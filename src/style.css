@@ -13,7 +13,7 @@ html {
 }
 
 body {
-    background-color: #f2f2f2;
+    background-color: 	#e6f2e6;
 }
 
 .navbar {
@@ -21,7 +21,7 @@ body {
     top: 0;
     z-index: 5;
     width: 100%;
-    background-color: #FFFFFF;
+    background-color: #e6f2e6;
 }
 
 .icon {
@@ -29,19 +29,52 @@ body {
 }
 
 .training-links {
-    color: black;
-    text-decoration: none;
-    padding: 0.3rem;
-    border-radius: 0.3rem;
+  color: black;
+  text-decoration: none;
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 8px 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 .training-links:hover {
-    color: var(--blue);
-    transition: transform, bacbkground-color 0.2s ease-in-out;
+  color: var(--blue);
+  background-color: #f8f9fa;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .training-links:hover img {
-    filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2500%) hue-rotate(190deg);
+  filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2500%) hue-rotate(190deg);
+}
+
+.training-links .icon {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  transition: filter 0.3s ease;
+}
+
+.training-links h6 {
+  font-size: 1rem;
+  margin: 0;
+}
+
+.bg-light-blue {
+   background-color: #e6f2e6;
+}
+
+.hide-scrollbar {
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 .cauresel-images img {
@@ -190,16 +223,11 @@ p {
     /* height: 7rem; */
     background-color: white;
     padding: 1rem;
-}
-
-.clients-img {
-    max-width: 250px;
+      max-width: 250px;
     width: 100%;
     height: auto;
     object-fit: contain;
 }
-
-
 
 .client-page {
     width: 100%;
