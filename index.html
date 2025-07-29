@@ -15,38 +15,246 @@
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="src/style.css">
     <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Custom Variables */
+        :root {
+            --primary-color: #2c5530;
+            --secondary-color: #4a7c59;
+            --accent-color: #7fb069;
+            --light-green: #a7d129;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Navbar Enhancements */
+        .enhanced-navbar {
+            background: linear-gradient(135deg, var(--white) 0%, var(--light-gray) 100%);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(42, 85, 48, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .enhanced-navbar.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        /* Logo Enhancements */
+        .navbar-brand {
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-placeholder {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 8px 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.4rem;
+            letter-spacing: -0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
+        }
+
+        /* Navigation Links */
+        .navbar-nav .nav-link {
+            color: var(--primary-color) !important;
+            font-weight: 500;
+            padding: 12px 20px !important;
+            margin: 0 4px;
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--accent-color), var(--light-green));
+            transition: var(--transition);
+            z-index: -1;
+            border-radius: 25px;
+        }
+
+        .navbar-nav .nav-link:hover::before {
+            left: 0;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(127, 176, 105, 0.4);
+        }
+
+        .navbar-nav .nav-link.active {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white !important;
+            box-shadow: 0 4px 15px rgba(44, 85, 48, 0.3);
+        }
+
+        /* Mobile Toggle Button */
+        .navbar-toggler {
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--accent-color), var(--light-green));
+            transition: var(--transition);
+        }
+
+        .navbar-toggler:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 15px rgba(127, 176, 105, 0.4);
+        }
+
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='m4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+        }
+
+        /* Mobile Enhancements */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(10px);
+                border-radius: 15px;
+                margin-top: 15px;
+                padding: 20px;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+                border: 1px solid rgba(127, 176, 105, 0.2);
+            }
+
+            .navbar-nav .nav-link {
+                margin: 4px 0;
+                text-align: center;
+            }
+
+            .navbar-nav .nav-link:hover {
+                transform: translateX(5px);
+            }
+        }
+
+        /* Additional Enhancements */
+        .nav-icon {
+            margin-right: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            background: linear-gradient(135deg, var(--accent-color), var(--light-green));
+            color: white !important;
+            border: none;
+            padding: 10px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: var(--transition);
+            text-decoration: none;
+            margin-left: 15px;
+            box-shadow: 0 4px 15px rgba(127, 176, 105, 0.3);
+        }
+
+        .cta-button:hover {
+            color: white !important;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(127, 176, 105, 0.5);
+        }
+
+        /* Body padding for fixed navbar */
+        body {
+            padding-top: 80px;
+        }
+
+        /* Demo content */
+        .demo-content {
+            height: 200vh;
+            background: linear-gradient(135deg, var(--light-gray), white);
+            padding: 40px 0;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+    </style>
 
 </head>
 
 <body>
     <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-            <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="GrowCraft" width="200" id="logo"></a>
+    <nav class="navbar navbar-expand-lg enhanced-navbar" id="mainNavbar">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-3 px-sm-5">
+            <!-- Enhanced Logo -->
+            <a class="navbar-brand" href="#home">
+                <!-- Using a placeholder logo design since image path may not work -->
+                <div class="logo-placeholder">
+                    <i class="fas fa-seedling"></i>
+                    GrowCraft
+                </div>
+            </a>
 
+            <!-- Mobile Toggle Button -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
+            <!-- Navigation Menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link active visited" aria-current="page" href="#home">Home</a>
+                        <a class="nav-link active" href="#home">
+                            <i class="fas fa-home nav-icon"></i>Home
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#services">Services</a>
+                        <a class="nav-link" href="#services">
+                            <i class="fas fa-cogs nav-icon"></i>Services
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about">About Us</a>
+                        <a class="nav-link" href="#about">
+                            <i class="fas fa-users nav-icon"></i>About Us
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="src/workList.html">Our Work</a>
+                        <a class="nav-link" href="src/workList.html">
+                            <i class="fas fa-briefcase nav-icon"></i>Our Work
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#contact">Contact Us</a>
+                        <a class="nav-link" href="#contact">
+                            <i class="fas fa-envelope nav-icon"></i>Contact Us
+                        </a>
                     </li>
-
+                    <!-- CTA Button -->
+                    <li class="nav-item">
+                        <a class="cta-button" href="#contact">
+                            <i class="fas fa-rocket nav-icon"></i>Get Started
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -472,6 +680,64 @@
 
     <!-- Copyright section ends here  -->
     <script src="src/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('mainNavbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Active link highlighting
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Mobile menu auto-close
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    bootstrap.Collapse.getInstance(navbarCollapse).hide();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
