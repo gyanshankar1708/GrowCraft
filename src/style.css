@@ -685,45 +685,4 @@ body.dark .copyright{
 }
 
 
-body.dark .icon {
-    filter: invert(1);
-}
-
-body.dark .mb-0:hover {
-    color: var(--blue);
-    transition: transform, bacbkground-color 0.2s ease-in-out;
-}
-
-body.dark .mb-4:hover {
-    color: var(--blue);
-    transition: transform, bacbkground-color 0.2s ease-in-out;
-}
-
-body.dark .icon:hover{
-    filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2500%) hue-rotate(190deg);
-} 
-
-.logo-wrapper {
-  background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 10px;
-  padding: 8px;
-  display: inline-block;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-#form-submit {
-    transition: 0.4s;
-    border: 2px solid  rgb(24, 112, 255);
-    box-sizing: border-box;
-}
-
-#form-submit:hover {
-    background-color: rgb(24, 112, 255);
-    border: 2px solid rgb(247, 245, 245);
-    color:#fdfeff;
-    transform: scale(1.05);
-    transform: 0.4s;
-}
 
