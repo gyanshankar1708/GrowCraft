@@ -16,12 +16,219 @@
     <link rel="stylesheet" href="src/style.css">
     <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
 
-    
 
 
 </head>
+  <style>
+       /* Import modern readable font */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-<body>
+        /* Footer Section */
+        footer {
+            background: #989898;
+            font-family: 'Poppins', sans-serif;
+            padding: 60px 30px;
+            color: #ffffff;
+        }
+
+        /* Grid Container */
+        .contact-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+
+
+        }
+
+
+        .contact-grid {
+            background: whitesmoke;
+            flex: 1 1 45%;
+            max-width: 500px;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Equal height trick */
+        .contact-container>.contact-grid {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        /* Hover Effect */
+        .contact-grid:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Headings */
+        .heading-text {
+            font-size: 26px;
+            color: #0078ff;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+
+        }
+
+        /* Text Styling */
+        .contact-grid p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #0a0a0a;
+        }
+
+        /* Address block */
+        .address p {
+            margin: 5px 0;
+        }
+
+        /* Social icons */
+        .footer-links {
+            margin-top: 20px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-links a {
+            margin-right: 12px;
+            transition: transform 0.3s ease;
+
+        }
+
+
+        .footer-links a:hover svg {
+            stroke: #ff5722;
+            /* Change this to any hover color you prefer */
+            transform: scale(1.2);
+        }
+
+        /* Contact Form Layout */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        form input,
+        form textarea {
+            background: #989898;
+            color: rgb(35, 35, 35);
+            border: none;
+            border-radius: 5px;
+            padding: 14px 16px;
+            font-size: 15px;
+            width: 100%;
+            max-width: 420px;
+            transition: background-color 0.3s ease;
+            text-align: left;
+        }
+
+        form input::placeholder,
+        form textarea::placeholder {
+            color: #3f3e3e;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            background-color: #868686;
+            outline: 2px solid #0078ff;
+            transition: outline 0.2s ease, background-color 0.3s ease;
+        }
+
+        #form-submit {
+            background-color: #0078ff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #form-submit:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Error Message */
+        #error {
+            color: #ff6b6b;
+            font-size: 14px;
+        }
+
+        /* Responsive for Mobile */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-grid {
+                flex: 1 1 80%;
+            }
+        }
+    
+=======
+body.dark .icon {
+    filter: invert(1);
+}
+
+body.dark .mb-0:hover {
+    color: var(--blue);
+    transition: transform, bacbkground-color 0.2s ease-in-out;
+}
+
+body.dark .mb-4:hover {
+    color: var(--blue);
+    transition: transform, bacbkground-color 0.2s ease-in-out;
+}
+
+body.dark .icon:hover{
+    filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2500%) hue-rotate(190deg);
+} 
+
+.logo-wrapper {
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 10px;
+  padding: 8px;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#form-submit {
+    transition: 0.4s;
+    border: 2px solid  rgb(24, 112, 255);
+    box-sizing: border-box;
+}
+
+#form-submit:hover {
+    background-color: rgb(24, 112, 255);
+    border: 2px solid rgb(247, 245, 245);
+    color:#fdfeff;
+    transform: scale(1.05);
+    transform: 0.4s;
+}
+  </style>
+
+<body id="main-body">
     <!-- Navbar starts here -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
@@ -43,13 +250,21 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#about">About Us</a>
                     </li>
+                    <!-- Added new "Our Work" link to navigate to the new work section on same page -->                    
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="src/workList.html">Our Work</a>
+                        <a class="nav-link active" aria-current="page" href="#work">Our Work</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#contact">Contact Us</a>
+                        <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
                     </li>
-
+                    <li class="nav-item">
+                        <div class="toggle-switch">
+                            <label class="switch-label">
+                            <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
+                            <span class="slider"></span>
+                            </label>
+                        </div>  
+                    </li>
                 </ul>
             </div>
         </div>
@@ -59,7 +274,7 @@
     <!-- Training and Internship program section starts here  -->
     <div class="bg-body-tertiary py-2">
         <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center px-2 px-sm-5">
-            <h5 class="mb-4 mb-xxl-0">Training and Internship program :-</h5>
+            <h5 class="mb-4 mb-xxl-0">Training and Internship program:</h5>
             <div class="d-flex flex-wrap gap-3">
                 <a href="#" class="training-links">
                     <div class="d-flex align-items-center gap-2">
@@ -94,7 +309,7 @@
             </div>
         </div>
     </div>
-    <!-- Trainign abd Internship program section ends here -->
+    <!-- Trainign and Internship program section ends here -->
 
     <main class="section" id="home">
         <!-- Caurosel section starts here -->
@@ -188,6 +403,9 @@
         </div>
         <!-- Carousel section ends here -->
 
+
+
+
         <!-- Services section starts here -->
         <section class="d-flex flex-column align-items-center mt-4 section" id="services">
             <h2 class="heading-text">SERVICES</h2>
@@ -197,10 +415,12 @@
             <div class="container text-center">
                 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 d-flex justify-content-center">
                     <!--  Services card starts here -->
+
                     <div class="col">
-                        <div class="card card-services">
+                        <div class="card card-services h-80 d-flex flex-column">
                             <div class="card-body d-flex flex-column align-items-center">
                                 <div class="svg-img" id="digital-marketing-card">
+                                    <!-- SVG icon -->
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                         stroke-linejoin="round" class="feather feather-bar-chart-2"
@@ -210,41 +430,33 @@
                                         <line x1="6" y1="20" x2="6" y2="14"></line>
                                     </svg>
                                 </div>
-                                <h5 class="card-title">Digital Marketing</h5>
-                                <p class="card-text">In today's digital-driven age, Marketing means Digital Marketing.
-                                    For any size of business, Digital Marketing plays a vital role in reaching the
+                                <h5 class="card-title mt-2">Digital Marketing</h5>
+
+                                <!-- Short text -->
+                                <p class="card-text summary">
+                                    In today's digital-driven age, Marketing means Digital Marketing. For any size of
+                                    business, Digital Marketing plays a vital role...
+                                </p>
+
+                                <!-- Full text hidden initially -->
+                                <p class="card-text extra d-none">
+                                    In today's digital-driven age, Marketing means Digital Marketing. For any size of
+                                    business, Digital Marketing plays a vital role in reaching the
                                     target customers and enhancing the brand visibility. Our digital marketing team is
-                                    experienced in a wide range of digital marketing channels, including search engine
-                                    optimization (SEO), pay-per-click (PPC) advertising, social media marketing, email
-                                    marketing, and content marketing.</p>
+                                    experienced in a wide range of digital marketing channels,
+                                    including SEO, PPC, social media, email marketing, and content marketing.
+                                </p>
+
+                                <button class="btn btn-sm btn-outline-primary mt-auto toggle-btn">Read More</button>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col">
-                        <div class="card card-services">
-                            <div class="card-body d-flex flex-column align-items-center">
-                                <div class="svg-img" id="content-writing-card">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" class="feather feather-book-open"
-                                        style="color: #e98e06;">
-                                        <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
-                                        <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
-                                    </svg>
-                                </div>
-                                <h5 class="card-title">Content Writing</h5>
-                                <p class="card-text">Content is the king and in the digital age, compelling content is
-                                    the cornerstone of online success. High-quality content is what a business needs to
-                                    attract and engage target customers. Our content writing team can help you create
-                                    informative, engaging and SEO-friendly content for your articles, blogs, websites,
-                                    social media posts, product descriptions and more to resonate with customers.</p>
-                            </div>
-                        </div>
-                    </div>
+
+
 
                     <div class="col">
-                        <div class="card card-services">
+                        <div class="card card-services h-80 d-flex flex-column">
                             <div class="card-body d-flex flex-column align-items-center">
                                 <div class="svg-img" id="website-development-card">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -255,19 +467,26 @@
                                         <line x1="9" y1="21" x2="9" y2="9"></line>
                                     </svg>
                                 </div>
-                                <h5 class="card-title">Website Development</h5>
-                                <p class="card-text">Website is often the first point of contact for businesses and
-                                    individuals. A well-designed website can increase brand awareness and visibility,
-                                    provide information about your products and services and build relationships with
-                                    customers. Our website development services can help you create a website that is
-                                    both visually appealing and user-friendly and that meets all of your business needs.
+                                <h5 class="card-title mt-2">Website Development</h5>
+                                <p class="card-text summary">
+                                    A website is often the first impression. Our services ensure your site is
+                                    attractive, functional, and aligned with your business needs...
                                 </p>
+                                <p class="card-text extra d-none">
+                                    Website is often the first point of contact for businesses and individuals. A
+                                    well-designed website can increase brand awareness and visibility,
+                                    provide information about your products and services, and build relationships with
+                                    customers.
+                                    Our website development services help you create a website that is both visually
+                                    appealing and user-friendly, meeting all your business needs.
+                                </p>
+                                <button class="btn btn-sm btn-outline-primary mt-auto toggle-btn">Read More</button>
                             </div>
                         </div>
                     </div>
 
                     <div class="col">
-                        <div class="card card-services">
+                        <div class="card card-services h-80 d-flex flex-column">
                             <div class="card-body d-flex flex-column align-items-center">
                                 <div class="svg-img" id="graphic-design-card">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -278,19 +497,27 @@
                                         <polyline points="2 12 12 17 22 12"></polyline>
                                     </svg>
                                 </div>
-                                <h5 class="card-title">Graphic Design</h5>
-                                <p class="card-text">Graphic design has become more crucial than ever in today's
-                                    visually driven world. Effective marketing materials, Brand Logos and social media
-                                    content are essential for any business to stand out. Our team of skilled designers
-                                    is committed to enhancing brand recognition through effective designs, eye-catching
-                                    logos, marketing materials and visuals.
+                                <h5 class="card-title mt-2">Graphic Design</h5>
+                                <p class="card-text summary">
+                                    In a visually driven world, stunning designs can define your brand. We create logos,
+                                    graphics, and materials that truly stand out...
                                 </p>
+                                <p class="card-text extra d-none">
+                                    Graphic design has become more crucial than ever in today's visually driven world.
+                                    Effective marketing materials, brand logos, and social media content are essential
+                                    for any business to stand out.
+                                    Our team of skilled designers is committed to enhancing brand recognition through
+                                    effective designs, eye-catching logos,
+                                    marketing materials, and visuals.
+                                </p>
+                                <button class="btn btn-sm btn-outline-primary mt-auto toggle-btn">Read More</button>
                             </div>
                         </div>
                     </div>
 
+
                     <div class="col">
-                        <div class="card card-services">
+                        <div class="card card-services h-80 d-flex flex-column">
                             <div class="card-body d-flex flex-column align-items-center">
                                 <div class="svg-img" id="social-media-management-card">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -302,21 +529,50 @@
                                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                                     </svg>
                                 </div>
-                                <h5 class="card-title">Social Media Management</h5>
-                                <p class="card-text">Passionate storytellers and digital experts, we create compelling
-                                    narratives that connect with your audience. Our seasoned social media strategists
-                                    tailor each post to amplify your brand identity, ensuring a consistent and impactful
-                                    online presence. Going beyond the ordinary, we curate captivating content that
-                                    builds genuine connections, turning followers into loyal brand advocates.
+                                <h5 class="card-title mt-2">Social Media Management</h5>
+                                <p class="card-text summary">
+                                    We craft engaging stories and posts tailored to your brand. Our strategy builds
+                                    loyal audiences through consistent and creative content...
                                 </p>
+                                <p class="card-text extra d-none">
+                                    Passionate storytellers and digital experts, we create compelling narratives that
+                                    connect with your audience.
+                                    Our seasoned social media strategists tailor each post to amplify your brand
+                                    identity, ensuring a consistent and impactful online presence.
+                                    Going beyond the ordinary, we curate captivating content that builds genuine
+                                    connections, turning followers into loyal brand advocates.
+                                </p>
+                                <button class="btn btn-sm btn-outline-primary mt-auto toggle-btn">Read More</button>
                             </div>
                         </div>
                     </div>
+
                     <!-- New Services card can be add here -->
                 </div>
             </div>
-            <!-- Services section ends here -->
+            <script>
+                document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        const cardBody = btn.closest('.card-body');
+                        const summary = cardBody.querySelector('.summary');
+                        const extra = cardBody.querySelector('.extra');
 
+                        const isExpanded = !extra.classList.contains('d-none');
+
+                        if (isExpanded) {
+                            summary.classList.remove('d-none');
+                            extra.classList.add('d-none');
+                            btn.textContent = "Read More";
+                        } else {
+                            summary.classList.add('d-none');
+                            extra.classList.remove('d-none');
+                            btn.textContent = "Read Less";
+                        }
+                    });
+                });
+            </script>
+            <!-- Services section ends here -->
+            <hr>
             <!-- About us section starts from here -->
             <div class="card section" id="about">
                 <h2 class="heading-text text-center mt-4">About Us</h2>
@@ -381,6 +637,68 @@
                 </div>
             </div>
             <!-- About us section ends here -->
+
+            <!-- Our Work section starts here -->
+            <div class="section mt-5" id="work">
+                <h2 class="heading-text text-center">Our Work</h2>
+                <p class="fst-italic text-center">Showcasing Our Creative Excellence and Client Success Stories</p>
+                
+                <div class="container text-center">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 d-flex justify-content-center">
+                        
+                        <!-- Work Card 1 - Web Development -->
+                        <div class="col">
+                            <a href="src/works.html#WebDev" style="text-decoration: none;">
+                                <div class="gallery-card h-100 work-card">
+                                    <img src="images/WebDev.png" alt="Web Development Project" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Olnine Platform</h5>
+                                        <p class="card-text">Modern and responsive e-commerce website with advanced features and seamless user experience.</p>
+                                        <span class="badge bg-primary">Web Development</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Work Card 2 - Digital Marketing -->
+                        <div class="col">
+                            <a href="src/works.html#digital-marketing" style="text-decoration: none;">
+                                <div class="gallery-card h-100 work-card">
+                                    <img src="images/DigitalMarketing.png" alt="Digital Marketing Campaign" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Brand Growth Campaign</h5>
+                                        <p class="card-text">Comprehensive digital marketing strategy that increased client's online presence by 300%.</p>
+                                        <span class="badge bg-success">Digital Marketing</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- Work Card 3 - Graphic Design -->
+                        <div class="col">
+                            <a href="src/works.html#graphic-design" style="text-decoration: none;">
+                                <div class="gallery-card h-100 work-card">
+                                    <img src="images/GraphicDesign.png" alt="Graphic Design Project" class="card-img-top">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Brand Identity Design</h5>
+                                        <p class="card-text">Complete brand identity package including logo, business cards, and marketing materials.</p>
+                                        <span class="badge bg-info">Graphic Design</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                    
+                    <!-- View All Work Button -->
+                    <div class="text-center mt-4 mb-5">
+                        <a href="src/workList.html" class="btn btn-custom-purple btn-lg">
+                            View All Our Work <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Our Work section ends here -->
         </section>
     </main>
 
@@ -475,6 +793,7 @@
 
     <!-- Copyright section ends here  -->
     <script src="src/script.js"></script>
+    <script src="src/utils.js"></script>
 </body>
 
 </html>
