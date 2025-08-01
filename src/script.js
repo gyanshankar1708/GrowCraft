@@ -106,4 +106,101 @@ document.addEventListener("DOMContentLoaded", function () {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
   }
+
+  // Initialize scroll animations
+  initScrollAnimations();
 });
+
+// === Scroll Animation System ===
+function initScrollAnimations() {
+  // Create Intersection Observer for better performance
+  const observerOptions = {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Add a small delay to make animations feel more natural
+        setTimeout(() => {
+          entry.target.classList.add('animate');
+        }, 100);
+        // Stop observing after animation to improve performance
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Add animation classes to elements
+  addAnimationClasses();
+  
+  // Small delay before starting observations to ensure page is ready
+  setTimeout(() => {
+    const animatedElements = document.querySelectorAll('.fade-in-element, .slide-left, .slide-right, .scale-up');
+    animatedElements.forEach(el => observer.observe(el));
+  }, 500);
+}
+
+function addAnimationClasses() {
+  // Skip service cards to avoid merge conflicts - keep them as they are
+  
+  // Animate work/gallery cards
+  const workCards = document.querySelectorAll('.work-card, .gallery-card');
+  workCards.forEach((card, index) => {
+    if (!card.classList.contains('fade-in-element')) {
+      card.classList.add('fade-in-element');
+      if (index > 0) {
+        card.classList.add(`delay-${Math.min(index % 3 + 1, 3)}`);
+      }
+    }
+  });
+
+  // Animate headings (but skip navbar and carousel headings)
+  const headings = document.querySelectorAll('h1, h2, h3, .heading-text');
+  headings.forEach((heading) => {
+    if (!heading.closest('.navbar') && !heading.closest('.carousel-caption') && !heading.classList.contains('fade-in-element')) {
+      heading.classList.add('fade-in-element');
+    }
+  });
+
+  // Animate about section content
+  const aboutSection = document.getElementById('about');
+  if (aboutSection) {
+    const aboutImages = aboutSection.querySelectorAll('img');
+    const aboutText = aboutSection.querySelectorAll('.about-us, .founder-detail');
+    
+    aboutImages.forEach(img => {
+      if (!img.classList.contains('slide-left')) {
+        img.classList.add('slide-left');
+      }
+    });
+    
+    aboutText.forEach((text, index) => {
+      if (!text.classList.contains('slide-right') && !text.classList.contains('slide-left')) {
+        text.classList.add('slide-right');
+      }
+    });
+  }
+
+  // Animate buttons (but skip navbar buttons and carousel controls)
+  const buttons = document.querySelectorAll('.btn:not(.carousel-control-prev):not(.carousel-control-next), .redirect-btns button');
+  buttons.forEach(button => {
+    if (!button.closest('.navbar') && !button.closest('.carousel') && !button.classList.contains('scale-up')) {
+      button.classList.add('scale-up');
+    }
+  });
+
+  // Keep footer exactly as it is - no animations to avoid conflicts
+  
+  // Animate training links in services section
+  const trainingLinks = document.querySelectorAll('.training-links');
+  trainingLinks.forEach((link, index) => {
+    if (!link.classList.contains('scale-up')) {
+      link.classList.add('scale-up');
+      if (index > 0) {
+        link.classList.add(`delay-${Math.min(index % 3 + 1, 3)}`);
+      }
+    }
+  });
+}

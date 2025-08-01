@@ -150,6 +150,11 @@ body {
     flex-direction: column;
 }
 
+.card-services:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
 .card-services .card-body {
     display: flex;
     flex-direction: column;
@@ -166,11 +171,6 @@ body {
 
 p {
     text-align: justify;
-}
-
-.card-services:hover {
-    transform: translateY(-5px) scale(1.03);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 /* Services cards - 2 per row on desktop, 1 on mobile */
@@ -466,9 +466,17 @@ textarea {
     border: 0.5px solid black;
     border-radius: 15px;
     overflow: hidden;
-    transition: 0.3s;
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     text-align: center;
     color: black;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    will-change: opacity, transform;
+}
+
+.gallery-card.animate {
+    opacity: 1;
+    transform: translateY(0) scale(1);
 }
 
 .gallery-card:hover {
@@ -498,10 +506,19 @@ textarea {
     font-size: 15px;
 }
 .work-card {
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
-  border: none;
-
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
+    border: none;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
 }
+
+.work-card.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .work-card:hover {
     transform: scale(1.05);
     transition: transform 0.3s ease-in-out;
@@ -1016,6 +1033,90 @@ body.dark .mb-4:hover{
     .toggle-switch {
         margin-top: 1rem;
         padding-left: 0.5rem;
+    }
+}
+
+/* === Scroll Animation Styles === */
+.fade-in-element {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+}
+
+.fade-in-element.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Different animation delays for staggered effects */
+.fade-in-element.delay-1 {
+    transition-delay: 0.1s;
+}
+
+.fade-in-element.delay-2 {
+    transition-delay: 0.2s;
+}
+
+.fade-in-element.delay-3 {
+    transition-delay: 0.3s;
+}
+
+.fade-in-element.delay-4 {
+    transition-delay: 0.4s;
+}
+
+/* Slide from left animation */
+.slide-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+}
+
+.slide-left.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Slide from right animation */
+.slide-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+}
+
+.slide-right.animate {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Scale up animation for cards */
+.scale-up {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+}
+
+.scale-up.animate {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .fade-in-element,
+    .slide-left,
+    .slide-right,
+    .scale-up,
+    .card-services,
+    .work-card,
+    .gallery-card {
+        transition: none;
+        opacity: 1;
+        transform: none;
     }
 }
  
