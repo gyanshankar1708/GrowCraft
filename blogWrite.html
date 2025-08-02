@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Write Blog | GrowCraft</title>
+  <link rel="stylesheet" href="src/blogs.css">
+      <link rel="stylesheet" href="src/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
+  
+</head>
+<body>
+   <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+            <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="GrowCraft" width="200" id="logo"></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active visited" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#services">Services</a>
+                    </li>
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blogListing.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">About Us</a>
+                    </li>
+                    <!-- Added new "Our Work" link to navigate to the new work section on same page -->                    
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#work">Our Work</a>
+                    </li>
+                        
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
+                    </li>
+                
+                    <li class="nav-item mt-3">
+                        <div class="toggle-switch">
+                            <label class="switch-label">
+                            <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
+                            <span class="slider"></span>
+                            </label>
+                        </div>  
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+  <div class="blog-section">
+    <h2>Write a New Blog</h2>
+    <form id="blog-form">
+      <input type="text" id="author" placeholder="Your Name" required>
+      <input type="text" id="title" placeholder="Blog Title" required>
+      <textarea id="content" rows="6" placeholder="Write your blog..." required></textarea>
+      <button type="submit">Publish Blog</button>
+    </form>
+    <button onclick="window.location='blogListing.html'" style="margin-top:30px; background:#ccc; color:#222;">← Back to Blogs</button>
+  </div>
+  <script src="src/write-blog.js"></script>
+    
+</body>
+</html>
