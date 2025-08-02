@@ -50,7 +50,8 @@ body {
 
 .training-links:hover {
     color: var(--blue);
-    transition: transform, bacbkground-color 0.2s ease-in-out;
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out;
+
 }
 
 .training-links:hover img {
@@ -59,23 +60,59 @@ body {
 
 .cauresel-images img {
     height: 65vh;
-    width: auto;
+    width: 100%;
     object-fit: cover;
 }
 
-.redirect-btns button {
+.carousel {
+  position: relative;
+}
+
+.carousel-static-btns {
+    margin-top: 1.5rem;
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  pointer-events: auto;
+}
+
+.carousel-static-btns .btn {
+    margin-top: 1.5rem;
     border-radius: 1.5rem;
     border: none;
     outline: none;
     background: linear-gradient(45deg, #007bff, #0056b3);;
     color: white;
     padding: 15px;
+    margin: 0 10px;
+    text-align: center;
 }
-.redirect-btns button:hover{
-    background: linear-gradient(45deg, #0056b3, #007bff); 
-    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
-    transform: translateY(-2px);
+.carousel-static-btns .btn:hover {
+  background: linear-gradient(45deg, #0056b3, #007bff);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
 }
+
+.carousel-caption h2 {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .nav-link:hover,
 .visited {
     text-decoration-line: underline;
@@ -113,9 +150,29 @@ body {
 
 .carousel-caption {
     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100%;
     z-index: 2;
+    text-align: center;
+    padding: 1rem 2rem;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 1rem;
+    color: white;
+    bottom: 5vh;
 }
+@media (max-width: 576px) {
+  .carousel-caption {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
 
+  .carousel-caption h2 {
+    font-size: 1.2rem;
+  }
+}
 .nav-btn {
     filter: invert(1)
 }
@@ -363,7 +420,7 @@ p {
   align-items: center;
   justify-content: center;
   margin-right: 10px;
-  transition: background 0.3s, color 0.3s;
+  transition: transform 0.3 colour.3s;
 }
 
 .social-list a:hover i {
