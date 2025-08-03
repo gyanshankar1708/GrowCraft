@@ -126,3 +126,35 @@ document.querySelectorAll('.toggle-btn').forEach(function (btn) {
                         }
                     });
                 });
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const sections = ['home', 'services', 'about', 'work', 'contact'];
+  const navLinks = sections.map(id => document.querySelector(`a[href="#${id}"]`));
+
+  function onScroll() {
+    let currentSection = sections[0];
+    for (let id of sections){
+      const section = document.getElementById(id);
+      if(section){
+        const rect = section.getBoundingClientRect();
+        if(rect.top <= 80 && rect.bottom > 80) {
+          currentSection = id;
+        }
+      }
+    }
+    navLinks.forEach(link => {
+      if (link) {
+        link.classList.remove('active', 'visited');
+      }
+    });
+    const activeLink = document.querySelector(`a[href="#${currentSection}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active', 'visited');
+    }
+  }
+
+  window.addEventListener('scroll', onScroll);
+  onScroll();
+});
