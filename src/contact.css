@@ -682,3 +682,294 @@
 @keyframes spin {
     to { transform: rotate(360deg); }
 }
+
+/* Dark Mode Styles for Contact Page */
+body.dark .contact-hero {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+body.dark .contact-info {
+    background-color: #1a1a1a;
+}
+
+body.dark .contact-info-card {
+    background: #2d2d2d;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .contact-info-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .contact-info-card h4 {
+    color: #ffffff;
+}
+
+body.dark .contact-info-card p {
+    color: #cccccc;
+}
+
+body.dark .contact-form-section {
+    background-color: #1a1a1a;
+}
+
+body.dark .form-container {
+    background: #2d2d2d;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark .form-title {
+    color: #ffffff;
+}
+
+body.dark .form-subtitle {
+    color: #cccccc;
+}
+
+body.dark .form-group label {
+    color: #ffffff;
+}
+
+body.dark .form-group input,
+body.dark .form-group select,
+body.dark .form-group textarea {
+    background-color: #3a3a3a;
+    border-color: #555555;
+    color: #ffffff;
+}
+
+body.dark .form-group input:focus,
+body.dark .form-group select:focus,
+body.dark .form-group textarea:focus {
+    border-color: #0078FF;
+    box-shadow: 0 0 0 0.2rem rgba(0, 120, 255, 0.25);
+}
+
+body.dark .form-group input::placeholder,
+body.dark .form-group textarea::placeholder {
+    color: #999999;
+}
+
+body.dark .file-upload-area {
+    background-color: #3a3a3a;
+    border-color: #555555;
+}
+
+body.dark .file-upload-area:hover {
+    border-color: #0078FF;
+}
+
+body.dark .file-upload-area p {
+    color: #cccccc;
+}
+
+body.dark .file-upload-area small {
+    color: #999999;
+}
+
+body.dark .file-item {
+    background-color: #4a4a4a;
+    border-color: #555555;
+}
+
+body.dark .file-item span {
+    color: #ffffff;
+}
+
+body.dark .contact-preferences > label {
+    color: #ffffff;
+}
+
+body.dark .contact-method {
+    background-color: #3a3a3a;
+    border-color: #555555;
+}
+
+body.dark .contact-method:hover {
+    background-color: #4a4a4a;
+}
+
+body.dark .contact-method span {
+    color: #ffffff;
+}
+
+body.dark .quick-contact {
+    background-color: #2d2d2d;
+}
+
+body.dark .quick-contact h3 {
+    color: #ffffff;
+}
+
+body.dark .quick-contact p {
+    color: #cccccc;
+}
+
+body.dark .quick-btn {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+body.dark .quick-btn:hover {
+    background-color: #4a4a4a;
+}
+
+body.dark .office-hours h4 {
+    color: #ffffff;
+}
+
+body.dark .office-hours {
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #555555;
+}
+
+body.dark .hour-item {
+    background-color: #3a3a3a;
+    border-color: #555555;
+    border-radius: 6px;
+    margin-bottom: 8px;
+}
+
+body.dark .hour-item:last-child {
+    margin-bottom: 0;
+}
+
+body.dark .hour-item span {
+    color: #ffffff;
+}
+
+body.dark .hour-item span:first-child {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+body.dark .hour-item span:last-child {
+    color: #cccccc;
+}
+
+body.dark .response-card {
+    background-color: #3a3a3a;
+    border-color: #555555;
+}
+
+body.dark .response-text h5 {
+    color: #ffffff;
+}
+
+body.dark .response-text p {
+    color: #cccccc;
+}
+
+body.dark .contact-footer {
+    background-color: #1a1a1a;
+    border-top-color: #555555;
+}
+
+body.dark .footer-content h4 {
+    color: #ffffff;
+}
+
+body.dark .footer-content p {
+    color: #cccccc;
+}
+
+body.dark .footer-links a {
+    color: #cccccc;
+}
+
+body.dark .footer-links a:hover {
+    color: #0078FF;
+}
+
+body.dark .footer-bottom p {
+    color: #999999;
+}
+
+body.dark #backToTop {
+    background-color: #3a3a3a;
+    color: #ffffff;
+    border-color: #555555;
+}
+
+body.dark #backToTop:hover {
+    background-color: #0078FF;
+    color: #ffffff;
+}
+
+/* Dark mode styles for booking section */
+body.dark .booking-section h4 {
+    color: #ffffff;
+}
+
+body.dark .booking-section {
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    border: 1px solid #555555;
+}
+
+body.dark .booking-section .form-group label {
+    color: #ffffff;
+}
+
+body.dark .booking-section .form-group input,
+body.dark .booking-section .form-group select {
+    background-color: #3a3a3a;
+    border-color: #555555;
+    color: #ffffff;
+}
+
+body.dark .booking-section .form-group input:focus,
+body.dark .booking-section .form-group select:focus {
+    border-color: #0078FF;
+    box-shadow: 0 0 0 0.2rem rgba(0, 120, 255, 0.25);
+}
+
+/* Dark mode styles for file upload section */
+body.dark .file-upload-section h4 {
+    color: #ffffff;
+}
+
+/* Dark mode styles for form messages */
+body.dark .error-message {
+    background-color: #4a2a2a;
+    border-color: #8b3a3a;
+    color: #ffcccc;
+}
+
+body.dark .success-message {
+    background-color: #2a4a2a;
+    border-color: #3a8b3a;
+    color: #ccffcc;
+}
+
+/* Dark mode styles for specific button states */
+body.dark .btn-primary {
+    background-color: #0078FF;
+    border-color: #0078FF;
+    color: #ffffff;
+}
+
+body.dark .btn-primary:hover {
+    background-color: #0056cc;
+    border-color: #0056cc;
+}
+
+/* Dark mode styles for info icons */
+body.dark .info-icon {
+    background: linear-gradient(135deg, #0078FF, #0056cc);
+}
+
+/* Dark mode styles for response icon */
+body.dark .response-icon {
+    background-color: #0078FF;
+    color: #ffffff;
+}
+
+
+
