@@ -59,9 +59,10 @@ body {
 }
 
 .cauresel-images img {
-    height: 65vh;
+    height: 70vh;
     width: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .carousel {
@@ -69,29 +70,29 @@ body {
 }
 
 .carousel-static-btns {
-    margin-top: 1.5rem;
   position: absolute;
-  bottom: 4rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   justify-content: center;
   pointer-events: auto;
 }
 
 .carousel-static-btns .btn {
-    margin-top: 1.5rem;
-    border-radius: 1.5rem;
+    border-radius: 2rem; 
     border: none;
     outline: none;
     background: linear-gradient(45deg, #007bff, #0056b3);;
     color: white;
-    padding: 15px;
-    margin: 0 10px;
-    text-align: center;
+    padding: 0.8rem 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
 }
+    
 .carousel-static-btns .btn:hover {
   background: linear-gradient(45deg, #0056b3, #007bff);
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
@@ -153,15 +154,15 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width: 100%;
+    width: 80%;
     z-index: 2;
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 2rem;
     background: rgba(0, 0, 0, 0.4);
-    border-radius: 10px;
-    padding: 1rem;
+    border-radius: 15px;
     color: white;
-    bottom: 5vh;
+    bottom: auto;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 576px) {
   .carousel-caption {
@@ -190,6 +191,28 @@ body {
     padding: 1.5rem;
     border-radius: 50%;
 
+}
+/* responsiveness */
+@media (max-width: 768px) {
+    .cauresel-images img {
+        height: 60vh; 
+    }
+    
+    .carousel-caption {
+        width: 90%;
+        padding: 1rem;
+    }
+    
+    .carousel-static-btns {
+        bottom: 2rem;
+        flex-direction: column; 
+        gap: 0.8rem;
+    }
+    
+    .carousel-static-btns .btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
 }
 /* Services card is here */
 .card-services {
