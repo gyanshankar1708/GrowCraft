@@ -24,30 +24,31 @@ clientSlide();
 // Scroll effect on navbar (only on index page)
 let sections = document.querySelectorAll(".section");
 let navLinks = document.querySelectorAll(".nav-link");
-if (window.location.pathname.includes("index")) {
-  window.addEventListener("scroll", () => {
-    let current = "home";
-    const scrollY = window.pageYOffset;
-    const nav = document.querySelector("nav");
-    const navHeight = nav ? nav.offsetHeight - 50 : 50;
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop - navHeight;
-      const sectionHeight = section.offsetHeight;
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        current = section.getAttribute("id");
-      }
-      if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        current = "contact";
-      }
-    });
-    navLinks.forEach((link) => {
-      link.classList.remove("visited");
-      if (link.getAttribute("href") === "#" + current) {
-        link.classList.add("visited");
-      }
-    });
+
+window.addEventListener("scroll", () => {
+  let currentSection = null;
+  let minDistance = window.innerHeight;
+
+  sections.forEach((section) => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top >= 0 && rect.top < minDistance) {
+      minDistance = rect.top;
+      currentSection = section.getAttribute("id");
+    }
   });
-}
+
+  if (!currentSection && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+    currentSection = "contact"; // fallback if at bottom
+  }
+
+  navLinks.forEach((link) => {
+    link.classList.remove("visited");
+    if (link.getAttribute("href") === "#" + currentSection) {
+      link.classList.add("visited");
+    }
+  });
+});
+
 
 // Form validation (only if form exists)
 let submitForm = document.getElementById("form-submit");
@@ -106,3 +107,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        const cardBody = btn.closest('.card-body');
+                        const summary = cardBody.querySelector('.summary');
+                        const extra = cardBody.querySelector('.extra');
+
+                        const isExpanded = !extra.classList.contains('d-none');
+
+                        if (isExpanded) {
+                            summary.classList.remove('d-none');
+                            extra.classList.add('d-none');
+                            btn.textContent = "Read More";
+                        } else {
+                            summary.classList.add('d-none');
+                            extra.classList.remove('d-none');
+                            btn.textContent = "Read Less";
+                        }
+                    });
+                });
