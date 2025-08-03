@@ -545,68 +545,180 @@
         </section>
     </main>
 
+
     <!-- Footer section starts here (Contact us) -->
-    <footer class="footer" id="contact" >
-  <div class="footer-container">
-    <!-- About GrowCraft -->
-     <div class="footer-about-wrapper">
-    <div class="footer-about">
-      <h3>About GrowCraft</h3>
-      <p>
-        GrowCraft is a service-based platform offering:
-        <br>🌐 Website Development<br> 🖌️ Graphic Design <br>✍️ Content Writing <br>
-        📣 Social Media Management <br> 📊 Digital Marketing <br>
-        🎓 Training & Internship Programs.
-        <br>We help businesses grow online while providing students real-world learning.
-      </p>
-    </div>
-    </div>
+    <footer class="footer-creative" id="contact">
+      <div class="footer-creative-bg">
+        <div class="container py-5">
+          <div class="row align-items-center">
+            <!-- Logo & Social -->
+            <div class="col-lg-4 col-md-5 col-12 mb-4 mb-lg-0 text-center text-lg-start">
+              <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
+              <h2 class="footer-brand">GrowCraft</h2>
+              <h4 class="footer-social-title">Social Media</h4>
+              <div class="footer-social-icons mt-3">
+                <a href="#" class="footer-social-icon" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="footer-social-icon" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="footer-social-icon" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-icon" title="X"><i class="fab fa-x-twitter"></i></a>
+              </div>
+            </div>
+            <!-- Contact Info -->
+            <div class="col-lg-4 col-md-4 col-12 mb-4 mb-lg-0 text-center text-lg-start">
+              <h4 class="footer-contact-title">Contact Us</h4>
+              <p class="footer-contact-text">info@growcraft.com</p>
+              <p class="footer-contact-text">+91 999 999 999</p>
+            </div>
+            <!-- Contact Form -->
+            <div class="col-lg-4 col-md-3 col-12 text-center text-lg-start">
+              <h4 class="footer-form-title">Get In Touch</h4>
+              <form class="footer-form" autocomplete="off">
+                <input type="text" class="footer-input" placeholder="Your name" required>
+                <input type="email" class="footer-input" placeholder="Your email" required>
+                <textarea class="footer-input" rows="2" placeholder="Your message" required></textarea>
+                <button type="submit" class="footer-send-btn">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="footer-copyright text-center py-3">
+          Copyright © 2024 - 2025 GrowCraft. All rights reserved.
+        </div>
+      </div>
+    </footer>
 
-    <!-- Quick Links -->
-     <div class="footer-top">
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#index.html">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Internship</a></li>
-        <li><a href="#contact.html">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact -->
-    <div class="footer-contact">
-      <h3>Contact Us</h3>
-      <p>📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
-      <p>📞 +91 999 999 999</p>
-      <p>📧 info@growcraft.com</p>
-      <button class="send-message-btn">Send Message</button>
-    </div>
-    </div>
-
-    <!-- Follow Us -->
-    <div class="footer-social">
-  <h3>Follow Us</h3><br>
-  <ul class="social-list">
-    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-    <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
-    <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
-  </ul>
-</div>
-  </div>
-
-
-</footer>
-
-    <!--  COntact us section ends here -->
-
-    <!-- Copyright section -->
-    <div class="copyright d-flex justify-content-center m-3">
-        <span>&copy; Copyright </span><span style="font-weight: bold;"> GrowCraft.</span><span> All Rights
-            Reserved</span>
-    </div>
+    <style>
+      .footer-creative-bg {
+        background: #111;
+        color: #fff;
+        border-radius: 0 0 24px 24px;
+        box-shadow: 0 2px 24px rgba(0,0,0,0.12);
+      }
+      .footer-logo {
+        width: 80px;
+        height: 80px;
+        object-fit: contain;
+        border-radius: 16px;
+        background: #fff;
+        box-shadow: 0 2px 12px rgba(34,130,255,0.08);
+      }
+      .footer-brand {
+        font-size: 2.1rem;
+        font-weight: 700;
+        margin-bottom: 8px;
+        letter-spacing: 1px;
+      }
+      .footer-social-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .footer-social-icons {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      .footer-social-icon {
+        display: inline-block;
+        width: 44px;
+        height: 44px;
+        background: #111;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 1.6em;
+        text-align: center;
+        line-height: 44px;
+        border: 2px solid #fff;
+        transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.2s;
+      }
+      .footer-social-icon:hover {
+        background: #fff;
+        color: #2282ff;
+        box-shadow: 0 0 12px #2282ff99;
+        transform: scale(1.1);
+        border-color: #2282ff;
+      }
+      .footer-contact-title, .footer-form-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 16px;
+      }
+      .footer-contact-text {
+        font-size: 1.08rem;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+      .footer-form {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 8px;
+      }
+      .footer-input {
+        width: 100%;
+        padding: 10px 14px;
+        background: #222;
+        color: #fff;
+        border: 1px solid #333;
+        border-radius: 8px;
+        font-size: 1em;
+        outline: none;
+        transition: border-color 0.2s, box-shadow 0.2s;
+      }
+      .footer-input:focus {
+        border-color: #2282ff;
+        box-shadow: 0 0 8px #2282ff55;
+      }
+      .footer-send-btn {
+        font-weight: 600;
+        background: #0022ff;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 0;
+        margin-top: 4px;
+        box-shadow: 0 2px 8px rgba(34,130,255,0.08);
+        transition: background 0.2s, color 0.2s, transform 0.2s;
+        cursor: pointer;
+        font-size: 1.08em;
+      }
+      .footer-send-btn:hover {
+        background: #fff;
+        color: #0022ff;
+        transform: scale(1.05);
+      }
+      .footer-copyright {
+        color: #fff;
+        font-size: 1.05em;
+        background: transparent;
+        margin-top: 18px;
+      }
+      @media (max-width: 991.98px) {
+        .footer-logo {
+          width: 60px;
+          height: 60px;
+        }
+        .footer-brand {
+          font-size: 1.5rem;
+        }
+        .footer-social-title, .footer-contact-title, .footer-form-title {
+          font-size: 1.1rem;
+        }
+      }
+      @media (max-width: 767.98px) {
+        .footer-creative-bg {
+          border-radius: 0 0 12px 12px;
+        }
+        .footer-block {
+          margin-bottom: 24px;
+        }
+        .footer-creative .container {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+      }
+    </style>
 
 
     <!-- Back to Top Button -->
