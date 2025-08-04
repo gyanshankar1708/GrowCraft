@@ -21,3 +21,16 @@ window.onload = function () {
     }
   }
 }
+// Apply dark mode on page load
+document.addEventListener("DOMContentLoaded", function () {
+    const isDarkMode = localStorage.getItem("darkMode") === "true";
+    document.body.classList.toggle("dark-mode", isDarkMode);
+    document.getElementById("darkModeToggle").checked = isDarkMode;
+});
+
+// Toggle dark mode
+document.getElementById("darkModeToggle").addEventListener("change", function () {
+    const enabled = this.checked;
+    document.body.classList.toggle("dark-mode", enabled);
+    localStorage.setItem("darkMode", enabled);
+});

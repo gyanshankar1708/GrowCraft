@@ -107,3 +107,22 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 });
+document.querySelectorAll('.toggle-btn').forEach(function (btn) {
+                    btn.addEventListener('click', function () {
+                        const cardBody = btn.closest('.card-body');
+                        const summary = cardBody.querySelector('.summary');
+                        const extra = cardBody.querySelector('.extra');
+
+                        const isExpanded = !extra.classList.contains('d-none');
+
+                        if (isExpanded) {
+                            summary.classList.remove('d-none');
+                            extra.classList.add('d-none');
+                            btn.textContent = "Read More";
+                        } else {
+                            summary.classList.add('d-none');
+                            extra.classList.remove('d-none');
+                            btn.textContent = "Read Less";
+                        }
+                    });
+                });

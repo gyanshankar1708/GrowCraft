@@ -428,15 +428,22 @@ textarea {
     box-shadow: 0 0 15px white;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
 }
+.gallery-card .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 170px;
+}
 
 .gallery-card img {
   width: 100%;
   height: 180px;
   object-fit: cover;
+  margin-top: 0 ;
 }
 
 .gallery-card .card-body {
-    padding: 15px;
+    padding: 15px 15px 0;
 
 }
 
@@ -985,6 +992,9 @@ body.dark .mb-4:hover{
   transform: 0.4s;
 }
 
+
+.btn-custom-purple {
+
 @media screen and (max-width: 768px) {
   .footer-container {
     display: flex;
@@ -1090,9 +1100,62 @@ body.dark .mb-4:hover{
   }
 }
 
+
+.about-section {
+  padding: 60px 20px;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 36px;
+  margin-bottom: 10px;
+  border-bottom: 3px solid #2a63f4;
+  display: inline-block;
+}
+
+.about-subtitle {
+  font-style: italic;
+  color: #666;
+  margin-bottom: 40px;
+  margin-left: 450px;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-card {
+  background: white;
+  border-radius: 16px;
+  padding: 25px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.about-card h3 {
+  margin-bottom: 15px;
+  color: #2a63f4;
+}
+
+.about-card p {
+  color: #333;
+  line-height: 1.6;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+=======
 .send-message-btn {
   display: none;
        .btn-custom-purple {
+
             background-color: #463896;
             border-color: #291987;
             color: white;
@@ -1113,6 +1176,9 @@ body.dark .mb-4:hover{
             border-color: #1f0d66 !important;
             color: white !important;
             box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
+
+        }
+
         }
         /* === Navbar Custom Styling === */
 
@@ -1169,4 +1235,5 @@ body.dark .mb-4:hover{
         margin-top: 1rem;
         padding-left: 0.5rem;
     }
+
 }
