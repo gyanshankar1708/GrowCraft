@@ -893,6 +893,70 @@ body.dark .training-links:hover .mb-0 ,body.dark .training-links:hover img{
      filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2500%) hue-rotate(190deg)
 }
 
+/* styling for testimonials*/
+.testimonials {
+  padding: 3rem 1.5rem;
+  background: #f9f9f9;
+  text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #222;
+}
+
+.testimonial-slider {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem;
+  cursor: grab;
+}
+
+.testimonial-slider::-webkit-scrollbar {
+  height: 8px;
+}
+.testimonial-slider::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+
+.testimonial-card {
+  flex: 0 0 280px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: scale(1.05);
+}
+
+.testimonial-card img {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+
+.testimonial-card p {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.75rem;
+}
+
+.testimonial-card h4 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+}
+
 body.dark .mb-4:hover{
     color: var(--blue);
 }
