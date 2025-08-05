@@ -3,73 +3,127 @@
 <head>
   <meta charset="UTF-8" />
   <title>View Blog | GrowCraft</title>
+
+  <!-- Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="src/style.css" />
   <link rel="stylesheet" href="src/blogs.css" />
-      <link rel="stylesheet" href="src/style.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="src/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
 
+  <!-- Optional additional styling -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fc;
+      color: #333;
+    }
+
+    .blog-section {
+      background-color: #ffffff;
+      margin: 40px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-weight: 500;
+      background-color: #e3eaf5;
+      color: #273055;
+      border-radius: 8px;
+      text-decoration: none;
+      margin-bottom: 25px;
+      transition: all 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #d2def0;
+      color: #1e2c49;
+    }
+
+    #full-blog-content h1,
+    #full-blog-content h2 {
+      color: #2c3e50;
+      margin-bottom: 1rem;
+    }
+
+    #full-blog-content p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+      margin-bottom: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      .blog-section {
+        padding: 20px;
+      }
+
+      .back-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
-     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-            <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="GrowCraft" width="200" id="logo"></a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-3 px-sm-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Logo.png" alt="GrowCraft" width="180" id="logo" />
+      </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active visited" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#services">Services</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="blogListing.html">Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about">About Us</a>
-                    </li>
-                    <!-- Added new "Our Work" link to navigate to the new work section on same page -->                    
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#work">Our Work</a>
-                    </li>
-                        
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
-                    </li>
-                
-                    <li class="nav-item mt-3">
-                        <div class="toggle-switch">
-                            <label class="switch-label">
-                            <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
-                            <span class="slider"></span>
-                            </label>
-                        </div>  
-                    </li>
-                </ul>
+      <div class="collapse navbar-collapse mt-2 mt-lg-0" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-2">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blogListing.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#work">Our Work</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
+          <li class="nav-item">
+            <div class="toggle-switch mt-2">
+              <label class="switch-label">
+                <input onclick="toggleDarkMode()" type="checkbox" class="checkbox" />
+                <span class="slider"></span>
+              </label>
             </div>
-        </div>
-    </nav>
-  <div class="blog-section" id="full-blog-section" style="max-width:650px;">
-    <button onclick="window.location='blogListing.html'" style="margin-bottom:18px;margin-top:0; background:#f3f6fa; color:#273055; font-weight:600; border-radius:6px; border:none; padding:9px 0; cursor:pointer; font-size:1rem;">← Back to Blogs</button>
-    <div id="full-blog-content">
-      <!-- Full blog post will load here -->
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Content Section -->
+  <div class="container">
+    <div class="blog-section" id="full-blog-section" style="max-width: 800px;">
+      <a href="blogListing.html" class="back-btn"><i class="fas fa-arrow-left me-2"></i>Back to Blogs</a>
+      <div id="full-blog-content">
+        <!-- Blog will be rendered here by blogView.js -->
+      </div>
     </div>
   </div>
+
+  <!-- JS Scripts -->
   <script src="src/blogView.js"></script>
-   
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 </body>
 </html>
