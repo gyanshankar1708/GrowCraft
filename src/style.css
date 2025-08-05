@@ -37,7 +37,7 @@ body {
 
 /* It removes the Bootstrap’s solid background */
 .bg-body-tertiary {
-  background-color: transparent !important;
+  background-color: #ffffff !important;
 }
 .icon {
   height: 1.5rem;
