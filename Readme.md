@@ -54,6 +54,12 @@ GrowCraft/
 
 ---
 
+## 📢 Discord Server
+
+- https://discord.gg/mpeDXD7f
+
+---
+
 ## 🚀 Getting Started
 
 ### Prerequisites

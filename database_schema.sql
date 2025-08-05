@@ -4,6 +4,27 @@
 CREATE DATABASE IF NOT EXISTS growcraft;
 USE growcraft;
 
+-- Users table for authentication
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    phone VARCHAR(50),
+    role ENUM('admin', 'client', 'user') DEFAULT 'user',
+    email_verified BOOLEAN DEFAULT FALSE,
+    profile_image VARCHAR(500),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    last_login TIMESTAMP NULL,
+    
+    INDEX idx_email (email),
+    INDEX idx_username (username),
+    INDEX idx_role (role)
+);
+
 -- Contacts table to store form submissions
 CREATE TABLE IF NOT EXISTS contacts (
     id INT AUTO_INCREMENT PRIMARY KEY,

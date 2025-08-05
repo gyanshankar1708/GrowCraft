@@ -76,7 +76,14 @@
         .navbar .toggle-switch {
             display: flex;
             align-items: center;
-            padding-left: 1rem;
+            padding: 0.75rem 1rem;
+            height: 100%;
+        }
+
+        /* Ensure all nav items are aligned */
+        .navbar-nav .nav-item {
+            display: flex;
+            align-items: center;
         }
 
         /* Responsive logo alignment fix */
@@ -136,7 +143,43 @@
                         <a class="nav-link active" aria-current="page" href="src/contact.html">Contact Us</a>
                     </li>
 
-                    <li class="nav-item mt-3">
+                    <!-- Login/Profile Section -->
+                    <li class="nav-item" id="auth-section">
+                        <a class="nav-link active" aria-current="page" href="src/login.html" id="login-btn">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login
+                        </a>
+                    </li>
+                    
+                    <!-- Profile dropdown (hidden by default) -->
+                    <li class="nav-item" id="profile-section">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle profile-user-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="user-display-name me-2" id="navbar-user-name">John Doe</span>
+                                <div class="profile-avatar">
+                                    <i class="fas fa-user-circle" style="font-size: 1.8rem; color: #0078FF;"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li class="dropdown-header">
+                                    <div class="user-info">
+                                        <i class="fas fa-user-circle me-2" style="font-size: 1.5rem; color: #0078FF;"></i>
+                                        <div>
+                                            <div class="user-name" id="user-display-name">John Doe</div>
+                                            <div class="user-email" id="user-display-email">john@example.com</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
                         <div class="toggle-switch">
                             <label class="switch-label">
                                 <input onclick="toggleDarkMode()" type="checkbox" class="checkbox" />
@@ -673,16 +716,16 @@
                 <br />
                 <ul class="social-list">
                     <li>
-                        <a href="#"><i class="fab fa-facebook-f"></i> Facebook</a>
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> Facebook</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                        <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fab fa-github"></i> GitHub</a>
+                        <a href="https://github.com/"><i class="fab fa-github"></i> GitHub</a>
                     </li>
                 </ul>
             </div>
