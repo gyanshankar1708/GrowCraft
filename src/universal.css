@@ -1,3 +1,7 @@
 .navbarnew {
     background-color: #ffffff !important;
 }
+
+.checkbox {
+    display: none;
+}
