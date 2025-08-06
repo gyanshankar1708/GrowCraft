@@ -220,84 +220,89 @@
 }
 
 
-        /* FOOTER STYLING*/
-        .footer {
-            background: linear-gradient(to right, #2c3e50, #34495e);
-            color: #ffffff;
-            padding: 60px 30px 30px;
-            font-family: 'Segoe UI', sans-serif;
-        }
+/* FOOTER STYLING*/
 
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            border-bottom: 2px solid #3498db;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .footer-section p,
-        .footer-section ul,
-        .footer-section li,
-        .footer-section a {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #ccc;
-            text-decoration: none;
-        }
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
+    /* Footer Styles */
+.footer {
+  background: linear-gradient(to right, #2c3e50, #34495e);
+  color: #f1f1f1;
+  padding: 50px 20px 30px;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.footer-section li a:hover {
-  color: #3498db;
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 80px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-left: 4px solid #6c5ce7;
+  padding-left: 12px;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links li,
+.footer-social li {
+  margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-social a {
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #6c5ce7;
 }
 
 .send-message-btn {
-  background-color: #3498db;
-  border: none;
-  color: white;
-  padding: 8px 14px;
   margin-top: 10px;
-  border-radius: 5px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s ease;
 }
 
 .send-message-btn:hover {
-  background-color: #2980b9;
+  background: #5947d1;
 }
 
-.social-list li {
-  margin-bottom: 8px;
-}
-
-.social-list i {
+/* Social Icons Styling */
+.footer-social i {
   margin-right: 8px;
-  color: #ffffff;
-  transition: 0.3s;
 }
 
-.social-list i:hover {
-  color: #1abc9c;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 20px;
-  font-size: 0.85rem;
-  color: #bbb;
+/* Copyright Bar */
+.copyright {
+  font-size: 14px;
+  color: #888;
+  padding-bottom: 10px;
 }
 
 /* Back to Top */
@@ -799,67 +804,58 @@
   
 
     <!-- Footer section starts here (Contact us) -->
-<footer class="footer">
+ <footer class="footer">
   <div class="footer-container">
     <!-- About GrowCraft -->
-    <div class="footer-about-wrapper">
-      <div class="footer-about">
-        <h3>About GrowCraft</h3>
-        <p>
-          GrowCraft is a service-based platform offering:<br />
-          🌐 Website Development<br />
-          🖌️ Graphic Design<br />
-          ✍️ Content Writing<br />
-          📣 Social Media Management<br />
-          📊 Digital Marketing<br />
-          🎓 Internship Programs
-        </p>
-      </div>
+    <div class="footer-about">
+      <h3>About GrowCraft</h3>
+      <p>
+        GrowCraft is a service-based platform offering:
+        <br>🌐 Website Development<br> 🖌️ Graphic Design <br>✍️ Content Writing <br>
+        📣 Social Media Management <br> 📊 Digital Marketing <br>
+        🎓 Training & Internship Programs.
+        <br>We help businesses grow online while providing students real-world learning.</p>
     </div>
 
-    <!-- Quick Links + Contact -->
-    <div class="footer-top">
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#index.html">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Internship</a></li>
-          <li><a href="#contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-contact">
-        <h3>Contact Us</h3>
-        <p>📍 235, PQR, GHI, ABC Street, XYZ, ABC - 10000, India</p>
-        <p>📞 +91 999 999 999</p>
-        <p>📧 info@growcraft.com</p>
-        <button class="send-message-btn">Send Message</button>
-      </div>
-    </div>
-
-    <!-- Social -->
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <ul class="social-list">
-        <li><a href="https://facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
-        <li><a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
-        <li><a href="https://github.com"><i class="fab fa-github"></i> GitHub</a></li>
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Internship</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </div>
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
+      <p>📞 +91 999 999 999</p>
+      <p>📧 info@growcraft.com</p>
+      <button class="send-message-btn">Send Message</button>
+    </div>
+
+    <!-- Follow Us -->
+    <div class="footer-social">
+  <h3>Follow Us</h3>
+  <ul class="social-list">
+    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+    <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+    <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+  </ul>
+</div>
   </div>
 </footer>
 
-        </div>
+<!-- Copyright section -->
+    <div class="copyright d-flex justify-content-center m-3">
+        <span>&copy; Copyright </span><span style="font-weight: bold;"> GrowCraft.</span><span> All Rights
+            Reserved</span>
+    </div>
       
-        <!-- Copyright -->
-        <div class="footer-bottom">
-            <p style="text-align: center;">&copy; <strong>GrowCraft</strong>. All Rights Reserved</p>
-
-        </div>
-      </footer>
       
       <!-- Back to Top -->
       <button id="backToTop" title="Go to top">
