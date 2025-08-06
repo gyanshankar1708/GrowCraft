@@ -16,6 +16,116 @@
     <link href="style.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<style>
+    /* Footer Styles */
+.footer {
+  background: #222;
+  color: #f1f1f1;
+  padding: 50px 20px 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-left: 4px solid #6c5ce7;
+  padding-left: 12px;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links li,
+.footer-social li {
+  margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-social a {
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #6c5ce7;
+}
+
+.send-message-btn {
+  margin-top: 10px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.send-message-btn:hover {
+  background: #5947d1;
+}
+
+/* Social Icons Styling */
+.footer-social i {
+  margin-right: 8px;
+}
+
+/* Copyright Bar */
+.copyright {
+  font-size: 14px;
+  color: #888;
+  padding-bottom: 10px;
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #6c5ce7;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+#backToTop:hover {
+  background-color: #5947d1;
+  transform: scale(1.1);
+}
+
+</style>
 
 <body id="main-body">
     <!-- Navbar Section -->

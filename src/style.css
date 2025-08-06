@@ -1086,37 +1086,32 @@ body.dark .mb-4:hover{
 .about-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-=======
-.send-message-btn {
-  display: none;
-       .btn-custom-purple {
+}
 
-            background-color: #463896;
-            border-color: #291987;
-            color: white;
-        }
-        
-        .btn-custom-purple:hover {
-            background-color: #1f0d66;
-            border-color: #1f0d66;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(41, 25, 135, 0.4);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-custom-purple:focus,
-        .btn-custom-purple:active {
-            background-color: #1f0d66 !important;
-            border-color: #1f0d66 !important;
-            color: white !important;
-            box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
+.btn-custom-purple {
+    background-color: #463896;
+    border-color: #291987;
+    color: white;
+}
 
-        }
+.btn-custom-purple:hover {
+    background-color: #1f0d66;
+    border-color: #1f0d66;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(41, 25, 135, 0.4);
+    transition: all 0.3s ease;
+}
 
-        }
-        /* === Navbar Custom Styling === */
+.btn-custom-purple:focus,
+.btn-custom-purple:active {
+    background-color: #1f0d66 !important;
+    border-color: #1f0d66 !important;
+    color: white !important;
+    box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
+}
 
+/* === Navbar Custom Styling === */
 .navbar {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
@@ -1170,5 +1165,148 @@ body.dark .mb-4:hover{
         margin-top: 1rem;
         padding-left: 0.5rem;
     }
+}
 
+/* Authentication Navbar Styles */
+#profile-section {
+    display: none !important; /* Hidden by default */
+}
+
+#profile-section.show {
+    display: flex !important; /* Show when logged in */
+}
+
+#profile-section .dropdown {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-user-btn {
+    padding: 0.75rem 1rem !important;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #333;
+    width: 100%;
+}
+
+.profile-user-btn:hover {
+    background-color: rgba(0, 120, 255, 0.1);
+    transform: translateY(-1px);
+    color: #0078FF;
+}
+
+.profile-user-btn::after {
+    display: none !important; /* Hide Bootstrap dropdown arrow */
+}
+
+.user-display-name {
+    font-weight: 600;
+    color: inherit;
+    font-size: 0.95rem;
+    white-space: nowrap;
+}
+
+.profile-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-avatar i {
+    transition: all 0.3s ease;
+}
+
+.profile-user-btn:hover .profile-avatar i {
+    color: #0066cc !important;
+    transform: scale(1.05);
+}
+
+.profile-user-btn:hover .user-display-name {
+    color: #0078FF;
+}
+
+#profile-section .dropdown-menu {
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+    border: 1px solid #e1e5e9;
+    padding: 0;
+    min-width: 280px;
+    margin-top: 0.5rem;
+}
+
+#profile-section .dropdown-header {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 1rem;
+    border-bottom: 1px solid #e1e5e9;
+    border-radius: 12px 12px 0 0;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.user-email {
+    font-size: 0.875rem;
+    color: #666;
+    margin: 0;
+}
+
+#profile-section .dropdown-item {
+    padding: 0.75rem 1rem;
+    color: #333;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+#profile-section .dropdown-item:hover {
+    background-color: #f8f9fa;
+    color: #0078FF;
+}
+
+#profile-section .dropdown-item.text-danger:hover {
+    background-color: #fef2f2;
+    color: #dc2626;
+}
+
+#profile-section .dropdown-item i {
+    color: #0078FF;
+    width: 16px;
+    font-size: 0.95rem;
+}
+
+#profile-section .dropdown-item.text-danger i {
+    color: #dc2626;
+}
+
+#profile-section .dropdown-divider {
+    margin: 0.5rem 0;
+    border-color: #e1e5e9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991.98px) {
+    .user-display-name {
+        display: none; /* Hide name on mobile to save space */
+    }
+    
+    .profile-user-btn {
+        padding: 0.75rem !important;
+        justify-content: center;
+    }
 }

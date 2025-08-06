@@ -2,79 +2,553 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - GrowCraft</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="src/style.css">
-    <link rel="stylesheet" href="src/contact.css">
-    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
-</head>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Contact Us - GrowCraft</title>
+      
+        <!-- Bootstrap CSS -->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+          crossorigin="anonymous"
+        />
+      
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="src/style.css" />
+        <link rel="stylesheet" href="src/contact.css" />
+      
+        <!-- Favicon -->
+        <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+      
+        <!-- Bootstrap Bundle with Popper -->
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+          crossorigin="anonymous"
+        ></script>
+      </head>
+    <style>
+        /* Navbar Gradient Background */
+.navbar {
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
 
-<body id="main-body">
-    <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-            <a class="navbar-brand" href="index.html">
-                <div class="logo-wrapper">
-                    <img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo">
-                </div>
-            </a>
+/* Logo Hover Effect */
+#logo {
+  max-height: 60px;
+  transition: transform 0.3s ease;
+}
+#logo:hover {
+  transform: scale(1.05);
+}
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+/* Nav Link Styling */
+.navbar-nav .nav-link {
+  color: #ffffff;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html#about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html#workList">Our Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active visited" aria-current="page" href="contact.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <div class="toggle-switch">
-                            <label class="switch-label">
-                            <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
-                            <span class="slider"></span>
-                            </label>
-                        </div>  
-                    </li>
-                </ul>
-            </div>
+.navbar-nav .nav-link:hover {
+  color: #1abc9c;
+}
+
+.navbar-nav .nav-link.active {
+  font-weight: 600;
+  color: #f1c40f;
+}
+
+/* Optional: Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+body.dark-mode .navbar {
+  background: #1a1a1a;
+}
+body.dark-mode .nav-link {
+  color: #ccc;
+}
+body.dark-mode .nav-link.active {
+  color: #f1c40f;
+}
+
+/* Toggle Switch (Optional Styling) */
+.toggle-switch {
+  display: flex;
+  align-items: center;
+}
+
+.switch-label {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 24px;
+}
+
+.switch-label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #1abc9c;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/*CONTACT HERO SECTION*/
+
+.contact-hero {
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+  border-bottom: 5px solid #1abc9c;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+.hero-subtitle {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #f1f1f1;
+}
+
+/* Responsive Tweaks */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.4rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
+.contact-hero {
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+/* Contact Info Section */
+.contact-info {
+  background-color: #f9f9f9;
+}
+
+.contact-info-card {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 30px 25px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info-card .info-icon {
+  background: linear-gradient(to right, #3498db, #2ecc71);
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.contact-info-card h4 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.contact-info-card p {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/*ENHANCED CONTACT FORM */
+
+.contact-form-section {
+  background-color: #fdfdfd;
+  padding: 60px 20px;
+}
+
+.form-container {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  padding: 30px;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.form-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* Form Fields */
+.contact-form .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  transition: border-color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #1abc9c;
+  outline: none;
+}
+
+/* Upload Area */
+.file-upload-area {
+  border: 2px dashed #ccc;
+  padding: 20px;
+  text-align: center;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #f8f8f8;
+  transition: background 0.3s;
+}
+.file-upload-area:hover {
+  background-color: #eefdfc;
+}
+
+/* Contact Preferences */
+.contact-methods {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-weight: 500;
+}
+
+/* Form Buttons */
+.form-buttons {
+  text-align: right;
+  margin-top: 20px;
+}
+.form-buttons button {
+  background: linear-gradient(to right, #3498db, #1abc9c);
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.form-buttons button:hover {
+  background: linear-gradient(to right, #2980b9, #16a085);
+}
+
+/* Quick Contact Section */
+.quick-contact {
+  background: #f7f9fa;
+  padding: 20px;
+  border-left: 2px solid #1abc9c;
+  height: 100%;
+}
+
+.quick-contact-buttons .quick-btn {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  border: none;
+  background: #e9f8f4;
+  color: #2c3e50;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+.quick-contact-buttons .quick-btn:hover {
+  background: #d3f1e8;
+}
+
+.office-hours h4 {
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.hours-list {
+  margin-top: 10px;
+}
+.hour-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 5px 0;
+}
+
+/* Response Time */
+.response-card {
+  background: #ffffff;
+  border-left: 4px solid #1abc9c;
+  padding: 15px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+.response-icon {
+  color: #1abc9c;
+}
+.response-text h5 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.response-text p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .form-buttons {
+    text-align: center;
+  }
+  .form-buttons button {
+    width: 100%;
+  }
+}
+/* Footer Styling */
+.contact-footer {
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 40px 0 20px 0;
+  font-size: 0.95rem;
+}
+
+.contact-footer h4 {
+  font-weight: 600;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
+
+.contact-footer p {
+  margin-bottom: 0;
+  color: #bdc3c7;
+}
+
+.footer-links {
+  text-align: right;
+}
+
+.footer-links a {
+  display: inline-block;
+  margin-left: 15px;
+  color: #ecf0f1;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #1abc9c;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #34495e;
+  padding-top: 15px;
+  font-size: 0.85rem;
+  color: #bdc3c7;
+}
+
+/* Responsive Footer */
+@media (max-width: 767px) {
+  .footer-links {
+    text-align: left;
+    margin-top: 15px;
+  }
+  .footer-links a {
+    display: block;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+}
+/* Back to Top Button */
+#backToTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: linear-gradient(to right, #3498db, #1abc9c);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  padding: 12px 16px;
+  font-size: 18px;
+  cursor: pointer;
+  z-index: 999;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+#backToTop:hover {
+  background: linear-gradient(to right, #2980b9, #16a085);
+  transform: translateY(-2px);
+}
+
+
+    </style>
+<!-- Navbar starts here -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+  
+      <!-- Brand Logo -->
+      <a class="navbar-brand" href="index.html">
+        <div class="logo-wrapper">
+          <img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo">
         </div>
-    </nav>
-    <!-- Navbar ends here -->
+      </a>
+  
+      <!-- Toggler for mobile -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+  
+      <!-- Nav Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center">
+  
+            <ul class="navbar-nav ms-auto align-items-center">
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html">Home</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html#services">Services</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html#about">About Us</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html#workList">Our Works</a>
+                </li>
+              
+                <li class="nav-item">
+                  <a class="nav-link active visited" aria-current="page" href="contact.html">Contact Us</a>
+                </li>
+              </ul>
+              
+          <!-- Dark Mode Toggle -->
+          <li class="nav-item">
+            <div class="toggle-switch ms-3">
+              <label class="switch-label">
+                <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
+                <span class="slider"></span>
+              </label>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar ends here -->
+  
 
     <!-- Contact Hero Section -->
-    <section class="contact-hero">
-        <div class="container">
-            <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
-                    <h1 class="hero-title">Get In Touch</h1>
-                    <p class="hero-subtitle">Ready to start your digital journey? Let's discuss how we can help grow your business.</p>
-                </div>
-            </div>
+<section class="contact-hero">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1 class="hero-title">Get In Touch</h1>
+          <p class="hero-subtitle">
+            Ready to start your digital journey? Let's discuss how we can help grow your business.
+          </p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
+  
 
     <!-- Contact Information Section -->
     <section class="contact-info py-5">
@@ -412,30 +886,55 @@
     <!-- Footer -->
     <footer class="contact-footer">
         <div class="container">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="footer-content">
-                        <h4>GrowCraft</h4>
-                        <p>Your trusted partner for digital growth and innovation.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="footer-links">
-                        <a href="index.html">Back to Home</a>
-                        <a href="index.html#services">Services</a>
-                        <a href="index.html#about">About Us</a>
-                    </div>
-                </div>
+          <div class="row">
+            <!-- Left Content -->
+            <div class="col-md-6">
+              <div class="footer-content">
+                <h4>GrowCraft</h4>
+                <p>Your trusted partner for digital growth and innovation.</p>
+              </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 GrowCraft. All rights reserved.</p>
+      
+            <!-- Right Links -->
+            <div class="col-md-6">
+              <div class="footer-links">
+                <a href="../index.html">Back to Home</a>
+                <a href="../index.html#services">Services</a>
+                <a href="../index.html#about">About Us</a>
+                <a href="../index.html#workList">Our Works</a>
+                <a href="contact.html">Contact Us</a> <!-- Same page -->
+                
+              </div>
             </div>
+          </div>
+      
+          <div class="footer-bottom text-center mt-4">
+            <p>&copy; 2025 <strong>GrowCraft</strong>. All rights reserved.</p>
+          </div>
         </div>
-    </footer>
-
+      </footer>
+      
     <!-- Back to Top Button -->
     <button id="backToTop" title="Go to top">↑</button>
 
+    <!--DARK TOGGLE MODE BUTTON-->
+    <script>
+        function toggleDarkMode() {
+          document.body.classList.toggle('dark-mode');
+        }
+    </script>
+    
+    <script>
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = () => {
+          backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+        };
+      
+        backToTopBtn.onclick = () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        };
+      </script>
+      
     <!-- Scripts -->
     <script src="src/contact.js"></script>
     <script src="src/utils.js"></script>
