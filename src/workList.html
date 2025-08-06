@@ -27,7 +27,7 @@
 
 .footer-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 30px;
   max-width: 1200px;
   margin: auto;
@@ -40,6 +40,13 @@
   font-weight: 600;
   border-left: 4px solid #6c5ce7;
   padding-left: 12px;
+}
+
+/* Align section headers with description text */
+.footer-links h3,
+.footer-contact h3,
+.footer-social h3 {
+  margin-top: 15px;
 }
 
 .footer p {
@@ -248,9 +255,9 @@
     </div>
     <footer class="footer">
   <div class="footer-container">
-    <!-- About GrowCraft -->
-    <div class="footer-about">
-      <h3>About GrowCraft</h3>
+                <!-- About GrowCraft -->
+            <div class="footer-about">
+              <img src="../images/Logo.png" alt="GrowCraft" width="180" style="margin-bottom: 15px; border-radius: 10px;" />
       <p>
         GrowCraft is a service-based platform offering:
         <br>🌐 Website Development<br> 🖌️ Graphic Design <br>✍️ Content Writing <br>
@@ -272,13 +279,12 @@
       </ul>
     </div>
 
-    <!-- Contact -->
+    <!-- Contact Us -->
     <div class="footer-contact">
       <h3>Contact Us</h3>
       <p>📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
       <p>📞 +91 999 999 999</p>
       <p>📧 info@growcraft.com</p>
-      <button class="send-message-btn">Send Message</button>
     </div>
 
     <!-- Follow Us -->
