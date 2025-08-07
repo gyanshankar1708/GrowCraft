@@ -713,6 +713,16 @@
             .contact-btn:hover {
                 background: linear-gradient(to right, #2563eb, #4f46e5);
             }
+            /*Footer*/
+            #backToTop {
+  z-index: 9999;
+}
+
+.footer a:hover {
+  color: #a29bfe !important;
+  text-decoration: underline;
+}
+
     </style>
 
 
@@ -972,18 +982,6 @@
         </div>
     </section>
 
-
-
-
-
-
-
-
-
-
-
-
-
     <!-- Contact -->
     <section class="contact-section" id="contact">
         <div class="contact-content">
@@ -995,66 +993,69 @@
 
 
     <!-- Footer section starts here (Contact us) -->
-    <footer class="footer">
-        <div class="footer-container">
+    <footer class="footer py-5 text-white" style="background-color: #222;">
+        <div class="container">
+          <div class="row gy-4">
+      
             <!-- About GrowCraft -->
-            <div class="footer-about">
-                <h3>About GrowCraft</h3>
-                <p>
-                    GrowCraft is a service-based platform offering:
-                    <br>🌐 Website Development<br> 🖌️ Graphic Design <br>✍️ Content Writing <br>
-                    📣 Social Media Management <br> 📊 Digital Marketing <br>
-                    🎓 Training & Internship Programs.
-                    <br>We help businesses grow online while providing students real-world learning.
-                </p>
+            <div class="col-md-3">
+              <h5 class="fw-bold mb-3">About GrowCraft</h5>
+              <p style="font-size: 14px;">
+                GrowCraft is a service-based platform offering:
+                <br>🌐 Website Development
+                <br>🖌️ Graphic Design
+                <br>✍️ Content Writing
+                <br>📣 Social Media Management
+                <br>📊 Digital Marketing
+                <br>🎓 Training & Internship Programs
+                <br>Helping businesses grow while students gain real-world learning.
+              </p>
             </div>
-
+      
             <!-- Quick Links -->
-            <div class="footer-links">
-                <h3>Quick Links</h3>
-                <ul>
-                    <li><a href="#index.html">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Internship</a></li>
-                    <li><a href="#contact.html">Contact</a></li>
-                </ul>
+            <div class="col-md-2">
+              <h5 class="fw-bold mb-3">Quick Links</h5>
+              <ul class="list-unstyled">
+                <li><a href="index.html" class="text-decoration-none text-light">Home</a></li>
+                <li><a href="#services" class="text-decoration-none text-light">Services</a></li>
+                <li><a href="src/workList.html" class="text-decoration-none text-light">Portfolio</a></li>
+                <li><a href="#internship" class="text-decoration-none text-light">Internship</a></li>
+                <li><a href="src/contact.html" class="text-decoration-none text-light">Contact</a></li>
+              </ul>
             </div>
-
+      
             <!-- Contact -->
-            <div class="footer-contact">
-                <h3>Contact Us</h3>
-                <p>📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
-                <p>📞 +91 999 999 999</p>
-                <p>📧 info@growcraft.com</p>
-                <button class="send-message-btn">Send Message</button>
+            <div class="col-md-4">
+              <h5 class="fw-bold mb-3">Contact Us</h5>
+              <p>📍 235, PQR, GHI, ABC Street, XYZ, ABC - 10000, India</p>
+              <p>📞 +91 999 999 999</p>
+              <p>📧 info@growcraft.com</p>
+              <button class="btn btn-outline-light btn-sm mt-2">Send Message</button>
             </div>
-
-            <!-- Follow Us -->
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <ul class="social-list">
-                    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
-                    <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
-                </ul>
+      
+            <!-- Social Links -->
+            <div class="col-md-3">
+              <h5 class="fw-bold mb-3">Follow Us</h5>
+              <ul class="list-unstyled d-flex flex-column gap-2">
+                <li><a href="#" class="text-decoration-none text-light"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+                <li><a href="#" class="text-decoration-none text-light"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+                <li><a href="#" class="text-decoration-none text-light"><i class="fab fa-linkedin-in me-2"></i>LinkedIn</a></li>
+                <li><a href="#" class="text-decoration-none text-light"><i class="fab fa-github me-2"></i>GitHub</a></li>
+              </ul>
             </div>
+      
+          </div>
         </div>
-
-
-    </footer>
-    <!-- Copyright section -->
-    <div class="copyright d-flex justify-content-center m-3">
-        <span>&copy; Copyright </span><span style="font-weight: bold;"> GrowCraft.</span><span> All Rights
-            Reserved</span>
-    </div>
-
-
-    <!-- Back to Top Button -->
-    <button id="backToTop" title="Go to top">↑</button>
-
-
+      </footer>
+      
+      <!-- Copyright -->
+      <div class="text-center text-light py-3" style="background-color: #111;">
+        &copy; 2025 <strong>GrowCraft</strong>. All Rights Reserved.
+      </div>
+      
+      <!-- Back to Top -->
+      <button id="backToTop" title="Go to top" class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle px-3 py-2" style="display:none;">↑</button>
+      
     <script>
         //Show/hide the back-to-top button on scroll
         window.onscroll = function () {
