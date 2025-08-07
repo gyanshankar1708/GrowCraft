@@ -252,6 +252,88 @@
   height: 22px;
 }
 
+   /* Footer Styles */
+.footer {
+  background: linear-gradient(to right, #2c3e50, #34495e);
+  color: #f1f1f1;
+  padding: 50px 20px 30px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 80px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 600;
+  border-left: 4px solid #6c5ce7;
+  padding-left: 12px;
+}
+
+.footer p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #cccccc;
+}
+
+.footer-links ul,
+.footer-social ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.footer-links li,
+.footer-social li {
+  margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-social a {
+  color: #dddddd;
+  text-decoration: none;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-social a:hover {
+  color: #6c5ce7;
+}
+
+.send-message-btn {
+  margin-top: 10px;
+  background: #6c5ce7;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.send-message-btn:hover {
+  background: #5947d1;
+}
+
+/* Social Icons Styling */
+.footer-social i {
+  margin-right: 8px;
+}
+
+/* Copyright Bar */
+.copyright {
+  font-size: 14px;
+  color: #888;
+  padding-bottom: 10px;
+}
 
         /* Back to Top */
 #backToTop {
@@ -776,67 +858,55 @@
   </section>
   <!-- Our Work section ends here -->
   
-
-    <!-- Footer section starts here (Contact us) -->
-<!-- Footer section starts here (Contact us) -->
-<footer style="background: linear-gradient(160deg, #184d23, #219653); color: #fff; font-family: 'Segoe UI', sans-serif; padding: 60px 25px 20px;">
-
-  <!-- Main Footer Container -->
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1200px; margin: auto;">
-
-    <!-- About Section -->
-    <div style="flex: 1 1 280px; min-width: 250px;">
-      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">About GrowCraft</h3>
-      <p style="font-size: 15px; line-height: 1.8; opacity: 0.9;">
+<!-- Footer section -->
+<footer class="footer">
+  <div class="footer-container">
+    <!-- About GrowCraft -->
+    <div class="footer-about">
+      <h3>About GrowCraft</h3>
+      <p>
         GrowCraft is a service-based platform offering:
-        <br>🌐 Website Development<br>
-        🖌️ Graphic Design<br>
-        ✍️ Content Writing<br>
-        📣 Social Media Management<br>
-        📊 Digital Marketing<br>
+        <br>🌐 Website Development<br> 🖌️ Graphic Design <br>✍️ Content Writing <br>
+        📣 Social Media Management <br> 📊 Digital Marketing <br>
         🎓 Training & Internship Programs.
-        <br><br>We help businesses grow online while providing students real-world learning.
+        <br>We help businesses grow online while providing students real-world learning.
       </p>
     </div>
 
     <!-- Quick Links -->
-    <div style="flex: 1 1 180px; min-width: 200px;">
-      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Quick Links</h3>
-      <ul style="list-style: none; padding: 0; margin: 0;">
-        <li style="margin-bottom: 10px;"><a href="index.html" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Home</a></li>
-        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Services</a></li>
-        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Portfolio</a></li>
-        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Internship</a></li>
-        <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Contact</a></li>
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Internship</a></li>
+        <li><a href="#">Contact</a></li>
       </ul>
     </div>
 
-    <!-- Contact & Social -->
-    <div style="flex: 1 1 280px; min-width: 250px;">
-      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Contact Us</h3>
-      <p style="font-size: 15px; line-height: 1.8;">📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
-      <p style="font-size: 15px; line-height: 1.8;">📞 +91 999 999 999</p>
-      <p style="font-size: 15px; line-height: 1.8;">📧 info@growcraft.com</p>
-      <button style="margin-top: 15px; padding: 10px 20px; background-color: #fff; color: #219653; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; transition: all 0.3s;">
-        Send Message
-      </button>
-
-      <!-- Social Links -->
-      <h3 style="font-size: 22px; margin-top: 28px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Follow Us</h3>
-      <ul style="list-style: none; display: flex; gap: 12px; padding: 0; margin-top: 10px;">
-        <li><a href="https://facebook.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-facebook-f"></i> </a></li>
-        <li><a href="https://instagram.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-instagram"></i> </a></li>
-        <li><a href="https://linkedin.com/login" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-linkedin-in"></i> </a></li>
-        <li><a href="https://github.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-github"></i> </a></li>
-      </ul>
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h3>Contact Us</h3>
+      <p>📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
+      <p>📞 +91 999 999 999</p>
+      <p>📧 info@growcraft.com</p>
+      <button class="send-message-btn">Send Message</button>
     </div>
 
+    <!-- Follow Us -->
+    <div class="footer-social">
+  <h3>Follow Us</h3>
+  <ul class="social-list">
+    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+    <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+    <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+  </ul>
+</div>
   </div>
 
-  <!-- Footer Bottom -->
-  <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 14px;">
-    &copy; 2025 <strong>GrowCraft</strong>. All rights reserved.
-  </div>
+
 </footer>
 <!-- Footer section ends here -->
 
@@ -851,8 +921,13 @@
           document.body.classList.toggle('dark-mode');
         }
       </script>
+
+      <!-- Copyright section -->
+    <div class="copyright d-flex justify-content-center m-3">
+        <span>&copy; Copyright </span><span style="font-weight: bold;"> GrowCraft.</span><span> All Rights
+            Reserved</span>
+    </div>
       
-    <!-- Copyright section ends here  -->
     <script src="src/script.js"></script>
     <script src="src/utils.js"></script>
 </body>
