@@ -223,8 +223,6 @@ document.querySelectorAll('.toggle-btn').forEach(function (btn) {
                     });
                 });
 
-
-
 document.addEventListener('DOMContentLoaded', function () {
   const sections = ['home', 'services', 'about', 'work', 'contact'];
   const navLinks = sections.map(id => document.querySelector(`a[href="#${id}"]`));

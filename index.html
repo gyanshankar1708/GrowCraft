@@ -174,13 +174,26 @@
 }
 
 .about-card {
-  background-color: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .about-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.12);
+}
+
+.about-card h4 {
+  color: #463896;
+  font-weight: 600;
+}
+
+.about-card p {
+  color: #333;
+  font-size: 1rem;
 }
 
         .btn-group {
@@ -220,87 +233,7 @@
 }
 
 
-        /* FOOTER STYLING*/
-        .footer {
-            background: linear-gradient(to right, #2c3e50, #34495e);
-            color: #ffffff;
-            padding: 60px 30px 30px;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            border-bottom: 2px solid #3498db;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .footer-section p,
-        .footer-section ul,
-        .footer-section li,
-        .footer-section a {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #ccc;
-            text-decoration: none;
-        }
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section li a:hover {
-  color: #3498db;
-}
-
-.send-message-btn {
-  background-color: #3498db;
-  border: none;
-  color: white;
-  padding: 8px 14px;
-  margin-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.send-message-btn:hover {
-  background-color: #2980b9;
-}
-
-.social-list li {
-  margin-bottom: 8px;
-}
-
-.social-list i {
-  margin-right: 8px;
-  color: #ffffff;
-  transition: 0.3s;
-}
-
-.social-list i:hover {
-  color: #1abc9c;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 20px;
-  font-size: 0.85rem;
-  color: #bbb;
-}
-
-/* Back to Top */
+        /* Back to Top */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -546,10 +479,11 @@
       In the realm of software, we excel at transmuting the ordinary into the extraordinary
     </p>
     <div class="container text-center">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 d-flex justify-content-center">
+      <!-- 2-2-1 Grid Layout for Services (5 cards total) -->
+      <div class="row g-4 justify-content-center">
         
-        <!-- Service Card 1: Digital Marketing -->
-        <div class="col">
+        <!-- First Row - 2 Cards -->
+        <div class="col-12 col-md-6 col-lg-5">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
               <div class="svg-img">
@@ -576,8 +510,7 @@
           </div>
         </div>
   
-        <!-- Service Card 2: Website Development -->
-        <div class="col">
+        <div class="col-12 col-md-6 col-lg-5">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
               <div class="svg-img">
@@ -604,8 +537,8 @@
           </div>
         </div>
   
-        <!-- Service Card 3: Graphic Design -->
-        <div class="col">
+        <!-- Second Row - 2 Cards -->
+        <div class="col-12 col-md-6 col-lg-5">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
               <div class="svg-img">
@@ -632,8 +565,7 @@
           </div>
         </div>
   
-        <!-- Service Card 4: Social Media Management -->
-        <div class="col">
+        <div class="col-12 col-md-6 col-lg-5">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
               <div class="svg-img">
@@ -659,12 +591,39 @@
             </div>
           </div>
         </div>
+
+        <!-- Third Row - 1 Centered Card -->
+        <div class="col-12 col-md-8 col-lg-5">
+          <div class="card card-services h-100 d-flex flex-column">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="svg-img">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3"
+                  style="color: #f39c12">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+              </div>
+              <h5 class="card-title mt-2">Content Writing</h5>
+              <p class="card-text summary text-center">
+                Compelling content that connects, converts, and captivates your audience...
+              </p>
+              <p class="card-text extra d-none text-center">
+                Our expert writers create engaging blog posts, web copy, articles, and marketing content that drives results and builds your brand voice.
+              </p>
+              <div class="btn-group">
+                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+                <a href="learn/contentwriting.html"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
   
       </div>
     </div>
   </section>
   <!-- Services section ends here -->
-  <hr />
+  <br />
   
            <!-- About Us section starts here -->
 <section class="about-section py-5" id="about">
@@ -789,7 +748,7 @@
   
       <!-- View All Work Button -->
       <div class="text-center mt-4 mb-5">
-        <a href="src/workList.html" class="btn btn-custom-purple btn-lg">
+        <a href="src/workList.html" class="btn btn-brand btn-lg">
           View All Our Work <i class="fas fa-arrow-right ms-2"></i>
         </a>
       </div>
@@ -977,6 +936,7 @@
 
     <!-- Back to Top Button -->
     <button id="backToTop" title="Go to top">
+
 
         <i class="fas fa-arrow-up"></i>
       </button>
