@@ -82,7 +82,25 @@
             padding-bottom: 0.8rem;
             background-color: #ffffff !important;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            
         }
+                        .navbar-collapse {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100%;
+}
+.navbar-nav li {
+  margin: 0 10px; /* Reduce from 20px or more if it’s higher */
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+
 
         .navbar-brand img {
             max-height: 60px;
@@ -215,6 +233,8 @@ body.dark-mode .about-section .card {
         .navbar-nav .nav-item {
             display: flex;
             align-items: center;
+            margin-left: auto;
+            
         }
 
         /* Responsive logo alignment fix */
@@ -272,13 +292,26 @@ body.dark-mode .about-section .card {
 }
 
 .about-card {
-  background-color: white;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #fff;
+  color: #222;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.07);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .about-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1rem 2rem rgba(0,0,0,0.12);
+}
+
+.about-card h4 {
+  color: #463896;
+  font-weight: 600;
+}
+
+.about-card p {
+  color: #333;
+  font-size: 1rem;
 }
 
         .btn-group {
@@ -318,87 +351,7 @@ body.dark-mode .about-section .card {
 }
 
 
-        /* FOOTER STYLING*/
-        .footer {
-            background: linear-gradient(to right, #2c3e50, #34495e);
-            color: #ffffff;
-            padding: 60px 30px 30px;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            border-bottom: 2px solid #3498db;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .footer-section p,
-        .footer-section ul,
-        .footer-section li,
-        .footer-section a {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #ccc;
-            text-decoration: none;
-        }
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section li a:hover {
-  color: #3498db;
-}
-
-.send-message-btn {
-  background-color: #3498db;
-  border: none;
-  color: white;
-  padding: 8px 14px;
-  margin-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.send-message-btn:hover {
-  background-color: #2980b9;
-}
-
-.social-list li {
-  margin-bottom: 8px;
-}
-
-.social-list i {
-  margin-right: 8px;
-  color: #ffffff;
-  transition: 0.3s;
-}
-
-.social-list i:hover {
-  color: #1abc9c;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 20px;
-  font-size: 0.85rem;
-  color: #bbb;
-}
-
-/* Back to Top */
+        /* Back to Top */
 #backToTop {
   position: fixed;
   bottom: 30px;
@@ -700,130 +653,98 @@ body.dark-mode .about-section .card {
   
       <!-- Services section starts here -->
 <section class="d-flex flex-column align-items-center mt-4 section" id="services">
-  <h2 class="heading-text">SERVICES</h2>
-  <p class="fst-italic text-center">
-    In the realm of software, we excel at transmuting the ordinary into the extraordinary
-  </p>
-  <div class="container text-center">
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 d-flex justify-content-center">
-      
-      <!-- Service Card 1: Digital Marketing -->
-      <div class="col">
-        <div class="card card-services h-100 d-flex flex-column">
-          <div class="card-body d-flex flex-column align-items-center">
-            <div class="svg-img">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"
-                style="color: #ff689b">
-                <line x1="18" y1="20" x2="18" y2="10"></line>
-                <line x1="12" y1="20" x2="12" y2="4"></line>
-                <line x1="6" y1="20" x2="6" y2="14"></line>
-              </svg>
-            </div>
-            <h5 class="card-title mt-2">Digital Marketing</h5>
-            <p class="card-text summary text-center">
-              In today's digital-driven age, Marketing means Digital Marketing...
-            </p>
-            <p class="card-text extra d-none text-center">
-              Digital Marketing plays a vital role in reaching target customers and enhancing brand visibility. Our team specializes in SEO, PPC, social media, email campaigns, and content marketing.
-            </p>
-            <div class="btn-group">
-              <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-              <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-            </div>
-          </div>
+<h2 class="heading-text">SERVICES</h2>
+<p class="fst-italic text-center">
+  In the realm of software, we excel at transmuting the ordinary into the extraordinary
+</p>
+<div class="container text-center">
+  <div class="row g-4 justify-content-center">
+
+    <!-- Card 1: Website Development -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100 border-0 shadow">
+        <img src="./images/carousel1.jpg" class="card-img-top" alt="Website Development" />
+        <div class="card-body">
+          <h5 class="card-title">Website Development</h5>
+          <p class="card-text">
+            Crafting modern, responsive, and high-performance websites that elevate your online presence.
+          </p>
+          <a href="#" class="btn btn-primary me-2">Learn More</a>
+          <a href="#" class="btn btn-outline-secondary">Portfolio</a>
         </div>
       </div>
-
-      <!-- Service Card 2: Website Development -->
-      <div class="col">
-        <div class="card card-services h-100 d-flex flex-column">
-          <div class="card-body d-flex flex-column align-items-center">
-            <div class="svg-img">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"
-                style="color: #41cf2e">
-                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="3" y1="9" x2="21" y2="9"></line>
-                <line x1="9" y1="21" x2="9" y2="9"></line>
-              </svg>
-            </div>
-            <h5 class="card-title mt-2">Website Development</h5>
-            <p class="card-text summary text-center">
-              A website is often the first impression. We make it exceptional...
-            </p>
-            <p class="card-text extra d-none text-center">
-              A well-designed website increases brand trust and customer engagement. We deliver responsive, aesthetic, and performance-optimized websites aligned with your goals.
-            </p>
-            <div class="btn-group">
-              <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-              <a href="src/web.html"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service Card 3: Graphic Design -->
-      <div class="col">
-        <div class="card card-services h-100 d-flex flex-column">
-          <div class="card-body d-flex flex-column align-items-center">
-            <div class="svg-img">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"
-                style="color: #2282ff">
-                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                <polyline points="2 17 12 22 22 17"></polyline>
-                <polyline points="2 12 12 17 22 12"></polyline>
-              </svg>
-            </div>
-            <h5 class="card-title mt-2">Graphic Design</h5>
-            <p class="card-text summary text-center">
-              Stunning visuals to elevate your brand in a crowded space...
-            </p>
-            <p class="card-text extra d-none text-center">
-              From branding to social media, our designers craft engaging graphics that communicate effectively and leave a lasting impression.
-            </p>
-            <div class="btn-group">
-              <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-              <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Service Card 4: Social Media Management -->
-      <div class="col">
-        <div class="card card-services h-100 d-flex flex-column">
-          <div class="card-body d-flex flex-column align-items-center">
-            <div class="svg-img">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"
-                style="color: #8660fe">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-              </svg>
-            </div>
-            <h5 class="card-title mt-2">Social Media Management</h5>
-            <p class="card-text summary text-center">
-              From posts to stories, we manage your online presence with style...
-            </p>
-            <p class="card-text extra d-none text-center">
-              We help you stay consistent and engaging on all platforms. Our strategies increase audience retention and brand loyalty.
-            </p>
-            <div class="btn-group">
-              <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-              <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
-  </div>
+
+    <!-- Card 2: Graphic Design -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100 border-0 shadow">
+        <img src="./images/carousel2.jpg" class="card-img-top" alt="Graphic Design" />
+        <div class="card-body">
+          <h5 class="card-title">Graphic Design</h5>
+          <p class="card-text">
+            Visually compelling graphics that breathe life into your brand and message.
+          </p>
+          <a href="#" class="btn btn-primary me-2">Learn More</a>
+          <a href="#" class="btn btn-outline-secondary">Portfolio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3: Digital Marketing -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100 border-0 shadow">
+        <img src="./images/carousel3.jpg" class="card-img-top" alt="Digital Marketing" />
+        <div class="card-body">
+          <h5 class="card-title">Digital Marketing</h5>
+          <p class="card-text">
+            Boosting visibility and engagement through smart SEO, PPC, and content strategies.
+          </p>
+          <a href="#" class="btn btn-primary me-2">Learn More</a>
+          <a href="#" class="btn btn-outline-secondary">Portfolio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4: Social Media Management -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100 border-0 shadow">
+        <img src="./images/carousel4.jpg" class="card-img-top" alt="Social Media Management" />
+        <div class="card-body">
+          <h5 class="card-title">Social Media Management</h5>
+          <p class="card-text">
+            Building your brand presence across social platforms with consistency and creativity.
+          </p>
+          <a href="#" class="btn btn-primary me-2">Learn More</a>
+          <a href="#" class="btn btn-outline-secondary">Portfolio</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 5: Content Writing -->
+    <div class="col-12 col-sm-6 col-lg-4">
+      <div class="card h-100 border-0 shadow">
+        <img src="./images/carousel5.jpg" class="card-img-top" alt="Content Writing" />
+        <div class="card-body">
+          <h5 class="card-title">Content Writing</h5>
+          <p class="card-text">
+            Engaging and SEO-optimized content tailored to resonate with your target audience.
+          </p>
+          <a href="#" class="btn btn-primary me-2">Learn More</a>
+          <a href="#" class="btn btn-outline-secondary">Portfolio</a>
+        </div>
+      </div>
+    </div>
+
+      </div> <!-- row -->
+    </div> <!-- container -->
+    <br />
+  </div> <!-- text-center wrapper if exists -->
 </section>
 <!-- Services section ends here -->
-  <hr />
+<hr />
+<br />
+
+
   
           <!-- About Us section starts here -->
 <section class="about-section py-5" id="about">
@@ -949,7 +870,7 @@ body.dark-mode .about-section .card {
   
       <!-- View All Work Button -->
       <div class="text-center mt-4 mb-5">
-        <a href="src/workList.html" class="btn btn-custom-purple btn-lg">
+        <a href="src/workList.html" class="btn btn-brand btn-lg">
           View All Our Work <i class="fas fa-arrow-right ms-2"></i>
         </a>
       </div>
@@ -959,68 +880,68 @@ body.dark-mode .about-section .card {
   
 
     <!-- Footer section starts here (Contact us) -->
-<footer class="footer">
-  <div class="footer-container">
-    <!-- About GrowCraft -->
-    <div class="footer-about-wrapper">
-      <div class="footer-about">
-        <h3>About GrowCraft</h3>
-        <p>
-          GrowCraft is a service-based platform offering:<br />
-          🌐 Website Development<br />
-          🖌️ Graphic Design<br />
-          ✍️ Content Writing<br />
-          📣 Social Media Management<br />
-          📊 Digital Marketing<br />
-          🎓 Internship Programs
-        </p>
-      </div>
+<!-- Footer section starts here (Contact us) -->
+<footer style="background: linear-gradient(160deg, #184d23, #219653); color: #fff; font-family: 'Segoe UI', sans-serif; padding: 60px 25px 20px;">
+
+  <!-- Main Footer Container -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1200px; margin: auto;">
+
+    <!-- About Section -->
+    <div style="flex: 1 1 280px; min-width: 250px;">
+      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">About GrowCraft</h3>
+      <p style="font-size: 15px; line-height: 1.8; opacity: 0.9;">
+        GrowCraft is a service-based platform offering:
+        <br>🌐 Website Development<br>
+        🖌️ Graphic Design<br>
+        ✍️ Content Writing<br>
+        📣 Social Media Management<br>
+        📊 Digital Marketing<br>
+        🎓 Training & Internship Programs.
+        <br><br>We help businesses grow online while providing students real-world learning.
+      </p>
     </div>
 
-    <!-- Quick Links + Contact -->
-    <div class="footer-top">
-      <div class="footer-links">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="#index.html">Home</a></li>
-          <li><a href="#">Services</a></li>
-          <li><a href="#">Portfolio</a></li>
-          <li><a href="#">Internship</a></li>
-          <li><a href="#contact.html">Contact</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-contact">
-        <h3>Contact Us</h3>
-        <p>📍 235, PQR, GHI, ABC Street, XYZ, ABC - 10000, India</p>
-        <p>📞 +91 999 999 999</p>
-        <p>📧 info@growcraft.com</p>
-        <button class="send-message-btn">Send Message</button>
-      </div>
-    </div>
-
-    <!-- Social -->
-    <div class="footer-social">
-      <h3>Follow Us</h3>
-      <ul class="social-list">
-        <li><a href="https://facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-        <li><a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
-        <li><a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
-        <li><a href="https://github.com"><i class="fab fa-github"></i> GitHub</a></li>
+    <!-- Quick Links -->
+    <div style="flex: 1 1 180px; min-width: 200px;">
+      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Quick Links</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 10px;"><a href="index.html" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Home</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Services</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Portfolio</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Internship</a></li>
+        <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Contact</a></li>
       </ul>
     </div>
+
+    <!-- Contact & Social -->
+    <div style="flex: 1 1 280px; min-width: 250px;">
+      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Contact Us</h3>
+      <p style="font-size: 15px; line-height: 1.8;">📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
+      <p style="font-size: 15px; line-height: 1.8;">📞 +91 999 999 999</p>
+      <p style="font-size: 15px; line-height: 1.8;">📧 info@growcraft.com</p>
+      <button style="margin-top: 15px; padding: 10px 20px; background-color: #fff; color: #219653; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; transition: all 0.3s;">
+        Send Message
+      </button>
+
+      <!-- Social Links -->
+      <h3 style="font-size: 22px; margin-top: 28px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Follow Us</h3>
+      <ul style="list-style: none; display: flex; gap: 12px; padding: 0; margin-top: 10px;">
+        <li><a href="https://facebook.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-facebook-f"></i> </a></li>
+        <li><a href="https://instagram.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-instagram"></i> </a></li>
+        <li><a href="https://linkedin.com/login" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-linkedin-in"></i> </a></li>
+        <li><a href="https://github.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-github"></i> </a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 14px;">
+    &copy; 2025 <strong>GrowCraft</strong>. All rights reserved.
   </div>
 </footer>
+<!-- Footer section ends here -->
 
-        </div>
-      
-        <!-- Copyright -->
-        <div class="footer-bottom">
-            <p style="text-align: center;">&copy; <strong>GrowCraft</strong>. All Rights Reserved</p>
-
-        </div>
-      </footer>
-      
       <!-- Back to Top -->
       <button id="backToTop" title="Go to top">
         <i class="fas fa-arrow-up"></i>

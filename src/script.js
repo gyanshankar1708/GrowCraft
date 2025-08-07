@@ -222,3 +222,298 @@ document.querySelectorAll('.toggle-btn').forEach(function (btn) {
                         }
                     });
                 });
+
+// Progressive Loading & Enhanced Scroll Animations System
+document.addEventListener('DOMContentLoaded', function() {
+    // Add loading indicator
+    showLoadingProgress();
+    
+    // Initialize all elements as hidden for progressive loading
+    initializeProgressiveElements();
+    
+    // Setup intersection observers for different content types
+    setupProgressiveLoading();
+    
+    // Add enhanced button effects
+    addEnhancedButtonEffects();
+    
+    // Hide loading indicator after initial setup
+    setTimeout(() => hideLoadingProgress(), 500);
+});
+
+function showLoadingProgress() {
+    // Create and show a subtle loading indicator
+    const loadingIndicator = document.createElement('div');
+    loadingIndicator.id = 'progressive-loader';
+    loadingIndicator.innerHTML = `
+        <div class="loading-bar"></div>
+        <div class="loading-text">Loading content...</div>
+    `;
+    
+    const loaderStyle = `
+        #progressive-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .loading-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #007bff, #28a745, #007bff);
+            background-size: 200% 100%;
+            animation: progressMove 2s infinite;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .loading-text {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 12px;
+            color: #666;
+            opacity: 0.7;
+        }
+        @keyframes progressMove {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+    `;
+    
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = loaderStyle;
+    document.head.appendChild(styleSheet);
+    document.body.appendChild(loadingIndicator);
+}
+
+function hideLoadingProgress() {
+    const loader = document.getElementById('progressive-loader');
+    if (loader) {
+        loader.style.opacity = '0';
+        loader.style.transition = 'opacity 0.5s ease';
+        setTimeout(() => loader.remove(), 500);
+    }
+}
+
+function initializeProgressiveElements() {
+    // Add initial hidden state to all animatable elements
+    const elementsToAnimate = [
+        '.card-services',
+        '.about-card', 
+        '.work-card',
+        '.training-pill',
+        '.carousel-item',
+        '.footer-section'
+    ];
+    
+    elementsToAnimate.forEach(selector => {
+        document.querySelectorAll(selector).forEach((element, index) => {
+            element.classList.add('progressive-load');
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+        });
+    });
+}
+
+function setupProgressiveLoading() {
+    // Enhanced observer options for better performance
+    const observerOptions = {
+        threshold: [0.1, 0.3],
+        rootMargin: '50px 0px -50px 0px'
+    };
+
+    // Main content observer
+    const contentObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+                loadElementWithAnimation(entry.target);
+                contentObserver.unobserve(entry.target); // Performance optimization
+            }
+        });
+    }, observerOptions);
+
+    // Section-specific observer for staggered loading
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                loadSectionContent(entry.target);
+                sectionObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '30px' });
+
+    // Observe individual elements
+    document.querySelectorAll('.progressive-load').forEach(element => {
+        contentObserver.observe(element);
+    });
+
+    // Observe sections for staggered animations
+    document.querySelectorAll('#services, #about, #work, .footer').forEach(section => {
+        sectionObserver.observe(section);
+    });
+}
+
+function loadElementWithAnimation(element) {
+    // Add entrance animation based on element type
+    const animationType = getAnimationType(element);
+    
+    setTimeout(() => {
+        element.style.opacity = '1';
+        element.style.transform = 'translateY(0)';
+        element.classList.add('loaded');
+        
+        // Add specific animation class
+        element.classList.add(animationType);
+        
+        // Enhanced hover effects
+        addHoverEffects(element);
+        
+    }, getStaggerDelay(element));
+}
+
+function loadSectionContent(section) {
+    const sectionId = section.id || section.className;
+    const children = section.querySelectorAll('.progressive-load');
+    
+    children.forEach((child, index) => {
+        setTimeout(() => {
+            if (!child.classList.contains('loaded')) {
+                loadElementWithAnimation(child);
+            }
+        }, index * 100); // Staggered loading within section
+    });
+}
+
+function getAnimationType(element) {
+    if (element.classList.contains('card-services')) return 'animate-service-card';
+    if (element.classList.contains('about-card')) return 'animate-about-card';
+    if (element.classList.contains('work-card')) return 'animate-work-card';
+    if (element.classList.contains('training-pill')) return 'animate-pill';
+    return 'animate-default';
+}
+
+function getStaggerDelay(element) {
+    const index = Array.from(element.parentNode.children).indexOf(element);
+    return Math.min(index * 150, 800); // Max 800ms delay
+}
+
+function addHoverEffects(element) {
+    if (element.classList.contains('card-services') || 
+        element.classList.contains('about-card') || 
+        element.classList.contains('work-card')) {
+        
+        element.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.15)';
+        });
+
+        element.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+        });
+    }
+}
+
+function addEnhancedButtonEffects() {
+    // Dynamic CSS injection for enhanced effects
+    const style = document.createElement('style');
+    style.textContent = `
+        /* Progressive loading animations */
+        .progressive-load {
+            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .animate-service-card.loaded {
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+        
+        .animate-about-card.loaded {
+            animation: slideInLeft 0.7s ease-out forwards;
+        }
+        
+        .animate-work-card.loaded {
+            animation: slideInRight 0.7s ease-out forwards;
+        }
+        
+        .animate-pill.loaded {
+            animation: bounceIn 0.6s ease-out forwards;
+        }
+        
+        /* Keyframe animations */
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        
+        /* Enhanced button effects */
+        .card-services .btn-group .btn,
+        .about-card .btn,
+        .work-card .btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-services .btn-group .btn::before,
+        .about-card .btn::before,
+        .work-card .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .card-services .btn-group .btn:hover::before,
+        .about-card .btn:hover::before,
+        .work-card .btn:hover::before {
+            left: 100%;
+        }
+
+        .card-services .btn-group .btn:hover,
+        .about-card .btn:hover,
+        .work-card .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+        }
+        
+        /* Loading state improvements */
+        .progressive-load:not(.loaded) {
+            pointer-events: none;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Performance optimizations */
+        .loaded {
+            will-change: auto;
+        }
+    `;
+    document.head.appendChild(style);
+}
