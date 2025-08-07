@@ -106,6 +106,104 @@
         }
 
         /* Dark Mode Toggle Switch Alignment */
+        /* Light Theme (Default) */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --nav-bg: #f8f9fa;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --nav-bg: #1e1e1e;
+}
+
+/* Apply variables */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.navbar {
+  background-color: var(--nav-bg) !important;
+}
+
+.nav-link {
+  color: var(--text-color) !important;
+}
+/* Default (Light) Theme */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --nav-bg: #f8f9fa;
+  --section-bg: #f9f9f9;
+  --card-bg: #ffffff;
+  --card-text: #000000;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --nav-bg: #1e1e1e;
+  --section-bg: #1a1a1a;
+  --card-bg: #232323;
+  --card-text: #f0f0f0;
+}
+
+/* Apply to services section */
+.services-section {
+  background-color: var(--section-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.service-card {
+  background-color: var(--card-bg);
+  color: var(--card-text);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.section-title {
+  color: var(--text-color);
+}
+
+.service-title,
+.service-desc {
+  color: var(--card-text);
+}
+
+/* Default light mode styles */
+.about-section {
+  background-color: #f8f9fa;
+  color: #212529;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.about-section .card {
+  background-color: #ffffff;
+  color: #212529;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* DARK MODE */
+body.dark-mode .about-section {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .about-section .card {
+  background-color: #1e1e1e !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(255,255,255,0.05);
+}
+
+
         .navbar .toggle-switch {
             display: flex;
             align-items: center;
@@ -337,6 +435,67 @@
 </head>
 
 <body id="main-body">
+   <!-- Navbar starts here -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+    <!-- Logo -->
+    <a class="navbar-brand" href="index.html">
+      <img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" />
+    </a>
+
+    <!-- Toggler -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Links -->
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-center gap-2">
+        <li class="nav-item">
+          <a class="nav-link" href="index.html">Home</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#services">Services</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="blogListing.html">Blogs</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#about">About Us</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="index.html#work">Our Work</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="src/contact.html">Contact Us</a>
+        </li>
+
+        <!-- Dark mode toggle -->
+        <li class="nav-item ms-3">
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="darkModeSwitch">
+            <label class="form-check-label" for="darkModeSwitch"></label>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Navbar ends here -->
+
     <!-- Navbar starts here -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
 <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
@@ -541,193 +700,194 @@
   
       <!-- Services section starts here -->
 <section class="d-flex flex-column align-items-center mt-4 section" id="services">
-    <h2 class="heading-text">SERVICES</h2>
-    <p class="fst-italic text-center">
-      In the realm of software, we excel at transmuting the ordinary into the extraordinary
-    </p>
-    <div class="container text-center">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 d-flex justify-content-center">
-        
-        <!-- Service Card 1: Digital Marketing -->
-        <div class="col">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"
-                  style="color: #ff689b">
-                  <line x1="18" y1="20" x2="18" y2="10"></line>
-                  <line x1="12" y1="20" x2="12" y2="4"></line>
-                  <line x1="6" y1="20" x2="6" y2="14"></line>
-                </svg>
-              </div>
-              <h5 class="card-title mt-2">Digital Marketing</h5>
-              <p class="card-text summary text-center">
-                In today's digital-driven age, Marketing means Digital Marketing...
-              </p>
-              <p class="card-text extra d-none text-center">
-                Digital Marketing plays a vital role in reaching target customers and enhancing brand visibility. Our team specializes in SEO, PPC, social media, email campaigns, and content marketing.
-              </p>
-              <div class="btn-group">
-                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-                <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-              </div>
+  <h2 class="heading-text">SERVICES</h2>
+  <p class="fst-italic text-center">
+    In the realm of software, we excel at transmuting the ordinary into the extraordinary
+  </p>
+  <div class="container text-center">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 d-flex justify-content-center">
+      
+      <!-- Service Card 1: Digital Marketing -->
+      <div class="col">
+        <div class="card card-services h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="svg-img">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"
+                style="color: #ff689b">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h5 class="card-title mt-2">Digital Marketing</h5>
+            <p class="card-text summary text-center">
+              In today's digital-driven age, Marketing means Digital Marketing...
+            </p>
+            <p class="card-text extra d-none text-center">
+              Digital Marketing plays a vital role in reaching target customers and enhancing brand visibility. Our team specializes in SEO, PPC, social media, email campaigns, and content marketing.
+            </p>
+            <div class="btn-group">
+              <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+              <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
             </div>
           </div>
         </div>
-  
-        <!-- Service Card 2: Website Development -->
-        <div class="col">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"
-                  style="color: #41cf2e">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="3" y1="9" x2="21" y2="9"></line>
-                  <line x1="9" y1="21" x2="9" y2="9"></line>
-                </svg>
-              </div>
-              <h5 class="card-title mt-2">Website Development</h5>
-              <p class="card-text summary text-center">
-                A website is often the first impression. We make it exceptional...
-              </p>
-              <p class="card-text extra d-none text-center">
-                A well-designed website increases brand trust and customer engagement. We deliver responsive, aesthetic, and performance-optimized websites aligned with your goals.
-              </p>
-              <div class="btn-group">
-                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-                <a href="src/web.html"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Service Card 3: Graphic Design -->
-        <div class="col">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"
-                  style="color: #2282ff">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  <polyline points="2 17 12 22 22 17"></polyline>
-                  <polyline points="2 12 12 17 22 12"></polyline>
-                </svg>
-              </div>
-              <h5 class="card-title mt-2">Graphic Design</h5>
-              <p class="card-text summary text-center">
-                Stunning visuals to elevate your brand in a crowded space...
-              </p>
-              <p class="card-text extra d-none text-center">
-                From branding to social media, our designers craft engaging graphics that communicate effectively and leave a lasting impression.
-              </p>
-              <div class="btn-group">
-                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-                <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Service Card 4: Social Media Management -->
-        <div class="col">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"
-                  style="color: #8660fe">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </div>
-              <h5 class="card-title mt-2">Social Media Management</h5>
-              <p class="card-text summary text-center">
-                From posts to stories, we manage your online presence with style...
-              </p>
-              <p class="card-text extra d-none text-center">
-                We help you stay consistent and engaging on all platforms. Our strategies increase audience retention and brand loyalty.
-              </p>
-              <div class="btn-group">
-                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-                <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
       </div>
+
+      <!-- Service Card 2: Website Development -->
+      <div class="col">
+        <div class="card card-services h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="svg-img">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"
+                style="color: #41cf2e">
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                <line x1="3" y1="9" x2="21" y2="9"></line>
+                <line x1="9" y1="21" x2="9" y2="9"></line>
+              </svg>
+            </div>
+            <h5 class="card-title mt-2">Website Development</h5>
+            <p class="card-text summary text-center">
+              A website is often the first impression. We make it exceptional...
+            </p>
+            <p class="card-text extra d-none text-center">
+              A well-designed website increases brand trust and customer engagement. We deliver responsive, aesthetic, and performance-optimized websites aligned with your goals.
+            </p>
+            <div class="btn-group">
+              <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+              <a href="src/web.html"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Card 3: Graphic Design -->
+      <div class="col">
+        <div class="card card-services h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="svg-img">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"
+                style="color: #2282ff">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h5 class="card-title mt-2">Graphic Design</h5>
+            <p class="card-text summary text-center">
+              Stunning visuals to elevate your brand in a crowded space...
+            </p>
+            <p class="card-text extra d-none text-center">
+              From branding to social media, our designers craft engaging graphics that communicate effectively and leave a lasting impression.
+            </p>
+            <div class="btn-group">
+              <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+              <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Card 4: Social Media Management -->
+      <div class="col">
+        <div class="card card-services h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column align-items-center">
+            <div class="svg-img">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"
+                style="color: #8660fe">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </div>
+            <h5 class="card-title mt-2">Social Media Management</h5>
+            <p class="card-text summary text-center">
+              From posts to stories, we manage your online presence with style...
+            </p>
+            <p class="card-text extra d-none text-center">
+              We help you stay consistent and engaging on all platforms. Our strategies increase audience retention and brand loyalty.
+            </p>
+            <div class="btn-group">
+              <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+              <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
-  <!-- Services section ends here -->
+  </div>
+</section>
+<!-- Services section ends here -->
   <hr />
   
-           <!-- About Us section starts here -->
+          <!-- About Us section starts here -->
 <section class="about-section py-5" id="about">
-    <div class="container text-center">
-      <h2 class="about-title mb-2">About Us</h2>
-      <p class="about-subtitle mb-4">
-        Gateway to <em>Go Digital and Grow Business</em>
-      </p>
-  
-      <div class="row justify-content-center g-4">
-        <!-- Card 1 -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="about-card p-4 h-100 shadow rounded">
-            <h4 class="mb-2">Who We Are</h4>
-            <p>
-              GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design & Social Media. We deliver high-quality services that align with market trends.
-            </p>
-          </div>
+  <div class="container text-center">
+    <h2 class="about-title mb-2">About Us</h2>
+    <p class="about-subtitle mb-4">
+      Gateway to <em>Go Digital and Grow Business</em>
+    </p>
+
+    <div class="row justify-content-center g-4">
+      <!-- Card 1 -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="about-card p-4 h-100 shadow rounded">
+          <h4 class="mb-2">Who We Are</h4>
+          <p>
+            GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design & Social Media. We deliver high-quality services that align with market trends.
+          </p>
         </div>
-  
-        <!-- Card 2 -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="about-card p-4 h-100 shadow rounded">
-            <h4 class="mb-2">Tech-Driven Solutions</h4>
-            <p>
-              We use the latest technologies & best practices to deliver innovative solutions. Our services evolve constantly to meet clients’ changing needs.
-            </p>
-          </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="about-card p-4 h-100 shadow rounded">
+          <h4 class="mb-2">Tech-Driven Solutions</h4>
+          <p>
+            We use the latest technologies & best practices to deliver innovative solutions. Our services evolve constantly to meet clients’ changing needs.
+          </p>
         </div>
-  
-        <!-- Card 3 -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="about-card p-4 h-100 shadow rounded">
-            <h4 class="mb-2">Client-Centric Approach</h4>
-            <p>
-              Every client has unique needs. We understand their goals before creating custom solutions and involve them throughout the development process.
-            </p>
-          </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="about-card p-4 h-100 shadow rounded">
+          <h4 class="mb-2">Client-Centric Approach</h4>
+          <p>
+            Every client has unique needs. We understand their goals before creating custom solutions and involve them throughout the development process.
+          </p>
         </div>
-  
-        <!-- Card 4 -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="about-card p-4 h-100 shadow rounded">
-            <h4 class="mb-2">Reliable & Transparent</h4>
-            <p>
-              With clear communication, timely delivery, and transparent processes, we ensure success for both our clients and ourselves.
-            </p>
-          </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="about-card p-4 h-100 shadow rounded">
+          <h4 class="mb-2">Reliable & Transparent</h4>
+          <p>
+            With clear communication, timely delivery, and transparent processes, we ensure success for both our clients and ourselves.
+          </p>
         </div>
-  
-        <!-- Card 5 -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="about-card p-4 h-100 shadow rounded">
-            <h4 class="mb-2">Affordable & Proven</h4>
-            <p>
-              We offer cost-effective services and have a history of successful projects. For a reliable digital partner, GrowCraft is your best choice.
-            </p>
-          </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-sm-6 col-lg-4">
+        <div class="about-card p-4 h-100 shadow rounded">
+          <h4 class="mb-2">Affordable & Proven</h4>
+          <p>
+            We offer cost-effective services and have a history of successful projects. For a reliable digital partner, GrowCraft is your best choice.
+          </p>
         </div>
       </div>
     </div>
-  </section>
-  <!-- About Us section ends here -->
+  </div>
+</section>
+<!-- About Us section ends here -->
+
   
            <!-- Our Work section starts here -->
 <section class="section mt-5" id="work">
@@ -868,10 +1028,28 @@
       
       <!--Dark Toggle Mode-->
       <script>
-        function toggleDarkMode() {
-          document.body.classList.toggle('dark-mode');
+        const toggleSwitch = document.getElementById("darkModeSwitch");
+      
+        // Toggle dark mode
+        function setTheme(mode) {
+          document.documentElement.setAttribute("data-theme", mode);
+          localStorage.setItem("theme", mode);
+          toggleSwitch.checked = mode === "dark";
         }
+      
+        // On toggle switch change
+        toggleSwitch.addEventListener("change", () => {
+          const mode = toggleSwitch.checked ? "dark" : "light";
+          setTheme(mode);
+        });
+      
+        // Load saved theme on page load
+        window.addEventListener("DOMContentLoaded", () => {
+          const savedTheme = localStorage.getItem("theme") || "light";
+          setTheme(savedTheme);
+        });
       </script>
+      
       
     <!-- Copyright section ends here  -->
     <script src="src/script.js"></script>
