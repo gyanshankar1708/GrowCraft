@@ -82,7 +82,25 @@
             padding-bottom: 0.8rem;
             background-color: #ffffff !important;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            
         }
+                        .navbar-collapse {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100%;
+}
+.navbar-nav li {
+  margin: 0 10px; /* Reduce from 20px or more if it’s higher */
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 20px;
+}
+
+
 
         .navbar-brand img {
             max-height: 60px;
@@ -117,6 +135,8 @@
         .navbar-nav .nav-item {
             display: flex;
             align-items: center;
+            margin-left: auto;
+            
         }
 
         /* Responsive logo alignment fix */
@@ -233,86 +253,6 @@
 }
 
 
-        /* FOOTER STYLING*/
-        /* .footer {
-            background: linear-gradient(to right, #2c3e50, #34495e);
-            color: #ffffff;
-            padding: 60px 30px 30px;
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .footer-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 2rem;
-        }
-
-        .footer-section h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-            color: #ffffff;
-            border-bottom: 2px solid #3498db;
-            display: inline-block;
-            padding-bottom: 5px;
-        }
-
-        .footer-section p,
-        .footer-section ul,
-        .footer-section li,
-        .footer-section a {
-            font-size: 0.95rem;
-            line-height: 1.6;
-            color: #ccc;
-            text-decoration: none;
-        }
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-section li a:hover {
-  color: #3498db;
-}
-
-.send-message-btn {
-  background-color: #3498db;
-  border: none;
-  color: white;
-  padding: 8px 14px;
-  margin-top: 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.send-message-btn:hover {
-  background-color: #2980b9;
-}
-
-.social-list li {
-  margin-bottom: 8px;
-}
-
-.social-list i {
-  margin-right: 8px;
-  color: #ffffff;
-  transition: 0.3s;
-}
-
-.social-list i:hover {
-  color: #1abc9c;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 20px;
-  font-size: 0.85rem;
-  color: #bbb;
-} */
-
         /* Back to Top */
 #backToTop {
   position: fixed;
@@ -403,13 +343,7 @@
         </div>
       </li>
 
-      <!-- Dark Mode Toggle -->
-      <li class="nav-item d-flex align-items-center ms-3">
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="darkModeSwitch" onclick="toggleDarkMode()">
-          <label class="form-check-label" for="darkModeSwitch"></label>
-        </div>
-      </li>
+
     </ul>
   </div>
 </div>
@@ -559,10 +493,11 @@
       In the realm of software, we excel at transmuting the ordinary into the extraordinary
     </p>
     <div class="container text-center">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3 d-flex justify-content-center">
+      <!-- 2-2-1 Grid Layout for Services (5 cards total) -->
+      <div class="row g-4 justify-content-center">
         
-        <!-- Service Card 1: Digital Marketing -->
-        <div class="col">
+        <!-- First Row - 2 Cards -->
+        <div class="col-12 col-md-6 col-lg-5">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
               <div class="svg-img">
@@ -589,8 +524,7 @@
           </div>
         </div>
   
-        <!-- Service Card 2: Website Development -->
-        <div class="col">
+        <div class="col-12 col-md-6 col-lg-5">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
               <div class="svg-img">
@@ -617,8 +551,8 @@
           </div>
         </div>
   
-        <!-- Service Card 3: Graphic Design -->
-        <div class="col">
+        <!-- Second Row - 2 Cards -->
+        <div class="col-12 col-md-6 col-lg-5">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
               <div class="svg-img">
@@ -645,8 +579,7 @@
           </div>
         </div>
   
-        <!-- Service Card 4: Social Media Management -->
-        <div class="col">
+        <div class="col-12 col-md-6 col-lg-5">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
               <div class="svg-img">
@@ -672,12 +605,39 @@
             </div>
           </div>
         </div>
+
+        <!-- Third Row - 1 Centered Card -->
+        <div class="col-12 col-md-8 col-lg-5">
+          <div class="card card-services h-100 d-flex flex-column">
+            <div class="card-body d-flex flex-column align-items-center">
+              <div class="svg-img">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3"
+                  style="color: #f39c12">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+              </div>
+              <h5 class="card-title mt-2">Content Writing</h5>
+              <p class="card-text summary text-center">
+                Compelling content that connects, converts, and captivates your audience...
+              </p>
+              <p class="card-text extra d-none text-center">
+                Our expert writers create engaging blog posts, web copy, articles, and marketing content that drives results and builds your brand voice.
+              </p>
+              <div class="btn-group">
+                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+                <a href="learn/contentwriting.html"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
   
       </div>
     </div>
   </section>
   <!-- Services section ends here -->
-  <hr />
+  <br />
   
            <!-- About Us section starts here -->
 <section class="about-section py-5" id="about">
@@ -812,25 +772,79 @@
   
 
     <!-- Footer section starts here (Contact us) -->
-<footer class="footer py-3 mt-5 text-center">
-  <span>&copy; 2025 GrowCraft. All rights reserved.</span>
+<!-- Footer section starts here (Contact us) -->
+<footer style="background: linear-gradient(160deg, #184d23, #219653); color: #fff; font-family: 'Segoe UI', sans-serif; padding: 60px 25px 20px;">
+
+  <!-- Main Footer Container -->
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1200px; margin: auto;">
+
+    <!-- About Section -->
+    <div style="flex: 1 1 280px; min-width: 250px;">
+      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">About GrowCraft</h3>
+      <p style="font-size: 15px; line-height: 1.8; opacity: 0.9;">
+        GrowCraft is a service-based platform offering:
+        <br>🌐 Website Development<br>
+        🖌️ Graphic Design<br>
+        ✍️ Content Writing<br>
+        📣 Social Media Management<br>
+        📊 Digital Marketing<br>
+        🎓 Training & Internship Programs.
+        <br><br>We help businesses grow online while providing students real-world learning.
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div style="flex: 1 1 180px; min-width: 200px;">
+      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Quick Links</h3>
+      <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="margin-bottom: 10px;"><a href="index.html" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Home</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Services</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Portfolio</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Internship</a></li>
+        <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact & Social -->
+    <div style="flex: 1 1 280px; min-width: 250px;">
+      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Contact Us</h3>
+      <p style="font-size: 15px; line-height: 1.8;">📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
+      <p style="font-size: 15px; line-height: 1.8;">📞 +91 999 999 999</p>
+      <p style="font-size: 15px; line-height: 1.8;">📧 info@growcraft.com</p>
+      <button style="margin-top: 15px; padding: 10px 20px; background-color: #fff; color: #219653; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; transition: all 0.3s;">
+        Send Message
+      </button>
+
+      <!-- Social Links -->
+      <h3 style="font-size: 22px; margin-top: 28px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Follow Us</h3>
+      <ul style="list-style: none; display: flex; gap: 12px; padding: 0; margin-top: 10px;">
+        <li><a href="https://facebook.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-facebook-f"></i> </a></li>
+        <li><a href="https://instagram.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-instagram"></i> </a></li>
+        <li><a href="https://linkedin.com/login" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-linkedin-in"></i> </a></li>
+        <li><a href="https://github.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-github"></i> </a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Footer Bottom -->
+  <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 14px;">
+    &copy; 2025 <strong>GrowCraft</strong>. All rights reserved.
+  </div>
 </footer>
+<!-- Footer section ends here -->
 
       <!-- Back to Top -->
       <button id="backToTop" title="Go to top">
         <i class="fas fa-arrow-up"></i>
       </button>
       
-      <!--Dark Toggle Mode-->
-      <script>
-        function toggleDarkMode() {
-          document.body.classList.toggle('dark-mode');
-        }
-      </script>
+
       
     <!-- Copyright section ends here  -->
     <script src="src/script.js"></script>
     <script src="src/utils.js"></script>
+    <script src="src/darkMode.js"></script>
 </body>
 
 </html>

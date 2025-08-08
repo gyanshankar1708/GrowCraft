@@ -189,19 +189,7 @@ textarea {
 
 
 
-/* Dark Mode Switch Styles  */
-.toggle-switch {
-  position: relative;
-  width: 60px;
-  height: 10px;
-  margin-left: auto;
-  margin-right: 40px;
-  padding: 10px;
-  --light:#0078FF;
-  --dark: #060707;
-  --link: rgb(27, 129, 112);
-  --link-hover: rgb(24, 94, 82);
-}
+
 
 
 @media only screen and (max-width:576px) {
@@ -213,29 +201,7 @@ textarea {
         max-width: 60px;
     }
 
-    .toggle-switch {
-            position: relative;
-            width: 60px;
-            height: 10px;
-            padding: 10px;
-            --light:#0078FF;
-            --dark: #28292c;
-            --link: rgb(27, 129, 112);
-            --link-hover: rgb(24, 94, 82);
-    }
-    .navbar .toggle-switch {
-        align-self: center;
-        margin-left: 1rem;
-        margin-right: 0;
-    }    
-    .switch-label {
-        height: 22px;
-        border-radius: 16px;
-        border-width: 2px;
-    }    
-    .checkbox:checked ~ .slider::before {
-        transform: translateX(16px);
-    }
+
 }
 
 @media only screen and (max-width:320px) {
@@ -243,36 +209,7 @@ textarea {
         width: 6rem;
     }
 
-    .toggle-switch {
-            position: relative;
-            width: 60px;
-            height: 10px;
-            padding: 10px;
-            --light:#0078FF;
-            --dark: #28292c;
-            --link: rgb(27, 129, 112);
-            --link-hover: rgb(24, 94, 82);
-    }
-        
-     .switch-label {
-        height: 16px;
-        border-radius: 10px;
-        border-width: 2px;
-    }
-    .navbar .toggle-switch {
-    align-self: center;
-    margin-left: 1rem;
-    margin-right: 0;
-    }
-    .slider::before {
-        top: 1px;
-        left: 2px;
-        width: 10px;
-        height: 10px;
-    }
-    .checkbox:checked ~ .slider::before {
-        transform: translateX(10px);
-    }    
+    
 }
 
 @media only screen and (max-width:768px) {
@@ -289,16 +226,7 @@ textarea {
         max-width: 80px;
     }
 
-    .toggle-switch {
-            position: relative;
-            width: 60px;
-            height: 10px;
-            padding: 10px;
-            --light:#0078FF;
-            --dark: #28292c;
-            --link: rgb(27, 129, 112);
-            --link-hover: rgb(24, 94, 82);
-        }
+
 }
 
 @media (max-width:1412px) {
@@ -306,91 +234,6 @@ textarea {
         max-width: 105px;
     }
 }
-
-    .toggle-switch {
-            position: relative;
-            width: 60px;
-            height: 10px;
-            padding: 10px;
-            --light:#0078FF;
-            --dark: #070708;
-            --link: rgb(27, 129, 112);
-            --link-hover: rgb(24, 94, 82);
-    }
-
-.switch-label {
-  position: absolute;
-  width: 100%;
-  height: 30px;
-  background-color: var(--dark);
-  border-radius: 25px;
-  cursor: pointer;
-  border: 3px solid var(--dark);
-}
-
-.checkbox {
-  position: absolute;
-  display: none;
-}
-
-.slider {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: 25px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.checkbox:checked ~ .slider {
-  background-color: var(--light);
-}
-
-.slider::before {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 5px;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  -webkit-box-shadow: inset 12px -4px 0px 0px var(--light);
-  box-shadow: inset 12px -4px 0px 0px var(--light);
-  background-color: var(--dark);
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-}
-
-.checkbox:checked ~ .slider::before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-  background-color: var(--dark);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-
-/* Dark Mode Switch Styles for Body element*/
-body.dark {background-color: #222;} 
-
-body.dark .navbar .container-fluid {
-    background-color: #292929;
-    color: #fff;
-}
-
-body.dark .navbar-toggler{
-    border-color: #fff;
-    color:#f2f2f2;
-    background-color: #f2f2f2;
-}
-
-body.dark .navbar .container-fluid .collapse .navbar-nav .nav-item .nav-link  {
-    color: #fff !important;
-}
-
-body.dark h1, body.dark .support a {color: #fff;}
-
-
 
 
 
@@ -422,43 +265,6 @@ body.dark-mode #backToTop {
 body.dark-mode #backToTop:hover{
   background-color: #fefefe;
 }
-
-body.dark-mode .navbar-toggler {
-    padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
-    font-size: var(--bs-navbar-toggler-font-size);
-    line-height: 1;
-    color: var(--bs-navbar-color);
-    background-color: transparent;
-    border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
-    border-radius: var(--bs-navbar-toggler-border-radius);
-    transition: var(--bs-navbar-toggler-transition);
-}
-
-
-
-
-/* Dark Mode Switch Styles for Body element*/
-body.dark {background-color: #222;} 
-
-body.dark .navbar .container-fluid {
-    background-color: #292929;
-    color: #fff;
-}
-
-body.dark .navbar-toggler{
-    border-color: #fff;
-    color:#f2f2f2;
-    background-color: #f2f2f2;
-}
-
-body.dark .navbar .container-fluid .collapse .navbar-nav .nav-item .nav-link  {
-    color: #fff !important;
-}
-
-body.dark h1, body.dark .support a {color: #fff;}
-
-
-
 
 /* DARK MODE STYLES */
 body.dark-mode {
