@@ -2,57 +2,58 @@ console.log("script.js is loading");
 console.log(document.getElementById("backToTop"));
 
 // Check authentication status when page loads
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function () {
   checkAuthStatus();
 });
 
 // Check if user is logged in and update navbar
 function checkAuthStatus() {
-  const userData = localStorage.getItem('growcraft_user');
-  const loginBtn = document.getElementById('login-btn');
-  const profileSection = document.getElementById('profile-section');
-  
+  const userData = localStorage.getItem("growcraft_user");
+  const loginBtn = document.getElementById("login-btn");
+  const profileSection = document.getElementById("profile-section");
+
   if (userData) {
     const user = JSON.parse(userData);
     updateNavbarForLoggedInUser(user);
   } else {
     // No user logged in - ensure login button is shown and profile is hidden
     if (loginBtn) {
-      loginBtn.style.display = 'block';
+      loginBtn.style.display = "block";
     }
     if (profileSection) {
-      profileSection.classList.remove('show');
-      profileSection.style.display = 'none'; // Force hide
+      profileSection.classList.remove("show");
+      profileSection.style.display = "none"; // Force hide
     }
   }
 }
 
 // Update navbar for logged in user
 function updateNavbarForLoggedInUser(user) {
-  const loginBtn = document.getElementById('login-btn');
-  const profileSection = document.getElementById('profile-section');
-  
+  const loginBtn = document.getElementById("login-btn");
+  const profileSection = document.getElementById("profile-section");
+
   if (loginBtn && profileSection) {
-    loginBtn.style.display = 'none';
-    profileSection.classList.add('show');
-    
+    loginBtn.style.display = "none";
+    profileSection.classList.add("show");
+
     // Update navbar display name
-    const navbarUserName = document.getElementById('navbar-user-name');
+    const navbarUserName = document.getElementById("navbar-user-name");
     if (navbarUserName) {
-      const fullName = `${user.firstName || ''} ${user.lastName || ''}`.trim();
-      navbarUserName.textContent = fullName || 'User';
+      const fullName = `${user.firstName || ""} ${user.lastName || ""}`.trim();
+      navbarUserName.textContent = fullName || "User";
     }
-    
+
     // Update dropdown user information
-    const userDisplayName = document.getElementById('user-display-name');
-    const userDisplayEmail = document.getElementById('user-display-email');
-    
+    const userDisplayName = document.getElementById("user-display-name");
+    const userDisplayEmail = document.getElementById("user-display-email");
+
     if (userDisplayName) {
-      userDisplayName.textContent = `${user.firstName || ''} ${user.lastName || ''}`.trim() || 'User';
+      userDisplayName.textContent =
+        `${user.firstName || ""} ${user.lastName || ""}`.trim() || "User";
     }
-    
+
     if (userDisplayEmail) {
-      userDisplayEmail.textContent = user.email || 'user@example.com';
+      userDisplayEmail.textContent = user.email || "user@example.com";
     }
   }
 }
@@ -60,37 +61,37 @@ function updateNavbarForLoggedInUser(user) {
 // Logout function
 function logout() {
   // Remove user data from localStorage
-  localStorage.removeItem('growcraft_user');
-  
+  localStorage.removeItem("growcraft_user");
+
   // Get elements
-  const loginBtn = document.getElementById('login-btn');
-  const profileSection = document.getElementById('profile-section');
-  
+  const loginBtn = document.getElementById("login-btn");
+  const profileSection = document.getElementById("profile-section");
+
   // Show login button and hide profile section
   if (loginBtn) {
-    loginBtn.style.display = 'block';
+    loginBtn.style.display = "block";
   }
-  
+
   if (profileSection) {
-    profileSection.classList.remove('show');
-    profileSection.style.display = 'none'; // Force hide with inline style as backup
+    profileSection.classList.remove("show");
+    profileSection.style.display = "none"; // Force hide with inline style as backup
   }
-  
+
   // Show logout message
-  const logoutMessage = document.createElement('div');
-  logoutMessage.className = 'alert alert-success alert-dismissible fade show';
-  logoutMessage.style.position = 'fixed';
-  logoutMessage.style.top = '20px';
-  logoutMessage.style.right = '20px';
-  logoutMessage.style.zIndex = '9999';
+  const logoutMessage = document.createElement("div");
+  logoutMessage.className = "alert alert-success alert-dismissible fade show";
+  logoutMessage.style.position = "fixed";
+  logoutMessage.style.top = "20px";
+  logoutMessage.style.right = "20px";
+  logoutMessage.style.zIndex = "9999";
   logoutMessage.innerHTML = `
     <i class="fas fa-check-circle me-2"></i>
     Logged out successfully!
     <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
   `;
-  
+
   document.body.appendChild(logoutMessage);
-  
+
   // Refresh page after showing message
   setTimeout(() => {
     window.location.reload();
@@ -133,7 +134,10 @@ window.addEventListener("scroll", () => {
     }
   });
 
-  if (!currentSection && window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+  if (
+    !currentSection &&
+    window.innerHeight + window.scrollY >= document.body.offsetHeight
+  ) {
     currentSection = "contact"; // fallback if at bottom
   }
 
@@ -144,7 +148,6 @@ window.addEventListener("scroll", () => {
     }
   });
 });
-
 
 // Form validation (only if form exists)
 let submitForm = document.getElementById("form-submit");
@@ -157,7 +160,8 @@ if (submitForm) {
     const messageField = document.getElementById("message");
     const error = document.getElementById("error");
 
-    if (!nameField || !emailField || !subjectField || !messageField || !error) return;
+    if (!nameField || !emailField || !subjectField || !messageField || !error)
+      return;
 
     const name = nameField.value.trim();
     const email = emailField.value.trim();
@@ -183,74 +187,91 @@ if (submitForm) {
   });
 }
 
-// Show/hide the back-to-top button on scroll
+// Scroll to top button functionality
+// Show button when scrolled down
 window.onscroll = function () {
-  const btn = document.getElementById("backToTop");
-  if (!btn) return;
-  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-    btn.style.display = "block";
+  const btn = document.getElementById("scrollBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    btn.classList.add("show");
+    // added bounce animation
+    btn.classList.add("bounce");
   } else {
-    btn.style.display = "none";
+    btn.classList.remove("show");
+    btn.classList.remove("bounce");
   }
 };
 
-// Scroll to top smoothly when back-to-top button is clicked
-document.addEventListener("DOMContentLoaded", function () {
-  const btn = document.getElementById("backToTop");
-  if (btn) {
-    btn.addEventListener("click", function () {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
+// Scroll to top on click
+function scrollToTop() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+document.querySelectorAll(".toggle-btn").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    const cardBody = btn.closest(".card-body");
+    const summary = cardBody.querySelector(".summary");
+    const extra = cardBody.querySelector(".extra");
+
+    const isExpanded = !extra.classList.contains("d-none");
+
+    if (isExpanded) {
+      summary.classList.remove("d-none");
+      extra.classList.add("d-none");
+      btn.textContent = "Read More";
+    } else {
+      summary.classList.add("d-none");
+      extra.classList.remove("d-none");
+      btn.textContent = "Read Less";
+    }
+  });
 });
-document.querySelectorAll('.toggle-btn').forEach(function (btn) {
-                    btn.addEventListener('click', function () {
-                        const cardBody = btn.closest('.card-body');
-                        const summary = cardBody.querySelector('.summary');
-                        const extra = cardBody.querySelector('.extra');
+document.querySelectorAll(".toggle-btn").forEach(function (btn) {
+  btn.addEventListener("click", function () {
+    const cardBody = btn.closest(".card-body");
+    const summary = cardBody.querySelector(".summary");
+    const extra = cardBody.querySelector(".extra");
 
-                        const isExpanded = !extra.classList.contains('d-none');
+    const isExpanded = !extra.classList.contains("d-none");
 
-                        if (isExpanded) {
-                            summary.classList.remove('d-none');
-                            extra.classList.add('d-none');
-                            btn.textContent = "Read More";
-                        } else {
-                            summary.classList.add('d-none');
-                            extra.classList.remove('d-none');
-                            btn.textContent = "Read Less";
-                        }
-                    });
-                });
+    if (isExpanded) {
+      summary.classList.remove("d-none");
+      extra.classList.add("d-none");
+      btn.textContent = "Read More";
+    } else {
+      summary.classList.add("d-none");
+      extra.classList.remove("d-none");
+      btn.textContent = "Read Less";
+    }
+  });
+});
 
 // Progressive Loading & Enhanced Scroll Animations System
-document.addEventListener('DOMContentLoaded', function() {
-    // Add loading indicator
-    showLoadingProgress();
-    
-    // Initialize all elements as hidden for progressive loading
-    initializeProgressiveElements();
-    
-    // Setup intersection observers for different content types
-    setupProgressiveLoading();
-    
-    // Add enhanced button effects
-    addEnhancedButtonEffects();
-    
-    // Hide loading indicator after initial setup
-    setTimeout(() => hideLoadingProgress(), 500);
+document.addEventListener("DOMContentLoaded", function () {
+  // Add loading indicator
+  showLoadingProgress();
+
+  // Initialize all elements as hidden for progressive loading
+  initializeProgressiveElements();
+
+  // Setup intersection observers for different content types
+  setupProgressiveLoading();
+
+  // Add enhanced button effects
+  addEnhancedButtonEffects();
+
+  // Hide loading indicator after initial setup
+  setTimeout(() => hideLoadingProgress(), 500);
 });
 
 function showLoadingProgress() {
-    // Create and show a subtle loading indicator
-    const loadingIndicator = document.createElement('div');
-    loadingIndicator.id = 'progressive-loader';
-    loadingIndicator.innerHTML = `
+  // Create and show a subtle loading indicator
+  const loadingIndicator = document.createElement("div");
+  loadingIndicator.id = "progressive-loader";
+  loadingIndicator.innerHTML = `
         <div class="loading-bar"></div>
         <div class="loading-text">Loading content...</div>
     `;
-    
-    const loaderStyle = `
+
+  const loaderStyle = `
         #progressive-loader {
             position: fixed;
             top: 0;
@@ -282,146 +303,153 @@ function showLoadingProgress() {
             100% { background-position: 200% 0; }
         }
     `;
-    
-    const styleSheet = document.createElement('style');
-    styleSheet.textContent = loaderStyle;
-    document.head.appendChild(styleSheet);
-    document.body.appendChild(loadingIndicator);
+
+  const styleSheet = document.createElement("style");
+  styleSheet.textContent = loaderStyle;
+  document.head.appendChild(styleSheet);
+  document.body.appendChild(loadingIndicator);
 }
 
 function hideLoadingProgress() {
-    const loader = document.getElementById('progressive-loader');
-    if (loader) {
-        loader.style.opacity = '0';
-        loader.style.transition = 'opacity 0.5s ease';
-        setTimeout(() => loader.remove(), 500);
-    }
+  const loader = document.getElementById("progressive-loader");
+  if (loader) {
+    loader.style.opacity = "0";
+    loader.style.transition = "opacity 0.5s ease";
+    setTimeout(() => loader.remove(), 500);
+  }
 }
 
 function initializeProgressiveElements() {
-    // Add initial hidden state to all animatable elements
-    const elementsToAnimate = [
-        '.card-services',
-        '.about-card', 
-        '.work-card',
-        '.training-pill',
-        '.carousel-item',
-        '.footer-section'
-    ];
-    
-    elementsToAnimate.forEach(selector => {
-        document.querySelectorAll(selector).forEach((element, index) => {
-            element.classList.add('progressive-load');
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            element.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-        });
+  // Add initial hidden state to all animatable elements
+  const elementsToAnimate = [
+    ".card-services",
+    ".about-card",
+    ".work-card",
+    ".training-pill",
+    ".carousel-item",
+    ".footer-section",
+  ];
+
+  elementsToAnimate.forEach((selector) => {
+    document.querySelectorAll(selector).forEach((element, index) => {
+      element.classList.add("progressive-load");
+      element.style.opacity = "0";
+      element.style.transform = "translateY(30px)";
+      element.style.transition =
+        "all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
     });
+  });
 }
 
 function setupProgressiveLoading() {
-    // Enhanced observer options for better performance
-    const observerOptions = {
-        threshold: [0.1, 0.3],
-        rootMargin: '50px 0px -50px 0px'
-    };
+  // Enhanced observer options for better performance
+  const observerOptions = {
+    threshold: [0.1, 0.3],
+    rootMargin: "50px 0px -50px 0px",
+  };
 
-    // Main content observer
-    const contentObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
-                loadElementWithAnimation(entry.target);
-                contentObserver.unobserve(entry.target); // Performance optimization
-            }
-        });
-    }, observerOptions);
-
-    // Section-specific observer for staggered loading
-    const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                loadSectionContent(entry.target);
-                sectionObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.1, rootMargin: '30px' });
-
-    // Observe individual elements
-    document.querySelectorAll('.progressive-load').forEach(element => {
-        contentObserver.observe(element);
+  // Main content observer
+  const contentObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.1) {
+        loadElementWithAnimation(entry.target);
+        contentObserver.unobserve(entry.target); // Performance optimization
+      }
     });
+  }, observerOptions);
 
-    // Observe sections for staggered animations
-    document.querySelectorAll('#services, #about, #work, .footer').forEach(section => {
-        sectionObserver.observe(section);
+  // Section-specific observer for staggered loading
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          loadSectionContent(entry.target);
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.1, rootMargin: "30px" }
+  );
+
+  // Observe individual elements
+  document.querySelectorAll(".progressive-load").forEach((element) => {
+    contentObserver.observe(element);
+  });
+
+  // Observe sections for staggered animations
+  document
+    .querySelectorAll("#services, #about, #work, .footer")
+    .forEach((section) => {
+      sectionObserver.observe(section);
     });
 }
 
 function loadElementWithAnimation(element) {
-    // Add entrance animation based on element type
-    const animationType = getAnimationType(element);
-    
-    setTimeout(() => {
-        element.style.opacity = '1';
-        element.style.transform = 'translateY(0)';
-        element.classList.add('loaded');
-        
-        // Add specific animation class
-        element.classList.add(animationType);
-        
-        // Enhanced hover effects
-        addHoverEffects(element);
-        
-    }, getStaggerDelay(element));
+  // Add entrance animation based on element type
+  const animationType = getAnimationType(element);
+
+  setTimeout(() => {
+    element.style.opacity = "1";
+    element.style.transform = "translateY(0)";
+    element.classList.add("loaded");
+
+    // Add specific animation class
+    element.classList.add(animationType);
+
+    // Enhanced hover effects
+    addHoverEffects(element);
+  }, getStaggerDelay(element));
 }
 
 function loadSectionContent(section) {
-    const sectionId = section.id || section.className;
-    const children = section.querySelectorAll('.progressive-load');
-    
-    children.forEach((child, index) => {
-        setTimeout(() => {
-            if (!child.classList.contains('loaded')) {
-                loadElementWithAnimation(child);
-            }
-        }, index * 100); // Staggered loading within section
-    });
+  const sectionId = section.id || section.className;
+  const children = section.querySelectorAll(".progressive-load");
+
+  children.forEach((child, index) => {
+    setTimeout(() => {
+      if (!child.classList.contains("loaded")) {
+        loadElementWithAnimation(child);
+      }
+    }, index * 100); // Staggered loading within section
+  });
 }
 
 function getAnimationType(element) {
-    if (element.classList.contains('card-services')) return 'animate-service-card';
-    if (element.classList.contains('about-card')) return 'animate-about-card';
-    if (element.classList.contains('work-card')) return 'animate-work-card';
-    if (element.classList.contains('training-pill')) return 'animate-pill';
-    return 'animate-default';
+  if (element.classList.contains("card-services"))
+    return "animate-service-card";
+  if (element.classList.contains("about-card")) return "animate-about-card";
+  if (element.classList.contains("work-card")) return "animate-work-card";
+  if (element.classList.contains("training-pill")) return "animate-pill";
+  return "animate-default";
 }
 
 function getStaggerDelay(element) {
-    const index = Array.from(element.parentNode.children).indexOf(element);
-    return Math.min(index * 150, 800); // Max 800ms delay
+  const index = Array.from(element.parentNode.children).indexOf(element);
+  return Math.min(index * 150, 800); // Max 800ms delay
 }
 
 function addHoverEffects(element) {
-    if (element.classList.contains('card-services') || 
-        element.classList.contains('about-card') || 
-        element.classList.contains('work-card')) {
-        
-        element.addEventListener('mouseenter', function() {
-            this.style.transform = 'translateY(-10px) scale(1.02)';
-            this.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.15)';
-        });
+  if (
+    element.classList.contains("card-services") ||
+    element.classList.contains("about-card") ||
+    element.classList.contains("work-card")
+  ) {
+    element.addEventListener("mouseenter", function () {
+      this.style.transform = "translateY(-10px) scale(1.02)";
+      this.style.boxShadow = "0 15px 35px rgba(0, 0, 0, 0.15)";
+    });
 
-        element.addEventListener('mouseleave', function() {
-            this.style.transform = 'translateY(0) scale(1)';
-            this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-        });
-    }
+    element.addEventListener("mouseleave", function () {
+      this.style.transform = "translateY(0) scale(1)";
+      this.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
+    });
+  }
 }
 
 function addEnhancedButtonEffects() {
-    // Dynamic CSS injection for enhanced effects
-    const style = document.createElement('style');
-    style.textContent = `
+  // Dynamic CSS injection for enhanced effects
+  const style = document.createElement("style");
+  style.textContent = `
         /* Progressive loading animations */
         .progressive-load {
             transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -515,5 +543,5 @@ function addEnhancedButtonEffects() {
             will-change: auto;
         }
     `;
-    document.head.appendChild(style);
+  document.head.appendChild(style);
 }
