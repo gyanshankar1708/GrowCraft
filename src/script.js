@@ -262,6 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => hideLoadingProgress(), 500);
 });
 
+
 function showLoadingProgress() {
   // Create and show a subtle loading indicator
   const loadingIndicator = document.createElement("div");
@@ -520,6 +521,19 @@ function addEnhancedButtonEffects() {
         .work-card .btn:hover::before {
             left: 100%;
         }
+      }
+    }
+    navLinks.forEach(link => {
+      if (link) {
+        link.classList.remove('active', 'visited');
+      }
+    });
+    const activeLink = document.querySelector(`a[href="#${currentSection}"]`);
+    if (activeLink) {
+      activeLink.classList.add('active', 'visited');
+    }
+  }
+
 
         .card-services .btn-group .btn:hover,
         .about-card .btn:hover,
