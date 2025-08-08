@@ -18,14 +18,11 @@
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-      integrity="sha512-YOUR-INTEGRITY-HERE"
+      integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <!--Social Icons-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="src/style.css" />
   
     <!-- Favicon -->
@@ -38,810 +35,538 @@
       crossorigin="anonymous"
       defer
     ></script>
-  
-    <!-- Optional: Popper.js (not needed separately if using bundle) -->
     
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-      defer
-    ></script>
-    
-  </head>
-  
-    <!-- Added custom view all works button class with hover effects and smooth transitions -->
-    <style>
-        .btn-custom-purple {
-            background-color: #463896;
-            border-color: #291987;
-            color: white;
-        }
-
-        .btn-custom-purple:hover {
-            background-color: #1f0d66;
-            border-color: #1f0d66;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(41, 25, 135, 0.4);
-            transition: all 0.3s ease;
-        }
-
-        .btn-custom-purple:focus,
-        .btn-custom-purple:active {
-            background-color: #1f0d66 !important;
-            border-color: #1f0d66 !important;
-            color: white !important;
-            box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
-        }
-
-        /* === Navbar Custom Styling === */
-
-        .navbar {
-            padding-top: 0.8rem;
-            padding-bottom: 0.8rem;
-            background-color: #ffffff !important;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            
-        }
-                        .navbar-collapse {
-  display: flex !important;
-  justify-content: center !important;
-  width: 100%;
-}
-.navbar-nav li {
-  margin: 0 10px; /* Reduce from 20px or more if it’s higher */
-}
-
-.navbar-nav {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  gap: 20px;
-}
-
-
-
-        .navbar-brand img {
-            max-height: 60px;
-            object-fit: contain;
-            vertical-align: middle;
-        }
-
-        /* Align all nav items vertically center */
-        .navbar-nav .nav-link {
-            font-weight: 500;
-            padding: 0.75rem 1rem;
-            color: #333;
-            display: flex;
-            align-items: center;
-            transition: color 0.3s ease;
-        }
-
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: #463896;
-        }
-
-        /* Dark Mode Toggle Switch Alignment */
-        .navbar .toggle-switch {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem 1rem;
-            height: 100%;
-        }
-
-        /* Ensure all nav items are aligned */
-        .navbar-nav .nav-item {
-            display: flex;
-            align-items: center;
-            margin-left: auto;
-            
-        }
-
-        /* Responsive logo alignment fix */
-        @media (max-width: 991.98px) {
-            .navbar .navbar-brand {
-                margin-right: auto;
-            }
-
-            .navbar-collapse {
-                margin-top: 0.8rem;
-            }
-
-            .navbar-nav .nav-link {
-                padding-left: 0;
-            }
-
-            .toggle-switch {
-                margin-top: 1rem;
-                padding-left: 0.5rem;
-            }
-        }
-        .work-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: none;
-}
-
-.work-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-}
-
-.btn-custom-purple {
-  background-color: #6c5ce7;
-  color: #fff;
-  border: none;
-}
-
-.btn-custom-purple:hover {
-  background-color: #5a4fcf;
-  color: #fff;
-}
-
-        .about-section {
-  background-color: #f9f9f9;
-}
-
-.about-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-}
-
-.about-subtitle {
-  font-size: 1.25rem;
-  color: #555;
-}
-
-.about-card {
-  background-color: #fff;
-  color: #222;
-  border: 1px solid #e0e0e0;
-  box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.07);
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.about-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 1rem 2rem rgba(0,0,0,0.12);
-}
-
-.about-card h4 {
-  color: #463896;
-  font-weight: 600;
-}
-
-.about-card p {
-  color: #333;
-  font-size: 1rem;
-}
-
-        .btn-group {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: auto;
-  padding-top: 0.5rem;
-}
-
-        .training-pill {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  background-color: #ffffff;
-  border-radius: 25px;
-  border: 1px solid #dee2e6;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  text-decoration: none;
-  font-size: 0.95rem;
-  color: #333;
-  transition: all 0.3s ease;
-}
-
-.training-pill:hover {
-  background-color: #e8f4ff;
-  border-color: #0d6efd;
-  color: #0d6efd;
-  transform: translateY(-1px);
-}
-
-.training-pill img {
-  width: 22px;
-  height: 22px;
-}
-
-
-        /* Back to Top */
-#backToTop {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, #3498db, #2ecc71);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  font-size: 18px;
-  cursor: pointer;
-  z-index: 1000;
-  display: none; /* Hidden until scroll */
-  align-items: center;
-  justify-content: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#backToTop i {
-  font-size: 20px;
-}
-
-#backToTop:hover {
-  transform: scale(1.15);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.4);
-  background: linear-gradient(135deg, #2ecc71, #3498db);
-}
-/*Dark Mode*/
-
-    </style>
-    <!-- END: Custom CSS changes -->
 </head>
 
 <body id="main-body">
     <!-- Navbar starts here -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-<div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-  <a class="navbar-brand" href="index.html"><img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" /></a>
+        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" />
+            </a>
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto align-items-center">
-      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
-      <li class="nav-item"><a class="nav-link" href="blogListing.html">Blogs</a></li>
-      <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-      <li class="nav-item"><a class="nav-link" href="index.html#work">Our Work</a></li>
-      <li class="nav-item"><a class="nav-link" href="src/contact.html">Contact Us</a></li>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blogListing.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#work">Our Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="src/contact.html">Contact Us</a></li>
 
-      <!-- Login/Profile Section -->
-      <li class="nav-item" id="auth-section">
-        <a class="nav-link" href="src/login.html" id="login-btn">
-          <i class="fas fa-sign-in-alt me-1"></i>Login
-        </a>
-      </li>
-      <li class="nav-item" id="profile-section">
-        <div class="dropdown">
-          <a class="nav-link dropdown-toggle profile-user-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="user-display-name me-2" id="navbar-user-name">John Doe</span>
-            <div class="profile-avatar">
-              <i class="fas fa-user-circle" style="font-size: 1.8rem; color: #0078FF;"></i>
+                    <!-- Login/Profile Section -->
+                    <li class="nav-item" id="auth-section">
+                        <a class="nav-link" href="src/login.html" id="login-btn">
+                            <i class="fas fa-sign-in-alt me-1"></i>Login
+                        </a>
+                    </li>
+                    <li class="nav-item" id="profile-section">
+                        <div class="dropdown">
+                            <a class="nav-link dropdown-toggle profile-user-btn" href="#" role="button" 
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="user-display-name me-2" id="navbar-user-name">John Doe</span>
+                                <div class="profile-avatar">
+                                    <i class="fas fa-user-circle"></i>
+                                </div>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li class="dropdown-header">
+                                    <div class="user-info">
+                                        <i class="fas fa-user-circle me-2"></i>
+                                        <div>
+                                            <div class="user-name" id="user-display-name">John Doe</div>
+                                            <div class="user-email" id="user-display-email">john@example.com</div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+                                <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item text-danger" href="#" onclick="logout()">
+                                    <i class="fas fa-sign-out-alt me-2"></i>Logout
+                                </a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
             </div>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li class="dropdown-header">
-              <div class="user-info">
-                <i class="fas fa-user-circle me-2" style="font-size: 1.5rem; color: #0078FF;"></i>
-                <div>
-                  <div class="user-name" id="user-display-name">John Doe</div>
-                  <div class="user-email" id="user-display-email">john@example.com</div>
-                </div>
-              </div>
-            </li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
-          </ul>
         </div>
-      </li>
-
-
-    </ul>
-  </div>
-</div>
-
-        </div>
-      </div>
     </nav>
-    <!-- Navbar ends here -->
   
-<!-- Training and Internship Program Section Starts -->
-<section class="training-internship bg-light py-3">
-    <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between gap-3 px-3 px-md-5">
-      <h5 class="mb-0 fw-bold">🚀 Training and Internship Program:</h5>
-      
-      <div class="d-flex flex-wrap gap-3 justify-content-end">
-        <a href="src/web.html" class="training-pill">
-          <img src="images/icons/WebDev.png" alt="Web Development" />
-          <span>Web Development</span>
-        </a>
-        <a href="#" class="training-pill">
-          <img src="images/icons/DigitalMarketing.png" alt="Digital Marketing" />
-          <span>Digital Marketing</span>
-        </a>
-        <a href="#" class="training-pill">
-          <img src="images/icons/Content.png" alt="Content Writing" />
-          <span>Content Writing</span>
-        </a>
-        <a href="#" class="training-pill">
-          <img src="images/icons/SocialMediaMaganement.png" alt="Social Media Management" />
-          <span>Social Media</span>
-        </a>
-        <a href="#" class="training-pill">
-          <img src="images/icons/GraphicDesign.png" alt="Graphic Designing" />
-          <span>Graphic Design</span>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- Training and Internship Program Section Ends -->
-  
-  
+    <section class="training-internship bg-light py-3">
+        <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between gap-3 px-3 px-md-5">
+            <h5 class="mb-0 fw-bold">🚀 Training and Internship Program:</h5>
+            
+            <div class="d-flex flex-wrap gap-3 justify-content-end">
+                <a href="src/web.html" class="training-pill">
+                    <img src="images/icons/WebDev.png" alt="Web Development" />
+                    <span>Web Development</span>
+                </a>
+                <a href="#" class="training-pill">
+                    <img src="images/icons/DigitalMarketing.png" alt="Digital Marketing" />
+                    <span>Digital Marketing</span>
+                </a>
+                <a href="#" class="training-pill">
+                    <img src="images/icons/Content.png" alt="Content Writing" />
+                    <span>Content Writing</span>
+                </a>
+                <a href="#" class="training-pill">
+                    <img src="images/icons/SocialMediaMaganement.png" alt="Social Media Management" />
+                    <span>Social Media</span>
+                </a>
+                <a href="#" class="training-pill">
+                    <img src="images/icons/GraphicDesign.png" alt="Graphic Designing" />
+                    <span>Graphic Design</span>
+                </a>
+            </div>
+        </div>
+    </section>  
+    <main class="section" id="home">
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+            </div>
+    
+            <div class="carousel-inner cauresel-images">
+                <!-- Slide 1 -->
+                <div class="carousel-item active" data-bs-interval="8000">
+                    <div class="carousel-overlay">
+                        <img src="images/WebDev.png" class="d-block w-100" alt="Website Development">
+                    </div>
+                    <div class="carousel-caption d-block">
+                        <h2>Website Development</h2>
+                        <div class="redirect-btns m-4">
+                            <a href="#learn" class="btn btn-primary m-1">Learn more</a>
+                            <a href="learn/webdev.html" class="btn btn-custom-purple m-1">Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 2 -->
+                <div class="carousel-item" data-bs-interval="8000">
+                    <div class="carousel-overlay">
+                        <img src="images/GraphicDesign.png" class="d-block w-100" alt="Graphic Design">
+                    </div>
+                    <div class="carousel-caption d-block">
+                        <h2>Graphic Design</h2>
+                        <div class="redirect-btns m-4">
+                            <a href="#learn" class="btn btn-primary m-1">Learn more</a>
+                            <a href="learn/graphic.html" class="btn btn-custom-purple m-1">Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 3 -->
+                <div class="carousel-item" data-bs-interval="8000">
+                    <div class="carousel-overlay">
+                        <img src="images/DigitalMarketing.png" class="d-block w-100" alt="Digital Marketing">
+                    </div>
+                    <div class="carousel-caption d-block">
+                        <h2>Digital Marketing</h2>
+                        <div class="redirect-btns m-4">
+                            <a href="#learn" class="btn btn-primary m-1">Learn more</a>
+                            <a href="learn/marketing.html" class="btn btn-custom-purple m-1">Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 4 -->
+                <div class="carousel-item" data-bs-interval="8000">
+                    <div class="carousel-overlay">
+                        <img src="images/SocialMediaManagement.png" class="d-block w-100" alt="Social Media Management">
+                    </div>
+                    <div class="carousel-caption d-block">
+                        <h2>Social Media Management</h2>
+                        <div class="redirect-btns m-4">
+                            <a href="#learn" class="btn btn-primary m-1">Learn more</a>
+                            <a href="learn/socialmedia.html" class="btn btn-custom-purple m-1">Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide 5 -->
+                <div class="carousel-item" data-bs-interval="8000">
+                    <div class="carousel-overlay">
+                        <img src="images/ContentWriting.png" class="d-block w-100" alt="Content Writing">
+                    </div>
+                    <div class="carousel-caption d-block">
+                        <h2>Content Writing</h2>
+                        <div class="redirect-btns m-4">
+                            <a href="#learn" class="btn btn-primary m-1">Learn more</a>
+                            <a href="learn/contentwriting.html" class="btn btn-custom-purple m-1">Portfolio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon nav-btn" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+    
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                <span class="carousel-control-next-icon nav-btn" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </main>
+    
+    <section class="d-flex flex-column align-items-center mt-4 section" id="services">
+        <h2 class="heading-text">SERVICES</h2>
+        <p class="fst-italic text-center">
+            In the realm of software, we excel at transmuting the ordinary into the extraordinary
+        </p>
+        <div class="container text-center">
+            <div class="row g-4 justify-content-center">
+                
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="card card-services h-100 d-flex flex-column">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <div class="svg-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"
+                                    style="color: #ff689b">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                            <h5 class="card-title mt-2">Digital Marketing</h5>
+                            <p class="card-text summary text-center">
+                                In today's digital-driven age, Marketing means Digital Marketing...
+                            </p>
+                            <p class="card-text extra d-none text-center">
+                                Digital Marketing plays a vital role in reaching target customers and enhancing brand visibility. Our team specializes in SEO, PPC, social media, email campaigns, and content marketing.
+                            </p>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+                                <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="card card-services h-100 d-flex flex-column">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <div class="svg-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"
+                                    style="color: #41cf2e">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                                </svg>
+                            </div>
+                            <h5 class="card-title mt-2">Website Development</h5>
+                            <p class="card-text summary text-center">
+                                A website is often the first impression. We make it exceptional...
+                            </p>
+                            <p class="card-text extra d-none text-center">
+                                A well-designed website increases brand trust and customer engagement. We deliver responsive, aesthetic, and performance-optimized websites aligned with your goals.
+                            </p>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+                                <a href="src/web.html"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Second Row - 2 Cards -->
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="card card-services h-100 d-flex flex-column">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <div class="svg-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"
+                                    style="color: #2282ff">
+                                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                                    <polyline points="2 17 12 22 22 17"></polyline>
+                                    <polyline points="2 12 12 17 22 12"></polyline>
+                                </svg>
+                            </div>
+                            <h5 class="card-title mt-2">Graphic Design</h5>
+                            <p class="card-text summary text-center">
+                                Stunning visuals to elevate your brand in a crowded space...
+                            </p>
+                            <p class="card-text extra d-none text-center">
+                                From branding to social media, our designers craft engaging graphics that communicate effectively and leave a lasting impression.
+                            </p>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+                                <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="col-12 col-md-6 col-lg-5">
+                    <div class="card card-services h-100 d-flex flex-column">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <div class="svg-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"
+                                    style="color: #8660fe">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                                </svg>
+                            </div>
+                            <h5 class="card-title mt-2">Social Media Management</h5>
+                            <p class="card-text summary text-center">
+                                From posts to stories, we manage your online presence with style...
+                            </p>
+                            <p class="card-text extra d-none text-center">
+                                We help you stay consistent and engaging on all platforms. Our strategies increase audience retention and brand loyalty.
+                            </p>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+                                <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-  <main class="section" id="home">
-    <!-- Carousel Section Starts -->
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-      <!-- Indicators -->
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
-      </div>
-  
-      <!-- Slides -->
-      <div class="carousel-inner cauresel-images">
-        <!-- Slide 1 -->
-        <div class="carousel-item active" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/WebDev.png" class="d-block w-100" alt="Website Development">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2>Website Development</h2>
-            <div class="redirect-btns m-4">
-              <a href="#learn" class="btn btn-primary m-1">Learn more</a>
-              <a href="learn/webdev.html" class="btn btn-custom-purple m-1">Portfolio</a>
+                <!-- Third Row - 1 Centered Card -->
+                <div class="col-12 col-md-8 col-lg-5">
+                    <div class="card card-services h-100 d-flex flex-column">
+                        <div class="card-body d-flex flex-column align-items-center">
+                            <div class="svg-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3"
+                                    style="color: #f39c12">
+                                    <path d="M12 20h9"></path>
+                                    <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                                </svg>
+                            </div>
+                            <h5 class="card-title mt-2">Content Writing</h5>
+                            <p class="card-text summary text-center">
+                                Compelling content that connects, converts, and captivates your audience...
+                            </p>
+                            <p class="card-text extra d-none text-center">
+                                Our expert writers create engaging blog posts, web copy, articles, and marketing content that drives results and builds your brand voice.
+                            </p>
+                            <div class="btn-group">
+                                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
+                                <a href="learn/contentwriting.html"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-  
-        <!-- Slide 2 -->
-        <div class="carousel-item" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/GraphicDesign.png" class="d-block w-100" alt="Graphic Design">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2>Graphic Design</h2>
-            <div class="redirect-btns m-4">
-              <a href="#learn" class="btn btn-primary m-1">Learn more</a>
-              <a href="learn/graphic.html" class="btn btn-custom-purple m-1">Portfolio</a>
+    </section>
+    <br />
+    
+    <!-- About Us section starts here -->
+    <section class="about-section py-5" id="about">
+        <div class="container text-center">
+            <h2 class="about-title mb-2">About Us</h2>
+            <p class="about-subtitle mb-4">
+                Gateway to <em>Go Digital and Grow Business</em>
+            </p>
+    
+            <div class="row justify-content-center g-4">
+                <!-- Card 1 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="about-card p-4 h-100 shadow rounded">
+                        <h4 class="mb-2">Who We Are</h4>
+                        <p>
+                            GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design & Social Media. We deliver high-quality services that align with market trends.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Card 2 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="about-card p-4 h-100 shadow rounded">
+                        <h4 class="mb-2">Tech-Driven Solutions</h4>
+                        <p>
+                            We use the latest technologies & best practices to deliver innovative solutions. Our services evolve constantly to meet clients' changing needs.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Card 3 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="about-card p-4 h-100 shadow rounded">
+                        <h4 class="mb-2">Client-Centric Approach</h4>
+                        <p>
+                            Every client has unique needs. We understand their goals before creating custom solutions and involve them throughout the development process.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Card 4 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="about-card p-4 h-100 shadow rounded">
+                        <h4 class="mb-2">Reliable & Transparent</h4>
+                        <p>
+                            With clear communication, timely delivery, and transparent processes, we ensure success for both our clients and ourselves.
+                        </p>
+                    </div>
+                </div>
+    
+                <!-- Card 5 -->
+                <div class="col-sm-6 col-lg-4">
+                    <div class="about-card p-4 h-100 shadow rounded">
+                        <h4 class="mb-2">Affordable & Proven</h4>
+                        <p>
+                            We offer cost-effective services and have a history of successful projects. For a reliable digital partner, GrowCraft is your best choice.
+                        </p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-  
-        <!-- Slide 3 -->
-        <div class="carousel-item" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/DigitalMarketing.png" class="d-block w-100" alt="Digital Marketing">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2>Digital Marketing</h2>
-            <div class="redirect-btns m-4">
-              <a href="#learn" class="btn btn-primary m-1">Learn more</a>
-              <a href="learn/marketing.html" class="btn btn-custom-purple m-1">Portfolio</a>
+    </section>
+    <!-- About Us section ends here -->
+    
+    <!-- Our Work section starts here -->
+    <section class="section mt-5" id="work">
+        <div class="container text-center">
+            <h2 class="heading-text">Our Work</h2>
+            <p class="fst-italic">
+                Showcasing Our Creative Excellence and Client Success Stories
+            </p>
+    
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+                <!-- Work Card 1 - Web Development -->
+                <div class="col">
+                    <a href="src/works.html#WebDev" class="text-decoration-none text-dark">
+                        <div class="card gallery-card h-100 work-card shadow-sm">
+                            <img src="images/WebDev.png" alt="Web Development Project" class="card-img-top" />
+                            <div class="card-body">
+                                <h5 class="card-title">Online Platform</h5>
+                                <p class="card-text">
+                                    A modern, responsive e-commerce website with seamless user experience and advanced features.
+                                </p>
+                                <span class="badge bg-primary">Web Development</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- Work Card 2 - Digital Marketing -->
+                <div class="col">
+                    <a href="src/works.html#digital-marketing" class="text-decoration-none text-dark">
+                        <div class="card gallery-card h-100 work-card shadow-sm">
+                            <img src="images/DigitalMarketing.png" alt="Digital Marketing Campaign" class="card-img-top" />
+                            <div class="card-body">
+                                <h5 class="card-title">Brand Growth Campaign</h5>
+                                <p class="card-text">
+                                    A strategic digital campaign that increased online engagement and traffic by over 300%.
+                                </p>
+                                <span class="badge bg-success">Digital Marketing</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+    
+                <!-- Work Card 3 - Graphic Design -->
+                <div class="col">
+                    <a href="src/works.html#graphic-design" class="text-decoration-none text-dark">
+                        <div class="card gallery-card h-100 work-card shadow-sm">
+                            <img src="images/GraphicDesign.png" alt="Graphic Design Project" class="card-img-top" />
+                            <div class="card-body">
+                                <h5 class="card-title">Brand Identity Design</h5>
+                                <p class="card-text">
+                                    A complete branding package including logos, business cards, and social media visuals.
+                                </p>
+                                <span class="badge bg-info text-dark">Graphic Design</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </div>
-          </div>
-        </div>
-  
-        <!-- Slide 4 -->
-        <div class="carousel-item" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/SocialMediaManagement.png" class="d-block w-100" alt="Social Media Management">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2>Social Media Management</h2>
-            <div class="redirect-btns m-4">
-              <a href="#learn" class="btn btn-primary m-1">Learn more</a>
-              <a href="learn/socialmedia.html" class="btn btn-custom-purple m-1">Portfolio</a>
+    
+            <!-- View All Work Button -->
+            <div class="text-center mt-4 mb-5">
+                <a href="src/workList.html" class="btn btn-brand btn-lg">
+                    View All Our Work <i class="fas fa-arrow-right ms-2"></i>
+                </a>
             </div>
-          </div>
         </div>
-  
-        <!-- Slide 5 -->
-        <div class="carousel-item" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/ContentWriting.png" class="d-block w-100" alt="Content Writing">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2>Content Writing</h2>
-            <div class="redirect-btns m-4">
-              <a href="#learn" class="btn btn-primary m-1">Learn more</a>
-              <a href="learn/contentwriting.html" class="btn btn-custom-purple m-1">Portfolio</a>
-            </div>
-          </div>
-        </div>
-      </div>
-  
-      <!-- Controls -->
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon nav-btn" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-  
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon nav-btn" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
-    </div>
-    <!-- Carousel Section Ends -->
-  </main>
-  
-      <!-- Services section starts here -->
-<section class="d-flex flex-column align-items-center mt-4 section" id="services">
-    <h2 class="heading-text">SERVICES</h2>
-    <p class="fst-italic text-center">
-      In the realm of software, we excel at transmuting the ordinary into the extraordinary
-    </p>
-    <div class="container text-center">
-      <!-- 2-2-1 Grid Layout for Services (5 cards total) -->
-      <div class="row g-4 justify-content-center">
-        
-        <!-- First Row - 2 Cards -->
-        <div class="col-12 col-md-6 col-lg-5">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"
-                  style="color: #ff689b">
-                  <line x1="18" y1="20" x2="18" y2="10"></line>
-                  <line x1="12" y1="20" x2="12" y2="4"></line>
-                  <line x1="6" y1="20" x2="6" y2="14"></line>
-                </svg>
-              </div>
-              <h5 class="card-title mt-2">Digital Marketing</h5>
-              <p class="card-text summary text-center">
-                In today's digital-driven age, Marketing means Digital Marketing...
-              </p>
-              <p class="card-text extra d-none text-center">
-                Digital Marketing plays a vital role in reaching target customers and enhancing brand visibility. Our team specializes in SEO, PPC, social media, email campaigns, and content marketing.
-              </p>
-              <div class="btn-group">
-                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-                <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-12 col-md-6 col-lg-5">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"
-                  style="color: #41cf2e">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="3" y1="9" x2="21" y2="9"></line>
-                  <line x1="9" y1="21" x2="9" y2="9"></line>
-                </svg>
-              </div>
-              <h5 class="card-title mt-2">Website Development</h5>
-              <p class="card-text summary text-center">
-                A website is often the first impression. We make it exceptional...
-              </p>
-              <p class="card-text extra d-none text-center">
-                A well-designed website increases brand trust and customer engagement. We deliver responsive, aesthetic, and performance-optimized websites aligned with your goals.
-              </p>
-              <div class="btn-group">
-                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-                <a href="src/web.html"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <!-- Second Row - 2 Cards -->
-        <div class="col-12 col-md-6 col-lg-5">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"
-                  style="color: #2282ff">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  <polyline points="2 17 12 22 22 17"></polyline>
-                  <polyline points="2 12 12 17 22 12"></polyline>
-                </svg>
-              </div>
-              <h5 class="card-title mt-2">Graphic Design</h5>
-              <p class="card-text summary text-center">
-                Stunning visuals to elevate your brand in a crowded space...
-              </p>
-              <p class="card-text extra d-none text-center">
-                From branding to social media, our designers craft engaging graphics that communicate effectively and leave a lasting impression.
-              </p>
-              <div class="btn-group">
-                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-                <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-        <div class="col-12 col-md-6 col-lg-5">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"
-                  style="color: #8660fe">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </div>
-              <h5 class="card-title mt-2">Social Media Management</h5>
-              <p class="card-text summary text-center">
-                From posts to stories, we manage your online presence with style...
-              </p>
-              <p class="card-text extra d-none text-center">
-                We help you stay consistent and engaging on all platforms. Our strategies increase audience retention and brand loyalty.
-              </p>
-              <div class="btn-group">
-                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-                <a href="#"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
+    </section>
+    <!-- Our Work section ends here -->
 
-        <!-- Third Row - 1 Centered Card -->
-        <div class="col-12 col-md-8 col-lg-5">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3"
-                  style="color: #f39c12">
-                  <path d="M12 20h9"></path>
-                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                </svg>
-              </div>
-              <h5 class="card-title mt-2">Content Writing</h5>
-              <p class="card-text summary text-center">
-                Compelling content that connects, converts, and captivates your audience...
-              </p>
-              <p class="card-text extra d-none text-center">
-                Our expert writers create engaging blog posts, web copy, articles, and marketing content that drives results and builds your brand voice.
-              </p>
-              <div class="btn-group">
-                <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
-                <a href="learn/contentwriting.html"><button class="btn btn-sm btn-outline-primary">Explore</button></a>
-              </div>
-            </div>
-          </div>
-        </div>
-  
-      </div>
-    </div>
-  </section>
-  <!-- Services section ends here -->
-  <br />
-  
-           <!-- About Us section starts here -->
-<section class="about-section py-5" id="about">
-    <div class="container text-center">
-      <h2 class="about-title mb-2">About Us</h2>
-      <p class="about-subtitle mb-4">
-        Gateway to <em>Go Digital and Grow Business</em>
-      </p>
-  
-      <div class="row justify-content-center g-4">
-        <!-- Card 1 -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="about-card p-4 h-100 shadow rounded">
-            <h4 class="mb-2">Who We Are</h4>
-            <p>
-              GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design & Social Media. We deliver high-quality services that align with market trends.
-            </p>
-          </div>
-        </div>
-  
-        <!-- Card 2 -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="about-card p-4 h-100 shadow rounded">
-            <h4 class="mb-2">Tech-Driven Solutions</h4>
-            <p>
-              We use the latest technologies & best practices to deliver innovative solutions. Our services evolve constantly to meet clients’ changing needs.
-            </p>
-          </div>
-        </div>
-  
-        <!-- Card 3 -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="about-card p-4 h-100 shadow rounded">
-            <h4 class="mb-2">Client-Centric Approach</h4>
-            <p>
-              Every client has unique needs. We understand their goals before creating custom solutions and involve them throughout the development process.
-            </p>
-          </div>
-        </div>
-  
-        <!-- Card 4 -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="about-card p-4 h-100 shadow rounded">
-            <h4 class="mb-2">Reliable & Transparent</h4>
-            <p>
-              With clear communication, timely delivery, and transparent processes, we ensure success for both our clients and ourselves.
-            </p>
-          </div>
-        </div>
-  
-        <!-- Card 5 -->
-        <div class="col-sm-6 col-lg-4">
-          <div class="about-card p-4 h-100 shadow rounded">
-            <h4 class="mb-2">Affordable & Proven</h4>
-            <p>
-              We offer cost-effective services and have a history of successful projects. For a reliable digital partner, GrowCraft is your best choice.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- About Us section ends here -->
-  
-           <!-- Our Work section starts here -->
-<section class="section mt-5" id="work">
-    <div class="container text-center">
-      <h2 class="heading-text">Our Work</h2>
-      <p class="fst-italic">
-        Showcasing Our Creative Excellence and Client Success Stories
-      </p>
-  
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
-        <!-- Work Card 1 - Web Development -->
-        <div class="col">
-          <a href="src/works.html#WebDev" class="text-decoration-none text-dark">
-            <div class="card gallery-card h-100 work-card shadow-sm">
-              <img src="images/WebDev.png" alt="Web Development Project" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">Online Platform</h5>
-                <p class="card-text">
-                  A modern, responsive e-commerce website with seamless user experience and advanced features.
+    <!-- Footer section starts here -->
+    <footer>
+        <!-- Main Footer Container -->
+        <div class="footer-container">
+            <!-- About Section -->
+            <div class="footer-section">
+                <h3>About GrowCraft</h3>
+                <p>
+                    GrowCraft is a service-based platform offering:
+                    <br>🌐 Website Development<br>
+                    🖌️ Graphic Design<br>
+                    ✍️ Content Writing<br>
+                    📣 Social Media Management<br>
+                    📊 Digital Marketing<br>
+                    🎓 Training & Internship Programs.
+                    <br><br>We help businesses grow online while providing students real-world learning.
                 </p>
-                <span class="badge bg-primary">Web Development</span>
-              </div>
             </div>
-          </a>
-        </div>
-  
-        <!-- Work Card 2 - Digital Marketing -->
-        <div class="col">
-          <a href="src/works.html#digital-marketing" class="text-decoration-none text-dark">
-            <div class="card gallery-card h-100 work-card shadow-sm">
-              <img src="images/DigitalMarketing.png" alt="Digital Marketing Campaign" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">Brand Growth Campaign</h5>
-                <p class="card-text">
-                  A strategic digital campaign that increased online engagement and traffic by over 300%.
-                </p>
-                <span class="badge bg-success">Digital Marketing</span>
-              </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section quick-links">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#work">Portfolio</a></li>
+                    <li><a href="src/web.html">Internship</a></li>
+                    <li><a href="src/contact.html">Contact</a></li>
+                </ul>
             </div>
-          </a>
-        </div>
-  
-        <!-- Work Card 3 - Graphic Design -->
-        <div class="col">
-          <a href="src/works.html#graphic-design" class="text-decoration-none text-dark">
-            <div class="card gallery-card h-100 work-card shadow-sm">
-              <img src="images/GraphicDesign.png" alt="Graphic Design Project" class="card-img-top" />
-              <div class="card-body">
-                <h5 class="card-title">Brand Identity Design</h5>
-                <p class="card-text">
-                  A complete branding package including logos, business cards, and social media visuals.
-                </p>
-                <span class="badge bg-info text-dark">Graphic Design</span>
-              </div>
+
+            <!-- Contact & Social -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
+                <p>📞 +91 999 999 999</p>
+                <p>📧 info@growcraft.com</p>
+                <button class="footer-contact-btn">Send Message</button>
+
+                <!-- Social Links -->
+                <h3>Follow Us</h3>
+                <ul class="social-links">
+                    <li><a href="https://facebook.com"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://instagram.com"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="https://linkedin.com/login"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="https://github.com"><i class="fab fa-github"></i></a></li>
+                </ul>
             </div>
-          </a>
         </div>
-      </div>
-  
-      <!-- View All Work Button -->
-      <div class="text-center mt-4 mb-5">
-        <a href="src/workList.html" class="btn btn-brand btn-lg">
-          View All Our Work <i class="fas fa-arrow-right ms-2"></i>
-        </a>
-      </div>
-    </div>
-  </section>
-  <!-- Our Work section ends here -->
-  
 
-    <!-- Footer section starts here (Contact us) -->
-<!-- Footer section starts here (Contact us) -->
-<footer style="background: linear-gradient(160deg, #184d23, #219653); color: #fff; font-family: 'Segoe UI', sans-serif; padding: 60px 25px 20px;">
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            &copy; 2025 <strong>GrowCraft</strong>. All rights reserved.
+        </div>
+    </footer>
+    <!-- Footer section ends here -->
 
-  <!-- Main Footer Container -->
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1200px; margin: auto;">
-
-    <!-- About Section -->
-    <div style="flex: 1 1 280px; min-width: 250px;">
-      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">About GrowCraft</h3>
-      <p style="font-size: 15px; line-height: 1.8; opacity: 0.9;">
-        GrowCraft is a service-based platform offering:
-        <br>🌐 Website Development<br>
-        🖌️ Graphic Design<br>
-        ✍️ Content Writing<br>
-        📣 Social Media Management<br>
-        📊 Digital Marketing<br>
-        🎓 Training & Internship Programs.
-        <br><br>We help businesses grow online while providing students real-world learning.
-      </p>
-    </div>
-
-    <!-- Quick Links -->
-    <div style="flex: 1 1 180px; min-width: 200px;">
-      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Quick Links</h3>
-      <ul style="list-style: none; padding: 0; margin: 0;">
-        <li style="margin-bottom: 10px;"><a href="index.html" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Home</a></li>
-        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Services</a></li>
-        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Portfolio</a></li>
-        <li style="margin-bottom: 10px;"><a href="#" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Internship</a></li>
-        <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #f1f1f1; text-decoration: none; font-size: 15px;">Contact</a></li>
-      </ul>
-    </div>
-
-    <!-- Contact & Social -->
-    <div style="flex: 1 1 280px; min-width: 250px;">
-      <h3 style="font-size: 22px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Contact Us</h3>
-      <p style="font-size: 15px; line-height: 1.8;">📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
-      <p style="font-size: 15px; line-height: 1.8;">📞 +91 999 999 999</p>
-      <p style="font-size: 15px; line-height: 1.8;">📧 info@growcraft.com</p>
-      <button style="margin-top: 15px; padding: 10px 20px; background-color: #fff; color: #219653; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 14px; transition: all 0.3s;">
-        Send Message
-      </button>
-
-      <!-- Social Links -->
-      <h3 style="font-size: 22px; margin-top: 28px; margin-bottom: 16px; font-weight: 600; border-left: 4px solid #fff; padding-left: 10px;">Follow Us</h3>
-      <ul style="list-style: none; display: flex; gap: 12px; padding: 0; margin-top: 10px;">
-        <li><a href="https://facebook.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-facebook-f"></i> </a></li>
-        <li><a href="https://instagram.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-instagram"></i> </a></li>
-        <li><a href="https://linkedin.com/login" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-linkedin-in"></i> </a></li>
-        <li><a href="https://github.com" style="color: #fff; background: rgba(255,255,255,0.15); width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; text-decoration: none; font-size: 16px;"> <i class="fab fa-github"></i> </a></li>
-      </ul>
-    </div>
-
-  </div>
-
-  <!-- Footer Bottom -->
-  <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 14px;">
-    &copy; 2025 <strong>GrowCraft</strong>. All rights reserved.
-  </div>
-</footer>
-<!-- Footer section ends here -->
-
-      <!-- Back to Top -->
-      <button id="backToTop" title="Go to top">
+    <!-- Back to Top -->
+    <button id="backToTop" title="Go to top">
         <i class="fas fa-arrow-up"></i>
-      </button>
-      
-
-      
-    <!-- Copyright section ends here  -->
+    </button>
+    
+    <!-- Scripts -->
     <script src="src/script.js"></script>
     <script src="src/utils.js"></script>
     <script src="src/darkMode.js"></script>
