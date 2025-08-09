@@ -12,7 +12,25 @@
       rel="stylesheet"
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
+    /> 
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <!-- added style css -->
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" /> 
   
     <!-- Font Awesome -->
     <link
@@ -23,7 +41,7 @@
       referrerpolicy="no-referrer"
     />
     <!--Social Icons-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" /> 
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="src/style.css" />
@@ -52,21 +70,75 @@
   
     <!-- Added custom view all works button class with hover effects and smooth transitions -->
     <style>
-        .btn-custom-purple {
-            background-color: #463896;
-            border-color: #291987;
-            color: white;
+      .btn-custom-purple {
+        background-color: #463896;
+        border-color: #291987;
+        color: white;
+      }
+
+      .btn-custom-purple:hover {
+        background-color: #1f0d66;
+        border-color: #1f0d66;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(41, 25, 135, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      .btn-custom-purple:focus,
+      .btn-custom-purple:active {
+        background-color: #1f0d66 !important;
+        border-color: #1f0d66 !important;
+        color: white !important;
+        box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
+      }
+      /* === Navbar Custom Styling === */
+
+      .navbar {
+        padding-top: 0.8rem;
+        padding-bottom: 0.8rem;
+        background-color: #ffffff !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .navbar-brand img {
+        max-height: 60px;
+        object-fit: contain;
+        vertical-align: middle;
+      }
+
+      /* Align all nav items vertically center */
+      .navbar-nav .nav-link {
+        font-weight: 500;
+        padding: 0.75rem 1rem;
+        color: #333;
+        display: flex;
+        align-items: center;
+        transition: color 0.3s ease;
+      }
+
+      .navbar-nav .nav-link:hover,
+      .navbar-nav .nav-link.active {
+        color: #463896;
+      }
+
+      /* Dark Mode Toggle Switch Alignment */
+      .navbar .toggle-switch {
+        display: flex;
+        align-items: center;
+        padding-left: 1rem;
+      }
+
+      /* Responsive logo alignment fix */
+      @media (max-width: 991.98px) {
+        .navbar .navbar-brand {
+          margin-right: auto;
         }
 
-        .btn-custom-purple:hover {
-            background-color: #1f0d66;
-            border-color: #1f0d66;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(41, 25, 135, 0.4);
-            transition: all 0.3s ease;
+        .navbar-collapse {
+          margin-top: 0.8rem;
         }
-
+      }
         .btn-custom-purple:focus,
         .btn-custom-purple:active {
             background-color: #1f0d66 !important;
@@ -108,20 +180,15 @@
             vertical-align: middle;
         }
 
-        /* Align all nav items vertically center */
+        /* Align all nav items vertically center */ 
         .navbar-nav .nav-link {
-            font-weight: 500;
-            padding: 0.75rem 1rem;
-            color: #333;
-            display: flex;
-            align-items: center;
-            transition: color 0.3s ease;
+          padding-left: 0;
         }
 
-        .navbar-nav .nav-link:hover,
-        .navbar-nav .nav-link.active {
-            color: #463896;
-        }
+        .toggle-switch {
+          margin-top: 1rem;
+          padding-left: 0.5rem;
+        } 
 
         /* Dark Mode Toggle Switch Alignment */
         .navbar .toggle-switch {
@@ -284,101 +351,147 @@
   background: linear-gradient(135deg, #2ecc71, #3498db);
 }
 /*Dark Mode*/
-
+ 
     </style>
     <!-- END: Custom CSS changes -->
-</head>
+  </head>
 
-<body id="main-body">
+  <body id="main-body">
     <!-- Navbar starts here -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-<div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-  <a class="navbar-brand" href="index.html"><img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" /></a>
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5"
+      >
+        <a class="navbar-brand" href="#"
+          ><img src="images/Logo.png" alt="GrowCraft" width="200" id="logo"
+        /></a>
 
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto align-items-center">
-      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
-      <li class="nav-item"><a class="nav-link" href="blogListing.html">Blogs</a></li>
-      <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-      <li class="nav-item"><a class="nav-link" href="index.html#work">Our Work</a></li>
-      <li class="nav-item"><a class="nav-link" href="src/contact.html">Contact Us</a></li>
-
-      <!-- Login/Profile Section -->
-      <li class="nav-item" id="auth-section">
-        <a class="nav-link" href="src/login.html" id="login-btn">
-          <i class="fas fa-sign-in-alt me-1"></i>Login
-        </a>
-      </li>
-      <li class="nav-item" id="profile-section">
-        <div class="dropdown">
-          <a class="nav-link dropdown-toggle profile-user-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="user-display-name me-2" id="navbar-user-name">John Doe</span>
-            <div class="profile-avatar">
-              <i class="fas fa-user-circle" style="font-size: 1.8rem; color: #0078FF;"></i>
-            </div>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li class="dropdown-header">
-              <div class="user-info">
-                <i class="fas fa-user-circle me-2" style="font-size: 1.5rem; color: #0078FF;"></i>
-                <div>
-                  <div class="user-name" id="user-display-name">John Doe</div>
-                  <div class="user-email" id="user-display-email">john@example.com</div>
-                </div>
-              </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active visited"
+                aria-current="page"
+                href="#home"
+                >Home</a
+              >
             </li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#services"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="blogListing.html"
+                >Blogs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#about"
+                >About Us</a
+              >
+            </li>
+            <!-- Added new "Our Work" link to navigate to the new work section on same page -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#work"
+                >Our Work</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="src/contact.html"
+                >Contact Us</a
+              >
+            </li> 
           </ul>
-        </div>
-      </li>
-
-
-    </ul>
-  </div>
-</div>
-
-        </div>
+        </div>  
       </div>
+  
     </nav>
     <!-- Navbar ends here -->
-  
-<!-- Training and Internship Program Section Starts -->
-<section class="training-internship bg-light py-3">
-    <div class="container-fluid d-flex flex-wrap align-items-center justify-content-between gap-3 px-3 px-md-5">
-      <h5 class="mb-0 fw-bold">🚀 Training and Internship Program:</h5>
-      
-      <div class="d-flex flex-wrap gap-3 justify-content-end">
-        <a href="src/web.html" class="training-pill">
-          <img src="images/icons/WebDev.png" alt="Web Development" />
-          <span>Web Development</span>
-        </a>
-        <a href="#" class="training-pill">
-          <img src="images/icons/DigitalMarketing.png" alt="Digital Marketing" />
-          <span>Digital Marketing</span>
-        </a>
-        <a href="#" class="training-pill">
-          <img src="images/icons/Content.png" alt="Content Writing" />
-          <span>Content Writing</span>
-        </a>
-        <a href="#" class="training-pill">
-          <img src="images/icons/SocialMediaMaganement.png" alt="Social Media Management" />
-          <span>Social Media</span>
-        </a>
-        <a href="#" class="training-pill">
-          <img src="images/icons/GraphicDesign.png" alt="Graphic Designing" />
-          <span>Graphic Design</span>
-        </a>
+
+    <!-- Training and Internship program section starts here  -->
+    <div class="bg-body-tertiary mt-4 py-2 mb-4">
+      <div
+        class="container-fluid d-flex flex-wrap justify-content-center align-items-center px-2 px-sm-5 mt-3 mb-4"
+      >
+        <h5 class="head-training mb-xxl-0">Training and Internship program</h5>
+        <div class="row g-4 px-6 py-6 justify-content-md-center">
+          <!-- adding program card styles -->
+          <a href="src/web.html" class="training-links col-sm-12 col-md-6 col-lg-4
+">
+            <div class="program-card d-flex align-items-center gap-2" data-tooltip="Learn to build websites" >
+              <img
+                src="images/icons/WebDev.png"
+                alt="Web Development"
+                class="icon"
+              />
+              <h6 class="mb-0">Website Development</h6>
+            </div>
+          </a>
+          <a href="#" class="training-links col-sm-12 col-md-6 col-lg-4
+">
+            <div class="program-card d-flex align-items-center gap-2" data-tooltip="Promote brands online effectively.">
+              <img
+                src="images/icons/DigitalMarketing.png"
+                alt="Digital Marketing"
+                class="icon"
+              />
+              <h6 class="mb-0">Digital Marketing</h6>
+            </div>
+          </a>
+          <a href="#" class="training-links col-sm-12 col-md-6 col-lg-4
+">
+            <div class="program-card d-flex align-items-center gap-2" data-tooltip="Write engaging content for blogs and sites.">
+              <img
+                src="images/icons/Content.png"
+                alt="Content Writing"
+                class="icon"
+              />
+              <h6 class="mb-0">Content Writing</h6>
+            </div>
+          </a>
+          <a href="#" class="training-links col-sm-12 col-md-6 col-lg-4
+">
+            <div class="program-card d-flex align-items-center gap-2" data-tooltip="Manage and grow social platforms.">
+              <img
+                src="images/icons/SocialMediaMaganement.png"
+                alt="Social Media Management"
+                class="icon"
+              />
+              <h6 class="mb-0">Social Media Management</h6>
+            </div>
+          </a>
+          <a href="#" class="training-links col-sm-12 col-md-6 col-lg-4
+">
+            <div class="program-card d-flex align-items-center gap-2" data-tooltip="Create beautiful and professional designs.">
+              <img
+                src="images/icons/GraphicDesign.png"
+                alt="Graphic Designing"
+                class="icon"
+              />
+              <h6 class="mb-0">Graphic Designing</h6>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -843,8 +956,24 @@
       
     <!-- Copyright section ends here  -->
     <script src="src/script.js"></script>
-    <script src="src/utils.js"></script>
+    <script src="src/utils.js"></script> 
+  </body>
+  <!-- Back to Top Button -->
+  <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">
+    <!-- added svg of arrow up -->
+    <svg
+      data-name="1-Arrow Up"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="white"
+      viewBox="0 0 32 32"
+    >
+      <path
+        d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"
+      />
+    </svg>
+  </button>
+</html> 
     <script src="src/darkMode.js"></script>
 </body>
 
-</html>
+</html> 
