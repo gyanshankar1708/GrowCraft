@@ -15,32 +15,36 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid px-2 px-sm-5">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
       <a class="navbar-brand" href="index.html">
-        <img src="images/Logo.png" alt="GrowCraft" width="180" />
+        <img src="images/Logo.png" alt="GrowCraft Logo" width="200" id="logo" style="object-fit:contain;" />
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav align-items-center">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link active" href="blogListing.html">Blogs</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="index.html#work">Our Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="src/contact.html">Contact Us</a></li>
-
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active visited" aria-current="page" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="blogListing.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html#work">Our Work</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="src/contact.html">Contact Us</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Blog Section -->
-  <section class="py-5 bg-light">
+  <!-- Blog Hero Section -->
+  <section class="blog-hero-section">
     <div class="container">
-      <h2 class="text-center mb-4">📚 Our Blog</h2>
-      <div class="row" id="blog-list">
+      <div class="blog-hero-content text-center py-5">
+        <span class="blog-hero-icon mb-3" style="font-size:3.5rem; color:#3D5CFC;"><i class="fa-solid fa-feather"></i></span>
+        <h1 class="display-5 fw-bold mb-2" style="color:#2B3A67;">GrowCraft Blog</h1>
+        <p class="lead mb-4" style="color:#41506b; max-width:600px; margin:auto;">Insights, tips, and stories from our creative team. Discover the latest in web development, digital marketing, and design.</p>
+      </div>
+      <h2 class="text-center mb-4" style="color:#3D5CFC; font-weight:700;">Latest Posts</h2>
+      <div class="row blog-list" id="blog-list">
         <!-- Blog cards populated via JavaScript -->
       </div>
     </div>
@@ -69,8 +73,46 @@
       text-decoration: none;
     }
     .dark-mode {
-      background-color: #121212;
-      color: #f1f1f1;
+      background-color: #121212 !important;
+      color: #f1f1f1 !important;
+    }
+    .dark-mode .navbar {
+      background-color: #222 !important;
+      box-shadow: none;
+    }
+    .dark-mode .navbar .nav-link {
+      color: #f1f1f1 !important;
+    }
+    .dark-mode .navbar .nav-link.active {
+      color: #fbc02d !important;
+    }
+    .dark-mode .navbar-brand img {
+      filter: brightness(1.2) drop-shadow(0 0 2px #fbc02d);
+    }
+    .blog-hero-section {
+      background: linear-gradient(120deg, #f0f4ff 0%, #eaf0fb 100%);
+      border-bottom: 1px solid #e3e8ef;
+      margin-bottom: 0;
+    }
+    .dark-mode .blog-hero-section {
+      background: linear-gradient(120deg, #222 0%, #333 100%);
+      border-bottom: 1px solid #444;
+    }
+    .blog-hero-content {
+      padding-top: 48px;
+      padding-bottom: 32px;
+    }
+    .blog-hero-icon {
+      display: inline-block;
+      margin-bottom: 12px;
+      animation: floatIcon 1.2s infinite alternate;
+    }
+    @keyframes floatIcon {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-10px); }
+    }
+    .dark-mode h1, .dark-mode h2, .dark-mode .blog-hero-content p, .dark-mode .blog-hero-icon {
+      color: #fbc02d !important;
     }
   </style>
 
