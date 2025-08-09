@@ -940,40 +940,41 @@
 
   </div>
 
-  <!-- Footer Bottom -->
-  <div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 14px;">
-    &copy; 2025 <strong>GrowCraft</strong>. All rights reserved.
-  </div>
+<!-- Footer Bottom -->
+<div style="text-align: center; margin-top: 30px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.2); font-size: 14px;">
+  &copy; <span id="year"></span> <strong>GrowCraft</strong>. All rights reserved.
+</div>
 </footer>
 <!-- Footer section ends here -->
 
-      <!-- Back to Top -->
-      <button id="backToTop" title="Go to top">
-        <i class="fas fa-arrow-up"></i>
-      </button>
-      
+<!-- Back to Top -->
+<button id="backToTop" title="Go to top">
+  <i class="fas fa-arrow-up"></i>
+</button>
 
-      
-    <!-- Copyright section ends here  -->
-    <script src="src/script.js"></script>
-    <script src="src/utils.js"></script> 
-  </body>
-  <!-- Back to Top Button -->
-  <button onclick="scrollToTop()" id="scrollBtn" title="Go to top">
-    <!-- added svg of arrow up -->
-    <svg
-      data-name="1-Arrow Up"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="white"
-      viewBox="0 0 32 32"
-    >
-      <path
-        d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"
-      />
-    </svg>
-  </button>
-</html> 
-    <script src="src/darkMode.js"></script>
+<!-- Copyright section ends -->
+<script src="src/script.js"></script>
+<script src="src/utils.js"></script>
+<script src="src/darkMode.js"></script>
+
+<!-- Set the dynamic year -->
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+<!-- Back to Top Button -->
+<button onclick="scrollToTop()" id="scrollBtn" title="Go to top">
+  <!-- SVG Arrow Up -->
+  <svg
+    data-name="1-Arrow Up"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="white"
+    viewBox="0 0 32 32"
+  >
+    <path
+      d="m26.71 10.29-10-10a1 1 0 0 0-1.41 0l-10 10 1.41 1.41L15 3.41V32h2V3.41l8.29 8.29z"
+    />
+  </svg>
+</button>
 </body>
-
-</html> 
+</html>
