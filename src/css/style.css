@@ -39,7 +39,7 @@ section {
   color: var(--green1);
   /* light green text shadow */
   text-shadow: 2px 2px 6px #90ee90;
-  font-weight: bold; 
+  font-weight: bold;
   margin-bottom: 2rem;
 }
 
@@ -267,7 +267,7 @@ textarea {
   color: red;
   font-size: 1rem;
 }
- 
+
 /* Dark Mode Switch Styles  */
 .toggle-switch {
   position: relative;
@@ -280,7 +280,7 @@ textarea {
   --dark: #060707;
   --link: rgb(27, 129, 112);
   --link-hover: rgb(24, 94, 82);
-} 
+}
 
 @media only screen and (max-width: 576px) {
   #logo {
@@ -290,7 +290,7 @@ textarea {
   .clients-img {
     max-width: 60px;
   }
- 
+
   .toggle-switch {
     position: relative;
     width: 60px;
@@ -313,20 +313,16 @@ textarea {
   }
   .checkbox:checked ~ .slider::before {
     transform: translateX(16px);
-  } 
-    .clients-img {
-        max-width: 60px;
-    }
-
-
+  }
+  .clients-img {
+    max-width: 60px;
+  }
 }
 
-@media only screen and (max-width:320px) {
-    #logo {
-        width: 6rem;
-    }
-
-     
+@media only screen and (max-width: 320px) {
+  #logo {
+    width: 6rem;
+  }
 }
 
 @media only screen and (max-width: 320px) {
@@ -344,7 +340,7 @@ textarea {
     --link: rgb(27, 129, 112);
     --link-hover: rgb(24, 94, 82);
   }
- 
+
   .switch-label {
     height: 16px;
     border-radius: 10px;
@@ -363,12 +359,10 @@ textarea {
   }
   .checkbox:checked ~ .slider::before {
     transform: translateX(10px);
-  } 
-    .clients-img {
-        max-width: 80px;
-    }
-
- 
+  }
+  .clients-img {
+    max-width: 80px;
+  }
 }
 
 @media only screen and (max-width: 768px) {
@@ -396,7 +390,7 @@ textarea {
     --link-hover: rgb(24, 94, 82);
   }
 }
- 
+
 @media (max-width: 1412px) {
   .clients-img {
     max-width: 105px;
@@ -490,10 +484,9 @@ body.dark h1,
 body.dark .support a {
   color: #fff;
 }
- 
 
 #backToTop {
-  display: none; 
+  display: none;
   position: fixed;
   bottom: 65px;
   right: 30px;
@@ -861,8 +854,6 @@ body.dark-mode .btn-glass-light {
   background: rgba(255, 255, 255, 0.37);
   color: #ffffff;
 }
-
- 
 
 body.dark-mode .btn-glass-light:hover {
   background: rgba(75, 188, 248, 0.934);
