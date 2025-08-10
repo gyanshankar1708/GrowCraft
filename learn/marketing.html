@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketing Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    .card {
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+  height: 220px;
+  object-fit: cover;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #2d2d2d;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+h1 {
+  font-weight: 700;
+  color: #1f1f1f;
+}
+
+section.container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+  </style>
+</head>
+<body>
+  <div class="container mt-4">
+    <a href="../index.html" class="btn btn-link text-decoration-none d-flex align-items-center" style="font-size: 1.1rem;">
+      &#8592; <span class="ms-2">Back</span>
+    </a>
+  </div>
+  <!-- Navbar -->
+  <!-- ... Navbar code ... -->
+  <section class="container mt-5">
+    <h1 class="mb-4 text-center">Digital Marketing Campaigns</h1>
+    <p class="text-center mb-5">Result-driven strategies that turn impressions into customers.</p>
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="card shadow">
+          <img src="../images/img2dm.jpeg" class="card-img-top" alt="SEO">
+          <div class="card-body">
+            <h5 class="card-title">SEO Case Study</h5>
+            <p class="card-text">Increased organic traffic by 300% for a blog using keyword clusters and schema.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow">
+          <img src="../images/img3dm.png" class="card-img-top" alt="Google Ads">
+          <div class="card-body">
+            <h5 class="card-title">Google Ads Campaign</h5>
+            <p class="card-text">Targeted ad campaigns with conversion tracking and CTR optimization.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow">
+          <img src="../images/img4dm.jpg" class="card-img-top" alt="Email Marketing">
+          <div class="card-body">
+            <h5 class="card-title">Email Funnels</h5>
+            <p class="card-text">Lead nurturing campaigns using Mailchimp, resulting in 2x higher engagement.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

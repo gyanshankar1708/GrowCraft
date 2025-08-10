@@ -1,79 +1,155 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Write Blog | GrowCraft</title>
-  <link rel="stylesheet" href="src/blogs.css">
-      <link rel="stylesheet" href="src/style.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="src/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
-  
+
+  <!-- Meta -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="src/style.css" />
+  <link rel="stylesheet" href="src/blogs.css" />
+
+  <!-- Inline Enhancements -->
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f7fa;
+      color: #333;
+    }
+
+    .blog-section {
+      max-width: 700px;
+      background: #ffffff;
+      margin: 50px auto;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+    }
+
+    .blog-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    #blog-form input,
+    #blog-form textarea {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      border: 1px solid #dcdfe6;
+      border-radius: 8px;
+      transition: border-color 0.3s ease;
+    }
+
+    #blog-form input:focus,
+    #blog-form textarea:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+
+    #blog-form button[type="submit"] {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    #blog-form button[type="submit"]:hover {
+      background-color: #0056b3;
+    }
+
+    .back-btn {
+      display: block;
+      width: fit-content;
+      margin: 30px auto 0;
+      padding: 10px 18px;
+      background-color: #e3eaf5;
+      color: #273055;
+      font-weight: 500;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      text-align: center;
+    }
+
+    .back-btn:hover {
+      background-color: #d2def0;
+    }
+
+    @media (max-width: 768px) {
+      .blog-section {
+        padding: 25px;
+        margin: 30px 16px;
+      }
+
+      #blog-form input,
+      #blog-form textarea {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
-   <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-            <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="GrowCraft" width="200" id="logo"></a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-3 px-sm-5">
+      <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="GrowCraft" width="180" id="logo"></a>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active visited" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#services">Services</a>
-                    </li>
-                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="blogListing.html">Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about">About Us</a>
-                    </li>
-                    <!-- Added new "Our Work" link to navigate to the new work section on same page -->                    
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#work">Our Work</a>
-                    </li>
-                        
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
-                    </li>
-                
-                    <li class="nav-item mt-3">
-                        <div class="toggle-switch">
-                            <label class="switch-label">
-                            <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
-                            <span class="slider"></span>
-                            </label>
-                        </div>  
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse mt-2 mt-lg-0" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-2">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="blogListing.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#work">Our Work</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact Us</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Blog Form -->
   <div class="blog-section">
     <h2>Write a New Blog</h2>
     <form id="blog-form">
-      <input type="text" id="author" placeholder="Your Name" required>
-      <input type="text" id="title" placeholder="Blog Title" required>
-      <textarea id="content" rows="6" placeholder="Write your blog..." required></textarea>
+      <input type="text" id="author" placeholder="Your Name" required />
+      <input type="text" id="title" placeholder="Blog Title" required />
+      <textarea id="content" rows="7" placeholder="Write your blog..." required></textarea>
       <button type="submit">Publish Blog</button>
     </form>
-    <button onclick="window.location='blogListing.html'" style="margin-top:30px; background:#ccc; color:#222;">← Back to Blogs</button>
+
+    <a href="blogListing.html" class="back-btn"><i class="fas fa-arrow-left me-2"></i>Back to Blogs</a>
   </div>
+
+  <!-- Scripts -->
   <script src="src/write-blog.js"></script>
-    
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script src="src/darkMode.js"></script>
+
 </body>
 </html>
