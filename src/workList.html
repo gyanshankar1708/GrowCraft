@@ -1,312 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GrowCraft</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous">
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"></script>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
     <link href="style.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-</head>
-<style>
-    /* Footer Styles */
-.footer {
-  background: #222;
-  color: #f1f1f1;
-  padding: 50px 20px 30px;
-  font-family: 'Segoe UI', sans-serif;
-}
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-.footer-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
+  </head>
+  <style>
+  /* Footer Styles */
+  .footer {
+    background: #222;
+    color: #f1f1f1;
+    padding: 50px 20px 30px;
+    font-family: 'Segoe UI', sans-serif;
+  }
 
-.footer h3 {
-  color: #ffffff;
-  font-size: 20px;
-  margin-bottom: 15px;
-  font-weight: 600;
-  border-left: 4px solid #6c5ce7;
-  padding-left: 12px;
-}
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: auto;
+  }
 
-.footer p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #cccccc;
-}
+  .footer h3 {
+    color: #ffffff;
+    font-size: 20px;
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-left: 4px solid #6c5ce7;
+    padding-left: 12px;
+  }
 
-.footer-links ul,
-.footer-social ul {
-  list-style: none;
-  padding-left: 0;
-}
+  .footer p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #cccccc;
+  }
 
-.footer-links li,
-.footer-social li {
-  margin-bottom: 10px;
-}
+  .footer-links ul,
+  .footer-social ul {
+    list-style: none;
+    padding-left: 0;
+  }
 
-.footer-links a,
-.footer-social a {
-  color: #dddddd;
-  text-decoration: none;
-  font-size: 15px;
-  transition: color 0.3s ease;
-}
+  .footer-links li,
+  .footer-social li {
+    margin-bottom: 10px;
+  }
 
-.footer-links a:hover,
-.footer-social a:hover {
-  color: #6c5ce7;
-}
+  .footer-links a,
+  .footer-social a {
+    color: #dddddd;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s ease;
+  }
 
-.send-message-btn {
-  margin-top: 10px;
-  background: #6c5ce7;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  font-size: 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
+  .footer-links a:hover,
+  .footer-social a:hover {
+    color: #6c5ce7;
+  }
 
-.send-message-btn:hover {
-  background: #5947d1;
-}
+  .send-message-btn {
+    margin-top: 10px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
 
-/* Social Icons Styling */
-.footer-social i {
-  margin-right: 8px;
-}
+  .send-message-btn:hover {
+    background: #5947d1;
+  }
 
-/* Copyright Bar */
-.copyright {
-  font-size: 14px;
-  color: #888;
-  padding-bottom: 10px;
-}
+  /* Social Icons Styling */
+  .footer-social i {
+    margin-right: 8px;
+  }
 
-/* Back to Top Button */
-#backToTop {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background-color: #6c5ce7;
-  color: #fff;
-  border: none;
-  border-radius: 50%;
-  width: 48px;
-  height: 48px;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 1000;
-  display: none;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: background 0.3s ease, transform 0.2s ease;
-}
+  /* Copyright Bar */
+  .copyright {
+    font-size: 14px;
+    color: #888;
+    padding-bottom: 10px;
+  }
 
-#backToTop:hover {
-  background-color: #5947d1;
-  transform: scale(1.1);
-}
+  /* Back to Top Button */
+  #backToTop {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background-color: #6c5ce7;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
 
+  #backToTop:hover {
+    background-color: #5947d1;
+    transform: scale(1.1);
+  }
 </style>
 
-<body id="main-body">
+  <body id="main-body">
     <!-- Navbar Section -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-            <a class="navbar-brand" href="../index.html"><img src="../images/Logo.png" alt="Logo" width="200"
-                    id="logo" /></a>
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+        <a class="navbar-brand" href="../index.html"><img
+            src="../images/Logo.png" alt="Logo" width="200" id="logo" /></a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.html#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.html#about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active visited" aria-current="page" href="../index.html#work">Our Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.html#contact">Contact Us</a>
-                    </li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"
+                href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"
+                href="../index.html#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"
+                href="../index.html#about">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active visited" aria-current="page"
+                href="../index.html#work">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page"
+                href="../index.html#contact">Contact Us</a>
+            </li>
 
-                </ul>
-            </div>
+          </ul>
         </div>
+      </div>
     </nav>
 
     <div class="container py-5">
-        <h2 class="text-center mb-5 heading-text">Our Works</h2>
+      <h2 class="text-center mb-5 heading-text">Our Works</h2>
 
-        <div class="row justify-content-center g-4">
+      <div class="row justify-content-center g-4">
 
-            <div class="col-md-4 col-sm-6 col-12">
-                <a href="works.html#WebDev" style="text-decoration: none;">
-                    <div class="gallery-card h-100 work-card">
-                        <img src="../images/WebDev.png" alt="Web Dev" />
-                        <div class="card-body">
-                            <h3 class="card-title">Web Development</h3>
-                            <p class="card-text">
-                                Modern and responsive websites using the latest tech.
-                            </p>
-                        </div>
-                    </div>
-                </a>
+        <div class="col-md-4 col-sm-6 col-12">
+          <a href="works.html#WebDev" style="text-decoration: none;">
+            <div class="gallery-card h-100 work-card">
+              <img src="../images/WebDev.png" alt="Web Dev" />
+              <div class="card-body">
+                <h3 class="card-title">Web Development</h3>
+                <p class="card-text">
+                  Modern and responsive websites using the latest tech.
+                </p>
+              </div>
             </div>
-
-            <div class="col-md-4 col-sm-6 col-12">
-                <a href="works.html#digital-marketing" style="text-decoration: none;">
-                    <div class="gallery-card h-100 work-card">
-                        <img src="../images/DigitalMarketing.png" alt="Digital Marketing" />
-                        <div class="card-body">
-                            <h3 class="card-title">Digital Marketing</h3>
-                            <p class="card-text">
-                                Boost your online presence with smart strategies.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4 col-sm-6 sol-12">
-                <a href="works.html#graphic-design" style="text-decoration: none;">
-                    <div class="gallery-card h-100  work-card">
-                        <img src="../images/GraphicDesign.png" alt="Graphic Designing" />
-                        <div class="card-body">
-                            <h3 class="card-title">Graphic Designing</h3>
-                            <p class="card-text">
-                                Eye-catching visuals for web, print, and more.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-12">
-                <a href="works.html#content-writing" style="text-decoration: none;">
-                    <div class="gallery-card h-100 work-card">
-                        <img src="../images/ContentWriting.png" alt="Content Writing" />
-                        <div class="card-body">
-                            <h3 class="card-title">Content Writing</h3>
-                            <p class="card-text">
-                                Creative content that connects with your audience.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            <div class="col-md-4 col-sm-6 col-12">
-                <a href="works.html#social-media" style="text-decoration: none;">
-                    <div class="gallery-card h-100 work-card">
-                        <img src="../images/SocialMediaManagement.png" alt="Social Media Management" />
-                        <div class="card-body">
-                            <h3 class="card-title">Social Media Management</h3>
-                            <p class="card-text">
-                                Grow your brand with engaging social media content.
-                            </p>
-                        </div>
-                    </div>
-                </a>
-            </div>
-            
+          </a>
         </div>
+
+        <div class="col-md-4 col-sm-6 col-12">
+          <a href="works.html#digital-marketing" style="text-decoration: none;">
+            <div class="gallery-card h-100 work-card">
+              <img src="../images/DigitalMarketing.png"
+                alt="Digital Marketing" />
+              <div class="card-body">
+                <h3 class="card-title">Digital Marketing</h3>
+                <p class="card-text">
+                  Boost your online presence with smart strategies.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 sol-12">
+          <a href="works.html#graphic-design" style="text-decoration: none;">
+            <div class="gallery-card h-100  work-card">
+              <img src="../images/GraphicDesign.png" alt="Graphic Designing" />
+              <div class="card-body">
+                <h3 class="card-title">Graphic Designing</h3>
+                <p class="card-text">
+                  Eye-catching visuals for web, print, and more.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12">
+          <a href="works.html#content-writing" style="text-decoration: none;">
+            <div class="gallery-card h-100 work-card">
+              <img src="../images/ContentWriting.png" alt="Content Writing" />
+              <div class="card-body">
+                <h3 class="card-title">Content Writing</h3>
+                <p class="card-text">
+                  Creative content that connects with your audience.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+        <div class="col-md-4 col-sm-6 col-12">
+          <a href="works.html#social-media" style="text-decoration: none;">
+            <div class="gallery-card h-100 work-card">
+              <img src="../images/SocialMediaManagement.png"
+                alt="Social Media Management" />
+              <div class="card-body">
+                <h3 class="card-title">Social Media Management</h3>
+                <p class="card-text">
+                  Grow your brand with engaging social media content.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
     </div>
-    <footer class="footer">
-  <div class="footer-container">
-    <!-- About GrowCraft -->
-    <div class="footer-about">
-      <h3>About GrowCraft</h3>
-      <p>
-        GrowCraft is a service-based platform offering:
-        <br>🌐 Website Development<br> 🖌️ Graphic Design <br>✍️ Content Writing <br>
-        📣 Social Media Management <br> 📊 Digital Marketing <br>
-        🎓 Training & Internship Programs.
-        <br>We help businesses grow online while providing students real-world learning.
-      </p>
-    </div>
+    <footer style="background: linear-gradient(160deg, #184d23, #219653);"
+      class="footer">
+      <div class="footer-container">
+        <!-- About GrowCraft -->
+        <div class="footer-about">
+          <h3>About GrowCraft</h3>
+          <p>
+            GrowCraft is a service-based platform offering:
+            <br>🌐 Website Development<br> 🖌️ Graphic Design <br>✍️ Content
+            Writing <br>
+            📣 Social Media Management <br> 📊 Digital Marketing <br>
+            🎓 Training & Internship Programs.
+            <br>We help businesses grow online while providing students
+            real-world learning.
+          </p>
+        </div>
 
-    <!-- Quick Links -->
-    <div class="footer-links">
-      <h3>Quick Links</h3>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Internship</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-    </div>
+        <!-- Quick Links -->
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#">Internship</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
 
-    <!-- Contact -->
-    <div class="footer-contact">
-      <h3>Contact Us</h3>
-      <p>📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
-      <p>📞 +91 999 999 999</p>
-      <p>📧 info@growcraft.com</p>
-      <button class="send-message-btn">Send Message</button>
-    </div>
+        <!-- Contact -->
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>📍 235, PQR, GHI, ABC Street, XYZ,<br>ABC - 10000, India</p>
+          <p>📞 +91 999 999 999</p>
+          <p>📧 info@growcraft.com</p>
+          <button class="send-message-btn">Send Message</button>
+        </div>
 
-    <!-- Follow Us -->
-    <div class="footer-social">
-  <h3>Follow Us</h3>
-  <ul class="social-list">
-    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-    <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
-    <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
-  </ul>
-</div>
-  </div>
+        <!-- Follow Us -->
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <ul class="social-list">
+            <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+            <li><a href="#"><i class="fab fa-linkedin-in"></i> LinkedIn</a></li>
+            <li><a href="#"><i class="fab fa-github"></i> GitHub</a></li>
+          </ul>
+        </div>
+      </div>
 
-
-</footer>
+    </footer>
 
     <!--  COntact us section ends here -->
 
     <!-- Copyright section -->
     <div class="copyright d-flex justify-content-center m-3">
-        <span>&copy; Copyright </span><span style="font-weight: bold;"> GrowCraft.</span><span> All Rights
-            Reserved</span>
+      <span>&copy; Copyright </span><span style="font-weight: bold;">
+        GrowCraft.</span><span> All Rights
+        Reserved</span>
     </div>
-
 
     <script src="utils.js"></script>
     <script src="darkMode.js"></script>
 
-    
     <!-- Back to Top Button -->
-<button id="backToTop" title="Go to top">↑</button>
-
+    <button id="backToTop" title="Go to top">↑</button>
 
     <script src="script.js"></script>
-</body>
+  </body>
 
 </html>

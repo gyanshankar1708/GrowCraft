@@ -1,9 +1,9 @@
-console.log("script.js is loading");
-console.log(document.getElementById("backToTop"));
+// GrowCraft - Enhanced Interactive Website Script
 
 // Check authentication status when page loads
 document.addEventListener("DOMContentLoaded", function () {
   checkAuthStatus();
+  initializeScrollButton();
 });
 
 // Check if user is logged in and update navbar
@@ -187,24 +187,129 @@ if (submitForm) {
   });
 }
 
-// Scroll to top button functionality
-// Show button when scrolled down
-window.onscroll = function () {
-  const btn = document.getElementById("scrollBtn");
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    btn.classList.add("show");
-    // added bounce animation
-    btn.classList.add("bounce");
-  } else {
-    btn.classList.remove("show");
-    btn.classList.remove("bounce");
+// Initialize scroll button on page load
+function initializeScrollButton() {
+  const btn = document.getElementById("backToTop");
+  if (!btn) {
+    console.warn("Scroll to top button not found");
+    return;
   }
-};
-
-// Scroll to top on click
-function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  
+  console.log("Initializing scroll button...");
+  
+  // Ensure button starts hidden
+  btn.classList.remove("show");
+  btn.style.opacity = "0";
+  btn.style.visibility = "hidden";
+  
+  // Clear any existing listeners and add new ones
+  btn.onclick = null;
+  btn.removeEventListener('click', handleScrollClick, false);
+  
+  // Add click event listener
+  btn.addEventListener('click', handleScrollClick, false);
+  
+  // Also set onclick as backup
+  btn.onclick = handleScrollClick;
+  
+  // Add mousedown for immediate feedback
+  btn.addEventListener('mousedown', function() {
+    btn.style.transform = "scale(0.9)";
+  });
+  
+  btn.addEventListener('mouseup', function() {
+    btn.style.transform = "";
+  });
+  
+  // Check initial scroll position
+  checkScrollPosition();
+  
+  console.log("Scroll button initialized successfully");
 }
+
+// Handle scroll button click
+function handleScrollClick(e) {
+  e.preventDefault();
+  e.stopPropagation();
+  console.log("Button clicked");
+  scrollToTop();
+  return false;
+}
+
+// Check scroll position and show/hide button
+function checkScrollPosition() {
+  const btn = document.getElementById("backToTop");
+  if (!btn) return;
+  
+  // Get scroll position (works across different browsers)
+  const scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  
+  // Show button when scrolled down more than 300px from top
+  if (scrollTop > 300) {
+    if (!btn.classList.contains("show")) {
+      btn.classList.add("show");
+      btn.classList.add("bounce");
+      console.log("Scroll button shown at scroll position:", scrollTop);
+    }
+  } else {
+    if (btn.classList.contains("show")) {
+      btn.classList.remove("show");
+      btn.classList.remove("bounce");
+      console.log("Scroll button hidden at scroll position:", scrollTop);
+    }
+  }
+}
+
+// Enhanced Scroll to top functionality with smooth positioning
+window.addEventListener('scroll', checkScrollPosition);
+
+// Enhanced smooth scroll to top function - SIMPLIFIED
+function scrollToTop() {
+  console.log("Scroll to top clicked!");
+  
+  // Immediate visual feedback
+  const btn = document.getElementById("backToTop");
+  if (btn) {
+    btn.style.transform = "scale(0.8)";
+    setTimeout(() => {
+      btn.style.transform = "";
+    }, 200);
+  }
+
+  // Smooth scroll to top
+  try {
+    window.scrollTo({ 
+      top: 0, 
+      left: 0,
+      behavior: "smooth" 
+    });
+  } catch(e) {
+    // Fallback for older browsers
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }
+  
+  // Hide button after scrolling starts
+  setTimeout(() => {
+    checkScrollPosition();
+  }, 100);
+  
+  console.log("Scroll executed");
+  return false;
+}
+
+// Make scrollToTop globally available
+window.scrollToTop = scrollToTop;
+
+// Simple test function
+function testScroll() {
+  console.log("Test scroll function called");
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
+}
+
+// Make test function globally available
+window.testScroll = testScroll;
 document.querySelectorAll(".toggle-btn").forEach(function (btn) {
   btn.addEventListener("click", function () {
     const cardBody = btn.closest(".card-body");
