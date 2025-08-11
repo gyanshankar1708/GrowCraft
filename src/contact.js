@@ -499,3 +499,4 @@ window.ContactForm = {
     showSuccessMessage,
     clearMessages
 };
+
