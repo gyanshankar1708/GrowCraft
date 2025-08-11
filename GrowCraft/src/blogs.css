@@ -1,0 +1,183 @@
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(120deg, #f0f4ff 0%, #f7f7fa 100%);
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+}
+
+.blog-section {
+    max-width: 900px;
+    margin: 48px auto;
+    background: #fff;
+    border-radius: 22px;
+    box-shadow: 0 8px 32px rgba(52, 88, 255, 0.10), 0 1.5px 6px rgba(0,0,0,0.06);
+    padding: 36px 42px;
+    position: relative;
+    animation: fadeIn 0.8s;
+}
+
+@keyframes fadeIn {
+    0% { opacity:0; transform:translateY(30px);}
+    100% { opacity:1; transform:translateY(0);}
+}
+
+h2 {
+    text-align: center;
+    color: #2B3A67;
+    font-weight: 800;
+    font-size: 2.3rem;
+    margin-bottom: 24px;
+    letter-spacing: 1px;
+}
+
+.blog-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    margin-bottom: 32px;
+}
+@media (max-width:900px) {
+    .blog-section { padding: 24px 8vw; }
+}
+@media (max-width: 700px) {
+    .blog-list { grid-template-columns: 1fr; }
+    .blog-section {padding:18px 3vw;}
+}
+.blog-card {
+    background: #f8fafc;
+    padding: 20px 22px 19px 22px;
+    border-radius: 14px;
+    transition: box-shadow 0.2s, transform 0.18s;
+    box-shadow: 0 2px 10px rgba(52,88,255,0.07);
+    border-left: 5px solid #3D5CFC;
+    position: relative;
+    cursor: pointer;
+}
+.blog-card:hover {
+    box-shadow: 0 6px 22px rgba(61,92,252,0.18);
+    transform: translateY(-4px) scale(1.03);
+}
+.blog-card h4 {
+    margin: 0 0 8px 0;
+    font-size: 1.22rem;
+    color: #222b4e;
+    font-weight: 700;
+    transition: color 0.18s;
+}
+.blog-card:hover h4 {
+    color: #3D5CFC;
+}
+.blog-card small {
+    display: block;
+    margin-bottom: 12px;
+    color: #8492a6;
+    font-size:0.93rem;
+    font-style: italic;
+    letter-spacing: .2px;
+}
+.blog-card p {
+    margin: 0;
+    color: #41506b;
+    font-size: 1.04rem;
+    line-height:1.6;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    margin-top: 12px;
+    animation: fadeIn 1.2s;
+}
+form input, form textarea {
+    padding: 14px;
+    border-radius: 8px;
+    border: 1.5px solid #e3e8ef;
+    background: #fbfcff;
+    outline: none;
+    font-size: 1rem;
+    transition: border-color 0.16s, box-shadow 0.16s;
+    box-shadow: 0 1.5px 6px rgba(52, 88, 255, 0.04);
+}
+form input:focus, form textarea:focus {
+    border-color: #3D5CFC;
+    box-shadow: 0 2px 12px rgba(61,92,252,0.09);
+}
+form button[type=submit] {
+    background: linear-gradient(85deg, #3D5CFC 70%, #3458FF 100%);
+    color: #fff;
+    border: none;
+    padding: 15px 0;
+    border-radius: 7px;
+    font-size: 1.08rem;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 14px rgba(61, 92, 252, 0.13);
+    transition: background 0.16s, box-shadow .16s;
+}
+form button[type=submit]:hover {
+    background: #273EBB;
+    box-shadow: 0 8px 28px rgba(61, 92, 252, 0.18);
+}
+
+/* Stylize back button */
+button[onclick*="blogListing.html"] {
+    background: #f3f6fa;
+    color: #273055;
+    font-weight: 600;
+    margin-top: 17px;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 0;
+    cursor: pointer;
+    font-size:1rem;
+    box-shadow: 0 1.5px 6px rgba(52, 88, 255, 0.04);
+    transition: background 0.13s;
+}
+button[onclick*="blogListing.html"]:hover {
+    background: #e4e8f5;
+    color: #3D5CFC;
+}
+
+.fab {
+  position: fixed;
+  bottom: 30px;
+  right: 36px;
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(120deg,#3869fa 75%, #3458FF 100%);
+  border-radius: 50%;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  border: 2.5px solid #fff;
+  box-shadow: 0 8px 32px rgba(52, 88, 255, 0.16);
+  z-index: 1000;
+  text-decoration: none;
+   padding-top: 5px;
+  display: block;
+  text-align: center;
+  line-height: 64px; /* Vertically center text */
+}
+
+.fab:hover {
+    background: linear-gradient(120deg,#273EBB 75%, #3351C4 100%);
+    transform: scale(1.08);
+    box-shadow: 0 16px 48px rgba(52, 88, 255, 0.32);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .blog-section { padding: 12px 2vw; }
+    .fab {
+        width: 48px;
+        height: 48px;
+        font-size: 30px;
+        right: 10px;
+        bottom: 10px;
+    }
+    h2 { font-size:1.35rem;}
+    .blog-card {padding: 14px 11px;}
+}

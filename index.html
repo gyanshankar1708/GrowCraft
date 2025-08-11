@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 
 <head>
     <meta charset="UTF-8" />
@@ -314,6 +315,7 @@ body.dark-mode .about-section .card {
   font-size: 1rem;
 }
 
+
         .btn-group {
   display: flex;
   gap: 0.5rem;
@@ -388,135 +390,78 @@ body.dark-mode .about-section .card {
 </head>
 
 <body id="main-body">
-   <!-- Navbar starts here -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-    <!-- Logo -->
-    <a class="navbar-brand" href="index.html">
-      <img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" />
-    </a>
+  <!-- Navbar starts here -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" />
+      </a>
 
-    <!-- Toggler -->
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- Toggler -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <!-- Nav Links -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto align-items-center gap-2">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
+      <!-- Nav Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-center gap-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogListing.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#work">Our Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="src/contact.html">Contact Us</a></li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#services">Services</a>
-        </li>
+          <!-- Login/Profile Section -->
+          <li class="nav-item" id="auth-section">
+            <a class="nav-link" href="src/login.html" id="login-btn">
+              <i class="fas fa-sign-in-alt me-1"></i>Login
+            </a>
+          </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="blogListing.html">Blogs</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#about">About Us</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="index.html#work">Our Work</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" href="src/contact.html">Contact Us</a>
-        </li>
-
-        <!-- Dark mode toggle -->
-        <li class="nav-item ms-3">
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" id="darkModeSwitch">
-            <label class="form-check-label" for="darkModeSwitch"></label>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
-<!-- Navbar ends here -->
-
-    <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-<div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-  <a class="navbar-brand" href="index.html"><img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" /></a>
-
-  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ms-auto align-items-center">
-      <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-      <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
-      <li class="nav-item"><a class="nav-link" href="blogListing.html">Blogs</a></li>
-      <li class="nav-item"><a class="nav-link" href="index.html#about">About Us</a></li>
-      <li class="nav-item"><a class="nav-link" href="index.html#work">Our Work</a></li>
-      <li class="nav-item"><a class="nav-link" href="src/contact.html">Contact Us</a></li>
-
-      <!-- Login/Profile Section -->
-      <li class="nav-item" id="auth-section">
-        <a class="nav-link" href="src/login.html" id="login-btn">
-          <i class="fas fa-sign-in-alt me-1"></i>Login
-        </a>
-      </li>
-      <li class="nav-item" id="profile-section">
-        <div class="dropdown">
-          <a class="nav-link dropdown-toggle profile-user-btn" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="user-display-name me-2" id="navbar-user-name">John Doe</span>
-            <div class="profile-avatar">
-              <i class="fas fa-user-circle" style="font-size: 1.8rem; color: #0078FF;"></i>
-            </div>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li class="dropdown-header">
-              <div class="user-info">
-                <i class="fas fa-user-circle me-2" style="font-size: 1.5rem; color: #0078FF;"></i>
-                <div>
-                  <div class="user-name" id="user-display-name">John Doe</div>
-                  <div class="user-email" id="user-display-email">john@example.com</div>
-                </div>
+          <li class="nav-item dropdown d-none" id="profile-section">
+            <a class="nav-link dropdown-toggle profile-user-btn" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <span class="user-display-name me-2" id="navbar-user-name">John Doe</span>
+              <div class="profile-avatar">
+                <i class="fas fa-user-circle" style="font-size: 1.8rem; color: #0078FF;"></i>
               </div>
-            </li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
-            <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
-          </ul>
-        </div>
-      </li>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li class="dropdown-header">
+                <div class="user-info">
+                  <i class="fas fa-user-circle me-2" style="font-size: 1.5rem; color: #0078FF;"></i>
+                  <div>
+                    <div class="user-name" id="user-display-name">John Doe</div>
+                    <div class="user-email" id="user-display-email">john@example.com</div>
+                  </div>
+                </div>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#"><i class="fas fa-user me-2"></i>My Profile</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fas fa-cog me-2"></i>Settings</a></li>
+              <li><a class="dropdown-item" href="#"><i class="fas fa-bell me-2"></i>Notifications</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item text-danger" href="#" onclick="logout()"><i
+                    class="fas fa-sign-out-alt me-2"></i>Logout</a></li>
+            </ul>
+          </li>
 
-      <!-- Dark Mode Toggle -->
-      <li class="nav-item d-flex align-items-center ms-3">
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" id="darkModeSwitch" onclick="toggleDarkMode()">
-          <label class="form-check-label" for="darkModeSwitch"></label>
-        </div>
-      </li>
-    </ul>
-  </div>
-</div>
-
-        </div>
+          <!-- Dark Mode Toggle -->
+          <li class="nav-item d-flex align-items-center ms-3">
+            <div class="form-check form-switch">
+              <input class="form-check-input" type="checkbox" id="darkModeSwitch" onclick="toggleDarkMode()">
+              <label class="form-check-label" for="darkModeSwitch"></label>
+            </div>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <!-- Navbar ends here -->
+    </div>
+  </nav>
+  <!-- Navbar ends here -->
+
   
 <!-- Training and Internship Program Section Starts -->
 <section class="training-internship bg-light py-3">
@@ -652,97 +597,114 @@ body.dark-mode .about-section .card {
   </main>
   
       <!-- Services section starts here -->
-<section class="d-flex flex-column align-items-center mt-4 section" id="services">
-<h2 class="heading-text">SERVICES</h2>
-<p class="fst-italic text-center">
-  In the realm of software, we excel at transmuting the ordinary into the extraordinary
-</p>
-<div class="container text-center">
-  <div class="row g-4 justify-content-center">
-
-    <!-- Card 1: Website Development -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100 border-0 shadow">
-        <img src="./images/carousel1.jpg" class="card-img-top" alt="Website Development" />
-        <div class="card-body">
-          <h5 class="card-title">Website Development</h5>
-          <p class="card-text">
-            Crafting modern, responsive, and high-performance websites that elevate your online presence.
-          </p>
-          <a href="#" class="btn btn-primary me-2">Learn More</a>
-          <a href="#" class="btn btn-outline-secondary">Portfolio</a>
+      <section class="d-flex flex-column align-items-center mt-4 section" id="services">
+        <h2 class="heading-text mb-2">SERVICES</h2>
+        <p class="fst-italic text-center mb-4">
+          In the realm of software, we excel at transmuting the ordinary into the extraordinary
+        </p>
+      
+        <div class="container">
+          <div class="row g-4 justify-content-center">
+      
+            <!-- Service Card -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="service-card card h-100 border-0 shadow-sm">
+                <div class="card-img-wrapper">
+                  <img src="./images/carousel1.jpg" class="card-img-top" alt="Website Development" />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Website Development</h5>
+                  <p class="card-text">
+                    Crafting modern, responsive, and high-performance websites that elevate your online presence.
+                  </p>
+                  <div class="d-flex gap-2 mt-3">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-outline-secondary">Portfolio</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Service Card -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="service-card card h-100 border-0 shadow-sm">
+                <div class="card-img-wrapper">
+                  <img src="./images/carousel2.jpg" class="card-img-top" alt="Graphic Design" />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Graphic Design</h5>
+                  <p class="card-text">
+                    Visually compelling graphics that breathe life into your brand and message.
+                  </p>
+                  <div class="d-flex gap-2 mt-3">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-outline-secondary">Portfolio</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Service Card -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="service-card card h-100 border-0 shadow-sm">
+                <div class="card-img-wrapper">
+                  <img src="./images/carousel3.jpg" class="card-img-top" alt="Digital Marketing" />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Digital Marketing</h5>
+                  <p class="card-text">
+                    Boosting visibility and engagement through smart SEO, PPC, and content strategies.
+                  </p>
+                  <div class="d-flex gap-2 mt-3">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-outline-secondary">Portfolio</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Service Card -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="service-card card h-100 border-0 shadow-sm">
+                <div class="card-img-wrapper">
+                  <img src="./images/carousel4.jpg" class="card-img-top" alt="Social Media Management" />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Social Media Management</h5>
+                  <p class="card-text">
+                    Building your brand presence across social platforms with consistency and creativity.
+                  </p>
+                  <div class="d-flex gap-2 mt-3">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-outline-secondary">Portfolio</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            <!-- Service Card -->
+            <div class="col-12 col-sm-6 col-lg-4">
+              <div class="service-card card h-100 border-0 shadow-sm">
+                <div class="card-img-wrapper">
+                  <img src="./images/carousel5.jpg" class="card-img-top" alt="Content Writing" />
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">Content Writing</h5>
+                  <p class="card-text">
+                    Engaging and SEO-optimized content tailored to resonate with your target audience.
+                  </p>
+                  <div class="d-flex gap-2 mt-3">
+                    <a href="#" class="btn btn-primary">Learn More</a>
+                    <a href="#" class="btn btn-outline-secondary">Portfolio</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+          </div>
         </div>
-      </div>
-    </div>
-
-    <!-- Card 2: Graphic Design -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100 border-0 shadow">
-        <img src="./images/carousel2.jpg" class="card-img-top" alt="Graphic Design" />
-        <div class="card-body">
-          <h5 class="card-title">Graphic Design</h5>
-          <p class="card-text">
-            Visually compelling graphics that breathe life into your brand and message.
-          </p>
-          <a href="#" class="btn btn-primary me-2">Learn More</a>
-          <a href="#" class="btn btn-outline-secondary">Portfolio</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 3: Digital Marketing -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100 border-0 shadow">
-        <img src="./images/carousel3.jpg" class="card-img-top" alt="Digital Marketing" />
-        <div class="card-body">
-          <h5 class="card-title">Digital Marketing</h5>
-          <p class="card-text">
-            Boosting visibility and engagement through smart SEO, PPC, and content strategies.
-          </p>
-          <a href="#" class="btn btn-primary me-2">Learn More</a>
-          <a href="#" class="btn btn-outline-secondary">Portfolio</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 4: Social Media Management -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100 border-0 shadow">
-        <img src="./images/carousel4.jpg" class="card-img-top" alt="Social Media Management" />
-        <div class="card-body">
-          <h5 class="card-title">Social Media Management</h5>
-          <p class="card-text">
-            Building your brand presence across social platforms with consistency and creativity.
-          </p>
-          <a href="#" class="btn btn-primary me-2">Learn More</a>
-          <a href="#" class="btn btn-outline-secondary">Portfolio</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Card 5: Content Writing -->
-    <div class="col-12 col-sm-6 col-lg-4">
-      <div class="card h-100 border-0 shadow">
-        <img src="./images/carousel5.jpg" class="card-img-top" alt="Content Writing" />
-        <div class="card-body">
-          <h5 class="card-title">Content Writing</h5>
-          <p class="card-text">
-            Engaging and SEO-optimized content tailored to resonate with your target audience.
-          </p>
-          <a href="#" class="btn btn-primary me-2">Learn More</a>
-          <a href="#" class="btn btn-outline-secondary">Portfolio</a>
-        </div>
-      </div>
-    </div>
-
-      </div> <!-- row -->
-    </div> <!-- container -->
-    <br />
-  </div> <!-- text-center wrapper if exists -->
-</section>
-<!-- Services section ends here -->
-<hr />
-<br />
+      </section>
+      
 
 
   
