@@ -286,11 +286,14 @@
             }
 
             .offer-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                /* Converted to flex so the last row (with 1–2 cards) centers nicely */
+                display: flex;
+                flex-wrap: wrap;
                 gap: 30px;
                 max-width: 1200px;
-                margin: auto;
+                margin: 0 auto;
+                justify-content: center; /* center remaining cards on final row */
+                align-items: stretch;
             }
 
             .offer-card {
@@ -298,13 +301,17 @@
                 border-radius: 16px;
                 padding: 25px 20px;
                 text-align: center;
-                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
-                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+                transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s cubic-bezier(.4,2,.3,1);
+                flex: 0 1 clamp(250px, 28%, 300px); /* responsive width while keeping nice spacing */
             }
 
             .offer-card:hover {
-                transform: translateY(-10px);
-                box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+                transform: translateY(-6px);
+                box-shadow: 0 32px 80px 0 rgba(0, 0, 0, 0.32), 0 2px 8px 0 rgba(0,0,0,0.18);
+                background-color: #f1f5f9;
+                border: 2px solid #e0e7ef;
+                cursor: pointer;
             }
 
             .offer-card i {
@@ -325,14 +332,7 @@
                 line-height: 1.5;
             }
 
-            .offer-bottom-row {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                gap: 30px;
-                max-width: 680px;
-                margin: auto;
-                padding-top: 40px;
-            }
+            /* .offer-bottom-row removed: all cards live in a single responsive grid */
 
             .offer-section-glass {
                 padding: 80px 20px;
@@ -393,6 +393,93 @@
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             }
 
+            /* Carousel Enhancements for "What We Made" */
+            .carousel-wrapper {
+                position: relative;
+                max-width: 1300px;
+                margin: 0 auto;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+                padding-inline: 10px;
+            }
+            .glass-scroll-wrapper {
+                display: flex;
+                gap: 24px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                overscroll-behavior-x: contain;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none; /* Firefox */
+                padding: 10px 4px 30px;
+            }
+            .glass-scroll-wrapper::-webkit-scrollbar { display: none; }
+            .glass-item {
+                flex: 0 0 clamp(235px, 29%, 294px); /* ~2% narrower */
+                scroll-snap-align: start;
+                background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+                border: 1px solid rgba(0,0,0,.05);
+                border-radius: 18px;
+                padding: 26px 19px 24px; /* slight reduction */
+                text-align: center;
+                box-shadow: 0 4px 18px -4px rgba(0,0,0,0.08);
+                transition: box-shadow .35s ease, transform .35s ease;
+                min-height: 225px; /* small height reduction */
+            }
+            .glass-item:focus-visible { outline: 3px solid #3b82f6; outline-offset: 3px; }
+            .glass-item:hover {
+                box-shadow: 0 10px 28px -6px rgba(0,0,0,0.15);
+                transform: translateY(-6px);
+            }
+            .carousel-btn {
+                background: #ffffffcc;
+                backdrop-filter: blur(6px);
+                border: 1px solid rgba(0,0,0,0.08);
+                width: 46px;
+                height: 46px;
+                display: grid;
+                place-items: center;
+                border-radius: 50%;
+                cursor: pointer;
+                color: #1e293b;
+                font-size: 1.6rem;
+                line-height: 1;
+                box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+                transition: background .3s, transform .3s;
+            }
+            .carousel-btn:hover:not(:disabled) { background: #fff; transform: scale(1.07); }
+            .carousel-btn:disabled { opacity: .35; cursor: not-allowed; }
+            @media (max-width: 900px) {
+                .carousel-wrapper { gap: 4px; }
+                .glass-item { flex: 0 0 63%; }
+            }
+            @media (max-width: 600px) {
+                .glass-item { flex: 0 0 80%; }
+                .carousel-btn { display: none; }
+            }
+
+            /* Dots (pagination) */
+            .carousel-dots {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                margin: 22px 0 0;
+                padding: 0;
+                list-style: none;
+            }
+            .carousel-dots button {
+                width: 12px;
+                height: 12px;
+                border-radius: 50%;
+                border: none;
+                background: #cbd5e1; /* slate-300 */
+                cursor: pointer;
+                padding: 0;
+                transition: background .3s, transform .3s;
+            }
+            .carousel-dots button.active { background: #1d4ed8; transform: scale(1.28); }
+            .carousel-dots button:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
+
             /*tech stack */
             /* Tech Stack Section */
             .tech-section {
@@ -423,12 +510,16 @@
                 background: #ffffff;
                 padding: 20px;
                 border-radius: 12px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-                transition: transform 0.3s ease;
+                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
+                transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s cubic-bezier(.4,2,.3,1);
             }
 
             .tech-card:hover {
-                transform: translateY(-5px);
+                transform: translateY(-4px);
+                box-shadow: 0 32px 80px 0 rgba(0, 0, 0, 0.32), 0 2px 8px 0 rgba(0,0,0,0.18);
+                background-color: #f1f5f9;
+                border: 2px solid #e0e7ef;
+                cursor: pointer;
             }
 
             .tech-card img {
@@ -576,6 +667,7 @@
                 background: linear-gradient(90deg, #3b82f6, #6366f1);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
+                background-clip: text;
             }
 
             .why-timeline {
@@ -689,6 +781,7 @@
                 background: linear-gradient(90deg, #3b82f6, #6366f1);
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
+                background-clip: text;
             }
 
             .contact-content p {
@@ -757,14 +850,7 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
                     </li>
-                    <li class="nav-item">
-                        <div class="toggle-switch">
-                            <label class="switch-label">
-                                <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                    </li>
+
                 </ul>
             </div>
         </div>
@@ -816,9 +902,6 @@
                     <h3>Clean Code</h3>
                     <p>Well-structured HTML, CSS & JS for maintainable and scalable websites.</p>
                 </div>
-            </div>
-            <div class="offer-bottom-row">
-
                 <div class="offer-card">
                     <i class="fas fa-paint-brush"></i>
                     <h3>Custom UI/UX</h3>
@@ -835,45 +918,45 @@
     </section>
     <section class="offer-section-glass">
         <h2 class="offer-glass-title">What We Made</h2>
-        <div class="glass-scroll-wrapper">
-
-            <div class="glass-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" alt="Static Website Icon">
-                <h3>Static Websites</h3>
-                <p>Simple and lightning-fast pages for personal and business needs.</p>
+        <!-- Carousel Wrapper -->
+        <div class="carousel-wrapper">
+            <button class="carousel-btn prev" aria-label="Scroll previous" disabled><span aria-hidden="true">&#8249;</span></button>
+            <div class="glass-scroll-wrapper" tabindex="0" role="listbox" aria-label="Project types">
+                <div class="glass-item" role="option" aria-label="Static Websites">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" alt="Static Website Icon">
+                    <h3>Static Websites</h3>
+                    <p>Simple and lightning-fast pages for personal and business needs.</p>
+                </div>
+                <div class="glass-item" role="option" aria-label="Dynamic Websites">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Dynamic Website Icon">
+                    <h3>Dynamic Websites</h3>
+                    <p>Interactive and data-driven websites with user functionality.</p>
+                </div>
+                <div class="glass-item" role="option" aria-label="E-commerce Solutions">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="E-Commerce Icon">
+                    <h3>E-commerce Solutions</h3>
+                    <p>Beautiful online stores with secure checkout and product management.</p>
+                </div>
+                <div class="glass-item" role="option" aria-label="Landing Pages">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2166/2166821.png" alt="Landing Page Icon">
+                    <h3>Landing Pages</h3>
+                    <p>Designed to convert leads and boost your product visibility.</p>
+                </div>
+                <div class="glass-item" role="option" aria-label="Portfolio Sites">
+                    <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Portfolio Icon">
+                    <h3>Portfolio Sites</h3>
+                    <p>Personalized spaces to showcase your skills and work.</p>
+                </div>
+                <div class="glass-item" role="option" aria-label="Custom Web Apps">
+                    <img src="https://cdn-icons-png.flaticon.com/512/108/10838348.png" alt="Web App Icon">
+                    <h3>Custom Web Apps</h3>
+                    <p>Tailor-made applications for startups, businesses, and teams.</p>
+                </div>
             </div>
-
-            <div class="glass-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Dynamic Website Icon">
-                <h3>Dynamic Websites</h3>
-                <p>Interactive and data-driven websites with user functionality.</p>
-            </div>
-
-            <div class="glass-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="E-Commerce Icon">
-                <h3>E-commerce Solutions</h3>
-                <p>Beautiful online stores with secure checkout and product management.</p>
-            </div>
-
-            <div class="glass-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/2166/2166821.png" alt="Landing Page Icon">
-                <h3>Landing Pages</h3>
-                <p>Designed to convert leads and boost your product visibility.</p>
-            </div>
-
-            <div class="glass-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Portfolio Icon">
-                <h3>Portfolio Sites</h3>
-                <p>Personalized spaces to showcase your skills and work.</p>
-            </div>
-
-            <div class="glass-item">
-                <img src="https://cdn-icons-png.flaticon.com/512/108/10838348.png" alt="Web App Icon">
-                <h3>Custom Web Apps</h3>
-                <p>Tailor-made applications for startups, businesses, and teams.</p>
-            </div>
-
+            <button class="carousel-btn next" aria-label="Scroll next"><span aria-hidden="true">&#8250;</span></button>
         </div>
+    <!-- Dots navigation -->
+    <ul class="carousel-dots" aria-label="Carousel pagination" role="tablist"></ul>
     </section>
     <section class="tech-section">
         <h2 class="tech-title">Technologies We Use</h2>
@@ -1078,20 +1161,103 @@
             }
         });
 
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-theme");
-            const modeIcon = document.getElementById("mode-icon");
-            if (document.body.classList.contains("dark-theme")) {
-                modeIcon.textContent = "🌞";  // Switch to sun icon
-            } else {
-                modeIcon.textContent = "🌙";  // Switch to moon icon
-            }
-        }
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
-        }
+        // Carousel logic for "What We Made" section
+        (function initCarousel() {
+            const wrapper = document.querySelector('.carousel-wrapper');
+            if (!wrapper) return; // safety
+            const scroller = wrapper.querySelector('.glass-scroll-wrapper');
+            const prevBtn = wrapper.querySelector('.carousel-btn.prev');
+            const nextBtn = wrapper.querySelector('.carousel-btn.next');
+            const dotsContainer = document.querySelector('.carousel-dots');
+            if (!scroller || !prevBtn || !nextBtn) return;
+
+            const getCardWidth = () => {
+                const first = scroller.querySelector('.glass-item');
+                if (!first) return 300;
+                const style = window.getComputedStyle(first);
+                return first.getBoundingClientRect().width + parseFloat(style.marginRight || 24);
+            };
+
+            const updateButtons = () => {
+                const maxScroll = scroller.scrollWidth - scroller.clientWidth - 2; // allow small epsilon
+                prevBtn.disabled = scroller.scrollLeft <= 0;
+                nextBtn.disabled = scroller.scrollLeft >= maxScroll;
+                updateActiveDot();
+            };
+
+            const scrollByAmount = (dir) => {
+                // If using fixed 4-dot model we'll override below after anchors built
+                scroller.scrollBy({ left: dir * getCardWidth(), behavior: 'smooth' });
+            };
+
+            prevBtn.addEventListener('click', () => scrollByAmount(-1));
+            nextBtn.addEventListener('click', () => scrollByAmount(1));
+            scroller.addEventListener('scroll', updateButtons, { passive: true });
+            window.addEventListener('resize', updateButtons);
+            // keyboard support
+            scroller.addEventListener('keydown', (e) => {
+                if (e.key === 'ArrowRight') { e.preventDefault(); scrollByAmount(1); }
+                if (e.key === 'ArrowLeft') { e.preventDefault(); scrollByAmount(-1); }
+            });
+            // Fixed 4-dot pagination with discrete anchor positions
+            const DOT_COUNT = 4;
+            let dots = [];
+            let anchors = [0,0,0,0];
+            const computeAnchors = () => {
+                const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+                anchors = [0, maxScroll/3, (2*maxScroll)/3, maxScroll];
+            };
+            const buildDots = () => {
+                if (!dotsContainer) return;
+                computeAnchors();
+                dotsContainer.innerHTML = '';
+                dots = Array.from({ length: DOT_COUNT }, (_, idx) => {
+                    const btn = document.createElement('button');
+                    btn.type = 'button';
+                    btn.setAttribute('role', 'tab');
+                    btn.setAttribute('aria-label', `Go to section ${idx + 1}`);
+                    btn.addEventListener('click', () => {
+                        scroller.scrollTo({ left: anchors[idx], behavior: 'smooth' });
+                    });
+                    dotsContainer.appendChild(btn);
+                    return btn;
+                });
+            };
+            const getActiveIndex = () => {
+                const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+                if (maxScroll <= 0) return 0;
+                const sl = scroller.scrollLeft;
+                const ratio = sl / maxScroll;
+                // Use floor so it doesn't jump early; last anchor when near end
+                let idx = Math.floor(ratio * (DOT_COUNT - 1) + 0.0001);
+                if (sl >= maxScroll - 2) idx = DOT_COUNT - 1; // ensure end
+                return Math.min(DOT_COUNT - 1, Math.max(0, idx));
+            };
+            const updateActiveDot = () => {
+                if (!dots.length) return;
+                const idx = getActiveIndex();
+                dots.forEach((d,i)=> d.classList.toggle('active', i === idx));
+            };
+            // Override arrow buttons to move between anchors for stability
+            const gotoAnchorDelta = (delta) => {
+                const current = getActiveIndex();
+                const next = Math.min(DOT_COUNT - 1, Math.max(0, current + delta));
+                scroller.scrollTo({ left: anchors[next], behavior: 'smooth' });
+            };
+            prevBtn.addEventListener('click', () => gotoAnchorDelta(-1));
+            nextBtn.addEventListener('click', () => gotoAnchorDelta(1));
+            buildDots();
+            window.addEventListener('resize', () => { buildDots(); updateButtons(); updateActiveDot(); });
+            // Ensure we start at the very first card (left=0) and active dot is first
+            scroller.scrollTo({ left: 0, behavior: 'auto' });
+            updateButtons();
+            updateActiveDot();
+        })();
+
+
 
     </script>
+    <script src="darkMode.js"></script>
 </body>
 
 </html>

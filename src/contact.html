@@ -1,930 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - GrowCraft</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 
-<head>
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Contact Us - GrowCraft</title>
-      
-        <!-- Bootstrap CSS -->
-        <link
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
-          rel="stylesheet"
-          integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
-          crossorigin="anonymous"
-        />
-      
-        <!-- Custom CSS -->
-        <link rel="stylesheet" href="src/style.css" />
-        <link rel="stylesheet" href="src/contact.css" />
-      
-        <!-- Favicon -->
-        <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
-      
-        <!-- Bootstrap Bundle with Popper -->
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-          crossorigin="anonymous"
-        ></script>
-      </head>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="stylesheet" href="src/contact.css" />
+    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
     <style>
-        /* Navbar Gradient Background */
-.navbar {
-  background: linear-gradient(to right, #2c3e50, #4ca1af);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-}
+      :root {
+        --light_green: rgba(5, 173, 44, 0.7);
+      }
+      body {
+        transition: background 0.3s, color 0.3s;
+      }
+      .card {
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+      }
+      .form-label {
+        color: #fff;
+        font-size: 1.2rem;
+      }
+      .form-section {
+        background-color: var(--light_green);
+        padding: 2rem;
+        border-radius: 10px;
+      }
+      .info-box {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+      }
 
-/* Logo Hover Effect */
-#logo {
-  max-height: 60px;
-  transition: transform 0.3s ease;
-}
-#logo:hover {
-  transform: scale(1.05);
-}
-
-/* Nav Link Styling */
-.navbar-nav .nav-link {
-  color: #ffffff;
-  margin-left: 15px;
-  transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-  color: #1abc9c;
-}
-
-.navbar-nav .nav-link.active {
-  font-weight: 600;
-  color: #f1c40f;
-}
-
-/* Optional: Dark Mode Styles */
-body.dark-mode {
-  background-color: #121212;
-  color: #f0f0f0;
-}
-body.dark-mode .navbar {
-  background: #1a1a1a;
-}
-body.dark-mode .nav-link {
-  color: #ccc;
-}
-body.dark-mode .nav-link.active {
-  color: #f1c40f;
-}
-
-/* Toggle Switch (Optional Styling) */
-.toggle-switch {
-  display: flex;
-  align-items: center;
-}
-
-.switch-label {
-  position: relative;
-  display: inline-block;
-  width: 44px;
-  height: 24px;
-}
-
-.switch-label input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: 0.4s;
-  border-radius: 24px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 18px;
-  width: 18px;
-  left: 3px;
-  bottom: 3px;
-  background-color: white;
-  transition: 0.4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #1abc9c;
-}
-
-input:checked + .slider:before {
-  transform: translateX(20px);
-}
-
-/*CONTACT HERO SECTION*/
-
-.contact-hero {
-  background: linear-gradient(to right, #2c3e50, #4ca1af);
-  color: #fff;
-  padding: 80px 20px;
-  text-align: center;
-  border-bottom: 5px solid #1abc9c;
-}
-
-.hero-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 20px;
-  letter-spacing: 1px;
-}
-
-.hero-subtitle {
-  font-size: 1.2rem;
-  font-weight: 400;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
-  color: #f1f1f1;
-}
-
-/* Responsive Tweaks */
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.4rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-    padding: 0 10px;
-  }
-}
-.contact-hero {
-  animation: fadeIn 1.5s ease-in-out;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(-20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-/* Contact Info Section */
-.contact-info {
-  background-color: #f9f9f9;
-}
-
-.contact-info-card {
-  background: #ffffff;
-  border-radius: 10px;
-  padding: 30px 25px;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.contact-info-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.contact-info-card .info-icon {
-  background: linear-gradient(to right, #3498db, #2ecc71);
-  width: 64px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 20px auto;
-  border-radius: 50%;
-  color: white;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-}
-
-.contact-info-card h4 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  font-weight: 600;
-  color: #2c3e50;
-}
-
-.contact-info-card p {
-  color: #555;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  margin: 0;
-}
-
-/*ENHANCED CONTACT FORM */
-
-.contact-form-section {
-  background-color: #fdfdfd;
-  padding: 60px 20px;
-}
-
-.form-container {
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-  overflow: hidden;
-  padding: 30px;
-}
-
-.form-title {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #2c3e50;
-}
-
-.form-subtitle {
-  font-size: 1rem;
-  color: #555;
-  margin-bottom: 30px;
-}
-
-/* Form Fields */
-.contact-form .form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-form input,
-.contact-form select,
-.contact-form textarea {
-  padding: 10px 15px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
-  transition: border-color 0.3s ease;
-  font-size: 0.95rem;
-}
-
-.contact-form input:focus,
-.contact-form select:focus,
-.contact-form textarea:focus {
-  border-color: #1abc9c;
-  outline: none;
-}
-
-/* Upload Area */
-.file-upload-area {
-  border: 2px dashed #ccc;
-  padding: 20px;
-  text-align: center;
-  border-radius: 8px;
-  cursor: pointer;
-  background-color: #f8f8f8;
-  transition: background 0.3s;
-}
-.file-upload-area:hover {
-  background-color: #eefdfc;
-}
-
-/* Contact Preferences */
-.contact-methods {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
-}
-
-.contact-method {
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  font-weight: 500;
-}
-
-/* Form Buttons */
-.form-buttons {
-  text-align: right;
-  margin-top: 20px;
-}
-.form-buttons button {
-  background: linear-gradient(to right, #3498db, #1abc9c);
-  border: none;
-  color: white;
-  padding: 10px 20px;
-  font-weight: bold;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-.form-buttons button:hover {
-  background: linear-gradient(to right, #2980b9, #16a085);
-}
-
-/* Quick Contact Section */
-.quick-contact {
-  background: #f7f9fa;
-  padding: 20px;
-  border-left: 2px solid #1abc9c;
-  height: 100%;
-}
-
-.quick-contact-buttons .quick-btn {
-  width: 100%;
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 10px;
-  border: none;
-  background: #e9f8f4;
-  color: #2c3e50;
-  font-weight: 500;
-  border-radius: 5px;
-  transition: background 0.3s;
-}
-.quick-contact-buttons .quick-btn:hover {
-  background: #d3f1e8;
-}
-
-.office-hours h4 {
-  margin-top: 20px;
-  font-weight: bold;
-}
-
-.hours-list {
-  margin-top: 10px;
-}
-.hour-item {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.9rem;
-  padding: 5px 0;
-}
-
-/* Response Time */
-.response-card {
-  background: #ffffff;
-  border-left: 4px solid #1abc9c;
-  padding: 15px;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  margin-top: 20px;
-  border-radius: 6px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
-}
-.response-icon {
-  color: #1abc9c;
-}
-.response-text h5 {
-  margin: 0;
-  font-size: 1rem;
-  font-weight: 600;
-}
-.response-text p {
-  margin: 0;
-  font-size: 0.85rem;
-  color: #666;
-}
-
-/* Responsive */
-@media (max-width: 991px) {
-  .form-buttons {
-    text-align: center;
-  }
-  .form-buttons button {
-    width: 100%;
-  }
-}
-/* Footer Styling */
-.contact-footer {
-  background-color: #2c3e50;
-  color: #ecf0f1;
-  padding: 40px 0 20px 0;
-  font-size: 0.95rem;
-}
-
-.contact-footer h4 {
-  font-weight: 600;
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.contact-footer p {
-  margin-bottom: 0;
-  color: #bdc3c7;
-}
-
-.footer-links {
-  text-align: right;
-}
-
-.footer-links a {
-  display: inline-block;
-  margin-left: 15px;
-  color: #ecf0f1;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.footer-links a:hover {
-  color: #1abc9c;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 20px;
-  border-top: 1px solid #34495e;
-  padding-top: 15px;
-  font-size: 0.85rem;
-  color: #bdc3c7;
-}
-
-/* Responsive Footer */
-@media (max-width: 767px) {
-  .footer-links {
-    text-align: left;
-    margin-top: 15px;
-  }
-  .footer-links a {
-    display: block;
-    margin-left: 0;
-    margin-bottom: 10px;
-  }
-}
-/* Back to Top Button */
-#backToTop {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  background: linear-gradient(to right, #3498db, #1abc9c);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  padding: 12px 16px;
-  font-size: 18px;
-  cursor: pointer;
-  z-index: 999;
-  transition: background 0.3s ease, transform 0.3s ease;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-#backToTop:hover {
-  background: linear-gradient(to right, #2980b9, #16a085);
-  transform: translateY(-2px);
-}
-
-
-    </style>
-<!-- Navbar starts here -->
-<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      .info-box i {
+        font-size: 20px;
+        color: #00b894;
+        margin-right: 10px;
+      } 
+      #myBtn{
+        font-size: 1.2rem;
+        box-shadow: 0 2px 12px #fff;
+        transition: transform 0.3s ease;
+      }
+      #myBtn:hover{
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px #fff;
+      }
+      .get-touch{
+        border-radius: 12px;
+        background-color: var(--light_green);
+      }
+      .footer-links{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .footer-links a{
+        text-decoration: none;
+        color: white;
+      }
+    </style> 
+  </head> 
   
-      <!-- Brand Logo -->
-      <a class="navbar-brand" href="index.html">
-        <div class="logo-wrapper">
-          <img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo">
-        </div>
-      </a>
   
-      <!-- Toggler for mobile -->
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-  
-      <!-- Nav Links -->
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto align-items-center">
-  
-            <ul class="navbar-nav ms-auto align-items-center">
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html">Home</a>
-                </li>
-              
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html#services">Services</a>
-                </li>
-              
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html#about">About Us</a>
-                </li>
-              
-                <li class="nav-item">
-                  <a class="nav-link" href="../index.html#workList">Our Works</a>
-                </li>
-              
-                <li class="nav-item">
-                  <a class="nav-link active visited" aria-current="page" href="contact.html">Contact Us</a>
-                </li>
-              </ul>
-              
-          <!-- Dark Mode Toggle -->
-          <li class="nav-item">
-            <div class="toggle-switch ms-3">
-              <label class="switch-label">
-                <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
-                <span class="slider"></span>
-              </label>
+  <body id="main-body">
+    <!-- Navbar starts here -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      
+          <!-- Brand Logo -->
+          <a class="navbar-brand" href="index.html">
+            <div class="logo-wrapper">
+              <img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo">
             </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar ends here -->
-  
-
-    <!-- Contact Hero Section -->
-<section class="contact-hero">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-8">
-          <h1 class="hero-title">Get In Touch</h1>
-          <p class="hero-subtitle">
-            Ready to start your digital journey? Let's discuss how we can help grow your business.
-          </p>
+          </a>
+      
+          <!-- Toggler for mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- Nav Links -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto align-items-center">
+      
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                      <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                  
+                    <li class="nav-item">
+                      <a class="nav-link" href="../index.html#services">Services</a>
+                    </li>
+                  
+                    <li class="nav-item">
+                      <a class="nav-link" href="../index.html#about">About Us</a>
+                    </li>
+                  
+                    <li class="nav-item">
+                      <a class="nav-link" href="../index.html#workList">Our Works</a>
+                    </li>
+                  
+                    <li class="nav-item">
+                      <a class="nav-link active visited" aria-current="page" href="contact.html">Contact Us</a>
+                    </li>
+                  </ul>
+                  
+    
+            </ul>
+          </div>
         </div>
-      </div>
-    </div>
-  </section>
-  
+      </nav>
+      <!-- Navbar ends here --> 
 
     <!-- Contact Information Section -->
-    <section class="contact-info py-5">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="contact-info-card">
-                        <div class="info-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
-                        </div>
-                        <h4>Visit Our Office</h4>
-                        <p>235, PQR, GHI<br>ABC Street, XYZ<br>ABC - 10000, India</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contact-info-card">
-                        <div class="info-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
-                        </div>
-                        <h4>Call Us</h4>
-                        <p>Phone: +91 999 999 999<br>Available: Mon - Fri<br>9:00 AM - 6:00 PM</p>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="contact-info-card">
-                        <div class="info-icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                        </div>
-                        <h4>Email Us</h4>
-                        <p>info@growcraft.com<br>support@growcraft.com<br>Quick response guaranteed</p>
-                    </div>
-                </div>
-            </div>
+    <div class="container mt-5">
+      <h2 class="text-center mb-4">Send Us a Message</h2>
+
+      <form id="contactForm" class="form-section">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone Number</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Company/Organization</label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Service Interest *</label>
+            <select class="form-select" required>
+              <option selected disabled>Select a service</option>
+              <option>Web Development</option>
+              <option>App Development</option>
+              <option>SEO</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Project Budget</label>
+            <select class="form-select">
+              <option selected disabled>Select budget range</option>
+              <option>&lt; $1,000</option>
+              <option>$1,000 - $5,000</option>
+              <option>&gt; $5,000</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Project Timeline</label>
+            <select class="form-select">
+              <option selected disabled>When do you need this?</option>
+              <option>ASAP</option>
+              <option>1-3 months</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Preferred Date</label>
+            <input type="date" class="form-control" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Preferred Time</label>
+            <select class="form-select">
+              <option selected disabled>Select time slot</option>
+              <option>Morning</option>
+              <option>Afternoon</option>
+              <option>Evening</option>
+            </select>
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">Attach Files (Optional)</label>
+            <input type="file" id="fileUpload" class="form-control" />
+            <div id="filePreview" class="mt-2"></div>
+            <small
+              >Supported: PDF, DOC, DOCX, JPG, PNG, GIF (Max 10MB each)</small
+            >
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="4"></textarea>
+          </div>
+          <div class="col-md-12 text-center">
+            <button id="myBtn" type="submit" class="btn btn-success">Submit</button>
+          </div>
         </div>
-    </section>
+      </form>
 
-    <!-- Enhanced Contact Form Section -->
-    <section class="contact-form-section py-5">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <div class="form-container">
-                        <div class="row g-0">
-                            <!-- Form Column -->
-                            <div class="col-lg-8">
-                                <div class="form-content">
-                                    <h2 class="form-title">Send Us a Message</h2>
-                                    <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
-                                    
-                                    <form id="enhanced-contact-form" class="contact-form">
-                                        <div class="row g-3">
-                                            <!-- Basic Information -->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="name">Full Name *</label>
-                                                    <input type="text" id="name" name="name" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="email">Email Address *</label>
-                                                    <input type="email" id="email" name="email" required>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="phone">Phone Number</label>
-                                                    <input type="tel" id="phone" name="phone">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="company">Company/Organization</label>
-                                                    <input type="text" id="company" name="company">
-                                                </div>
-                                            </div>
-
-                                            <!-- Service Selection -->
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="service-type">Service Interest *</label>
-                                                    <select id="service-type" name="service-type" required>
-                                                        <option value="">Select a service</option>
-                                                        <option value="web-development">Web Development</option>
-                                                        <option value="digital-marketing">Digital Marketing</option>
-                                                        <option value="graphic-design">Graphic Design</option>
-                                                        <option value="social-media">Social Media Management</option>
-                                                        <option value="content-writing">Content Writing</option>
-                                                        <option value="consultation">Free Consultation</option>
-                                                        <option value="training">Training Program</option>
-                                                        <option value="other">Other</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <!-- Budget Range -->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="budget">Project Budget</label>
-                                                    <select id="budget" name="budget">
-                                                        <option value="">Select budget range</option>
-                                                        <option value="under-10k">Under ₹10,000</option>
-                                                        <option value="10k-50k">₹10,000 - ₹50,000</option>
-                                                        <option value="50k-100k">₹50,000 - ₹1,00,000</option>
-                                                        <option value="100k-500k">₹1,00,000 - ₹5,00,000</option>
-                                                        <option value="above-500k">Above ₹5,00,000</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <!-- Timeline -->
-                                            <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="timeline">Project Timeline</label>
-                                                    <select id="timeline" name="timeline">
-                                                        <option value="">When do you need this?</option>
-                                                        <option value="asap">ASAP</option>
-                                                        <option value="1-month">Within 1 month</option>
-                                                        <option value="2-3-months">2-3 months</option>
-                                                        <option value="3-6-months">3-6 months</option>
-                                                        <option value="flexible">Flexible timeline</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <!-- Calendar Booking -->
-                                            <div class="col-12">
-                                                <div class="booking-section">
-                                                    <h4>Schedule a Consultation</h4>
-                                                    <div class="row g-3">
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="preferred-date">Preferred Date</label>
-                                                                <input type="date" id="preferred-date" name="preferred-date">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="form-group">
-                                                                <label for="preferred-time">Preferred Time</label>
-                                                                <select id="preferred-time" name="preferred-time">
-                                                                    <option value="">Select time slot</option>
-                                                                    <option value="09:00">9:00 AM</option>
-                                                                    <option value="09:30">9:30 AM</option>
-                                                                    <option value="10:00">10:00 AM</option>
-                                                                    <option value="10:30">10:30 AM</option>
-                                                                    <option value="11:00">11:00 AM</option>
-                                                                    <option value="11:30">11:30 AM</option>
-                                                                    <option value="12:00">12:00 PM</option>
-                                                                    <option value="12:30">12:30 PM</option>
-                                                                    <option value="14:00">2:00 PM</option>
-                                                                    <option value="14:30">2:30 PM</option>
-                                                                    <option value="15:00">3:00 PM</option>
-                                                                    <option value="15:30">3:30 PM</option>
-                                                                    <option value="16:00">4:00 PM</option>
-                                                                    <option value="16:30">4:30 PM</option>
-                                                                    <option value="17:00">5:00 PM</option>
-                                                                    <option value="17:30">5:30 PM</option>
-                                                                </select>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- File Upload -->
-                                            <div class="col-12">
-                                                <div class="file-upload-section">
-                                                    <h4>Attach Files (Optional)</h4>
-                                                    <div class="file-upload-area" onclick="document.getElementById('file-upload').click()">
-                                                        <div class="upload-icon">
-                                                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                                                                <polyline points="14,2 14,8 20,8"></polyline>
-                                                                <line x1="16" y1="13" x2="8" y2="13"></line>
-                                                                <line x1="16" y1="17" x2="8" y2="17"></line>
-                                                                <polyline points="10,9 9,9 8,9"></polyline>
-                                                            </svg>
-                                                        </div>
-                                                        <p>Click to upload files or drag and drop</p>
-                                                        <small>Supported: PDF, DOC, DOCX, JPG, PNG, GIF (Max 10MB each)</small>
-                                                    </div>
-                                                    <input type="file" id="file-upload" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png,.gif" style="display: none;">
-                                                    <div id="file-list" class="file-list"></div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Message -->
-                                            <div class="col-12">
-                                                <div class="form-group">
-                                                    <label for="message">Project Details *</label>
-                                                    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project, requirements, goals, or any specific questions you have..." required></textarea>
-                                                </div>
-                                            </div>
-
-                                            <!-- Contact Preferences -->
-                                            <div class="col-12">
-                                                <div class="contact-preferences">
-                                                    <label>How would you prefer to be contacted?</label>
-                                                    <div class="contact-methods">
-                                                        <label class="contact-method">
-                                                            <input type="radio" name="contact-method" value="email" checked>
-                                                            <span>Email</span>
-                                                        </label>
-                                                        <label class="contact-method">
-                                                            <input type="radio" name="contact-method" value="phone">
-                                                            <span>Phone Call</span>
-                                                        </label>
-                                                        <label class="contact-method">
-                                                            <input type="radio" name="contact-method" value="whatsapp">
-                                                            <span>WhatsApp</span>
-                                                        </label>
-                                                        <label class="contact-method">
-                                                            <input type="radio" name="contact-method" value="telegram">
-                                                            <span>Telegram</span>
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <!-- Messages -->
-                                            <div class="col-12">
-                                                <div id="form-messages">
-                                                    <p id="error-message" class="error-message"></p>
-                                                    <p id="success-message" class="success-message"></p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Form Buttons -->
-                                            <div class="col-12">
-                                                <div class="form-buttons">
-                                                    <button type="submit" class="btn-primary">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                            <line x1="22" y1="2" x2="11" y2="13"></line>
-                                                            <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
-                                                        </svg>
-                                                        Send Message
-                                                    </button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-
-                            <!-- Quick Contact Column -->
-                            <div class="col-lg-4">
-                                <div class="quick-contact">
-                                    <h3>Quick Contact</h3>
-                                    <p>Need immediate assistance? Reach out to us instantly!</p>
-                                    
-                                    <div class="quick-contact-buttons">
-                                        <button type="button" class="quick-btn whatsapp-btn" id="whatsapp-quick">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                                            </svg>
-                                            WhatsApp Chat
-                                        </button>
-                                        
-                                        <button type="button" class="quick-btn telegram-btn" id="telegram-quick">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <line x1="22" y1="2" x2="11" y2="13"></line>
-                                                <polygon points="22,2 15,22 11,13 2,9 22,2"></polygon>
-                                            </svg>
-                                            Telegram Chat
-                                        </button>
-                                        
-                                        <button type="button" class="quick-btn call-btn" id="call-quick">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                                            </svg>
-                                            Call Now
-                                        </button>
-                                    </div>
-
-                                    <div class="office-hours">
-                                        <h4>Office Hours</h4>
-                                        <div class="hours-list">
-                                            <div class="hour-item">
-                                                <span>Monday - Friday</span>
-                                                <span>9:00 AM - 6:00 PM</span>
-                                            </div>
-                                            <div class="hour-item">
-                                                <span>Saturday</span>
-                                                <span>10:00 AM - 4:00 PM</span>
-                                            </div>
-                                            <div class="hour-item">
-                                                <span>Sunday</span>
-                                                <span>Closed</span>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="response-time">
-                                        <div class="response-card">
-                                            <div class="response-icon">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                                    <circle cx="12" cy="12" r="10"></circle>
-                                                    <polyline points="12,6 12,12 16,14"></polyline>
-                                                </svg>
-                                            </div>
-                                            <div class="response-text">
-                                                <h5>Quick Response</h5>
-                                                <p>We typically respond within 2-4 hours during business hours</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <!-- get in touch section -->
+      <div class="get-touch mt-5 text-center">
+        <h3>Get In Touch</h3>
+        <p class="mb-4">
+          Ready to start your digital journey? Let's discuss how we can help
+          grow your business.
+        </p>
+        <div class="row g-6 justify-content-center"> 
+          <div class="col-md-3 me-3 info-box ">
+            <i class="fas fa-map-marker-alt"></i> 123 Grow Street, Innovation
+            City, IN
+          </div>
+          <div class="col-md-3 me-3 info-box">
+            <i class="fas fa-envelope"></i> support@growcraft.com
+          </div>
+          <div class="col-md-3 info-box">
+            <i class="fas fa-phone-alt"></i> +91 98765 43210
+          </div> 
         </div>
-    </section>
-
-    <!-- Map Section (Optional - can be uncommented when API key is available) -->
-    <!--
-    <section class="map-section">
-        <div class="container-fluid p-0">
-            <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=..." width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
-    -->
+      </div>
+    </div>
 
     <!-- Footer -->
-    <footer class="contact-footer">
-        <div class="container">
-          <div class="row">
-            <!-- Left Content -->
-            <div class="col-md-6">
-              <div class="footer-content">
-                <h4>GrowCraft</h4>
-                <p>Your trusted partner for digital growth and innovation.</p>
-              </div>
-            </div>
-      
-            <!-- Right Links -->
-            <div class="col-md-6">
-              <div class="footer-links">
-                <a href="../index.html">Back to Home</a>
-                <a href="../index.html#services">Services</a>
-                <a href="../index.html#about">About Us</a>
-                <a href="../index.html#workList">Our Works</a>
-                <a href="contact.html">Contact Us</a> <!-- Same page -->
-                
-              </div>
+    <footer class="contact-footer mt-3 text-bg-success">
+      <div class="container">
+        <div class="row justify-content-md-center py-3">
+          <div class="col-md-6">
+            <div class="footer-content d-flex flex-column justify-content-center align-items-center">
+              <h4>GrowCraft</h4>
+              <p class="px-2 w-50 text-center ">Your trusted partner for digital growth and innovation.</p>
             </div>
           </div>
-      
-          <div class="footer-bottom text-center mt-4">
-            <p>&copy; 2025 <strong>GrowCraft</strong>. All rights reserved.</p>
+          <div class="col-md-6 ">
+            <div class="footer-left d-flex justify-content-center align-items-center">
+                <div class="footer-links">
+                  <a href="index.html"><i class="fa-solid fa-house-crack"></i> Back to Home</a>
+                  <a href="index.html#services"><i class="fa-solid fa-hand-holding-heart"></i> Services</a>
+                  <a href="index.html#about"><i class="fa-solid fa-people-roof"></i> About Us</a>
+                </div>
+            </div>
           </div>
         </div>
-      </footer>
-      
-    <!-- Back to Top Button -->
-    <button id="backToTop" title="Go to top">↑</button>
-
-    <!--DARK TOGGLE MODE BUTTON-->
-    <script>
-        function toggleDarkMode() {
-          document.body.classList.toggle('dark-mode');
-        }
-    </script>
+        <div class="footer-bottom text-center mt-2">
+          <p class="mb-0 py-2">&copy; 2025 GrowCraft. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+ 
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     
+    <!-- Scripts -->
+    <script src="src/contact.js"></script>
+    <script src="src/utils.js"></script>
+    <script src="darkMode.js"></script> 
     <script>
+      document.querySelector(".theme-toggle").addEventListener("click", () => {
+        const html = document.documentElement;
+        const isDark = html.getAttribute("data-bs-theme") === "dark";
+        html.setAttribute("data-bs-theme", isDark ? "light" : "dark");
+        document.querySelector(".footer").classList.toggle("dark");
+      }); 
+
+     
         const backToTopBtn = document.getElementById("backToTop");
         window.onscroll = () => {
           backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
@@ -932,12 +292,30 @@ input:checked + .slider:before {
       
         backToTopBtn.onclick = () => {
           window.scrollTo({ top: 0, behavior: "smooth" });
-        };
-      </script>
-      
-    <!-- Scripts -->
-    <script src="src/contact.js"></script>
-    <script src="src/utils.js"></script>
-</body>
+        }; 
+       
 
+      document
+        .getElementById("fileUpload")
+        .addEventListener("change", function (e) {
+          const preview = document.getElementById("filePreview");
+          preview.innerHTML = "";
+          for (let file of e.target.files) {
+            const div = document.createElement("div");
+            div.textContent = `📄 ${file.name}`;
+            preview.appendChild(div);
+          }
+        });
+
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (e) {
+          if (!this.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+            alert("Please fill all required fields.");
+          }
+        });
+    </script>
+  </body>
 </html>
