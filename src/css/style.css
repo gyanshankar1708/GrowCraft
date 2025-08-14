@@ -65,10 +65,7 @@ section {
   transform: translateY(-5px);
   background-color: var(--green);
   box-shadow: 0 4px 20px rgba(17, 199, 32, 0.5);
-  /* on hover top margin 2rem for tooltip  */
-  margin-top: 2.4rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
+
 }
 .program-card:hover h6 {
   color: #fff;
