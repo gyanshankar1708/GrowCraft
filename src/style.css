@@ -789,8 +789,11 @@ textarea {
 .gallery-card .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   min-height: 170px;
+  align-items: center;
+  gap:.5rem;
+  
 }
 
 .gallery-card img {
@@ -808,11 +811,14 @@ textarea {
   /* color: #fff; */
   font-weight: 600;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .gallery-card .card-text {
   /* color: #e0e0e0; */
-  font-size: 15px;
+  font-size: 17px;
+  cursor: text;
+  
 }
 .work-card {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
