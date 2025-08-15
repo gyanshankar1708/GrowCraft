@@ -1,0 +1,47 @@
+#phone.is-invalid {
+  border-color: red;
+}
+
+.iti {
+  width: 100%;
+}
+
+
+#phone {
+  border: 1px solid #ccc;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#phone:focus {
+  border-color: #007BFF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+.is-invalid {
+  border-color: #dc3545 !important;
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+
+body.dark-mode .form-label,
+body.dark-mode .form-control,
+body.dark-mode .form-select {
+  color: #fff !important;
+}
+
+body.dark-mode .form-control {
+  background-color: #222 !important;
+  border-color: #444;
+}
+
+body.dark-mode .form-select {
+  background-color: #222 !important;
+  border-color: #444;
+}
