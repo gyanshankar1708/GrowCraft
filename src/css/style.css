@@ -1237,3 +1237,67 @@ body.dark-mode .contact-btn:hover {
   background: linear-gradient(135deg, #2563eb, #4f46e5);
   transform: translateY(-2px);
 }
+
+
+
+.navbar.bg-body-tertiary .navbar-nav .nav-link {
+  color: #000;
+}
+
+/* Dark mode text color */
+[data-bs-theme="dark"] .navbar .nav-link {
+  color: #fff;
+}
+
+/* Hover color in both modes */
+.navbar .nav-link:hover {
+  color: #28a745;
+}
+
+
+.form-section .iti__country-list {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+.form-section .iti__country-list .iti__country {
+  color: #fff !important;
+}
+
+.form-section .iti__country-list .iti__dial-code {
+  color: #ccc !important;
+}
+
+.form-section .iti__country-list .iti__highlight {
+  background-color: #444 !important;
+}
+
+
+.form-section label {
+  font-weight: 500;
+}
+
+.form-section .form-control,
+.form-section .form-select {
+  border-radius: 6px;
+}
+
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode a,
+body.dark-mode nav,
+body.dark-mode nav a {
+  color: #ffffff;
+}
+
+body.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.light-mode nav a {
+  color: #000000;
+}
