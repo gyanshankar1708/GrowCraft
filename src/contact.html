@@ -8,6 +8,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/src/scroll-after-submit.css">
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+ <link rel="stylesheet" href="./css/style.css">
+ <link rel="stylesheet" href="phonevalidator.css" />
 
     <link
       rel="stylesheet"
@@ -337,128 +340,130 @@
   </head> 
   
 <body id="main-body">
-  <!-- Navbar starts here -->
-<!-- Navbar -->
 
-<nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
-  <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-    <a class="navbar-brand" href="#"><img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo" /></a>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      <a class="navbar-brand" href="#"><img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo" /></a>
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="../index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="../index.html#services">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="../blogListing.html">Blogs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="../index.html#about">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="../index.html#work">Our Work</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="contact.html">Contact Us</a>
-        </li>
-      </ul>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="../blogListing.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#about">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#work">Our Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+      </div>
     </div>
+  </nav>
+
+  <!-- Contact Form -->
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Send Us a Message</h2>
+
+  <form id="contactForm" class="form-section">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <label class="form-label">Full Name *</label>
+        <input type="text" class="form-control" required />
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Email Address *</label>
+        <input type="email" class="form-control" required />
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Phone Number *</label>
+        <input 
+          type="tel"
+          id="phone"
+          name="phone"
+          class="form-control"
+          placeholder="Enter your phone number"
+          maxlength="15"
+          required
+        />
+        <div class="invalid-feedback">Please enter a valid phone number</div>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Company/Organization</label>
+        <input type="text" class="form-control" />
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Service Interest *</label>
+        <select class="form-select" required>
+          <option selected disabled>Select a service</option>
+          <option>Web Development</option>
+          <option>App Development</option>
+          <option>SEO</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Project Budget</label>
+        <select class="form-select">
+          <option selected disabled>Select budget range</option>
+          <option>&lt; $1,000</option>
+          <option>$1,000 - $5,000</option>
+          <option>&gt; $5,000</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Project Timeline</label>
+        <select class="form-select">
+          <option selected disabled>When do you need this?</option>
+          <option>ASAP</option>
+          <option>1-3 months</option>
+          <option>Flexible</option>
+        </select>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Preferred Date *</label>
+        <input type="date" class="form-control"  id="PreferredDate" name="PreferredDate" required/>
+      </div>
+
+      <div class="col-md-6">
+        <label class="form-label">Preferred Time</label>
+        <select class="form-select">
+          <option selected disabled>Select time slot</option>
+          <option>Morning</option>
+          <option>Afternoon</option>
+          <option>Evening</option>
+        </select>
+      </div>
+
+      <div class="col-md-12">
+        <label class="form-label">Attach Files (Optional)</label>
+        <input type="file" id="fileUpload" class="form-control" />
+        <div id="filePreview" class="mt-2"></div>
+        <small>Supported: PDF, DOC, DOCX, JPG, PNG, GIF (Max 10MB each)</small>
+      </div>
+
+      <div class="col-md-12">
+        <label class="form-label">Message</label>
+        <textarea class="form-control" rows="4"></textarea>
+      </div>
+
+      <div class="col-md-12 text-center">
+        <button id="myBtn" type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+
+  <div id="thankYouSection" style="display: none;">
+    ✅ Thank you! Your message has been sent.
   </div>
-</nav>
-
-  <!-- Navbar ends here -->
-
-    <!-- Contact Information Section -->
-    <div class="container mt-5">
-      <h2 class="text-center mb-4">Send Us a Message</h2>
-
-      <form id="contactForm" class="form-section">
-        <div class="row g-4">
-          <div class="col-md-6">
-            <label class="form-label">Full Name *</label>
-            <input type="text" class="form-control" required />
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Email Address *</label>
-            <input type="email" class="form-control" required />
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Phone Number</label>
-            <input type="text" class="form-control" />
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Company/Organization</label>
-            <input type="text" class="form-control" />
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Service Interest *</label>
-            <select class="form-select" required>
-              <option selected disabled>Select a service</option>
-              <option>Web Development</option>
-              <option>App Development</option>
-              <option>SEO</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Project Budget</label>
-            <select class="form-select">
-              <option selected disabled>Select budget range</option>
-              <option>&lt; $1,000</option>
-              <option>$1,000 - $5,000</option>
-              <option>&gt; $5,000</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Project Timeline</label>
-            <select class="form-select">
-              <option selected disabled>When do you need this?</option>
-              <option>ASAP</option>
-              <option>1-3 months</option>
-              <option>Flexible</option>
-            </select>
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Preferred Date</label>
-            <input type="date" class="form-control" />
-          </div>
-          <div class="col-md-6">
-            <label class="form-label">Preferred Time</label>
-            <select class="form-select">
-              <option selected disabled>Select time slot</option>
-              <option>Morning</option>
-              <option>Afternoon</option>
-              <option>Evening</option>
-            </select>
-          </div>
-          <div class="col-md-12">
-            <label class="form-label">Attach Files (Optional)</label>
-            <input type="file" id="fileUpload" class="form-control" />
-            <div id="filePreview" class="mt-2"></div>
-            <small
-              >Supported: PDF, DOC, DOCX, JPG, PNG, GIF (Max 10MB each)</small
-            >
-          </div>
-          <div class="col-md-12">
-            <label class="form-label">Message</label>
-            <textarea class="form-control" rows="4"></textarea>
-          </div>
-          <div class="col-md-12 text-center">
-            <button id="myBtn" type="submit" class="btn btn-success">Submit</button>
-          </div>
-         
-
-        </div>
-      </form>
-      <div id="thankYouSection" style="display: none;">
-  ✅ Thank you! Your message has been sent.
 </div>
 
 
@@ -566,5 +571,10 @@
         });
     </script>
      <script src="/src/scroll-after-submit.js"></script>
+     <!-- Scripts -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
+       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+        <script src="./phone-validation.js"></script>
   </body>
 </html>
