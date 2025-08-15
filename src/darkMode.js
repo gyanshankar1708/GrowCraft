@@ -572,6 +572,22 @@ class DarkModeToggle {
                 color: var(--text-secondary) !important;
             }
             
+            /* Get in Touch info boxes (Contact page) - keep original white cards in dark mode */
+            .dark-mode .info-box, .dark .info-box {
+                background-color: #ffffff !important;
+                color: #333333 !important;
+                box-shadow: 0 5px 15px var(--shadow) !important;
+            }
+
+            /* Ensure inner text stays dark on white cards in dark mode */
+            .dark-mode .info-box *, .dark .info-box * {
+                color: #333333 !important;
+            }
+            
+            .dark-mode .info-box i, .dark .info-box i {
+                color: #00b894 !important; /* keep the accent color for icons */
+            }
+            
             /* Contact form section */
             .dark-mode .contact-form-section, .dark .contact-form-section {
                 background-color: var(--bg-primary) !important;

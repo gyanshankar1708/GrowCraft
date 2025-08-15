@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing | GrowCraft</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        /* CSS Variables for Light and Dark Themes */
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f0f8ff;
+            --bg-tertiary: #f9f9f9;
+            --text-primary: #222222;
+            --text-secondary: #4f5d75;
+            --text-muted: #666666;
+            --border-color: #e0e0e0;
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --accent-color: #0077ff;
+            --accent-hover: #005ecc;
+            --card-bg: #ffffff;
+            --hero-bg: linear-gradient(135deg, #f0f8ff, #ffffff);
+            --section-bg-alt: linear-gradient(135deg, #eef7ff, #f9f9f9);
+        }
+
+        .dark {
+            --bg-primary: #1a1a1a;
+            --bg-secondary: #0f172a;
+            --bg-tertiary: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border-color: #334155;
+            --shadow-light: rgba(0, 0, 0, 0.4);
+            --shadow-medium: rgba(0, 0, 0, 0.5);
+            --accent-color: #60a5fa;
+            --accent-hover: #3b82f6;
+            --card-bg: #1e293b;
+            --hero-bg: linear-gradient(135deg, #0f172a, #1e293b);
+            --section-bg-alt: linear-gradient(135deg, #0f172a, #1e293b);
+        }
+
+        /* Global Styles */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+
+        body { 
+            font-family: 'Poppins', sans-serif; 
+            background-color: var(--bg-secondary); 
+            color: var(--text-primary); 
+            line-height: 1.6; 
+        }
+
+        .container { 
+            max-width: 1200px; 
+            margin: auto; 
+            padding: 0 15px; 
+        }
+
+        .section-title { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            text-align: center; 
+            margin-bottom: 2rem; 
+            color: var(--text-primary); 
+        }
+
+        .section-subtitle { 
+            font-size: 1.1rem; 
+            color: var(--text-secondary); 
+            text-align: center; 
+            max-width: 700px; 
+            margin: 0 auto 3rem; 
+        }
+
+        /* Hero Section */
+        .hero { 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            padding: 60px 10%; 
+            background: var(--hero-bg);
+            gap: 40px; 
+            flex-wrap: wrap; 
+        }
+
+        .hero-content h1 { 
+            font-size: 3rem; 
+            font-weight: 600; 
+            margin-bottom: 20px; 
+            color: var(--text-primary); 
+        }
+
+        .hero-content p { 
+            font-size: 1.1rem; 
+            margin-bottom: 30px; 
+            color: var(--text-secondary); 
+        }
+
+        .hero-content button { 
+            background-color: var(--accent-color); 
+            color: var(--bg-primary); 
+            padding: 14px 28px; 
+            border: none; 
+            border-radius: 8px; 
+            font-size: 1rem; 
+            cursor: pointer; 
+            transition: all 0.3s ease; 
+        }
+
+        .hero-content button:hover { 
+            background-color: var(--accent-hover); 
+            transform: translateY(-2px); 
+        }
+
+        .hero-image { 
+            flex: 1; 
+            max-width: 500px; 
+        }
+
+        .hero-image img { 
+            width: 100%; 
+            border-radius: 12px; 
+            box-shadow: 0 8px 20px var(--shadow-light); 
+            animation: float 5s ease-in-out infinite; 
+        }
+
+        @keyframes float { 
+            0% { transform: translateY(0px); } 
+            50% { transform: translateY(-8px); } 
+            100% { transform: translateY(0px); } 
+        }
+
+        /* Modal Styles */
+        .modal { 
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; 
+            top: 0; 
+            width: 100%; 
+            height: 100%; 
+            background: rgba(0, 0, 0, 0.6); 
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        .modal-content { 
+            background: var(--card-bg); 
+            color: var(--text-primary);
+            padding: 30px; 
+            border-radius: 12px; 
+            max-width: 450px; 
+            width: 90%; 
+            box-shadow: 0 8px 20px var(--shadow-medium); 
+            position: relative; 
+            animation: fadeIn 0.3s ease; 
+        }
+
+        .modal-content h2 {
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .modal-content label {
+            color: var(--text-primary);
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .modal-content input,
+        .modal-content textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .modal-content input::placeholder,
+        .modal-content textarea::placeholder {
+            color: var(--text-muted);
+        }
+
+        .submit-btn {
+            background-color: var(--accent-color);
+            color: var(--bg-primary);
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+        }
+
+        .submit-btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        @keyframes fadeIn { 
+            from { opacity: 0; transform: translateY(-10px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        }
+
+        .close-btn { 
+            position: absolute; 
+            right: 15px; 
+            top: 10px; 
+            font-size: 1.5rem; 
+            cursor: pointer; 
+            color: var(--text-muted); 
+        }
+
+        .close-btn:hover { 
+            color: var(--text-primary); 
+        }
+
+        @media (max-width: 900px) { 
+            .hero { 
+                flex-direction: column-reverse; 
+                text-align: center; 
+                padding: 40px 5%; 
+            } 
+            .hero-content h1 { 
+                font-size: 2.2rem; 
+            } 
+        }
+
+        /* Pillars Section */
+        .pillars-section { 
+            background: var(--section-bg-alt); 
+            padding: 80px 0; 
+        }
+
+        .pillars-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+        }
+
+        .pillar-card { 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 15px; 
+            text-align: center; 
+            box-shadow: 0 6px 20px var(--shadow-light); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+
+        .pillar-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 10px 30px var(--shadow-medium); 
+        }
+
+        .pillar-card .icon { 
+            font-size: 3rem; 
+            color: var(--accent-color); 
+            margin-bottom: 20px; 
+            transition: transform 0.3s ease; 
+        }
+
+        .pillar-card:hover .icon { 
+            transform: scale(1.1); 
+        }
+
+        .pillar-card h3 { 
+            font-size: 1.4rem; 
+            font-weight: 600; 
+            color: var(--accent-color); 
+            margin-bottom: 10px; 
+        }
+
+        .pillar-card p { 
+            font-size: 1rem; 
+            color: var(--text-secondary); 
+        }
+
+        /* Services Section */
+        .services-section { 
+            padding: 80px 0; 
+            background: var(--bg-primary); 
+        }
+
+        .services-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 25px; 
+        }
+
+        .service-card { 
+            background: var(--bg-secondary); 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 15px var(--shadow-light); 
+            transition: all 0.3s ease; 
+            cursor: pointer; 
+            position: relative; 
+            overflow: hidden; 
+            border: 1px solid var(--border-color); 
+        }
+
+        .service-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 10px 25px var(--shadow-medium); 
+        }
+
+        .service-card h3 { 
+            font-size: 1.3rem; 
+            color: var(--accent-color); 
+            font-weight: 600; 
+            margin-bottom: 10px; 
+        }
+
+        .service-card p { 
+            color: var(--text-secondary); 
+            font-size: 1rem; 
+        }
+
+        /* Benefits Section */
+        .benefits-alt-section { 
+            padding: 80px 0; 
+            background: var(--section-bg-alt); 
+        }
+
+        .benefits-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 20px; 
+        }
+
+        .benefit-card { 
+            background: var(--card-bg); 
+            padding: 25px; 
+            border-radius: 12px; 
+            box-shadow: 0 5px 15px var(--shadow-light); 
+            transition: all 0.3s ease; 
+            border-left: 5px solid var(--accent-color); 
+        }
+
+        .benefit-card:hover { 
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 20px var(--shadow-medium); 
+        }
+
+        .benefit-card .icon { 
+            font-size: 2rem; 
+            color: var(--accent-color); 
+            margin-bottom: 10px; 
+        }
+
+        .benefit-card h3 { 
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: var(--text-primary); 
+            margin-bottom: 5px; 
+        }
+
+        .benefit-card p { 
+            font-size: 0.95rem; 
+            color: var(--text-secondary); 
+        }
+
+        /* Process Flow Section */
+        .process-flow { 
+            padding: 80px 20px; 
+            background: var(--bg-primary); 
+            text-align: center; 
+        }
+
+        .timeline { 
+            display: flex; 
+            overflow-x: auto; 
+            gap: 30px; 
+            padding: 20px 0; 
+            scroll-behavior: smooth; 
+            justify-content: center; 
+        }
+
+        .timeline::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .timeline::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+            border-radius: 4px;
+        }
+
+        .timeline::-webkit-scrollbar-thumb {
+            background: var(--accent-color);
+            border-radius: 4px;
+        }
+
+        .step { 
+            min-width: 280px; 
+            background: var(--card-bg); 
+            padding: 30px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 12px var(--shadow-light); 
+            position: relative; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+        }
+
+        .step:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 6px 18px var(--shadow-medium); 
+        }
+
+        .step::before { 
+            content: attr(data-step); 
+            position: absolute; 
+            top: -15px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            background: var(--accent-color); 
+            color: var(--bg-primary); 
+            font-weight: bold; 
+            font-size: 1rem; 
+            width: 40px; 
+            height: 40px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            border-radius: 50%; 
+            box-shadow: 0 2px 8px var(--shadow-light); 
+        }
+
+        .step h3 { 
+            margin-top: 15px; 
+            font-size: 1.3rem; 
+            font-weight: 600; 
+            color: var(--text-primary); 
+        }
+
+        .step p { 
+            font-size: 0.95rem; 
+            color: var(--text-secondary); 
+            line-height: 1.5; 
+        }
+
+        /* Case Study Section */
+        .case-study-section { 
+            padding: 80px 20px; 
+            background: var(--section-bg-alt); 
+        }
+
+        .case-study-cards { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 30px; 
+            text-align: center; 
+        }
+
+        .case-card { 
+            background: var(--card-bg); 
+            padding: 30px; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 20px var(--shadow-light); 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            border: 1px solid var(--border-color); 
+        }
+
+        .case-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 8px 25px var(--shadow-medium); 
+        }
+
+        .case-card h3 { 
+            font-size: 1.5rem; 
+            font-weight: 600; 
+            margin-bottom: 10px; 
+            color: var(--text-primary); 
+        }
+
+        .case-card p { 
+            color: var(--text-secondary); 
+            font-size: 1rem; 
+            margin-bottom: 20px; 
+        }
+
+        .progress-bar { 
+            height: 8px; 
+            background: var(--border-color); 
+            border-radius: 20px; 
+            overflow: hidden; 
+            margin-bottom: 10px; 
+        }
+
+        .progress-fill { 
+            height: 100%; 
+            width: 0; 
+            background: linear-gradient(90deg, var(--accent-color), #00bcd4); 
+            transition: width 1.5s ease; 
+        }
+
+        .result-text { 
+            font-weight: 600; 
+            font-size: 0.9rem; 
+            color: var(--text-primary); 
+        }
+
+        /* CTA Section */
+        .cta-section { 
+            background: var(--bg-tertiary); 
+            text-align: center; 
+            padding: 3rem 1rem; 
+            border-radius: 16px; 
+            margin: 2rem 0; 
+        }
+
+        .cta-section h2 { 
+            font-size: 2rem; 
+            margin-bottom: 0.5rem; 
+            color: var(--text-primary); 
+        }
+
+        .cta-section p { 
+            font-size: 1rem; 
+            color: var(--text-secondary); 
+            margin-bottom: 1.5rem; 
+        }
+
+        .cta-button { 
+            display: flex; 
+            gap: 1rem; 
+            justify-content: center; 
+            flex-wrap: wrap;
+        }
+
+        .btn-primary { 
+            background: var(--accent-color); 
+            color: var(--bg-primary); 
+            padding: 0.8rem 1.5rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            transition: 0.3s; 
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover { 
+            background: var(--accent-hover); 
+            transform: scale(1.05); 
+            color: var(--bg-primary);
+        }
+
+        .btn-secondary { 
+            border: 2px solid var(--accent-color); 
+            padding: 0.8rem 1.5rem; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            color: var(--accent-color); 
+            transition: 0.3s; 
+            background: transparent;
+        }
+
+        .btn-secondary:hover { 
+            background: var(--accent-color); 
+            color: var(--bg-primary); 
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: var(--bg-primary) !important;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar-brand,
+        .navbar-nav .nav-link {
+            color: var(--text-primary) !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--accent-color) !important;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--bg-tertiary) !important;
+            color: var(--text-primary) !important;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .footer h5 {
+            color: var(--text-primary) !important;
+        }
+
+        .footer p,
+        .footer li {
+            color: var(--text-secondary) !important;
+        }
+
+        .footer a {
+            color: var(--text-secondary) !important;
+            transition: color 0.3s ease;
+        }
+
+        .footer a:hover {
+            color: var(--accent-color) !important;
+        }
+
+        .footer .btn-outline-light {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .footer .btn-outline-light:hover {
+            background-color: var(--accent-color);
+            color: var(--bg-primary);
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            background-color: var(--accent-color) !important;
+            border-color: var(--accent-color) !important;
+            color: var(--bg-primary) !important;
+        }
+
+        #backToTop:hover {
+            background-color: var(--accent-hover) !important;
+            border-color: var(--accent-hover) !important;
+        }
+
+        /* Theme Toggle Styles */
+        .theme-toggle-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--text-primary);
+            background-color: transparent;
+        }
+
+        .theme-toggle:hover {
+            background-color: var(--border-color);
+            transform: scale(1.1);
+        }
+
+        .theme-toggle svg {
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle .sun-icon {
+            display: block;
+        }
+
+        .theme-toggle .moon-icon {
+            display: none;
+        }
+
+        .theme-toggle.active .sun-icon {
+            display: none;
+        }
+
+        .theme-toggle.active .moon-icon {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar starts here -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+            <a class="navbar-brand" href="#"><img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#work">Our Work</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar ends here -->
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content" style="flex: 1; min-width: 300px;">
+            <h1>Driving Online Growth and Engagement</h1>
+            <p>
+                We develop data-driven digital marketing strategies that connect your brand
+                with the right audience, increase visibility, and deliver measurable ROI.
+            </p>
+            <button id="cta-btn">Request a Free Consultation</button>
+        </div>
+        <div class="hero-image" style="flex: 0 0 300px; text-align: right;">
+            <img src="https://www.monash.edu/__data/assets/image/0006/3997950/illustration-digital-marketing.jpg"
+                 alt="Digital Marketing Analytics"
+                 style="width: 500px; border-radius: 12px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); animation: float 5s ease-in-out infinite;">
+        </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Request a Free Consultation</h2>
+            <form>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@example.com" required>
+                <label for="details">Project Details</label>
+                <textarea id="details" rows="4" placeholder="Tell us about your digital marketing goals..." required></textarea>
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Key Pillars Section -->
+    <section class="pillars-section">
+        <div class="container">
+            <h2 class="section-title">Our Core Digital Pillars</h2>
+            <p class="section-subtitle">
+                We focus on these key areas to build a robust and high-performing online presence for your brand.
+            </p>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <span class="icon"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+                    <h3>Data-Driven SEO</h3>
+                    <p>Attract qualified leads with technical, on-page, and off-page SEO strategies that boost organic rankings.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="icon"><i class="fa-solid fa-bullhorn"></i></span>
+                    <h3>Targeted Paid Ads</h3>
+                    <p>Maximize your ROI with precisely targeted PPC campaigns across search engines and social platforms.</p>
+                </div>
+                <div class="pillar-card">
+                    <span class="icon"><i class="fa-solid fa-chart-line"></i></span>
+                    <h3>Conversion Rate Optimization</h3>
+                    <p>Turn visitors into customers by analyzing user behavior and optimizing your website and funnels.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section">
+        <div class="container">
+            <h2 class="section-title">Our Digital Marketing Services</h2>
+            <p class="section-subtitle">
+                From SEO and paid ads to social media and email campaigns, we provide a holistic
+                approach to building your online presence and driving business growth.
+            </p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Search Engine Optimization (SEO)</h3>
+                    <p>Improve your search engine rankings and increase organic traffic with our expert SEO strategies.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Pay-Per-Click (PPC) Advertising</h3>
+                    <p>Run targeted ad campaigns on Google, Bing, and other platforms to generate immediate leads and sales.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Social Media Marketing (SMM)</h3>
+                    <p>Build a strong brand community and drive engagement with strategic social media campaigns.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Email Marketing</h3>
+                    <p>Develop automated email campaigns and newsletters to nurture leads and retain customers.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Content Marketing</h3>
+                    <p>Create and distribute valuable, relevant content to attract and engage a clearly defined audience.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Analytics & Reporting</h3>
+                    <p>Gain insights with detailed performance reports to optimize your campaigns and maximize ROI.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Website & Funnel Optimization</h3>
+                    <p>Improve user experience and conversion rates through data-driven website and sales funnel analysis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits-alt-section">
+        <div class="container">
+            <h2 class="section-title">Why Partner with Us for Digital Marketing?</h2>
+            <p class="section-subtitle">Our strategic approach, data expertise, and commitment to results ensure your marketing budget works harder for your business.</p>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="icon"><i class="fas fa-chart-line"></i></div>
+                    <h3>Measurable ROI</h3>
+                    <p>Every campaign is tracked with clear metrics, so you can see the direct impact on your business growth.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon"><i class="fas fa-bullseye"></i></div>
+                    <h3>Targeted Audience Reach</h3>
+                    <p>We identify and engage your ideal customers with precision, minimizing wasted ad spend.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon"><i class="fas fa-eye"></i></div>
+                    <h3>Enhanced Brand Visibility</h3>
+                    <p>We increase your brand's presence across all major online channels, making you stand out from competitors.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon"><i class="fas fa-lightbulb"></i></div>
+                    <h3>Innovative Strategies</h3>
+                    <p>We stay ahead of industry trends, using the latest tools and techniques to give you a competitive edge.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon"><i class="fas fa-handshake"></i></div>
+                    <h3>Dedicated Support</h3>
+                    <p>Our team works closely with you to understand your goals and deliver a personalized, responsive service.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="icon"><i class="fas fa-database"></i></div>
+                    <h3>Data-Driven Decisions</h3>
+                    <p>We rely on analytics, not guesswork, to optimize campaigns and ensure every action is strategic.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-flow">
+        <div class="container">
+            <h2 class="section-title">Our Digital Marketing Process</h2>
+            <div class="timeline">
+                <div class="step" data-step="1">
+                    <h3>Strategy & Planning</h3>
+                    <p>We begin with a deep dive into your business, competitors, and target audience to build a roadmap.</p>
+                </div>
+                <div class="step" data-step="2">
+                    <h3>Campaign Creation</h3>
+                    <p>We develop compelling content, design eye-catching visuals, and set up your campaigns across platforms.</p>
+                </div>
+                <div class="step" data-step="3">
+                    <h3>Launch & Management</h3>
+                    <p>We launch your campaigns and actively monitor performance, making real-time optimizations.</p>
+                </div>
+                <div class="step" data-step="4">
+                    <h3>Analysis & Reporting</h3>
+                    <p>We provide detailed performance reports, highlighting key insights and a clear path forward.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-study-section">
+        <div class="container">
+            <div class="case-study-header">
+                <h2 class="section-title">Case Studies & Results</h2>
+                <p class="section-subtitle">Explore how our digital marketing strategies have driven significant growth for our clients.</p>
+            </div>
+            <div class="case-study-cards">
+                <div class="case-card" data-result="80%">
+                    <h3>Organic Traffic Growth</h3>
+                    <p>A comprehensive SEO strategy that increased organic search traffic and qualified leads by 80% in six months.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="result-text"></span>
+                </div>
+                <div class="case-card" data-result="150%">
+                    <h3>Social Media Engagement</h3>
+                    <p>Creative social media campaigns that boosted brand visibility and significantly increased audience engagement by 150%.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="result-text"></span>
+                </div>
+                <div class="case-card" data-result="60%">
+                    <h3>PPC Conversion Rate</h3>
+                    <p>Optimized paid advertising campaigns that lowered cost-per-click and increased conversion rates by 60%.</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="result-text"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Accelerate Your Online Presence?</h2>
+                <p>Partner with us to create a digital marketing strategy that delivers real, tangible results for your business.</p>
+                <div class="cta-button">
+                    <a href="#contact" class="btn-primary">🚀 Get a Free Proposal</a>
+                    <a href="#portfolio" class="btn-secondary">See Our Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer section starts here (Contact us) -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">About GrowCraft</h5>
+                    <p style="font-size: 14px;">
+                        GrowCraft is a service-based platform offering:
+                        <br>🌐 Website Development
+                        <br>🖌️ Graphic Design
+                        <br>✍️ Content Writing
+                        <br>📣 Social Media Management
+                        <br>📊 Digital Marketing
+                        <br>🎓 Training & Internship Programs
+                        <br>Helping businesses grow while students gain real-world learning.
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none">Home</a></li>
+                        <li><a href="#services" class="text-decoration-none">Services</a></li>
+                        <li><a href="src/workList.html" class="text-decoration-none">Portfolio</a></li>
+                        <li><a href="#internship" class="text-decoration-none">Internship</a></li>
+                        <li><a href="src/contact.html" class="text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Contact Us</h5>
+                    <p>📍 235, PQR, GHI, ABC Street, XYZ, ABC - 10000, India</p>
+                    <p>📞 +91 999 999 999</p>
+                    <p>📧 info@growcraft.com</p>
+                    <button class="btn btn-outline-light btn-sm mt-2">Send Message</button>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Follow Us</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="text-decoration-none"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fab fa-linkedin-in me-2"></i>LinkedIn</a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fab fa-github me-2"></i>GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <div class="text-center py-3" style="background-color: var(--bg-tertiary); color: var(--text-secondary); border-top: 1px solid var(--border-color);">
+        &copy; 2025 <strong>GrowCraft</strong>. All Rights Reserved.
+    </div>
+    <button id="backToTop" title="Go to top"
+        class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle px-3 py-2"
+        style="display:none;">↑</button>
+
+    <script>
+        /**
+         * Dark Mode Toggle Module
+         * A clean, modular implementation for theme switching
+         */
+        class DarkModeToggle {
+            constructor() {
+                this.theme = this.getSavedTheme() || 'light';
+                this.toggleElement = null;
+                this.init();
+            }
+
+            getSavedTheme() {
+                // Use in-memory storage instead of localStorage for artifact compatibility
+                return window.themePreference || 'light';
+            }
+
+            saveTheme(theme) {
+                // Store theme preference in memory
+                window.themePreference = theme;
+            }
+
+            init() {
+                // Apply saved theme on page load
+                this.applyTheme();
+
+                // Create and insert toggle button
+                this.createToggle();
+            }
+
+            createToggle() {
+                // Create toggle container
+                const toggleContainer = document.createElement('div');
+                toggleContainer.className = 'theme-toggle-container';
+                toggleContainer.innerHTML = `
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                `;
+
+                // Find navbar and insert toggle
+                const navbar = document.querySelector('.navbar-nav');
+                if (navbar) {
+                    const navItem = document.createElement('li');
+                    navItem.className = 'nav-item d-flex align-items-center ms-3';
+                    navItem.appendChild(toggleContainer);
+                    navbar.appendChild(navItem);
+                }
+
+                // Add event listener
+                this.toggleElement = document.getElementById('themeToggle');
+                if (this.toggleElement) {
+                    this.toggleElement.addEventListener('click', () => this.toggle());
+                    // Set initial button state
+                    this.toggleElement.classList.toggle('active', this.theme === 'dark');
+                }
+            }
+
+            applyTheme() {
+                if (this.theme === 'dark') {
+                    document.documentElement.classList.add('dark');
+                } else {
+                    document.documentElement.classList.remove('dark');
+                }
+            }
+
+            toggle() {
+                this.theme = this.theme === 'light' ? 'dark' : 'light';
+                this.saveTheme(this.theme);
+                this.applyTheme();
+
+                // Update toggle button state
+                if (this.toggleElement) {
+                    this.toggleElement.classList.toggle('active', this.theme === 'dark');
+                }
+            }
+        }
+
+        // Smooth scroll for internal links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Back to top functionality
+        window.onscroll = function () {
+            const btn = document.getElementById("backToTop");
+            if (!btn) return;
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            // Initialize dark mode toggle
+            new DarkModeToggle();
+
+            // Back to top button
+            const btn = document.getElementById("backToTop");
+            if (btn) {
+                btn.addEventListener("click", function () {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            }
+
+            // Modal functionality
+            const modal = document.getElementById("contactModal");
+            const openBtn = document.getElementById("cta-btn");
+            const closeBtn = document.getElementById("closeModal");
+
+            if(openBtn) {
+                openBtn.addEventListener("click", () => {
+                    modal.style.display = "flex";
+                });
+            }
+            if(closeBtn) {
+                closeBtn.addEventListener("click", () => {
+                    modal.style.display = "none";
+                });
+            }
+            window.addEventListener("click", (e) => {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+
+            // Service card interactions
+            document.querySelectorAll(".service-card").forEach(card => {
+                card.addEventListener("click", () => {
+                    alert(`Learn more about our ${card.querySelector("h3").innerText} service!`);
+                });
+            });
+            
+            // Timeline auto-scroll
+            const timeline = document.querySelector(".timeline");
+            if (timeline) {
+                let scrollAmount = 0;
+                const interval = setInterval(() => {
+                    if (timeline.scrollLeft + timeline.clientWidth >= timeline.scrollWidth) {
+                        timeline.scrollTo({ left: 0, behavior: "smooth" });
+                        scrollAmount = 0;
+                    } else {
+                        scrollAmount += 280;
+                        timeline.scrollTo({ left: scrollAmount, behavior: "smooth" });
+                    }
+                }, 4000);
+                
+                // Stop auto-scroll on user interaction
+                timeline.addEventListener('mouseenter', () => clearInterval(interval));
+            }
+
+            // Case study progress bars
+            const caseCards = document.querySelectorAll(".case-card");
+            caseCards.forEach(card => {
+                const fill = card.querySelector(".progress-fill");
+                const resultText = card.querySelector(".result-text");
+                const resultValue = card.getAttribute("data-result");
+
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            fill.style.width = resultValue;
+                            resultText.textContent = resultValue + " Growth";
+                            observer.unobserve(card);
+                        }
+                    });
+                }, { threshold: 0.4 });
+
+                observer.observe(card);
+            });
+        });
+    </script>
+     <script src="darkMode.js"></script>
+</body>
+
+</html>

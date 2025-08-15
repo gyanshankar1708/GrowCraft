@@ -1,3 +1,5 @@
+[![Join our group on Discord](https://github.com/user-attachments/assets/f7be9334-dd82-4c36-83d4-2e21bfca7633)](https://discord.gg/mpeDXD7f)
+
 # 🌱 GrowCraft
 
 GrowCraft is a **service-based platform** designed to help businesses grow online while also providing students with hands-on experience through training and internships.  
@@ -88,13 +90,6 @@ GrowCraft/
   </table>
 
 </div>
-
----
-
-## 📢 Discord Server
-
-### For any queries or issue, feel free to join our discord server.
-- **Discord:** https://discord.gg/mpeDXD7f
 
 ---
 
