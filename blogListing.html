@@ -18,68 +18,7 @@
     padding-bottom: 0.8rem;
     background-color: #ffffff !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
 
-  .navbar-brand img {
-    max-height: 60px;
-    object-fit: contain;
-    vertical-align: middle;
-  }
-
-  .navbar-nav .nav-link {
-    font-weight: 500;
-    padding: 0.75rem 1rem;
-    color: #333;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
-
-  .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link.active {
-    color: #463896;
-  }
-
-  /* Dark Mode Toggle Switch Alignment */
-  .navbar .toggle-switch {
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-  }
-
-  /* Responsive logo alignment fix */
-  @media (max-width: 991.98px) {
-    .navbar .navbar-brand {
-      margin-right: auto;
-    }
-
-    .navbar-collapse {
-      margin-top: 0.8rem;
-    }
-  }
-
-  .btn-custom-purple:focus,
-  .btn-custom-purple:active {
-    background-color: #1f0d66 !important;
-    border-color: #1f0d66 !important;
-    color: white !important;
-    box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
-  }
-
-  /* === Navbar Custom Styling === */
-
-  .navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-
-  }
-
-  .navbar-collapse {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100%;
   }
 
   .navbar-nav li {
@@ -102,25 +41,6 @@
     vertical-align: middle;
   }
 
-  /* Align all nav items vertically center */
-  .navbar-nav .nav-link {
-    padding-left: 0;
-  }
-
-  .toggle-switch {
-    margin-top: 1rem;
-    padding-left: 0.5rem;
-  }
-
-  /* Dark Mode Toggle Switch Alignment */
-  .navbar .toggle-switch {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    height: 100%;
-  }
-
-  /* Ensure all nav items are aligned */
   .navbar-nav .nav-item {
     display: flex;
     align-items: center;
@@ -128,24 +48,43 @@
 
   }
 
-  /* Responsive logo alignment fix */
-  @media (max-width: 991.98px) {
-    .navbar .navbar-brand {
-      margin-right: auto;
-    }
+  .nav-item .nav-link {
+    font-weight: 900;
+    color: #7a5a08 !important;
+    font-family: "Lora", serif;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
 
-    .navbar-collapse {
-      margin-top: 0.8rem;
-    }
+  /* Navbar link hover effect */
+  .navbar-nav .nav-link {
+    position: relative;
+    color: #333;
+    /* Default link color */
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
 
-    .navbar-nav .nav-link {
-      padding-left: 0;
-    }
+  .navbar-nav .nav-link:hover {
+    color: #007bff;
+    /* Change text color on hover */
+  }
 
-    .toggle-switch {
-      margin-top: 1rem;
-      padding-left: 0.5rem;
-    }
+  /* Underline animation */
+  .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover::after {
+    width: 100%;
   }
 </style>
 

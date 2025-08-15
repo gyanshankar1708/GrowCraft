@@ -1,5 +1,7 @@
 /* Google Font Import */
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
 
 :root {
   --blue: #0078ff;
@@ -27,26 +29,20 @@ body {
   color: #222;
 }
 
-.navbar,
+
+
 .footer {
   background-color: #388e3c;
 }
 
-.navbar .nav-link,
-.footer {
-  color: #fff !important;
-}
 
-.navbar .nav-link.active {
-  color: #fbc02d !important;
-  font-weight: 600;
-}
 
 h1,
 h2,
 h3,
 h4,
 h5 {
+
   font-family: "Poppins", Arial, sans-serif;
   color: #388e3c;
   font-weight: 700;
@@ -91,6 +87,7 @@ h5 {
 .dark-mode h1 {
   color: #fbc02d !important;
 }
+
 
 /* === Navbar Custom Styling === */
 .navbar {
@@ -155,6 +152,7 @@ h5 {
 
 #profile-section.show {
   display: flex !important; /* Show when logged in */
+
 }
 
 #profile-section .dropdown {
@@ -178,11 +176,13 @@ h5 {
 .profile-user-btn:hover {
   background-color: rgba(0, 120, 255, 0.1);
   transform: translateY(-1px);
+
   color: #0078ff;
 }
 
 .profile-user-btn::after {
   display: none !important; /* Hide Bootstrap dropdown arrow */
+
 }
 
 .user-display-name {
@@ -208,7 +208,9 @@ h5 {
 }
 
 .profile-user-btn:hover .user-display-name {
+
   color: #0078ff;
+
 }
 
 #profile-section .dropdown-menu {
@@ -257,6 +259,7 @@ h5 {
 
 #profile-section .dropdown-item:hover {
   background-color: #f8f9fa;
+
   color: #0078ff;
 }
 
@@ -266,7 +269,9 @@ h5 {
 }
 
 #profile-section .dropdown-item i {
+
   color: #0078ff;
+
   width: 16px;
   font-size: 0.95rem;
 }
@@ -283,7 +288,9 @@ h5 {
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
   .user-display-name {
+
     display: none; /* Hide name on mobile to save space */
+
   }
 
   .profile-user-btn {
@@ -296,6 +303,7 @@ h5 {
 .bg-body-tertiary {
   background-color: transparent !important;
 }
+
 .icon {
   height: 1.5rem;
 }
@@ -319,10 +327,12 @@ h5 {
 }
 
 .redirect-btns button {
+
   border-radius: 1.5rem;
   border: none;
   outline: none;
   background: linear-gradient(45deg, #007bff, #0056b3);
+
   color: white;
   padding: 15px;
 }
@@ -330,16 +340,15 @@ h5 {
   background: linear-gradient(45deg, #0056b3, #007bff);
   box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
   transform: translateY(-2px);
+
 }
-.nav-link:hover,
-.visited {
-  text-decoration-line: underline;
-  text-decoration-color: var(--blue);
-  text-underline-offset: 0.3rem;
-  transition: text-decoration-line 0.3s ease-in-out;
-  text-decoration-thickness: 2px;
-  color: var(--blue) !important;
+
+.redirect-btns button:hover {
+  background: linear-gradient(45deg, #0056b3, #007bff);
+  box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+  transform: translateY(-2px);
 }
+
 
 .carousel-item {
   transition: transform 0.5s ease-in-out;
@@ -370,9 +379,10 @@ h5 {
   z-index: 2;
 }
 
+
 .nav-btn {
-  filter: invert(1); 
-}
+  filter: invert(1);
+  }
 
 .heading-text {
   text-decoration-line: underline;
@@ -387,6 +397,7 @@ h5 {
   padding: 1.5rem;
   border-radius: 50%;
 }
+
 /* Services card is here */
 .card-services {
   margin: 1rem;
@@ -463,9 +474,11 @@ p {
   0% {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
+
   50% {
     box-shadow: 0 8px 20px rgba(0, 123, 255, 0.2);
   }
+
   100% {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
@@ -488,6 +501,7 @@ p {
   0% {
     background-position: -200% 0;
   }
+
   100% {
     background-position: 200% 0;
   }
@@ -522,6 +536,7 @@ body.dark .card-services:hover {
   border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
+
 #digital-marketing-card {
   background-color: #ff689a3d;
 }
@@ -558,8 +573,7 @@ body.dark .card-services:hover {
 }
 
 .about-us ul svg {
-  filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2500%)
-    hue-rotate(190deg);
+  filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2500%) hue-rotate(190deg);
 }
 
 .about-us-img {
@@ -652,7 +666,7 @@ body.dark .card-services:hover {
   gap: 60px;
 }
 
-.footer-container > div {
+.footer-container>div {
   flex: 1 1 200px;
   min-width: 200px;
 }
@@ -739,6 +753,7 @@ body.dark .card-services:hover {
   padding-top: 15px;
   font-size: 13px;
 }
+
 .send-message-btn {
   display: inline-block;
   margin-top: 15px;
@@ -786,14 +801,12 @@ textarea {
   box-shadow: 0 0 15px white;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
 }
+
 .gallery-card .card-body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   min-height: 170px;
-  align-items: center;
-  gap:.5rem;
-  
 }
 
 .gallery-card img {
@@ -805,25 +818,25 @@ textarea {
 
 .gallery-card .card-body {
   padding: 15px 15px 0;
+
 }
 
 .gallery-card .card-title {
   /* color: #fff; */
   font-weight: 600;
   margin-bottom: 10px;
-  cursor: pointer;
 }
 
 .gallery-card .card-text {
   /* color: #e0e0e0; */
-  font-size: 17px;
-  cursor: text;
-  
+  font-size: 15px;
 }
+
 .work-card {
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6);
   border: none;
 }
+
 .work-card:hover {
   transform: scale(1.05);
   transition: transform 0.3s ease-in-out;
@@ -843,26 +856,32 @@ textarea {
   }
 }
 
+
 @media only screen and (max-width: 576px) {
   #logo {
     width: 10rem;
   }
+
 
   .clients-img {
     max-width: 60px;
   }
 }
 
+
 @media only screen and (max-width: 320px) {
+
   #logo {
     width: 6rem;
   }
+
 
   .switch-label {
     height: 16px;
     border-radius: 8px;
     border-width: 2px;
   }
+
 
   .navbar .toggle-switch {
     position: absolute;
@@ -888,6 +907,7 @@ textarea {
   .footer-links {
     flex-direction: row;
     margin: 2rem 0;
+    
   }
 
   .founder-text {
@@ -899,6 +919,7 @@ textarea {
   }
 }
 
+
 @media (max-width: 1412px) {
   .clients-img {
     max-width: 105px;
@@ -907,6 +928,7 @@ textarea {
 
 @media (max-width: 991.5px) {
 }
+
 
 /* Dark mode for about section */
 body.dark .about-us {
@@ -935,13 +957,7 @@ body.dark .bg-body-tertiary .container-fluid .d-flex {
   background-color: #292929;
 }
 
-body.dark
-  .bg-body-tertiary
-  .container-fluid
-  .d-flex
-  .training-links
-  .d-flex
-  .icon {
+body.dark .bg-body-tertiary .container-fluid .d-flex .training-links .d-flex .icon {
   color: #fff !important;
 }
 
@@ -989,11 +1005,13 @@ body.dark .copyright {
   z-index: 999;
   width: 60px;
   height: 60px;
+
   background: linear-gradient(
     135deg,
     #1e90ff,
     #00c6ff
   ); /* vivid blue gradient */
+
   color: white;
   font-size: 24px;
   font-weight: bold;
@@ -1009,7 +1027,8 @@ body.dark .copyright {
 
 #backToTop:hover {
   transform: scale(1.15) rotate(360deg);
-  background: linear-gradient(135deg, #0077ff, #00aaff); /* hover gradient */
+  background: linear-gradient(135deg, #0077ff, #00aaff);
+  /* hover gradient */
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.35);
 }
 
@@ -1028,16 +1047,17 @@ body.dark .mb-4:hover {
 }
 
 body.dark .icon:hover {
-  filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2500%)
-    hue-rotate(190deg);
+  filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2500%) hue-rotate(190deg);
 }
 
 body.dark .training-links:hover .mb-0,
 body.dark .training-links:hover img {
   color: var(--blue);
   transition: transform, bacbkground-color 0.2s ease-in-out;
+
   filter: brightness(0) saturate(100%) invert(30%) sepia(98%) saturate(2500%)
     hue-rotate(190deg);
+
 }
 
 body.dark .mb-4:hover {
@@ -1086,22 +1106,26 @@ body.dark .mb-4:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: left; /* keep left alignment of text */
+    text-align: left;
+    /* keep left alignment of text */
     padding: 20px 0;
   }
 
   .footer-about {
-    background-color: #28a745; /* or whatever green you're using */
+    background-color: #28a745;
+    /* or whatever green you're using */
     padding: 20px;
     border-radius: 8px;
     color: white;
     max-width: 500px;
   }
+
   .footer-about h3 {
     text-align: center;
     text-decoration: none;
     font-weight: bold;
   }
+
   .footer-about p {
     text-align: justify;
   }
@@ -1112,7 +1136,8 @@ body.dark .mb-4:hover {
     float: left;
     margin-left: 5px;
     padding: 2px;
-    background-color: #28a745; /* or whatever green you're using */
+    background-color: #28a745;
+    /* or whatever green you're using */
     border-radius: 8px;
     color: white;
     max-width: 500px;
@@ -1128,14 +1153,17 @@ body.dark .mb-4:hover {
   .footer-contact p {
     text-align: justify;
   }
+
   .footer-links {
     padding-left: 20px;
+
   }
 
   .footer-social {
     text-align: center;
     padding: 2px;
-    background-color: #28a745; /* or whatever green you're using */
+    background-color: #28a745;
+    /* or whatever green you're using */
     border-radius: 8px;
     color: white;
     max-width: 500px;
@@ -1144,7 +1172,8 @@ body.dark .mb-4:hover {
 
   .footer-social .social-list {
     display: flex;
-    flex-wrap: wrap; /* allows wrapping on smaller screens */
+    flex-wrap: wrap;
+    /* allows wrapping on smaller screens */
     justify-content: center;
     gap: 10px;
     padding: 0;
@@ -1228,6 +1257,7 @@ body.dark .mb-4:hover {
   background: white;
   border-radius: 16px;
   padding: 25px;
+
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
   text-align: left;
@@ -1244,9 +1274,11 @@ body.dark .mb-4:hover {
 }
 
 .about-card:hover {
+
   transform: translateY(-6px) scale(1.1);
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
 }
+
 .send-message-btn {
   display: none;
 }
@@ -1272,6 +1304,7 @@ body.dark .mb-4:hover {
   border-color: #1f0d66 !important;
   color: white !important;
   box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
+
 }
 
 /* === Navbar Custom Styling === */
@@ -1325,6 +1358,7 @@ body.dark .mb-4:hover {
 
 #profile-section.show {
   display: flex !important; /* Show when logged in */
+
 }
 
 #profile-section .dropdown {
@@ -1348,11 +1382,13 @@ body.dark .mb-4:hover {
 .profile-user-btn:hover {
   background-color: rgba(0, 120, 255, 0.1);
   transform: translateY(-1px);
+
   color: #0078ff;
 }
 
 .profile-user-btn::after {
   display: none !important; /* Hide Bootstrap dropdown arrow */
+
 }
 
 .user-display-name {
@@ -1378,7 +1414,9 @@ body.dark .mb-4:hover {
 }
 
 .profile-user-btn:hover .user-display-name {
+
   color: #0078ff;
+
 }
 
 #profile-section .dropdown-menu {
@@ -1427,7 +1465,9 @@ body.dark .mb-4:hover {
 
 #profile-section .dropdown-item:hover {
   background-color: #f8f9fa;
+
   color: #0078ff;
+
 }
 
 #profile-section .dropdown-item.text-danger:hover {
@@ -1436,7 +1476,9 @@ body.dark .mb-4:hover {
 }
 
 #profile-section .dropdown-item i {
+
   color: #0078ff;
+
   width: 16px;
   font-size: 0.95rem;
 }
@@ -1511,11 +1553,13 @@ body.dark .mb-4:hover {
 
 /* Authentication Navbar Styles */
 #profile-section {
+
   display: none !important; /* Hidden by default */
 }
 
 #profile-section.show {
   display: flex !important; /* Show when logged in */
+
 }
 
 #profile-section .dropdown {
@@ -1539,11 +1583,13 @@ body.dark .mb-4:hover {
 .profile-user-btn:hover {
   background-color: rgba(0, 120, 255, 0.1);
   transform: translateY(-1px);
+
   color: #0078ff;
 }
 
 .profile-user-btn::after {
   display: none !important; /* Hide Bootstrap dropdown arrow */
+
 }
 
 .user-display-name {
@@ -1569,7 +1615,9 @@ body.dark .mb-4:hover {
 }
 
 .profile-user-btn:hover .user-display-name {
+
   color: #0078ff;
+
 }
 
 #profile-section .dropdown-menu {
@@ -1618,7 +1666,10 @@ body.dark .mb-4:hover {
 
 #profile-section .dropdown-item:hover {
   background-color: #f8f9fa;
+
+  
   color: #0078ff;
+
 }
 
 #profile-section .dropdown-item.text-danger:hover {
@@ -1627,7 +1678,9 @@ body.dark .mb-4:hover {
 }
 
 #profile-section .dropdown-item i {
+
   color: #0078ff;
+
   width: 16px;
   font-size: 0.95rem;
 }
@@ -1644,7 +1697,9 @@ body.dark .mb-4:hover {
 /* Responsive adjustments */
 @media (max-width: 991.98px) {
   .user-display-name {
+
     display: none; /* Hide name on mobile to save space */
+
   }
 
   .profile-user-btn {
@@ -1652,10 +1707,13 @@ body.dark .mb-4:hover {
     justify-content: center;
   }
 }
+
 .btn-brand:hover,
 .btn-brand:focus {
   background: linear-gradient(90deg, #1976d2 0%, #388e3c 100%);
   color: #fff;
   box-shadow: 0 6px 24px rgba(25, 118, 210, 0.18);
   transform: translateY(-2px) scale(1.03);
+
 }
+
