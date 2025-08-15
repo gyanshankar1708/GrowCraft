@@ -20,7 +20,7 @@
       integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
       crossorigin="anonymous"
     />
-    <script
+    <script b
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
       crossorigin="anonymous"
@@ -35,27 +35,51 @@
     <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
     
     <style>
-      :root {
-        --light_green: rgba(5, 173, 44, 0.7);
-      }
-      body {
-        transition: background 0.3s, color 0.3s;
-      }
       .card {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
       }
       .form-label {
+        font-weight: 600;
+        color: #fafafa;
         color: #fff;
         font-size: 1.2rem;
       }
+
+      .section-subtitle{
+        display: flex;
+        justify-self: center;
+      font-style: italic;
+      font-weight: 600;
+      padding: 0.5rem;
+      background: linear-gradient(45deg,#90d4c8, #f3d17d);
+      border-radius: 25px;
+    }
+
       .form-section {
-        background-color: var(--light_green);
+         margin-top: 6vh;
+         background: linear-gradient(-45deg, rgba(52, 125, 194,0.6) , rgba(141, 184, 219,0.5), rgba(51, 131, 109,0.6), rgba(54, 131, 90,0.6));
         padding: 2rem;
         border-radius: 10px;
       }
+
+      
+    .mb-4{
+      margin-top: 10%;
+      color: #24a51a;
+      text-shadow: 2px 2px 5px rgb(112, 166, 112);
+    }
+
+    .section-title{
+      margin-top: 20rem;
+      color: #24a51a;
+      text-shadow: 2px 2px 5px rgb(112, 166, 112);
+      margin-bottom: 4vh;
+    }
+
       .info-box {
-        background: #fff;
+         margin-top: 3vh;
+      background: rgba(55, 116, 168, 0.4);
         border-radius: 10px;
         padding: 20px;
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -63,24 +87,17 @@
         text-align: center;
       }
 
+      
+
       .info-box i {
         font-size: 20px;
         color: #00b894;
         display: block;
         margin: 0 auto 8px auto;
       } 
-      #myBtn{
-        font-size: 1.2rem;
-        box-shadow: 0 2px 12px #fff;
-        transition: transform 0.3s ease;
-      }
-      #myBtn:hover{
-        transform: scale(1.05);
-        box-shadow: 0 5px 20px #fff;
-      }
       .get-touch{
         border-radius: 12px;
-        background-color: var(--light_green);
+        transform: translateY(-150px);
       }
       .footer-links{
         display: flex;
@@ -95,10 +112,46 @@
       }
 
     .navbar {
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
-      background-color: #ffffff !important;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  .navbar-brand img {
+    max-height: 60px;
+    object-fit: contain;
+    vertical-align: middle;
+  }
+
+  /* Align all nav items vertically center */
+  .navbar-nav .nav-link {
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    color: #463896;
+  }
+
+  /* Dark Mode Toggle Switch Alignment */
+  .navbar .toggle-switch {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+  }
+
+  /* Responsive logo alignment fix */
+  @media (max-width: 991.98px) {
+   
+    .navbar .navbar-brand {
+      margin-right: auto;
 
     }
 
@@ -107,11 +160,90 @@
       /* Reduce from 20px or more if it’s higher */
     }
 
-    .navbar-nav {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      gap: 20px;
+  }
+
+  .btn-custom-purple:focus,
+  .btn-custom-purple:active {
+    background-color: #1f0d66 !important;
+    border-color: #1f0d66 !important;
+    color: white !important;
+    box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
+  }
+   
+ 
+  /* === Navbar Custom Styling === */
+
+  .navbar {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+
+  }
+
+  .navbar-collapse {
+    display: flex !important;
+    justify-content: center !important;
+    width: 100%;
+  }
+
+  .navbar-nav li {
+    margin: 0 10px;
+    /* Reduce from 20px or more if it’s higher */
+  }
+
+  .navbar-nav {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 20px;
+  }
+
+  .navbar-brand img {
+    max-height: 60px;
+    object-fit: contain;
+    vertical-align: middle;
+  }
+
+  /* Align all nav items vertically center */
+  .navbar-nav .nav-link {
+    padding-left: 0;
+  }
+
+  .toggle-switch {
+    margin-top: 1rem;
+    padding-left: 0.5rem;
+  }
+
+  /* Dark Mode Toggle Switch Alignment */
+  .navbar .toggle-switch {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    height: 100%;
+  }
+
+  /* Ensure all nav items are aligned */
+  .navbar-nav .nav-item {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+
+  }
+  .nav-item .nav-link {
+    font-weight: 900;
+    color: #fbc02d !important;
+    font-family: "Lora", serif;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+
+  /* Responsive logo alignment fix */
+  @media (max-width: 991.98px) {
+    .navbar .navbar-brand {
+      margin-right: auto;
+
     }
 
 
@@ -174,46 +306,65 @@
     }
 
     .form-label {
-      color: #fff;
+       font-weight: 600;
+      color: #fafafa;
       font-size: 1.2rem;
     }
 
-    .form-section {
-      background-color: var(--light_green);
-      padding: 2rem;
-      border-radius: 10px;
-    }
-
     .info-box {
-      background: #fff;
+       margin-top: 3vh;
+      background: rgba(55, 116, 168, 0.4);
       border-radius: 10px;
       padding: 20px;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
       margin-bottom: 20px;
       text-align: center;
     }
 
     .info-box i {
       font-size: 20px;
+
+      color: #1649cb;
+      margin-right: 10px;
+
       color: #00b894;
       display: block;
       margin: 0 auto 8px auto;
     }
 
     #myBtn {
+      border-radius: 25px;
+      border: none;
       font-size: 1.2rem;
       box-shadow: 0 2px 12px #fff;
       transition: transform 0.3s ease;
-    }
+        background-image: linear-gradient(30deg,#2e62bb, #4ce3f7);
+        padding: .5rem;
+}
+    
+@keyframes pulse512 {
+  0% {
+    box-shadow: 0 0 0 0 #05bada66;
+  }
 
+  70% {
+    box-shadow: 0 0 0 10px rgb(218 103 68 / 0%);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
+  }
+}
     #myBtn:hover {
-      transform: scale(1.05);
-      box-shadow: 0 5px 20px #fff;
+       background-position: right center;
+  background-size: 200% auto;
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse512 1.5s infinite;
+  transform: scale(1.1);
     }
 
     .get-touch {
       border-radius: 12px;
-      background-color: var(--light_green);
     }
 
     .footer-links {
@@ -223,7 +374,7 @@
       flex-direction: column;
       gap: 1rem;
     }
-
+  
     .footer-links a {
       text-decoration: none;
       color: white;
@@ -344,9 +495,31 @@
           <label class="form-label">Full Name *</label>
           <input type="text" class="form-control" required />
         </div>
+
         <div class="col-md-6">
           <label class="form-label">Email Address *</label>
           <input type="email" class="form-control" required />
+
+      </form>
+      <div id="thankYouSection" style="display: none;">
+  ✅ Thank you! Your message has been sent.
+</div>
+
+
+<!-- Get in Touch Section -->
+<section class="get-touch mt-5 text-center">
+  <h3 class="section-title">Get In Touch</h3>
+
+    <div class="section-subtitle">Ready to start your digital journey? Let's discuss how we can help grow your business.</div>
+    
+
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      <div class="col-12 col-md-4">
+        <div class="info-box">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>123 Grow Street, Innovation City, IN</p>
+
         </div>
         <div class="col-md-6">
           <label class="form-label">Phone Number</label>
