@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Writing | GrowCraft </title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #f9f9f9;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 10%;
+            background: linear-gradient(135deg, #f0f4ff, #ffffff);
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #0d1b2a;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            color: #4f5d75;
+        }
+
+        .hero-content button {
+            background-color: #0077ff;
+            color: #fff;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .hero-content button:hover {
+            background-color: #579ef0ec;
+            transform: translateY(-2px);
+        }
+
+        /* Hero Image */
+        .hero-image {
+            flex: 1;
+            max-width: 500px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            animation: float 5s ease-in-out infinite;
+        }
+
+        /* Floating animation */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            max-width: 450px;
+            width: 90%;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            position: relative;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            font-size: 1.6rem;
+            color: #0d1b2a;
+        }
+
+        label {
+            display: block;
+            margin: 12px 0 5px;
+            font-weight: 500;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.95rem;
+        }
+
+        textarea {
+            resize: none;
+        }
+
+        .submit-btn {
+            margin-top: 15px;
+            background-color: #0077ff;
+            color: #fff;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #005ecc;
+        }
+
+        .close-btn {
+            position: absolute;
+            right: 15px;
+            top: 10px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .close-btn:hover {
+            color: #000;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 40px 5%;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+
+        /* service section */
+        .services-section {
+            margin-top: 30px;
+            padding: 60px 10%;
+            background: #ffffff;
+        }
+
+        .services-intro {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .services-intro h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: #0d1b2a;
+            margin-bottom: 15px;
+        }
+
+        .services-intro p {
+            color: #4f5d75;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #f9f9ff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            border: 0.6px solid black;
+        }
+
+        .service-card h3 {
+            font-size: 1.2rem;
+            color: #0077ff;
+            font-weight: 400px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #2d2e2e;
+            font-size: 0.95rem;
+        }
+
+        .service-card::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 119, 255, 0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scale(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .services-highlight {
+            text-align: center;
+            margin-top: 40px;
+            background: #eaf4ff;
+            padding: 15px 20px;
+            border-radius: 8px;
+            color: #005ecc;
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-intro h2 {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* benefit section */
+        .benefits-alt-section {
+            padding: 60px 10%;
+            background: linear-gradient(135deg, #f8faff, #ffffff);
+        }
+
+        .benefits-alt-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px;
+        }
+
+        .benefits-alt-header h2 {
+            font-size: 2.3rem;
+            font-weight: 600;
+            color: #0d1b2a;
+            margin-bottom: 15px;
+        }
+
+        .benefits-alt-header p {
+            font-size: 1.2rem;
+            color: #393a3b;
+        }
+
+        /* List Layout */
+        .benefits-alt-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .benefit-alt-item {
+            display: flex;
+            align-items: flex-start;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.171);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .benefit-alt-item:hover {
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.368);
+        }
+
+        .benefit-alt-icon {
+            font-size: 2rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+            transition: transform 0.5s ease;
+        }
+
+        .benefit-alt-item:hover .benefit-alt-icon {
+            transform: rotate(8deg) scale(1.4);
+        }
+
+        .benefit-alt-text h3 {
+            font-size: 1.4rem;
+            font-weight: 300;
+            color: #0077ff;
+            margin-bottom: 6px;
+        }
+
+        .benefit-alt-text p {
+            font-size: 0.95rem;
+            color: #4f5d75;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .benefit-alt-item {
+                flex-direction: column;
+                align-items: flex-start;
+                text-align: left;
+            }
+
+            .benefit-alt-icon {
+                margin-bottom: 10px;
+            }
+        }
+
+        /* process flow */
+        .process-flow {
+            padding: 80px 20px;
+            background: #f9fafb;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.3rem;
+            font-weight: 580;
+            margin-bottom: 40px;
+            font-weight: bold;
+            color: #1e293b;
+        }
+
+        .timeline {
+            display: flex;
+            overflow-x: auto;
+            gap: 30px;
+            padding-bottom: 15px;
+            scroll-behavior: smooth;
+        }
+
+        .timeline::-webkit-scrollbar {
+            height: 5px;
+        }
+
+        .timeline::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 3px;
+        }
+
+        .timeline::-webkit-scrollbar-track {
+            background: #e2e8f0;
+        }
+
+        .step {
+            min-width: 300px;
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.155);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: visible;
+
+        }
+
+        .step::before {
+            content: attr(data-step);
+            position: absolute;
+
+
+            background: #2563eb;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            z-index: 10;
+            /* ✅ Keep badge above the card */
+        }
+
+
+        .step:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+        }
+
+
+
+        .step h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: 380;
+            color: #0f172a;
+        }
+
+        .step p {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline {
+                gap: 20px;
+            }
+
+            .step {
+                min-width: 220px;
+                padding: 20px;
+            }
+        }
+
+        /* case result */
+        .case-study-section {
+            padding: 60px 20px;
+            background: #f9fafb;
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .case-study-header h2 {
+            font-size: 2.4rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #111827;
+        }
+
+        .case-study-header p {
+            color: #3b3c3c;
+            font-size: 1rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .case-study-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .case-card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.201);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.098);
+        }
+
+        .case-card h3 {
+            color: #1f2937;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+
+        .case-card p {
+            color: #383839;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .progress-bar {
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, #3b82f6, #06b6d4);
+            transition: width 1.5s ease;
+        }
+
+        .result-text {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #111827;
+        }
+
+
+        .cta-section {
+            background: linear-gradient(135deg, #f8f9fa, #eef2f7);
+            text-align: center;
+            padding: 3rem 1rem;
+            border-radius: 16px;
+            margin-top: 2rem;
+        }
+
+        .cta-section h2 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-button {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: #007bff;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #0056b3;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            border: 2px solid #007bff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #007bff;
+            transition: 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #007bff;
+            color: #fff;
+        }
+
+        .heading {
+            margin-top: 30px;
+        }
+
+        .heading h1 {
+            font-weight: 700;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Navbar starts here -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+            <a class="navbar-brand" href="#"><img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo"></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active visited" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">About Us</a>
+                    </li>
+                    <!-- Added new "Our Work" link to navigate to the new work section on same page -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#work">Our Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar ends here -->
+
+
+    <!-- Hero Section -->
+    <div class="heading">
+        <center>
+            <h1> Content Writing</h1>
+        </center>
+    </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Engaging Content That Converts</h1>
+            <p>
+                We craft compelling, SEO-friendly content that boosts your brand’s
+                authority and drives measurable results.
+            </p>
+            <button id="cta-btn">Request a Free Quote</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80"
+                alt="Content Writing Workspace">
+        </div>
+    </section>
+
+    <!-- Modal Form -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Request a Free Quote</h2>
+            <form>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="you@example.com" required>
+
+                <label for="details">Project Details</label>
+                <textarea id="details" rows="4" placeholder="Tell us about your content needs..." required></textarea>
+
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="services-section">
+        <div class="services-intro">
+            <h2>Our Content Writing Services</h2>
+            <p>
+                We deliver SEO-friendly, audience-focused, and industry-specific content
+                that strengthens your brand voice, engages your target audience, and
+                drives measurable results.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Blog & Article Writing</h3>
+                <p>Engaging, well-researched posts tailored to your audience to increase traffic and brand authority.
+                </p>
+            </div>
+            <div class="service-card">
+                <h3>Website Copywriting</h3>
+                <p>Compelling website content that communicates your value proposition and drives conversions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Product Descriptions</h3>
+                <p>Clear, persuasive product descriptions that highlight benefits and encourage purchases.</p>
+            </div>
+            <div class="service-card">
+                <h3>Social Media Captions</h3>
+                <p>Catchy, brand-aligned captions to boost engagement and grow your online community.</p>
+            </div>
+            <div class="service-card">
+                <h3>Email Newsletters</h3>
+                <p>Informative and promotional emails that nurture leads and retain customers.</p>
+            </div>
+            <div class="service-card">
+                <h3>Press Releases</h3>
+                <p>Professional press releases to announce updates, events, and company news effectively.</p>
+            </div>
+            <div class="service-card">
+                <h3>SEO-Optimized Long-Form Content</h3>
+                <p>In-depth, keyword-rich articles designed to rank high in search results and build authority.</p>
+            </div>
+        </div>
+
+        <div class="services-highlight">
+            <p>💡 Custom packages available for startups, SMEs, and enterprises.</p>
+        </div>
+    </section>
+
+    <section class="benefits-alt-section">
+        <div class="benefits-alt-header">
+            <h2>Why Choose Our Content Writing Services?</h2>
+            <p>Our approach blends creativity with strategy, delivering content that speaks to your audience and ranks
+                high in search results.</p>
+        </div>
+
+        <div class="benefits-alt-list">
+            <div class="benefit-alt-item">
+                <span class="benefit-alt-icon">📚</span>
+                <div class="benefit-alt-text">
+                    <h3>Industry Expertise</h3>
+                    <p>Specialized writers with deep knowledge of multiple industries, ensuring relevant and credible
+                        content.</p>
+                </div>
+            </div>
+
+            <div class="benefit-alt-item">
+                <span class="benefit-alt-icon">🔍</span>
+                <div class="benefit-alt-text">
+                    <h3>SEO Best Practices</h3>
+                    <p>All content is search-engine optimized without sacrificing readability or user engagement.</p>
+                </div>
+            </div>
+
+            <div class="benefit-alt-item">
+                <span class="benefit-alt-icon">✅</span>
+                <div class="benefit-alt-text">
+                    <h3>100% Original Content</h3>
+                    <p>Plagiarism-free, unique ideas that set your brand apart from the competition.</p>
+                </div>
+            </div>
+
+            <div class="benefit-alt-item">
+                <span class="benefit-alt-icon">🎯</span>
+                <div class="benefit-alt-text">
+                    <h3>Consistent Brand Voice</h3>
+                    <p>We maintain your brand's tone and message across all content types.</p>
+                </div>
+            </div>
+
+            <div class="benefit-alt-item">
+                <span class="benefit-alt-icon">⚡</span>
+                <div class="benefit-alt-text">
+                    <h3>Fast Turnaround</h3>
+                    <p>High-quality content delivered quickly to meet your deadlines.</p>
+                </div>
+            </div>
+
+            <div class="benefit-alt-item">
+                <span class="benefit-alt-icon">📊</span>
+                <div class="benefit-alt-text">
+                    <h3>Data-Driven Approach</h3>
+                    <p>We use research and analytics to ensure every piece of content drives measurable results.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-flow">
+        <div class="container">
+            <h2 class="section-title">Our Content Writing Process</h2>
+            <div class="timeline">
+                <div class="step" data-step="1">
+                    <h3>Research & Discovery</h3>
+                    <p>Understanding your business, audience, and industry to set the right tone.</p>
+                </div>
+                <div class="step" data-step="2">
+                    <h3>Content Strategy</h3>
+                    <p>Planning content structure with SEO keywords for maximum reach.</p>
+                </div>
+                <div class="step" data-step="3">
+                    <h3>Writing & Drafting</h3>
+                    <p>Creating engaging, high-quality, and audience-focused content.</p>
+                </div>
+                <div class="step" data-step="4">
+                    <h3>Editing & Proofreading</h3>
+                    <p>Polishing the draft to ensure accuracy, tone, and readability.</p>
+                </div>
+                <div class="step" data-step="5">
+                    <h3>Delivery & Feedback</h3>
+                    <p>Delivering the final content and refining based on your feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-study-section">
+        <div class="case-study-header">
+            <h2>Case Studies & Results</h2>
+            <p>See how our content writing has transformed businesses with measurable results.</p>
+        </div>
+
+        <div class="case-study-cards">
+            <div class="case-card" data-result="80%">
+                <h3>SEO Blog Campaign</h3>
+                <p>We created a 6-month blog strategy that boosted organic traffic and improved search engine rankings.
+                </p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="result-text"></span>
+            </div>
+
+            <div class="case-card" data-result="150%">
+                <h3>Product Copy Overhaul</h3>
+                <p>Revamped product descriptions that increased conversion rates and improved customer engagement.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="result-text"></span>
+            </div>
+
+            <div class="case-card" data-result="60%">
+                <h3>Email Newsletter</h3>
+                <p>Personalized email campaigns that increased click-through rates and subscriber retention.</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <span class="result-text"></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>Ready to Transform Your Words into Impact?</h2>
+            <p>We craft engaging, SEO-friendly, and value-packed content that connects with your audience and drives
+                results.</p>
+            <div class="cta-button">
+                <a href="#contact" class="btn-primary">🚀 Get Started Today</a>
+                <a href="#portfolio" class="btn-secondary">See Our Work</a>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <!-- Footer section starts here (Contact us) -->
+    <footer class="footer py-5 text-white" style="background-color: #222;">
+        <div class="container">
+            <div class="row gy-4">
+
+                <!-- About GrowCraft -->
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">About GrowCraft</h5>
+                    <p style="font-size: 14px;">
+                        GrowCraft is a service-based platform offering:
+                        <br>🌐 Website Development
+                        <br>🖌️ Graphic Design
+                        <br>✍️ Content Writing
+                        <br>📣 Social Media Management
+                        <br>📊 Digital Marketing
+                        <br>🎓 Training & Internship Programs
+                        <br>Helping businesses grow while students gain real-world learning.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-2">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html" class="text-decoration-none text-light">Home</a></li>
+                        <li><a href="#services" class="text-decoration-none text-light">Services</a></li>
+                        <li><a href="src/workList.html" class="text-decoration-none text-light">Portfolio</a></li>
+                        <li><a href="#internship" class="text-decoration-none text-light">Internship</a></li>
+                        <li><a href="src/contact.html" class="text-decoration-none text-light">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Contact Us</h5>
+                    <p>📍 235, PQR, GHI, ABC Street, XYZ, ABC - 10000, India</p>
+                    <p>📞 +91 999 999 999</p>
+                    <p>📧 info@growcraft.com</p>
+                    <button class="btn btn-outline-light btn-sm mt-2">Send Message</button>
+                </div>
+
+                <!-- Social Links -->
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Follow Us</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="text-decoration-none text-light"><i
+                                    class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+                        <li><a href="#" class="text-decoration-none text-light"><i
+                                    class="fab fa-instagram me-2"></i>Instagram</a></li>
+                        <li><a href="#" class="text-decoration-none text-light"><i
+                                    class="fab fa-linkedin-in me-2"></i>LinkedIn</a></li>
+                        <li><a href="#" class="text-decoration-none text-light"><i
+                                    class="fab fa-github me-2"></i>GitHub</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright -->
+    <div class="text-center text-light py-3" style="background-color: #111;">
+        &copy; 2025 <strong>GrowCraft</strong>. All Rights Reserved.
+    </div>
+
+    <!-- Back to Top -->
+    <button id="backToTop" title="Go to top"
+        class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle px-3 py-2"
+        style="display:none;">↑</button>
+    <script>
+        //Show/hide the back-to-top button on scroll
+        window.onscroll = function () {
+            const btn = document.getElementById("backToTop");
+            if (!btn) return;
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                btn.style.display = "block";
+            } else {
+                btn.style.display = "none";
+            }
+        };
+
+        // Scroll to top smoothly when back-to-top button is clicked
+        document.addEventListener("DOMContentLoaded", function () {
+            const btn = document.getElementById("backToTop");
+            if (btn) {
+                btn.addEventListener("click", function () {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                });
+            }
+        });
+
+
+
+        const modal = document.getElementById("contactModal");
+        const openBtn = document.getElementById("cta-btn");
+        const closeBtn = document.getElementById("closeModal");
+
+        openBtn.addEventListener("click", () => {
+            modal.style.display = "flex";
+        });
+
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+
+        document.querySelectorAll(".service-card").forEach(card => {
+            card.addEventListener("click", () => {
+                alert(`Learn more about our ${card.querySelector("h3").innerText} service!`);
+            });
+        });
+
+        const benefitItems = document.querySelectorAll(".benefit-alt-item");
+
+        const revealOnScroll = () => {
+            benefitItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 50) {
+                    item.style.opacity = "1";
+                    item.style.transform = "translateY(0)";
+                }
+            });
+        };
+
+        benefitItems.forEach(item => {
+            item.style.opacity = "0";
+            item.style.transform = "translateY(20px)";
+            item.style.transition = "all 0.6s ease";
+        });
+
+        window.addEventListener("scroll", revealOnScroll);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const timeline = document.querySelector(".timeline");
+
+            let scrollAmount = 0;
+            setInterval(() => {
+                if (timeline.scrollLeft + timeline.clientWidth >= timeline.scrollWidth) {
+                    timeline.scrollTo({ left: 0, behavior: "smooth" });
+                } else {
+                    scrollAmount += 280;
+                    timeline.scrollTo({ left: scrollAmount, behavior: "smooth" });
+                }
+            }, 4000);
+        });
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const caseCards = document.querySelectorAll(".case-card");
+
+            caseCards.forEach(card => {
+                const fill = card.querySelector(".progress-fill");
+                const resultText = card.querySelector(".result-text");
+                const resultValue = card.getAttribute("data-result");
+
+                // Animate when card comes into view
+                const observer = new IntersectionObserver(entries => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            fill.style.width = resultValue;
+                            resultText.textContent = resultValue + " Growth";
+                            observer.unobserve(card);
+                        }
+                    });
+                }, { threshold: 0.4 });
+
+                observer.observe(card);
+            });
+        });
+
+    </script>
+    <script src="darkMode.js"></script>
+</body>
+
+</html>

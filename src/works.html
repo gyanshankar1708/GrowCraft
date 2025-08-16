@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TechOuthopia-Our Work</title>
+
+    <title>GrowCraft</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -15,22 +16,247 @@
         crossorigin="anonymous"></script>
     <link href="style.css" rel="stylesheet" />
     <style>
-        section {
-            padding-top: 100px;
+        :root {
+            --primary: #6c5ce7;
+            --primary-dark: #5b4ad1;
+            --primary-light: #a29bfe;
+            --secondary: #00cec9;
+            --bg-light: #f8f9fa;
+            --bg-dark: #212529;
+            --card-bg: #ffffff;
+            --card-bg-dark: #2d3436;
+            --text-primary: #2d3436;
+            --text-secondary: #636e72;
+            --text-light: #f8f9fa;
+            --success: #00b894;
+            --warning: #fdcb6e;
         }
 
-        #WebDev {
-            padding-top: 50px;
+        body {
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        #work-body {
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+        }
+
+        .dark-mode #work-body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        section {
+            padding-top: 80px;
+            padding-bottom: 40px;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            background-color: var(--card-bg) !important;
+        }
+
+        .dark-mode .navbar {
+            background-color: var(--card-bg-dark) !important;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .dark-mode .nav-link {
+            color: var(--text-light);
+        }
+
+        .nav-link.active {
+            color: var(--primary) !important;
+            font-weight: 600;
+        }
+
+        /* Work Section Styling */
+        .heading-text {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 40px 0 30px;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .dark-mode .heading-text {
+            color: var(--primary-light);
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-light));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+
+        .work-card {
+            transition: all 0.3s ease;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            background-color: var(--card-bg);
+            height: 100%;
+        }
+
+        .dark-mode .work-card {
+            background-color: var(--card-bg-dark);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .work-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(108, 92, 231, 0.15);
+            border-color: var(--primary-light);
+        }
+
+        .dark-mode .work-card:hover {
+            box-shadow: 0 12px 24px rgba(162, 155, 254, 0.2);
+        }
+
+        .work-card img {
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .work-card img {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        .dark-mode .card-title {
+            color: var(--primary-light);
+        }
+
+        .card-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            text-align: center;
+        }
+
+        .dark-mode .card-text {
+            color: #b2bec3;
+        }
+
+        /* Back to Top Button */
+        #backToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        #backToTop:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            transform: scale(1.1);
+        }
+
+        /* Dark Mode Toggle */
+        .toggle-switch {
+            display: flex;
+            align-items: center;
+            margin-left: 15px;
+        }
+
+        .switch-label {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+        }
+
+        .checkbox {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        .checkbox:checked + .slider {
+            background-color: var(--primary);
+        }
+
+        .checkbox:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            section {
+                padding-top: 60px;
+            }
+            
+            .heading-text {
+                font-size: 1.75rem;
+            }
         }
     </style>
 </head>
 
 <body id="work-body">
     <!-- Navbar Section -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-            <a class="navbar-brand" href="../index.html"><img src="../images/Logo.png" alt="Logo" width="200"
-                    id="logo" /></a>
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/Logo.png" alt="TechOuthopia Logo" width="200" id="logo" />
+            </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,29 +280,21 @@
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../index.html#contact">Contact Us</a>
                     </li>
-                    <li class="nav-item">
-                        <div class="toggle-switch">
-                            <label class="switch-label">
-                            <input onclick="toggleDarkMode()" type="checkbox" class="checkbox">
-                            <span class="slider"></span>
-                            </label>
-                        </div>  
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <div class="container py-5">
-        <h2 class="text-center mb-5 heading-text">Our Works</h2>
+    <div class="container py-5 mt-4">
+        <h2 class="text-center mb-5 heading-text section-title">Our Work</h2>
+        
         <section id="WebDev">
-            <h3 class="heading-text m-4">Website Development</h3>
+            <h3 class="heading-text section-title">Website Development</h3>
             <div class="row justify-content-center g-4">
-
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/WebDev1.png" alt="E-commerce Website" />
+                            <img src="../images/WebDev1.png" alt="E-commerce Website" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">E-commerce Platform</h3>
                                 <p class="card-text">
@@ -88,9 +306,9 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/WebDev2.png" alt="Corporate Website" />
+                            <img src="../images/WebDev2.png" alt="Corporate Website" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Corporate Website</h3>
                                 <p class="card-text">
@@ -102,9 +320,9 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/WebDev.png" alt="Portfolio Website" />
+                            <img src="../images/WebDev.png" alt="Portfolio Website" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Portfolio Website</h3>
                                 <p class="card-text">
@@ -114,19 +332,16 @@
                         </div>
                     </a>
                 </div>
-
             </div>
-
-
         </section>
-        <section id="digital-marketing">
-            <h3 class="heading-text m-4">Digital Marketing</h3>
-            <div class="row justify-content-center g-4">
 
+        <section id="digital-marketing">
+            <h3 class="heading-text section-title">Digital Marketing</h3>
+            <div class="row justify-content-center g-4">
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/DigitalMarketing.png" alt="SEO Campaign" />
+                            <img src="../images/DigitalMarketing.png" alt="SEO Campaign" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">SEO Optimization</h3>
                                 <p class="card-text">
@@ -138,9 +353,9 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/DigitalMarketing2.png" alt="PPC Campaign" />
+                            <img src="../images/DigitalMarketing2.png" alt="PPC Campaign" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">PPC Advertising</h3>
                                 <p class="card-text">
@@ -152,9 +367,9 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/DigitalMarketing3.png" alt="Email Marketing" />
+                            <img src="../images/DigitalMarketing3.png" alt="Email Marketing" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Email Marketing</h3>
                                 <p class="card-text">
@@ -164,17 +379,16 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </section>
-        <section id="graphic-design">
-            <h3 class="heading-text m-4">Graphic Design</h3>
-            <div class="row justify-content-center g-4">
 
+        <section id="graphic-design">
+            <h3 class="heading-text section-title">Graphic Design</h3>
+            <div class="row justify-content-center g-4">
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/GraphicDesign.png" alt="Logo Design" />
+                            <img src="../images/GraphicDesign.png" alt="Logo Design" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Brand Identity</h3>
                                 <p class="card-text">
@@ -186,9 +400,9 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/GraphicDesign2.png" alt="Marketing Materials" />
+                            <img src="../images/GraphicDesign2.png" alt="Marketing Materials" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Marketing Materials</h3>
                                 <p class="card-text">
@@ -200,9 +414,9 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/GraphicDesign3.jpg" alt="Digital Graphics" />
+                            <img src="../images/GraphicDesign3.jpg" alt="Digital Graphics" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Digital Graphics</h3>
                                 <p class="card-text">
@@ -212,17 +426,16 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </section>
-        <section id="content-writing">
-            <h3 class="heading-text m-4">Content Writing</h3>
-            <div class="row justify-content-center g-4">
 
+        <section id="content-writing">
+            <h3 class="heading-text section-title">Content Writing</h3>
+            <div class="row justify-content-center g-4">
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/ContentWriting1.png" alt="Blog Writing" />
+                            <img src="../images/ContentWriting1.png" alt="Blog Writing" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Blog Content</h3>
                                 <p class="card-text">
@@ -234,9 +447,9 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/ContentWriting.png" alt="Website Copy" />
+                            <img src="../images/ContentWriting.png" alt="Website Copy" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Website Copywriting</h3>
                                 <p class="card-text">
@@ -248,9 +461,9 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/ContentWriting3.png" alt="Product Descriptions" />
+                            <img src="../images/ContentWriting3.png" alt="Product Descriptions" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Product Descriptions</h3>
                                 <p class="card-text">
@@ -260,18 +473,16 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </section>
+
         <section id="social-media">
-
-            <h3 class="heading-text m-4">Social Media Management </h3>
+            <h3 class="heading-text section-title">Social Media Management</h3>
             <div class="row justify-content-center g-4">
-
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/SocialMediaManagement1.png" alt="Instagram Management" />
+                            <img src="../images/SocialMediaManagement1.png" alt="Instagram Management" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Instagram Growth</h3>
                                 <p class="card-text">
@@ -283,9 +494,9 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/SocialMediaManagement.png" alt="Content Strategy" />
+                            <img src="../images/SocialMediaManagement.png" alt="Content Strategy" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Content Strategy</h3>
                                 <p class="card-text">
@@ -297,9 +508,9 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6 col-12">
-                    <a href="" style="text-decoration: none;">
+                    <a href="#" style="text-decoration: none;">
                         <div class="gallery-card h-100 work-card">
-                            <img src="../images/SocialMediaManagement3.png" alt="Community Management" />
+                            <img src="../images/SocialMediaManagement3.png" alt="Community Management" class="img-fluid" />
                             <div class="card-body">
                                 <h3 class="card-title">Community Building</h3>
                                 <p class="card-text">
@@ -309,20 +520,55 @@
                         </div>
                     </a>
                 </div>
-
             </div>
         </section>
     </div>
 
-    
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">↑</button>
 
-   <!-- Back to Top Button -->
-   <button id="backToTop" title="Go to top">↑</button>
+  <script>
+    // Back to Top Button functionality
+    window.onscroll = function () {
+        scrollFunction();
+    };
 
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("backToTop").style.display = "block";
+        } else {
+            document.getElementById("backToTop").style.display = "none";
+        }
+    }
 
+    document.getElementById("backToTop").addEventListener("click", function () {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
 
-    <script src="script.js"></script>
-    <script src="utils.js"></script>
+    // Dark mode toggle function
+    function toggleDarkMode() {
+        const body = document.body;
+        body.classList.toggle("dark-mode");
+
+        // Save preference to localStorage
+        const isDark = body.classList.contains("dark-mode");
+        localStorage.setItem("darkMode", isDark);
+    }
+
+    // Check for saved dark mode preference
+    document.addEventListener("DOMContentLoaded", function () {
+        if (localStorage.getItem("darkMode") === "true") {
+            document.body.classList.add("dark-mode");
+            document.querySelector(".checkbox").checked = true;
+        }
+    });
+</script>
+
+<script src="script.js"></script>
+<script src="utils.js"></script>
+<script src="darkMode.js"></script>
+
 </body>
 
 </html>
