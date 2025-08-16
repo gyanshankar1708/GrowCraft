@@ -1659,3 +1659,167 @@ body.dark .mb-4:hover {
   box-shadow: 0 6px 24px rgba(25, 118, 210, 0.18);
   transform: translateY(-2px) scale(1.03);
 }
+
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+        /* Footer Section */
+        footer {
+            background: #989898;
+            font-family: 'Poppins', sans-serif;
+            padding: 60px 30px;
+            color: #ffffff;
+        }
+
+        /* Grid Container */
+        .contact-container {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: stretch;
+            flex-wrap: wrap;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+
+
+        }
+
+
+        .contact-grid {
+            background: whitesmoke;
+            flex: 1 1 45%;
+            max-width: 500px;
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Equal height trick */
+        .contact-container>.contact-grid {
+            display: flex;
+            flex-direction: column;
+
+        }
+
+        /* Hover Effect */
+        .contact-grid:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Headings */
+        .heading-text {
+            font-size: 26px;
+            color: #0078ff;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+
+        }
+
+        /* Text Styling */
+        .contact-grid p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #0a0a0a;
+        }
+
+        /* Address block */
+        .address p {
+            margin: 5px 0;
+        }
+
+        /* Social icons */
+        .footer-links {
+            margin-top: 20px;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .footer-links a {
+            margin-right: 12px;
+            transition: transform 0.3s ease;
+
+        }
+
+
+        .footer-links a:hover svg {
+            stroke: #ff5722;
+            /* Change this to any hover color you prefer */
+            transform: scale(1.2);
+        }
+
+        /* Contact Form Layout */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        form input,
+        form textarea {
+            background: #989898;
+            color: rgb(35, 35, 35);
+            border: none;
+            border-radius: 5px;
+            padding: 14px 16px;
+            font-size: 15px;
+            width: 100%;
+            max-width: 420px;
+            transition: background-color 0.3s ease;
+            text-align: left;
+        }
+
+        form input::placeholder,
+        form textarea::placeholder {
+            color: #3f3e3e;
+        }
+
+        form input:focus,
+        form textarea:focus {
+            background-color: #868686;
+            outline: 2px solid #0078ff;
+            transition: outline 0.2s ease, background-color 0.3s ease;
+        }
+
+        #form-submit {
+            background-color: #0078ff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        #form-submit:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Error Message */
+        #error {
+            color: #ff6b6b;
+            font-size: 14px;
+        }
+
+        /* Responsive for Mobile */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .contact-grid {
+                flex: 1 1 80%;
+            }
+        }
+    
