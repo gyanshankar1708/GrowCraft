@@ -46,6 +46,31 @@
 
 <!-- Added custom view all works button class with hover effects and smooth transitions -->
 <style>
+  html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; 
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;             
+  z-index: 1000;
+  background-color: #000;   
+}
+
+.nav-link {
+  color: white;
+  padding: 10px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffc107;
+}
+
   .btn-custom-purple {
     background-color: #463896;
     border-color: #291987;
