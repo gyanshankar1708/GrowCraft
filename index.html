@@ -82,7 +82,10 @@
     max-height: 60px;
     object-fit: contain;
     vertical-align: middle;
+    transition: all 0.3s ease;
   }
+
+  /* Dark mode logo switching - will be handled by JavaScript */
 
   /* Align all nav items vertically center */
   .navbar-nav .nav-link {
@@ -784,6 +787,8 @@
           </li>
         </ul>
       </div>
+      
+
     </div>
 
   </nav>
@@ -1402,6 +1407,40 @@
   <script src="src/script.js"></script>
   <script src="src/utils.js"></script>
   <script src="src/darkMode.js"></script>
+  
+  <script>
+    // Logo switching functionality for dark mode
+    document.addEventListener('DOMContentLoaded', function() {
+      const logo = document.querySelector("#logo");
+      
+      // Function to update logo based on theme
+      function updateLogo() {
+        const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+        if (isDark) {
+          logo.src = 'images/logo-transparent-dark-mode.png';
+        } else {
+          logo.src = 'images/logo_bg_transparent.png';
+        }
+      }
+      
+      // Update logo when page loads
+      updateLogo();
+      
+      // Watch for theme changes
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'data-bs-theme') {
+            updateLogo();
+          }
+        });
+      });
+      
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-bs-theme']
+      });
+    });
+  </script>
 </body>
 
 </html>

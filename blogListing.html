@@ -24,6 +24,12 @@
     max-height: 60px;
     object-fit: contain;
     vertical-align: middle;
+    transition: all 0.3s ease;
+  }
+
+  /* Dark mode logo switching */
+  [data-bs-theme="dark"] .navbar-brand img {
+    content: url('images/logo-transparent-dark-mode.png');
   }
 
   .navbar-nav .nav-link {
@@ -100,6 +106,12 @@
     max-height: 60px;
     object-fit: contain;
     vertical-align: middle;
+    transition: all 0.3s ease;
+  }
+
+  /* Dark mode logo switching */
+  [data-bs-theme="dark"] .navbar-brand img {
+    content: url('images/logo-transparent-dark-mode.png');
   }
 
   /* Align all nav items vertically center */
@@ -154,10 +166,14 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+
         <a class="navbar-brand d-flex align-items-center mb-0" href="#">
       <img src="images/logo_bg_transparent1.png" alt="GrowCraft" width="50" id="logo" class="me-2" />
       <h1 class="h4 mb-0 fw-bold">GrowCraft</h1>
     </a>
+
+      <a class="navbar-brand" href="#"><img src="images/logo_bg_transparent.png" alt="GrowCraft" width="200" id="logo" /></a>
+
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -188,6 +204,8 @@
           </li>
         </ul>
       </div>
+      
+
     </div>
 
   </nav>
@@ -208,6 +226,7 @@
   <!-- JS Scripts -->
   <script src="src/blogs.js"></script>
   <script src="src/darkMode.js"></script>
+  
 
 
   <style>
