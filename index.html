@@ -54,8 +54,8 @@
       background-color: #ffffff !important;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 
-    }
-    .navbar-nav li {
+  }
+  .navbar-nav li {
       margin: 0 10px;
       /* Reduce from 20px or more if it’s higher */
     }
@@ -139,6 +139,8 @@
     .navbar-nav .nav-link:hover::after {
       width: 100%;
     }
+
+
 
   .btn-custom-purple {
     background-color: #463896;
@@ -769,11 +771,13 @@
           </ul>
         </div>  
       </div>
+
   
     </nav>
     <!-- Navbar ends here -->
 
     
+
 
 
   <!-- Training and Internship program section starts here  -->
@@ -1476,6 +1480,40 @@
   <script src="src/script.js"></script>
   <script src="src/utils.js"></script>
   <script src="src/darkMode.js"></script>
+  
+  <script>
+    // Logo switching functionality for dark mode
+    document.addEventListener('DOMContentLoaded', function() {
+      const logo = document.querySelector("#logo");
+      
+      // Function to update logo based on theme
+      function updateLogo() {
+        const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+        if (isDark) {
+          logo.src = 'images/logo-transparent-dark-mode.png';
+        } else {
+          logo.src = 'images/logo_bg_transparent.png';
+        }
+      }
+      
+      // Update logo when page loads
+      updateLogo();
+      
+      // Watch for theme changes
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'data-bs-theme') {
+            updateLogo();
+          }
+        });
+      });
+      
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-bs-theme']
+      });
+    });
+  </script>
 </body>
 
 </html>

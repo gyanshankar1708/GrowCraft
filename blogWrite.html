@@ -28,6 +28,11 @@
       color: #333;
     }
 
+    /* Dark mode logo switching */
+    [data-bs-theme="dark"] .navbar-brand img {
+      content: url('images/logo-transparent-dark-mode.png');
+    }
+
     .blog-section {
       max-width: 700px;
       background: #ffffff;
@@ -112,7 +117,7 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between align-items-center px-3 px-sm-5">
-      <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="GrowCraft" width="180" id="logo"></a>
+      <a class="navbar-brand" href="#"><img src="images/logo_bg_transparent.png" alt="GrowCraft" width="180" id="logo"></a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -130,6 +135,10 @@
 
         </ul>
       </div>
+      
+
+      
+
     </div>
   </nav>
 
@@ -150,6 +159,7 @@
   <script src="src/write-blog.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="src/darkMode.js"></script>
+  
 
 </body>
 </html>
