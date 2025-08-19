@@ -59,11 +59,7 @@ h5 {
   font-weight: 600;
   transition: background 0.2s;
 }
-.fab{
-  border: none;
-  color: #fff;
-  font-weight: 600; 
-} 
+ 
 
 .btn-primary:hover {
   background-color: #1976d2;
