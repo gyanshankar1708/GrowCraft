@@ -22,10 +22,89 @@
 
   <!-- Inline Enhancements -->
   <style>
+    /* Base styles */
     body {
       font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f7fa;
+      background-color: #f4f6f8;
       color: #333;
+      transition: background-color 0.3s ease, color 0.3s ease;
+      min-height: 100vh;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Ensure html covers full viewport */
+    html {
+      background-color: #f4f6f8;
+      transition: background-color 0.3s ease;
+      min-height: 100vh;
+    }
+
+    /* Navbar styling - slightly darker than hero section */
+    .navbar.bg-body-tertiary {
+      background-color: #e9ecef !important;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      transition: background-color 0.3s ease;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Dark mode html - Force override with highest specificity */
+    html[data-bs-theme="dark"],
+    html.dark,
+    html.dark-mode {
+      background-color: #121822 !important;
+      background: #121822 !important;
+    }
+
+    /* Dark mode navbar - slightly darker than hero section */
+    html[data-bs-theme="dark"] .navbar.bg-body-tertiary,
+    html.dark .navbar.bg-body-tertiary,
+    html.dark-mode .navbar.bg-body-tertiary {
+      background-color: #0a0e12 !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    /* Dark mode navbar text */
+    html[data-bs-theme="dark"] .navbar-brand,
+    html[data-bs-theme="dark"] .navbar-nav .nav-link,
+    html.dark .navbar-brand,
+    html.dark .navbar-nav .nav-link,
+    html.dark-mode .navbar-brand,
+    html.dark-mode .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+
+    /* Dark mode body - Force override with highest specificity */
+    html[data-bs-theme="dark"] body,
+    html[data-bs-theme="dark"] body.dark-mode,
+    html.dark body,
+    html.dark body.dark-mode,
+    .dark-mode body,
+    .dark body,
+    body.dark-mode {
+      background-color: #121822 !important;
+      background: #121822 !important;
+      color: #ffffff !important;
+      min-height: 100vh !important;
+    }
+
+    /* Dark mode container override */
+    .dark-mode .container,
+    .dark .container,
+    body.dark-mode .container,
+    html.dark .container,
+    html[data-bs-theme="dark"] .container {
+      background-color: transparent !important;
+    }
+
+    /* Force specific Bootstrap utility overrides in dark mode */
+    html[data-bs-theme="dark"] .bg-light,
+    html[data-bs-theme="dark"] .bg-white,
+    html[data-bs-theme="dark"] .bg-body,
+    html[data-bs-theme="dark"] .bg-body-secondary,
+    html[data-bs-theme="dark"] .bg-body-tertiary:not(.navbar) {
+      background-color: #121822 !important;
     }
 
     /* Dark mode logo switching */
@@ -40,6 +119,18 @@
       padding: 40px;
       border-radius: 12px;
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Dark mode blog section */
+    .dark-mode .blog-section,
+    .dark .blog-section,
+    body.dark-mode .blog-section,
+    html.dark .blog-section,
+    html[data-bs-theme="dark"] .blog-section {
+      background-color: #1a1a2e !important;
+      color: #ffffff !important;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3) !important;
     }
 
     .blog-section h2 {
@@ -53,6 +144,376 @@
     #blog-form textarea {
       width: 100%;
       padding: 14px;
+      border: 2px solid #e1e8ed;
+      border-radius: 8px;
+      font-size: 16px;
+      margin-bottom: 18px;
+      transition: all 0.3s ease;
+      background-color: #fafbfc;
+    }
+
+    /* Dark mode form inputs */
+    html[data-bs-theme="dark"] #blog-form input,
+    html[data-bs-theme="dark"] #blog-form textarea,
+    .dark-mode #blog-form input,
+    .dark-mode #blog-form textarea,
+    .dark #blog-form input,
+    .dark #blog-form textarea {
+      background-color: #2d3748 !important;
+      border-color: #4a5568 !important;
+      color: #ffffff !important;
+    }
+
+    #blog-form input:focus,
+    #blog-form textarea:focus {
+      outline: none;
+      border-color: #007bff;
+      background-color: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.15);
+    }
+
+    /* Dark mode form focus states */
+    html[data-bs-theme="dark"] #blog-form input:focus,
+    html[data-bs-theme="dark"] #blog-form textarea:focus,
+    .dark-mode #blog-form input:focus,
+    .dark-mode #blog-form textarea:focus,
+    .dark #blog-form input:focus,
+    .dark #blog-form textarea:focus {
+      background-color: #1a202c !important;
+      border-color: #00ffe7 !important;
+      box-shadow: 0 0 0 3px rgba(0, 255, 231, 0.15) !important;
+    }
+
+    #blog-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    #blog-form button {
+      width: 100%;
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      color: white;
+      border: none;
+      padding: 16px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+
+    #blog-form button:hover {
+      background: linear-gradient(45deg, #0056b3, #004085);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 12px 20px;
+      font-weight: 500;
+      background-color: #e3eaf5;
+      color: #273055;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #d4e2f4;
+      transform: translateY(-2px);
+      text-decoration: none;
+      color: #273055;
+    }
+
+    /* Dark mode back button */
+    html[data-bs-theme="dark"] .back-btn,
+    .dark-mode .back-btn,
+    .dark .back-btn {
+      background-color: #4a5568 !important;
+      color: #ffffff !important;
+    }
+
+    html[data-bs-theme="dark"] .back-btn:hover,
+    .dark-mode .back-btn:hover,
+    .dark .back-btn:hover {
+      background-color: #2d3748 !important;
+      color: #ffffff !important;
+    }
+
+    /* Professional Footer Styles */
+    .professional-footer {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+      color: #333;
+      padding: 40px 0 0;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .professional-footer, .dark .professional-footer {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%) !important;
+      color: #ffffff !important;
+    }
+
+    .footer-brand { text-align: center; }
+
+    .footer-logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .brand-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .brand-name, .dark .brand-name {
+      color: #ffffff !important;
+      background: linear-gradient(45deg, #00ffe7, #0b84f3) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+
+    .brand-description {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 1.5rem;
+      line-height: 1.5;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .brand-description, .dark .brand-description { color: #a8b2d1 !important; }
+
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-number {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #007bff;
+      margin-bottom: 0.25rem;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .stat-number, .dark .stat-number { color: #00ffe7 !important; }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .stat-label, .dark .stat-label { color: #a8b2d1 !important; }
+
+    /* Footer Titles */
+    .footer-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .footer-title, .dark .footer-title { color: #ffffff !important; }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .footer-title::after, .dark .footer-title::after {
+      background: linear-gradient(45deg, #00ffe7, #0b84f3) !important;
+    }
+
+    /* Footer Links */
+    .footer-links { list-style: none; padding: 0; margin: 0; }
+    .footer-links li { margin-bottom: 0.5rem; }
+
+    .footer-links a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-left: 15px;
+      display: inline-block;
+    }
+
+    .dark-mode .footer-links a, .dark .footer-links a { color: #a8b2d1 !important; }
+
+    .footer-links a:hover { color: #007bff; transform: translateX(5px); }
+    .dark-mode .footer-links a:hover, .dark .footer-links a:hover { color: #00ffe7 !important; }
+
+    .footer-links a::before {
+      content: '▶';
+      position: absolute;
+      left: 0; top: 0;
+      font-size: 0.7rem;
+      color: #007bff;
+      transition: all 0.3s ease;
+      opacity: 0;
+      transform: translateX(-5px);
+    }
+
+    .dark-mode .footer-links a::before, .dark .footer-links a::before { color: #0b84f3 !important; }
+
+    .footer-links a:hover::before { opacity: 1; transform: translateX(0); }
+
+    /* Contact Info */
+    .contact-info { margin-bottom: 2rem; }
+
+    .contact-item { display: flex; align-items: center; margin-bottom: 0.75rem; gap: 10px; }
+
+    .contact-item i {
+      width: 18px;
+      color: #007bff;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .dark-mode .contact-item i, .dark .contact-item i { color: #0b84f3 !important; }
+
+    .contact-item a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+      flex: 1;
+    }
+
+    .dark-mode .contact-item a, .dark .contact-item a { color: #a8b2d1 !important; }
+
+    .contact-item a:hover { color: #007bff; }
+    .dark-mode .contact-item a:hover, .dark .contact-item a:hover { color: #00ffe7 !important; }
+
+    .contact-item span {
+      color: #666;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      flex: 1;
+    }
+
+    .dark-mode .contact-item span, .dark .contact-item span { color: #a8b2d1 !important; }
+
+    /* Footer Bottom */
+    .footer-bottom {
+      background: rgba(0, 0, 0, 0.05);
+      padding: 20px 0;
+      margin-top: 30px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .footer-bottom, .dark .footer-bottom {
+      background: rgba(0, 0, 0, 0.3) !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .copyright {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .copyright, .dark .copyright { color: #a8b2d1 !important; }
+
+    .footer-nav { display: flex; gap: 20px; justify-content: flex-end; align-items: center; }
+
+    .footer-nav a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .dark-mode .footer-nav a, .dark .footer-nav a { color: #a8b2d1 !important; }
+
+    .footer-nav a:hover { color: #007bff; }
+    .dark-mode .footer-nav a:hover, .dark .footer-nav a:hover { color: #00ffe7 !important; }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .professional-footer {
+        padding: 30px 0 0;
+      }
+
+      .footer-brand,
+      .footer-title {
+        text-align: center;
+      }
+
+      .footer-nav {
+        justify-content: center;
+      }
+
+      .footer-bottom .row {
+        text-align: center;
+      }
+
+      .footer-bottom .col-md-6:first-child {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .quick-stats {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .stat-number {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+      }
+
+      .stat-label {
+        font-size: 0.7rem;
+      }
+    }
+  
+      #blog-form input,
+      #blog-form textarea {
+      width: 100%;
+      padding: 12px;
       margin-bottom: 20px;
       font-size: 1rem;
       border: 1px solid #dcdfe6;
@@ -110,6 +571,7 @@
         font-size: 0.95rem;
       }
     }
+  
   </style>
 </head>
 <body>
@@ -154,6 +616,104 @@
 
     <a href="blogListing.html" class="back-btn"><i class="fas fa-arrow-left me-2"></i>Back to Blogs</a>
   </div>
+
+  <!-- Professional Footer -->
+  <footer class="professional-footer fade-in">
+    <div class="container">
+        <div class="row g-4 py-4 fade-in">
+            <!-- Footer Columns -->
+            <div class="col-lg-4 col-md-6 fade-in">
+                <div class="footer-brand fade-in">
+                    <img src="images/Logo.png" alt="GrowCraft Logo"
+                        class="footer-logo mb-3">
+                    <h4 class="brand-name">GrowCraft</h4>
+                    <p class="brand-description">Empowering businesses with
+                        innovative digital solutions and creative excellence.</p>
+                    <div class="quick-stats fade-in">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Links -->
+            <div class="col-lg-2 col-md-3 col-6 fade-in">
+                <h5 class="footer-title">Services</h5>
+                <ul class="footer-links">
+                    <li><a href="learn/webdev.html">Web Development</a></li>
+                    <li><a href="learn/graphic.html">Graphic Design</a></li>
+                    <li><a href="learn/marketing.html">Digital Marketing</a></li>
+                    <li><a href="learn/contentwriting.html">Content Writing</a></li>
+                    <li><a href="learn/socialmedia.html">Social Media</a></li>
+                    <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-3 col-6 fade-in">
+                <h5 class="footer-title">Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html#about">About Us</a></li>
+                    <li><a href="index.html#work">Portfolio</a></li>
+                    <li><a href="src/contact.html">Contact</a></li>
+                    <li><a href="#careers">Careers</a></li>
+                    <li><a href="blogListing.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-lg-4 col-md-6 fade-in">
+                <h5 class="footer-title">Get In Touch</h5>
+                <div class="contact-info mb-3 fade-in">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:+919999999999">+91 999 999 999</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>ABC Street, XYZ City, India</span>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom fade-in">
+        <div class="container">
+            <div class="row align-items-center py-3 fade-in">
+                <div class="col-md-6">
+                    <p class="copyright mb-0">© 2024
+                        <strong>GrowCraft</strong>. All rights reserved.</p>
+                </div>
+                <div class="col-md-6">
+                    <div class="footer-nav fade-in">
+                        <a href="#privacy">Privacy</a>
+                        <a href="#terms">Terms</a>
+                        <a href="#sitemap">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+  </footer>
+  <!-- Professional Footer ends -->
 
   <!-- Scripts -->
   <script src="src/write-blog.js"></script>
