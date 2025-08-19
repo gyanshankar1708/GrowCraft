@@ -98,17 +98,157 @@
         }
         
         /* Responsive design */
-        @media (max-width: 991.98px) {
+        
+        /* Work card styling */
+        .work-card {
+            background: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            overflow: hidden;
+            height: 100%;
+            border: none;
+        }
+
+        .work-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .work-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .work-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .work-card .card-title {
+            color: #2B3A67;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        .work-card .card-text {
+            color: #41506b;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        /* Section headings */
+        .heading-text {
+            color: #2B3A67;
+            font-weight: 800;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        section h3.heading-text {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #463896;
+        }
+
+        /* Gallery card specific styling */
+        .gallery-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Dark mode support for cards */
+        [data-bs-theme="dark"] .work-card {
+            background: #2d2d44;
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .work-card .card-title {
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] .work-card .card-text {
+            color: #b8b9c7;
+        }
+
+        [data-bs-theme="dark"] .heading-text {
+            color: #ffffff;
+        }
+
+        [data-bs-theme="dark"] section h3.heading-text {
+            color: #667eea;
+        }
+                @media (max-width: 991.98px) {
             .navbar .navbar-brand {
                 margin-right: auto;
             }
-            
+
             .navbar-collapse {
                 margin-top: 0.8rem;
             }
-            
+
             .navbar-nav .nav-link {
                 padding-left: 0;
+            }
+            
+            /* Responsive card adjustments */
+            .heading-text {
+                font-size: 2rem;
+            }
+            
+            section h3.heading-text {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .work-card img {
+                height: 180px;
+            }
+            
+            .work-card .card-body {
+                padding: 1.25rem;
+            }
+            
+            .work-card .card-title {
+                font-size: 1.1rem;
+            }
+            
+            .work-card .card-text {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .heading-text {
+                font-size: 1.75rem;
+            }
+            
+            section h3.heading-text {
+                font-size: 1.25rem;
+            }
+            
+            .work-card img {
+                height: 160px;
+            }
+            
+            .work-card .card-body {
+                padding: 1rem;
             }
         }
 
