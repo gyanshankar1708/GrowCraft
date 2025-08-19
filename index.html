@@ -82,7 +82,10 @@
     max-height: 60px;
     object-fit: contain;
     vertical-align: middle;
+    transition: all 0.3s ease;
   }
+
+  /* Dark mode logo switching - will be handled by JavaScript */
 
   /* Align all nav items vertically center */
   .navbar-nav .nav-link {
@@ -465,7 +468,7 @@
     color: #b8b9c7;
     line-height: 1.6;
     margin-bottom: 20px;
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 
   /* Quick Stats */
@@ -502,6 +505,8 @@
     margin-bottom: 15px;
     position: relative;
     padding-bottom: 8px;
+    text-align: justify;
+    max-width: 12ch;
   }
 
   .footer-title::after {
@@ -513,13 +518,22 @@
     height: 2px;
     background: linear-gradient(90deg, #667eea, #764ba2);
     border-radius: 2px;
+    transition: all 0.4s ease;
   }
+  /* underLine hover effect added */
+  .footer-title:hover::after {
+      left: 50%;
+      width: 100%;
+      transform: translateX(-50%);
+    }
 
   /* Footer Links */
   .footer-links {
     list-style: none;
     padding: 0;
     margin: 0;
+    letter-spacing: .5px;
+    text-align: justify;
   }
 
   .footer-links li {
@@ -555,11 +569,12 @@
 
   .footer-links a:hover::before {
     width: 4px;
-  }
+  } 
 
   /* Contact Info */
   .contact-info {
     margin-bottom: 15px;
+    letter-spacing: 1px;
   }
 
   .contact-item {
@@ -575,6 +590,27 @@
     width: 16px;
     font-size: 0.9rem;
   }
+
+  /* pulse animation */
+  .pulse {
+    animation: pulse 1.5s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.07);
+      opacity: 0.7;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
 
   .contact-item a {
     color: #b8b9c7;
@@ -600,6 +636,7 @@
 
   .social-links {
     display: flex;
+    justify-content: center;
     gap: 8px;
   }
 
@@ -686,11 +723,6 @@
       text-align: center;
     }
 
-    .footer-title::after {
-      left: 50%;
-      transform: translateX(-50%);
-    }
-
     .footer-nav {
       justify-content: center;
       margin-top: 15px;
@@ -747,6 +779,7 @@
   <body id="main-body">
     <!-- Navbar starts here -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
+
       <div
         class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5"
       >
@@ -783,7 +816,48 @@
             <a class="nav-link active" aria-current="page" href="src/contact.html">Contact Us</a>
           </li>
         </ul>
+
+
+        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+            <a class="navbar-brand" href="#"><img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" /></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active visited" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="blogListing.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#about">About Us</a>
+                    </li>
+                    <!-- Added new "Our Work" link to navigate to the new work section on same page -->
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./work.html">Our Work</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="src/contact.html">Contact Us</a>
+                    </li>
+
+                    <li class="nav-item mt-3">
+                        <div class="toggle-switch">
+                        </div>
+                    </li>
+                </ul>
+
       </div>
+      
+
     </div>
 
   </nav>
@@ -802,6 +876,7 @@
             <div class="program-card d-flex align-items-center gap-2" data-tooltip="Learn to build websites">
               <img src="images/icons/WebDev.png" alt="Web Development" class="icon" />
               <h6 class="mb-0">Website Development</h6>
+
             </div>
 
           </a>
@@ -867,21 +942,22 @@
 
   <main class="section fade-in" id="home">
     <!-- Carousel Section Starts -->
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel" data-bs-wrap="true">
       <!-- Indicators -->
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-          aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 4"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4" aria-label="Slide 5"></button>
+          aria-current="true" ></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"  ></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" ></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"  ></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"  ></button>
+        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"  ></button>
       </div>
 
       <!-- Slides -->
       <div class="carousel-inner cauresel-images fade-in">
         <!-- Slide 1 -->
-        <div class="carousel-item active  fade-in" data-bs-interval="8000">
+        <div class="carousel-item active  fade-in">
           <div class="carousel-overlay">
             <img src="images/WebDev.png" class="d-flex w-100" alt="Website Development">
           </div>
@@ -895,7 +971,7 @@
         </div>
 
         <!-- Slide 2 -->
-        <div class="carousel-item fade-in" data-bs-interval="8000">
+        <div class="carousel-item fade-in"  >
           <div class="carousel-overlay">
             <img src="images/GraphicDesign.png" class="d-block w-100" alt="Graphic Design">
           </div>
@@ -909,7 +985,7 @@
         </div>
 
         <!-- Slide 3 -->
-        <div class="carousel-item fade-in" data-bs-interval="8000">
+        <div class="carousel-item fade-in"  >
           <div class="carousel-overlay">
             <img src="images/DigitalMarketing.png" class="d-block w-100" alt="Digital Marketing">
           </div>
@@ -923,7 +999,7 @@
         </div>
 
         <!-- Slide 4 -->
-        <div class="carousel-item fade-in" data-bs-interval="8000">
+        <div class="carousel-item fade-in"  >
           <div class="carousel-overlay">
             <img src="images/SocialMediaManagement.png" class="d-block w-100" alt="Social Media Management">
           </div>
@@ -937,7 +1013,7 @@
         </div>
 
         <!-- Slide 5 -->
-        <div class="carousel-item fade-in" data-bs-interval="8000">
+        <div class="carousel-item fade-in" >
           <div class="carousel-overlay">
             <img src="images/ContentWriting.png" class="d-block w-100" alt="Content Writing">
           </div>
@@ -950,7 +1026,7 @@
           </div>
         </div>
         <!-- Slide 6-->
-        <div class="carousel-item fade-in" data-bs-interval="8000">
+        <div class="carousel-item fade-in"  >
           <div class="carousel-overlay">
             <img src="images/Cybersecurity.png" class="d-block w-100" alt="Cyber Analyst">
           </div>
@@ -1165,7 +1241,7 @@
                         <div class="btn-group fade-in">
                             <button class="btn btn-sm btn-outline-primary toggle-btn">Read More</button>
                             <a href="learn/cyberanalyst.html"><button
-                                    class="btn btn-sm btn-outline-primary">Explore</button></a>
+                                  class="btn btn-sm btn-outline-primary">Explore</button></a>
                         </div>
                     </div>
                 </div>
@@ -1238,6 +1314,47 @@
       </div>
     </div>
 
+  </section>
+  <!-- About Us section ends here -->
+  
+           <!-- Our Work section starts here -->
+<section class="section mt-5" id="work">
+    <div class="container text-center">
+      <h2 class="heading-text">Our Work</h2>
+      <p class="fst-italic">
+        Showcasing Our Creative Excellence and Client Success Stories
+      </p>
+  
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+        <!-- Work Card 1 - Web Development -->
+        <div class="col">
+          <a href="src/works.html#WebDev" class="text-decoration-none text-dark">
+            <div class="card gallery-card h-100 work-card shadow-sm">
+              <img src="images/WebDev.png" alt="Web Development Project" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">Online Platform</h5>
+                <p class="card-text">
+                  A modern, responsive e-commerce website with seamless user experience and advanced features.
+                </p>
+                <span style="padding: 10px 20px;margin-bottom: 12px;" class="badge bg-primary">Web Development</span>
+              </div>
+            </div>
+          </a>
+        </div>
+  
+        <!-- Work Card 2 - Digital Marketing -->
+        <div class="col">
+          <a href="src/works.html#digital-marketing" class="text-decoration-none text-dark">
+            <div class="card gallery-card h-100 work-card shadow-sm">
+              <img src="images/DigitalMarketing.png" alt="Digital Marketing Campaign" class="card-img-top" />
+              <div class="card-body">
+                <h5 class="card-title">Brand Growth Campaign</h5>
+                <p class="card-text">
+                  A strategic digital campaign that increased online engagement and traffic by over 300%.
+                </p>
+                <span style="padding: 10px 20px;margin-bottom: 12px;" class="badge bg-success">Digital Marketing</span>
+              </div>
+
             </div>
           </a>
         </div>
@@ -1252,7 +1369,7 @@
                 <p class="card-text">
                   A complete branding package including logos, business cards, and social media visuals.
                 </p>
-                <span class="badge bg-info text-dark">Graphic Design</span>
+                <span style="padding: 8px 20px;margin-bottom: 12px;"class="badge bg-info text-dark">Graphic Design</span>
               </div>
             </div>
           </a>
@@ -1273,11 +1390,11 @@
 <!-- Professional Footer -->
 <footer class="professional-footer fade-in">
     <div class="container">
-        <div class="row g-4 py-4 fade-in">
+        <div class="row gx-5 gy-4 py-4 fade-in justify-content-center d-flex gap-3">
             <!-- Footer Columns -->
             <div class="col-lg-4 col-md-6 fade-in">
                 <div class="footer-brand fade-in">
-                    <img src="images/Logo.png" alt="GrowCraft Logo"
+                    <img src="images/logo-transparent-dark-mode.png" alt="GrowCraft Logo"
                         class="footer-logo mb-3">
                     <h4 class="brand-name">GrowCraft</h4>
                     <p class="brand-description">Empowering businesses with
@@ -1301,43 +1418,48 @@
 
             <!-- Services Links -->
             <div class="col-lg-2 col-md-3 col-6 fade-in">
-                <h5 class="footer-title">Services</h5>
+                <h5 class="footer-title"><i class="fas fa-tools pulse"></i> Services</h5>
                 <ul class="footer-links">
-                    <li><a href="learn/webdev.html">Web Development</a></li>
-                    <li><a href="learn/graphic.html">Graphic Design</a></li>
-                    <li><a href="learn/marketing.html">Digital Marketing</a></li>
-                    <li><a href="learn/contentwriting.html">Content Writing</a></li>
-                    <li><a href="learn/socialmedia.html">Social Media</a></li>
-                    <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+                    <li><a href="learn/webdev.html"><i class="fas fa-code"></i> Web Development</a></li>
+                    <li><a href="learn/graphic.html"><i class="fas fa-paint-brush"></i> Graphic Design</a></li>
+                    <li><a href="learn/marketing.html"><i class="fas fa-bullhorn"></i> Digital Marketing</a></li>
+                    <li><a href="learn/contentwriting.html"><i class="fas fa-pen-nib"></i> Content Writing</a></li>
+                    <li><a href="learn/socialmedia.html"><i class="fas fa-hashtag"></i> Social Media</a></li>
+                    <li><a href="learn/cyberanalyst.html"><i class="fas fa-shield-alt"></i> Cyber Analyst</a></li>
                 </ul>
             </div>
 
             <!-- Quick Links -->
+
             <div class="col-lg-2 col-md-3 col-6 fade-in">
-                <h5 class="footer-title">Quick Links</h5>
+                <h5 class="footer-title"><i class="fas fa-link pulse"></i> Quick Links</h5>
                 <ul class="footer-links">
+                  <li><a href="./index.html">Home</a></li>
                     <li><a href="#about">About Us</a></li>
-                    <li><a href="#work">Portfolio</a></li>
+                  <li><a href="./services.html">Services</a></li>
+                    <li><a href="./work.html">Portfolio</a></li>
                     <li><a href="src/contact.html">Contact</a></li>
                     <li><a href="#careers">Careers</a></li>
                     <li><a href="blogListing.html">Blog</a></li>
+
                 </ul>
             </div>
 
+
             <!-- Contact -->
-            <div class="col-lg-4 col-md-6 fade-in">
-                <h5 class="footer-title">Get In Touch</h5>
+            <div class="col-lg-3 col-md-3 col-6 fade-in">
+                <h5 class="footer-title"><i class="fas fa-envelope pulse"></i> Get In Touch</h5>
                 <div class="contact-info mb-3 fade-in">
                     <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-envelope pulse"></i>
                         <a href="mailto:info@growcraft.com">info@growcraft.com</a>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-phone"></i>
+                        <i class="fas fa-phone pulse"></i>
                         <a href="tel:+919999999999">+91 999 999 999</a>
                     </div>
                     <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class="fas fa-map-marker-alt pulse"></i>
                         <span>ABC Street, XYZ City, India</span>
                     </div>
                 </div>
@@ -1402,6 +1524,47 @@
   <script src="src/script.js"></script>
   <script src="src/utils.js"></script>
   <script src="src/darkMode.js"></script>
+  
+  <script>
+    // Logo switching functionality for dark mode
+    document.addEventListener('DOMContentLoaded', function() {
+      const logo = document.querySelector("#logo");
+      
+      // Function to update logo based on theme
+      function updateLogo() {
+        const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+        if (isDark) {
+          logo.src = 'images/logo-transparent-dark-mode.png';
+        } else {
+          logo.src = 'images/logo_bg_transparent.png';
+        }
+      }
+      
+      // Update logo when page loads
+      updateLogo();
+      
+      // Watch for theme changes
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'data-bs-theme') {
+            updateLogo();
+          }
+        });
+      });
+      
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-bs-theme']
+      });
+    });
+
+    // JavaScript (custom carousel) 
+      var myCarousel = new bootstrap.Carousel('#carouselExampleDark', {
+          interval: 4000,  // auto-slide time
+          wrap: true       // enables infinite loop
+    });
+
+  </script>
 </body>
 
 </html>

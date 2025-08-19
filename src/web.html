@@ -1,1263 +1,1538 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website Development | GrowCraft</title>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
 
     <style>
-        .light-mode.webdev-hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 5rem 2rem;
-            background: linear-gradient(135deg, #f9f9f9, #e6f0ff);
-            color: #111827;
-            gap: 2rem;
-            flex-wrap: wrap;
-            position: relative;
-            overflow: hidden;
+      .light-mode.webdev-hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 5rem 2rem;
+        background: linear-gradient(135deg, #f9f9f9, #e6f0ff);
+        color: #111827;
+        gap: 2rem;
+        flex-wrap: wrap;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .light-mode .hero-text {
+        padding-left: 60px;
+        max-width: 100%;
+        z-index: 2;
+      }
+
+      .light-mode .hero-text h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, #2563eb, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .heading {
+        font-size: 3rem;
+        max-width: 100%;
+      }
+      /* Floating blurred background circles for heading */
+      .webdev-heading {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        z-index: 2;
+        padding: 0;
+      }
+
+      .webdev-heading::before,
+      .webdev-heading::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.2),
+          transparent
+        );
+        z-index: 1;
+      }
+
+      /* Increased sizes */
+      .webdev-heading::before {
+        width: 180px; /* increased from 120px */
+        height: 180px; /* increased from 120px */
+        top: -40px; /* adjust position if needed */
+        left: -60px; /* adjust position if needed */
+      }
+
+      .webdev-heading::after {
+        width: 220px; /* increased from 150px */
+        height: 220px; /* increased from 150px */
+        bottom: -50px; /* adjust position if needed */
+        right: -50px; /* adjust position if needed */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
+        .webdev-heading::before {
+          width: 120px;
+          height: 120px;
+          top: -20px;
+          left: -30px;
         }
 
+        .webdev-heading::after {
+          width: 150px;
+          height: 150px;
+          bottom: -30px;
+          right: -25px;
+        }
 
-        .light-mode .hero-text {
-            padding-left: 60px;
-            max-width: 100%;
-            z-index: 2;
+        .webdev-heading {
+          font-size: 2rem;
+        }
+      }
+
+      .head {
+        padding: 50px;
+        display: block;
+        align-items: center;
+      }
+
+      .light-mode .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        color: #374151;
+      }
+
+      .btn-glass-light {
+        padding: 0.8rem 1.8rem;
+        border-radius: 10px;
+        background: #c1d3f7;
+        backdrop-filter: blur(8px);
+        color: #1f2937;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease, transform 0.2s;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .btn-glass-light:hover {
+        background: #5586e7;
+        transform: scale(1.05);
+        color: #232425;
+      }
+
+      .light-mode .hero-illustration img {
+        max-width: 100%;
+        height: auto;
+        filter: drop-shadow(0 0 20px rgba(37, 99, 235, 0.2));
+        z-index: 2;
+      }
+
+      /* Floating blurred background circles */
+      .light-mode.webdev-hero::before,
+      .light-mode.webdev-hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.2),
+          transparent
+        );
+        z-index: 1;
+      }
+
+      .light-mode.webdev-hero::before {
+        max-width: 100%;
+        height: 200px;
+        top: -40px;
+        left: -40px;
+      }
+
+      .light-mode.webdev-hero::after {
+        max-width: 100%;
+        height: auto;
+        bottom: -80px;
+        right: -60px;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .light-mode.webdev-hero {
+          flex-direction: column;
+          text-align: center;
         }
 
         .light-mode .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #2563eb, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .heading {
-            font-size: 3rem;
-            max-width: 100%;
-
-
-        }
-
-        .head {
-            padding: 50px;
-            display: block;
-            align-items: center;
-
-        }
-
-        .light-mode .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            color: #374151;
-        }
-
-        .btn-glass-light {
-            padding: 0.8rem 1.8rem;
-            border-radius: 10px;
-            background: #c1d3f7;
-            backdrop-filter: blur(8px);
-            color: #1f2937;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: background 0.3s ease, transform 0.2s;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .btn-glass-light:hover {
-            background: #5586e7;
-            transform: scale(1.05);
-            color: #232425;
+          font-size: 2.4rem;
         }
 
         .light-mode .hero-illustration img {
-            max-width: 100%;
-            height: auto;
-            filter: drop-shadow(0 0 20px rgba(37, 99, 235, 0.2));
-            z-index: 2;
+          margin-top: 2rem;
         }
+      }
 
-        /* Floating blurred background circles */
-        .light-mode.webdev-hero::before,
-        .light-mode.webdev-hero::after {
-            content: "";
-            position: absolute;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
-            z-index: 1;
-        }
+      .light-mode.webdev-hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 4rem 2rem;
+        background: linear-gradient(135deg, #f9f9f9, #e6f0ff);
+        color: #111827;
+        gap: 2rem;
+        flex-wrap: wrap;
+        position: relative;
+        overflow: hidden;
+      }
 
-        .light-mode.webdev-hero::before {
-            max-width: 100%;
-            height: 200px;
-            top: -40px;
-            left: -40px;
-        }
+      .light-mode .hero-text {
+        flex: 1 1 500px;
+        padding-left: 60px;
+        z-index: 2;
+      }
 
-        .light-mode.webdev-hero::after {
-            max-width: 100%;
-            height: auto;
-            bottom: -80px;
-            right: -60px;
-        }
+      .light-mode .hero-text h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        background: linear-gradient(to right, #2563eb, #3b82f6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
 
-        /* Responsive */
-        @media (max-width: 768px) {
-            .light-mode.webdev-hero {
-                flex-direction: column;
-                text-align: center;
-            }
+      .light-mode .hero-text p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        line-height: 1.6;
+        color: #374151;
+      }
 
-            .light-mode .hero-text h1 {
-                font-size: 2.4rem;
-            }
+      .btn-glass-light {
+        padding: 0.8rem 1.8rem;
+        border-radius: 10px;
+        background: #c1d3f7d9;
+        backdrop-filter: blur(8px);
+        color: #1f2937;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        transition: background 0.3s ease, transform 0.2s;
+        text-decoration: none;
+        font-weight: 500;
+      }
 
-            .light-mode .hero-illustration img {
-                margin-top: 2rem;
-            }
-        }
+      body:not(.dark-mode) .btn-glass-light:hover {
+        background: #5c8be8;
+        color: #000;
+      }
 
+      .btn-glass-light:hover {
+        background: #5c8be8;
+        transform: scale(1.05);
+        color: #232425;
+      }
+
+      .light-mode .hero-illustration {
+        flex: 1 1 400px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .light-mode .hero-illustration img {
+        max-width: 100%;
+        width: 100%;
+        max-height: auto;
+        object-fit: contain;
+        filter: drop-shadow(0 0 20px rgba(37, 99, 235, 0.2));
+        z-index: 2;
+      }
+
+      /* Floating blurred background circles */
+      .light-mode.webdev-hero::before,
+      .light-mode.webdev-hero::after {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(59, 130, 246, 0.2),
+          transparent
+        );
+        z-index: 1;
+      }
+
+      .light-mode.webdev-hero::before {
+        max-width: 100%;
+        height: auto;
+        top: -40px;
+        left: -40px;
+      }
+
+      .light-mode.webdev-hero::after {
+        max-width: 100%;
+        height: auto;
+        bottom: -80px;
+        right: -60px;
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 1024px) {
         .light-mode.webdev-hero {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 4rem 2rem;
-            background: linear-gradient(135deg, #f9f9f9, #e6f0ff);
-            color: #111827;
-            gap: 2rem;
-            flex-wrap: wrap;
-            position: relative;
-            overflow: hidden;
+          flex-direction: column-reverse;
+          padding: 3rem 1.5rem;
+          text-align: center;
         }
 
         .light-mode .hero-text {
-            flex: 1 1 500px;
-            padding-left: 60px;
-            z-index: 2;
+          padding-left: 0;
         }
 
         .light-mode .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            background: linear-gradient(to right, #2563eb, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+          font-size: 2.4rem;
         }
 
         .light-mode .hero-text p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-            color: #374151;
+          font-size: 1.1rem;
+        }
+
+        .light-mode .hero-illustration img {
+          max-height: 300px;
+          margin-bottom: 2rem;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .light-mode .hero-text h1 {
+          font-size: 2rem;
         }
 
         .btn-glass-light {
-            padding: 0.8rem 1.8rem;
-            border-radius: 10px;
-            background: #c1d3f7d9;
-            backdrop-filter: blur(8px);
-            color: #1f2937;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            transition: background 0.3s ease, transform 0.2s;
-            text-decoration: none;
-            font-weight: 500;
+          padding: 0.7rem 1.5rem;
+          font-size: 0.95rem;
+        }
+      }
+
+      /*section*/
+      .webdev-offer-section {
+        background-color: linear-gradient(135deg, #f9f9f9, #e6f0ff);
+        padding: 60px 20px;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .offer-title {
+        text-align: center;
+        color: #111827;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 50px;
+      }
+
+      .heading-title {
+        text-align: center;
+        color: #111827;
+        font-size: 2.5rem;
+        font-weight: 700;
+      }
+
+      .offer-grid {
+        /* Converted to flex so the last row (with 1–2 cards) centers nicely */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        justify-content: center; /* center remaining cards on final row */
+        align-items: stretch;
+      }
+
+      .offer-card {
+        background-color: #ffffff;
+        border-radius: 16px;
+        padding: 25px 20px;
+        text-align: center;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s cubic-bezier(0.4, 2, 0.3, 1),
+          box-shadow 0.3s cubic-bezier(0.4, 2, 0.3, 1);
+        flex: 0 1 clamp(250px, 28%, 300px); /* responsive width while keeping nice spacing */
+      }
+
+      .offer-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 32px 80px 0 rgba(0, 0, 0, 0.32),
+          0 2px 8px 0 rgba(0, 0, 0, 0.18);
+        background-color: #f1f5f9;
+        border: 2px solid #e0e7ef;
+        cursor: pointer;
+      }
+
+      .offer-card i {
+        font-size: 2.2rem;
+        color: #4f46e5;
+        margin-bottom: 15px;
+      }
+
+      .offer-card h3 {
+        color: #1f2937;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+      }
+
+      .offer-card p {
+        color: #4b5563;
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+
+      /* .offer-bottom-row removed: all cards live in a single responsive grid */
+
+      .offer-section-glass {
+        padding: 80px 20px;
+        background: linear-gradient(to bottom right, #e7f0ff, #fefefe);
+        font-family: "Poppins", sans-serif;
+        text-align: center;
+      }
+
+      .offer-glass-title {
+        font-size: 2.5rem;
+        color: #111;
+        margin-bottom: 40px;
+        font-weight: 600;
+      }
+
+      .glass-scroll-wrapper {
+        display: flex;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 10px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .glass-item {
+        flex: 0 0 300px;
+        scroll-snap-align: start;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 16px;
+        padding: 30px 20px;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #222;
+        transition: transform 0.3s ease;
+      }
+
+      .glass-item:hover {
+        transform: scale(1.05);
+      }
+
+      .glass-item h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+      }
+
+      .glass-item p {
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .glass-item img {
+        width: 60px;
+        margin-bottom: 18px;
+        border-radius: 50%;
+        background: #ffffffcc;
+        padding: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Carousel Enhancements for "What We Made" */
+      .carousel-wrapper {
+        position: relative;
+        max-width: 1300px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding-inline: 10px;
+      }
+      .glass-scroll-wrapper {
+        display: flex;
+        gap: 24px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        overscroll-behavior-x: contain;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+        padding: 10px 4px 30px;
+      }
+      .glass-scroll-wrapper::-webkit-scrollbar {
+        display: none;
+      }
+      .glass-item {
+        flex: 0 0 clamp(235px, 29%, 294px); /* ~2% narrower */
+        scroll-snap-align: start;
+        background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 18px;
+        padding: 26px 19px 24px; /* slight reduction */
+        text-align: center;
+        box-shadow: 0 4px 18px -4px rgba(0, 0, 0, 0.08);
+        transition: box-shadow 0.35s ease, transform 0.35s ease;
+        min-height: 225px; /* small height reduction */
+      }
+      .glass-item:focus-visible {
+        outline: 3px solid #3b82f6;
+        outline-offset: 3px;
+      }
+      .glass-item:hover {
+        box-shadow: 0 10px 28px -6px rgba(0, 0, 0, 0.15);
+        transform: translateY(-6px);
+      }
+      .carousel-btn {
+        background: #ffffffcc;
+        backdrop-filter: blur(6px);
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        cursor: pointer;
+        color: #1e293b;
+        font-size: 1.6rem;
+        line-height: 1;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+        transition: background 0.3s, transform 0.3s;
+      }
+      .carousel-btn:hover:not(:disabled) {
+        background: #fff;
+        transform: scale(1.07);
+      }
+      .carousel-btn:disabled {
+        opacity: 0.35;
+        cursor: not-allowed;
+      }
+      @media (max-width: 900px) {
+        .carousel-wrapper {
+          gap: 4px;
+        }
+        .glass-item {
+          flex: 0 0 63%;
+        }
+      }
+      @media (max-width: 600px) {
+        .glass-item {
+          flex: 0 0 80%;
+        }
+        .carousel-btn {
+          display: none;
+        }
+      }
+
+      /* Dots (pagination) */
+      .carousel-dots {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 22px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      .carousel-dots button {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: none;
+        background: #cbd5e1; /* slate-300 */
+        cursor: pointer;
+        padding: 0;
+        transition: background 0.3s, transform 0.3s;
+      }
+      .carousel-dots button.active {
+        background: #1d4ed8;
+        transform: scale(1.28);
+      }
+      .carousel-dots button:focus-visible {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
+
+      /*tech stack */
+      /* Tech Stack Section */
+      .tech-section {
+        background-color: #f9fafb;
+        padding: 60px 20px;
+        text-align: center;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .tech-title {
+        font-size: 2.4rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: #1f2937;
+      }
+
+      /* Grid Layout for Tech Cards */
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 25px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 0 10px;
+      }
+
+      .tech-card {
+        background: #ffffff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s cubic-bezier(0.4, 2, 0.3, 1),
+          box-shadow 0.3s cubic-bezier(0.4, 2, 0.3, 1);
+      }
+
+      .tech-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 32px 80px 0 rgba(0, 0, 0, 0.32),
+          0 2px 8px 0 rgba(0, 0, 0, 0.18);
+        background-color: #f1f5f9;
+        border: 2px solid #e0e7ef;
+        cursor: pointer;
+      }
+
+      .tech-card img {
+        width: 60px;
+        height: 60px;
+        object-fit: contain;
+        margin-bottom: 10px;
+      }
+
+      .tech-card p {
+        font-size: 1rem;
+        color: #374151;
+        font-weight: 500;
+        margin: 0;
+      }
+
+      /* our process */
+      .our-process {
+        position: relative;
+        padding: 80px 20px;
+        background: #f9fafb;
+        text-align: center;
+      }
+
+      .process-heading {
+        font-size: 2.5rem;
+        color: #111827;
+        font-weight: 700;
+        margin-bottom: 60px;
+      }
+
+      /* Responsive Timeline */
+      .timeline {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .step {
+        flex: 1 1 120px;
+        min-width: 120px;
+        max-width: 160px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      .circle {
+        width: 40px;
+        height: 40px;
+        background: #3b82f6;
+        color: white;
+        font-weight: bold;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        z-index: 3;
+        font-size: 1.2rem;
+      }
+
+      .label {
+        position: absolute;
+        top: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: white;
+        padding: 10px 15px;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 180px;
+      }
+
+      .step2 .label,
+      .step4 .label {
+        top: auto;
+        bottom: 60px;
+      }
+
+      .label h4 {
+        margin: 0 0 5px;
+        font-size: 1rem;
+        color: #1f2937;
+      }
+
+      .label p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #6b7280;
+      }
+
+      .wave {
+        position: absolute;
+        bottom: 40%;
+        left: 0;
+        width: 100%;
+        height: 100px;
+        z-index: 1;
+      }
+
+      /* RESPONSIVE FIXES */
+      @media (max-width: 768px) {
+        .timeline {
+          flex-direction: column;
+          gap: 80px;
+          align-items: center;
         }
 
-        body:not(.dark-mode) .btn-glass-light:hover {
-            background: #5c8be8;
-            color: #000;
+        .label {
+          top: 60px !important;
+          bottom: auto !important;
         }
 
-            .btn-glass-light:hover {
-                background: #5c8be8;
-                transform: scale(1.05);
-                color: #232425;
-            }
-
-            .light-mode .hero-illustration {
-                flex: 1 1 400px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-            }
-
-            .light-mode .hero-illustration img {
-                max-width: 100%;
-                width: 100%;
-                max-height: auto;
-                object-fit: contain;
-                filter: drop-shadow(0 0 20px rgba(37, 99, 235, 0.2));
-                z-index: 2;
-            }
-
-            /* Floating blurred background circles */
-            .light-mode.webdev-hero::before,
-            .light-mode.webdev-hero::after {
-                content: "";
-                position: absolute;
-                border-radius: 50%;
-                background: radial-gradient(circle, rgba(59, 130, 246, 0.2), transparent);
-                z-index: 1;
-            }
-
-            .light-mode.webdev-hero::before {
-                max-width: 100%;
-                height: auto;
-                top: -40px;
-                left: -40px;
-            }
-
-            .light-mode.webdev-hero::after {
-                max-width: 100%;
-                height: auto;
-                bottom: -80px;
-                right: -60px;
-            }
-
-            /* Responsive adjustments */
-            @media (max-width: 1024px) {
-                .light-mode.webdev-hero {
-                    flex-direction: column-reverse;
-                    padding: 3rem 1.5rem;
-                    text-align: center;
-                }
-
-                .light-mode .hero-text {
-                    padding-left: 0;
-                }
-
-                .light-mode .hero-text h1 {
-                    font-size: 2.4rem;
-                }
-
-                .light-mode .hero-text p {
-                    font-size: 1.1rem;
-                }
-
-                .light-mode .hero-illustration img {
-                    max-height: 300px;
-                    margin-bottom: 2rem;
-                }
-            }
-
-            @media (max-width: 600px) {
-                .light-mode .hero-text h1 {
-                    font-size: 2rem;
-                }
-
-                .btn-glass-light {
-                    padding: 0.7rem 1.5rem;
-                    font-size: 0.95rem;
-                }
-            }
-
-
-            /*section*/
-            .webdev-offer-section {
-                background-color: linear-gradient(135deg, #f9f9f9, #e6f0ff);
-                padding: 60px 20px;
-                font-family: 'Segoe UI', sans-serif;
-            }
-
-            .offer-title {
-                text-align: center;
-                color: #111827;
-                font-size: 2.5rem;
-                font-weight: 700;
-                margin-bottom: 50px;
-            }
-
-            .offer-grid {
-                /* Converted to flex so the last row (with 1–2 cards) centers nicely */
-                display: flex;
-                flex-wrap: wrap;
-                gap: 30px;
-                max-width: 1200px;
-                margin: 0 auto;
-                justify-content: center; /* center remaining cards on final row */
-                align-items: stretch;
-            }
-
-            .offer-card {
-                background-color: #ffffff;
-                border-radius: 16px;
-                padding: 25px 20px;
-                text-align: center;
-                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
-                transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s cubic-bezier(.4,2,.3,1);
-                flex: 0 1 clamp(250px, 28%, 300px); /* responsive width while keeping nice spacing */
-            }
-
-            .offer-card:hover {
-                transform: translateY(-6px);
-                box-shadow: 0 32px 80px 0 rgba(0, 0, 0, 0.32), 0 2px 8px 0 rgba(0,0,0,0.18);
-                background-color: #f1f5f9;
-                border: 2px solid #e0e7ef;
-                cursor: pointer;
-            }
-
-            .offer-card i {
-                font-size: 2.2rem;
-                color: #4f46e5;
-                margin-bottom: 15px;
-            }
-
-            .offer-card h3 {
-                color: #1f2937;
-                font-size: 1.3rem;
-                margin-bottom: 10px;
-            }
-
-            .offer-card p {
-                color: #4b5563;
-                font-size: 0.95rem;
-                line-height: 1.5;
-            }
-
-            /* .offer-bottom-row removed: all cards live in a single responsive grid */
-
-            .offer-section-glass {
-                padding: 80px 20px;
-                background: linear-gradient(to bottom right, #e7f0ff, #fefefe);
-                font-family: 'Poppins', sans-serif;
-                text-align: center;
-            }
-
-            .offer-glass-title {
-                font-size: 2.5rem;
-                color: #111;
-                margin-bottom: 40px;
-                font-weight: 600;
-            }
-
-            .glass-scroll-wrapper {
-                display: flex;
-                overflow-x: auto;
-                gap: 20px;
-                padding-bottom: 10px;
-                scroll-snap-type: x mandatory;
-                -webkit-overflow-scrolling: touch;
-            }
-
-            .glass-item {
-                flex: 0 0 300px;
-                scroll-snap-align: start;
-                background: rgba(255, 255, 255, 0.2);
-                border-radius: 16px;
-                padding: 30px 20px;
-                backdrop-filter: blur(12px);
-                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                color: #222;
-                transition: transform 0.3s ease;
-            }
-
-            .glass-item:hover {
-                transform: scale(1.05);
-            }
-
-            .glass-item h3 {
-                font-size: 1.4rem;
-                margin-bottom: 10px;
-            }
-
-            .glass-item p {
-                font-size: 1rem;
-                color: #333;
-            }
-
-            .glass-item img {
-                width: 60px;
-                margin-bottom: 18px;
-                border-radius: 50%;
-                background: #ffffffcc;
-                padding: 8px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            }
-
-            /* Carousel Enhancements for "What We Made" */
-            .carousel-wrapper {
-                position: relative;
-                max-width: 1300px;
-                margin: 0 auto;
-                display: flex;
-                align-items: center;
-                gap: 12px;
-                padding-inline: 10px;
-            }
-            .glass-scroll-wrapper {
-                display: flex;
-                gap: 24px;
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                overscroll-behavior-x: contain;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none; /* Firefox */
-                padding: 10px 4px 30px;
-            }
-            .glass-scroll-wrapper::-webkit-scrollbar { display: none; }
-            .glass-item {
-                flex: 0 0 clamp(235px, 29%, 294px); /* ~2% narrower */
-                scroll-snap-align: start;
-                background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-                border: 1px solid rgba(0,0,0,.05);
-                border-radius: 18px;
-                padding: 26px 19px 24px; /* slight reduction */
-                text-align: center;
-                box-shadow: 0 4px 18px -4px rgba(0,0,0,0.08);
-                transition: box-shadow .35s ease, transform .35s ease;
-                min-height: 225px; /* small height reduction */
-            }
-            .glass-item:focus-visible { outline: 3px solid #3b82f6; outline-offset: 3px; }
-            .glass-item:hover {
-                box-shadow: 0 10px 28px -6px rgba(0,0,0,0.15);
-                transform: translateY(-6px);
-            }
-            .carousel-btn {
-                background: #ffffffcc;
-                backdrop-filter: blur(6px);
-                border: 1px solid rgba(0,0,0,0.08);
-                width: 46px;
-                height: 46px;
-                display: grid;
-                place-items: center;
-                border-radius: 50%;
-                cursor: pointer;
-                color: #1e293b;
-                font-size: 1.6rem;
-                line-height: 1;
-                box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-                transition: background .3s, transform .3s;
-            }
-            .carousel-btn:hover:not(:disabled) { background: #fff; transform: scale(1.07); }
-            .carousel-btn:disabled { opacity: .35; cursor: not-allowed; }
-            @media (max-width: 900px) {
-                .carousel-wrapper { gap: 4px; }
-                .glass-item { flex: 0 0 63%; }
-            }
-            @media (max-width: 600px) {
-                .glass-item { flex: 0 0 80%; }
-                .carousel-btn { display: none; }
-            }
-
-            /* Dots (pagination) */
-            .carousel-dots {
-                display: flex;
-                justify-content: center;
-                gap: 10px;
-                margin: 22px 0 0;
-                padding: 0;
-                list-style: none;
-            }
-            .carousel-dots button {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                border: none;
-                background: #cbd5e1; /* slate-300 */
-                cursor: pointer;
-                padding: 0;
-                transition: background .3s, transform .3s;
-            }
-            .carousel-dots button.active { background: #1d4ed8; transform: scale(1.28); }
-            .carousel-dots button:focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; }
-
-            /*tech stack */
-            /* Tech Stack Section */
-            .tech-section {
-                background-color: #f9fafb;
-                padding: 60px 20px;
-                text-align: center;
-                font-family: 'Segoe UI', sans-serif;
-            }
-
-            .tech-title {
-                font-size: 2.4rem;
-                font-weight: 700;
-                margin-bottom: 40px;
-                color: #1f2937;
-            }
-
-            /* Grid Layout for Tech Cards */
-            .tech-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-                gap: 25px;
-                max-width: 1000px;
-                margin: 0 auto;
-                padding: 0 10px;
-            }
-
-            .tech-card {
-                background: #ffffff;
-                padding: 20px;
-                border-radius: 12px;
-                box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.10);
-                transition: transform 0.3s cubic-bezier(.4,2,.3,1), box-shadow 0.3s cubic-bezier(.4,2,.3,1);
-            }
-
-            .tech-card:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 32px 80px 0 rgba(0, 0, 0, 0.32), 0 2px 8px 0 rgba(0,0,0,0.18);
-                background-color: #f1f5f9;
-                border: 2px solid #e0e7ef;
-                cursor: pointer;
-            }
-
-            .tech-card img {
-                width: 60px;
-                height: 60px;
-                object-fit: contain;
-                margin-bottom: 10px;
-            }
-
-            .tech-card p {
-                font-size: 1rem;
-                color: #374151;
-                font-weight: 500;
-                margin: 0;
-            }
-
-
-            /* our process */
-            .our-process {
-                position: relative;
-                padding: 80px 20px;
-                background: #f9fafb;
-                text-align: center;
-            }
-
-            .process-heading {
-                font-size: 2.5rem;
-                color: #111827;
-                font-weight: 700;
-                margin-bottom: 60px;
-            }
-
-            /* Responsive Timeline */
-            .timeline {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-                flex-wrap: wrap;
-                gap: 40px;
-                max-width: 1000px;
-                margin: 0 auto;
-                position: relative;
-                z-index: 2;
-            }
-
-            .step {
-                flex: 1 1 120px;
-                min-width: 120px;
-                max-width: 160px;
-                margin: 0 auto;
-                position: relative;
-            }
-
-            .circle {
-                width: 40px;
-                height: 40px;
-                background: #3b82f6;
-                color: white;
-                font-weight: bold;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin: 0 auto;
-                z-index: 3;
-                font-size: 1.2rem;
-            }
-
-            .label {
-                position: absolute;
-                top: 60px;
-                left: 50%;
-                transform: translateX(-50%);
-                background: white;
-                padding: 10px 15px;
-                border-radius: 12px;
-                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-                width: 180px;
-            }
-
-            .step2 .label,
-            .step4 .label {
-                top: auto;
-                bottom: 60px;
-            }
-
-            .label h4 {
-                margin: 0 0 5px;
-                font-size: 1rem;
-                color: #1f2937;
-            }
-
-            .label p {
-                margin: 0;
-                font-size: 0.9rem;
-                color: #6b7280;
-            }
-
-            .wave {
-                position: absolute;
-                bottom: 40%;
-                left: 0;
-                width: 100%;
-                height: 100px;
-                z-index: 1;
-            }
-
-            /* RESPONSIVE FIXES */
-            @media (max-width: 768px) {
-                .timeline {
-                    flex-direction: column;
-                    gap: 80px;
-                    align-items: center;
-                }
-
-                .label {
-                    top: 60px !important;
-                    bottom: auto !important;
-                }
-
-                .wave {
-                    display: none;
-                }
-
-                .step {
-                    max-width: 100%;
-                }
-            }
-
-            .why-growcraft-section {
-                padding: 100px 20px;
-                background: #f8fafc;
-                text-align: center;
-                font-family: 'Segoe UI', sans-serif;
-            }
-
-            .why-heading {
-                font-size: 2.5rem;
-                font-weight: 700;
-                color: #1e293b;
-                margin-bottom: 70px;
-            }
-
-            .why-heading span {
-                background: linear-gradient(90deg, #3b82f6, #6366f1);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            .why-timeline {
-                position: relative;
-                max-width: 850px;
-                margin: auto;
-                padding-left: 40px;
-            }
-
-            .why-step {
-                display: flex;
-                align-items: flex-start;
-                gap: 20px;
-                margin-bottom: 60px;
-                position: relative;
-                padding: 10px 0;
-                transition: transform 0.3s ease;
-            }
-
-            .why-step:hover {
-                transform: translateY(-5px);
-            }
-
-            .circle {
-                background: linear-gradient(135deg, #3b82f6, #6366f1);
-                color: white;
-                font-weight: bold;
-                border-radius: 50%;
-                width: 46px;
-                height: 46px;
-                display: grid;
-                place-items: center;
-                font-size: 17px;
-                box-shadow: 0 4px 15px #3b82f650;
-                flex-shrink: 0;
-            }
-
-            .why-content h3 {
-                font-size: 1.4rem;
-                color: #1f2937;
-                margin-bottom: 8px;
-                font-weight: 600;
-            }
-
-            .why-content p {
-                font-size: 1.05rem;
-                color: #4b5563;
-                line-height: 1.6;
-                max-width: 600px;
-            }
-
-            .why-timeline::before {
-                content: "";
-                position: absolute;
-                left: 42px;
-                top: 0;
-                width: 3px;
-                height: 100%;
-                background: linear-gradient(to bottom, #3b82f6, #6366f1);
-                opacity: 0.25;
-                z-index: 0;
-            }
-
-            /* Responsive */
-            @media (max-width: 768px) {
-                .why-heading {
-                    font-size: 2.2rem;
-                }
-
-                .why-step {
-                    flex-direction: column;
-                    align-items: center;
-                    text-align: center;
-                    padding-left: 0;
-                }
-
-                .why-timeline::before {
-                    left: 50%;
-                    transform: translateX(-50%);
-                }
-
-                .circle {
-                    margin-bottom: 12px;
-                }
-
-                .why-content h3 {
-                    font-size: 1.3rem;
-                }
-
-                .why-content p {
-                    font-size: 1rem;
-                }
-            }
-
-            /*contact*/
-            .contact-section {
-                background: #f1f5f9;
-                padding: 100px 20px;
-                text-align: center;
-                font-family: 'Segoe UI', sans-serif;
-            }
-
-            .contact-content h2 {
-                font-size: 2.5rem;
-                font-weight: 700;
-                color: #1e293b;
-                margin-bottom: 20px;
-            }
-
-            .contact-content h2 span {
-                background: linear-gradient(90deg, #3b82f6, #6366f1);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                background-clip: text;
-            }
-
-            .contact-content p {
-                font-size: 1.1rem;
-                color: #475569;
-                margin-bottom: 30px;
-                max-width: 600px;
-                margin-inline: auto;
-            }
-
-            .contact-btn {
-                padding: 12px 30px;
-                font-size: 1rem;
-                background: linear-gradient(to right, #3b82f6, #6366f1);
-                color: #fff;
-                border: none;
-                border-radius: 6px;
-                text-decoration: none;
-                transition: background 0.3s ease;
-            }
-
-            .contact-btn:hover {
-                background: linear-gradient(to right, #2563eb, #4f46e5);
-            }
-            /*Footer*/
-            #backToTop {
-  z-index: 9999;
-}
-
-.footer a:hover {
-  color: #a29bfe !important;
-  text-decoration: underline;
-}
-
+        .wave {
+          display: none;
+        }
+
+        .step {
+          max-width: 100%;
+        }
+      }
+
+      .why-growcraft-section {
+        padding: 100px 20px;
+        background: #f8fafc;
+        text-align: center;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .why-heading {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 70px;
+      }
+
+      .why-heading span {
+        background: linear-gradient(90deg, #3b82f6, #6366f1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .why-timeline {
+        position: relative;
+        max-width: 850px;
+        margin: auto;
+        padding-left: 40px;
+      }
+
+      .why-step {
+        display: flex;
+        align-items: flex-start;
+        gap: 20px;
+        margin-bottom: 60px;
+        position: relative;
+        padding: 10px 0;
+        transition: transform 0.3s ease;
+      }
+
+      .why-step:hover {
+        transform: translateY(-5px);
+      }
+
+      .circle {
+        background: linear-gradient(135deg, #3b82f6, #6366f1);
+        color: white;
+        font-weight: bold;
+        border-radius: 50%;
+        width: 46px;
+        height: 46px;
+        display: grid;
+        place-items: center;
+        font-size: 17px;
+        box-shadow: 0 4px 15px #3b82f650;
+        flex-shrink: 0;
+      }
+
+      .why-content h3 {
+        font-size: 1.4rem;
+        color: #1f2937;
+        margin-bottom: 8px;
+        font-weight: 600;
+      }
+
+      .why-content p {
+        font-size: 1.05rem;
+        color: #4b5563;
+        line-height: 1.6;
+        max-width: 600px;
+      }
+
+      .why-timeline::before {
+        content: "";
+        position: absolute;
+        left: 42px;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background: linear-gradient(to bottom, #3b82f6, #6366f1);
+        opacity: 0.25;
+        z-index: 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .why-heading {
+          font-size: 2.2rem;
+        }
+
+        .why-step {
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding-left: 0;
+        }
+
+        .why-timeline::before {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .circle {
+          margin-bottom: 12px;
+        }
+
+        .why-content h3 {
+          font-size: 1.3rem;
+        }
+
+        .why-content p {
+          font-size: 1rem;
+        }
+      }
+
+      /*contact*/
+      .contact-section {
+        background: #f1f5f9;
+        padding: 100px 20px;
+        text-align: center;
+        font-family: "Segoe UI", sans-serif;
+      }
+
+      .contact-content h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 20px;
+      }
+
+      .contact-content h2 span {
+        background: linear-gradient(90deg, #3b82f6, #6366f1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .contact-content p {
+        font-size: 1.1rem;
+        color: #475569;
+        margin-bottom: 30px;
+        max-width: 600px;
+        margin-inline: auto;
+      }
+
+      .contact-btn {
+        padding: 12px 30px;
+        font-size: 1rem;
+        background: linear-gradient(to right, #3b82f6, #6366f1);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: background 0.3s ease;
+      }
+
+      .contact-btn:hover {
+        background: linear-gradient(to right, #2563eb, #4f46e5);
+      }
+      /*Footer*/
+      #backToTop {
+        z-index: 9999;
+      }
+
+      .footer a:hover {
+        color: #a29bfe !important;
+        text-decoration: underline;
+      }
     </style>
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <!-- Navbar starts here -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-            <a class="navbar-brand" href="#"><img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo"></a>
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5"
+      >
+        <a class="navbar-brand" href="../index.html"
+          ><img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo"
+        /></a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active visited" aria-current="page" href="index.html#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about">About Us</a>
-                    </li>
-                    <!-- Added new "Our Work" link to navigate to the new work section on same page -->
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#work">Our Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
-                    </li>
-
-                </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active visited"
+                aria-current="page"
+                href="../index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../services.html"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../blogListing.html"
+                >Blogs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../index.html#about"
+                >About Us</a
+              >
+            </li>
+            <!-- Added new "Our Work" link to navigate to the new work section on same page -->
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="../work.html"
+                >Our Work</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="contact.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
     <!-- Navbar ends here -->
-    <h1
-        style="color: black; text-align: center; margin-top: 40px;  background: linear-gradient(135deg, #f9f9f9, #e6f0ff); font-weight: 600;">
-        Website Development
-    </h1>
+    <h1 class="webdev-heading heading-title">Website Development</h1>
 
-    <section class="webdev-hero light-mode ">
-
-
-        <div class="hero-text fade-in">
-
-            <h1>Design. Develop. Deploy.</h1>
-            <p>Transform your ideas into responsive and scalable websites with GrowCraft's expert development services.
-            </p>
-            <button class="btn-glass-light">
-                <a href="contact.html" style="color: black; text-decoration: none;">Let's Get Started</a>
-            </button>
-        </div>
-        <div class="hero-illustration">
-            <img src="../images/pexels-fauxels-3182773.jpg" alt="Web Development Illustration" height="400px"
-                width="400px" />
-        </div>
+    <section class="webdev-hero light-mode">
+      <div class="hero-text fade-in">
+        <h1>Design. Develop. Deploy.</h1>
+        <p>
+          Transform your ideas into responsive and scalable websites with
+          GrowCraft's expert development services.
+        </p>
+        <button class="btn-glass-light">
+          <a href="contact.html" style="color: black; text-decoration: none"
+            >Let's Get Started</a
+          >
+        </button>
+      </div>
+      <div class="hero-illustration">
+        <img
+          src="../images/pexels-fauxels-3182773.jpg"
+          alt="Web Development Illustration"
+          height="400px"
+          width="400px"
+        />
+      </div>
     </section>
     <section class="webdev-offer-section">
-        <div class="container">
-            <h2 class="offer-title">What We Offer</h2>
-            <div class="offer-grid">
-                <div class="offer-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>Responsive Design</h3>
-                    <p>Seamless experience across all devices – mobile, tablet, and desktop.</p>
-                </div>
-                <div class="offer-card">
-                    <i class="fas fa-bolt"></i>
-                    <h3>Fast Performance</h3>
-                    <p>Optimized code and assets for blazing fast website speed and load time.</p>
-                </div>
-                <div class="offer-card">
-                    <i class="fas fa-lock"></i>
-                    <h3>Secure Websites</h3>
-                    <p>Built-in security best practices to protect data and prevent breaches.</p>
-                </div>
-                <div class="offer-card">
-                    <i class="fas fa-code"></i>
-                    <h3>Clean Code</h3>
-                    <p>Well-structured HTML, CSS & JS for maintainable and scalable websites.</p>
-                </div>
-                <div class="offer-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>Custom UI/UX</h3>
-                    <p>Visually appealing, interactive and user-centric design approach.</p>
-                </div>
-                <div class="offer-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Maintenance Support</h3>
-                    <p>Post-launch updates, bug fixes, and continued enhancements.</p>
-                </div>
-            </div>
-
+      <div class="container">
+        <h2 class="offer-title">What We Offer</h2>
+        <div class="offer-grid">
+          <div class="offer-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Responsive Design</h3>
+            <p>
+              Seamless experience across all devices – mobile, tablet, and
+              desktop.
+            </p>
+          </div>
+          <div class="offer-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Fast Performance</h3>
+            <p>
+              Optimized code and assets for blazing fast website speed and load
+              time.
+            </p>
+          </div>
+          <div class="offer-card">
+            <i class="fas fa-lock"></i>
+            <h3>Secure Websites</h3>
+            <p>
+              Built-in security best practices to protect data and prevent
+              breaches.
+            </p>
+          </div>
+          <div class="offer-card">
+            <i class="fas fa-code"></i>
+            <h3>Clean Code</h3>
+            <p>
+              Well-structured HTML, CSS & JS for maintainable and scalable
+              websites.
+            </p>
+          </div>
+          <div class="offer-card">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Custom UI/UX</h3>
+            <p>
+              Visually appealing, interactive and user-centric design approach.
+            </p>
+          </div>
+          <div class="offer-card">
+            <i class="fas fa-tools"></i>
+            <h3>Maintenance Support</h3>
+            <p>Post-launch updates, bug fixes, and continued enhancements.</p>
+          </div>
         </div>
+      </div>
     </section>
     <section class="offer-section-glass">
-        <h2 class="offer-glass-title">What We Made</h2>
-        <!-- Carousel Wrapper -->
-        <div class="carousel-wrapper">
-            <button class="carousel-btn prev" aria-label="Scroll previous" disabled><span aria-hidden="true">&#8249;</span></button>
-            <div class="glass-scroll-wrapper" tabindex="0" role="listbox" aria-label="Project types">
-                <div class="glass-item" role="option" aria-label="Static Websites">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png" alt="Static Website Icon">
-                    <h3>Static Websites</h3>
-                    <p>Simple and lightning-fast pages for personal and business needs.</p>
-                </div>
-                <div class="glass-item" role="option" aria-label="Dynamic Websites">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Dynamic Website Icon">
-                    <h3>Dynamic Websites</h3>
-                    <p>Interactive and data-driven websites with user functionality.</p>
-                </div>
-                <div class="glass-item" role="option" aria-label="E-commerce Solutions">
-                    <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="E-Commerce Icon">
-                    <h3>E-commerce Solutions</h3>
-                    <p>Beautiful online stores with secure checkout and product management.</p>
-                </div>
-                <div class="glass-item" role="option" aria-label="Landing Pages">
-                    <img src="https://cdn-icons-png.flaticon.com/512/2166/2166821.png" alt="Landing Page Icon">
-                    <h3>Landing Pages</h3>
-                    <p>Designed to convert leads and boost your product visibility.</p>
-                </div>
-                <div class="glass-item" role="option" aria-label="Portfolio Sites">
-                    <img src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png" alt="Portfolio Icon">
-                    <h3>Portfolio Sites</h3>
-                    <p>Personalized spaces to showcase your skills and work.</p>
-                </div>
-                <div class="glass-item" role="option" aria-label="Custom Web Apps">
-                    <img src="https://cdn-icons-png.flaticon.com/512/108/10838348.png" alt="Web App Icon">
-                    <h3>Custom Web Apps</h3>
-                    <p>Tailor-made applications for startups, businesses, and teams.</p>
-                </div>
-            </div>
-            <button class="carousel-btn next" aria-label="Scroll next"><span aria-hidden="true">&#8250;</span></button>
+      <h2 class="offer-glass-title">What We Made</h2>
+      <!-- Carousel Wrapper -->
+      <div class="carousel-wrapper">
+        <button class="carousel-btn prev" aria-label="Scroll previous" disabled>
+          <span aria-hidden="true">&#8249;</span>
+        </button>
+        <div
+          class="glass-scroll-wrapper"
+          tabindex="0"
+          role="listbox"
+          aria-label="Project types"
+        >
+          <div class="glass-item" role="option" aria-label="Static Websites">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2721/2721297.png"
+              alt="Static Website Icon"
+            />
+            <h3>Static Websites</h3>
+            <p>
+              Simple and lightning-fast pages for personal and business needs.
+            </p>
+          </div>
+          <div class="glass-item" role="option" aria-label="Dynamic Websites">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+              alt="Dynamic Website Icon"
+            />
+            <h3>Dynamic Websites</h3>
+            <p>Interactive and data-driven websites with user functionality.</p>
+          </div>
+          <div
+            class="glass-item"
+            role="option"
+            aria-label="E-commerce Solutions"
+          >
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png"
+              alt="E-Commerce Icon"
+            />
+            <h3>E-commerce Solutions</h3>
+            <p>
+              Beautiful online stores with secure checkout and product
+              management.
+            </p>
+          </div>
+          <div class="glass-item" role="option" aria-label="Landing Pages">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/2166/2166821.png"
+              alt="Landing Page Icon"
+            />
+            <h3>Landing Pages</h3>
+            <p>Designed to convert leads and boost your product visibility.</p>
+          </div>
+          <div class="glass-item" role="option" aria-label="Portfolio Sites">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/9131/9131529.png"
+              alt="Portfolio Icon"
+            />
+            <h3>Portfolio Sites</h3>
+            <p>Personalized spaces to showcase your skills and work.</p>
+          </div>
+          <div class="glass-item" role="option" aria-label="Custom Web Apps">
+            <img
+              src="https://cdn-icons-png.flaticon.com/512/108/10838348.png"
+              alt="Web App Icon"
+            />
+            <h3>Custom Web Apps</h3>
+            <p>Tailor-made applications for startups, businesses, and teams.</p>
+          </div>
         </div>
-    <!-- Dots navigation -->
-    <ul class="carousel-dots" aria-label="Carousel pagination" role="tablist"></ul>
+        <button class="carousel-btn next" aria-label="Scroll next">
+          <span aria-hidden="true">&#8250;</span>
+        </button>
+      </div>
+      <!-- Dots navigation -->
+      <ul
+        class="carousel-dots"
+        aria-label="Carousel pagination"
+        role="tablist"
+      ></ul>
     </section>
     <section class="tech-section">
-        <h2 class="tech-title">Technologies We Use</h2>
-        <div class="tech-grid">
-            <div class="tech-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML5">
-                <p>HTML5</p>
-            </div>
-            <div class="tech-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="CSS3">
-                <p>CSS3</p>
-            </div>
-            <div class="tech-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png" alt="JavaScript">
-                <p>JavaScript</p>
-            </div>
-            <div class="tech-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/919/919851.png" alt="React.js">
-                <p>React</p>
-            </div>
-            <div class="tech-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/919/919825.png" alt="Node.js">
-                <p>Node.js</p>
-            </div>
-            <div class="tech-card">
-                <img src="https://cdn-icons-png.flaticon.com/512/528/528260.png" alt="MongoDB">
-                <p>MongoDB</p>
-            </div>
-
+      <h2 class="tech-title">Technologies We Use</h2>
+      <div class="tech-grid">
+        <div class="tech-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/732/732212.png"
+            alt="HTML5"
+          />
+          <p>HTML5</p>
         </div>
+        <div class="tech-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/732/732190.png"
+            alt="CSS3"
+          />
+          <p>CSS3</p>
+        </div>
+        <div class="tech-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
+            alt="JavaScript"
+          />
+          <p>JavaScript</p>
+        </div>
+        <div class="tech-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/919/919851.png"
+            alt="React.js"
+          />
+          <p>React</p>
+        </div>
+        <div class="tech-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/919/919825.png"
+            alt="Node.js"
+          />
+          <p>Node.js</p>
+        </div>
+        <div class="tech-card">
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/528/528260.png"
+            alt="MongoDB"
+          />
+          <p>MongoDB</p>
+        </div>
+      </div>
     </section>
-
 
     <section class="our-process">
-        <h2 class="process-heading">Our Process</h2>
-        <div class="timeline">
-            <div class="step step1">
-                <div class="circle">1</div>
-                <div class="label">
-                    <h4>Discussion</h4>
-                    <p>We understand your vision and needs.</p>
-                </div>
-            </div>
-            <div class="step step2">
-                <div class="circle">2</div>
-                <div class="label">
-                    <h4>Planning</h4>
-                    <p>We create wireframes & structure.</p>
-                </div>
-            </div>
-            <div class="step step3">
-                <div class="circle">3</div>
-                <div class="label">
-                    <h4>Design</h4>
-                    <p>Crafting elegant and intuitive UI/UX.</p>
-                </div>
-            </div>
-            <div class="step step4">
-                <div class="circle">4</div>
-                <div class="label">
-                    <h4>Development</h4>
-                    <p>Converting design to functional code.</p>
-                </div>
-            </div>
-            <div class="step step5">
-                <div class="circle">5</div>
-                <div class="label">
-                    <h4>Launch</h4>
-                    <p>Tested and deployed to go live!</p>
-                </div>
-            </div>
+      <h2 class="process-heading">Our Process</h2>
+      <div class="timeline">
+        <div class="step step1">
+          <div class="circle">1</div>
+          <div class="label">
+            <h4>Discussion</h4>
+            <p>We understand your vision and needs.</p>
+          </div>
         </div>
-        <svg class="wave" viewBox="0 0 1000 100" preserveAspectRatio="none">
-            <path d="M0,50 C250,0 750,100 1000,50" fill="transparent" stroke="#3b82f6" stroke-width="3" />
-        </svg>
+        <div class="step step2">
+          <div class="circle">2</div>
+          <div class="label">
+            <h4>Planning</h4>
+            <p>We create wireframes & structure.</p>
+          </div>
+        </div>
+        <div class="step step3">
+          <div class="circle">3</div>
+          <div class="label">
+            <h4>Design</h4>
+            <p>Crafting elegant and intuitive UI/UX.</p>
+          </div>
+        </div>
+        <div class="step step4">
+          <div class="circle">4</div>
+          <div class="label">
+            <h4>Development</h4>
+            <p>Converting design to functional code.</p>
+          </div>
+        </div>
+        <div class="step step5">
+          <div class="circle">5</div>
+          <div class="label">
+            <h4>Launch</h4>
+            <p>Tested and deployed to go live!</p>
+          </div>
+        </div>
+      </div>
+      <svg class="wave" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <path
+          d="M0,50 C250,0 750,100 1000,50"
+          fill="transparent"
+          stroke="#3b82f6"
+          stroke-width="3"
+        />
+      </svg>
     </section>
 
-
-
     <section class="why-growcraft-section">
-        <h2 class="why-heading">Why Choose <span>GrowCraft</span>?</h2>
-        <div class="why-timeline">
-            <div class="why-step">
-                <div class="circle">1</div>
-                <div class="why-content">
-                    <h3>Creative-First Approach</h3>
-                    <p>We blend design with strategy to deliver websites that are beautiful, user-friendly, and
-                        performance-focused.</p>
-                </div>
-            </div>
-            <div class="why-step">
-                <div class="circle">2</div>
-                <div class="why-content">
-                    <h3>Full-Service Partnership</h3>
-                    <p>We’re with you every step — from planning and development to post-launch support and scaling.</p>
-                </div>
-            </div>
-            <div class="why-step">
-                <div class="circle">3</div>
-                <div class="why-content">
-                    <h3>Results That Matter</h3>
-                    <p>Our work is focused on real outcomes — more visibility, engagement, and growth for your brand.
-                    </p>
-                </div>
-            </div>
+      <h2 class="why-heading">Why Choose <span>GrowCraft</span>?</h2>
+      <div class="why-timeline">
+        <div class="why-step">
+          <div class="circle">1</div>
+          <div class="why-content">
+            <h3>Creative-First Approach</h3>
+            <p>
+              We blend design with strategy to deliver websites that are
+              beautiful, user-friendly, and performance-focused.
+            </p>
+          </div>
         </div>
+        <div class="why-step">
+          <div class="circle">2</div>
+          <div class="why-content">
+            <h3>Full-Service Partnership</h3>
+            <p>
+              We’re with you every step — from planning and development to
+              post-launch support and scaling.
+            </p>
+          </div>
+        </div>
+        <div class="why-step">
+          <div class="circle">3</div>
+          <div class="why-content">
+            <h3>Results That Matter</h3>
+            <p>
+              Our work is focused on real outcomes — more visibility,
+              engagement, and growth for your brand.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Contact -->
     <section class="contact-section" id="contact">
-        <div class="contact-content">
-            <h2>Let’s Build Something <span>Great</span></h2>
-            <p>Have a project in mind? We’re just a message away. Let’s turn your vision into reality.</p>
-            <a href="contact.html" class="contact-btn">Contact Us</a>
-        </div>
+      <div class="contact-content">
+        <h2>Let’s Build Something <span>Great</span></h2>
+        <p>
+          Have a project in mind? We’re just a message away. Let’s turn your
+          vision into reality.
+        </p>
+        <a href="contact.html" class="contact-btn">Contact Us</a>
+      </div>
     </section>
 
-
     <!-- Footer section starts here (Contact us) -->
-    <footer class="footer py-5 text-white" style="background-color: #222;">
-        <div class="container">
-          <div class="row gy-4">
-      
-            <!-- About GrowCraft -->
-            <div class="col-md-3">
-              <h5 class="fw-bold mb-3">About GrowCraft</h5>
-              <p style="font-size: 14px;">
-                GrowCraft is a service-based platform offering:
-                <br>🌐 Website Development
-                <br>🖌️ Graphic Design
-                <br>✍️ Content Writing
-                <br>📣 Social Media Management
-                <br>📊 Digital Marketing
-                <br>🎓 Training & Internship Programs
-                <br>Helping businesses grow while students gain real-world learning.
-              </p>
-            </div>
-      
-            <!-- Quick Links -->
-            <div class="col-md-2">
-              <h5 class="fw-bold mb-3">Quick Links</h5>
-              <ul class="list-unstyled">
-                <li><a href="index.html" class="text-decoration-none text-light">Home</a></li>
-                <li><a href="#services" class="text-decoration-none text-light">Services</a></li>
-                <li><a href="src/workList.html" class="text-decoration-none text-light">Portfolio</a></li>
-                <li><a href="#internship" class="text-decoration-none text-light">Internship</a></li>
-                <li><a href="src/contact.html" class="text-decoration-none text-light">Contact</a></li>
-              </ul>
-            </div>
-      
-            <!-- Contact -->
-            <div class="col-md-4">
-              <h5 class="fw-bold mb-3">Contact Us</h5>
-              <p>📍 235, PQR, GHI, ABC Street, XYZ, ABC - 10000, India</p>
-              <p>📞 +91 999 999 999</p>
-              <p>📧 info@growcraft.com</p>
-              <button class="btn btn-outline-light btn-sm mt-2">Send Message</button>
-            </div>
-      
-            <!-- Social Links -->
-            <div class="col-md-3">
-              <h5 class="fw-bold mb-3">Follow Us</h5>
-              <ul class="list-unstyled d-flex flex-column gap-2">
-                <li><a href="#" class="text-decoration-none text-light"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
-                <li><a href="#" class="text-decoration-none text-light"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
-                <li><a href="#" class="text-decoration-none text-light"><i class="fab fa-linkedin-in me-2"></i>LinkedIn</a></li>
-                <li><a href="#" class="text-decoration-none text-light"><i class="fab fa-github me-2"></i>GitHub</a></li>
-              </ul>
-            </div>
-      
+    <footer class="footer py-5 text-white" style="background-color: #222">
+      <div class="container">
+        <div class="row gy-4">
+          <!-- About GrowCraft -->
+          <div class="col-md-3">
+            <h5 class="fw-bold mb-3">About GrowCraft</h5>
+            <p style="font-size: 14px">
+              GrowCraft is a service-based platform offering:
+              <br />🌐 Website Development <br />🖌️ Graphic Design <br />✍️
+              Content Writing <br />📣 Social Media Management <br />📊 Digital
+              Marketing <br />🎓 Training & Internship Programs <br />Helping
+              businesses grow while students gain real-world learning.
+            </p>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="col-md-2">
+            <h5 class="fw-bold mb-3">Quick Links</h5>
+            <ul class="list-unstyled">
+              <li>
+                <a href="index.html" class="text-decoration-none text-light"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="text-decoration-none text-light"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="src/workList.html"
+                  class="text-decoration-none text-light"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a href="#internship" class="text-decoration-none text-light"
+                  >Internship</a
+                >
+              </li>
+              <li>
+                <a
+                  href="src/contact.html"
+                  class="text-decoration-none text-light"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact -->
+          <div class="col-md-4">
+            <h5 class="fw-bold mb-3">Contact Us</h5>
+            <p>📍 235, PQR, GHI, ABC Street, XYZ, ABC - 10000, India</p>
+            <p>📞 +91 999 999 999</p>
+            <p>📧 info@growcraft.com</p>
+            <button class="btn btn-outline-light btn-sm mt-2">
+              Send Message
+            </button>
+          </div>
+
+          <!-- Social Links -->
+          <div class="col-md-3">
+            <h5 class="fw-bold mb-3">Follow Us</h5>
+            <ul class="list-unstyled d-flex flex-column gap-2">
+              <li>
+                <a href="#" class="text-decoration-none text-light"
+                  ><i class="fab fa-facebook-f me-2"></i>Facebook</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-light"
+                  ><i class="fab fa-instagram me-2"></i>Instagram</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-light"
+                  ><i class="fab fa-linkedin-in me-2"></i>LinkedIn</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-decoration-none text-light"
+                  ><i class="fab fa-github me-2"></i>GitHub</a
+                >
+              </li>
+            </ul>
           </div>
         </div>
-      </footer>
-      
-      <!-- Copyright -->
-      <div class="text-center text-light py-3" style="background-color: #111;">
-        &copy; 2025 <strong>GrowCraft</strong>. All Rights Reserved.
       </div>
-      
-      <!-- Back to Top -->
-      <button id="backToTop" title="Go to top" class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle px-3 py-2" style="display:none;">↑</button>
-      
+    </footer>
+
+    <!-- Copyright -->
+    <div class="text-center text-light py-3" style="background-color: #111">
+      &copy; 2025 <strong>GrowCraft</strong>. All Rights Reserved.
+    </div>
+
+    <!-- Back to Top -->
+    <button
+      id="backToTop"
+      title="Go to top"
+      class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle px-3 py-2"
+      style="display: none"
+    >
+      ↑
+    </button>
+
     <script>
-        //Show/hide the back-to-top button on scroll
-        window.onscroll = function () {
-            const btn = document.getElementById("backToTop");
-            if (!btn) return;
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                btn.style.display = "block";
-            } else {
-                btn.style.display = "none";
-            }
+      //Show/hide the back-to-top button on scroll
+      window.onscroll = function () {
+        const btn = document.getElementById("backToTop");
+        if (!btn) return;
+        if (
+          document.body.scrollTop > 100 ||
+          document.documentElement.scrollTop > 100
+        ) {
+          btn.style.display = "block";
+        } else {
+          btn.style.display = "none";
+        }
+      };
+
+      // Scroll to top smoothly when back-to-top button is clicked
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("backToTop");
+        if (btn) {
+          btn.addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          });
+        }
+      });
+
+      // Carousel logic for "What We Made" section
+      (function initCarousel() {
+        const wrapper = document.querySelector(".carousel-wrapper");
+        if (!wrapper) return; // safety
+        const scroller = wrapper.querySelector(".glass-scroll-wrapper");
+        const prevBtn = wrapper.querySelector(".carousel-btn.prev");
+        const nextBtn = wrapper.querySelector(".carousel-btn.next");
+        const dotsContainer = document.querySelector(".carousel-dots");
+        if (!scroller || !prevBtn || !nextBtn) return;
+
+        const getCardWidth = () => {
+          const first = scroller.querySelector(".glass-item");
+          if (!first) return 300;
+          const style = window.getComputedStyle(first);
+          return (
+            first.getBoundingClientRect().width +
+            parseFloat(style.marginRight || 24)
+          );
         };
 
-        // Scroll to top smoothly when back-to-top button is clicked
-        document.addEventListener("DOMContentLoaded", function () {
-            const btn = document.getElementById("backToTop");
-            if (btn) {
-                btn.addEventListener("click", function () {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                });
-            }
+        const updateButtons = () => {
+          const maxScroll = scroller.scrollWidth - scroller.clientWidth - 2; // allow small epsilon
+          prevBtn.disabled = scroller.scrollLeft <= 0;
+          nextBtn.disabled = scroller.scrollLeft >= maxScroll;
+          updateActiveDot();
+        };
+
+        const scrollByAmount = (dir) => {
+          // If using fixed 4-dot model we'll override below after anchors built
+          scroller.scrollBy({ left: dir * getCardWidth(), behavior: "smooth" });
+        };
+
+        prevBtn.addEventListener("click", () => scrollByAmount(-1));
+        nextBtn.addEventListener("click", () => scrollByAmount(1));
+        scroller.addEventListener("scroll", updateButtons, { passive: true });
+        window.addEventListener("resize", updateButtons);
+        // keyboard support
+        scroller.addEventListener("keydown", (e) => {
+          if (e.key === "ArrowRight") {
+            e.preventDefault();
+            scrollByAmount(1);
+          }
+          if (e.key === "ArrowLeft") {
+            e.preventDefault();
+            scrollByAmount(-1);
+          }
         });
-
-        // Carousel logic for "What We Made" section
-        (function initCarousel() {
-            const wrapper = document.querySelector('.carousel-wrapper');
-            if (!wrapper) return; // safety
-            const scroller = wrapper.querySelector('.glass-scroll-wrapper');
-            const prevBtn = wrapper.querySelector('.carousel-btn.prev');
-            const nextBtn = wrapper.querySelector('.carousel-btn.next');
-            const dotsContainer = document.querySelector('.carousel-dots');
-            if (!scroller || !prevBtn || !nextBtn) return;
-
-            const getCardWidth = () => {
-                const first = scroller.querySelector('.glass-item');
-                if (!first) return 300;
-                const style = window.getComputedStyle(first);
-                return first.getBoundingClientRect().width + parseFloat(style.marginRight || 24);
-            };
-
-            const updateButtons = () => {
-                const maxScroll = scroller.scrollWidth - scroller.clientWidth - 2; // allow small epsilon
-                prevBtn.disabled = scroller.scrollLeft <= 0;
-                nextBtn.disabled = scroller.scrollLeft >= maxScroll;
-                updateActiveDot();
-            };
-
-            const scrollByAmount = (dir) => {
-                // If using fixed 4-dot model we'll override below after anchors built
-                scroller.scrollBy({ left: dir * getCardWidth(), behavior: 'smooth' });
-            };
-
-            prevBtn.addEventListener('click', () => scrollByAmount(-1));
-            nextBtn.addEventListener('click', () => scrollByAmount(1));
-            scroller.addEventListener('scroll', updateButtons, { passive: true });
-            window.addEventListener('resize', updateButtons);
-            // keyboard support
-            scroller.addEventListener('keydown', (e) => {
-                if (e.key === 'ArrowRight') { e.preventDefault(); scrollByAmount(1); }
-                if (e.key === 'ArrowLeft') { e.preventDefault(); scrollByAmount(-1); }
+        // Fixed 4-dot pagination with discrete anchor positions
+        const DOT_COUNT = 4;
+        let dots = [];
+        let anchors = [0, 0, 0, 0];
+        const computeAnchors = () => {
+          const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+          anchors = [0, maxScroll / 3, (2 * maxScroll) / 3, maxScroll];
+        };
+        const buildDots = () => {
+          if (!dotsContainer) return;
+          computeAnchors();
+          dotsContainer.innerHTML = "";
+          dots = Array.from({ length: DOT_COUNT }, (_, idx) => {
+            const btn = document.createElement("button");
+            btn.type = "button";
+            btn.setAttribute("role", "tab");
+            btn.setAttribute("aria-label", `Go to section ${idx + 1}`);
+            btn.addEventListener("click", () => {
+              scroller.scrollTo({ left: anchors[idx], behavior: "smooth" });
             });
-            // Fixed 4-dot pagination with discrete anchor positions
-            const DOT_COUNT = 4;
-            let dots = [];
-            let anchors = [0,0,0,0];
-            const computeAnchors = () => {
-                const maxScroll = scroller.scrollWidth - scroller.clientWidth;
-                anchors = [0, maxScroll/3, (2*maxScroll)/3, maxScroll];
-            };
-            const buildDots = () => {
-                if (!dotsContainer) return;
-                computeAnchors();
-                dotsContainer.innerHTML = '';
-                dots = Array.from({ length: DOT_COUNT }, (_, idx) => {
-                    const btn = document.createElement('button');
-                    btn.type = 'button';
-                    btn.setAttribute('role', 'tab');
-                    btn.setAttribute('aria-label', `Go to section ${idx + 1}`);
-                    btn.addEventListener('click', () => {
-                        scroller.scrollTo({ left: anchors[idx], behavior: 'smooth' });
-                    });
-                    dotsContainer.appendChild(btn);
-                    return btn;
-                });
-            };
-            const getActiveIndex = () => {
-                const maxScroll = scroller.scrollWidth - scroller.clientWidth;
-                if (maxScroll <= 0) return 0;
-                const sl = scroller.scrollLeft;
-                const ratio = sl / maxScroll;
-                // Use floor so it doesn't jump early; last anchor when near end
-                let idx = Math.floor(ratio * (DOT_COUNT - 1) + 0.0001);
-                if (sl >= maxScroll - 2) idx = DOT_COUNT - 1; // ensure end
-                return Math.min(DOT_COUNT - 1, Math.max(0, idx));
-            };
-            const updateActiveDot = () => {
-                if (!dots.length) return;
-                const idx = getActiveIndex();
-                dots.forEach((d,i)=> d.classList.toggle('active', i === idx));
-            };
-            // Override arrow buttons to move between anchors for stability
-            const gotoAnchorDelta = (delta) => {
-                const current = getActiveIndex();
-                const next = Math.min(DOT_COUNT - 1, Math.max(0, current + delta));
-                scroller.scrollTo({ left: anchors[next], behavior: 'smooth' });
-            };
-            prevBtn.addEventListener('click', () => gotoAnchorDelta(-1));
-            nextBtn.addEventListener('click', () => gotoAnchorDelta(1));
-            buildDots();
-            window.addEventListener('resize', () => { buildDots(); updateButtons(); updateActiveDot(); });
-            // Ensure we start at the very first card (left=0) and active dot is first
-            scroller.scrollTo({ left: 0, behavior: 'auto' });
-            updateButtons();
-            updateActiveDot();
-        })();
-
-
-
+            dotsContainer.appendChild(btn);
+            return btn;
+          });
+        };
+        const getActiveIndex = () => {
+          const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+          if (maxScroll <= 0) return 0;
+          const sl = scroller.scrollLeft;
+          const ratio = sl / maxScroll;
+          // Use floor so it doesn't jump early; last anchor when near end
+          let idx = Math.floor(ratio * (DOT_COUNT - 1) + 0.0001);
+          if (sl >= maxScroll - 2) idx = DOT_COUNT - 1; // ensure end
+          return Math.min(DOT_COUNT - 1, Math.max(0, idx));
+        };
+        const updateActiveDot = () => {
+          if (!dots.length) return;
+          const idx = getActiveIndex();
+          dots.forEach((d, i) => d.classList.toggle("active", i === idx));
+        };
+        // Override arrow buttons to move between anchors for stability
+        const gotoAnchorDelta = (delta) => {
+          const current = getActiveIndex();
+          const next = Math.min(DOT_COUNT - 1, Math.max(0, current + delta));
+          scroller.scrollTo({ left: anchors[next], behavior: "smooth" });
+        };
+        prevBtn.addEventListener("click", () => gotoAnchorDelta(-1));
+        nextBtn.addEventListener("click", () => gotoAnchorDelta(1));
+        buildDots();
+        window.addEventListener("resize", () => {
+          buildDots();
+          updateButtons();
+          updateActiveDot();
+        });
+        // Ensure we start at the very first card (left=0) and active dot is first
+        scroller.scrollTo({ left: 0, behavior: "auto" });
+        updateButtons();
+        updateActiveDot();
+      })();
     </script>
     <script src="darkMode.js"></script>
-</body>
-
+  </body>
 </html>

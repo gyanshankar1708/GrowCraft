@@ -62,12 +62,17 @@ class DarkModeToggle {
 
     applyTheme() {
         if (this.theme === 'dark') {
+            document.documentElement.setAttribute('data-bs-theme', 'dark');
             document.documentElement.classList.add('dark');
             document.body.classList.add('dark-mode');
         } else {
+            document.documentElement.setAttribute('data-bs-theme', 'light');
             document.documentElement.classList.remove('dark');
             document.body.classList.remove('dark-mode');
         }
+        
+        // Update logo based on theme
+        this.updateLogo();
     }
 
     toggle() {
@@ -78,6 +83,40 @@ class DarkModeToggle {
         // Update toggle button state
         if (this.toggleElement) {
             this.toggleElement.classList.toggle('active', this.theme === 'dark');
+        }
+        
+        // Update logo based on theme
+        this.updateLogo();
+    }
+    
+    updateLogo() {
+        const logo = document.querySelector("#logo");
+        if (logo) {
+            // Determine the correct path based on current page location
+            let darkLogoPath, lightLogoPath;
+            
+            // Check if we're in the src folder (contact page) or root (home page)
+            if (window.location.pathname.includes('/src/')) {
+                // We're in src folder, use relative path
+                darkLogoPath = 'images/logo-transparent-dark-mode.png';
+                lightLogoPath = 'images/logo_bg_transparent.png';
+            } else {
+                // We're in root folder, use root path
+                darkLogoPath = 'images/logo-transparent-dark-mode.png';
+                lightLogoPath = 'images/logo_bg_transparent.png';
+            }
+            
+            console.log('Updating logo:', this.theme, 'Dark path:', darkLogoPath, 'Light path:', lightLogoPath);
+            
+            if (this.theme === 'dark') {
+                logo.src = darkLogoPath;
+                console.log('Logo updated to dark mode:', logo.src);
+            } else {
+                logo.src = lightLogoPath;
+                console.log('Logo updated to light mode:', logo.src);
+            }
+        } else {
+            console.log('Logo element not found');
         }
     }
 
@@ -199,7 +238,10 @@ class DarkModeToggle {
             .dark-mode .navbar .navbar-brand, .dark .navbar .navbar-brand {
                 color: var(--text-primary) !important;
             }
-            
+            /* training card bg white on dark*/
+            .dark-mode .program-card , .dark .program-card{
+               background-color: var(--bg-primary); 
+            }
             /* Card overrides */
             .dark-mode .card, .dark .card {
                 background-color: var(--bg-secondary) !important;
@@ -549,10 +591,11 @@ class DarkModeToggle {
                 color: var(--text-secondary) !important;
             }
             
-            /* Contact info section */
-            .dark-mode .contact-info, .dark .contact-info {
-                background-color: var(--bg-primary) !important;
-            }
+            // no need to apply background black in footer in light mode
+            // /* Contact info section */
+            // .dark-mode .contact-info, .dark .contact-info {
+            //     background-color: var(--bg-primary) !important;
+            // }
             
             .dark-mode .contact-info-card, .dark .contact-info-card {
                 background-color: var(--bg-secondary) !important;
