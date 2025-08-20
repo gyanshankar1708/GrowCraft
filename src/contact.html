@@ -7,6 +7,9 @@
     <title>Contact Us - GrowCraft</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
 <link rel="stylesheet" href="/src/scroll-after-submit.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
+<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="phonevalidator.css" />
 
 
     <link
@@ -459,19 +462,10 @@
             <label class="form-label">Email Address *</label>
             <input type="email" class="form-control" required />
           </div>
-        <div class="col-md-6">
-        <label class="form-label">Phone Number *</label>
-        <input 
-          type="tel"
-          id="phone"
-          name="phone"
-          class="form-control"
-          placeholder="Enter your phone number"
-          maxlength="15"
-          required
-        />
-        <div class="invalid-feedback">Please enter a valid phone number</div>
-      </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Enter your phone number" maxlength="15" required />
+          </div>
           <div class="col-md-6">
             <label class="form-label">Company/Organization</label>
             <input type="text" class="form-control" />
@@ -680,8 +674,8 @@
     </script>
      <script src="/src/scroll-after-submit.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.js"></script>
-       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-       <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-        <script src="./phone-validation.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+      <script src="./phone-validation.js"></script>
   </body>
       </html>
