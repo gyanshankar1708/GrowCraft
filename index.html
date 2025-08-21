@@ -1305,19 +1305,19 @@
           <div class="social-section">
             <h6 class="social-title">Follow Us</h6>
             <div class="social-links">
-              <a href="https://facebook.com" class="social-link" aria-label="Facebook">
+              <a target="_blank"  href="https://facebook.com" class="social-link" aria-label="Facebook">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="https://instagram.com" class="social-link" aria-label="Instagram">
+              <a target="_blank"  href="https://instagram.com" class="social-link" aria-label="Instagram">
                 <i class="fab fa-instagram"></i>
               </a>
-              <a href="https://linkedin.com" class="social-link" aria-label="LinkedIn">
+              <a target="_blank"  href="https://linkedin.com" class="social-link" aria-label="LinkedIn">
                 <i class="fab fa-linkedin-in"></i>
               </a>
-              <a href="https://github.com" class="social-link" aria-label="GitHub">
+              <a target="_blank"  href="https://github.com" class="social-link" aria-label="GitHub">
                 <i class="fab fa-github"></i>
               </a>
-              <a href="https://twitter.com" class="social-link" aria-label="Twitter">
+              <a target="_blank" href="https://twitter.com" class="social-link" aria-label="Twitter">
                 <i class="fab fa-twitter"></i>
               </a>
 
@@ -1333,7 +1333,7 @@
         <div class="container">
           <div class="row align-items-center py-3">
             <div class="col-md-6">
-              <p class="copyright mb-0">© 2024
+              <p class="copyright mb-0">© <span id="currentYear"></span>
                 <strong>GrowCraft</strong>. All rights reserved.
               </p>
             </div>
@@ -1402,6 +1402,14 @@
     });
 
   </script>
+
+ <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const yearSpan = document.getElementById("currentYear");
+    yearSpan.textContent = new Date().getFullYear();
+  });
+</script>
+
 </body>
 
 </html>
