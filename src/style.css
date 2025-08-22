@@ -57,11 +57,7 @@ h5 {
   font-weight: 600;
   transition: background 0.2s;
 }
-.fab{
-  border: none;
-  color: #fff;
-  font-weight: 600; 
-} 
+ 
 
 
 .btn-primary:hover,
@@ -1337,14 +1333,6 @@ body.dark .mb-4:hover {
   color: white !important;
   box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
 
-}
-
-/* === Navbar Custom Styling === */
-.navbar {
-  padding-top: 0.8rem;
-  padding-bottom: 0.8rem;
-  background-color: #ffffff !important;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
 
