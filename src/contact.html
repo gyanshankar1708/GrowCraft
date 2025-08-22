@@ -34,6 +34,12 @@
     <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
     
     <style>
+      body#main-body {
+    background: linear-gradient(135deg, #00b894, #2ecc71);
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-size: cover;
+}
       .card {
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         border-radius: 10px;
@@ -61,14 +67,6 @@
         padding: 2rem;
         border-radius: 10px;
       }
-
-      
-    .mb-4{
-      margin-top: 10%;
-      color: #24a51a;
-      text-shadow: 2px 2px 5px rgb(112, 166, 112);
-    }
-
     .section-title{
       margin-top: 20rem;
       color: #24a51a;
@@ -94,10 +92,7 @@
         display: block;
         margin: 0 auto 8px auto;
       } 
-      .get-touch{
-        border-radius: 12px;
-        transform: translateY(-150px);
-      }
+      
       .footer-links{
         display: flex;
         justify-content: center;
@@ -116,12 +111,6 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
   }
 
-  .navbar-brand img {
-    max-height: 60px;
-    object-fit: contain;
-    vertical-align: middle;
-    transition: all 0.3s ease;
-  }
 
   /* Dark mode logo switching - will be handled by JavaScript */
 
@@ -175,13 +164,55 @@
     padding-bottom: 0.8rem;
     background-color: #ffffff !important;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-
   }
 
-  .navbar-collapse {
-    display: flex !important;
-    justify-content: center !important;
-    width: 100%;
+  .navbar-brand img {
+    max-height: 60px;
+    object-fit: contain;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+  }
+
+  /* Dark mode logo switching - will be handled by JavaScript */
+
+  /* Align all nav items vertically center */
+  .navbar-nav .nav-link {
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link.active {
+    color: #463896;
+  }
+
+  /* Dark Mode Toggle Switch Alignment */
+  .navbar .toggle-switch {
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+  }
+
+  /* Responsive logo alignment fix */
+  @media (max-width: 991.98px) {
+    .navbar .navbar-brand {
+      margin-right: auto;
+    }
+
+    .navbar-collapse {
+      margin-top: 0.8rem;
+    }
+  }
+  .navbar {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    background-color: #ffffff !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
+
   }
 
   .navbar-nav li {
@@ -196,67 +227,53 @@
     gap: 20px;
   }
 
-  .navbar-brand img {
-    max-height: 60px;
-    object-fit: contain;
-    vertical-align: middle;
-    transition: all 0.3s ease;
-  }
 
-  /* Dark mode logo switching - will be handled by JavaScript */
 
-  /* Align all nav items vertically center */
-  .navbar-nav .nav-link {
-    padding-left: 0;
-  }
-
-  .toggle-switch {
-    margin-top: 1rem;
-    padding-left: 0.5rem;
-  }
-
-  /* Dark Mode Toggle Switch Alignment */
-  .navbar .toggle-switch {
-    display: flex;
-    align-items: center;
-    padding: 0.75rem 1rem;
-    height: 100%;
-  }
-
-  /* Ensure all nav items are aligned */
+  
   .navbar-nav .nav-item {
     display: flex;
     align-items: center;
     margin-left: auto;
 
   }
+
   .nav-item .nav-link {
     font-weight: 900;
-    color: #fbc02d !important;
+    color: #7a5a08 !important;
     font-family: "Lora", serif;
     display: flex;
     align-items: center;
     transition: color 0.3s ease;
   }
 
-  /* Responsive logo alignment fix */
-  @media (max-width: 991.98px) {
-    .navbar .navbar-brand {
-      margin-right: auto;
-    }
+  /* Navbar link hover effect */
+  .navbar-nav .nav-link {
+    position: relative;
+    color: #333;
+    /* Default link color */
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
 
-    .navbar-collapse {
-      margin-top: 0.8rem;
-    }
+  .navbar-nav .nav-link:hover {
+    color: #007bff;
+    /* Change text color on hover */
+  }
 
-    .navbar-nav .nav-link {
-      padding-left: 0;
-    }
+  /* Underline animation */
+  .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background-color: #007bff;
+    transition: width 0.3s ease;
+  }
 
-    .toggle-switch {
-      margin-top: 1rem;
-      padding-left: 0.5rem;
-    }
+  .navbar-nav .nav-link:hover::after {
+    width: 100%;
   }
 
 
@@ -271,36 +288,32 @@
       font-size: 1.2rem;
     }
 
-    .info-box {
-       margin-top: 3vh;
-      background: rgba(55, 116, 168, 0.4);
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
-      margin-bottom: 20px;
-      text-align: center;
-    }
 
-    .info-box i {
-      font-size: 20px;
 
-      color: #1649cb;
-      margin-right: 10px;
-
-      color: #00b894;
-      display: block;
-      margin: 0 auto 8px auto;
-    }
-
-    #myBtn {
-      border-radius: 25px;
-      border: none;
-      font-size: 1.2rem;
-      box-shadow: 0 2px 12px #fff;
-      transition: transform 0.3s ease;
-        background-image: linear-gradient(30deg,#2e62bb, #4ce3f7);
-        padding: .5rem;
+.btn-submit {
+  background: linear-gradient(135deg, #2e62bb, #4ce3f7);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 0.6rem 2rem;
+  border: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(46, 98, 187, 0.4);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
+
+.btn-submit:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(46, 98, 187, 0.6);
+}
+
+.btn-submit:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 10px rgba(46, 98, 187, 0.3);
+}
+
+
     
 @keyframes pulse512 {
   0% {
@@ -315,17 +328,9 @@
     box-shadow: 0 0 0 0 rgb(218 103 68 / 0%);
   }
 }
-    #myBtn:hover {
-       background-position: right center;
-  background-size: 200% auto;
-  -webkit-animation: pulse 2s infinite;
-  animation: pulse512 1.5s infinite;
-  transform: scale(1.1);
-    }
 
-    .get-touch {
-      border-radius: 12px;
-    }
+
+    
 
     .footer-links {
       display: flex;
@@ -335,44 +340,76 @@
       gap: 1rem;
     }
   
-      .footer-links a {
-    text-decoration: none;
-    color: white;
-  }
 
-  /* Dark mode styles */
-  [data-bs-theme="dark"] {
-    background-color: #1a1a1a !important;
-    color: #ffffff !important;
-  }
+    .footer-links a {
+      text-decoration: none;
+      color: white;
+    }
+    .glass-green {
+  background: linear-gradient(
+      135deg,
+      rgba(108, 219, 108, 0.25),
+      rgba(124, 167, 124, 0.25)
+    );
+      backdrop-filter: blur(12px) saturate(120%);
+      -webkit-backdrop-filter: blur(12px) saturate(120%);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 8px 20px rgba(0, 128, 0, 0.15);
+      border-radius: 12px;
+    }
+    .get-touch {
+  padding: 20px 15px; /* reduced padding */
+  margin-top: 2rem; /* smaller top space */
+  border-radius: 12px;
+  text-align: center;
+  background: linear-gradient(
+      135deg,
+      rgba(108, 219, 108, 0.25),
+      rgba(124, 167, 124, 0.25)
+    );
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 128, 0, 0.15);
+}
 
-  [data-bs-theme="dark"] .navbar {
-    background-color: #2d2d2d !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-  }
+.get-touch .section-title {
+  color: white;
+  text-shadow: 2px 2px 5px rgba(112, 166, 112, 0.8);
+  margin: 0 0 1rem 0; /* remove giant top margin */
+}
 
-  [data-bs-theme="dark"] .navbar-nav .nav-link {
-    color: #ffffff !important;
-  }
+.get-touch .section-subtitle {
+  display: inline-block;
+  font-style: italic;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(45deg, #90d4c8, #f3d17d);
+  border-radius: 25px;
+  margin-bottom: 1.5rem;
+}
 
-  [data-bs-theme="dark"] .navbar-nav .nav-link:hover {
-    color: #90d4c8 !important;
-  }
 
-  [data-bs-theme="dark"] .form-section {
-    background: linear-gradient(-45deg, rgba(26, 26, 26, 0.9), rgba(45, 45, 45, 0.8), rgba(26, 26, 26, 0.9), rgba(45, 45, 45, 0.8));
-  }
+.get-touch .info-box {
+  background: rgba(179, 238, 184, 0.4);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
 
-  [data-bs-theme="dark"] .info-box {
-    background: rgba(45, 45, 45, 0.8);
-  }
+.get-touch .info-box i {
+  font-size: 20px;
+  color: #026d14;
+  display: block;
+  margin-bottom: 8px;
+}
 
-  [data-bs-theme="dark"] .section-title,
-  [data-bs-theme="dark"] .mb-4 {
-    color: #90d4c8 !important;
-    text-shadow: 2px 2px 5px rgba(144, 212, 200, 0.3);
-  }
+    
+
+
     </style> 
+    
   </head> 
   
   <body id="main-body">
@@ -425,10 +462,11 @@
       </nav>
       <!-- Navbar ends here -->
     <!-- Contact Information Section -->
-    <div class="container mt-5">
-      <h2 class="text-center mb-4">Send Us a Message</h2>
+    <div class="container mt-4 ">
+      <h2 class="text-center mb-4 text-bold text-white">Send Us a Message</h2>
+      <p class="text-center text-white">We'd love to hear from you! Please fill out the form below and we'll get back to you as soon as possible.</p>
 
-      <form id="contactForm" class="form-section">
+      <form id="contactForm" class="form-section glass-green">
         <div class="row g-4">
           <div class="col-md-6">
             <label class="form-label">Full Name *</label>
@@ -499,7 +537,7 @@
             <textarea class="form-control" rows="4"></textarea>
           </div>
           <div class="col-md-12 text-center">
-            <button id="myBtn" type="submit" class="btn btn-success">Submit</button>
+              <button id="myBtn" type="submit" class="btn-submit">Submit</button>
           </div>
          
 
@@ -510,37 +548,36 @@
 </div>
 
 
-<!-- Get in Touch Section -->
-<section class="get-touch mt-5 text-center">
+<section class="get-touch glass-green text-center">
   <h3 class="section-title">Get In Touch</h3>
-
-    <div class="section-subtitle">Ready to start your digital journey? Let's discuss how we can help grow your business.</div>
-    
+  <div class="section-subtitle">
+    Ready to start your digital journey? Let's discuss how we can help grow your business.
+  </div>
 
   <div class="container">
     <div class="row g-4 justify-content-center">
-      <div class="col-12 col-md-4">
-        <div class="info-box">
+      <div class="col-12 col-md-4 ">
+        <div class="info-box ">
           <i class="fas fa-map-marker-alt"></i>
-          <p>123 Grow Street, Innovation City, IN</p>
+          <p class="text-white">123 Grow Street, Innovation City, IN</p>
         </div>
       </div>
       <div class="col-12 col-md-4">
         <div class="info-box">
           <i class="fas fa-envelope"></i>
-          <p>support@growcraft.com</p>
+          <p class="text-white">support@growcraft.com</p>
         </div>
       </div>
       <div class="col-12 col-md-4">
         <div class="info-box">
           <i class="fas fa-phone-alt"></i>
-          <p>+91 98765 43210</p>
+          <p class="text-white">+91 98765 43210</p>
         </div>
       </div>
     </div>
   </div>
-
 </section>
+
 
 
   <!-- Footer -->
@@ -552,13 +589,20 @@
             <h4>GrowCraft</h4>
             <p class="px-2 w-50 text-center ">Your trusted partner for digital growth and innovation.</p>
           </div>
+          <div class="col-md-6 ">
+            <div class="footer-left d-flex justify-content-center align-items-center">
+                <div class="footer-links">
+                  <a href="../../index.html"><i class="fa-solid fa-house-crack"></i> Back to Home</a>
+                  <a href="../../index.html#services"><i class="fa-solid fa-hand-holding-heart"></i> Services</a>
+                  <a href="../../index.html#about"><i class="fa-solid fa-people-roof"></i> About Us</a>
+                </div>
         </div>
         <div class="col-md-6 ">
           <div class="footer-left d-flex justify-content-center align-items-center">
             <div class="footer-links">
-              <a href="/index.html"><i class="fa-solid fa-house-crack"></i> Back to Home</a>
-                                  <a href="../services.html"><i class="fa-solid fa-hand-holding-heart"></i> Services</a>
-              <a href="/index.html#about"><i class="fa-solid fa-people-roof"></i> About Us</a>
+              <a href="../index.html"><i class="fa-solid fa-house-crack"></i> Back to Home</a>
+              <a href="../index.html#services"><i class="fa-solid fa-hand-holding-heart"></i> Services</a>
+              <a href="../index.html#about"><i class="fa-solid fa-people-roof"></i> About Us</a>
             </div>
           </div>
         </div>
@@ -650,4 +694,4 @@
     </script>
      <script src="/src/scroll-after-submit.js"></script>
   </body>
-</html>
+      </html>
