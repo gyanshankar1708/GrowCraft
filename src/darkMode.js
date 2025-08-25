@@ -1066,6 +1066,189 @@ class DarkModeToggle {
             transform: translateY(-7px);
             box-shadow: 0 8px 25px rgba(42, 41, 41, 0.26);
         }
+           .dark .testimonials {
+  padding: 80px 20px;
+  background: #0d1117; /* Dark background */
+  text-align: center;
+  color: #e6edf3; /* Light text */
+}
+
+.dark .testimonials h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark .testimonial-container {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto;
+  perspective: 1000px;
+  height: 200px;
+}
+
+.dark .testimonial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: rotateY(90deg);
+  transition: all 0.8s ease;
+  background: #161b22; /* Dark card */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6); /* Softer dark shadow */
+  color: #e6edf3;
+}
+
+.dark .testimonial.active {
+  opacity: 1;
+  transform: rotateY(0deg);
+}
+
+.dark .testimonial p {
+  font-size: 1.1rem;
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #c9d1d9; /* Softer light text */
+}
+
+.dark .testimonial h4 {
+  font-weight: 600;
+  color: #ffffff; /* Bright username */
+}
+
+.dark .testimonial-controls {
+  margin-top: 30px;
+}
+
+.dark .dot {
+  display: inline-block;
+  height: 14px;
+  width: 14px;
+  margin: 0 6px;
+  background: #444; /* Darker inactive */
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.dark .dot.active {
+  background: #2575fc; /* Accent for active */
+  transform: scale(1.2);
+}
+
+/* Responsive */
+.dark @media (max-width: 768px) {
+  .testimonial-container {
+    height: auto;
+  }
+
+  .testimonial {
+    font-size: 0.95rem;
+  }
+}
+   .dark .professional-footer,
+    .dark .professional-footer {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%) !important;
+      color: #ffffff !important;
+    }
+       .dark.brand-name,
+    .dark .brand-name {
+      color: #ffffff !important;
+      background: linear-gradient(45deg, #00ffe7, #0b84f3) !important;
+      -webkit-background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      background-clip: text !important;
+    }
+       .dark .stat-number,
+    .dark .stat-number {
+      color: #00ffe7 !important;
+    }
+       .dark .stat-label,
+    .dark .stat-label {
+      color: #a8b2d1 !important;
+    }
+      .dark .footer-title,
+    .dark .footer-title {
+      color: #ffffff !important;
+    }
+       .dark .footer-title::after,
+    .dark .footer-title::after {
+      background: linear-gradient(45deg, #00ffe7, #0b84f3) !important;
+    }
+      .dark .footer-links a,
+    .dark .footer-links a {
+      color: #a8b2d1 !important;
+    }
+      .dark .footer-links a:hover,
+    .dark .footer-links a:hover {
+      color: #00ffe7 !important;
+    }
+       .dark .footer-links a::before,
+    .dark .footer-links a::before {
+      color: #0b84f3 !important;
+    }
+      .dark .contact-item i,
+    .dark .contact-item i {
+      color: #0b84f3 !important;
+    }
+      .dark .contact-item a,
+    .dark .contact-item a {
+      color: #a8b2d1 !important;
+    }
+      .dark .contact-item a:hover,
+    .dark .contact-item a:hover {
+      color: #00ffe7 !important;
+    }
+       .dark .contact-item span,
+    .dark .contact-item span {
+      color: #a8b2d1 !important;
+    }
+       .dark .footer-bottom,
+    .dark .footer-bottom {
+      background: rgba(0, 0, 0, 0.3) !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+      .dark .copyright,
+    .dark .copyright {
+      color: #a8b2d1 !important;
+    }
+      .dark .footer-nav a,
+    .dark .footer-nav a {
+      color: #a8b2d1 !important;
+    }
+      .dark .footer-nav a:hover,
+    .dark .footer-nav a:hover {
+      color: #00ffe7 !important;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+            
 
         `;
         document.head.appendChild(style);
