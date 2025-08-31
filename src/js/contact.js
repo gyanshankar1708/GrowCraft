@@ -1,5 +1,5 @@
 // Enhanced Contact Form JavaScript
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     initializeContactForm();
     initializeFileUpload();
     initializeQuickContact();
@@ -15,7 +15,7 @@ function initializeContactForm() {
     const form = document.getElementById('enhanced-contact-form');
     if (!form) return;
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
         handleFormSubmission();
     });
@@ -24,13 +24,13 @@ function initializeContactForm() {
 // Handle form submission
 function handleFormSubmission() {
     const formData = collectFormData();
-    
+
     if (!validateForm(formData)) {
         return;
     }
 
     showLoadingState();
-    
+
     // Simulate form submission (replace with actual API call)
     setTimeout(() => {
         hideLoadingState();
@@ -104,29 +104,29 @@ function initializeFileUpload() {
     if (!fileInput || !fileUploadArea || !fileList) return;
 
     // Handle file input change
-    fileInput.addEventListener('change', function(e) {
+    fileInput.addEventListener('change', function (e) {
         handleFileSelection(Array.from(e.target.files));
         e.target.value = ''; // Reset input
     });
 
     // Handle drag and drop
-    fileUploadArea.addEventListener('dragover', function(e) {
+    fileUploadArea.addEventListener('dragover', function (e) {
         e.preventDefault();
         fileUploadArea.style.borderColor = '#0078FF';
         fileUploadArea.style.backgroundColor = '#f0f8ff';
     });
 
-    fileUploadArea.addEventListener('dragleave', function(e) {
+    fileUploadArea.addEventListener('dragleave', function (e) {
         e.preventDefault();
         fileUploadArea.style.borderColor = '#ddd';
         fileUploadArea.style.backgroundColor = '#fafafa';
     });
 
-    fileUploadArea.addEventListener('drop', function(e) {
+    fileUploadArea.addEventListener('drop', function (e) {
         e.preventDefault();
         fileUploadArea.style.borderColor = '#ddd';
         fileUploadArea.style.backgroundColor = '#fafafa';
-        
+
         const files = Array.from(e.dataTransfer.files);
         handleFileSelection(files);
     });
@@ -174,19 +174,19 @@ function displayFile(file) {
     const fileItem = document.createElement('div');
     fileItem.className = 'file-item';
     fileItem.dataset.fileName = file.name;
-    
+
     fileItem.innerHTML = `
         <span>${file.name} (${formatFileSize(file.size)})</span>
         <span class="file-remove" onclick="removeFile('${file.name}')">&times;</span>
     `;
-    
+
     fileList.appendChild(fileItem);
 }
 
 // Remove uploaded file
 function removeFile(fileName) {
     uploadedFiles = uploadedFiles.filter(file => file.name !== fileName);
-    
+
     const fileItem = document.querySelector(`[data-file-name="${fileName}"]`);
     if (fileItem) {
         fileItem.remove();
@@ -209,19 +209,19 @@ function initializeQuickContact() {
     const callBtn = document.getElementById('call-quick');
 
     if (whatsappBtn) {
-        whatsappBtn.addEventListener('click', function() {
+        whatsappBtn.addEventListener('click', function () {
             openWhatsApp();
         });
     }
 
     if (telegramBtn) {
-        telegramBtn.addEventListener('click', function() {
+        telegramBtn.addEventListener('click', function () {
             openTelegram();
         });
     }
 
     if (callBtn) {
-        callBtn.addEventListener('click', function() {
+        callBtn.addEventListener('click', function () {
             window.open('tel:+919999999999', '_self');
         });
     }
@@ -232,20 +232,20 @@ function openWhatsApp() {
     const name = document.getElementById('name')?.value.trim() || '';
     const service = document.getElementById('service-type')?.value || '';
     const message = document.getElementById('message')?.value.trim() || '';
-    
+
     let whatsappMessage = `Hi! I'm ${name || 'interested in your services'}`;
-    
+
     if (service) {
         const serviceText = service.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
         whatsappMessage += ` and I need help with ${serviceText}`;
     }
-    
+
     if (message) {
         whatsappMessage += `. Here are more details: ${message}`;
     }
-    
+
     whatsappMessage += `\n\nI found you through your website.`;
-    
+
     // Replace with your actual WhatsApp business number
     const phoneNumber = "919999999999";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(whatsappMessage)}`;
@@ -256,16 +256,16 @@ function openWhatsApp() {
 function openTelegram() {
     const name = document.getElementById('name')?.value.trim() || '';
     const service = document.getElementById('service-type')?.value || '';
-    
+
     let telegramMessage = `Hi! I'm ${name || 'interested in your services'}`;
-    
+
     if (service) {
         const serviceText = service.replace('-', ' ').replace(/\b\w/g, l => l.toUpperCase());
         telegramMessage += ` and I need help with ${serviceText}`;
     }
-    
+
     telegramMessage += `. I'd like to discuss my project with you.`;
-    
+
     // Replace with your actual Telegram username or bot
     const telegramUsername = "growcraft_support"; // Replace with your Telegram username
     const telegramUrl = `https://t.me/${telegramUsername}?text=${encodeURIComponent(telegramMessage)}`;
@@ -286,17 +286,17 @@ function initializeDateValidation() {
     maxDate.setMonth(maxDate.getMonth() + 3);
     dateInput.setAttribute('max', maxDate.toISOString().split('T')[0]);
 
-    dateInput.addEventListener('change', function(e) {
+    dateInput.addEventListener('change', function (e) {
         const selectedDate = new Date(e.target.value);
         const day = selectedDate.getDay();
-        
+
         // Check if it's a weekend (0 = Sunday, 6 = Saturday)
         if (day === 0 || day === 6) {
             showErrorMessage('Please select a weekday (Monday to Friday) for consultations.');
             e.target.value = '';
             return;
         }
-        
+
         // Update available time slots based on selected date
         updateTimeSlots(selectedDate);
     });
@@ -311,16 +311,16 @@ function updateTimeSlots(selectedDate) {
     // In a real application, you would fetch available slots from your backend
     const now = new Date();
     const isToday = selectedDate.toDateString() === now.toDateString();
-    
+
     Array.from(timeSelect.options).forEach((option, index) => {
         if (index === 0) return; // Skip the first "Select time slot" option
-        
+
         if (isToday) {
             const optionTime = option.value;
             const [hours, minutes] = optionTime.split(':');
             const optionDateTime = new Date(selectedDate);
             optionDateTime.setHours(parseInt(hours), parseInt(minutes));
-            
+
             // Disable past time slots for today
             if (optionDateTime <= now) {
                 option.disabled = true;
@@ -340,19 +340,19 @@ function updateTimeSlots(selectedDate) {
 function showErrorMessage(message) {
     const errorElement = document.getElementById('error-message');
     const successElement = document.getElementById('success-message');
-    
+
     if (errorElement) {
         errorElement.textContent = message;
         errorElement.style.display = 'block';
     }
-    
+
     if (successElement) {
         successElement.style.display = 'none';
     }
-    
+
     // Scroll to messages
     document.getElementById('form-messages')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    
+
     // Auto-hide after 5 seconds
     setTimeout(clearMessages, 5000);
 }
@@ -360,16 +360,16 @@ function showErrorMessage(message) {
 function showSuccessMessage(message) {
     const errorElement = document.getElementById('error-message');
     const successElement = document.getElementById('success-message');
-    
+
     if (successElement) {
         successElement.textContent = message;
         successElement.style.display = 'block';
     }
-    
+
     if (errorElement) {
         errorElement.style.display = 'none';
     }
-    
+
     // Scroll to messages
     document.getElementById('form-messages')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
@@ -377,12 +377,12 @@ function showSuccessMessage(message) {
 function clearMessages() {
     const errorElement = document.getElementById('error-message');
     const successElement = document.getElementById('success-message');
-    
+
     if (errorElement) {
         errorElement.style.display = 'none';
         errorElement.textContent = '';
     }
-    
+
     if (successElement) {
         successElement.style.display = 'none';
         successElement.textContent = '';
@@ -426,14 +426,14 @@ function resetForm() {
     if (form) {
         form.reset();
     }
-    
+
     // Clear uploaded files
     uploadedFiles = [];
     const fileList = document.getElementById('file-list');
     if (fileList) {
         fileList.innerHTML = '';
     }
-    
+
     // Reset date minimum
     const dateInput = document.getElementById('preferred-date');
     if (dateInput) {
@@ -448,7 +448,7 @@ function initializeBackToTop() {
     if (!backToTopBtn) return;
 
     // Show/hide button based on scroll position
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function () {
         if (window.pageYOffset > 300) {
             backToTopBtn.style.display = 'block';
         } else {
@@ -457,7 +457,7 @@ function initializeBackToTop() {
     });
 
     // Smooth scroll to top
-    backToTopBtn.addEventListener('click', function() {
+    backToTopBtn.addEventListener('click', function () {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -478,7 +478,7 @@ function formatTime(time24) {
 function trackFormInteraction(action, data = {}) {
     // Implement your analytics tracking here
     console.log('Form interaction:', action, data);
-    
+
     // Example: Google Analytics
     // if (typeof gtag !== 'undefined') {
     //     gtag('event', action, {
@@ -499,4 +499,80 @@ window.ContactForm = {
     showSuccessMessage,
     clearMessages
 };
+
+
+// Dark mode toggle functionality
+document.addEventListener('DOMContentLoaded', function () {
+    const themeToggle = document.querySelector(".theme-toggle");
+    const themeIcon = themeToggle.querySelector("i");
+    const logo = document.querySelector("#logo");
+
+    // Check for saved theme preference or default to light
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-bs-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+    updateLogo(currentTheme);
+
+    themeToggle.addEventListener("click", () => {
+        const html = document.documentElement;
+        const isDark = html.getAttribute("data-bs-theme") === "dark";
+        const newTheme = isDark ? "light" : "dark";
+
+        html.setAttribute("data-bs-theme", newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+        updateLogo(newTheme);
+    });
+
+    function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            themeIcon.className = 'fas fa-sun';
+            themeIcon.style.color = '#fbc02d';
+        } else {
+            themeIcon.className = 'fas fa-moon';
+            themeIcon.style.color = '#463896';
+        }
+    }
+
+    function updateLogo(theme) {
+        if (theme === 'dark') {
+            logo.src = 'images/logo-transparent-dark-mode.png';
+        } else {
+            logo.src = 'images/logo_bg_transparent.png';
+        }
+    }
+});
+
+
+const backToTopBtn = document.getElementById("backToTop");
+window.onscroll = () => {
+    backToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
+};
+
+backToTopBtn.onclick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+};
+
+
+document
+    .getElementById("fileUpload")
+    .addEventListener("change", function (e) {
+        const preview = document.getElementById("filePreview");
+        preview.innerHTML = "";
+        for (let file of e.target.files) {
+            const div = document.createElement("div");
+            div.textContent = `📄 ${file.name}`;
+            preview.appendChild(div);
+        }
+    });
+
+document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (e) {
+        if (!this.checkValidity()) {
+            e.preventDefault();
+            e.stopPropagation();
+            alert("Please fill all required fields.");
+        }
+    });
 
