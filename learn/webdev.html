@@ -5,64 +5,60 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Web Dev Portfolio</title>
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <style>
-      .card {
-        border: none;
-        border-radius: 16px;
-        overflow: hidden;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-      }
-
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-      }
-
-      .card-img-top {
-        height: 220px;
-        object-fit: cover;
-        border-bottom: 1px solid #eaeaea;
-      }
-
-      .card-title {
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #2d2d2d;
-      }
-
-      .card-text {
-        font-size: 0.95rem;
-        color: #555;
-      }
-
-      h1 {
-        font-weight: 700;
-        color: #1f1f1f;
-      }
-
-      section.container {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-      }
-    </style>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../src/css/webdev.css" />
   </head>
   <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <!-- Navbar starts here -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
       <div
         class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5"
       >
-        <a class="navbar-brand" href="#"
-          ><img
-            src="../images/logo_bg_transparent.png"
-            alt="GrowCraft"
-            width="200"
-            id="logo"
-        /></a>
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="../images/Logo_new.png" alt="GrowCraft Logo" width="200" />
+        </a>
 
+        <!-- Nav Links -->
+        <div
+          class="collapse navbar-collapse justify-content-center g-4"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav me-3">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../blogListing.html">Blogs</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="../work.html">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../src/contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Icons -->
+        <div class="right-nav d-flex align-items-center">
+          <i class="fa-solid fa-sun me-3"></i>
+          <div class="search-box me-2">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <!-- Toggler -->
         <button
           class="navbar-toggler"
           type="button"
@@ -74,83 +70,20 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a
-                class="nav-link active visited"
-                aria-current="page"
-                href="../index.html"
-                >Home</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="../services.html"
-                >Services</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="../blogListing.html"
-                >Blogs</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#about"
-                >About Us</a
-              >
-            </li>
-            <!-- Added new "Our Work" link to navigate to the new work section on same page -->
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="../work.html"
-                >Our Work</a
-              >
-            </li>
-
-            <li class="nav-item">
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="../src/contact.html"
-                >Contact Us</a
-              >
-            </li>
-
-            <li class="nav-item mt-3">
-              <div class="toggle-switch"></div>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
-    <!-- ... Navbar code ... -->
+    <!-- Navbar ends here -->
 
-    <div class="container mt-4">
-      <a
-        href="../index.html"
-        class="btn btn-link text-decoration-none d-flex align-items-center"
-        style="font-size: 1.1rem"
-      >
-        &#8592; <span class="ms-2">Back</span>
-      </a>
-    </div>
-
-    <section class="container mt-5">
-      <h1 class="mb-4 text-center">Our Web Development Projects</h1>
-      <p class="text-center mb-5">
+    <section class="container">
+      <h1 class="web-title">Our Web Development Projects</h1>
+      <p class="sub-title text-center mb-5">
         Explore a collection of responsive, dynamic, and SEO-optimized websites
         we've built for startups, e-commerce brands, and service-based
         businesses.
       </p>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <div class="card shadow">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card shadow h-100">
             <img
               src="../images/img1wd.jpg"
               class="card-img-top"
@@ -165,8 +98,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card shadow">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card shadow h-100">
             <img
               src="../images/img2wd.jpg"
               class="card-img-top"
@@ -181,8 +114,8 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <div class="card shadow">
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card shadow h-100">
             <img
               src="../images/img3wd.webp"
               class="card-img-top"
@@ -197,7 +130,381 @@
             </div>
           </div>
         </div>
+        <!-- newly cards -->
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card shadow h-100">
+            <img
+              src="../images/admin-img.jpg"
+              alt="admin DashBoard"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Admin Dashboard</h5>
+              <p class="card-text">
+                Responsive React dashboard template with charts, analytics, and
+                user management tools.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card shadow h-100">
+            <img
+              src="../images/moderblog-img.webp"
+              alt="Modern Blog platform"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Modern Blog PlatForm</h5>
+              <p class="card-text">
+                A sleek blog with Markdown support, comments, and SEO
+                optimization using Next.js.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12">
+          <div class="card shadow h-100">
+            <img
+              src="../images/agencyWeb-img.webp"
+              alt="Agency design"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Agency Website</h5>
+              <p class="card-text">
+                Creative digital agency site with smooth animations, service
+                showcase, and contact forms.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
+
+    <!-- our tech stack section -->
+    <section class="py-5">
+      <div class="stack-container text-center">
+        <!-- Heading -->
+        <h2 class="mb-3 fw-bold">Our Tech Stack</h2>
+        <p class="sub-title mb-5">
+          Explore the powerful tools and technologies we use to deliver
+          top-notch web development solutions.
+        </p>
+
+        <!-- Responsive Row -->
+        <div class="row g-4">
+          <!-- HTML -->
+          <div class="col-6 col-md-4 col-lg-2">
+            <div
+              class="d-flex flex-column align-items-center p-3 shadow-lg rounded hover-effect"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                alt="HTML"
+                class="img-fluid mb-2"
+                style="height: 70px"
+              />
+              <p class="fw-medium mb-0">HTML</p>
+            </div>
+          </div>
+
+          <!-- CSS -->
+          <div class="col-6 col-md-4 col-lg-2">
+            <div
+              class="d-flex flex-column align-items-center p-3 shadow-lg rounded hover-effect"
+            >
+              <img
+                src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+                alt="CSS"
+                class="img-fluid mb-2"
+                style="height: 70px"
+              />
+              <p class="fw-medium mb-0">CSS</p>
+            </div>
+          </div>
+
+          <!-- Bootstrap -->
+          <div class="col-6 col-md-4 col-lg-2">
+            <div
+              class="d-flex flex-column align-items-center p-3 shadow-lg rounded hover-effect"
+            >
+              <img
+                src="../src/images/Bootstrap.png"
+                alt="Bootstrap"
+                class="img-fluid mb-2"
+                style="height: 70px"
+              />
+              <p class="fw-medium mb-0">Bootstrap</p>
+            </div>
+          </div>
+
+          <!-- React -->
+          <div class="col-6 col-md-4 col-lg-2">
+            <div
+              class="d-flex flex-column align-items-center p-3 shadow-lg rounded hover-effect"
+            >
+              <img
+                src="../src/images/React.png"
+                alt="React"
+                class="img-fluid mb-2"
+                style="height: 70px"
+              />
+              <p class="fw-medium mb-0">React</p>
+            </div>
+          </div>
+
+          <!-- Node.js -->
+          <div class="col-6 col-md-4 col-lg-2">
+            <div
+              class="d-flex flex-column align-items-center p-3 shadow-lg rounded hover-effect"
+            >
+              <img
+                src="../src/images/Node.js.png"
+                alt="React"
+                class="img-fluid mb-2"
+                style="height: 70px"
+              />
+              <p class="fw-medium mb-0">Node.js</p>
+            </div>
+          </div>
+
+          <!-- Tailwind -->
+          <div class="col-6 col-md-4 col-lg-2">
+            <div
+              class="d-flex flex-column align-items-center p-3 shadow-lg rounded hover-effect"
+            >
+              <img
+                src="../src/images/Tailwind CSS.png"
+                alt="React"
+                class="img-fluid mb-2"
+                style="height: 70px"
+              />
+
+              <p class="fw-medium mb-0">Tailwind CSS</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Testimonials Section -->
+    <section class="py-5 bg-light">
+      <div class="client-container">
+        <h2 class="text-center mb-5 fw-bold">Client Testimonials</h2>
+        <div class="row justify-content-center">
+          <!-- Testimonial 1 -->
+          <div class="col-md-4">
+            <div class="card shadow-sm border-0 text-center p-4 h-100">
+              <img
+                src="https://randomuser.me/api/portraits/men/45.jpg"
+                class="rounded-circle mx-auto mb-3 w-50"
+                alt="Client"
+              />
+              <h5 class="fw-bold">John Doe</h5>
+              <p class="text-muted">CEO, TechCorp</p>
+              <p class="mb-3">
+                “Working with GrowCraft was an amazing experience! The website
+                helped grow our business by 200%.”
+              </p>
+              <div class="text-warning">★★★★★</div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="col-md-4">
+            <div class="card shadow-sm border-0 text-center p-4 h-100">
+              <img
+                src="https://randomuser.me/api/portraits/women/44.jpg"
+                class="rounded-circle mx-auto mb-3 w-50"
+                alt="Client"
+              />
+              <h5 class="fw-bold">Alice Smith</h5>
+              <p class="text-muted">Founder, StartUp Inc.</p>
+              <p class="mb-3">
+                “They delivered a stunning portfolio website for us, easy to
+                manage and SEO optimized.”
+              </p>
+              <div class="text-warning">★★★★★</div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="col-md-4">
+            <div class="card shadow-sm border-0 text-center p-4 h-100">
+              <img
+                src="https://randomuser.me/api/portraits/men/32.jpg"
+                class="rounded-circle mx-auto mb-3 w-50"
+                alt="Client"
+              />
+              <h5 class="fw-bold">Mike Johnson</h5>
+              <p class="text-muted">Marketing Lead, BizWorld</p>
+              <p class="mb-3">
+                “The team was very supportive and creative. Highly recommended
+                for business websites.”
+              </p>
+              <div class="text-warning">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Button Section -->
+    <div class="text-center my-5">
+      <a
+        href="#contact"
+        class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-lg"
+      >
+        🚀 Let's Build Your Dream Website!
+      </a>
+    </div>
+
+    <!-- professional footer start -->
+    <footer class="professional-footer">
+      <div class="foot-container">
+        <div class="row g-4 py-4">
+          <!-- Brand Section -->
+          <div class="col-lg-4 col-md-12">
+            <div class="footer-brand">
+              <img
+                src="../images/logo_bg_transparent.png"
+                alt="GrowCraft Logo"
+                class="footer-logo"
+              />
+              <p class="brand-description">
+                Empowering businesses with innovative digital solutions and
+                creative excellence.
+              </p>
+              <div class="quick-stats">
+                <div class="stat-item">
+                  <span class="stat-number">500+</span>
+                  <span class="stat-label">PROJECTS</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">150+</span>
+                  <span class="stat-label">CLIENTS</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">5+</span>
+                  <span class="stat-label">YEARS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services Section -->
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5 class="footer-title">
+              <i class="fas fa-tools" style="margin-right: 8px"></i>Services
+            </h5>
+            <ul class="footer-links">
+              <li>
+                <a href="learn/webdev.html"
+                  ><i class="fas fa-code"></i> Web Development</a
+                >
+              </li>
+              <li>
+                <a href="learn/graphic.html"
+                  ><i class="fas fa-paint-brush"></i> Graphic Design</a
+                >
+              </li>
+              <li>
+                <a href="learn/marketing.html"
+                  ><i class="fas fa-bullhorn"></i> Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a href="learn/contentwriting.html"
+                  ><i class="fas fa-pen-nib"></i> Content Writing</a
+                >
+              </li>
+              <li>
+                <a href="learn/socialmedia.html"
+                  ><i class="fas fa-hashtag"></i> Social Media</a
+                >
+              </li>
+              <li>
+                <a href="learn/cyberanalyst.html"
+                  ><i class="fas fa-shield-alt"></i> Cyber Analyst</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5 class="footer-title">
+              <i class="fas fa-link" style="margin-right: 8px"></i>Quick Links
+            </h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="index.html#work">Portfolio</a></li>
+              <li><a href="src/contact.html">Contact</a></li>
+              <li><a href="#careers">Careers</a></li>
+              <li><a href="blogListing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="col-lg-4 col-md-4">
+            <h5 class="footer-title">
+              <i class="fas fa-envelope" style="margin-right: 8px"></i>Get In
+              Touch
+            </h5>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919999999999">+91 999 999 999</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>ABC Street, XYZ City, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="bottom-container">
+          <div class="row align-items-center w-100 py-3">
+            <div class="col-md-6">
+              <p class="copyright">
+                © 2024 <strong>GrowCraft</strong>. All rights reserved.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-nav">
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
+                <a href="#sitemap">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Professional Footer ends -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Add shadow on scroll
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("scrolled");
+        } else {
+          navbar.classList.remove("scrolled");
+        }
+      });
+    </script>
   </body>
 </html>
