@@ -323,12 +323,13 @@
             max-width: 700px;
             margin: 0 auto 50px;
         }
-
+        
         .benefits-alt-header h2 {
             font-size: 2.3rem;
             font-weight: 600;
             color: #0d1b2a;
             margin-bottom: 15px;
+            
         }
 
         .benefits-alt-header p {
@@ -351,8 +352,9 @@
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.171);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+              margin-left: 0; 
         }
-
+        
         .benefit-alt-item:hover {
             transform: translateX(8px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.368);
@@ -374,8 +376,17 @@
             font-weight: 300;
             color: #0077ff;
             margin-bottom: 6px;
+            transition: color 0.2s ease-in-out, font-weight 0.3s ease-in-out;
         }
-
+        .benefit-alt-text h3:hover {
+            color: rgb(167, 20, 69);
+            font-weight: 530;
+        }
+        .benefit-alt-text  {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
         .benefit-alt-text p {
             font-size: 0.95rem;
             color: #4f5d75;
