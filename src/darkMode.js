@@ -156,19 +156,19 @@ class DarkModeToggle {
                 transition: all 0.3s ease;
             }
             
-            .theme-toggle .sun-icon {
+            .theme-toggle .moon-icon {
                 display: block;
             }
             
-            .theme-toggle .moon-icon {
-                display: none;
-            }
-            
-            .theme-toggle.active .sun-icon {
+            .theme-toggle .sun-icon {
                 display: none;
             }
             
             .theme-toggle.active .moon-icon {
+                display: none;
+            }
+            
+            .theme-toggle.active .sun-icon {
                 display: block;
             }
             
@@ -915,7 +915,7 @@ class DarkModeToggle {
 }
 
 .dark .service-card p {
-    color: #cbd5e1; /* light gray */
+    color: #070708ff; /* light gray */
 }
 
 .dark .services-highlight {
@@ -1480,3 +1480,5 @@ document.addEventListener('DOMContentLoaded', () => {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = DarkModeToggle;
 } 
+
+localStorage.removeItem('theme');

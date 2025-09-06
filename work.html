@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GrowCraft</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-        crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="src/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/css/webdev.css" />
+    <link rel="stylesheet" href="work.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
 
     <!-- Added custom view all works button class with hover effects and smooth transitions -->
@@ -245,210 +246,555 @@
     }
       </style> -->
     <!-- END: Custom CSS changes -->
-</head>
+  </head>
 
-<body id="main-body">
+  <body id="main-body">
     <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid d-flex justify-content-between align-items-center px-3 px-lg-5">
-    
-    <!-- Logo -->
-    <a class="navbar-brand" href="./index.html">
-      <img src="images/Logo_new.png" alt="GrowCraft" width="160" id="logo">
-    </a>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5"
+      >
+        <!-- Brand -->
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="images/Logo_new.png" alt="GrowCraft Logo" width="200" />
+        </a>
 
-    <!-- Toggle (for mobile) -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+        <!-- Nav Links -->
+        <div
+          class="collapse navbar-collapse justify-content-center g-4"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav me-3">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blogListing.html">Blogs</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="work.html">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="src/contact.html">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Icons -->
+        <div class="right-nav d-flex align-items-center">
+          <div class="search-box me-2">
+            <input type="text" placeholder="Search..." />
+          </div>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+        <!-- Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+    <!-- Navbar ends here -->
+    <div class="container py-5 accordion" id="servicesAccordion">
+      <h1 class="section-title">Our Creative Work</h1>
+      <div class="row g-4">
+        <!-- Card 1 -->
+        <div class="col-md-6 col-lg-4 fade-in" style="animation-delay: 0.3s">
+          <div class="card shadow h-100">
+            <img
+              src="./images/DigitalMarketing2.png"
+              alt="Digital Marketing"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Digital Marketing</h5>
+              <p class="card-text">
+                We create targeted campaigns using SEO, SEM, email marketing,
+                and more.
+              </p>
+              <!--read more btn Button -->
+              <button
+                class="btn btn-success"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseDigital"
+                aria-expanded="false"
+                aria-controls="collapseDigital"
+                id="btnDigital"
+              >
+                Read More
+              </button>
+              <!-- Collapsible content -->
+              <div
+                class="collapse fade mt-3"
+                id="collapseDigital"
+                data-bs-parent="#servicesAccordion"
+              >
+                <p>
+                  From blogs to web content, we craft impactful words that
+                  captivate and convert your readers.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <!-- Menu -->
-    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-      <ul class="navbar-nav mx-auto gap-4">
-        <li class="nav-item">
-          <a class="nav-link " href="./index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./services.html">Services</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="blogListing.html">Blogs</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="./index.html">About Us</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="./work.html">Our Work</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="src/contact.html">Contact Us</a>
-        </li>
-      </ul>
+        <!-- Card 2 -->
+        <div class="col-md-6 col-lg-4 fade-in" style="animation-delay: 0.6s">
+          <div class="card shadow h-100">
+            <img
+              src="./images/WebDev1.png"
+              alt="Website Development"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Website Development</h5>
+              <p class="card-text">
+                Responsive websites that are fast, beautiful, and user-friendly.
+              </p>
+              <!-- Button -->
+              <button
+                class="btn btn-success"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseWeb"
+                aria-expanded="false"
+                aria-controls="collapseWeb"
+                id="btnWeb"
+              >
+                Read More
+              </button>
+
+              <!-- Collapsible content -->
+              <div
+                class="collapse fade mt-3"
+                id="collapseWeb"
+                data-bs-parent="#servicesAccordion"
+              >
+                <p>
+                  Extra details about Website Development services go here...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-lg-4 fade-in" style="animation-delay: 0.9s">
+          <div class="card shadow h-100">
+            <img
+              src="./images/GraphicDesign2.png"
+              alt="Graphic Design"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Graphic Design</h5>
+              <p class="card-text">
+                We bring brands to life through vibrant, meaningful visuals.
+              </p>
+              <!-- Button -->
+              <button
+                class="btn btn-success"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseGraphic"
+                aria-expanded="false"
+                aria-controls="collapseGraphic"
+                id="btnGraphic"
+              >
+                Read More
+              </button>
+
+              <!-- Collapsible content -->
+              <div
+                class="collapse fade mt-3"
+                id="collapseGraphic"
+                data-bs-parent="#servicesAccordion"
+              >
+                <p>Extra details about Graphic Design services go here...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 col-lg-4 fade-in" style="animation-delay: 1.2s">
+          <div class="card shadow h-100">
+            <img
+              src="./images/SocialMediaManagement1.png"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Social Media Management</h5>
+              <p class="card-text">
+                We build online communities and drive engagement.
+              </p>
+              <!-- Button -->
+              <button
+                class="btn btn-success"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseSocial"
+                aria-expanded="false"
+                aria-controls="collapseSocial"
+                id="btnSocial"
+              >
+                Read More
+              </button>
+
+              <!-- Collapsible content -->
+              <div
+                class="collapse fade mt-3"
+                id="collapseSocial"
+                data-bs-parent="#servicesAccordion"
+              >
+                <p>Extra details about Graphic Design services go here...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-6 col-lg-4 fade-in" style="animation-delay: 1.5s">
+          <div class="card shadow h-100">
+            <img
+              src="./images/ContentWriting1.png"
+              alt="Content Writing"
+              class="card-img-top"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Content Writing</h5>
+              <p class="card-text">
+                Persuasive and SEO-optimized content tailored for your brand.
+              </p>
+              <!-- Button -->
+              <button
+                class="btn btn-success"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseWriting"
+                aria-expanded="false"
+                aria-controls="collapseWriting"
+                id="btnWriting"
+              >
+                Read More
+              </button>
+
+              <!-- Collapsible content -->
+              <div
+                class="collapse fade mt-3"
+                id="collapseWriting"
+                data-bs-parent="#servicesAccordion"
+              >
+                <p>Extra details about Graphic Design services go here...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- How to Join Section -->
+    <section class="bg-light">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-4 text-success">How to Join Our Work</h2>
+        <p class="lead mb-5">
+          Follow these simple steps to become a part of our creative journey.
+        </p>
 
-    <!-- Dark/Light toggle button 
-    <div class="theme-toggle">
-      <button onclick="toggleDarkMode()" class="toggle-btn">
-        <i class="fa-solid fa-sun"></i>
-      </button>
-    </div> --> 
-
-    <!-- Responsive Search Bar -->
- <div class="search-container">
-  <input type="text" placeholder="Search..." class="search-input">
-  <button class="search-button">
-    <i class="fas fa-search"></i> <!-- Font Awesome icon -->
-  </button>
-</div>
-
-  </div>
-</nav>
-  <div class="container py-5">
-    <h2 class="section-title">Our Creative Work</h2>
-    <div class="row g-4">
-      <!-- Card 1 -->
-      <div class="col-md-6 col-lg-4 fade-in" style="animation-delay: 0.3s">
-        <div class="card h-100">
-          <img src="./images/DigitalMarketing2.png" alt="Digital Marketing" />
-          <div class="card-body">
-            <h5 class="card-title">Digital Marketing</h5>
-            <p class="card-text">We create targeted campaigns using SEO, SEM, email marketing, and more.</p>
-            <p class="read-more">Our campaigns have improved conversions by 40% for top clients. We track and optimize real-time!</p>
-            <button class="btn btn-sm btn-read-more">Read More</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 2 -->
-      <div class="col-md-6 col-lg-4 fade-in" style="animation-delay: 0.6s">
-        <div class="card h-100">
-          <img src="./images/WebDev1.png" alt="Website Development" />
-          <div class="card-body">
-            <h5 class="card-title">Website Development</h5>
-            <p class="card-text">Responsive websites that are fast, beautiful, and user-friendly.</p>
-            <p class="read-more">From e-commerce to portfolios, we deliver stunning websites tailored to your needs and vision.</p>
-            <button class="btn btn-sm btn-read-more">Read More</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-md-6 col-lg-4 fade-in" style="animation-delay: 0.9s">
-        <div class="card h-100">
-          <img src="./images/GraphicDesign2.png" alt="Graphic Design" />
-          <div class="card-body">
-            <h5 class="card-title">Graphic Design</h5>
-            <p class="card-text">We bring brands to life through vibrant, meaningful visuals.</p>
-            <p class="read-more">Logos, brochures, brand kits – we design eye-catching visuals to elevate your brand presence.</p>
-            <button class="btn btn-sm btn-read-more">Read More</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="col-md-6 col-lg-4 fade-in" style="animation-delay: 1.2s">
-        <div class="card h-100">
-          <img src="./images/SocialMediaManagement1.png" />
-          <div class="card-body">
-            <h5 class="card-title">Social Media Management</h5>
-            <p class="card-text">We build online communities and drive engagement.</p>
-            <p class="read-more">Daily posts, reels, stories, insights & ad strategies—everything to grow your social presence.</p>
-            <button class="btn btn-sm btn-read-more">Read More</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 5 -->
-      <div class="col-md-6 col-lg-4 fade-in" style="animation-delay: 1.5s">
-        <div class="card h-100">
-          <img src="./images/ContentWriting1.png" alt="Content Writing" />
-          <div class="card-body">
-            <h5 class="card-title">Content Writing</h5>
-            <p class="card-text">Persuasive and SEO-optimized content tailored for your brand.</p>
-            <p class="read-more">From blogs to web content, we craft impactful words that captivate and convert your readers.</p>
-            <button class="btn btn-sm btn-read-more">Read More</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<footer class="footer">
-        <div class="footer-container">
-            <!-- About GrowCraft -->
-            <div class="footer-about-wrapper">
-                <div class="footer-about">
-                    <h3>About GrowCraft</h3>
-                    <p>
-                        GrowCraft is a service-based platform offering:
-                        <br />🌐 Website Development<br />
-                        🖌️ Graphic Design <br />✍️ Content Writing <br />
-                        📣 Social Media Management <br />
-                        📊 Digital Marketing <br />
-                        🎓 Training & Internship Programs.
-                        <br />We help businesses grow online while providing students
-                        real-world learning.
-                    </p>
-                </div>
+        <div class="row g-4">
+          <!-- Step 1 -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body">
+                <h4 class="text-success">1. Apply</h4>
+                <p>
+                  Submit your details through our application form and let us
+                  know your skills and interests.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <!-- Quick Links -->
-            <div class="footer-top">
-                <div class="footer-links">
-                    <h3>Quick Links</h3>
-                    <ul>
-                        <li><a href="./index.html">Home</a></li>
-                        <li><a href="./services.html">Services</a></li>
-                        <li><a href="#">Portfolio</a></li>
-                        <li><a href="#">Internship</a></li>
-                        <li><a href="#contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact -->
-                <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p>📍 235, PQR, GHI, ABC Street, XYZ,<br />ABC - 10000, India</p>
-                    <p>📞 +91 999 999 999</p>
-                    <p>📧 info@growcraft.com</p>
-                    <button class="send-message-btn">Send Message</button>
-                </div>
+          <!-- Step 2 -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body">
+                <h4 class="text-success">2. Interview</h4>
+                <p>
+                  Our team will connect with you to discuss opportunities and
+                  evaluate how you can contribute.
+                </p>
+              </div>
             </div>
+          </div>
 
-            <!-- Follow Us -->
-            <div class="footer-social">
-                <h3>Follow Us</h3>
-                <br />
-                <ul class="social-list">
-                    <li>
-                        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i> Facebook</a>
-                    </li>
-                    <li>
-                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i> Instagram</a>
-                    </li>
-                    <li>
-                        <a href="https://www.linkedin.com/login"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/"><i class="fab fa-github"></i> GitHub</a>
-                    </li>
-                </ul>
+          <!-- Step 3 -->
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm border-0">
+              <div class="card-body">
+                <h4 class="text-success">3. Join Us</h4>
+                <p>
+                  Once selected, you’ll officially become part of our team and
+                  start working on real projects.
+                </p>
+              </div>
             </div>
+          </div>
         </div>
+
+        <!-- CTA Button -->
+        <div class="mt-5">
+          <a href="src/contact.html" class="btn btn-success btn-lg"
+            >Join Us Today</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Contribute Section -->
+    <section class=" bg-light">
+      <div class="container text-center">
+        <h2 class="fw-bold mb-4 text-success">How to Contribute</h2>
+        <p class="lead mb-5">
+          There are many ways you can contribute and be a part of our journey.
+        </p>
+
+        <div class="row g-4">
+          <!-- Contribution 1 -->
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100"> 
+              <div class="card-body">
+                <h5 class="card-title">Share Your Ideas</h5>
+                <p class="card-text">
+                  Bring innovative suggestions to help us improve and grow
+                  together.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contribution 2 -->
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100"> 
+              <div class="card-body">
+                <h5 class="card-title">Contribute Code</h5>
+                <p class="card-text">
+                  Help us build features, fix bugs, and make our projects even
+                  better.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contribution 3 -->
+          <div class="col-md-4">
+            <div class="card shadow-sm h-100"> 
+              <div class="card-body">
+                <h5 class="card-title">Support the Community</h5>
+                <p class="card-text">
+                  Engage in discussions, mentor others, and help create a
+                  welcoming space.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="mt-5">
+          <a href="#contribute" class="btn btn-success btn-lg"
+            >Start Contributing</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="professional-footer">
+      <div class="foot-container">
+        <div class="row g-4 py-4">
+          <!-- Brand Section -->
+          <div class="col-lg-4 col-md-12">
+            <div class="footer-brand">
+              <img
+                src="./src/images/logo_bg_transparent.png"
+                alt="GrowCraft Logo"
+                class="footer-logo"
+              />
+              <p class="brand-description">
+                Empowering businesses with innovative digital solutions and
+                creative excellence.
+              </p>
+              <div class="quick-stats">
+                <div class="stat-item">
+                  <span class="stat-number">500+</span>
+                  <span class="stat-label">PROJECTS</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">150+</span>
+                  <span class="stat-label">CLIENTS</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">5+</span>
+                  <span class="stat-label">YEARS</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Services Section -->
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5 class="footer-title">
+              <i class="fas fa-tools" style="margin-right: 8px"></i>Services
+            </h5>
+            <ul class="footer-links">
+              <li>
+                <a href="learn/webdev.html"
+                  ><i class="fas fa-code"></i> Web Development</a
+                >
+              </li>
+              <li>
+                <a href="learn/graphic.html"
+                  ><i class="fas fa-paint-brush"></i> Graphic Design</a
+                >
+              </li>
+              <li>
+                <a href="learn/marketing.html"
+                  ><i class="fas fa-bullhorn"></i> Digital Marketing</a
+                >
+              </li>
+              <li>
+                <a href="learn/contentwriting.html"
+                  ><i class="fas fa-pen-nib"></i> Content Writing</a
+                >
+              </li>
+              <li>
+                <a href="learn/socialmedia.html"
+                  ><i class="fas fa-hashtag"></i> Social Media</a
+                >
+              </li>
+              <li>
+                <a href="learn/cyberanalyst.html"
+                  ><i class="fas fa-shield-alt"></i> Cyber Analyst</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5 class="footer-title">
+              <i class="fas fa-link" style="margin-right: 8px"></i>Quick Links
+            </h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="index.html#work">Portfolio</a></li>
+              <li><a href="src/contact.html">Contact</a></li>
+              <li><a href="#careers">Careers</a></li>
+              <li><a href="blogListing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <!-- Contact Section -->
+          <div class="col-lg-4 col-md-4">
+            <h5 class="footer-title">
+              <i class="fas fa-envelope" style="margin-right: 8px"></i>Get In
+              Touch
+            </h5>
+            <div class="contact-info">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919999999999">+91 999 999 999</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>ABC Street, XYZ City, India</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="bottom-container">
+          <div class="row align-items-center w-100 py-3">
+            <div class="col-md-6">
+              <p class="copyright">
+                © 2024 <strong>GrowCraft</strong>. All rights reserved.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-nav">
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
+                <a href="#sitemap">Sitemap</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </footer>
-  <script>
-    const btns = document.querySelectorAll(".btn-read-more");
-    btns.forEach((btn) => {
-      btn.addEventListener("click", () => {
-        const extra = btn.previousElementSibling;
-        extra.style.display =
-          extra.style.display === "block" ? "none" : "block";
-        btn.textContent =
-          btn.textContent === "Read More" ? "Read Less" : "Read More";
-      });
-    });
-  </script>
-  <script src="/src/darkMode.js"></script>
-</body>
 
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Helper to attach toggle behavior
+      function attachToggle(collapseId, btnId) {
+        const collapseEl = document.getElementById(collapseId);
+        const btnEl = document.getElementById(btnId);
+
+        collapseEl.addEventListener("show.bs.collapse", () => {
+          btnEl.textContent = "Read Less";
+        });
+
+        collapseEl.addEventListener("hide.bs.collapse", () => {
+          btnEl.textContent = "Read More";
+        });
+      }
+
+      // Attach for each card
+      attachToggle("collapseDigital", "btnDigital");
+      attachToggle("collapseWeb", "btnWeb");
+      attachToggle("collapseGraphic", "btnGraphic");
+      attachToggle("collapseSocial", "btnSocial");
+      attachToggle("collapseWriting", "btnWriting");
+    </script>
+    <script>
+      const btns = document.querySelectorAll(".btn-read-more");
+      btns.forEach((btn) => {
+        btn.addEventListener("click", () => {
+          const extra = btn.previousElementSibling;
+          extra.style.display =
+            extra.style.display === "block" ? "none" : "block";
+          btn.textContent =
+            btn.textContent === "Read More" ? "Read Less" : "Read More";
+        });
+      });
+    </script>
+    <script src="./src/darkMode.js"></script>
+  </body>
 </html>

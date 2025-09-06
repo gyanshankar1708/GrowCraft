@@ -8,8 +8,25 @@ GrowCraft is a **service-based platform** designed to help businesses grow onlin
 > Contributions from the community are welcome!
 
 ---
+## 📑Table of Contents
 
-## ✨ Features
+- [Features](#features)
+- [Folder Structure](#folder-structure)
+- [Contributors](#contributors)
+- [Tech Stack](#tech-stack)
+- [Getting Started](#getting-started)
+- [Contributing](#contributing)
+- [Screenshots](#screenshots)
+- [License](#license)
+- [Acknowledgements](#acknowledgements)
+
+
+
+
+---
+---
+
+##  Features
 
 - 🌐 **Website Development**
 - 🖌️ **Graphic Design**
@@ -22,7 +39,7 @@ This platform offers services to clients and creates opportunities for students 
 
 ---
 
-## 📂 Folder Structure
+##  Folder Structure
 
 ```
 GrowCraft/
@@ -46,20 +63,21 @@ GrowCraft/
 ```
 
 ---
-## 👥 Contributors
+##  Contributors
 <a href="https://github.com/gyanshankar1708/GrowCraft/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=gyanshankar1708/GrowCraft" />
-</a>
 
 Made with [contrib.rocks](https://contrib.rocks).
+
+<img src="https://contrib.rocks/image?repo=gyanshankar1708/GrowCraft" />
+
 ---
+##  Tech Stack
 
-## 🛠️ Tech Stack
-
-- **Frontend:** HTML5, CSS3, Bootstrap 5.3
-- **Scripting:** JavaScript (vanilla)
-- **Backend (minimal):** PHP (for contact form handler)
+- **Frontend:** HTML5, CSS3, Bootstrap 5.3  
+- **Scripting:** JavaScript (vanilla)  
+- **Backend (minimal):** PHP (for contact form handler)  
 - **Database:** MySQL (schema included)
+
 
 ---
 
@@ -100,7 +118,7 @@ Made with [contrib.rocks](https://contrib.rocks).
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 - A modern browser
@@ -120,7 +138,7 @@ Made with [contrib.rocks](https://contrib.rocks).
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions from everyone!  
 If you're participating through **GSSoC'25**:
@@ -133,7 +151,7 @@ Please read our [Contributing Guidelines](src/CONTRIBUTING.md) and [Code of Cond
 
 ---
 
-## 📷 Screenshots
+##  Screenshots
 
 ### Landing Page
 ![Landing Page](images/index.png)
@@ -145,13 +163,13 @@ Please read our [Contributing Guidelines](src/CONTRIBUTING.md) and [Code of Cond
 
 ---
 
-## 📜 License
+##  License
 
 This project is licensed under the terms specified in the [LICENSE](LICENSE) file.
 
 ---
 
-## 🙌 Acknowledgements
+##  Acknowledgements
 
 - **GirlScript Summer of Code 2025 (GSSoC'25)** for providing an open-source platform
 - Project contributors and mentors

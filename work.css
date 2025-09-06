@@ -1,0 +1,21 @@
+/* main section */
+.section-title {
+  margin-bottom: 2rem;
+}
+#readMoreBtn {
+  background: #1f8321;
+  transition: all 0.3s ease;
+}
+
+.read-more-container{
+    transition: all 0.3s ease;
+}
+
+/* Fade effect for collapse */
+.collapse.fade {
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+.collapse.fade.show {
+  opacity: 1;
+}

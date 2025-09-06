@@ -242,7 +242,8 @@ h5 {
   background-color: transparent !important;
 }
 .icon {
-  height: 1.5rem;
+  height: 6.5rem;
+
 }
 
 .training-links {
@@ -308,7 +309,10 @@ h5 {
 }
 
 .nav-btn {
+  position:relative;
+  top:90%;
   filter: invert(1); 
+
 }
 
 .heading-text {
@@ -335,7 +339,9 @@ h5 {
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   overflow: hidden;
   position: relative;
-  background: white;
+  background: linear-gradient(120deg, #a8edea, #fed6e3);
+;
+  /* background-color:linear-gradient(125deg, pink,125deg , lightblue); */
   border: 1px solid rgba(0, 0, 0, 0.08);
   opacity: 1;
   transform: translateY(0);
@@ -438,6 +444,11 @@ body.dark .progressive-load:not(.loaded) {
 
 /* Responsive adjustments for 2x2 layout */
 @media (max-width: 768px) {
+
+  .nav-btn{
+    top:230%;
+  }
+
   .card-services {
     margin: 0.5rem;
     padding: 1rem;
@@ -952,6 +963,7 @@ body.dark .copyright {
 
 body.dark .icon {
   filter: invert(1);
+
 }
 
 body.dark .mb-0:hover {
