@@ -1435,6 +1435,89 @@ class DarkModeToggle {
 .dark .gc-privacy {
   color: var(--gc-muted);
 }
+  /* 🌙 Dark mode card styling */
+.dark .card {
+  background: #1e1e2f; /* deep slate */
+  color: #f5f5f5;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.dark .card-figure img {
+  border-radius: 0.75rem;
+  background: #2a2a3d; /* subtle image bg */
+}
+
+.dark .card-body {
+  background: transparent;
+  padding: 1rem;
+}
+
+.dark .card-title {
+  color: #ffffff;
+}
+
+.dark .card-desc {
+  color: #c7c7d3;
+}
+
+.dark .kicker {
+  color: #8b5cf6; /* accent purple */
+  font-weight: 600;
+}
+
+.dark .meta {
+  display: flex;
+  align-items: center;
+  color: #9ca3af;
+  font-size: 0.875rem;
+}
+
+.dark .btn-primary {
+  background: #8b5cf6;
+  color: #fff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s;
+}
+
+.dark .btn-primary:hover {
+  background: #a78bfa;
+}
+/* 🌙 Dark mode aside (featured case) */
+.dark aside {
+  padding: 18px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, rgba(40,40,60,0.8), #1e1e2f);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  color: #f5f5f5;
+}
+
+.dark aside h4 {
+  margin: 0 0 8px;
+  color: #ffffff;
+}
+
+.dark aside p {
+  margin: 0 0 12px;
+  color: #c7c7d3; /* muted text */
+}
+
+.dark aside .btn-primary {
+  display: inline-block;
+  background: #8b5cf6;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.dark aside .btn-primary:hover {
+  background: #a78bfa;
+}
+
 
 
 

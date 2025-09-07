@@ -204,6 +204,7 @@
         }
 
         .card {
+            position: relative;
             background: var(--card);
             border: 1px solid rgba(0, 0, 0, 0.05);
             border-radius: var(--radius);
@@ -405,9 +406,9 @@
         }
 
         .ribbon {
-            position: absolute;
-            top: 14px;
-            right: -6px;
+            transform: translateY(-50px);
+            transform: translateX(100px);
+            width: 8rem;
             background: var(--accent);
             color: white;
             padding: 6px 10px;
@@ -998,7 +999,7 @@
     <!-- Packages & Pricing -->
     <section class="section" id="pricing">
         <div class="container">
-            <div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+            <div style="display:flex;align-items:center;justify-content:space-around;gap:16px;flex-wrap:wrap">
                 <div>
                     <h2 class="head2">Packages & Pricing</h2>
                     <p class="muted">Tiered plans for startups to scale-ups. Paid ads management can be added to any
