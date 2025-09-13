@@ -136,7 +136,11 @@
       /* Enhanced Navbar Design */
       .navbar {
         padding: 1rem 0;
-        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+        background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #f8f9fa 100%
+        ) !important;
         border-bottom: 3px solid #388e3c;
         box-shadow: 0 8px 32px rgba(56, 142, 60, 0.1);
         backdrop-filter: blur(10px);
@@ -181,7 +185,6 @@
       .navbar-brand img:hover {
         filter: drop-shadow(4px 4px 8px rgba(56, 142, 60, 0.3));
       }
-
 
       .navbar-nav .nav-link {
         position: relative;
@@ -908,11 +911,15 @@
       }
 
       /*Dark Mode*/
-      
+
       /* Dark Mode Navbar Overrides */
       .dark-mode .navbar,
       .dark .navbar {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+        background: linear-gradient(
+          135deg,
+          #1a1a1a 0%,
+          #2d2d2d 100%
+        ) !important;
         border-bottom: 3px solid #4caf50 !important;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
       }
@@ -932,7 +939,11 @@
       .dark-mode .navbar-nav .nav-link:hover,
       .dark .navbar-nav .nav-link:hover {
         color: #000000 !important;
-        background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%) !important;
+        background: linear-gradient(
+          135deg,
+          #4caf50 0%,
+          #388e3c 100%
+        ) !important;
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
       }
@@ -940,7 +951,11 @@
       .dark-mode .navbar-nav .nav-link.active,
       .dark .navbar-nav .nav-link.active {
         color: #000000 !important;
-        background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
+        background: linear-gradient(
+          135deg,
+          #66bb6a 0%,
+          #4caf50 100%
+        ) !important;
         box-shadow: 0 4px 15px rgba(76, 175, 80, 0.25);
       }
 
@@ -952,7 +967,11 @@
       /* Dark Mode Search Bar */
       .dark-mode .search-container,
       .dark .search-container {
-        background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%) !important;
+        background: linear-gradient(
+          135deg,
+          #2d2d2d 0%,
+          #3a3a3a 100%
+        ) !important;
         border: 2px solid transparent;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
       }
@@ -976,13 +995,21 @@
 
       .dark-mode .search-button,
       .dark .search-button {
-        background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%) !important;
+        background: linear-gradient(
+          135deg,
+          #4caf50 0%,
+          #388e3c 100%
+        ) !important;
         color: #000000 !important;
       }
 
       .dark-mode .search-button:hover,
       .dark .search-button:hover {
-        background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
+        background: linear-gradient(
+          135deg,
+          #66bb6a 0%,
+          #4caf50 100%
+        ) !important;
         transform: scale(1.05);
       }
 
@@ -1016,7 +1043,11 @@
 
         .dark-mode .search-container,
         .dark .search-container {
-          background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%) !important;
+          background: linear-gradient(
+            135deg,
+            #2d2d2d 0%,
+            #3a3a3a 100%
+          ) !important;
         }
       }
     </style>
@@ -1029,9 +1060,16 @@
       <div
         class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5"
       >
-        <a class="navbar-brand" href="#"
-          ><img src="images/Logo.png" alt="GrowCraft" width="200" id="logo"
-        /></a>
+        <a class="navbar-brand" href="#">
+          <img
+            src="images/Logo_new.png"
+            alt="GrowCraft"
+            width="200"
+            class="theme-aware-logo"
+            data-light-src="images/Logo_new.png"
+            data-dark-src="images/Logo.png"
+          />
+        </a>
 
         <button
           class="navbar-toggler"
@@ -1847,7 +1885,9 @@
               <img
                 src="images/logo_bg_transparent.png"
                 alt="GrowCraft Logo"
-                class="footer-logo mb-3"
+                class="footer-logo mb-3 theme-aware-logo"
+                data-light-src="images/logo_bg_transparent.png"
+                data-dark-src="images/logo-transparent-dark-mode.png"
               />
               <p class="brand-description">
                 Empowering businesses with innovative digital solutions and
@@ -1880,7 +1920,7 @@
                 <a href="src/digital-marketing.html">Digital Marketing</a>
               </li>
               <li><a href="learn/contentwriting.html">Content Writing</a></li>
-              <li><a href="learn/socialmedia.html">Social Media Management</a></li>
+              <li><a href="learn/socialmedia.html">Social Media</a></li>
               <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
             </ul>
           </div>
@@ -1890,7 +1930,7 @@
             <h5 class="footer-title">Quick Links</h5>
             <ul class="footer-links">
               <li><a href="#about">About Us</a></li>
-              <li><a href="./work.html">Our Work</a></li>
+              <li><a href="#work">Portfolio</a></li>
               <li><a href="src/contact.html">Contact</a></li>
               <li><a href="#careers">Careers</a></li>
               <li><a href="blogListing.html">Blog</a></li>
@@ -1930,8 +1970,8 @@
             </div>
             <div class="col-md-6">
               <div class="footer-nav fade-in">
-                <a href="terms.html">Terms</a>
-                <a href="privacy.html">Privacy</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
                 <a href="#sitemap">Sitemap</a>
               </div>
             </div>
@@ -1949,28 +1989,31 @@
     <!-- Enhanced Navbar Scroll Effect -->
     <script>
       // Add scroll effect to navbar
-      window.addEventListener('scroll', function() {
-        const navbar = document.querySelector('.navbar');
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
         if (window.scrollY > 50) {
-          navbar.classList.add('scrolled');
+          navbar.classList.add("scrolled");
         } else {
-          navbar.classList.remove('scrolled');
+          navbar.classList.remove("scrolled");
         }
       });
 
       // Set active nav link based on current page
-      document.addEventListener('DOMContentLoaded', function() {
+      document.addEventListener("DOMContentLoaded", function () {
         const currentLocation = location.pathname;
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-        
-        navLinks.forEach(link => {
-          link.classList.remove('active');
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
           const linkPath = new URL(link.href).pathname;
-          
-          if (currentLocation === linkPath || 
-              (currentLocation === '/' && linkPath.includes('index.html')) ||
-              (currentLocation === '/index.html' && linkPath.includes('index.html'))) {
-            link.classList.add('active');
+
+          if (
+            currentLocation === linkPath ||
+            (currentLocation === "/" && linkPath.includes("index.html")) ||
+            (currentLocation === "/index.html" &&
+              linkPath.includes("index.html"))
+          ) {
+            link.classList.add("active");
           }
         });
       });
@@ -2002,39 +2045,6 @@
         }
 
         typeWriter();
-        // Logo switching functionality for dark mode
-        const logo = document.querySelector("#logo");
-
-        // Function to update logo based on theme
-        function updateLogo() {
-          const isDark =
-            document.documentElement.getAttribute("data-bs-theme") === "dark";
-          if (isDark) {
-            logo.src = "images/Logo.png";
-          } else {
-            logo.src = "images/Logo_new.png";
-          }
-        }
-
-        // Update logo when page loads
-        updateLogo();
-
-        // Watch for theme changes
-        const observer = new MutationObserver(function (mutations) {
-          mutations.forEach(function (mutation) {
-            if (
-              mutation.type === "attributes" &&
-              mutation.attributeName === "data-bs-theme"
-            ) {
-              updateLogo();
-            }
-          });
-        });
-
-        observer.observe(document.documentElement, {
-          attributes: true,
-          attributeFilter: ["data-bs-theme"],
-        });
       });
 
       // JavaScript (custom carousel)

@@ -28,11 +28,6 @@
     transition: all 0.3s ease;
   }
 
-  /* Dark mode logo switching */
-  [data-bs-theme="dark"] .navbar-brand img {
-    content: url('images/logo-transparent-dark-mode.png');
-  }
-
   .navbar-nav .nav-link {
     font-weight: 500;
     padding: 0.75rem 1rem;
@@ -151,11 +146,6 @@
     transition: all 0.3s ease;
   }
 
-  /* Dark mode logo switching */
-  [data-bs-theme="dark"] .navbar-brand img {
-    content: url('images/logo-transparent-dark-mode.png');
-  }
-
   .navbar-nav .nav-item {
     display: flex;
     align-items: center;
@@ -208,7 +198,16 @@
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-      <a class="navbar-brand" href="index.html"><img src="images/logo_bg_transparent.png" alt="GrowCraft" width="200" id="logo" /></a>
+      <a class="navbar-brand" href="index.html">
+        <img 
+          src="images/logo_bg_transparent.png" 
+          alt="GrowCraft" 
+          width="200" 
+          class="theme-aware-logo"
+          data-light-src="images/logo_bg_transparent.png"
+          data-dark-src="images/logo-transparent-dark-mode.png"
+        />
+      </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -269,8 +268,13 @@
             <!-- Footer Columns -->
             <div class="col-lg-4 col-md-6 fade-in">
                 <div class="footer-brand fade-in">
-                    <img src="images/Logo.png" alt="GrowCraft Logo"
-                        class="footer-logo mb-3">
+                    <img 
+                      src="images/Logo_new.png" 
+                      alt="GrowCraft Logo" 
+                      class="footer-logo mb-3 theme-aware-logo"
+                      data-light-src="images/Logo_new.png"
+                      data-dark-src="images/Logo.png" 
+                    />
                     <h4 class="brand-name">GrowCraft</h4>
                     <p class="brand-description">Empowering businesses with
                         innovative digital solutions and creative excellence.</p>

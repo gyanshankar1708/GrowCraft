@@ -94,34 +94,28 @@ class DarkModeToggle {
         this.updateLogo();
     }
     
+    // --- NEW AND IMPROVED METHOD ---
     updateLogo() {
-        const logo = document.querySelector("#logo");
-        if (logo) {
-            // Determine the correct path based on current page location
-            let darkLogoPath, lightLogoPath;
-            
-            // Check if we're in the src folder (contact page) or root (home page)
-            if (window.location.pathname.includes('/src/')) {
-                // We're in src folder, use relative path
-                darkLogoPath = 'images/logo-transparent-dark-mode.png';
-                lightLogoPath = 'images/logo_bg_transparent.png';
-            } else {
-                // We're in root folder, use root path
-                darkLogoPath = 'images/logo-transparent-dark-mode.png';
-                lightLogoPath = 'images/logo_bg_transparent.png';
-            }
-            
-            console.log('Updating logo:', this.theme, 'Dark path:', darkLogoPath, 'Light path:', lightLogoPath);
-            
-            if (this.theme === 'dark') {
-                logo.src = darkLogoPath;
-                console.log('Logo updated to dark mode:', logo.src);
-            } else {
-                logo.src = lightLogoPath;
-                console.log('Logo updated to light mode:', logo.src);
-            }
+        // Select ALL logos that are theme-aware
+        const logos = document.querySelectorAll(".theme-aware-logo");
+
+        if (logos.length > 0) {
+            logos.forEach(logo => {
+                if (this.theme === 'dark') {
+                    // Get the dark mode image path from the data attribute
+                    if (logo.dataset.darkSrc) {
+                        logo.src = logo.dataset.darkSrc;
+                    }
+                } else {
+                    // Get the light mode image path from the data attribute
+                    if (logo.dataset.lightSrc) {
+                        logo.src = logo.dataset.lightSrc;
+                    }
+                }
+            });
         } else {
-            console.log('Logo element not found');
+            // This message is helpful for debugging if the class name is wrong
+            console.log('No ".theme-aware-logo" elements found.');
         }
     }
 
