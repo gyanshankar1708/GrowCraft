@@ -1,34 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GrowCraft — About Us (Hero)</title>
-  <link rel="stylesheet" href="src/style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-    crossorigin="anonymous"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GrowCraft — About Us</title>
+  <link rel="stylesheet" href="src/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
-
     /* Brand Tokens */
     :root {
       --brand: #16a34a;           /* Grow green */
@@ -66,129 +48,371 @@
     a { color: inherit; text-decoration: none; }
     button { font: inherit; }
 
-      /* === Navbar Custom Styling === */
-
-  .navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
-
-  .navbar-brand img {
-    max-height: 60px;
-    object-fit: contain;
-    vertical-align: middle;
-    transition: all 0.3s ease;
-  }
-
-  /* Dark mode logo switching - will be handled by JavaScript */
-
-  /* Align all nav items vertically center */
-  .navbar-nav .nav-link {
-    font-weight: 500;
-    padding: 0.75rem 1rem;
-    color: #333;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
-
-  .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link.active {
-    color: #463896;
-  }
-
-  /* Dark Mode Toggle Switch Alignment */
-  .navbar .toggle-switch {
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-  }
-
-  /* Responsive logo alignment fix */
-  @media (max-width: 991.98px) {
-    .navbar .navbar-brand {
-      margin-right: auto;
+    /* Navbar Custom Styling */
+    .navbar {
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      background-color: #ffffff !important;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     }
 
-    .navbar-collapse {
-      margin-top: 0.8rem;
+    .navbar-brand img {
+      max-height: 60px;
+      object-fit: contain;
+      vertical-align: middle;
+      transition: all 0.3s ease;
     }
-  }
-  .navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
 
-  }
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      padding: 0.75rem 1rem;
+      color: #333;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
 
-  .navbar-nav li {
-    margin: 0 10px;
-    /* Reduce from 20px or more if it’s higher */
-  }
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #463896;
+    }
 
-  .navbar-nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
-  }
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
+    .navbar-nav .nav-link:hover {
+      color: #007bff;
+    }
 
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background-color: #007bff;
+      transition: width 0.3s ease;
+    }
 
-  
-  .navbar-nav .nav-item {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
 
-  }
+    /* Professional Footer */
+    .professional-footer {
+      background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+      color: #ffffff;
+      margin-top: 60px;
+      position: relative;
+      border-top: 3px solid transparent;
+      border-image: linear-gradient(90deg, #667eea, #764ba2, #667eea) 1;
+    }
 
-  .nav-item .nav-link {
-    font-weight: 900;
-    color: #7a5a08 !important;
-    font-family: "Lora", serif;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
+    /* Brand Section */
+    .footer-brand {
+      text-align: left;
+    }
 
-  /* Navbar link hover effect */
-  .navbar-nav .nav-link {
-    position: relative;
-    color: #333;
-    /* Default link color */
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
+    .footer-logo {
+      max-width: 120px;
+      height: auto;
+      filter: brightness(1.1);
+    }
 
-  .navbar-nav .nav-link:hover {
-    color: #007bff;
-    /* Change text color on hover */
-  }
+    .brand-name {
+      color: #667eea;
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin: 15px 0 10px 0;
+    }
 
-  /* Underline animation */
-  .navbar-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background-color: #007bff;
-    transition: width 0.3s ease;
-  }
+    .brand-description {
+      color: #b8b9c7;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
 
-  .navbar-nav .nav-link:hover::after {
-    width: 100%;
-  }
+    /* Quick Stats */
+    .quick-stats {
+      display: flex;
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #667eea;
+      margin-bottom: 2px;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Footer Titles */
+    .footer-title {
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 8px;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+
+    /* Footer Links */
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #b8b9c7;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 4px 0;
+      display: inline-block;
+    }
+
+    .footer-links a:hover {
+      color: #667eea;
+      padding-left: 8px;
+    }
+
+    .footer-links a::before {
+      content: '';
+      position: absolute;
+      left: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 2px;
+      background: #667eea;
+      transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover::before {
+      width: 4px;
+    }
+
+    /* Contact Info */
+    .contact-info {
+      margin-bottom: 15px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+
+    .contact-item i {
+      color: #667eea;
+      width: 16px;
+      font-size: 0.9rem;
+    }
+
+    .contact-item a {
+      color: #b8b9c7;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: #667eea;
+    }
+
+    .contact-item span {
+      color: #b8b9c7;
+    }
+
+    /* Social Section */
+    .social-title {
+      color: #ffffff;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+      font-weight: 500;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #b8b9c7;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .social-link:hover {
+      background: #667eea;
+      color: #ffffff;
+      transform: translateY(-2px);
+      border-color: #667eea;
+      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+    }
+
+    .social-link i {
+      font-size: 0.9rem;
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.2);
+      margin-top: 30px;
+    }
+
+    .copyright {
+      color: #9ca3af;
+      font-size: 0.85rem;
+      margin: 0;
+    }
+
+    .copyright strong {
+      color: #667eea;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 20px;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .footer-nav a {
+      color: #9ca3af;
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 6px 12px;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #ffffff;
+      background: rgba(102, 126, 234, 0.2);
+      border: 1px solid rgba(102, 126, 234, 0.3);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .professional-footer {
+        margin-top: 40px;
+      }
+
+      .quick-stats {
+        justify-content: center;
+        gap: 15px;
+      }
+
+      .footer-brand,
+      .footer-links,
+      .contact-info,
+      .social-section {
+        text-align: center;
+      }
+
+      .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .footer-nav {
+        justify-content: center;
+        margin-top: 15px;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .footer-nav a {
+        font-size: 0.8rem;
+        padding: 4px 8px;
+      }
+
+      .social-links {
+        justify-content: center;
+      }
+
+      .footer-bottom .row {
+        text-align: center;
+      }
+
+      .footer-bottom .col-md-6:first-child {
+        margin-bottom: 10px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .quick-stats {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .stat-number {
+        font-size: 1.2rem;
+        margin-bottom: 0;
+      }
+
+      .stat-label {
+        font-size: 0.7rem;
+      }
+    }
 
     /* Section Wrapper */
     .hero {
       position: relative;
-      isolation: isolate; /* separate stacking context for effects */
+      isolation: isolate;
       overflow: hidden;
       padding: clamp(72px, 8vw, 120px) 24px 72px;
     }
@@ -209,7 +433,7 @@
       background:
         linear-gradient(transparent, transparent calc(100% - 1px), var(--border) calc(100% - 1px)),
         linear-gradient(90deg, transparent, transparent calc(100% - 1px), var(--border) calc(100% - 1px));
-      background-size: 24px 24px, 24px 24px; /* square grid */
+      background-size: 24px 24px, 24px 24px;
       mask: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.75), rgba(255,255,255,0) 70%);
       opacity: .6;
     }
@@ -330,7 +554,7 @@
       background: color-mix(in oklab, var(--bg-soft), transparent 70%);
       backdrop-filter: blur(8px);
     }
-    .metric b { font-size: clamp(18px, 3.6vw, 26px); color: var(--text); }
+    .metric b { font-size: clamp(18px, 3.6vw, 26px); }
     .metric p { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
 
     /* Decorative ring */
@@ -354,7 +578,6 @@
     /* Accessibility improvements */
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
     .section{padding:clamp(36px,6vw,72px) 18px;position:relative;overflow:hidden}
-    .container{max-width:var(--max-w);margin:0 auto}
 
     /* background accents */
     .bg-layer{position:absolute;inset:0;pointer-events:none;z-index:-2}
@@ -401,344 +624,100 @@
     .step{width:10px;height:10px;border-radius:50%;background:var(--card);border:1px solid var(--border)}
     .step.active{background:linear-gradient(90deg,var(--brand),var(--brand-2));box-shadow:0 6px 18px rgba(22,163,74,.12)}
 
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.9,.3,1)}
-    .reveal.in{opacity:1;transform:none}
-
-    /* accessibility */
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
-    .orb{position:absolute;border-radius:999px;filter:blur(64px);opacity:.45}
-    .orb.l{left:-140px;top:-140px;width:420px;height:420px;background:radial-gradient(circle at 30% 30%, rgba(34,197,94,.56), transparent 60%)}
-    .orb.r{right:-120px;bottom:-120px;width:360px;height:360px;background:radial-gradient(circle at 60% 40%, rgba(96,165,250,.48), transparent 60%)}
-    .grid-lines{position:absolute;inset:0;z-index:-1;opacity:.45;background-size:26px 26px;background-image:linear-gradient(transparent,transparent calc(100% - 1px),var(--border) calc(100% - 1px));mask:radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.9), rgba(255,255,255,0) 72%)}
-
-    /* layout */
-    .wrap{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
-    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
-
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid var(--border);color:var(--muted);font-weight:700}
-    .eyebrow .seed{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--brand),var(--brand-2));}
-
-    h2{font-size:clamp(22px,4.4vw,34px);margin:14px 0 8px}
-    p.lead{color:var(--muted);margin:0 0 18px;max-width:64ch}
-
-    /* split toggle */
-    .split{display:flex;gap:12px;background:var(--card);border-radius:14px;padding:8px;border:1px solid var(--border);align-items:center}
-    .switch{flex:1;display:flex;gap:8px;align-items:center;padding:12px;border-radius:12px;cursor:pointer;transition:transform .12s ease,box-shadow .18s ease}
-    .switch p{margin:0}
-    .switch .k{font-size:13px;color:var(--muted);margin-top:6px}
-    .switch.active{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;box-shadow:0 10px 30px rgba(22,163,74,0.12);transform:translateY(-4px)}
-
-    /* right panel */
-    .card{padding:18px;border-radius:16px;background:linear-gradient(180deg,color-mix(in oklab,var(--bg-soft),transparent 6%),color-mix(in oklab,var(--bg-soft),transparent 0%));border:1px solid var(--border);box-shadow:var(--shadow);min-height:360px;display:flex;flex-direction:column;gap:12px}
-    .kicker{font-size:13px;color:var(--muted);font-weight:700}
-    .card h3{margin:6px 0 4px}
-    .card p{margin:0;color:var(--muted);line-height:1.6}
-
-    /* metrics */
-    .metrics{display:flex;gap:12px;margin-top:8px}
-    .metric{flex:1;padding:12px;border-radius:12px;background:var(--card);border:1px solid var(--border);text-align:center}
-    .metric b{display:block;font-size:18px}
-
-    /* radial progress */
-    .radial{width:110px;height:110px;border-radius:999px;display:grid;place-items:center;background:conic-gradient(var(--brand) 0deg, var(--brand) var(--deg, 120deg), rgba(255,255,255,0.03) var(--deg,120deg));border-radius:999px;position:relative}
-    .radial .inner{width:78px;height:78px;border-radius:999px;background:var(--bg-soft);display:grid;place-items:center;border:1px solid var(--border)}
-    .radial small{display:block;font-size:12px;color:var(--muted)}
-
-    /* small CTA row */
-    .cta-row{display:flex;gap:10px;margin-top:12px}
-    .btn{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:var(--glass);cursor:pointer}
-    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;border:0}
-
-    /* mobile tweaks */
-    @media(max-width:520px){ .radial{width:96px;height:96px}.radial .inner{width:64px;height:64px} }
-
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.9,.3,1)}
-    .reveal.in{opacity:1;transform:none}
-
-    /* accessibility focus */
-    .switch:focus{outline:2px solid color-mix(in oklab,var(--brand),transparent 60%)}
-     /* layout */
-    .wrap{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
-    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
-
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid var(--border);color:var(--muted);font-weight:600}
-    .eyebrow .seed{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--brand),var(--brand-2));}
-
-    h2{font-size:clamp(22px,4.4vw,34px);margin:14px 0 8px}
-    p.lead{color:var(--muted);margin:0 0 18px;max-width:66ch}
-
-    /* features list */
-    .features{display:grid;gap:12px;margin-top:18px}
-    .feature{display:flex;gap:12px;align-items:flex-start;padding:12px;border-radius:12px;background:linear-gradient(180deg,color-mix(in oklab,var(--bg-soft),transparent 6%),color-mix(in oklab,var(--bg-soft),transparent 0%));border:1px solid var(--border);cursor:pointer;transition:transform .12s ease,box-shadow .18s ease}
-    .feature:hover{transform:translateY(-6px)}
-    .feature .icon{min-width:48px;height:48px;border-radius:12px;display:grid;place-items:center;background:var(--card);border:1px solid var(--border)}
-    .feature h4{margin:0 0 4px}
-    .feature p{margin:0;color:var(--muted)}
-
-    /* badges / tags */
-    .tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .tag{padding:8px 12px;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--muted);font-weight:600}
-
-    /* right panel: interactive cards */
-    .panel{padding:18px;border-radius:16px;background:linear-gradient(180deg,color-mix(in oklab,var(--bg-soft),transparent 6%),color-mix(in oklab,var(--bg-soft),transparent 0%));border:1px solid var(--border);box-shadow:var(--shadow);min-height:360px;display:flex;flex-direction:column;gap:12px}
-    .panel .kicker{font-size:13px;color:var(--muted);font-weight:700}
-    .card-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-    @media(max-width:520px){.card-grid{grid-template-columns:1fr}}
-    .card{min-height: 225px; border-radius:12px;background:var(--card);border:1px solid var(--border);cursor:pointer;transition:transform .12s ease,box-shadow .18s ease}
-    .card:hover{transform:translateY(-6px)}
-    .card h4{margin:0 0 6px}
-    .card p{margin:0;color:var(--muted);font-size:13px}
-
-    /* detail area */
-    .detail{padding:12px;border-radius:12px;background:linear-gradient(180deg,color-mix(in oklab,var(--bg-soft),transparent 4%),color-mix(in oklab,var(--bg-soft),transparent 0%));border:1px solid var(--border);min-height:120px}
-
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.9,.3,1)}
-    .reveal.in{opacity:1;transform:none}
-
-    /* focus */
-    .feature:focus-within, .card:focus-within{outline:2px solid color-mix(in oklab,var(--brand),transparent 60%);border-radius:12px}
-    /* layout */
-    .wrap{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
-    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
-
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid var(--border);color:var(--muted);font-weight:700}
-    .eyebrow .seed{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--brand),var(--brand-2));}
-
-    h2{font-size:clamp(22px,4.4vw,34px);margin:14px 0 8px}
-    p.lead{color:var(--muted);margin:0 0 18px;max-width:66ch}
-
-    /* controls */
-    .controls{display:flex;gap:8px;align-items:center;margin-top:12px}
-    .search{flex:1;display:flex;gap:8px;align-items:center;padding:8px;border-radius:12px;background:var(--card);border:1px solid var(--border)}
-    .search input{all:unset;width:100%;padding:8px}
-    .filter-btn{padding:8px 10px;border-radius:10px;border:1px solid var(--border);background:var(--glass);cursor:pointer}
-
-    /* services grid */
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
-    @media(max-width:720px){.grid{grid-template-columns:1fr}}
-
-    .card{display:flex;gap:12px;align-items:flex-start;padding:14px;border-radius:12px;background:linear-gradient(180deg,color-mix(in oklab,var(--bg-soft),transparent 6%),color-mix(in oklab,var(--bg-soft),transparent 0%));border:1px solid var(--border);cursor:pointer;transition:transform .12s ease,box-shadow .18s ease}
-    .card:hover{transform:translateY(-6px)}
-    .card:focus{outline:2px solid color-mix(in oklab,var(--brand),transparent 60%)}
-    .card .icon{width:56px;height:56px;border-radius:10px;display:grid;place-items:center;background:var(--card);border:1px solid var(--border);font-size:22px}
-    .card h4{margin:0 0 6px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-
-    /* right panel */
-    .panel{padding:18px;border-radius:16px;background:linear-gradient(180deg,color-mix(in oklab,var(--bg-soft),transparent 6%),color-mix(in oklab,var(--bg-soft),transparent 0%));border:1px solid var(--border);box-shadow:var(--shadow);min-height:420px;display:flex;flex-direction:column;gap:12px}
-    .panel .kicker{font-size:13px;color:var(--muted);font-weight:700}
-    .panel h3{margin:6px 0 4px}
-    .panel p{margin:0;color:var(--muted);line-height:1.6}
-    .examples{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-    .tag{padding:6px 10px;border-radius:999px;background:var(--card);border:1px solid var(--border);color:var(--muted);font-weight:600}
-
-    .cta-row{display:flex;gap:8px;margin-top:auto}
-    .btn{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:var(--glass);cursor:pointer}
-    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;border:0}
-
-    /* mobile: show panel below grid */
-    @media(max-width:980px){
-      .wrap{grid-template-columns:1fr}
-      .panel{order:3}
+    /* Enhanced Scroll to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99999;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px) scale(0.8);
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      user-select: none;
+      pointer-events: auto;
+      -webkit-tap-highlight-color: transparent;
     }
 
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.9,.3,1)}
-    .reveal.in{opacity:1;transform:none}
-    :root{
-      --brand:#16a34a; --brand-2:#22c55e; --bg:#0b0f14; --bg-soft:#0f1720; --text:#e6eef3; --muted:#ffffff; --card:rgba(255,255,255,0.03); --border:rgba(255,255,255,0.06); --glass:rgba(255,255,255,0.02); --shadow:0 14px 36px rgba(2,6,23,0.6); --radius:14px; --max-w:1100px;
+    #backToTop:hover {
+      background: linear-gradient(135deg, #5a67d8, #6b46c1);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
     }
-    .theme-light{ --bg:#f8fafc; --bg-soft:#ffffff; --text:#07101a; --muted:#475569; --card:rgba(0,0,0,0.04); --border: rgba(2,6,23,0.06); --glass: rgba(0,0,0,0.04); --shadow: 0 10px 24px rgba(2,6,23,0.06); }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:var(--text)}
 
-    /* Section wrapper */
-    .gc-join{padding:clamp(28px,6vw,56px) 18px;position:relative;overflow:hidden}
-    .gc-join-wrap{max-width:var(--max-w);margin:0 auto;display:flex;gap:20px;align-items:center;justify-content:space-between}
-    @media(max-width:820px){ .gc-join-wrap{flex-direction:column;align-items:stretch} }
+    #backToTop:active {
+      transform: translateY(-1px) scale(0.95);
+      transition: all 0.1s ease;
+    }
 
-    /* subtle orbs */
-    .gc-orb-left,.gc-orb-right{position:absolute;border-radius:999px;filter:blur(54px);opacity:.45;pointer-events:none}
-    .gc-orb-left{width:300px;height:300px;left:-100px;top:-80px;background:radial-gradient(circle at 30% 30%, rgba(34,197,94,.48), transparent 60%)}
-    .gc-orb-right{width:260px;height:260px;right:-90px;bottom:-80px;background:radial-gradient(circle at 60% 40%, rgba(96,165,250,.42), transparent 60%)}
+    #backToTop.show {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) scale(1) !important;
+    }
 
-    /* content */
-    .gc-join-left{flex:1;min-width:220px}
-    .gc-eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid var(--border);color:var(--muted);font-weight:700}
-    .gc-seed{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
-    h3{font-size:clamp(20px,3.8vw,28px);margin:12px 0 6px}
-    p{margin:0;color:var(--muted);max-width:56ch}
-
-    /* CTA cluster */
-    .gc-join-ctas{display:flex;gap:12px;align-items:center;margin-top:14px}
-    .gc-btn{padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--glass);cursor:pointer}
-    .gc-btn.gc-primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;border:0;font-weight:700}
-    .gc-btn.gc-ghost{background:transparent}
-
-    /* small inline micro-form */
-    .gc-micro{display:inline-flex;align-items:center;gap:8px;background:var(--card);padding:6px;border-radius:999px;border:1px solid var(--border)}
-    .gc-micro input{all:unset;padding:8px 10px;min-width:200px;color:var(--text)}
-
-    /* right card */
-    .gc-join-card{width:340px;max-width:40%;background:linear-gradient(180deg,var(--bg-soft),color-mix(in oklab,var(--bg-soft),transparent 2%));border:1px solid var(--border);box-shadow:var(--shadow);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:12px}
-    @media(max-width:820px){ .gc-join-card{max-width:100%;width:100%} }
-    .gc-join-card small{color:var(--muted);font-weight:700}
-    .gc-stat-row{display:flex;gap:10px;justify-content:space-between}
-    .gc-stat{flex:1;padding:10px;border-radius:10px;background:var(--card);border:1px solid var(--border);text-align:center}
-    .gc-stat b{display:block;font-size:18px}
-
-    /* confirmation toast */
-    .gc-toast{position:fixed;right:18px;bottom:18px;background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;padding:10px 14px;border-radius:12px;box-shadow:0 10px 30px rgba(22,163,74,0.12);transform:translateY(20px);opacity:0;transition:opacity .24s ease,transform .24s ease}
-    .gc-toast.show{opacity:1;transform:none}
-
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(8px);transition:opacity .45s ease,transform .45s cubic-bezier(.2,.9,.3,1)}
-    .reveal.in{opacity:1;transform:none}
-
-    @media (prefers-reduced-motion: reduce){ .gc-orb-left,.gc-orb-right{filter:none} .reveal{transition:none} }
-     /* layout */
-    .wrap{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:start}
-    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
-
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid var(--border);color:var(--muted);font-weight:700}
-    .eyebrow .seed{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--brand),var(--brand-2));}
-
-    h2{font-size:clamp(22px,4.4vw,34px);margin:14px 0 8px}
-    p.lead{color:var(--muted);margin:0 0 18px;max-width:66ch}
-
-    /* main content */
-    .roles{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .role-btn{padding:8px 12px;border-radius:999px;background:var(--card);border:1px solid var(--border);cursor:pointer;color:var(--muted);font-weight:700}
-    .role-btn[aria-pressed="true"]{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;box-shadow:0 8px 26px rgba(22,163,74,0.12)}
-
-    .desc{margin-top:18px}
-    .desc ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
-
-    /* contributors carousel */
-    .carousel{margin-top:20px;display:grid;grid-auto-flow:column;grid-auto-columns:260px;gap:14px;overflow-x:auto;padding-bottom:10px}
-    .contrib{padding:14px;border-radius:12px;background:linear-gradient(180deg,color-mix(in oklab,var(--bg-soft),transparent 6%),color-mix(in oklab,var(--bg-soft),transparent 0%));border:1px solid var(--border);min-height:150px;display:flex;flex-direction:column;gap:12px;align-items:flex-start}
-    .avatar{width:56px;height:56px;border-radius:12px;background:var(--card);display:grid;place-items:center;font-weight:700}
-    .contrib h4{margin:0}
-    .contrib p{margin:0;color:var(--muted);font-size:13px}
-
-    /* right panel */
-    .panel{padding:18px;border-radius:16px;background:linear-gradient(180deg,color-mix(in oklab,var(--bg-soft),transparent 6%),color-mix(in oklab,var(--bg-soft),transparent 0%));border:1px solid var(--border);box-shadow:var(--shadow);min-height:420px;display:flex;flex-direction:column;gap:12px}
-    .panel h3{margin:6px 0 4px}
-    .panel p{margin:0;color:var(--muted);line-height:1.6}
-
-    .guide{margin-top:8px;padding:12px;border-radius:12px;background:var(--card);border:1px solid var(--border)}
-    .guide a{font-weight:700;color:var(--brand)}
-
-    .cta-row{display:flex;gap:8px;margin-top:auto}
-    .btn{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:var(--glass);cursor:pointer}
-    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;border:0}
-
-    /* small helper */
-    .muted{color:var(--muted)}
-
-    /* reveal */
-    .reveal{opacity:0;transform:translateY(10px);transition:opacity .55s ease,transform .55s cubic-bezier(.2,.9,.3,1)}
-    .reveal.in{opacity:1;transform:none}
-
-    /* accessibility focus */
-    .role-btn:focus, .contrib:focus{outline:2px solid color-mix(in oklab,var(--brand),transparent 60%)}
-      
-  /* Make snapshot box text white in dark mode */
-  body:not(.theme-light) .metric b,
-  body:not(.theme-light) .metric p,
-  body:not(.theme-light) .facts .muted,
-  body:not(.theme-light) .card h3,
-  body:not(.theme-light) .card p.muted,
-  body:not(.theme-light) .panel h3,
-  body:not(.theme-light) .panel p.muted,
-  body:not(.theme-light) .fact b,
-  body:not(.theme-light) .fact .muted,
-  body:not(.theme-light) .kicker,
-  body:not(.theme-light) .muted,
-  body:not(.theme-light) .sub,
-  body:not(.theme-light) p.lead,
-  body:not(.theme-light) h2,
-  body:not(.theme-light) h3,
-  body:not(.theme-light) h4 {
-    color: #fff 
-  }  
-  body:not(.theme-light) #contactBtn {
-  color: #fff !important;
-  border-color: #fff !important;
-}
-  /*Changing colout to white in dark mode for mission metrics box*/
-  body:not(.theme-light) .panel .kicker,
-  body:not(.theme-light) .panel h3,
-  body:not(.theme-light) .panel p,
-  body:not(.theme-light) .panel .muted,
-  body:not(.theme-light) .panel .metric p,
-  body:not(.theme-light) .panel .fact .muted,
-  body:not(.theme-light) .radial .inner b,
-  body:not(.theme-light) .radial .inner small {
-   color: #fff !important;
-  }
-  body:not(.theme-light) .panel .radial small {
-    color: #fff !important;
-  }
-  /*Changing colours of buttons*/
-  body:not(.theme-light) #learnMore{
-    color: #fff !important;
-    border-color: #fff !important;
-  }
-  body:not(.theme-light) #meetBtn{
-    color: #fff !important;
-    border-color: #fff !important;
-  }
-  body:not(.theme-light) #contributeBtn{
-    color: #fff !important;
-    border-color: #fff !important;
-  }
-</style>
+    /* Responsive positioning for scroll button */
+    @media (max-width: 768px) {
+      #backToTop {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+      }
+    }
+  </style>
 </head>
-<body>
-    <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
 
-        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-            <a class="navbar-brand" href="#"><img src="./images/Logo_new.png"alt="GrowCraft" width="200" id="logo"></a>
+<body class="theme-light">
+  <!-- Navbar starts here -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      <a class="navbar-brand" href="index.html"><img src="images/Logo_new.png" alt="GrowCraft" width="200" id="logo"></a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active visited" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="services.html">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="blogListing.html">Blogs</a>
-                    </li>
-                    <!-- Added new "Our Work" link to navigate to the new work section on same page -->
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="work.html">Our Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="src/contact.html">Contact Us</a>
-                    </li>
-
-                </ul>
-            </div>
-
-     
-           
-
-       
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a aria-current="page" class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a aria-current="page" class="nav-link" href="blogListing.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a aria-current="page" class="nav-link active visited" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html#work">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a aria-current="page" class="nav-link" href="src/contact.html">Contact Us</a>
+          </li>
+        </ul>
       </div>
-    </nav>
-    <!-- Navbar ends here -->
+    </div>
+  </nav>
+  <!-- Navbar ends here -->
+
   <section class="hero" id="about-hero" aria-labelledby="about-hero-title">
     <!-- Background layers -->
     <div class="bg-grid" aria-hidden="true"></div>
@@ -749,58 +728,58 @@
     <div class="container">
       <!-- Topbar -->
       <div class="topbar">
-        <div class="brand reveal">
+        <div class="brand reveal in">
           <span class="sprout" aria-hidden="true">
             <!-- sprout icon -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 21v-8"/>
-              <path d="M7 8c3-4 10-4 10 2 0 3-2 5-5 5S7 13 7 10V8Z"/>
-              <path d="M5 12c-1-3 1-7 5-7"/>
+              <path d="M12 21v-8"></path>
+              <path d="M7 8c3-4 10-4 10 2 0 3-2 5-5 5S7 13 7 10V8Z"></path>
+              <path d="M5 12c-1-3 1-7 5-7"></path>
             </svg>
           </span>
           <span>GrowCraft</span>
           <span class="eyebrow" style="margin-left:10px"><span class="dot"></span> GSSoC'25</span>
         </div>
         <div class="actions">
-          <button class="ghost reveal" id="learnMoreBtn" aria-label="Skip to story">Our Story</button>
-          <button class="theme-toggle reveal" id="themeToggle" aria-pressed="false" aria-label="Toggle theme">🌗</button>
+          <button class="ghost reveal in" id="learnMoreBtn" aria-label="Skip to story">Our Story</button>
+          <button class="theme-toggle reveal in" id="themeToggle" aria-pressed="false" aria-label="Toggle theme">☀️</button>
         </div>
       </div>
 
       <!-- Content -->
       <div class="content">
         <div class="copy">
-          <span class="eyebrow reveal">About Us</span>
-          <h1 class="reveal" id="about-hero-title">Empowering <span class="highlight">Businesses</span> & Enabling <span class="highlight">Students</span>.</h1>
-          <p class="sub reveal">GrowCraft is a service-based platform that helps brands grow online while giving students real-world experience through training, internships, and open-source collaboration.</p>
+          <span class="eyebrow reveal in">About Us</span>
+          <h1 class="reveal in" id="about-hero-title">Empowering <span class="highlight">Businesses</span> &amp; Enabling <span class="highlight">Students</span>.</h1>
+          <p class="sub reveal in">GrowCraft is a service-based platform that helps brands grow online while giving students real-world experience through training, internships, and open-source collaboration.</p>
 
-          <div class="cta-row reveal" style="margin-top:10px;">
+          <div class="cta-row reveal in" style="margin-top:10px;">
             <button class="btn-primary" id="exploreServices">Explore Services</button>
             <button class="btn-outline" id="joinContrib">Join as Contributor</button>
           </div>
 
-          <div class="badges reveal" aria-label="Key areas">
+          <div class="badges reveal in" aria-label="Key areas">
             <span class="chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18"/><path d="M3 6h18"/><path d="M3 18h18"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18"></path><path d="M3 6h18"></path><path d="M3 18h18"></path></svg>
               Website Development
             </span>
             <span class="chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .66.39 1.26 1 1.51.32.13.67.2 1.02.2"/></svg>
-              Training & Internships
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .66.39 1.26 1 1.51.32.13.67.2 1.02.2"></path></svg>
+              Training &amp; Internships
             </span>
             <span class="chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9"/><path d="M7 22h10"/><path d="M12 17v5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9"></path><path d="M7 22h10"></path><path d="M12 17v5"></path></svg>
               Open Source (GSSoC)
             </span>
           </div>
 
-          <div class="scroll-cue reveal" role="note">
+          <div class="scroll-cue reveal in" role="note">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
             Scroll to learn more
           </div>
         </div>
 
-        <div class="visual reveal" id="visualCard" data-parallax="4" aria-label="Impact metrics">
+        <div class="visual reveal in" id="visualCard" data-parallax="4" aria-label="Impact metrics">
           <div class="ring" aria-hidden="true"></div>
           <div class="metric-grid">
             <div class="metric">
@@ -809,7 +788,7 @@
             </div>
             <div class="metric">
               <b id="metricStudents">500+</b>
-              <p>Students trained & mentored</p>
+              <p>Students trained &amp; mentored</p>
             </div>
             <div class="metric">
               <b id="metricClients">30+</b>
@@ -817,7 +796,7 @@
             </div>
             <div class="metric">
               <b id="metricComm">Open</b>
-              <p>Community-first & inclusive</p>
+              <p>Community-first &amp; inclusive</p>
             </div>
           </div>
         </div>
@@ -825,6 +804,7 @@
       </div>
     </div>
   </section>
+
   <section class="section" id="about-who">
     <div class="bg-layer" aria-hidden="true">
       <div class="orb left" data-parallax="-10"></div>
@@ -836,18 +816,18 @@
       <div class="wrap">
 
         <div>
-          <span class="eyebrow reveal"><span class="seed" aria-hidden="true"></span> About Us</span>
-          <h2 class="reveal">Who We Are — <span class="em">GrowCraft</span></h2>
-          <p class="lead reveal">GrowCraft is a <strong>service-based platform</strong> designed to help businesses grow their online presence while also empowering students and contributors to gain hands-on experience in real-world projects. We pair client work with mentorship-driven contributor flows so learning happens by doing.</p>
+          <span class="eyebrow reveal in"><span class="seed" aria-hidden="true"></span> About Us</span>
+          <h2 class="reveal in">Who We Are — <span class="em">GrowCraft</span></h2>
+          <p class="lead reveal in">GrowCraft is a <strong>service-based platform</strong> designed to help businesses grow their online presence while also empowering students and contributors to gain hands-on experience in real-world projects. We pair client work with mentorship-driven contributor flows so learning happens by doing.</p>
 
-          <p class="lead reveal"><strong>This project is proudly part of <span class="em">GirlScript Summer of Code 2025 (GSSoC'25)</span></strong> — a nationwide open-source program where contributors collaborate, learn, and build impactful solutions.</p>
+          <p class="lead reveal in"><strong>This project is proudly part of <span class="em">GirlScript Summer of Code 2025 (GSSoC'25)</span></strong> — a nationwide open-source program where contributors collaborate, learn, and build impactful solutions.</p>
 
-          <div class="row reveal" style="margin-top:18px">
+          <div class="row reveal in" style="margin-top:18px">
             <button class="btn primary" id="exploreBtn">Explore Services</button>
             <button class="btn ghost" id="guideBtn">Read Contribution Guide</button>
           </div>
 
-          <div class="mini-timeline reveal" aria-hidden="true" style="margin-top:18px">
+          <div class="mini-timeline reveal in" aria-hidden="true" style="margin-top:18px">
             <div class="step active" aria-hidden="true"></div>
             <div class="step" aria-hidden="true"></div>
             <div class="step" aria-hidden="true"></div>
@@ -856,7 +836,7 @@
           </div>
         </div>
 
-        <aside class="card reveal" aria-labelledby="whoCardTitle">
+        <aside class="card reveal in" aria-labelledby="whoCardTitle">
           <div class="kicker">GrowCraft Snapshot</div>
           <h3 id="whoCardTitle">Services + Student Experience</h3>
           <p class="muted">We deliver digital services for clients while offering contributors mentorship, review, and real project work to boost learning and portfolios.</p>
@@ -885,360 +865,135 @@
       </div>
     </div>
   </section>
-  <section class="section" id="our-mission">
-    <div class="bg" aria-hidden="true">
-      <div class="orb l" data-parallax="-10"></div>
-      <div class="orb r" data-parallax="8"></div>
-      <div class="grid-lines"></div>
-    </div>
 
+  <!-- Professional Footer -->
+  <footer class="professional-footer">
     <div class="container">
-      <div class="wrap">
-        <div>
-          <span class="eyebrow reveal"><span class="seed" aria-hidden="true"></span> Our Mission</span>
-          <h2 class="reveal">We believe in a <span style="background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent">win-win</span> ecosystem</h2>
-
-          <p class="lead reveal">GrowCraft connects businesses with talented contributors — delivering affordable, high-quality digital services while giving students and open-source contributors hands-on mentorship and practical experience.</p>
-
-          <div class="split reveal" role="tablist" aria-label="Mission focus">
-            <div class="switch active" role="tab" aria-selected="true" tabindex="0" data-focus="clients">
-              <strong>For Clients</strong>
-              <p class="k">Affordable, reliable digital services — websites, marketing, design.</p>
+      <div class="row g-4 py-4">
+        <!-- Footer Columns -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
+            <h4 class="brand-name">GrowCraft</h4>
+            <p class="brand-description">Empowering businesses with
+              innovative digital solutions and creative excellence.</p>
+            <div class="quick-stats">
+              <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Clients</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years</span>
+              </div>
             </div>
-            <div class="switch" role="tab" aria-selected="false" tabindex="0" data-focus="contributors">
-              <strong>For Students & Contributors</strong>
-              <p class="k">Real-world learning, mentorship, and open-source contribution experience.</p>
-            </div>
-          </div>
-
-          <div class="cta-row reveal">
-            <button class="btn primary" id="getServices">Get Services</button>
-            <button class="btn" id="joinContrib">Join as Contributor</button>
           </div>
         </div>
 
-        <aside class="card reveal" aria-labelledby="missionCardTitle">
-          <div>
-            <div class="kicker">Mission Metrics</div>
-            <h3 id="missionCardTitle">Impact that matters</h3>
-            <p>We track quality, learning outcomes, and impact — these guide our mentorship and delivery approach.</p>
-          </div>
-
-          <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:12px">
-            <div class="radial" id="rQuality" style="--deg:0deg" aria-hidden="true">
-              <div class="inner"><b id="qVal">0%</b><small>Quality</small></div>
-            </div>
-
-            <div class="radial" id="rLearning" style="--deg:0deg" aria-hidden="true">
-              <div class="inner"><b id="lVal">0%</b><small>Learning</small></div>
-            </div>
-
-            <div class="radial" id="rImpact" style="--deg:0deg" aria-hidden="true">
-              <div class="inner"><b id="iVal">0%</b><small>Impact</small></div>
-            </div>
-          </div>
-
-          <div class="metrics">
-            <div class="metric"><b>Quality-first</b><p class="muted">Code reviews & QA</p></div>
-            <div class="metric"><b>Mentorship</b><p class="muted">Guided contributions</p></div>
-            <div class="metric"><b>Real Work</b><p class="muted">Client-facing projects</p></div>
-          </div>
-
-          <div style="margin-top:auto;display:flex;justify-content:flex-end;gap:10px">
-            <button class="btn" id="learnMore">Learn More</button>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="why-growcraft">
-    <div class="bg" aria-hidden="true">
-      <div class="orb l" data-parallax="-10"></div>
-      <div class="orb r" data-parallax="8"></div>
-      <div class="grid-lines"></div>
-    </div>
-
-    <div class="container">
-      <div class="wrap">
-
-        <div>
-          <span class="eyebrow reveal"><span class="seed" aria-hidden="true"></span> Why GrowCraft?</span>
-          <h2 class="reveal">Why GrowCraft — built for impact & learning</h2>
-          <p class="lead reveal">GrowCraft combines client-focused services with contributor-first workflows. It’s crafted to be open, educational, and impactful: a place where businesses get value and contributors gain experience.</p>
-
-          <div class="features reveal" role="list">
-            <div class="feature" role="listitem" tabindex="0" data-key="open-source">
-              <div class="icon" aria-hidden="true">✔️</div>
-              <div>
-                <h4>Open-source & community-driven</h4>
-                <p>Hosted under GSSoC'25 — contributions are encouraged, reviewed, and merged with mentorship.</p>
-              </div>
-            </div>
-
-            <div class="feature" role="listitem" tabindex="0" data-key="training">
-              <div class="icon" aria-hidden="true">🎓</div>
-              <div>
-                <h4>Training & internships</h4>
-                <p>Structured learning paths and internships help students convert theory into practice.</p>
-              </div>
-            </div>
-
-            <div class="feature" role="listitem" tabindex="0" data-key="bridge">
-              <div class="icon" aria-hidden="true">🔗</div>
-              <div>
-                <h4>Bridges business & learning</h4>
-                <p>Projects are client-facing so contributors solve real problems with real impact.</p>
-              </div>
-            </div>
-
-            <div class="feature" role="listitem" tabindex="0" data-key="collab">
-              <div class="icon" aria-hidden="true">🤝</div>
-              <div>
-                <h4>Collaborative environment</h4>
-                <p>Mentor reviews, office hours, and community support make learning faster and safer.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="tag-row reveal" aria-hidden="true">
-            <div class="tag">GSSoC'25</div>
-            <div class="tag">good-first-issue</div>
-            <div class="tag">mentored</div>
-            <div class="tag">real-projects</div>
-          </div>
+        <!-- Services Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="learn/webdev.html">Web Development</a></li>
+            <li><a href="learn/graphic.html">Graphic Design</a></li>
+            <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="learn/contentwriting.html">Content Writing</a></li>
+            <li><a href="learn/socialmedia.html">Social Media</a></li>
+            <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+          </ul>
         </div>
 
-        <aside class="panel reveal" aria-labelledby="whyPanelTitle">
-          <div>
-            <div class="kicker">Snapshot</div>
-            <h3 id="whyPanelTitle">Open. Educational. Impactful.</h3>
-            <p class="muted">Below are highlighted areas — click any card to read more about how we support that goal.</p>
-          </div>
-
-          <div class="card-grid" role="list">
-            <div class="card" role="listitem" tabindex="0" data-ref="open-source">
-              <h4>Open-source</h4>
-              <p>Transparent processes and contributor-friendly docs.</p>
-            </div>
-            <div class="card" role="listitem" tabindex="0" data-ref="training">
-              <h4>Training</h4>
-              <p>Workshops, office hours & mentor sessions.</p>
-            </div>
-            <div class="card" role="listitem" tabindex="0" data-ref="bridge">
-              <h4>Business-facing work</h4>
-              <p>Real briefs, client feedback, production results.</p>
-            </div>
-            <div class="card" role="listitem" tabindex="0" data-ref="collab">
-              <h4>Collaboration</h4>
-              <p>Peer reviews and community discussions.</p>
-            </div>
-          </div>
-
-          <div class="detail" id="detailArea" aria-live="polite">
-            <strong>Click a card to learn more</strong>
-            <p class="muted" style="margin-top:8px">GrowCraft balances business value with contributor learning — every feature aims to be both useful and instructive.</p>
-          </div>
-
-          <div style="margin-top:auto;display:flex;gap:10px;justify-content:flex-end">
-            <button class="btn" id="meetBtn">Meet the Team</button>
-            <button class="btn primary" id="contributeBtn">Contribute</button>
-          </div>
-        </aside>
-
-      </div>
-    </div>
-  </section>
-  <section class="section" id="what-we-do">
-    <div class="bg" aria-hidden="true">
-      <div class="orb l" data-parallax="-10"></div>
-      <div class="orb r" data-parallax="8"></div>
-      <div class="grid-lines"></div>
-    </div>
-
-    <div class="container">
-      <span class="eyebrow reveal"><span class="seed" aria-hidden="true"></span> What We Do</span>
-      <h2 class="reveal">Services that help businesses grow — and contributors learn</h2>
-      <p class="lead reveal">We offer a wide range of services to help businesses grow digitally — each service is also an opportunity for contributors to learn by working on real briefs.</p>
-
-      <div class="wrap reveal">
-        <div>
-          <div class="controls">
-            <div class="search" role="search" aria-label="Search services">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="11" cy="11" r="6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              <input id="serviceSearch" placeholder="Search services (e.g. website, design)" aria-label="Search services" />
-            </div>
-            <button class="filter-btn" id="allBtn" aria-pressed="true">All</button>
-            <button class="filter-btn" id="devBtn" aria-pressed="false">Dev</button>
-            <button class="filter-btn" id="creativeBtn" aria-pressed="false">Creative</button>
-          </div>
-
-          <div class="grid" id="servicesGrid" role="list">
-            <article class="card" role="listitem" tabindex="0" data-key="website" data-type="dev">
-              <div class="icon">🌐</div>
-              <div>
-                <h4>Website Development</h4>
-                <p>Responsive, modern, and scalable web solutions for businesses of all sizes.</p>
-              </div>
-            </article>
-
-            <article class="card" role="listitem" tabindex="0" data-key="design" data-type="creative">
-              <div class="icon">🖌️</div>
-              <div>
-                <h4>Graphic Design</h4>
-                <p>Branding, UI assets, and visuals that engage your audience.</p>
-              </div>
-            </article>
-
-            <article class="card" role="listitem" tabindex="0" data-key="content" data-type="creative">
-              <div class="icon">✍️</div>
-              <div>
-                <h4>Content Writing</h4>
-                <p>SEO-friendly blogs, articles, and copy that convert and educate.</p>
-              </div>
-            </article>
-
-            <article class="card" role="listitem" tabindex="0" data-key="social" data-type="creative">
-              <div class="icon">📣</div>
-              <div>
-                <h4>Social Media Management</h4>
-                <p>Strategy, scheduling, and content that grows your presence.</p>
-              </div>
-            </article>
-
-            <article class="card" role="listitem" tabindex="0" data-key="marketing" data-type="dev">
-              <div class="icon">📊</div>
-              <div>
-                <h4>Digital Marketing</h4>
-                <p>Data-driven campaigns (SEO, ads, analytics) to reach wider audiences.</p>
-              </div>
-            </article>
-
-            <article class="card" role="listitem" tabindex="0" data-key="training" data-type="creative">
-              <div class="icon">🎓</div>
-              <div>
-                <h4>Training & Internships</h4>
-                <p>Practical exposure for students & contributors through mentorship & projects.</p>
-              </div>
-            </article>
-          </div>
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="index.html#work">Portfolio</a></li>
+            <li><a href="src/contact.html">Contact</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="blogListing.html">Blog</a></li>
+          </ul>
         </div>
 
-        <aside class="panel" aria-labelledby="servicesPanelTitle">
-          <div>
-            <div class="kicker">Service Details</div>
-            <h3 id="servicesPanelTitle">Select a service to see more</h3>
-            <p id="serviceDesc" class="muted">Each service is a real opportunity for contributors to work on meaningful tasks while delivering value to clients. Click a card to view sample deliverables and contribution opportunities.</p>
+        <!-- Contact -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-title">Get In Touch</h5>
+          <div class="contact-info mb-3">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919999999999">+91 999 999 999</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>ABC Street, XYZ City, India</span>
+            </div>
           </div>
-
-          <div class="examples" id="serviceExamples" aria-hidden="true">
-            <!-- tags inserted by JS -->
-          </div>
-
-          <div class="cta-row">
-            <button class="btn" id="contactBtn">Get Quote</button>
-            <button class="btn primary" id="contributeBtn">Contribute</button>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-  <section class="section" id="open-source">
-    <div class="bg" aria-hidden="true">
-      <div class="orb l" data-parallax="-10"></div>
-      <div class="orb r" data-parallax="8"></div>
-      <div class="grid-lines"></div>
-    </div>
-
-    <div class="container">
-      <span class="eyebrow reveal"><span class="seed" aria-hidden="true"></span> Open Source & Community</span>
-      <h2 class="reveal">Join GrowCraft — contribute, learn, and grow together</h2>
-      <p class="lead reveal">Being part of GSSoC 2025, GrowCraft is open for contributions. We welcome developers, designers, writers, and digital marketers to collaborate and build impact.</p>
-
-      <div class="wrap reveal">
-        <div>
-          <div class="roles" role="tablist" aria-label="Contributor roles">
-            <button class="role-btn" data-role="all" aria-pressed="true">All</button>
-            <button class="role-btn" data-role="dev" aria-pressed="false">Developers</button>
-            <button class="role-btn" data-role="design" aria-pressed="false">Designers</button>
-            <button class="role-btn" data-role="content" aria-pressed="false">Writers</button>
-            <button class="role-btn" data-role="marketing" aria-pressed="false">Marketers</button>
-          </div>
-
-          <div class="desc">
-            <p class="muted">Every contribution counts — whether it’s fixing a bug, designing a page, writing content, or suggesting improvements. Start with issues labeled <code>good-first-issue</code> or <code>GSSoC</code>.</p>
-            <ul>
-              <li>Follow <strong>CONTRIBUTING.md</strong> for workflow and branch rules.</li>
-              <li>Open a clear PR with screenshots and description.</li>
-              <li>Request mentor review if needed — mentors will guide you.</li>
-            </ul>
-          </div>
-
-          <div class="carousel" id="contribCarousel" aria-live="polite">
-            <!-- populated by JS -->
-          </div>
-        </div>
-
-        <aside class="panel" aria-labelledby="osPanelTitle">
-          <h3 id="osPanelTitle">Get started</h3>
-          <p class="muted">Want to contribute? Here are quick links and resources to get you up and running.</p>
-
-          <div class="guide">
-            <p><strong>Start here:</strong> <a href="#contributing" id="contribGuideLink">CONTRIBUTING.md</a></p>
-            <p class="muted" style="margin-top:8px">Look for <code>good-first-issue</code>, <code>documentation</code>, or <code>GSSoC</code> tags in issues.</p>
-          </div>
-
-          <div class="stats" aria-hidden="true" style="display:flex;gap:10px;margin-top:12px">
-            <div style="flex:1;padding:10px;border-radius:10px;background:var(--card);border:1px solid var(--border);text-align:center"><b data-target="72">0</b><div class="muted">Projects</div></div>
-            <div style="flex:1;padding:10px;border-radius:10px;background:var(--card);border:1px solid var(--border);text-align:center"><b data-target="560">0</b><div class="muted">Students</div></div>
-          </div>
-
-          <div class="cta-row">
-            <button class="btn" id="githubBtn">View on GitHub</button>
-            <button class="btn primary" id="joinBtn">Join GSSoC'25</button>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-  <section class="gc-join" aria-labelledby="gc-join-title">
-    <div class="gc-orb-left" aria-hidden="true"></div>
-    <div class="gc-orb-right" aria-hidden="true"></div>
-
-    <div class="gc-join-wrap">
-      <div class="gc-join-left">
-        <div class="gc-eyebrow reveal"><span class="gc-seed" aria-hidden="true"></span> Join Us</div>
-        <h3 id="gc-join-title" class="reveal">Be part of GrowCraft — Learn, contribute, and grow.</h3>
-        <p class="reveal">Help businesses thrive while building your portfolio. Small steps → real experience. Together, we craft growth.</p>
-
-        <div class="gc-join-ctas reveal">
-          <button class="gc-btn gc-primary" id="gc-svc-btn">Get Services</button>
-          <button class="gc-btn" id="gc-contrib-btn">Contribute</button>
-
-          <div class="gc-micro">
-            <input id="gc-micro-email" type="email" placeholder="your@email.com" aria-label="Subscribe email" />
-            <button class="gc-btn" id="gc-micro-btn">Join</button>
+          <div class="social-section">
+            <h6 class="social-title">Follow Us</h6>
+            <div class="social-links">
+              <a target="_blank" href="https://facebook.com" class="social-link" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a target="_blank" href="https://instagram.com" class="social-link" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a target="_blank" href="https://linkedin.com" class="social-link" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a target="_blank" href="https://github.com" class="social-link" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+              <a target="_blank" href="https://twitter.com" class="social-link" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
+      <!-- End Footer Main Container -->
 
-      <aside class="gc-join-card reveal" aria-labelledby="gc-card-title">
-        <small>Why join?</small>
-        <h4 id="gc-card-title">Real projects • Mentorship • Portfolio-ready work</h4>
-        <p class="muted">Contributors get guided onboarding, mentor reviews, and issues labelled for beginners. Ship features that matter.</p>
-
-        <div class="gc-stat-row" aria-hidden="true">
-          <div class="gc-stat"><b data-target="72">0</b><small class="muted">Projects</small></div>
-          <div class="gc-stat"><b data-target="560">0</b><small class="muted">Students</small></div>
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="row align-items-center py-3">
+            <div class="col-md-6">
+              <p class="copyright mb-0">© <span id="currentYear"></span>
+                <strong>GrowCraft</strong>. All rights reserved.
+              </p>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-nav">
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
+                <a href="#sitemap">Sitemap</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </aside>
+      </div>
     </div>
+  </footer>
+  <!-- Professional Footer ends -->
 
-    <div class="gc-toast" id="gc-toast" role="status" aria-live="polite">Thanks — we'll keep you posted ✨</div>
-  </section>
-   
+  <!-- Enhanced Scroll to Top Button -->
+  <button id="backToTop" title="Go to top" type="button">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="src/script.js"></script>
+  <script src="src/utils.js"></script>
+  <script src="src/darkMode.js"></script>
+
   <script>
-   // Theme handling
-    
+    // Theme handling
     (function() {
       const stored = localStorage.getItem('gc-theme');
       const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -1258,8 +1013,8 @@
         });
       }
     })();
+
     // Parallax for decorative elements
-    
     (function() {
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (reduce) return;
@@ -1289,8 +1044,8 @@
       }
       requestAnimationFrame(tick);
     })();
+
     // Reveal on view (IO-based)
-    
     (function(){
       const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       const items = document.querySelectorAll('.reveal');
@@ -1308,423 +1063,82 @@
       }, { threshold: 0.15 });
       items.forEach(el => io.observe(el));
     })();
-    // CTA demo handlers (replace with real routes)
-    
+
+    // CTA demo handlers
     document.getElementById('exploreServices')?.addEventListener('click', ()=>{
-    window.location.href = 'services.html';
+      window.location.href = 'index.html#services';
     });
     document.getElementById('joinContrib')?.addEventListener('click', ()=>{
-      window.location.hash = '#contribute';
+      window.location.href = 'index.html#contribute';
     });
     document.getElementById('learnMoreBtn')?.addEventListener('click', ()=>{
-      window.location.hash = '#our-story';
+      window.location.href = 'index.html#our-story';
     });
-  
-    // Theme init (parity with hero)
-    (function(){
-      const stored = localStorage.getItem('gc-theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const mode = stored || (prefersDark ? 'dark' : 'light');
-      document.body.classList.toggle('theme-light', mode === 'light');
+
+    // Current year in footer
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearSpan = document.getElementById("currentYear");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+
+    // Back to top button functionality
+    (function() {
+      const backToTop = document.getElementById('backToTop');
+      if (!backToTop) return;
+
+      function toggleBackToTop() {
+        if (window.pageYOffset > 100) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      }
+
+      window.addEventListener('scroll', toggleBackToTop);
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
     })();
 
-    // Parallax
+    // Counter animation for facts
     (function(){
-      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const tracked = document.querySelectorAll('[data-parallax]');
-      if(!tracked.length) return;
-      let rx=0, ry=0;
-      const lerp = (a,b,t) => a + (b-a)*t;
-      window.addEventListener('mousemove', (e) => {
-        const nx = (e.clientX/window.innerWidth)*2 - 1;
-        const ny = (e.clientY/window.innerHeight)*2 - 1;
-        rx = lerp(rx, nx, 0.06); ry = lerp(ry, ny, 0.06);
-        tracked.forEach(el => { const amt = Number(el.getAttribute('data-parallax')) || 8; el.style.transform = `translate3d(${rx*amt}px, ${ry*amt}px, 0)` });
-      }, {passive:true});
-    })();
-
-    // Reveal on scroll + counters
-    (function(){
-      const reveals = document.querySelectorAll('.reveal');
       const counters = document.querySelectorAll('[data-target]');
       if('IntersectionObserver' in window){
-        const io = new IntersectionObserver((entries, o)=>{
-          entries.forEach(en => { if(en.isIntersecting){ en.target.classList.add('in'); o.unobserve(en.target); } });
-        }, {threshold:0.12});
-        reveals.forEach(r => io.observe(r));
-
         const counterObserver = new IntersectionObserver((entries, o)=>{
           entries.forEach(en => {
             if(en.isIntersecting){
               counters.forEach(el=>{
-                const target = Number(el.getAttribute('data-target')) || 0; let t0=null; const dur=1100;
-                function step(ts){ if(!t0) t0=ts; const p=Math.min((ts-t0)/dur, 1); el.textContent = Math.floor(p*target); if(p<1) requestAnimationFrame(step); else el.textContent = target; }
+                const target = Number(el.getAttribute('data-target')) || 0; 
+                let t0=null; 
+                const dur=1100;
+                function step(ts){ 
+                  if(!t0) t0=ts; 
+                  const p=Math.min((ts-t0)/dur, 1); 
+                  el.textContent = Math.floor(p*target); 
+                  if(p<1) requestAnimationFrame(step); 
+                  else el.textContent = target; 
+                }
                 requestAnimationFrame(step);
               });
               o.unobserve(en.target);
             }
           });
         }, {threshold:0.25});
-        const factsWrap = document.querySelector('.facts'); if(factsWrap) counterObserver.observe(factsWrap);
+        const factsWrap = document.querySelector('.facts'); 
+        if(factsWrap) counterObserver.observe(factsWrap);
       } else {
-        reveals.forEach(r=>r.classList.add('in'));
         counters.forEach(el => el.textContent = el.getAttribute('data-target'));
       }
     })();
 
-    // CTA handlers (replace hashes with routes)
-    document.getElementById('exploreBtn')?.addEventListener('click', ()=> window.location.href = 'services.html');
-    document.getElementById('guideBtn')?.addEventListener('click', ()=> window.location.hash = '#contributing');
-    document.getElementById('contactBtn')?.addEventListener('click', ()=> window.location.href = 'src/contact.html');
-    document.getElementById('contributeBtn')?.addEventListener('click', ()=> window.location.hash = '#contribute');
-  
-    // Theme init (keep parity with other sections)
-    (function(){
-      const s = localStorage.getItem('gc-theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const mode = s || (prefersDark ? 'dark' : 'light');
-      document.body.classList.toggle('theme-light', mode === 'light');
-    })();
-
-    // Parallax for orbs (reduced motion friendly)
-    (function(){
-      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const tracked = document.querySelectorAll('[data-parallax]');
-      if(!tracked.length) return;
-      let rx=0,ry=0; const lerp=(a,b,t)=>a+(b-a)*t;
-      window.addEventListener('mousemove', (e)=>{
-        const nx=(e.clientX/window.innerWidth)*2-1; const ny=(e.clientY/window.innerHeight)*2-1;
-        rx = lerp(rx,nx,0.06); ry = lerp(ry,ny,0.06);
-        tracked.forEach(el=>{ const amt = Number(el.getAttribute('data-parallax'))||6; el.style.transform = `translate3d(${rx*amt}px, ${ry*amt}px, 0)` });
-      }, {passive:true});
-    })();
-
-    // Reveal on scroll
-    (function(){
-      const els = document.querySelectorAll('.reveal');
-      if('IntersectionObserver' in window){
-        const io = new IntersectionObserver((entries, o)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); o.unobserve(en.target); } }); }, {threshold:0.12});
-        els.forEach(e=>io.observe(e));
-      } else { els.forEach(e=>e.classList.add('in')); }
-    })();
-
-    // Split toggle behavior
-    (function(){
-      const switches = Array.from(document.querySelectorAll('.switch'));
-      function setActive(el){ switches.forEach(s=>{ s.classList.toggle('active', s===el); s.setAttribute('aria-selected', s===el?'true':'false'); }); }
-      switches.forEach(s=>{
-        s.addEventListener('click', ()=> setActive(s));
-        s.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); setActive(s); } });
-      });
-      // keyboard: press 1/2
-      document.addEventListener('keydown', (e)=>{ if(e.key==='1') setActive(switches[0]); if(e.key==='2') setActive(switches[1]); });
-    })();
-
-    // Radial metrics animation (on view)
-    (function(){
-      const rQ = document.getElementById('rQuality'); const rL = document.getElementById('rLearning'); const rI = document.getElementById('rImpact');
-      const qVal = document.getElementById('qVal'); const lVal = document.getElementById('lVal'); const iVal = document.getElementById('iVal');
-      function animateRadial(el, valEl, target){
-        let t0=null; const dur=1000; function step(ts){ if(!t0) t0=ts; const p=Math.min((ts-t0)/dur,1); const v=Math.round(p*target); valEl.textContent = v + '%'; const deg = Math.round(p*target*3.6); el.style.setProperty('--deg', deg + 'deg'); if(p<1) requestAnimationFrame(step); }
-        requestAnimationFrame(step);
-      }
-      if('IntersectionObserver' in window){
-        const io = new IntersectionObserver((entries, o)=>{ entries.forEach(en=>{ if(en.isIntersecting){ animateRadial(rQ, qVal, 95); animateRadial(rL, lVal, 88); animateRadial(rI, iVal, 76); o.unobserve(en.target); } }); }, {threshold:0.25});
-        const card = document.querySelector('.card'); if(card) io.observe(card);
-      } else { animateRadial(rQ, qVal, 95); animateRadial(rL, lVal, 88); animateRadial(rI, iVal, 76); }
-    })();
-
-    // CTAs
-    document.getElementById('getServices')?.addEventListener('click', ()=> window.location.hash='#services');
-    document.getElementById('joinContrib')?.addEventListener('click', ()=> window.location.hash='#contribute');
-    document.getElementById('learnMore')?.addEventListener('click', ()=> window.location.hash='#about');
-  
-    // Theme parity
-    (function(){
-      const s = localStorage.getItem('gc-theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const mode = s || (prefersDark ? 'dark' : 'light');
-      document.body.classList.toggle('theme-light', mode === 'light');
-    })();
-
-    // Parallax for orbs
-    (function(){
-      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const tracked = document.querySelectorAll('[data-parallax]');
-      if(!tracked.length) return;
-      let rx=0,ry=0; const lerp=(a,b,t)=>a+(b-a)*t;
-      window.addEventListener('mousemove', (e)=>{
-        const nx=(e.clientX/window.innerWidth)*2-1; const ny=(e.clientY/window.innerHeight)*2-1;
-        rx=lerp(rx,nx,0.06); ry=lerp(ry,ny,0.06);
-        tracked.forEach(el=>{ const amt=Number(el.getAttribute('data-parallax'))||6; el.style.transform=`translate3d(${rx*amt}px, ${ry*amt}px, 0)` });
-      }, {passive:true});
-    })();
-
-    // Reveal on scroll
-    (function(){
-      const els = document.querySelectorAll('.reveal');
-      if('IntersectionObserver' in window){
-        const io = new IntersectionObserver((entries, o)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); o.unobserve(en.target); } }); }, {threshold:0.12});
-        els.forEach(e=>io.observe(e));
-      } else { els.forEach(e=>e.classList.add('in')); }
-    })();
-
-    // Feature focus: clicking left features expands right detail
-    (function(){
-      const leftItems = Array.from(document.querySelectorAll('.feature'));
-      const rightCards = Array.from(document.querySelectorAll('.card'));
-      const detail = document.getElementById('detailArea');
-
-      const map = {
-        'open-source': {title: 'Open-source & community-driven', text: "GrowCraft lives in the open: clear CONTRIBUTING.md, labels (good-first-issue), mentorship and PR reviews so new contributors can learn quickly."},
-        'training': {title: 'Training & Internships', text: 'We run guided workshops, pairing students with mentors and live client briefs for practical learning.'},
-        'bridge': {title: 'Bridging business & learning', text: 'Every task is client-centric — contributors ship real features and receive real feedback, building portfolio-ready work.'},
-        'collab': {title: 'Collaborative environment', text: 'Community discussions, office hours and peer reviews help contributors grow while delivering quality.'}
-      };
-
-      function show(key){
-        const d = map[key]; if(!d) return;
-        detail.innerHTML = `<strong>${d.title}</strong><p class="muted" style="margin-top:8px">${d.text}</p>`;
-      }
-
-      leftItems.forEach(it=>{
-        const key = it.dataset.key;
-        it.addEventListener('click', ()=>{
-          // highlight left
-          leftItems.forEach(i=> i.classList.toggle('active', i===it));
-          // highlight right
-          rightCards.forEach(c=> c.classList.toggle('active', c.dataset.ref===key));
-          show(key);
-        });
-        it.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); it.click(); } });
-      });
-
-      rightCards.forEach(c=>{
-        const k = c.dataset.ref;
-        c.addEventListener('click', ()=>{
-          // simulate left click
-          const left = leftItems.find(l=> l.dataset.key===k);
-          if(left) left.click();
-        });
-        c.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); c.click(); } });
-      });
-
-    })();
-
     // CTA handlers
-    document.getElementById('contributeBtn')?.addEventListener('click', ()=> window.location.hash='#contribute');
-    document.getElementById('meetBtn')?.addEventListener('click', ()=> window.location.hash='#team');
-    document.getElementById('exploreBtn')?.addEventListener('click', ()=> window.location.hash='#services');
-  
-    // theme parity
-    (function(){
-      const stored = localStorage.getItem('gc-theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const mode = stored || (prefersDark ? 'dark' : 'light');
-      document.body.classList.toggle('theme-light', mode === 'light');
-    })();
-
-    // parallax
-    (function(){
-      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const els = document.querySelectorAll('[data-parallax]'); if(!els.length) return;
-      let rx=0,ry=0; const lerp=(a,b,t)=>a+(b-a)*t;
-      window.addEventListener('mousemove',(e)=>{ const nx=(e.clientX/window.innerWidth)*2-1; const ny=(e.clientY/window.innerHeight)*2-1; rx=lerp(rx,nx,0.06); ry=lerp(ry,ny,0.06); els.forEach(el=>{ const amt = Number(el.getAttribute('data-parallax'))||6; el.style.transform = `translate3d(${rx*amt}px, ${ry*amt}px, 0)` }); },{passive:true});
-    })();
-
-    // reveal on scroll
-    (function(){
-      const els = document.querySelectorAll('.reveal');
-      if('IntersectionObserver' in window){ const io = new IntersectionObserver((entries,o)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); o.unobserve(en.target); } }); },{threshold:0.12}); els.forEach(e=>io.observe(e)); } else { els.forEach(e=>e.classList.add('in')); }
-    })();
-
-    // service interactions
-    (function(){
-      const grid = document.getElementById('servicesGrid');
-      const cards = Array.from(grid.querySelectorAll('.card'));
-      const panelTitle = document.getElementById('servicesPanelTitle');
-      const panelDesc = document.getElementById('serviceDesc');
-      const examples = document.getElementById('serviceExamples');
-      const search = document.getElementById('serviceSearch');
-      const allBtn = document.getElementById('allBtn');
-      const devBtn = document.getElementById('devBtn');
-      const creativeBtn = document.getElementById('creativeBtn');
-
-      const serviceMap = {
-        website: {title:'Website Development', desc:'Responsive, modern, and scalable solutions. Typical deliverables: landing pages, CMS integration, hosting setup, and maintenance.', tags:['Landing Page','React','SEO','Hosting']},
-        design: {title:'Graphic Design', desc:'Visual identity, UI assets, and promotional creatives. Deliverables: logos, banners, social assets, mockups.', tags:['Branding','Figma','Illustration']},
-        content: {title:'Content Writing', desc:'SEO-friendly blogs, copywriting and documentation. Deliverables: blog posts, product copy, newsletters.', tags:['SEO','Copywriting','Blog']},
-        social: {title:'Social Media Management', desc:'Strategy and content that engages users across platforms. Deliverables: content calendars, creatives, analytics reports.', tags:['Strategy','Scheduling','Analytics']},
-        marketing: {title:'Digital Marketing', desc:'Data-driven marketing — ads, SEO and analytics. Deliverables: campaign setup, tracking, optimizations.', tags:['Ads','SEO','Analytics']},
-        training: {title:'Training & Internships', desc:'Structured learning & mentorship for contributors. Deliverables: workshops, paired projects, evaluations.', tags:['Workshops','Mentorship','Portfolio']}
-      };
-
-      function setActive(key){
-        cards.forEach(c=> c.classList.toggle('active', c.dataset.key===key));
-        const data = serviceMap[key];
-        panelTitle.textContent = data.title;
-        panelDesc.textContent = data.desc + ' — Contributors can pick related issues and learn by implementing parts of these deliverables.';
-        examples.innerHTML = '';
-        data.tags.forEach(t=>{ const el = document.createElement('span'); el.className='tag'; el.textContent = t; examples.appendChild(el); });
-      }
-
-      function clearActive(){ cards.forEach(c=> c.classList.remove('active')); panelTitle.textContent = 'Select a service to see more'; panelDesc.textContent = 'Each service is a real opportunity for contributors to work on meaningful tasks while delivering value to clients.'; examples.innerHTML = ''; }
-
-      cards.forEach(card=>{
-        card.addEventListener('click', ()=> setActive(card.dataset.key));
-        card.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' ') { e.preventDefault(); setActive(card.dataset.key); } });
-      });
-
-      // simple filtering
-      function filterBy(type){
-        cards.forEach(c=>{ if(type==='all') c.style.display='flex'; else c.style.display = c.dataset.type===type ? 'flex' : 'none'; });
-      }
-      allBtn.addEventListener('click', ()=>{ filterBy('all'); allBtn.setAttribute('aria-pressed','true'); devBtn.setAttribute('aria-pressed','false'); creativeBtn.setAttribute('aria-pressed','false'); clearActive(); });
-      devBtn.addEventListener('click', ()=>{ filterBy('dev'); allBtn.setAttribute('aria-pressed','false'); devBtn.setAttribute('aria-pressed','true'); creativeBtn.setAttribute('aria-pressed','false'); clearActive(); });
-      creativeBtn.addEventListener('click', ()=>{ filterBy('creative'); allBtn.setAttribute('aria-pressed','false'); devBtn.setAttribute('aria-pressed','false'); creativeBtn.setAttribute('aria-pressed','true'); clearActive(); });
-
-      // search
-      search.addEventListener('input', (e)=>{
-        const v = e.target.value.trim().toLowerCase();
-        cards.forEach(c=>{
-          const text = (c.querySelector('h4').textContent + ' ' + c.querySelector('p').textContent).toLowerCase();
-          c.style.display = text.includes(v) ? 'flex' : 'none';
-        });
-        clearActive();
-      });
-
-      // CTAs
-      document.getElementById('contactBtn')?.addEventListener('click', ()=> window.location.hash='#contact');
-      document.getElementById('contributeBtn')?.addEventListener('click', ()=> window.location.hash='#contribute');
-
-    })();
-  
-    // theme parity
-    (function(){
-      const s = localStorage.getItem('gc-theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const mode = s || (prefersDark ? 'dark' : 'light');
-      document.body.classList.toggle('theme-light', mode === 'light');
-    })();
-
-    // parallax
-    (function(){
-      if(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      const els = document.querySelectorAll('[data-parallax]'); if(!els.length) return;
-      let rx=0,ry=0; const lerp=(a,b,t)=>a+(b-a)*t;
-      window.addEventListener('mousemove',(e)=>{ const nx=(e.clientX/window.innerWidth)*2-1; const ny=(e.clientY/window.innerHeight)*2-1; rx=lerp(rx,nx,0.06); ry=lerp(ry,ny,0.06); els.forEach(el=>{ const amt=Number(el.getAttribute('data-parallax'))||6; el.style.transform=`translate3d(${rx*amt}px, ${ry*amt}px, 0)` }); },{passive:true});
-    })();
-
-    // reveal + counters
-    (function(){
-      const reveals = document.querySelectorAll('.reveal');
-      const counters = document.querySelectorAll('[data-target]');
-      if('IntersectionObserver' in window){
-        const io = new IntersectionObserver((entries,o)=>{ entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); o.unobserve(en.target); } }); },{threshold:0.12}); reveals.forEach(r=> io.observe(r));
-
-        const statObserver = new IntersectionObserver((entries,o)=>{ entries.forEach(en=>{ if(en.isIntersecting){ counters.forEach(el=>{ const target = Number(el.getAttribute('data-target'))||0; let t0=null; const dur=1000; function step(ts){ if(!t0) t0=ts; const p=Math.min((ts-t0)/dur,1); el.textContent=Math.floor(p*target); if(p<1) requestAnimationFrame(step); else el.textContent=target; } requestAnimationFrame(step); }); o.unobserve(en.target); } }); },{threshold:0.25}); const statsWrap = document.querySelector('.stats'); if(statsWrap) statObserver.observe(statsWrap);
-      } else { reveals.forEach(r=> r.classList.add('in')); counters.forEach(el=> el.textContent = el.getAttribute('data-target')) }
-    })();
-
-    // contributors data (example placeholders)
-    (function(){
-      
-
-      const carousel = document.getElementById('contribCarousel');
-      const roles = Array.from(document.querySelectorAll('.role-btn'));
-
-      function render(filter='all'){
-        carousel.innerHTML='';
-        const list = filter==='all' ? sample : sample.filter(s=> s.roleKey===filter);
-        list.forEach(s=>{
-          const el = document.createElement('article'); el.className='contrib'; el.tabIndex=0; el.innerHTML = `<div style="display:flex;gap:12px;align-items:center;width:100%"><div class=\"avatar\">${s.name.charAt(0)}</div><div style=\"flex:1\"><h4>${s.name}</h4><div class=\"muted\">${s.role}</div></div></div><p class=\"muted\" style=\"margin-top:8px\">${s.bio}</p>`;
-          carousel.appendChild(el);
-        });
-      }
-
-      // initial
-      render('all');
-
-      roles.forEach(btn=> btn.addEventListener('click', ()=>{
-        const role = btn.getAttribute('data-role'); roles.forEach(b=> b.setAttribute('aria-pressed','false')); btn.setAttribute('aria-pressed','true'); render(role==='all' ? 'all' : role);
-      }));
-
-      // keyboard nav for carousel (left/right)
-      carousel.addEventListener('keydown', (e)=>{
-        const focus = document.activeElement; if(!focus || !carousel.contains(focus)) return;
-        if(e.key==='ArrowRight') focus.nextElementSibling?.focus(); if(e.key==='ArrowLeft') focus.previousElementSibling?.focus();
-      });
-
-      // CTAs
-      document.getElementById('githubBtn')?.addEventListener('click', ()=> window.open('https://github.com/your-org/growcraft','_blank'));
-      document.getElementById('joinBtn')?.addEventListener('click', ()=> window.location.hash='#gssoc');
-      document.getElementById('contribGuideLink')?.addEventListener('click', (e)=>{ e.preventDefault(); window.location.hash='#contributing'; });
-
-    })();
-  
-    // theme
-    (function(){ 
-      const s=localStorage.getItem('gc-theme'); 
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches; 
-      const mode = s || (prefersDark ? 'dark' : 'light'); 
-      document.body.classList.toggle('theme-light', mode === 'light'); 
-    })();
-
-    // reveal on scroll
-    (function(){ 
-      const els = document.querySelectorAll('.reveal'); 
-      if('IntersectionObserver' in window){ 
-        const io = new IntersectionObserver((entries,o)=>{ 
-          entries.forEach(en=>{ if(en.isIntersecting){ en.target.classList.add('in'); o.unobserve(en.target); } }); 
-        }, {threshold:0.12}); 
-        els.forEach(e=> io.observe(e)); 
-      } else els.forEach(e=> e.classList.add('in')); 
-    })();
-
-    // micro-join + toast
-    (function(){
-      const microBtn = document.getElementById('gc-micro-btn');
-      const microEmail = document.getElementById('gc-micro-email');
-      const toast = document.getElementById('gc-toast');
-      microBtn.addEventListener('click', ()=>{
-        const v = microEmail.value.trim();
-        if(!v || !/.+@.+\..+/.test(v)){ microEmail.focus(); microEmail.style.outline='2px solid rgba(255,0,0,0.18)'; return; }
-        microEmail.value='';
-        toast.classList.add('show');
-        setTimeout(()=> toast.classList.remove('show'), 2400);
-      });
-
-      document.getElementById('gc-contrib-btn')?.addEventListener('click', ()=> { window.location.hash='#contribute'; });
-      document.getElementById('gc-svc-btn')?.addEventListener('click', ()=> { window.location.hash='#services'; });
-    })();
-
-    // counters
-    (function(){ 
-      const els = document.querySelectorAll('[data-target]'); 
-      if('IntersectionObserver' in window){ 
-        const io = new IntersectionObserver((entries,o)=>{ 
-          entries.forEach(en=>{ if(en.isIntersecting){ 
-            els.forEach(el=>{ 
-              const t = Number(el.getAttribute('data-target'))||0; 
-              let t0=null; 
-              const dur=900; 
-              function step(ts){ 
-                if(!t0) t0=ts; 
-                const p=Math.min((ts-t0)/dur,1); 
-                el.textContent = Math.floor(p*t); 
-                if(p<1) requestAnimationFrame(step); else el.textContent=t; 
-              } 
-              requestAnimationFrame(step); 
-            }); 
-            o.unobserve(en.target);} 
-        }); }, {threshold:0.25}); 
-        const wrap = document.querySelector('.gc-join-card'); 
-        if(wrap) io.observe(wrap); 
-      } else els.forEach(el=> el.textContent = el.getAttribute('data-target')) 
-    })();
+    document.getElementById('exploreBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#services');
+    document.getElementById('guideBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#contributing');
+    document.getElementById('contactBtn')?.addEventListener('click', ()=> window.location.href = 'src/contact.html');
+    document.getElementById('contributeBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#contribute');
   </script>
-  
-  
+
 </body>
 </html>
- 

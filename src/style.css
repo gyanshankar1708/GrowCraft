@@ -1611,12 +1611,6 @@ body.dark .mb-4:hover {
   opacity: 1;
 }
 
-.custom-footer-green {
-  background: linear-gradient(180deg, #4be04b 0%, #6eea6e 100%);
-  color: #222;
-  font-family: 'Segoe UI', sans-serif;
-}
-
 .custom-footer-green .footer-underline {
   border-bottom: 3px solid #222;
   display: inline-block;

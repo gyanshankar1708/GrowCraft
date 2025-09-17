@@ -257,16 +257,179 @@
         transform: scale(1.01);
         box-shadow: 0 0 18px grey;
       }
+      .custom-footer-green {
+  background: linear-gradient(180deg, #4be04b 0%, #6eea6e 100%);
+  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+}
+body.dark-mode .custom-footer-green{
+  background: #222;
+  color: #222;
+  font-family: 'Segoe UI', sans-serif;
+}
+      /* Dark mode styles */
+body.dark-mode {
+  background-color: #121212 !important;
+  color: #ffffff !important;
+}
+
+body.dark-mode .navbar {
+  background-color: #1f1f1f !important;
+}
+
+body.dark-mode .custom-footer-green {
+  background-color: #1f1f1f !important;
+  color: #ffffff;
+}
+
+body.dark-mode .card {
+  background-color: #1f1f1f !important;
+  color: #ffffff;
+}
+
+body.dark-mode a {
+  color: #bb86fc !important;
+}
+
+body.dark-mode .btn-outline-secondary {
+  border-color: #bb86fc !important;
+  color: #bb86fc !important;
+}
+
+body.dark-mode .search-container {
+  background-color: #333 !important;
+}
+
+body.dark-mode .search-input {
+  background-color: #222 !important;
+  color: #fff !important;
+}
+
+body.dark-mode .footer-list a {
+  color: #bb86fc !important;
+}
+
+body.dark-mode .theme-aware-logo {
+  content: url('images/Logo.png');
+}
+/* Dark mode read more button fix */
+body.dark-mode .read-more {
+    background: linear-gradient(to right, #5a5a5a, #777);
+    color: #fff;
+}
+
+/* Circular Dark Mode Toggle Button Styling */
+.theme-toggle .toggle-btn {
+    border: 2px solid #cbc9cc;
+    background-color: #2b2d2e;
+    color: #ffffff;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.25rem;
+}
+
+.theme-toggle .toggle-btn:hover {
+    background-color: #bb86fc;
+    transform: scale(1.1);
+}
+
+/* Footer dark mode */
+/* Dark mode footer */
+body.dark-mode .custom-footer-green {
+    background-color: #1a1a1a;
+    color: #e0e0e0 !important; /* default text color */
+}
+.custom-footer-green{
+  color:black;
+}
+
+body.dark-mode .custom-footer-green a {
+    color: #a6abd3 !important; /* links color */
+    transition: color 0.3s;
+}
+.custom-footer-green a {
+    color: #b604fd !important; /* links color */
+    transition: color 0.3s;
+}
+
+body.dark-mode .custom-footer-green a:hover {
+    color: #ffb74d !important; /* hover color */
+}
+.custom-footer-green a:hover {
+    color: #faf9f7 !important; /* hover color */
+}
+
+body.dark-mode .custom-footer-green h5,
+body.dark-mode .custom-footer-green p,
+body.dark-mode .custom-footer-green span,
+body.dark-mode .custom-footer-green li {
+    color: #ffffff !important; /* all text in footer */
+}
+.custom-footer-green h5,
+.custom-footer-green p,
+.custom-footer-green span,
+.custom-footer-green li {
+    color: #090808 !important; /* all text in footer */
+}
+
+body.dark-mode .custom-footer-green i {
+    color: #e0e0e0 !important; /* icons */
+}
+
+
+
+/* Footer bottom bar */
+body.dark-mode .footer-bottom-bar,
+body.dark-mode .footer-bottom-bar-text,
+body.dark-mode .footer-bottom-bar-text .footer-brand {
+    background-color: #1a1a1a !important;
+    color: #e0e0e0 !important;
+}
+.footer-bottom-bar,
+.footer-bottom-bar-text,
+.footer-bottom-bar-text .footer-brand {
+    background-color: #f3eded !important;
+    color: green !important;
+}
+
+body.dark-mode .footer-bottom-bar a {
+    color: #a6abd3 !important;
+}
+.footer-bottom-bar a {
+    color: #01020b !important;
+}
+.footer-bottom-bar a:hover {
+    color: green !important;
+}
+
+body.dark-mode .footer-bottom-bar a:hover {
+    color: #ffb74d !important;
+}
+/* Make all main containers dark in dark mode */
+
+
+/* Optional: for Bootstrap cards that still show white */
+body.dark-mode .card {
+    background-color: #1f1f1f !important;
+    color: #fff !important;
+}
+
+
+
+
+
     </style>
   </head>
 
   <body id="main-body">
-    <!-- Navbar starts here -->
-    <!-- ✅ Navbar -->
     <nav class="navbar navbar-expand-lg">
-      <div
-        class="container-fluid d-flex justify-content-between align-items-center px-3 px-lg-5"
-      >
+      <div class="container-fluid d-flex justify-content-between align-items-center px-3 px-lg-5">
         <!-- Logo -->
         <a class="navbar-brand" href="./index.html">
           <img
@@ -318,6 +481,7 @@
             </li>
           </ul>
         </div>
+        
 
         <!-- Dark/Light toggle button 
     <div class="theme-toggle">
@@ -327,14 +491,21 @@
     </div> -->
 
         <!-- Responsive Search Bar -->
-        <div class="search-container">
-          <input type="text" placeholder="Search..." class="search-input" />
-          <button class="search-button">
-            <i class="fas fa-search"></i>
-            <!-- Font Awesome icon -->
-          </button>
-        </div>
-      </div>
+        <div class="d-flex align-items-center gap-3">
+  <div class="search-container">
+    <input type="text" placeholder="Search..." class="search-input" />
+    <button class="search-button">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+
+  <div class="theme-toggle">
+    <button id="themeToggleBtn" class="toggle-btn">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+  </div>
+</div>
+
     </nav>
 
     <div class="container py-5">
@@ -507,12 +678,12 @@
         </div>
       </div>
     </div>
-    <!-- Footer section starts here (Contact us) -->
-    <!-- ...existing code... -->
-    <footer class="custom-footer-green mt-5">
+
+    <footer class="custom-footer-green" style="
+  background-color: #1a1a1a;
+  color: #e0e0e0;">
       <div class="container py-5">
         <div class="row align-items-center">
-          <!-- Logo & About -->
           <div class="col-lg-4 text-center text-lg-start mb-4 mb-lg-0">
             <img
               src="images/Logo_new.png"
@@ -520,7 +691,7 @@
               style="height: 60px"
             />
             <!-- <h2 class="fw-bold mt-2 mb-3" style="color: #222;">GrowCraft</h2> -->
-            <p class="mb-3 fw-semibold" style="color: #222; font-size: 1.15rem">
+            <p class="mb-3 fw-semibold" style="font-size: 1.15rem">
               Empowering businesses with innovative digital<br />
               solutions and creative excellence.
             </p>
@@ -573,17 +744,16 @@
             <h5 class="fw-bold mb-3 footer-underline">Get In Touch</h5>
             <ul class="list-unstyled footer-list">
               <li>
-                <i class="fa-solid fa-envelope me-2" style="color: #007bff"></i>
+                <i class="fa-solid fa-envelope me-2"></i>
                 <a href="mailto:info@growcraft.com">info@growcraft.com</a>
               </li>
               <li>
-                <i class="fa-solid fa-phone me-2" style="color: #00bcd4"></i>
+                <i class="fa-solid fa-phone me-2" ></i>
                 <a href="tel:+91999999999">+91 999 999 999</a>
               </li>
               <li>
                 <i
                   class="fa-solid fa-location-dot me-2"
-                  style="color: #2196f3"
                 ></i>
                 <a
                   href="https://maps.google.com/?q=ABC+Street,+XYZ+City,+India"
@@ -599,9 +769,9 @@
         <div
           class="container d-flex flex-column flex-md-row justify-content-between align-items-center"
         >
-          <div class="small" style="color: #222">
+          <div class="small">
             © 2025
-            <span style="color: #007bff; font-weight: 600">GrowCraft</span>. All
+            <span style="font-weight: 600">GrowCraft</span>. All
             rights reserved.
           </div>
           <div>
@@ -626,5 +796,27 @@
     </script>
     <script src="script.js"></script>
     <script src="/src/darkMode.js"></script>
+    <script>
+      const toggleBtn = document.getElementById('themeToggleBtn');
+const body = document.body;
+
+// Apply saved theme on page load
+if (localStorage.getItem('theme') === 'dark') {
+  body.classList.add('dark-mode');
+}
+
+toggleBtn.addEventListener('click', () => {
+  body.classList.toggle('dark-mode');
+
+  if (body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+    toggleBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+  } else {
+    localStorage.setItem('theme', 'light');
+    toggleBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+  }
+});
+
+    </script>
   </body>
 </html>
