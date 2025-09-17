@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers - GrowCraft</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="src/style.css" />
+
+  <style>
+    /* Modern CSS Variables */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      --careers-gradient: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.12);
+      --text-primary: #2d3748;
+      --text-secondary: #4a5568;
+      --border-radius: 20px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark mode variables */
+    [data-bs-theme="dark"] {
+      --primary-gradient: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
+      --secondary-gradient: linear-gradient(135deg, #d946ef 0%, #f43f5e 100%);
+      --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+      --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+      --careers-gradient: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.4);
+      --text-primary: #f7fafc;
+      --text-secondary: #e2e8f0;
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: var(--transition);
+    }
+
+    [data-bs-theme="dark"] body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    /* Enhanced Navbar Design */
+    .navbar {
+      padding: 1rem 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+      border-bottom: 3px solid #388e3c;
+      box-shadow: 0 8px 32px rgba(56, 142, 60, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    [data-bs-theme="dark"] .navbar {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%) !important;
+      border-bottom: 3px solid #22c55e;
+      box-shadow: 0 8px 32px rgba(34, 197, 94, 0.2);
+    }
+
+    .navbar-brand img {
+      max-height: 55px;
+      object-fit: contain;
+      vertical-align: middle;
+      filter: drop-shadow(2px 2px 4px rgba(56, 142, 60, 0.2));
+      transition: filter 0.3s ease;
+    }
+
+    [data-bs-theme="dark"] .navbar-brand img {
+      filter: drop-shadow(2px 2px 4px rgba(34, 197, 94, 0.3));
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      font-weight: 600;
+      color: #2e7d32 !important;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.75rem;
+      padding: 0.75rem 1.25rem !important;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      background: transparent;
+    }
+
+    [data-bs-theme="dark"] .navbar-nav .nav-link {
+      color: #22c55e !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
+    }
+
+    [data-bs-theme="dark"] .navbar-nav .nav-link:hover {
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #ffffff !important;
+      background: var(--careers-gradient);
+      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
+    }
+
+    /* Dark mode navbar adjustments */
+    @media screen and (max-width: 991.98px) {
+      .dark-mode .navbar-nav,
+      .dark .navbar-nav {
+        background: rgba(26, 26, 26, 0.98) !important;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+      }
+    }
+
+    /* Careers Hero Section */
+    .careers-hero {
+      padding: 100px 0 80px;
+      background: var(--careers-gradient);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .careers-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="75" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="50" cy="10" r="0.5" fill="rgba(255,255,255,0.03)"/><circle cx="20" cy="80" r="0.5" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+      opacity: 0.6;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      font-weight: 300;
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Main Content Section */
+    .careers-content {
+      padding: 80px 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+    }
+
+    [data-bs-theme="dark"] .careers-content {
+      background: rgba(30, 41, 59, 0.95);
+    }
+
+    .careers-card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: var(--border-radius);
+      padding: 3rem;
+      margin: 2rem 0;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(56, 142, 60, 0.1);
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    [data-bs-theme="dark"] .careers-card {
+      background: rgba(51, 65, 85, 0.9);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+      box-shadow: var(--card-shadow);
+    }
+
+    .careers-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--card-shadow-hover);
+      border-color: #388e3c;
+    }
+
+    [data-bs-theme="dark"] .careers-card:hover {
+      border-color: #22c55e;
+    }
+
+    .careers-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--careers-gradient);
+      transition: var(--transition);
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      line-height: 1.8;
+    }
+
+    /* Stay Tuned Section */
+    .stay-tuned-section {
+      text-align: center;
+      padding: 4rem 0;
+    }
+
+    .stay-tuned-icon {
+      font-size: 4rem;
+      color: #388e3c;
+      margin-bottom: 2rem;
+      animation: pulse 2s infinite;
+    }
+
+    [data-bs-theme="dark"] .stay-tuned-icon {
+      color: #22c55e;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .stay-tuned-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .stay-tuned-message {
+      font-size: 1.3rem;
+      color: var(--text-secondary);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .notify-btn {
+      background: var(--careers-gradient);
+      border: none;
+      color: #ffffff;
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
+    }
+
+    .notify-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(56, 142, 60, 0.4);
+      text-decoration: none;
+      color: #ffffff;
+    }
+
+    /* Culture Section */
+    .culture-section {
+      background: linear-gradient(135deg, rgba(56, 142, 60, 0.05) 0%, rgba(46, 125, 50, 0.05) 100%);
+      padding: 4rem 0;
+      margin: 3rem 0;
+      border-radius: var(--border-radius);
+    }
+
+    [data-bs-theme="dark"] .culture-section {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.1) 0%, rgba(22, 163, 74, 0.1) 100%);
+    }
+
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .culture-item {
+      text-align: center;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: var(--transition);
+      border: 1px solid rgba(56, 142, 60, 0.1);
+    }
+
+    [data-bs-theme="dark"] .culture-item {
+      background: rgba(51, 65, 85, 0.8);
+      border: 1px solid rgba(34, 197, 94, 0.2);
+    }
+
+    .culture-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(56, 142, 60, 0.15);
+    }
+
+    .culture-icon {
+      font-size: 2.5rem;
+      color: #388e3c;
+      margin-bottom: 1rem;
+    }
+
+    [data-bs-theme="dark"] .culture-icon {
+      color: #22c55e;
+    }
+
+    .culture-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .culture-description {
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .careers-card {
+        padding: 2rem;
+        margin: 1rem 0;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+
+      .stay-tuned-title {
+        font-size: 2rem;
+      }
+
+      .stay-tuned-message {
+        font-size: 1.1rem;
+      }
+
+      .culture-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+    }
+
+    /* Animation classes */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.8s ease forwards;
+    }
+
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body id="main-body">
+  <!-- Navbar starts here -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="blogListing.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="work.html">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="careers.html">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="src/contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar ends here -->
+
+  <!-- Careers Hero Section -->
+  <section class="careers-hero">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 class="hero-title fade-in">Join Our Growing Team</h1>
+          <p class="hero-subtitle fade-in">
+            Be part of a dynamic team that's shaping the future of digital excellence. 
+            At GrowCraft, we're always looking for passionate individuals to grow with us.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <section class="careers-content">
+    <div class="container">
+      <!-- Stay Tuned Section -->
+      <div class="careers-card fade-in">
+        <div class="stay-tuned-section">
+          <div class="stay-tuned-icon">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <h2 class="stay-tuned-title">Exciting Opportunities Coming Soon!</h2>
+          <p class="stay-tuned-message">
+            We're constantly growing and expanding our team. While we don't have any open positions at the moment, 
+            we're always interested in connecting with talented individuals who share our passion for digital innovation.
+          </p>
+          <a href="src/contact.html" class="notify-btn">
+            <i class="fas fa-bell"></i>
+            Get Notified
+          </a>
+        </div>
+      </div>
+
+      <!-- Culture Section -->
+      <div class="culture-section fade-in">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Why Choose GrowCraft?</h2>
+            <p class="section-subtitle">
+              Discover what makes our workplace special and why talented professionals choose to build their careers with us.
+            </p>
+          </div>
+          
+          <div class="culture-grid">
+            <div class="culture-item fade-in">
+              <div class="culture-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <h3 class="culture-title">Collaborative Environment</h3>
+              <p class="culture-description">
+                Work alongside passionate professionals in a supportive environment that encourages creativity and innovation.
+              </p>
+            </div>
+            
+            <div class="culture-item fade-in">
+              <div class="culture-icon">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3 class="culture-title">Growth Opportunities</h3>
+              <p class="culture-description">
+                Advance your career with ongoing training, mentorship programs, and opportunities to work on cutting-edge projects.
+              </p>
+            </div>
+            
+            <div class="culture-item fade-in">
+              <div class="culture-icon">
+                <i class="fas fa-balance-scale"></i>
+              </div>
+              <h3 class="culture-title">Work-Life Balance</h3>
+              <p class="culture-description">
+                Enjoy flexible working arrangements and a culture that values both professional achievement and personal well-being.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Future Opportunities -->
+      <div class="careers-card fade-in">
+        <div class="row">
+          <div class="col-lg-8">
+            <h2 class="section-title">What We're Looking For</h2>
+            <p class="section-subtitle">
+              When opportunities arise, we typically seek professionals in these areas:
+            </p>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li><i class="fas fa-check text-success me-2"></i> Web Developers</li>
+                  <li><i class="fas fa-check text-success me-2"></i> UI/UX Designers</li>
+                  <li><i class="fas fa-check text-success me-2"></i> Digital Marketing Specialists</li>
+                  <li><i class="fas fa-check text-success me-2"></i> Content Creators</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li><i class="fas fa-check text-success me-2"></i> Graphic Designers</li>
+                  <li><i class="fas fa-check text-success me-2"></i> Social Media Managers</li>
+                  <li><i class="fas fa-check text-success me-2"></i> Project Managers</li>
+                  <li><i class="fas fa-check text-success me-2"></i> Cybersecurity Analysts</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 d-flex align-items-center justify-content-center">
+            <div class="text-center">
+              <i class="fas fa-briefcase" style="font-size: 4rem; color: #388e3c; margin-bottom: 1rem;"></i>
+              <p class="text-muted">Ready to make an impact?</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <div id="footer-container">
+    <!-- Footer will be loaded here by JavaScript -->
+  </div>
+
+  <!-- JavaScript -->
+  <script src="src/darkMode.js"></script>
+  <script>
+    // Load footer component
+    fetch('components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(error => console.error('Error loading footer:', error));
+
+    // Add fade-in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Observe all fade-in elements
+      document.querySelectorAll('.fade-in').forEach(el => {
+        observer.observe(el);
+      });
+    });
+
+    // Update footer current year
+    document.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        const yearElement = document.getElementById('currentYear');
+        if (yearElement) {
+          yearElement.textContent = new Date().getFullYear();
+        }
+      }, 100);
+    });
+  </script>
+</body>
+
+</html>
