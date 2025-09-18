@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers - GrowCraft</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="src/style.css" />
+
+  <style>
+    /* Modern CSS Variables */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      --career-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.12);
+      --text-primary: #2d3748;
+      --text-secondary: #4a5568;
+      --border-radius: 20px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark mode variables */
+    [data-bs-theme="dark"] {
+      --primary-gradient: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
+      --secondary-gradient: linear-gradient(135deg, #d946ef 0%, #f43f5e 100%);
+      --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+      --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+      --career-gradient: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.4);
+      --text-primary: #f7fafc;
+      --text-secondary: #e2e8f0;
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: var(--transition);
+    }
+
+    [data-bs-theme="dark"] body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    /* Enhanced Navbar Design */
+    .navbar {
+      padding: 1rem 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+      border-bottom: 3px solid #388e3c;
+      box-shadow: 0 8px 32px rgba(56, 142, 60, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand img {
+      max-height: 55px;
+      object-fit: contain;
+      vertical-align: middle;
+      filter: drop-shadow(2px 2px 4px rgba(56, 142, 60, 0.2));
+      transition: filter 0.3s ease;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      font-weight: 600;
+      color: #2e7d32 !important;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.75rem;
+      padding: 0.75rem 1.25rem !important;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      background: transparent;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+      box-shadow: 0 4px 15px rgba(56, 142, 60, 0.25);
+    }
+
+    /* Careers Hero Section */
+    .careers-hero {
+      background: var(--career-gradient);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .careers-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Careers Content */
+    .careers-content {
+      padding: 80px 0;
+      background: var(--bg-primary, #ffffff);
+    }
+
+    .careers-card {
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      padding: 3rem;
+      margin-bottom: 2rem;
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    [data-bs-theme="dark"] .careers-card {
+      background: #1e293b;
+      border-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+    }
+
+    .careers-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .section-title {
+      color: #667eea;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    [data-bs-theme="dark"] .section-title {
+      color: #4c63d2;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--career-gradient);
+      border-radius: 2px;
+    }
+
+    .careers-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .careers-icon {
+      font-size: 4rem;
+      color: var(--career-gradient);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      display: block;
+    }
+
+    .no-openings-card {
+      text-align: center;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 2px solid #0284c7;
+      border-radius: var(--border-radius);
+      padding: 3rem;
+      margin: 2rem 0;
+    }
+
+    [data-bs-theme="dark"] .no-openings-card {
+      background: linear-gradient(135d, #1e293b 0%, #334155 100%);
+      border-color: #0ea5e9;
+    }
+
+    .future-opportunities {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 3rem;
+      border-radius: var(--border-radius);
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    [data-bs-theme="dark"] .future-opportunities {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .btn-primary-custom {
+      background: var(--career-gradient);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: var(--transition);
+    }
+
+    .btn-primary-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+      color: white;
+    }
+
+    .career-benefits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+
+    .benefit-item {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--card-shadow);
+      text-align: center;
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    [data-bs-theme="dark"] .benefit-item {
+      background: #1e293b;
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .benefit-icon {
+      font-size: 2.5rem;
+      color: #667eea;
+      margin-bottom: 1rem;
+    }
+
+    [data-bs-theme="dark"] .benefit-icon {
+      color: #4c63d2;
+    }
+
+    /* Professional Footer */
+    .professional-footer {
+      background: linear-gradient(
+        135deg,
+        #f8f9fa 0%,
+        #e9ecef 50%,
+        #f8f9fa 100%
+      );
+      color: #fff !important;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    /* Brand Section */
+    .footer-brand {
+      text-align: center;
+    }
+
+    .footer-logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    .brand-name {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      transition: all 0.3s ease;
+    }
+
+    .brand-description {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .brand-name, .dark .brand-name { background: linear-gradient(45deg, #00ffe7, #007bff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    .dark-mode .brand-description, .dark .brand-description { color: #a8b2d1 !important; }
+
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item { text-align: center; }
+
+    .stat-number {
+      display: block;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #007bff;
+      margin-bottom: 0.25rem;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .stat-number, .dark .stat-number { color: #00ffe7 !important; }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .stat-label, .dark .stat-label { color: #a8b2d1 !important; }
+
+    /* Footer Titles */
+    .footer-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      border-radius: 1px;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .footer-title, .dark .footer-title { color: #ffffff !important; }
+    .dark-mode .footer-title::after, .dark .footer-title::after { background: linear-gradient(45deg, #00ffe7, #007bff) !important; }
+
+    /* Footer Links */
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+      transition: all 0.3s ease;
+    }
+
+    .footer-links a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding-left: 0;
+    }
+
+    .footer-links a:hover {
+      color: #007bff;
+      padding-left: 10px;
+      transform: translateX(5px);
+    }
+
+    .footer-links a::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 0;
+      height: 2px;
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      transition: width 0.3s ease;
+    }
+
+    .footer-links a:hover::before {
+      width: 20px;
+    }
+
+    .dark-mode .footer-links a, .dark .footer-links a { color: #a8b2d1 !important; }
+    .dark-mode .footer-links a:hover, .dark .footer-links a:hover { color: #00ffe7 !important; }
+    .dark-mode .footer-links a::before, .dark .footer-links a::before { background: linear-gradient(45deg, #00ffe7, #007bff) !important; }
+
+    /* Contact Information */
+    .contact-info {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      color: #666;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item i {
+      width: 20px;
+      margin-right: 12px;
+      color: #007bff;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item a {
+      color: #666;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item:hover {
+      color: #007bff;
+      transform: translateX(5px);
+    }
+
+    .contact-item:hover i {
+      color: #0056b3;
+      transform: scale(1.1);
+    }
+
+    .contact-item:hover a {
+      color: #007bff;
+    }
+
+    .dark-mode .contact-item, .dark .contact-item { color: #a8b2d1 !important; }
+    .dark-mode .contact-item i, .dark .contact-item i { color: #00ffe7 !important; }
+    .dark-mode .contact-item a, .dark .contact-item a { color: #a8b2d1 !important; }
+    .dark-mode .contact-item:hover, .dark .contact-item:hover { color: #00ffe7 !important; }
+    .dark-mode .contact-item:hover i, .dark .contact-item:hover i { color: #007bff !important; }
+    .dark-mode .contact-item:hover a, .dark .contact-item:hover a { color: #00ffe7 !important; }
+    .dark-mode .contact-item span, .dark .contact-item span { color: #a8b2d1 !important; }
+
+    /* Footer Bottom */
+    .footer-bottom {
+      background: rgba(0, 0, 0, 0.05);
+      padding: 20px 0;
+      margin-top: 30px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .footer-bottom, .dark .footer-bottom { background: rgba(0, 0, 0, 0.3) !important; border-top: 1px solid rgba(255, 255, 255, 0.1) !important; }
+
+    .copyright {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
+      transition: all 0.3s ease;
+    }
+
+    .dark-mode .copyright, .dark .copyright { color: #a8b2d1 !important; }
+
+    .footer-nav {
+      display: flex;
+      justify-content: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-nav a {
+      color: #666;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .footer-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      transition: width 0.3s ease;
+    }
+
+    .footer-nav a:hover {
+      color: #007bff;
+    }
+
+    .footer-nav a:hover::after {
+      width: 100%;
+    }
+
+    .dark-mode .footer-nav a, .dark .footer-nav a { color: #a8b2d1 !important; }
+    .dark-mode .footer-nav a:hover, .dark .footer-nav a:hover { color: #00ffe7 !important; }
+    .dark-mode .footer-nav a::after, .dark .footer-nav a::after { background: linear-gradient(45deg, #00ffe7, #007bff) !important; }
+
+    /* Social Media */
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 1rem;
+    }
+
+    .social-links a {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(45deg, #007bff, #0056b3);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-size: 1.1rem;
+    }
+
+    .social-links a:hover {
+      transform: translateY(-3px) scale(1.1);
+      box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+    }
+
+    .dark-mode .social-links a, .dark .social-links a { background: linear-gradient(45deg, #00ffe7, #007bff) !important; }
+
+    /* Dark Mode Overrides */
+    .dark-mode .professional-footer, .dark .professional-footer {
+      background: linear-gradient(135deg, #1a1d29 0%, #2d3748 50%, #1a1d29 100%) !important;
+      color: #a8b2d1 !important;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .footer-nav {
+        justify-content: center;
+        margin-top: 1rem;
+      }
+      
+      .quick-stats {
+        justify-content: center;
+      }
+      
+      .hero-title {
+        font-size: 2.5rem;
+      }
+    }
+
+    /* Search Container */
+    .search-container {
+      display: flex;
+      align-items: center;
+      background-color: #fff;
+      border: 2px solid #388e3c;
+      border-radius: 25px;
+      padding: 5px 10px;
+      width: 100%;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    .search-input {
+      border: none;
+      outline: none;
+      padding: 8px;
+      font-size: 16px;
+      flex: 1;
+      color: #333;
+    }
+
+    .search-input::placeholder {
+      color: #aaa;
+    }
+
+    .search-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: 600px) {
+      .search-container {
+        max-width: 200px;
+      }
+
+      .search-input {
+        font-size: 14px;
+      }
+    }
+
+    /* Dark mode body - Force override with highest specificity */
+    html[data-bs-theme="dark"] body,
+    html[data-bs-theme="dark"] body.dark-mode,
+    html.dark body,
+    html.dark body.dark-mode,
+    .dark-mode body,
+    .dark body,
+    body.dark-mode {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+      color: #f7fafc !important;
+    }
+
+    /* Dark mode navbar */
+    html[data-bs-theme="dark"] .navbar,
+    html.dark .navbar,
+    .dark-mode .navbar,
+    .dark .navbar {
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%) !important;
+      border-bottom-color: #00ffe7 !important;
+    }
+
+    /* Dark mode text overrides */
+    html[data-bs-theme="dark"] *,
+    html.dark *,
+    .dark-mode *,
+    .dark * {
+      border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    html[data-bs-theme="dark"] h1,
+    html[data-bs-theme="dark"] h2,
+    html[data-bs-theme="dark"] h3,
+    html[data-bs-theme="dark"] h4,
+    html[data-bs-theme="dark"] h5,
+    html[data-bs-theme="dark"] h6,
+    html.dark h1,
+    html.dark h2,
+    html.dark h3,
+    html.dark h4,
+    html.dark h5,
+    html.dark h6,
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode h4,
+    .dark-mode h5,
+    .dark-mode h6,
+    .dark h1,
+    .dark h2,
+    .dark h3,
+    .dark h4,
+    .dark h5,
+    .dark h6 {
+      color: #f7fafc !important;
+    }
+
+    html[data-bs-theme="dark"] p,
+    html[data-bs-theme="dark"] span,
+    html[data-bs-theme="dark"] div,
+    html.dark p,
+    html.dark span,
+    html.dark div,
+    .dark-mode p,
+    .dark-mode span,
+    .dark-mode div,
+    .dark p,
+    .dark span,
+    .dark div {
+      color: #e2e8f0 !important;
+    }
+
+    /* Fade-in animation */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Animation delays */
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.4s; }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar starts here -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Logo_new.png" alt="GrowCraft" width="200" id="logo">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="blogListing.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="work.html">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="src/contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input" />
+        <button class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar ends here -->
+
+  <!-- Careers Hero Section -->
+  <section class="careers-hero">
+    <div class="container">
+      <h1 class="hero-title">Join Our Team</h1>
+      <p class="hero-subtitle">
+        Build your career with GrowCraft and help us shape the future of digital innovation. We're always looking for passionate individuals to join our growing family.
+      </p>
+    </div>
+  </section>
+
+  <!-- Careers Content -->
+  <section class="careers-content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+
+          <!-- Current Status -->
+          <div class="careers-card fade-in">
+            <div class="no-openings-card">
+              <i class="fas fa-users careers-icon" style="color: #0284c7; margin-bottom: 1rem;"></i>
+              <h2 class="section-title" style="color: #0284c7; text-align: center;">Current Openings</h2>
+              <div class="careers-text" style="text-align: center; font-size: 1.2rem; margin-bottom: 2rem;">
+                <strong>We currently don't have any active job openings.</strong>
+              </div>
+              <p class="careers-text" style="text-align: center;">
+                While we don't have immediate openings, we're always interested in connecting with talented individuals who share our passion for digital innovation and creative excellence.
+              </p>
+            </div>
+          </div>
+
+          <!-- About Working at GrowCraft -->
+          <div class="careers-card fade-in">
+            <h2 class="section-title">
+              <i class="fas fa-heart" style="margin-right: 15px; color: #667eea;"></i>
+              Why GrowCraft?
+            </h2>
+            <p class="careers-text">
+              At GrowCraft, we believe in empowering our team members to grow both personally and professionally. We foster a collaborative environment where creativity meets technology, and every team member contributes to innovative digital solutions.
+            </p>
+            <p class="careers-text">
+              Our company culture is built on the principles of continuous learning, creative excellence, and client-focused innovation. We work with cutting-edge technologies and deliver high-quality services across web development, digital marketing, graphic design, and more.
+            </p>
+          </div>
+
+          <!-- What We Offer -->
+          <div class="careers-card fade-in">
+            <h2 class="section-title">
+              <i class="fas fa-gift" style="margin-right: 15px; color: #667eea;"></i>
+              What We Offer
+            </h2>
+            <div class="career-benefits">
+              <div class="benefit-item">
+                <i class="fas fa-graduation-cap benefit-icon"></i>
+                <h4>Learning & Growth</h4>
+                <p>Continuous learning opportunities with access to latest technologies and industry best practices.</p>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-users-cog benefit-icon"></i>
+                <h4>Collaborative Environment</h4>
+                <p>Work with a passionate team of professionals in a supportive and creative atmosphere.</p>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-rocket benefit-icon"></i>
+                <h4>Innovative Projects</h4>
+                <p>Work on cutting-edge projects that challenge you and help you grow your skills.</p>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-balance-scale benefit-icon"></i>
+                <h4>Work-Life Balance</h4>
+                <p>Flexible working arrangements that respect your personal time and well-being.</p>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-trophy benefit-icon"></i>
+                <h4>Recognition</h4>
+                <p>Your contributions are valued and recognized as we celebrate achievements together.</p>
+              </div>
+              <div class="benefit-item">
+                <i class="fas fa-handshake benefit-icon"></i>
+                <h4>Client Impact</h4>
+                <p>Make a real difference by helping businesses grow through innovative digital solutions.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Future Opportunities -->
+          <div class="careers-card fade-in">
+            <h2 class="section-title">
+              <i class="fas fa-compass" style="margin-right: 15px; color: #667eea;"></i>
+              Future Opportunities
+            </h2>
+            <p class="careers-text">
+              As we continue to grow, we anticipate openings in various areas including:
+            </p>
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="careers-text" style="list-style: none; padding-left: 0;">
+                  <li style="margin-bottom: 0.5rem;"><i class="fas fa-code" style="color: #667eea; margin-right: 10px;"></i> Full-Stack Developers</li>
+                  <li style="margin-bottom: 0.5rem;"><i class="fas fa-paint-brush" style="color: #667eea; margin-right: 10px;"></i> UI/UX Designers</li>
+                  <li style="margin-bottom: 0.5rem;"><i class="fas fa-chart-line" style="color: #667eea; margin-right: 10px;"></i> Digital Marketing Specialists</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="careers-text" style="list-style: none; padding-left: 0;">
+                  <li style="margin-bottom: 0.5rem;"><i class="fas fa-pen-fancy" style="color: #667eea; margin-right: 10px;"></i> Content Writers</li>
+                  <li style="margin-bottom: 0.5rem;"><i class="fas fa-shield-alt" style="color: #667eea; margin-right: 10px;"></i> Cybersecurity Analysts</li>
+                  <li style="margin-bottom: 0.5rem;"><i class="fas fa-share-alt" style="color: #667eea; margin-right: 10px;"></i> Social Media Managers</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact for Future Opportunities -->
+          <div class="future-opportunities fade-in">
+            <h3 style="color: #667eea; margin-bottom: 1.5rem;">
+              <i class="fas fa-envelope" style="margin-right: 10px;"></i>
+              Interested in Future Opportunities?
+            </h3>
+            <p class="careers-text">
+              We'd love to hear from you! Send us your resume and let us know how you'd like to contribute to GrowCraft's mission. We'll keep your information on file and reach out when suitable positions become available.
+            </p>
+            <div style="margin-top: 2rem;">
+              <a href="mailto:careers@growcraft.com?subject=Future%20Opportunities%20at%20GrowCraft" class="btn-primary-custom">
+                <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>
+                Send Your Resume
+              </a>
+              <a href="src/contact.html" class="btn-primary-custom" style="margin-left: 1rem;">
+                <i class="fas fa-comments" style="margin-right: 8px;"></i>
+                Get in Touch
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Footer -->
+  <footer class="professional-footer fade-in">
+    <div class="container">
+      <div class="row g-4 py-4 fade-in">
+        <!-- Footer Columns -->
+        <div class="col-lg-4 col-md-6 fade-in">
+          <div class="footer-brand fade-in">
+            <img 
+              src="images/Logo_new.png" 
+              alt="GrowCraft Logo" 
+              class="footer-logo mb-3 theme-aware-logo"
+              data-light-src="images/Logo_new.png"
+              data-dark-src="images/Logo.png" 
+            />
+            <h4 class="brand-name">GrowCraft</h4>
+            <p class="brand-description">Empowering businesses with
+                innovative digital solutions and creative excellence.</p>
+            <div class="quick-stats fade-in">
+                <div class="stat-item">
+                    <span class="stat-number">500+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">150+</span>
+                    <span class="stat-label">Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Years</span>
+                </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="learn/webdev.html">Web Development</a></li>
+            <li><a href="learn/graphic.html">Graphic Design</a></li>
+            <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="learn/contentwriting.html">Content Writing</a></li>
+            <li><a href="learn/socialmedia.html">Social Media</a></li>
+            <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="work.html">Portfolio</a></li>
+            <li><a href="src/contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blogListing.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Get In Touch</h5>
+          <div class="contact-info mb-3 fade-in">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919999999999">+91 999 999 999</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>ABC Street, XYZ City, India</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h6 class="footer-title">Follow Us</h6>
+          <div class="social-links fade-in">
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com" target="_blank" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom fade-in">
+      <div class="container">
+        <div class="row align-items-center py-3 fade-in">
+          <div class="col-md-6">
+            <p class="copyright mb-0">
+              © <span id="currentYear"></span> <strong>GrowCraft</strong>. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="footer-nav fade-in">
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+              <a href="sitemap.html">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Professional Footer ends -->
+
+  <script src="src/script.js"></script>
+  <script src="src/utils.js"></script>
+  <script src="src/darkMode.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearSpan = document.getElementById("currentYear");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+
+</html>
