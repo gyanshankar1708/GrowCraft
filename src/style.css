@@ -1045,11 +1045,10 @@ body.dark .mb-4:hover {
 
   .footer-links,
   .footer-contact {
-    width: 48%;
+    width:100%;
     float: left;
     margin-left: 5px;
-    padding: 2px;
-    background-color: #28a745; /* or whatever green you're using */
+    padding:10px;
     border-radius: 8px;
     color: white;
     max-width: 500px;

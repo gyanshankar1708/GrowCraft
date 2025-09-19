@@ -862,11 +862,6 @@
         text-align: center;
       }
 
-      .footer-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
       .footer-nav {
         justify-content: center;
         margin-top: 15px;
@@ -914,6 +909,76 @@
         font-size: 0.7rem;
       }
     }
+
+ /* Newsletter Section */
+.newsletter-text {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 0; /* remove extra spacing */
+}
+
+.newsletter-input {
+  flex: 1;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  outline: none;
+  transition: border 0.3s ease;
+}
+
+.newsletter-input:focus {
+  border-color: #007bff;
+}
+
+.newsletter-btn {
+  padding: 10px 18px;
+  background: #007bff;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.newsletter-btn:hover {
+  background: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Toast Message */
+.toast-msg {
+  visibility: hidden;
+  min-width: 220px;
+  background: #28a745;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  padding: 12px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  font-size: 0.9rem;
+  opacity: 0;
+  transition: opacity 0.5s ease, bottom 0.5s ease;
+}
+
+.toast-msg.show {
+  visibility: visible;
+  opacity: 1;
+  bottom: 50px;
+}
+
 
     /*Dark Mode*/
 
@@ -1087,7 +1152,358 @@
     .stat-number {
       color: maroon;
     }
+    /* Feedback & Reviews Section Styles */
+    .feedback-section {
+      background-color: #f9f9f9;
+      color: #333;
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
 
+    .feedback-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .feedback-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .feedback-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, #4caf50, #81c784);
+      border-radius: 2px;
+    }
+
+    .feedback-subtitle {
+      font-size: 1.1rem;
+      color: #555;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    .feedback-form-container {
+      background: #ffffff;
+      border: 2px solid rgba(76, 175, 80, 0.3);
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 8px 32px rgba(76, 175, 80, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .feedback-form-container::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      left: -2px;
+      right: -2px;
+      bottom: -2px;
+      background: linear-gradient(135deg, 
+        rgba(76, 175, 80, 0.4) 0%, 
+        rgba(129, 199, 132, 0.4) 50%, 
+        rgba(76, 175, 80, 0.4) 100%);
+      border-radius: 22px;
+      z-index: -1;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .feedback-form-container:hover::before {
+      opacity: 1;
+    }
+
+    .feedback-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-group {
+      position: relative;
+    }
+
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: #ffffff;
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      color: #333;
+      font-size: 1rem;
+      font-family: inherit;
+      transition: all 0.3s ease;
+      outline: none;
+    }
+
+    .form-input::placeholder,
+    .form-textarea::placeholder {
+      color: #6c757d;
+    }
+
+    .form-input:focus,
+    .form-textarea:focus {
+      border-color: #4caf50;
+      background: #ffffff;
+      box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.2);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+
+    .btn {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      outline: none;
+    }
+
+    .btn-submit {
+      background: linear-gradient(135deg, #2196f3, #1976d2);
+      color: #ffffff;
+      min-width: 120px;
+      justify-content: center;
+    }
+
+    .btn-submit:hover {
+      background: linear-gradient(135deg, #1976d2, #1565c0);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(33, 150, 243, 0.3);
+    }
+
+    .btn-cancel {
+      background: rgba(158, 158, 158, 0.8);
+      color: #ffffff;
+      min-width: 120px;
+      justify-content: center;
+    }
+
+    .btn-cancel:hover {
+      background: rgba(117, 117, 117, 0.9);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(158, 158, 158, 0.3);
+    }
+
+    .success-message {
+      text-align: center !important;
+      padding: 2rem !important;
+      background: #d4edda !important;
+      border: 2px solid #4caf50 !important;
+      border-radius: 20px !important;
+      color: #155724 !important;
+      margin-top: 1.5rem !important;
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3) !important;
+      width: 100% !important;
+      max-width: 600px !important;
+      z-index: 9999 !important;
+      position: relative !important;
+      display: none !important;
+      font-weight: 600 !important;
+    }
+
+    .success-message i {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #4caf50;
+    }
+
+    .success-message p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+    }
+
+    @keyframes fadeInScale {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .feedback-title {
+        font-size: 2rem;
+      }
+
+      .feedback-subtitle {
+        font-size: 1rem;
+      }
+
+      .feedback-form-container {
+        padding: 1.5rem;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .form-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .btn {
+        width: 100%;
+        max-width: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .feedback-form-container {
+        padding: 1rem;
+        margin: 0 1rem;
+      }
+
+      .form-input,
+      .form-textarea {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Dark Mode Feedback Section */
+    .dark-mode .feedback-section,
+    .dark .feedback-section {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+      color: #ffffff !important;
+    }
+
+    .dark-mode .feedback-title,
+    .dark .feedback-title {
+      color: #ffffff !important;
+    }
+
+    .dark-mode .feedback-subtitle,
+    .dark .feedback-subtitle {
+      color: #cccccc !important;
+    }
+
+    .dark-mode .feedback-form-container,
+    .dark .feedback-form-container {
+      background: rgba(255, 255, 255, 0.05) !important;
+      border: 2px solid rgba(76, 175, 80, 0.4) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .dark-mode .form-input,
+    .dark-mode .form-textarea,
+    .dark .form-input,
+    .dark .form-textarea {
+      background: rgba(255, 255, 255, 0.08) !important;
+      border: 1px solid rgba(255, 255, 255, 0.2) !important;
+      color: #ffffff !important;
+    }
+
+    .dark-mode .form-input::placeholder,
+    .dark-mode .form-textarea::placeholder,
+    .dark .form-input::placeholder,
+    .dark .form-textarea::placeholder {
+      color: rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .dark-mode .form-input:focus,
+    .dark-mode .form-textarea:focus,
+    .dark .form-input:focus,
+    .dark .form-textarea:focus {
+      background: rgba(255, 255, 255, 0.12) !important;
+      border-color: #4caf50 !important;
+    }
+
+    .dark-mode .success-message,
+    .dark .success-message {
+      background: rgba(76, 175, 80, 0.15) !important;
+      border: 2px solid rgba(76, 175, 80, 0.6) !important;
+      color: #81c784 !important;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3) !important;
+    }
+
+    /* Carousel Button Styling - Make them much smaller like original */
+    .redirect-btns {
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 8px !important;
+      margin: 1rem 0 !important;
+    }
+
+    .redirect-btns .btn {
+      padding: 8px 16px !important;
+      font-size: 14px !important;
+      font-weight: 500 !important;
+      border-radius: 6px !important;
+      margin: 0 !important;
+      min-width: auto !important;
+      text-decoration: none !important;
+      display: inline-block !important;
+      line-height: 1.3 !important;
+      border: none !important;
+    }
+
+    .redirect-btns .btn-primary {
+      background-color: #28a745 !important;
+      color: white !important;
+      border: none !important;
+    }
+
+    .redirect-btns .btn-custom-purple {
+      background-color: #6c5ce7 !important;
+      color: white !important;
+      border: none !important;
+    }
+
+    .redirect-btns .btn:hover {
+      transform: none !important;
+      box-shadow: none !important;
+    }
+    
     /*Dark Mode*/
   </style>
   <!-- END: Custom CSS changes -->
@@ -1123,6 +1539,9 @@
           <!-- Added new "Our Work" link to navigate to the new work section on same page -->
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="./work.html">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./src/faq.html">FAQ</a>
           </li>
 
           <li class="nav-item">
@@ -1611,50 +2030,37 @@
 
   </section>
   <!-- Our Work section ends here -->
-
-
-  <!-- Professional Footer -->
-  <footer class="professional-footer">
-    <div class="container">
-
-      <div class="row g-4 py-4">
-        <!-- Footer Columns -->
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-brand">
-            <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
-            <h4 class="brand-name">GrowCraft</h4>
-            <p class="brand-description">Empowering businesses with
-              innovative digital solutions and creative excellence.</p>
-            <div class="quick-stats">
-              <div class="stat-item">
-                <span class="stat-number">500+</span>
-                <span class="stat-label">Projects</span>
+ <!-- Feedback & Reviews section starts here -->
+  <section class="feedback-section py-5" id="feedback">
+    <div class="container d-flex flex-column align-items-center">
+      <div class="feedback-content">
+        <h2 class="feedback-title text-center mb-3">Feedback & Reviews</h2>
+        <p class="feedback-subtitle text-center mb-4">
+          We value your feedback! Share your experience and help us improve our services.
+        </p>
+        
+        <div class="feedback-form-container">
+          <form id="feedbackForm" class="feedback-form" onsubmit="return showSuccessMessage(event)">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="userName" name="userName" placeholder="Your Name *" required class="form-input">
               </div>
-              <div class="stat-item">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Clients</span>
+              <div class="form-group">
+                <input type="email" id="userEmail" name="userEmail" placeholder="Your Email *" required class="form-input">
               </div>
-              <div class="stat-item">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Years</span>
-              </div>
-
             </div>
-          </div>
-        </div>
-
-
-        <!-- Services Links -->
-        <div class="col-lg-2 col-md-3 col-6">
-          <h5 class="footer-title">Services</h5>
-          <ul class="footer-links">
-            <li><a href="learn/webdev.html">Web Development</a></li>
-            <li><a href="learn/graphic.html">Graphic Design</a></li>
-            <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
-            <li><a href="learn/contentwriting.html">Content Writing</a></li>
-            <li><a href="learn/socialmedia.html">Social Media</a></li>
-            <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
-          </ul>
+            <div class="form-group full-width">
+              <textarea id="userFeedback" name="userFeedback" placeholder="Share your thoughts, suggestions, or experience with us..." rows="4" required class="form-textarea"></textarea>
+            </div>
+            <div class="form-buttons">
+              <button type="submit" class="btn btn-submit" onclick="showSuccessMessage(event)">
+                <i class="fas fa-paper-plane"></i> Submit
+              </button>
+              <button type="button" class="btn btn-cancel" onclick="clearForm()">
+                <i class="fas fa-times"></i> Cancel
+              </button>
+            </div>
+          </form>
         </div>
 
         <!-- Quick Links -->
@@ -1666,49 +2072,73 @@
             <li><a href="src/contact.html">Contact</a></li>
             <li><a href="careers.html">Careers</a></li>
             <li><a href="blogListing.html">Blog</a></li>
-          </ul>
+        
+        <!-- Success Message BELOW Form Container -->
+        <div id="successMessage" style="display: none; text-align: center; padding: 20px; margin-top: 20px; background: #d4edda; border: 2px solid #4caf50; border-radius: 10px; color: #155724; font-weight: bold; max-width: 600px;">
+          <i class="fas fa-check-circle" style="color: #4caf50; font-size: 24px; margin-bottom: 10px;"></i>
+          <p style="margin: 0; font-size: 16px;">Thank you for your feedback! Submitted successfully.</p>
         </div>
+      </div>
+    </div>
+  </section>
+  <!-- Feedback & Reviews section ends here -->
+   
+ <!-- Professional Footer -->
+<footer class="professional-footer">
+  <div class="container">
 
-        <!-- Contact -->
-        <div class="col-lg-4 col-md-6">
-          <h5 class="footer-title">Get In Touch</h5>
-          <div class="contact-info mb-3">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+    <div class="row g-4 py-4">
+      <!-- Footer Columns -->
+      <div class="col-lg-4 col-md-6">
+        <div class="footer-brand">
+          <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
+          <h4 class="brand-name">GrowCraft</h4>
+          <p class="brand-description">Empowering businesses with
+            innovative digital solutions and creative excellence.</p>
+          <div class="quick-stats">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Projects</span>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+919999999999">+91 999 999 999</a>
+            <div class="stat-item">
+              <span class="stat-number">150+</span>
+              <span class="stat-label">Clients</span>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>ABC Street, XYZ City, India</span>
-            </div>
-          </div>
-          <div class="social-section">
-            <h6 class="social-title">Follow Us</h6>
-            <div class="social-links">
-              <a target="_blank" href="https://facebook.com" class="social-link" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a target="_blank" href="https://instagram.com" class="social-link" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a target="_blank" href="https://linkedin.com" class="social-link" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a target="_blank" href="https://github.com" class="social-link" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-              <a target="_blank" href="https://twitter.com" class="social-link" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Years</span>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- Services Links -->
+      <div class="col-lg-2 col-md-3 col-6">
+        <h5 class="footer-title">Services</h5>
+        <ul class="footer-links">
+          <li><a href="learn/webdev.html">Web Development</a></li>
+          <li><a href="learn/graphic.html">Graphic Design</a></li>
+          <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
+          <li><a href="learn/contentwriting.html">Content Writing</a></li>
+          <li><a href="learn/socialmedia.html">Social Media</a></li>
+          <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter (Right Side) -->
+      <div class="col-lg-4 col-md-6 d-flex flex-column justify-content-between">
+        <div>
+          <h5 class="footer-title">Newsletter</h5>
+          <p class="newsletter-text">Subscribe to our newsletter for the latest updates.</p>
+          <form class="newsletter-form" onsubmit="showToast(event)">
+            <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Enter your email" required>
+            <button type="submit" class="newsletter-btn">Subscribe</button>
+          </form>
+        </div>
+        <!-- Toast -->
+        <div id="newsletterToast" class="toast-msg">✅ Subscribed Successfully!</div>
+      </div>
+
       <!-- End Footer Main Container -->
       <!-- End Footer -->
 
@@ -1723,17 +2153,39 @@
             </div>
             <div class="col-md-6">
               <div class="footer-nav">
-                <a href="#privacy">Privacy</a>
-                <a href="#terms">Terms</a>
-                <a href="#sitemap">Sitemap</a>
+                <a href="./privacy.html">Privacy</a>
+                <a href="./terms.html">Terms</a>
+                <a href="./sitemap.html">Sitemap</a>
               </div>
+
             </div>
           </div>
         </div>
       </div>
     </div>
-  </footer>
-  <!-- Professional Footer ends -->
+  </div>
+</footer>
+<!-- Professional Footer ends -->
+
+<script>
+  function showToast(event) {
+    event.preventDefault();
+    const emailInput = document.getElementById("newsletterEmail");
+    if (!emailInput.value) return; // just in case
+
+    const toast = document.getElementById("newsletterToast");
+    toast.classList.add("show");
+
+    // clear the email field
+    emailInput.value = "";
+
+    setTimeout(() => {
+      toast.classList.remove("show");
+    }, 3000);
+  }
+</script>
+
+
 
   <!-- Enhanced Scroll to Top Button -->
   <button id="backToTop" title="Go to top" type="button">
@@ -1784,6 +2236,49 @@
           interval: 4000,  // auto-slide time
           wrap: true       // enables infinite loop
     });
+    // SIMPLE FEEDBACK FUNCTIONS - FORM STAYS VISIBLE
+    function showSuccessMessage(event) {
+      event.preventDefault();
+      
+      // Get form values
+      var name = document.getElementById('userName').value;
+      var email = document.getElementById('userEmail').value;
+      var feedback = document.getElementById('userFeedback').value;
+      
+      // Check if all fields are filled
+      if (name && email && feedback) {
+        // Save to localStorage
+        var data = {
+          name: name,
+          email: email,
+          feedback: feedback,
+          timestamp: new Date().toISOString()
+        };
+        
+        var feedbacks = JSON.parse(localStorage.getItem('growcraft_feedbacks') || '[]');
+        feedbacks.push(data);
+        localStorage.setItem('growcraft_feedbacks', JSON.stringify(feedbacks));
+        
+        // KEEP FORM VISIBLE - Just show success message below
+        document.getElementById('successMessage').style.display = 'block';
+        
+        // Reset form fields and hide success message after 4 seconds
+        setTimeout(function() {
+          document.getElementById('successMessage').style.display = 'none';
+          document.getElementById('feedbackForm').reset();
+        }, 4000);
+        
+      } else {
+        alert('Please fill all required fields!');
+      }
+      
+      return false;
+    }
+    
+    function clearForm() {
+      document.getElementById('feedbackForm').reset();
+      document.getElementById('successMessage').style.display = 'none';
+    }
 
   </script>
   <script>

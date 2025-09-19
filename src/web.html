@@ -38,12 +38,95 @@
 
     <style>
 
+      /* Modern Website Development Heading Styles */
+.webdev-modern-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 0 2rem 0;
+  border-radius: 24px;
+  margin: 2rem auto 1.5rem auto;
+  max-width: 900px;
+  box-shadow: 0 8px 32px 0 rgba(59, 130, 246, 0.06);
+  position: relative;
+  overflow: hidden;
+  animation: fadeInDown 1s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: -1rem;
+}
+
+.modern-heading-content {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  width: 100%;
+  justify-content: center;
+  margin-top: -2rem;
+}
+
+.modern-heading-gif {
+  width: 90px;
+  height: 90px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(59, 130, 246, 0.12);
+  background: #fff;
+  object-fit: cover;
+  margin-right: 1rem;
+  animation: floatY 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes floatY {
+  0% { transform: translateY(0);}
+  100% { transform: translateY(-12px);}
+}
+
+.modern-title {
+  font-size: 2.7rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #2563eb, #3b82f6 80%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -1px;
+}
+
+.modern-subtitle {
+  font-size: 1.2rem;
+  color: #374151;
+  margin: 0;
+  font-weight: 500;
+  opacity: 0.88;
+}
+
+@media (max-width: 600px) {
+  .webdev-modern-heading {
+    padding: 2rem 0.5rem 1.2rem 0.5rem;
+    border-radius: 14px;
+  }
+  .modern-heading-content {
+    flex-direction: column;
+    gap: 1.2rem;
+    text-align: center;
+  }
+  .modern-heading-gif {
+    margin: 0 auto 0.5rem auto;
+    width: 70px;
+    height: 70px;
+  }
+  .modern-title {
+    font-size: 2rem;
+  }
+}
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-40px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+
       .light-mode.webdev-hero {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 5rem 2rem;
-        background: linear-gradient(135deg, #f9f9f9, #e6f0ff);
         color: #111827;
         gap: 2rem;
         flex-wrap: wrap;
@@ -1379,7 +1462,24 @@
       </div>
     </nav>
     <!-- Navbar ends here -->
-    <h1 class="webdev-heading heading-title">Website Development</h1>
+    <!-- <h1 class="webdev-heading heading-title">Website Development</h1> -->
+
+<section class="webdev-modern-heading">
+  <div class="modern-heading-content">
+    <img
+      src="https://www.wishgeekstechserve.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fwebgif.189b9f2f.gif&w=3840&q=75"
+      alt="Animated Web Development"
+      class="modern-heading-gif"
+      loading="lazy"
+    />
+    <div>
+      <h1 class="modern-title">Website Development</h1>
+      <p class="modern-subtitle">
+        Modern, scalable, and beautiful websites built for your business growth.
+      </p>
+    </div>
+  </div>
+</section>
 
     <section class="webdev-hero light-mode">
       <div class="hero-text fade-in">
