@@ -237,8 +237,10 @@ h5 {
 .bg-body-tertiary {
   background-color: transparent !important;
 }
-.icon {
-  height: 6.5rem;
+.icon {  
+  font-size: 2rem;
+  border-radius: 20px;
+  margin-right: 1rem;
 }
 
 .training-links {
@@ -1116,7 +1118,7 @@ body.dark .mb-4:hover {
 }
 
 .about-title {
-  border-bottom: 3px solid #2a63f4;
+  border-bottom: 3px solid #409B44;
   display: inline-block;
 }
 
