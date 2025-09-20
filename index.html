@@ -304,7 +304,7 @@
     }
 
     .about-card h4 {
-      color: #463896;
+      color: #28a745;
       font-weight: 600;
     }
 
@@ -1503,8 +1503,66 @@
       transform: none !important;
       box-shadow: none !important;
     }
-    
-    /*Dark Mode*/
+
+   .arrow-slide-btn {
+     width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #fff;
+    color: #3498db;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 40%; /* Changed from 50% to position it higher */
+    transform: translateY(-50%);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+  .arrow-slide-btn:hover {
+    transform: translateY(-50%) translateX(5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    background: #fff;
+}
+
+  .arrow-slide-btn:active {
+    transform: translateY(-50%);
+  }
+
+  .arrow-icon {
+    font-size: 24px;
+    transition: all 0.3s ease;
+    color: #3498db;
+  }
+
+  .arrow-slide-btn:hover .arrow-icon {
+    transform: translateX(3px);
+    color: #8e44ad;
+  }
+
+  /* Optional pulse animation */
+  @keyframes pulse {
+    0% { transform: translateY(-50%) scale(1); }
+    50% { transform: translateY(-50%) scale(1.05); }
+    100% { transform: translateY(-50%) scale(1); }
+  }
+
+  .arrow-slide-btn {
+    animation: pulse 2s infinite;
+  }
+
+  /* Make sure the container has relative positioning */
+  .container {
+    position: relative;
+    padding-right: 90px; /* Add space for the button */
+  }
+
   </style>
   <!-- END: Custom CSS changes -->
 </head>
@@ -1663,7 +1721,7 @@
           <div class="carousel-caption d-block">
             <h2>Website Development</h2>
             <div class="redirect-btns m-4">
-              <a href="#learn" class="btn btn-primary m-1 fade-in">Learn more</a>
+              <a href="src/web.html" class="btn btn-primary m-1 fade-in">Learn More</a>
               <a href="learn/webdev.html" class="btn btn-custom-purple m-1 fade-in">Portfolio</a>
             </div>
           </div>
@@ -1679,7 +1737,7 @@
           <div class="carousel-caption d-block">
             <h2>Graphic Design</h2>
             <div class="redirect-btns m-4">
-              <a href="#learn" class="btn btn-primary m-1 fade-in">Learn more</a>
+              <a href="src/graphic_design.html" class="btn btn-primary m-1 fade-in">Learn More</a>
               <a href="learn/graphic.html" class="btn btn-custom-purple m-1 fade-in">Portfolio</a>
             </div>
           </div>
@@ -1695,7 +1753,7 @@
           <div class="carousel-caption d-block">
             <h2>Digital Marketing</h2>
             <div class="redirect-btns m-4">
-              <a href="src/digital-marketing.html" class="btn btn-primary m-1 fade-in">Learn more</a>
+              <a href="src/digital-marketing.html" class="btn btn-primary m-1 fade-in">Learn More</a>
               <a href="learn/marketing.html" class="btn btn-custom-purple m-1 fade-in">Portfolio</a>
             </div>
           </div>
@@ -1711,7 +1769,7 @@
           <div class="carousel-caption d-block">
             <h2>Social Media Management</h2>
             <div class="redirect-btns m-4">
-              <a href="#learn" class="btn btn-primary m-1 fade-in">Learn more</a>
+              <a href="src/social-media.html" class="btn btn-primary m-1 fade-in">Learn More</a>
               <a href="learn/socialmedia.html" class="btn btn-custom-purple m-1 fade-in">Portfolio</a>
             </div>
           </div>
@@ -1727,7 +1785,7 @@
           <div class="carousel-caption d-block">
             <h2>Content Writing</h2>
             <div class="redirect-btns m-4">
-              <a href="#learn" class="btn btn-primary m-1 fade-in">Learn more</a>
+              <a href="src/content-writing.html" class="btn btn-primary m-1 fade-in">Learn More</a>
               <a href="learn/contentwriting.html" class="btn btn-custom-purple m-1 fade-in">Portfolio</a>
             </div>
           </div>
@@ -1742,11 +1800,17 @@
           <div class="carousel-caption d-block">
             <h2>Cyber Analyst</h2>
             <div class="redirect-btns m-4">
-              <a href="#learn" class="btn btn-primary m-1 fade-in">Learn more</a>
+              <a href="src/cyber-analyst.html" class="btn btn-primary m-1 fade-in">Learn More</a>
               <a href="learn/cyberanalyst.html" class="btn btn-custom-purple m-1 fade-in">Portfolio</a>
             </div>
           </div>
         </div>
+        <button class="arrow-slide-btn" id="customNextButton">
+        <span class="arrow-icon">
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      </button>
+
       </div>
 
     </div>
@@ -2289,7 +2353,20 @@
     yearSpan.textContent = new Date().getFullYear();
   });
   </script>
-
+  <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Get the custom button and Bootstrap carousel
+  const customNextButton = document.getElementById('customNextButton');
+  const carousel = new bootstrap.Carousel(document.getElementById('carouselExampleDark'));
+  
+  // Add click event to custom button
+  if (customNextButton) {
+    customNextButton.addEventListener('click', function() {
+      carousel.next(); // Go to next slide
+    });
+  }
+});
+</script>
 </body>
 
 </html>
