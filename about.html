@@ -103,288 +103,204 @@
       width: 100%;
     }
 
-    /* Professional Footer */
-    .professional-footer {
-      background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
-      color: #ffffff;
-      margin-top: 60px;
-      position: relative;
-      border-top: 3px solid transparent;
-      border-image: linear-gradient(90deg, #667eea, #764ba2, #667eea) 1;
-    }
+     /* Professional Footer */
+  .professional-footer {
+    background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+    color: #ffffff;
+    margin-top: 60px;
+    padding-top: 50px;
+    border-top: 3px solid transparent;
+    border-image: linear-gradient(90deg, #667eea, #764ba2, #667eea) 1;
+  }
 
-    /* Brand Section */
-    .footer-brand {
-      text-align: left;
-    }
+  .professional-footer .container {
+    max-width: 1200px;
+    margin: auto;
+  }
 
-    .footer-logo {
-      max-width: 120px;
-      height: auto;
-      filter: brightness(1.1);
-    }
+  /* Brand Section */
+  .footer-logo {
+    max-width: 120px;
+    margin-bottom: 15px;
+  }
 
-    .brand-name {
-      color: #667eea;
-      font-weight: 700;
-      font-size: 1.5rem;
-      margin: 15px 0 10px 0;
-    }
+  .brand-name {
+    color: #667eea;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+  }
 
-    .brand-description {
-      color: #b8b9c7;
-      line-height: 1.6;
-      margin-bottom: 20px;
-      font-size: 0.9rem;
-    }
+  .brand-description {
+    color: #b8b9c7;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+  }
 
-    /* Quick Stats */
+  /* Quick Stats */
+  .quick-stats {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+  }
+
+  .stat-item {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+  }
+
+  .stat-item:hover {
+    background: rgba(102, 126, 234, 0.1);
+    transform: translateY(-3px);
+    border-color: #667eea;
+  }
+
+  .stat-number {
+    display: block;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #667eea;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+  }
+
+  /* Footer Titles */
+  .footer-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+  }
+
+  .footer-title:hover {
+    color: #667eea;
+  }
+
+  /* Footer Links */
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 8px;
+  }
+
+  .footer-links a {
+    color: #b8b9c7;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #667eea;
+    padding-left: 5px;
+  }
+
+  /* Contact Info */
+  .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    color: #b8b9c7;
+    transition: all 0.3s ease;
+  }
+
+  .contact-item:hover {
+    color: #667eea;
+  }
+
+  .contact-item i {
+    color: #667eea;
+  }
+
+  /* Social Links */
+  .social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.08);
+    color: #b8b9c7;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .social-link:hover {
+    background: #667eea;
+    color: #ffffff;
+    transform: translateY(-3px);
+    border-color: #667eea;
+  }
+
+  /* Footer Bottom */
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 0px;
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .copyright {
+    color: #9ca3af;
+    font-size: 0.85rem;
+  }
+
+  .copyright strong {
+    color: #667eea;
+  }
+
+  .footer-nav {
+    margin-top: 8px;
+  }
+
+  .footer-nav a {
+    color: #9ca3af;
+    text-decoration: none;
+    font-size: 0.85rem;
+    margin: 0 10px;
+    transition: all 0.3s ease;
+  }
+
+  .footer-nav a:hover {
+    color: #ffffff;
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
     .quick-stats {
-      display: flex;
-      gap: 20px;
-      margin-top: 15px;
+      flex-direction: column;
     }
-
     .stat-item {
-      text-align: center;
+      width: 100%;
     }
-
-    .stat-number {
-      display: block;
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #667eea;
-      margin-bottom: 2px;
-    }
-
-    .stat-label {
-      font-size: 0.75rem;
-      color: #9ca3af;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    /* Footer Titles */
-    .footer-title {
-      color: #ffffff;
-      font-weight: 600;
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-      position: relative;
-      padding-bottom: 8px;
-    }
-
-    .footer-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 30px;
-      height: 2px;
-      background: linear-gradient(90deg, #667eea, #764ba2);
-      border-radius: 2px;
-    }
-
-    /* Footer Links */
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .footer-links li {
-      margin-bottom: 8px;
-    }
-
-    .footer-links a {
-      color: #b8b9c7;
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: all 0.3s ease;
-      position: relative;
-      padding: 4px 0;
-      display: inline-block;
-    }
-
-    .footer-links a:hover {
-      color: #667eea;
-      padding-left: 8px;
-    }
-
-    .footer-links a::before {
-      content: '';
-      position: absolute;
-      left: -8px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 0;
-      height: 2px;
-      background: #667eea;
-      transition: width 0.3s ease;
-    }
-
-    .footer-links a:hover::before {
-      width: 4px;
-    }
-
-    /* Contact Info */
-    .contact-info {
-      margin-bottom: 15px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-      font-size: 0.9rem;
-    }
-
-    .contact-item i {
-      color: #667eea;
-      width: 16px;
-      font-size: 0.9rem;
-    }
-
-    .contact-item a {
-      color: #b8b9c7;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-
-    .contact-item a:hover {
-      color: #667eea;
-    }
-
-    .contact-item span {
-      color: #b8b9c7;
-    }
-
-    /* Social Section */
-    .social-title {
-      color: #ffffff;
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
     .social-links {
-      display: flex;
-      gap: 8px;
-    }
-
-    .social-link {
-      display: flex;
-      align-items: center;
       justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #b8b9c7;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
     }
-
-    .social-link:hover {
-      background: #667eea;
-      color: #ffffff;
-      transform: translateY(-2px);
-      border-color: #667eea;
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-    }
-
-    .social-link i {
-      font-size: 0.9rem;
-    }
-
-    /* Footer Bottom */
-    .footer-bottom {
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      background: rgba(0, 0, 0, 0.2);
-      margin-top: 30px;
-    }
-
-    .copyright {
-      color: #9ca3af;
-      font-size: 0.85rem;
-      margin: 0;
-    }
-
-    .copyright strong {
-      color: #667eea;
-    }
-
-    .footer-nav {
-      display: flex;
-      gap: 20px;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    .footer-nav a {
-      color: #9ca3af;
-      text-decoration: none;
-      font-size: 0.85rem;
-      padding: 6px 12px;
-      border-radius: 15px;
-      transition: all 0.3s ease;
-    }
-
-    .footer-nav a:hover {
-      color: #ffffff;
-      background: rgba(102, 126, 234, 0.2);
-      border: 1px solid rgba(102, 126, 234, 0.3);
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .professional-footer {
-        margin-top: 40px;
-      }
-
-      .quick-stats {
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .footer-brand,
-      .footer-links,
-      .contact-info,
-      .social-section {
-        text-align: center;
-      }
-
-      .footer-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .footer-nav {
-        justify-content: center;
-        margin-top: 15px;
-        gap: 15px;
-        flex-wrap: wrap;
-      }
-
-      .footer-nav a {
-        font-size: 0.8rem;
-        padding: 4px 8px;
-      }
-
-      .social-links {
-        justify-content: center;
-      }
-
-      .footer-bottom .row {
-        text-align: center;
-      }
-
-      .footer-bottom .col-md-6:first-child {
-        margin-bottom: 10px;
-      }
-    }
+  }
 
     @media (max-width: 576px) {
       .quick-stats {
@@ -867,47 +783,49 @@
   </section>
 
   <!-- Professional Footer -->
-  <footer class="professional-footer">
-    <div class="container">
-      <div class="row g-4 py-4">
-        <!-- Footer Columns -->
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-brand">
-            <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
-            <h4 class="brand-name">GrowCraft</h4>
-            <p class="brand-description">Empowering businesses with
-              innovative digital solutions and creative excellence.</p>
-            <div class="quick-stats">
-              <div class="stat-item">
-                <span class="stat-number">500+</span>
-                <span class="stat-label">Projects</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Clients</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Years</span>
-              </div>
+<footer class="professional-footer">
+  <div class="container">
+    <div class="row g-4 py-5 align-items-start">
+      
+      <!-- Brand Section -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="footer-brand">
+          <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
+          <h4 class="brand-name">GrowCraft</h4>
+          <p class="brand-description">
+            Empowering businesses with innovative digital solutions and creative excellence.
+          </p>
+          <div class="quick-stats d-flex gap-4">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">150+</span>
+              <span class="stat-label">Clients</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Years</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Services Links -->
-        <div class="col-lg-2 col-md-3 col-6">
-          <h5 class="footer-title">Services</h5>
-          <ul class="footer-links">
-            <li><a href="learn/webdev.html">Web Development</a></li>
-            <li><a href="learn/graphic.html">Graphic Design</a></li>
-            <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
-            <li><a href="learn/contentwriting.html">Content Writing</a></li>
-            <li><a href="learn/socialmedia.html">Social Media</a></li>
-            <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
-          </ul>
-        </div>
+      <!-- Services -->
+      <div class="col-lg-2 col-md-6 mb-4" style="margin-left: 90px;">
+        <h5 class="footer-title">Services</h5>
+        <ul class="footer-links">
+          <li><a href="learn/webdev.html">Web Development</a></li>
+          <li><a href="learn/graphic.html">Graphic Design</a></li>
+          <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
+          <li><a href="learn/contentwriting.html">Content Writing</a></li>
+          <li><a href="learn/socialmedia.html">Social Media</a></li>
+          <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+        </ul>
+      </div>
 
-        <!-- Quick Links -->
+     <!-- Quick Links -->
         <div class="col-lg-2 col-md-3 col-6">
           <h5 class="footer-title">Quick Links</h5>
           <ul class="footer-links">
@@ -918,70 +836,43 @@
             <li><a href="blogListing.html">Blog</a></li>
           </ul>
         </div>
-
-        <!-- Contact -->
-        <div class="col-lg-4 col-md-6">
-          <h5 class="footer-title">Get In Touch</h5>
-          <div class="contact-info mb-3">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+919999999999">+91 999 999 999</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>ABC Street, XYZ City, India</span>
-            </div>
-          </div>
-          <div class="social-section">
-            <h6 class="social-title">Follow Us</h6>
-            <div class="social-links">
-              <a target="_blank" href="https://facebook.com" class="social-link" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a target="_blank" href="https://instagram.com" class="social-link" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a target="_blank" href="https://linkedin.com" class="social-link" aria-label="LinkedIn">
-                <i class="fab fa-linkedin-in"></i>
-              </a>
-              <a target="_blank" href="https://github.com" class="social-link" aria-label="GitHub">
-                <i class="fab fa-github"></i>
-              </a>
-              <a target="_blank" href="https://twitter.com" class="social-link" aria-label="Twitter">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </div>
-          </div>
+      <!-- Contact -->
+      <div class="col-lg-3 col-md-6 mb-4">
+        <h5 class="footer-title">Get In Touch</h5>
+        <div class="contact-info">
+          <div class="contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@growcraft.com">info@growcraft.com</a></div>
+          <div class="contact-item"><i class="fas fa-phone"></i><a href="tel:+919999999999">+91 999 999 999</a></div>
+          <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>ABC Street, XYZ City, India</span></div>
         </div>
-      </div>
-      <!-- End Footer Main Container -->
-
-      <!-- Footer Bottom -->
-      <div class="footer-bottom">
-        <div class="container">
-          <div class="row align-items-center py-3">
-            <div class="col-md-6">
-              <p class="copyright mb-0">© <span id="currentYear"></span>
-                <strong>GrowCraft</strong>. All rights reserved.
-              </p>
-            </div>
-            <div class="col-md-6">
-              <div class="footer-nav">
-                <a href="#privacy">Privacy</a>
-                <a href="#terms">Terms</a>
-                <a href="#sitemap">Sitemap</a>
-              </div>
-            </div>
-          </div>
+        <div class="social-links ">
+          <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f social-link"></i></a>
+          <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram social-link"></i></a>
+          <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in social-link"></i></a>
+          <a href="https://github.com" target="_blank"><i class="fab fa-github social-link" social-link></i></a>
+          <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter social-link"></i></a>
         </div>
       </div>
     </div>
-  </footer>
-  <!-- Professional Footer ends -->
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom text-center py-3 mt-3">
+      <p class="copyright mb-1" style="text-align: center;">
+        © <span id="currentYear"></span> <strong>GrowCraft</strong> All rights reserved.
+      </p>
+      <div class="footer-nav">
+        <a href="#privacy">Privacy</a>
+        <a href="#terms">Terms</a>
+        <a href="#sitemap">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Professional Footer Ends -->
+
+
+<script>
+  document.getElementById("currentYear").textContent = new Date().getFullYear();
+</script>
 
   <!-- Enhanced Scroll to Top Button -->
   <button id="backToTop" title="Go to top" type="button">
@@ -1142,3 +1033,4 @@
 
 </body>
 </html>
+   

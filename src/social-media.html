@@ -1321,6 +1321,161 @@ label {
         font-size: 0.9rem;
     }
 }
+/* Our Approach Section */
+#approach {
+  text-align: center;
+  padding: 60px 0;
+}
+
+#approach .head2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+#approach .muted {
+  color: #6b7280; /* Tailwind gray-500 equivalent */
+  font-size: 1rem;
+}
+
+#approach .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 32px;
+}
+
+/* Card Styling */
+#approach .card {
+  
+  transition: all 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+/* Number style */
+#approach .card h3 {
+    
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1f2937; /* dark gray */
+  margin-bottom: 12px;
+}
+
+/* Description */
+#approach .card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #4b5563; /* gray-600 */
+}
+
+/* Hover Effects */
+#approach .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+}
+
+#approach .card:hover h3 {
+  color: #2563eb; /* blue-600 */
+}
+
+#approach .card:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #2563eb, #9333ea);
+  border-radius: 0 0 12px 12px;
+}
+/* ========================= */
+/*   Responsive Media Queries  */
+/* ========================= */
+
+/* Tablet View */
+@media (max-width: 992px) {
+  #approach {
+    padding: 50px 20px;
+  }
+
+  #approach .head2 {
+    font-size: 2rem;
+  }
+
+  #approach .muted {
+    font-size: 0.95rem;
+  }
+
+  #approach .card h3 {
+    font-size: 1.15rem;
+  }
+
+  #approach .card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  #approach {
+    padding: 40px 16px;
+  }
+
+  #approach .head2 {
+    font-size: 1.8rem;
+  }
+
+  #approach .muted {
+    font-size: 0.9rem;
+  }
+
+  #approach .grid {
+    grid-template-columns: 1fr 1fr; /* two cards per row */
+    gap: 20px;
+  }
+
+  #approach .card {
+    padding: 18px 14px;
+  }
+
+  #approach .card h3 {
+    font-size: 1.1rem;
+  }
+
+  #approach .card p {
+    font-size: 0.9rem;
+  }
+}
+
+/* Small Mobile View */
+@media (max-width: 480px) {
+  #approach .head2 {
+    font-size: 1.6rem;
+  }
+
+  #approach .muted {
+    font-size: 0.85rem;
+  }
+
+  #approach .grid {
+    grid-template-columns: 1fr; /* single card per row */
+    gap: 16px;
+  }
+
+  #approach .card {
+    padding: 16px 12px;
+  }
+
+  #approach .card h3 {
+    font-size: 1rem;
+  }
+
+  #approach .card p {
+    font-size: 0.85rem;
+  }
+}
+
 </style>
 
 <body>
@@ -1519,16 +1674,22 @@ label {
                     <p class="muted">Monthly content calendar, copywriting, design, and short-form video production
                         optimized per platform.</p>
                 </div>
-            </div>
-            <div class="timeline" style="margin-top:16px">
-                <div class="step"><strong>4) Scheduling & Publishing</strong><br><span class="muted">Best-time
-                        scheduling, geo/interest targeting where applicable, and first-hour engagement boost.</span>
+
+                 <div class="card">
+                    <h3>4) Scheduling & Publishing</h3>
+                    <p class="muted"> Best-time scheduling, geo/interest targeting where applicable, and first-hour engagement boost.</p>
                 </div>
-                <div class="step"><strong>5) Community & Engagement</strong><br><span class="muted">Reply to
-                        comments/DMs, manage mentions and reviews, escalate leads to sales inbox.</span></div>
-                <div class="step"><strong>6) Optimize & Report</strong><br><span class="muted">A/B test creatives,
-                        iterate hooks, and deliver monthly KPI reports with clear next steps.</span></div>
-            </div>
+                <div class="card">
+                    <h3>5) Community & Engagementy</h3>
+                    <p class="muted">Reply to
+                        comments/DMs, manage mentions and reviews, escalate leads to sales inbox.</p>
+                </div>
+                <div class="card">
+                    <h3>6) Optimize & Report</h3>
+                    <p class="muted">A/B test creatives,
+                        iterate hooks, and deliver monthly KPI reports with clear next steps.</p>
+                </div>
+
         </div>
     </section>
 
