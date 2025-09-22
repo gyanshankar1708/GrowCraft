@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers - Join Our Team at GrowCraft</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="src/style.css" />
+
+  <style>
+    /* Modern CSS Variables */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.12);
+      --text-primary: #2d3748;
+      --text-secondary: #4a5568;
+      --border-radius: 20px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark mode variables */
+    [data-bs-theme="dark"] {
+      --primary-gradient: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
+      --secondary-gradient: linear-gradient(135deg, #d946ef 0%, #f43f5e 100%);
+      --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+      --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.4);
+      --text-primary: #f7fafc;
+      --text-secondary: #e2e8f0;
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: var(--transition);
+    }
+
+    [data-bs-theme="dark"] body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    /* Enhanced Navbar Design */
+    .navbar {
+      padding: 1rem 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+      border-bottom: 3px solid #388e3c;
+      box-shadow: 0 8px 32px rgba(56, 142, 60, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand img {
+      max-height: 55px;
+      object-fit: contain;
+      vertical-align: middle;
+      filter: drop-shadow(2px 2px 4px rgba(56, 142, 60, 0.2));
+      transition: filter 0.3s ease;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      font-weight: 600;
+      color: #2e7d32 !important;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.75rem;
+      padding: 0.75rem 1.25rem !important;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      background: transparent;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+      box-shadow: 0 4px 15px rgba(56, 142, 60, 0.25);
+    }
+
+    /* Careers Hero Section */
+    .careers-hero {
+      background: var(--primary-gradient);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .careers-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Careers Content */
+    .careers-content {
+      padding: 80px 0;
+      background: var(--bg-primary, #ffffff);
+    }
+
+    .careers-card {
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      padding: 3rem;
+      margin-bottom: 2rem;
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    [data-bs-theme="dark"] .careers-card {
+      background: #1e293b;
+      border-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+    }
+
+    .careers-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .section-title {
+      color: #388e3c;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    [data-bs-theme="dark"] .section-title {
+      color: #4ade80;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary-gradient);
+      border-radius: 2px;
+    }
+
+    .section-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    [data-bs-theme="dark"] .section-text {
+      color: var(--text-secondary);
+    }
+
+    /* Job Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .benefit-item {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 2rem;
+      border-radius: 15px;
+      text-align: center;
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    [data-bs-theme="dark"] .benefit-item {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .benefit-item:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow);
+    }
+
+    .benefit-icon {
+      font-size: 3rem;
+      color: #388e3c;
+      margin-bottom: 1rem;
+    }
+
+    [data-bs-theme="dark"] .benefit-icon {
+      color: #4ade80;
+    }
+
+    .benefit-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-description {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    /* Values Section */
+    .values-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 3rem 0;
+      border-radius: var(--border-radius);
+      margin: 2rem 0;
+    }
+
+    [data-bs-theme="dark"] .values-section {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .value-item {
+      text-align: center;
+      padding: 1.5rem;
+    }
+
+    .value-emoji {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .value-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.5rem;
+    }
+
+    .value-description {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 3rem 0;
+      text-align: center;
+      border-radius: var(--border-radius);
+      margin-top: 2rem;
+    }
+
+    [data-bs-theme="dark"] .contact-section {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .btn-primary-custom {
+      background: var(--success-gradient);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: var(--transition);
+    }
+
+    .btn-primary-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(17, 153, 142, 0.3);
+      color: white;
+    }
+
+    /* Current Opening Card */
+    .opening-card {
+      background: linear-gradient(135deg, #fef9e7 0%, #fef3c7 100%);
+      border: 2px solid #f59e0b;
+      border-radius: 15px;
+      padding: 2rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    [data-bs-theme="dark"] .opening-card {
+      background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+      border-color: #f59e0b;
+    }
+
+    .opening-title {
+      color: #f59e0b;
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .opening-message {
+      color: var(--text-secondary);
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Professional Footer Styles */
+    .professional-footer {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+      color: #333 !important;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    [data-bs-theme="dark"] .professional-footer {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+      color: #a8b2d1 !important;
+    }
+
+    .footer-brand {
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-logo {
+      max-height: 50px;
+      margin-bottom: 1rem;
+    }
+
+    .brand-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #388e3c;
+      margin-bottom: 0.5rem;
+    }
+
+    [data-bs-theme="dark"] .brand-name {
+      color: #4ade80;
+    }
+
+    .brand-description {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .footer-title {
+      color: #333;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      position: relative;
+      padding-bottom: 8px;
+      font-weight: 600;
+    }
+
+    [data-bs-theme="dark"] .footer-title {
+      color: #a8b2d1;
+    }
+
+    .footer-title::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #333;
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      position: relative;
+      padding: 4px 0;
+      display: inline-block;
+    }
+
+    [data-bs-theme="dark"] .footer-links a {
+      color: #a8b2d1;
+    }
+
+    .footer-links a:hover {
+      color: #007bff;
+      padding-left: 8px;
+    }
+
+    .contact-info {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 0.75rem;
+      color: #333;
+    }
+
+    [data-bs-theme="dark"] .contact-item {
+      color: #a8b2d1;
+    }
+
+    .contact-item i {
+      width: 20px;
+      margin-right: 10px;
+      color: #388e3c;
+    }
+
+    [data-bs-theme="dark"] .contact-item i {
+      color: #4ade80;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item a:hover {
+      color: #007bff;
+    }
+
+    .footer-bottom {
+      background: rgba(0, 0, 0, 0.05);
+      padding: 20px 0;
+      margin-top: 30px;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    [data-bs-theme="dark"] .footer-bottom {
+      background: rgba(0, 0, 0, 0.3) !important;
+      border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .copyright {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0;
+      transition: all 0.3s ease;
+    }
+
+    [data-bs-theme="dark"] .copyright {
+      color: #a8b2d1 !important;
+    }
+
+    .footer-nav {
+      text-align: right;
+    }
+
+    .footer-nav a {
+      color: #666;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    [data-bs-theme="dark"] .footer-nav a {
+      color: #a8b2d1;
+    }
+
+    .footer-nav a:hover {
+      color: #007bff;
+    }
+
+    /* Dark Mode Navbar Overrides */
+    [data-bs-theme="dark"] .navbar {
+      background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+      border-bottom: 3px solid #4caf50 !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    [data-bs-theme="dark"] .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+
+    [data-bs-theme="dark"] .navbar-nav .nav-link:hover {
+      background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .careers-card {
+        padding: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+
+      .benefits-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+
+      .footer-nav {
+        text-align: left;
+        margin-top: 1rem;
+      }
+
+      .footer-nav a {
+        margin-left: 0;
+        margin-right: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Enhanced Navbar -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="blogListing.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="work.html">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="careers.html">Careers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="src/contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input" />
+        <button class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar ends here -->
+
+  <!-- Careers Hero Section -->
+  <section class="careers-hero">
+    <div class="container">
+      <h1 class="hero-title">Join Our Team</h1>
+      <p class="hero-subtitle">
+        Shape the future of digital innovation with GrowCraft. We're building something amazing, and we want you to be part of it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Careers Content -->
+  <section class="careers-content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          
+          <!-- Current Openings -->
+          <div class="careers-card">
+            <div class="opening-card">
+              <h2 class="opening-title">
+                <i class="fas fa-lightbulb me-2"></i>
+                Currently Building Our Team
+              </h2>
+              <p class="opening-message">
+                We're always looking for talented individuals who share our passion for innovation and excellence. 
+                While we don't have specific openings right now, we'd love to hear from you!
+              </p>
+              <a href="src/contact.html" class="btn-primary-custom">
+                <i class="fas fa-paper-plane me-2"></i>Get In Touch
+              </a>
+            </div>
+          </div>
+
+          <!-- Why Work With Us -->
+          <div class="careers-card">
+            <h2 class="section-title">Why GrowCraft?</h2>
+            <p class="section-text">
+              At GrowCraft, we believe that great work comes from passionate people working together toward a common goal. 
+              We're more than just a digital agency – we're innovators, dreamers, and problem-solvers who are dedicated 
+              to helping businesses grow and thrive in the digital landscape.
+            </p>
+
+            <div class="benefits-grid">
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-rocket"></i>
+                </div>
+                <h3 class="benefit-title">Innovation First</h3>
+                <p class="benefit-description">
+                  Work with cutting-edge technologies and be part of projects that push the boundaries of what's possible.
+                </p>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-users"></i>
+                </div>
+                <h3 class="benefit-title">Collaborative Culture</h3>
+                <p class="benefit-description">
+                  Join a supportive team where your ideas matter and collaboration drives our success.
+                </p>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="benefit-title">Growth Opportunities</h3>
+                <p class="benefit-description">
+                  Continuous learning and development opportunities to help you reach your full potential.
+                </p>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-balance-scale"></i>
+                </div>
+                <h3 class="benefit-title">Work-Life Balance</h3>
+                <p class="benefit-description">
+                  Flexible working arrangements that help you maintain a healthy balance between work and life.
+                </p>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-globe"></i>
+                </div>
+                <h3 class="benefit-title">Global Impact</h3>
+                <p class="benefit-description">
+                  Work on projects that make a difference for businesses and communities around the world.
+                </p>
+              </div>
+
+              <div class="benefit-item">
+                <div class="benefit-icon">
+                  <i class="fas fa-heart"></i>
+                </div>
+                <h3 class="benefit-title">Passionate Team</h3>
+                <p class="benefit-description">
+                  Be surrounded by dedicated professionals who genuinely care about quality and excellence.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Our Values -->
+          <div class="careers-card">
+            <h2 class="section-title">Our Core Values</h2>
+            <p class="section-text">
+              These values guide everything we do and shape the culture we've built at GrowCraft.
+            </p>
+
+            <div class="values-section">
+              <div class="values-grid">
+                <div class="value-item">
+                  <span class="value-emoji">🌱</span>
+                  <h3 class="value-title">Growth Mindset</h3>
+                  <p class="value-description">
+                    We believe in continuous learning, improvement, and embracing challenges as opportunities to grow.
+                  </p>
+                </div>
+
+                <div class="value-item">
+                  <span class="value-emoji">⭐</span>
+                  <h3 class="value-title">Excellence</h3>
+                  <p class="value-description">
+                    We strive for excellence in everything we do, from the smallest details to the biggest projects.
+                  </p>
+                </div>
+
+                <div class="value-item">
+                  <span class="value-emoji">🤝</span>
+                  <h3 class="value-title">Collaboration</h3>
+                  <p class="value-description">
+                    We work together, support each other, and believe that great results come from great teamwork.
+                  </p>
+                </div>
+
+                <div class="value-item">
+                  <span class="value-emoji">🔮</span>
+                  <h3 class="value-title">Innovation</h3>
+                  <p class="value-description">
+                    We embrace new ideas, technologies, and approaches to solve problems in creative ways.
+                  </p>
+                </div>
+
+                <div class="value-item">
+                  <span class="value-emoji">🎯</span>
+                  <h3 class="value-title">Purpose</h3>
+                  <p class="value-description">
+                    Everything we do is driven by our mission to help businesses grow and succeed in the digital world.
+                  </p>
+                </div>
+
+                <div class="value-item">
+                  <span class="value-emoji">🌍</span>
+                  <h3 class="value-title">Impact</h3>
+                  <p class="value-description">
+                    We measure our success by the positive impact we have on our clients, team, and community.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- What We Look For -->
+          <div class="careers-card">
+            <h2 class="section-title">What We Look For</h2>
+            <p class="section-text">
+              While specific requirements vary by role, here are the qualities we value in all team members:
+            </p>
+            
+            <div class="row mt-4">
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <strong>Passion for digital innovation</strong> - Genuine excitement about technology and its possibilities
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <strong>Problem-solving mindset</strong> - Ability to think creatively and find solutions
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <strong>Collaborative spirit</strong> - Works well with others and contributes to team success
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <ul class="list-unstyled">
+                  <li class="mb-3">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <strong>Continuous learner</strong> - Always looking to improve and stay current with industry trends
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <strong>Quality focused</strong> - Takes pride in delivering excellent work
+                  </li>
+                  <li class="mb-3">
+                    <i class="fas fa-check-circle text-success me-2"></i>
+                    <strong>Client-oriented</strong> - Understands the importance of creating value for our clients
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Get in Touch -->
+          <div class="contact-section">
+            <div class="container">
+              <h2 class="section-title text-center">Ready to Join Us?</h2>
+              <p class="section-text text-center">
+                We'd love to hear from talented individuals who want to be part of our journey. 
+                Send us your resume and let us know how you can contribute to GrowCraft's mission.
+              </p>
+              
+              <div class="row justify-content-center mt-4">
+                <div class="col-md-8 text-center">
+                  <p class="mb-3">
+                    <i class="fas fa-envelope me-2"></i>
+                    <strong>Email us at:</strong> 
+                    <a href="mailto:careers@growcraft.com" class="text-decoration-none">careers@growcraft.com</a>
+                  </p>
+                  <p class="mb-4">
+                    <i class="fas fa-phone me-2"></i>
+                    <strong>Call us:</strong> 
+                    <a href="tel:+919999999999" class="text-decoration-none">+91 999 999 999</a>
+                  </p>
+                  
+                  <a href="src/contact.html" class="btn-primary-custom">
+                    <i class="fas fa-envelope me-2"></i>Contact Us
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Footer -->
+  <footer class="professional-footer fade-in">
+    <div class="container">
+      <div class="row g-4 py-4 fade-in">
+        <!-- Footer Columns -->
+        <div class="col-lg-4 col-md-6 fade-in">
+          <div class="footer-brand fade-in">
+            <img src="images/logo_bg_transparent.png" alt="GrowCraft Logo" class="footer-logo mb-3" />
+            <h4 class="brand-name">GrowCraft</h4>
+            <p class="brand-description">
+              Empowering businesses with innovative digital solutions and creative excellence.
+            </p>
+          </div>
+        </div>
+
+        <!-- Services -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Our Services</h5>
+          <ul class="footer-links">
+            <li><a href="learn/webdev.html">Web Development</a></li>
+            <li><a href="learn/graphic.html">Graphic Design</a></li>
+            <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="learn/contentwriting.html">Content Writing</a></li>
+            <li><a href="learn/socialmedia.html">Social Media</a></li>
+            <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="work.html">Portfolio</a></li>
+            <li><a href="src/contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="blogListing.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-lg-4 col-md-6 fade-in">
+          <h5 class="footer-title">Get In Touch</h5>
+          <div class="contact-info mb-3 fade-in">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919999999999">+91 999 999 999</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>ABC Street, XYZ City, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom fade-in">
+      <div class="container">
+        <div class="row align-items-center py-3 fade-in">
+          <div class="col-md-6">
+            <p class="copyright mb-0">
+              © <span id="currentYear"></span> <strong>GrowCraft</strong>. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="footer-nav fade-in">
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+              <a href="sitemap.html">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Professional Footer ends -->
+
+  <script src="src/script.js"></script>
+  <script src="src/utils.js"></script>
+  <script src="src/darkMode.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearSpan = document.getElementById("currentYear");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+
+</html>
