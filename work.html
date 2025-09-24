@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>GrowCraft — Our Work</title>
+    <link rel="stylesheet" href="src/style.css" />
+  <link rel="stylesheet" href="src/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <meta name="description" content="GrowCraft — creative agency: web development, graphic design, digital marketing, content & social media case studies and services." />
@@ -25,184 +27,6 @@
     *{box-sizing:border-box}
     html,body{height:100%;margin:0;background: linear-gradient(180deg, rgba(var(--bg),1) 0%, #fff 60%);-webkit-font-smoothing:antialiased;color:#09122a}
 
-     .navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-
-  }
-
-  .navbar-brand img {
-    max-height: 60px;
-    object-fit: contain;
-    vertical-align: middle;
-    transition: all 0.3s ease;
-  }
-
-  .navbar-nav .nav-link {
-    font-weight: 500;
-    padding: 0.75rem 1rem;
-    color: #333;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
-
-  .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link.active {
-    color: #463896;
-  }
-
-  /* Dark Mode Toggle Switch Alignment */
-  .navbar .toggle-switch {
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-  }
-
-  /* search bar */
-
-    .search-container {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-radius: 25px;
-  padding: 5px 10px;
-  width: 100%;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.search-input {
-  border: none;
-  outline: none;
-  padding: 8px;
-  font-size: 16px;
-  flex: 1;
-  color: #333;
-}
-
-.search-input::placeholder {
-  color: #aaa;
-}
-
-.search-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #555;
-  font-size: 18px;
-}
-
-@media screen and (max-width: 600px) {
-  .search-container {
-    max-width: 200px;
-  }
-
-  .search-input {
-    font-size: 14px;
-  }
-}
-
-
-  /* Responsive logo alignment fix */
-  @media (max-width: 991.98px) {
-    .navbar .navbar-brand {
-      margin-right: auto;
-    }
-
-    .navbar-collapse {
-      margin-top: 0.8rem;
-    }
-  }
-
-  .btn-custom-purple:focus,
-  .btn-custom-purple:active {
-    background-color: #1f0d66 !important;
-    border-color: #1f0d66 !important;
-    color: white !important;
-    box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
-  }
-
-  /* === Navbar Custom Styling === */
-
-  .navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-
-
-  }
-
-  .navbar-nav li {
-    margin: 0 10px;
-    /* Reduce from 20px or more if it’s higher */
-  }
-
-  .navbar-nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
-  }
-
-
-
-  .navbar-brand img {
-    max-height: 60px;
-    object-fit: contain;
-    vertical-align: middle;
-    transition: all 0.3s ease;
-  }
-
-  .navbar-nav .nav-item {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-
-  }
-
-  .nav-item .nav-link {
-    font-weight: 900;
-    color: #7a5a08 !important;
-    font-family: "Lora", serif;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
-
-  /* Navbar link hover effect */
-  .navbar-nav .nav-link {
-    position: relative;
-    color: #333;
-    /* Default link color */
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .navbar-nav .nav-link:hover {
-    color: #007bff;
-    /* Change text color on hover */
-  }
-
-  /* Underline animation */
-  .navbar-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background-color: #007bff;
-    transition: width 0.3s ease;
-  }
-
-  .navbar-nav .nav-link:hover::after {
-    width: 100%;
-  }
 
     /* Page container */
     .page{max-width:1200px;margin:28px auto;padding:20px}
@@ -633,69 +457,11 @@ section {
         font-size: 0.7rem;
       }
     }
-  
-
-
-
-
   </style>
 </head>
 <body data-theme="light">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-      <a class="navbar-brand" href="index.html">
-        <img 
-          src="images/logo_bg_transparent.png" 
-          alt="GrowCraft" 
-          width="200" 
-          class="theme-aware-logo"
-          data-light-src="images/logo_bg_transparent.png"
-          data-dark-src="images/logo-transparent-dark-mode.png" 
-        />
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active visited" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="blogListing.html">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html#about">About Us</a>
-          </li>
-          <!-- Added new "Our Work" link to navigate to the new work section on same page -->
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Our Work</a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="src/contact.html">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-     
-      <!-- Responsive Search Bar -->
- <div class="search-container">
-  <input type="text" placeholder="Search..." class="search-input">
-  <button class="search-button">
-    <i class="fas fa-search"></i> <!-- Font Awesome icon -->
-  </button>
-</div>
-
-    </div>
-
-  </nav>
+<div id="navbar"></div>
 
 
   <main class="page">
@@ -1249,6 +1015,55 @@ modalRoot.addEventListener('keydown', (e) => {
   },{threshold:0.2});
   reveals.forEach(r => io.observe(r));
 </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+    defer></script>
+  <script src="src/darkMode.js"></script>
+<!-- navbar scripts -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Load navbar
+    fetch("src/components/navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+
+        // Initialize dark mode toggle (after navbar is loaded)
+        new DarkModeToggle();
+
+        // Now the logo exists — get it
+        const logo = document.querySelector('#logo');
+
+        if (logo) {
+          function updateLogo() {
+            const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+            logo.src = isDark
+              ? logo.getAttribute("data-dark-src") || 'src/images/logo-transparent-dark-mode.png'
+              : logo.getAttribute("data-light-src") || 'src/images/logo_bg_transparent.png';
+          }
+
+          updateLogo();
+
+          const observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+              if (mutation.type === 'attributes' && mutation.attributeName === 'data-bs-theme') {
+                updateLogo();
+              }
+            });
+          });
+
+          observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['data-bs-theme']
+          });
+        }
+      })
+      .catch(error => console.error("Navbar load error:", error));
+  });
+
+
+</script>
+
 
   <style>
     @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}

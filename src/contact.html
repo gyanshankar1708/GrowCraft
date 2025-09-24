@@ -15,7 +15,8 @@
   <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
   <!-- intl-tel-input CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
-
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <style>
     /* Modern CSS Variables */
     :root {
@@ -90,58 +91,6 @@
       66% { transform: translate(-20px, 20px) rotate(240deg); }
     }
 
-    /* Navbar Styles */
-    .navbar {
-      background: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: blur(20px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      transition: var(--transition);
-    }
-
-    [data-bs-theme="dark"] .navbar {
-      background: rgba(15, 23, 42, 0.95) !important;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .navbar-brand img {
-      max-height: 50px;
-      transition: var(--transition);
-    }
-
-    .navbar-nav .nav-link {
-      font-weight: 600;
-      color: var(--text-primary) !important;
-      margin: 0 0.5rem;
-      padding: 0.75rem 1rem !important;
-      border-radius: 12px;
-      position: relative;
-      overflow: hidden;
-      transition: var(--transition);
-    }
-
-    .navbar-nav .nav-link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: var(--primary-gradient);
-      transition: var(--transition);
-      z-index: -1;
-    }
-
-    .navbar-nav .nav-link:hover::before {
-      left: 0;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: white !important;
-      transform: translateY(-2px);
-    }
 
     /* Hero Section */
     .hero-section {
@@ -646,42 +595,8 @@
 
 <body id="main-body">
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container-fluid px-2 px-sm-5">
-      <a class="navbar-brand" href="../index.html">
-        <img src="images/logo_bg_transparent.png" alt="GrowCraft" id="logo" />
-      </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../blogListing.html">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html#about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../work.html">Our Work</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
+<div id="navbar"></div>
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="hero-content">
@@ -917,5 +832,13 @@
       observer.observe(el);
     });
   </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+    defer></script>
+  <script src="/GrowCraft/src/darkMode.js"></script>
+
+    <script src="/GrowCraft//src/loadNavbar.js"></script>
+
+
 </body>
 </html>

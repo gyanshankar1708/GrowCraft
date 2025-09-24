@@ -1,0 +1,281 @@
+<style>
+  .navbar {
+      padding: 1rem 0;
+      background: linear-gradient(135deg,
+          #ffffff 0%,
+          #f8f9fa 100%) !important;
+      border-bottom: 3px solid #388e3c;
+      box-shadow: 0 8px 32px rgba(56, 142, 60, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .navbar.scrolled {
+      padding: 0.5rem 0;
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+    }
+
+    .navbar-nav .nav-item {
+      display: flex;
+      align-items: center;
+    }
+
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .navbar-brand {
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand:hover {
+      transform: scale(1.05);
+    }
+
+    .navbar-brand img {
+      max-height: 55px;
+      object-fit: contain;
+      vertical-align: middle;
+      filter: drop-shadow(2px 2px 4px rgba(56, 142, 60, 0.2));
+      transition: filter 0.3s ease;
+    }
+
+    .navbar-brand img:hover {
+      filter: drop-shadow(4px 4px 8px rgba(56, 142, 60, 0.3));
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      font-weight: 600;
+      color: #2e7d32 !important;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.75rem;
+      padding: 0.75rem 1.25rem !important;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      background: transparent;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+      box-shadow: 0 4px 15px rgba(56, 142, 60, 0.25);
+    }
+
+    /* Elegant underline animation */
+    .navbar-nav .nav-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #4caf50, #388e3c);
+      transition: all 0.3s ease;
+      transform: translateX(-50%);
+      border-radius: 2px;
+    }
+
+    .navbar-nav .nav-link:not(.active):hover::before {
+      width: 80%;
+    }
+
+       /*Dark Mode*/
+
+    /* Dark Mode Navbar Overrides */
+    .dark-mode .navbar,
+    .dark .navbar {
+      background: linear-gradient(135deg,
+          #1a1a1a 0%,
+          #2d2d2d 100%) !important;
+      border-bottom: 3px solid #4caf50 !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    }
+
+    .dark-mode .navbar.scrolled,
+    .dark .navbar.scrolled {
+      background: rgba(26, 26, 26, 0.95) !important;
+      backdrop-filter: blur(20px);
+    }
+
+    .dark-mode .navbar-nav .nav-link,
+    .dark .navbar-nav .nav-link {
+      color: #ffffff !important;
+      background: transparent;
+    }
+
+    .dark-mode .navbar-nav .nav-link:hover,
+    .dark .navbar-nav .nav-link:hover {
+      color: #000000 !important;
+      background: linear-gradient(135deg,
+          #4caf50 0%,
+          #388e3c 100%) !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+    }
+
+    .dark-mode .navbar-nav .nav-link.active,
+    .dark .navbar-nav .nav-link.active {
+      color: #000000 !important;
+      background: linear-gradient(135deg,
+          #66bb6a 0%,
+          #4caf50 100%) !important;
+      box-shadow: 0 4px 15px rgba(76, 175, 80, 0.25);
+    }
+
+    .dark-mode .navbar-brand,
+    .dark .navbar-brand {
+      color: #ffffff !important;
+    }
+
+
+    /* Mobile responsive improvements */
+    @media screen and (max-width: 991.98px) {
+      .navbar {
+        padding: 0.75rem 0;
+      }
+
+      .navbar-nav {
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(56, 142, 60, 0.15);
+        backdrop-filter: blur(10px);
+      }
+
+      .navbar-nav .nav-link {
+        justify-content: center;
+        margin: 0.25rem 0;
+        padding: 0.75rem 1rem !important;
+      }
+
+      .search-container {
+        max-width: 100%;
+        margin: 1rem 0 0 0;
+        order: 3;
+      }
+    }
+
+
+
+    /* Mobile Dark Mode Navbar */
+    @media screen and (max-width: 991.98px) {
+
+      .dark-mode .navbar-nav,
+      .dark .navbar-nav {
+        background: rgba(26, 26, 26, 0.98) !important;
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+      }
+
+      .dark-mode .search-container,
+      .dark .search-container {
+        background: linear-gradient(135deg,
+            #2d2d2d 0%,
+            #3a3a3a 100%) !important;
+      }
+    }
+</style>
+<body>
+    <nav class= "navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      <!-- added transparent background of logo -->
+      <a class="navbar-brand" href="#">
+        <img 
+        src="/GrowCraft/src/images/logo_bg_transparent.png"
+     data-dark-src="/GrowCraft/src/images/logo-transparent-dark-mode.png"
+     data-light-src="/GrowCraft/src/images/logo_bg_transparent.png"
+      alt="GrowCraft"
+       width="200" id="logo" /></a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">                      
+        <ul class="navbar-nav ms-auto">                                   
+          <li class="nav-item">
+            <a class="nav-link active visited" aria-current="page" href="/GrowCraft/index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/GrowCraft/blogListing.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/GrowCraft/about.html">About Us</a>
+          </li>
+          <!-- Added new "Our Work" link to navigate to the new work section on same page -->
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/GrowCraft/work.html">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/GrowCraft/src/faq.html">FAQ</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/GrowCraft/src/contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <script src="../darkMode.js"></script>
+ <!-- <script>
+    // Logo switching functionality for dark mode
+    document.addEventListener('DOMContentLoaded', function () {
+      const logo = document.querySelector("#logo");
+
+      // Function to update logo based on theme
+      function updateLogo() {
+        const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+        if (isDark) {
+          logo.src = '../images/logo-transparent-dark-mode.png';
+        } else {
+          logo.src = '../images/logo_bg_transparent.png';
+        }
+      }
+
+      // Update logo when page loads
+      updateLogo();
+
+      // Watch for theme changes
+      const observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'data-bs-theme') {
+            updateLogo();
+          }
+        });
+      });
+
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['data-bs-theme']
+      });
+    });
+ </script> -->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+    defer></script>
+</body>
+</html>

@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Website Development | GrowCraft</title>
-    <link rel="stylesheet" href="css/style.css" />
+           <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       rel="stylesheet"
@@ -976,127 +977,6 @@
         }
       }
 
-
-        /* === Navbar Custom Styling === */
-
-  .navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  }
-
-  .navbar-brand img {
-    max-height: 60px;
-    object-fit: contain;
-    vertical-align: middle;
-    transition: all 0.3s ease;
-  }
-
-  /* Dark mode logo switching - will be handled by JavaScript */
-
-  /* Align all nav items vertically center */
-  .navbar-nav .nav-link {
-    font-weight: 500;
-    padding: 0.75rem 1rem;
-    color: #333;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
-
-  .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link.active {
-    color: #463896;
-  }
-
-  /* Dark Mode Toggle Switch Alignment */
-  .navbar .toggle-switch {
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-  }
-
-  /* Responsive logo alignment fix */
-  @media (max-width: 991.98px) {
-    .navbar .navbar-brand {
-      margin-right: auto;
-    }
-
-    .navbar-collapse {
-      margin-top: 0.8rem;
-    }
-  }
-  .navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); 
-
-  }
-
-  .navbar-nav li {
-    margin: 0 10px;
-    /* Reduce from 20px or more if it’s higher */
-  }
-
-  .navbar-nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
-  }
-
-
-
-  
-  .navbar-nav .nav-item {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-
-  }
-
-  .nav-item .nav-link {
-    font-weight: 900;
-    color: #7a5a08 !important;
-    font-family: "Lora", serif;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
-
-  /* Navbar link hover effect */
-  .navbar-nav .nav-link {
-    position: relative;
-    color: #333;
-    /* Default link color */
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
-
-  .navbar-nav .nav-link:hover {
-    color: #007bff;
-    /* Change text color on hover */
-  }
-
-  /* Underline animation */
-  .navbar-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background-color: #007bff;
-    transition: width 0.3s ease;
-  }
-
-  .navbar-nav .nav-link:hover::after {
-    width: 100%;
-  }
-
-
       /*contact*/
       .contact-section {
         background: #f1f5f9;
@@ -1420,47 +1300,7 @@
 
   <body>
     <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-
-        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-            <a class="navbar-brand" href="#"><img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo"></a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active visited" aria-current="page" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../blogListing.html">Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about">About Us</a>
-                    </li>
-                    <!-- Added new "Our Work" link to navigate to the new work section on same page -->
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#work">Our Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
-                    </li>
-
-                </ul>
-            </div>
-
-     
-           
-
-       
-      </div>
-    </nav>
+ <div id="navbar"></div>
     <!-- Navbar ends here -->
     <!-- <h1 class="webdev-heading heading-title">Website Development</h1> -->
 
@@ -2037,6 +1877,10 @@
         updateActiveDot();
       })();
     </script>
-    <script src="darkMode.js"></script>
+     <!-- Navbar Scripts -->
+    <script src="./darkMode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+    defer></script>
+    <script src="/GrowCraft//src/loadNavbar.js"></script>
   </body>
 </html>

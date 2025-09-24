@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GrowCraft — About Us</title>
   <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="src/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -48,338 +49,12 @@
     a { color: inherit; text-decoration: none; }
     button { font: inherit; }
 
-    /* Navbar Custom Styling */
-    .navbar {
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
-      background-color: #ffffff !important;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .navbar-brand img {
-      max-height: 60px;
-      object-fit: contain;
-      vertical-align: middle;
-      transition: all 0.3s ease;
-    }
-
-    .navbar-nav .nav-link {
-      font-weight: 500;
-      padding: 0.75rem 1rem;
-      color: #333;
-      display: flex;
-      align-items: center;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: #463896;
-    }
-
-    .navbar-nav .nav-link {
-      position: relative;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #007bff;
-    }
-
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0%;
-      height: 2px;
-      background-color: #007bff;
-      transition: width 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover::after {
-      width: 100%;
-    }
-
-<<<<<<< HEAD
     .professional-footer .row {
     display: flex !important;
     flex-wrap: wrap !important;
     gap: 0 !important; /* or any specific gap you need for the footer */
     align-items: stretch !important;
 }
-=======
-     /* Professional Footer */
-  .professional-footer {
-    background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
-    color: #ffffff;
-    margin-top: 60px;
-    padding-top: 50px;
-    border-top: 3px solid transparent;
-    border-image: linear-gradient(90deg, #667eea, #764ba2, #667eea) 1;
-  }
-
-  .professional-footer .container {
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  /* Brand Section */
-  .footer-logo {
-    max-width: 120px;
-    margin-bottom: 15px;
-  }
-
-  .brand-name {
-    color: #667eea;
-    font-weight: 700;
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-  }
-
-  .brand-description {
-    color: #b8b9c7;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-  }
-
-  /* Quick Stats */
-  .quick-stats {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-  }
-
-  .stat-item {
-    flex: 1;
-    padding: 12px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-  }
-
-  .stat-item:hover {
-    background: rgba(102, 126, 234, 0.1);
-    transform: translateY(-3px);
-    border-color: #667eea;
-  }
-
-  .stat-number {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #667eea;
-  }
-
-  .stat-label {
-    font-size: 0.8rem;
-    color: #9ca3af;
-    text-transform: uppercase;
-  }
-
-  /* Footer Titles */
-  .footer-title {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    transition: color 0.3s ease;
-  }
-
-  .footer-title:hover {
-    color: #667eea;
-  }
-
-  /* Footer Links */
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .footer-links li {
-    margin-bottom: 8px;
-  }
-
-  .footer-links a {
-    color: #b8b9c7;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-  }
-
-  .footer-links a:hover {
-    color: #667eea;
-    padding-left: 5px;
-  }
-
-  /* Contact Info */
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-    color: #b8b9c7;
-    transition: all 0.3s ease;
-  }
-
-  .contact-item:hover {
-    color: #667eea;
-  }
-
-  .contact-item i {
-    color: #667eea;
-  }
-
-  /* Social Links */
-  .social-links {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    color: #b8b9c7;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .social-link:hover {
-    background: #667eea;
-    color: #ffffff;
-    transform: translateY(-3px);
-    border-color: #667eea;
-  }
-
-  /* Footer Bottom */
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 0px;
-    padding: 15px 0;
-    text-align: center;
-  }
-
-  .copyright {
-    color: #9ca3af;
-    font-size: 0.85rem;
-  }
-
-  .copyright strong {
-    color: #667eea;
-  }
-
-  .footer-nav {
-    margin-top: 8px;
-  }
-
-  .footer-nav a {
-    color: #9ca3af;
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin: 0 10px;
-    transition: all 0.3s ease;
-  }
-
-  .footer-nav a:hover {
-    color: #ffffff;
-  }
-
-  /* =====================
-   FOOTER RESPONSIVE FIX
-   ===================== */
-
-/* Tablet (max 992px) */
-@media (max-width: 992px) {
-  .professional-footer .container {
-    padding: 0 20px;
-  }
-
-  .footer-column {
-    margin: 20px 0 !important; /* override inline margins */
-    text-align: center;
-  }
-
-  .footer-links li {
-    margin-bottom: 10px;
-  }
-
-  .contact-item {
-    justify-content: center;
-  }
-
-  .social-links {
-    justify-content: center;
-  }
-}
-/* ================================
-   Responsive Footer Fixes
-================================ */
-
-/* Tablet and below */
-@media (max-width: 992px) {
-  .professional-footer .col-lg-2,
-  .professional-footer .col-lg-3 {
-    margin-left: 0 !important;  /* remove hardcoded inline margin */
-    margin-right: 0 !important;
-    text-align: center;
-  }
-
-  .professional-footer .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    padding: 0;
-  }
-
-  .professional-footer .contact-info {
-    text-align: center;
-  }
-
-  .professional-footer .social-links {
-    justify-content: center;
-    margin-top: 12px;
-  }
-}
-
-/* Mobile - narrow screens */
-@media (max-width: 576px) {
-  .professional-footer .brand-description {
-    font-size: 0.85rem;
-  }
-
-  .professional-footer .stat-item {
-    flex: none;
-    width: 100%;
-  }
-
-  .professional-footer .footer-title {
-    font-size: 1rem;
-  }
-
-  .professional-footer .footer-links a {
-    font-size: 0.85rem;
-  }
-
-  .professional-footer .copyright {
-    font-size: 0.75rem;
-  }
-}
-
->>>>>>> upstream/master
 
     /* Section Wrapper */
     .hero {
@@ -656,8 +331,9 @@
 </head>
 
 <body class="theme-light">
+  <div id="navbar"></div>
   <!-- Navbar starts here -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
       <a class="navbar-brand" href="index.html"><img src="images/Logo_new.png" alt="GrowCraft" width="200" id="logo"></a>
 
@@ -688,7 +364,7 @@
         </ul>
       </div>
     </div>
-  </nav>
+  </nav> -->
   <!-- Navbar ends here -->
 
   <section class="hero" id="about-hero" aria-labelledby="about-hero-title">
@@ -839,128 +515,7 @@
   </section>
   
 
-<<<<<<< HEAD
  <!-- Footer -->
-  
-  
-=======
-  <!-- Professional Footer -->
-<footer class="professional-footer">
-  <div class="container">
-    <div class="row g-4 py-5 align-items-start">
-      
-      <!-- Brand Section -->
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="footer-brand">
-          <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
-          <h4 class="brand-name">GrowCraft</h4>
-          <p class="brand-description">
-            Empowering businesses with innovative digital solutions and creative excellence.
-          </p>
-          <div class="quick-stats d-flex gap-4">
-            <div class="stat-item">
-              <span class="stat-number">500+</span>
-              <span class="stat-label">Projects</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">150+</span>
-              <span class="stat-label">Clients</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">5+</span>
-              <span class="stat-label">Years</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Services -->
-      <div class="col-lg-2 col-md-6 mb-4" style="margin-left: 90px;">
-        <h5 class="footer-title">Services</h5>
-        <ul class="footer-links">
-           <li><a href="learn/webdev.html">Web Development</a></li>
-          <li><a href="learn/graphic.html">Graphic Design</a></li>
-          <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
-          <li><a href="learn/contentwriting.html">Content Writing</a></li>
-          <li><a href="learn/socialmedia.html">Social Media</a></li>
-          <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
-        </ul>
-      </div>
-
-       <!-- Services -->
-      <div class="col-lg-2 col-md-6 mb-4" style="margin-left: 70px;">
-        <h5 class="footer-title">Quick Links</h5>
-        <ul class="footer-links">
-           <li><a href="about.html">About Us</a></li>
-            <li><a href="index.html#work">Portfolio</a></li>
-            <li><a href="src/contact.html">Contact</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="blogListing.html">Blog</a></li>
-        </ul>
-      </div>
-
-<!-- Contact -->
-<div class="col-lg-4 col-md-6 mb-4">
-  <h5 class="footer-title">Get In Touch</h5>
-  <div class="contact-info mb-3">
-    <div class="contact-item">
-      <i class="fas fa-envelope"></i>
-      <a href="mailto:info@growcraft.com">info@growcraft.com</a>
-    </div>
-    <div class="contact-item">
-      <i class="fas fa-phone"></i>
-      <a href="tel:+919999999999">+91 999 999 999</a>
-    </div>
-    <div class="contact-item">
-      <i class="fas fa-map-marker-alt"></i>
-      <span>ABC Street, XYZ City, India</span>
-    </div>
-  </div>
-
-  <div class="social-section">
-    <h6 class="social-title">Follow Us</h6>
-    <div class="social-links">
-      <a href="https://facebook.com" target="_blank" class="social-link" aria-label="Facebook">
-        <i class="fab fa-facebook-f"></i>
-      </a>
-      <a href="https://instagram.com" target="_blank" class="social-link" aria-label="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://linkedin.com" target="_blank" class="social-link" aria-label="LinkedIn">
-        <i class="fab fa-linkedin-in"></i>
-      </a>
-      <a href="https://github.com" target="_blank" class="social-link" aria-label="GitHub">
-        <i class="fab fa-github"></i>
-      </a>
-      <a href="https://twitter.com" target="_blank" class="social-link" aria-label="Twitter">
-        <i class="fab fa-x-twitter"></i>
-      </a>
-    </div>
-  </div>
-</div>
-
-
-    <!-- Footer Bottom -->
-    <div class="footer-bottom text-center py-3 mt-3">
-      <p class="copyright mb-1" style="text-align: center;">
-        © <span id="currentYear"></span> <strong>GrowCraft</strong> All rights reserved.
-      </p>
-      <div class="footer-nav">
-        <a href="#privacy">Privacy</a>
-        <a href="#terms">Terms</a>
-        <a href="#sitemap">Sitemap</a>
-      </div>
-    </div>
-  </div>
-</footer>
-<!-- Professional Footer Ends -->
-
-
-<script>
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
-</script>
-
->>>>>>> upstream/master
   <!-- Enhanced Scroll to Top Button -->
   <button id="backToTop" title="Go to top" type="button">
     <i class="fas fa-chevron-up"></i>
@@ -1127,6 +682,54 @@
     document.getElementById('contactBtn')?.addEventListener('click', ()=> window.location.href = 'src/contact.html');
     document.getElementById('contributeBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#contribute');
   </script>
+
+  <!-- navbar scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+    defer></script>
+  <script src="src/darkMode.js"></script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Load navbar
+    fetch("src/components/navbar.html")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("navbar").innerHTML = data;
+
+        // Initialize dark mode toggle (after navbar is loaded)
+        new DarkModeToggle();
+
+        // Now the logo exists — get it
+        const logo = document.querySelector('#logo');
+
+        if (logo) {
+          function updateLogo() {
+            const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+            logo.src = isDark
+              ? logo.getAttribute("data-dark-src") || 'src/images/logo-transparent-dark-mode.png'
+              : logo.getAttribute("data-light-src") || 'src/images/logo_bg_transparent.png';
+          }
+
+          updateLogo();
+
+          const observer = new MutationObserver(mutations => {
+            mutations.forEach(mutation => {
+              if (mutation.type === 'attributes' && mutation.attributeName === 'data-bs-theme') {
+                updateLogo();
+              }
+            });
+          });
+
+          observer.observe(document.documentElement, {
+            attributes: true,
+            attributeFilter: ['data-bs-theme']
+          });
+        }
+      })
+      .catch(error => console.error("Navbar load error:", error));
+  });
+</script>
+
 
 </body>
 </html>

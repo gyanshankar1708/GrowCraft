@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Social Media Management | GrowCraft</title>
-    <link rel="stylesheet" href="css/style.css" />
+          <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -111,85 +112,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Enhanced Navbar Styles */
-.navbar {
-    padding: 1rem 0;
-    background: var(--gc-navbar-bg) !important;
-    backdrop-filter: blur(20px);
-    box-shadow: var(--gc-shadow);
-    transition: all 0.3s ease;
-    border-bottom: 1px solid var(--gc-border);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
 
-.navbar:hover {
-    box-shadow: var(--gc-shadow-lg);
-}
-
-.navbar-nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 2rem;
-}
-
-.navbar-nav li {
-    margin: 0 0.5rem;
-}
-
-.navbar-brand img {
-    max-height: 60px;
-    object-fit: contain;
-    vertical-align: middle;
-    transition: transform 0.3s ease;
-}
-
-.navbar-brand:hover img {
-    transform: scale(1.05);
-}
-
-.navbar-nav .nav-item {
-    display: flex;
-    align-items: center;
-}
-
-.nav-item .nav-link {
-    font-weight: 600;
-    color: var(--gc-text) !important;
-    font-family: inherit;
-    display: flex;
-    align-items: center;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    position: relative;
-    padding: 0.75rem 1rem;
-    border-radius: var(--gc-radius-sm);
-    font-size: 0.95rem;
-}
-
-.navbar-nav .nav-link:hover {
-    color: var(--gc-accent) !important;
-    transform: translateY(-1px);
-    background: var(--gc-bg-secondary);
-}
-
-.navbar-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    width: 0%;
-    height: 2px;
-    background: var(--gc-gradient-primary);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-radius: 1px;
-    transform: translateX(-50%);
-}
-
-.navbar-nav .nav-link:hover::after {
-    width: 80%;
-}
 
 /* Container and Layout */
 .container {
@@ -1480,43 +1403,7 @@ label {
 
 <body>
     <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-           <a class="navbar-brand" href="#">
-    <img src="../images/Logo_new.png" alt="GrowCraft" width="200" id="site-logo">
-</a>
-
-
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active visited" aria-current="page" href="../index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../blogListing.html">Blogs</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#about">About Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#work">Our Work</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="contact.html">Contact Us</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <div id="navbar"></div>
     <!-- Navbar ends here -->
 
     <!-- Hero -->
@@ -2059,5 +1946,10 @@ label {
             yearElement.textContent = new Date().getFullYear();
         }
     </script>
+ <!-- Navbar Scripts -->
+    <script src="./darkMode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+    defer></script>
+    <script src="/GrowCraft//src/loadNavbar.js"></script>
 </body>
 </html>

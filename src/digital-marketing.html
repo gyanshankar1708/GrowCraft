@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Marketing | GrowCraft</title>
+             <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -68,79 +70,7 @@
             margin: auto; 
             padding: 0 15px; 
         }
-        .navbar {
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
-      background-color: #ffffff !important;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-
-    }
-     .navbar-nav li {
-      margin: 0 10px;
-      /* Reduce from 20px or more if it’s higher */
-    }
-
-    .navbar-nav {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      gap: 20px;
-    }
-
-
-
-    .navbar-brand img {
-      max-height: 60px;
-      object-fit: contain;
-      vertical-align: middle;
-    }
-    /* Ensure all nav items are aligned */
-    .navbar-nav .nav-item {
-      display: flex;
-      align-items: center;
-      margin-left: auto;
-
-    }
-
-    .nav-item .nav-link {
-      font-weight: 900;
-      color: #7a5a08 !important;
-      font-family: "Lora", serif;
-      display: flex;
-      align-items: center;
-      transition: color 0.3s ease;
-    }
-
-    /* Navbar link hover effect */
-    .navbar-nav .nav-link {
-      position: relative;
-      color: #333;
-      /* Default link color */
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #007bff;
-      /* Change text color on hover */
-    }
-
-    /* Underline animation */
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0%;
-      height: 2px;
-      background-color: #007bff;
-      transition: width 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover::after {
-      width: 100%;
-    }
-
+      
         .section-title { 
             font-size: 2.5rem; 
             font-weight: 700; 
@@ -757,25 +687,7 @@
 
 <body>
     <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-            <a class="navbar-brand" href="../index.html"><img src="../images/Logo_new.png" alt="GrowCraft" width="200" id="logo"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../blogListing.html">Blogs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#work">Our Work</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <div id="navbar"></div>
     <!-- Navbar ends here -->
 
     <!-- Hero Section -->
@@ -1067,96 +979,6 @@
         style="display:none;">↑</button>
 
     <script>
-        /**
-         * Dark Mode Toggle Module
-         * A clean, modular implementation for theme switching
-         */
-        class DarkModeToggle {
-            constructor() {
-                this.theme = this.getSavedTheme() || 'light';
-                this.toggleElement = null;
-                this.init();
-            }
-
-            getSavedTheme() {
-                // Use in-memory storage instead of localStorage for artifact compatibility
-                return window.themePreference || 'light';
-            }
-
-            saveTheme(theme) {
-                // Store theme preference in memory
-                window.themePreference = theme;
-            }
-
-            init() {
-                // Apply saved theme on page load
-                this.applyTheme();
-
-                // Create and insert toggle button
-                this.createToggle();
-            }
-
-            createToggle() {
-                // Create toggle container
-                const toggleContainer = document.createElement('div');
-                toggleContainer.className = 'theme-toggle-container';
-                toggleContainer.innerHTML = `
-                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="5"></circle>
-                            <line x1="12" y1="1" x2="12" y2="3"></line>
-                            <line x1="12" y1="21" x2="12" y2="23"></line>
-                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                            <line x1="1" y1="12" x2="3" y2="12"></line>
-                            <line x1="21" y1="12" x2="23" y2="12"></line>
-                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                        </svg>
-                        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                        </svg>
-                    </button>
-                `;
-
-                // Find navbar and insert toggle
-                const navbar = document.querySelector('.navbar-nav');
-                if (navbar) {
-                    const navItem = document.createElement('li');
-                    navItem.className = 'nav-item d-flex align-items-center ms-3';
-                    navItem.appendChild(toggleContainer);
-                    navbar.appendChild(navItem);
-                }
-
-                // Add event listener
-                this.toggleElement = document.getElementById('themeToggle');
-                if (this.toggleElement) {
-                    this.toggleElement.addEventListener('click', () => this.toggle());
-                    // Set initial button state
-                    this.toggleElement.classList.toggle('active', this.theme === 'dark');
-                }
-            }
-
-            applyTheme() {
-                if (this.theme === 'dark') {
-                    document.documentElement.classList.add('dark');
-                } else {
-                    document.documentElement.classList.remove('dark');
-                }
-            }
-
-            toggle() {
-                this.theme = this.theme === 'light' ? 'dark' : 'light';
-                this.saveTheme(this.theme);
-                this.applyTheme();
-
-                // Update toggle button state
-                if (this.toggleElement) {
-                    this.toggleElement.classList.toggle('active', this.theme === 'dark');
-                }
-            }
-        }
-
         // Smooth scroll for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -1260,7 +1082,11 @@
             });
         });
     </script>
-     <script src="darkMode.js"></script>
+  <!-- Navbar Scripts -->
+    <script src="./darkMode.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"
+    defer></script>
+    <script src="/GrowCraft//src/loadNavbar.js"></script>
 </body>
 
 </html>
