@@ -225,7 +225,9 @@
 
     /* Filters */
     .filters{display:flex;gap:8px;align-items:center;margin-top:20px;flex-wrap:wrap}
-    .chip{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid rgba(2,6,23,0.06);font-weight:700;cursor:pointer}
+    .chip{padding:8px 12px;border-radius:999px;border:1px solid rgba(2,6,23,0.06);font-weight:700;cursor:pointer}
+        .chip:hover{padding:8px 12px;border-radius:999px;border:1px solid rgba(2,6,23,0.06);font-weight:700;cursor:pointer;background-color: #004d00;color: white;}
+
     .chip[data-active="true"]{background:linear-gradient(90deg, rgba(var(--accent),0.12), rgba(var(--accent-2),0.06));border-color:rgba(var(--accent),0.18)}
 
     /* Grid */
@@ -233,17 +235,21 @@
     @media(min-width:640px){.works-grid{grid-template-columns:repeat(2,1fr)}}
     @media(min-width:1000px){.works-grid{grid-template-columns:repeat(3,1fr)}}
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.7));border-radius:var(--card-radius);overflow:hidden;box-shadow:var(--shadow-1);transition:transform .28s,box-shadow .28s;border:1px solid rgba(2,6,23,0.04)}
-    [data-theme="dark"] .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
-    .card:hover{transform:translateY(-8px);box-shadow:var(--shadow-2)}
-    .card-figure{height:160px;overflow:hidden}
+    
+    .card{ border-radius:var(--card-radius);color: black; overflow:hidden;box-shadow:var(--shadow-1);transition:transform .28s,box-shadow .28s;border:1px solid rgba(2,6,23,0.04)}
+    [data-theme="dark"] 
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .card:hover{transform:translateY(-8px);box-shadow:var(--shadow-2);background-color: #c1dbb6;}
+    .card-figure{height:160px;overflow:hidden;color: #004d00;}
     .card-figure img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
     .card:hover .card-figure img{transform:scale(1.06)}
     .card-body{padding:14px}
-    .kicker{display:inline-block;font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(var(--accent),0.08);color:rgb(var(--accent-2));font-weight:700;margin-bottom:8px}
+    .kicker{display:inline-block;font-size:18px;padding:6px 8px;border-radius:999px;background:rgba(var(--accent),0.08);color:rgb(var(--accent-2));font-weight:1000;margin-bottom:8px;color: #66cc66; /* a bit darker green */;}
+     .kicker:hover{display:inline-block;font-size:20px;padding:6px 8px;border-radius:999px;font-weight:1200;margin-bottom:8px;color: #004d00;}
+
     .card-title{font-size:16px;margin:6px 0}
-    .card-desc{color:var(--muted);font-size:14px;margin:0 0 12px}
-    .meta{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+    .card-desc{color:var(--muted);font-size:14px;margin:0 0 12px;color: black;}
+    .meta{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center;color: black;}
 
     /* =====================
    Modal Styling
@@ -365,6 +371,14 @@ section {
   margin-top: 40px;
   margin-bottom: 20px;
 }
+#works {
+  background-color: #9ef69e; /* a bit darker green */
+  padding: 20px;             /* adds space inside the element */
+  border-radius: 8px;        /* slightly rounded corners */
+  color: #004d00;            /* dark green text for contrast */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
 .works-grid {
   margin-top: 30px;
   gap: 28px; /* bigger gaps between cards */
@@ -745,7 +759,7 @@ section {
         <figure class="card-figure"><img src="./images/DigitalMarketing2.png" alt="Digital marketing campaign preview"></figure>
         <div class="card-body">
           <div class="kicker">Digital</div>
-          <h3 class="card-title">Performance Marketing for E‑commerce</h3>
+          <h3 class="card-title">Performance Marketing, E‑commerce</h3>
           <p class="card-desc">Scaled paid media and SEO to lower CAC and lift repeat purchases via omnichannel funnels.</p>
           <div class="meta"><span>📈 +40% conversions</span><div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
           <!-- Data attributes for modal details -->
