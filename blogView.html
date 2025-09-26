@@ -19,6 +19,7 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="src/style.css" />
   <link rel="stylesheet" href="src/blogs.css" />
+  <link rel="stylesheet" href="components/footer.css" />
 
   <!-- Optional additional styling -->
   <style>
@@ -317,6 +318,108 @@ html.dark-mode .professional-footer {
   </div>
 
   <!-- Footer Component Container -->
+
+  <footer class="professional-footer">
+  <div class="container">
+    <div class="row g-4 py-4">
+      <!-- Brand Section -->
+      <div class="col-lg-4 col-md-12">
+        <div class="footer-brand">
+          <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo">
+          <h4 class="brand-name">GrowCraft</h4>
+          <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence.</p>
+          <div class="quick-stats">
+            <div class="stat-item">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">PROJECTS</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">150+</span>
+              <span class="stat-label">CLIENTS</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">YEARS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services Section -->
+      <div class="col-lg-2 col-md-4 col-6">
+        <h5 class="footer-title">
+          <i class="fas fa-tools" style="margin-right: 8px;"></i>Services
+        </h5>
+        <ul class="footer-links">
+          <li><a href="learn/webdev.html"><i class="fas fa-code"></i> Web Development</a></li>
+          <li><a href="learn/graphic.html"><i class="fas fa-paint-brush"></i> Graphic Design</a></li>
+          <li><a href="learn/marketing.html"><i class="fas fa-bullhorn"></i> Digital Marketing</a></li>
+          <li><a href="learn/contentwriting.html"><i class="fas fa-pen-nib"></i> Content Writing</a></li>
+          <li><a href="learn/socialmedia.html"><i class="fas fa-hashtag"></i> Social Media</a></li>
+          <li><a href="learn/cyberanalyst.html"><i class="fas fa-shield-alt"></i> Cyber Analyst</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links Section -->
+      <div class="col-lg-2 col-md-4 col-6">
+        <h5 class="footer-title">
+          <i class="fas fa-link" style="margin-right: 8px;"></i>Quick Links
+        </h5>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#work">Portfolio</a></li>
+          <li><a href="src/contact.html">Contact</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="blogListing.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="col-lg-4 col-md-4">
+        <h5 class="footer-title">
+          <i class="fas fa-envelope" style="margin-right: 8px;"></i>Get In Touch
+        </h5>
+        <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+919999999999">+91 999 999 999</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ABC Street, XYZ City, India</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="container">
+      <div class="row align-items-center py-3">
+        <div class="col-md-6">
+          <p class="copyright">© 2024 <strong>GrowCraft</strong>. All rights reserved.</p>
+        </div>
+        <div class="col-md-6">
+          <div class="footer-nav">
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+            <a href="#sitemap">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <!-- Footer Component Container ends -->
+  
+
    <div id="footer-placeholder"></div>
   <script>
     fetch('src/components/footer.html')
@@ -326,8 +429,10 @@ html.dark-mode .professional-footer {
     });
   </script>
 
+
   <!-- JS Scripts -->
   <script src="src/blogView.js"></script>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
   <script src="src/darkMode.js"></script>
   

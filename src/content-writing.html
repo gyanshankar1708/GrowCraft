@@ -614,6 +614,120 @@
             box-shadow: var(--shadow-hover);
         }
 
+        /* ===== THEME VARIABLES ===== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --text-secondary: #555;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark-mode {
+  --bg-color: #0f0f1a;
+  --text-color: #f2f2f7;
+  --text-secondary: #aaa;
+  --card-bg: rgba(20, 20, 40, 0.6);
+  --primary-gradient: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* ===== BASE ===== */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: var(--bg-color);
+  transition: all 0.4s ease;
+}
+.nav-link {
+  color: var(--text-color) !important;
+}
+.dark-mode .navbar {
+  background: #1a1a2e;
+}
+.dark-mode .nav-link {
+  color: var(--text-color) !important;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.hero-title {
+  background: var(--primary-gradient);      /* apply gradient */
+  -webkit-background-clip: text;           /* clip background to text */
+  -webkit-text-fill-color: transparent;    /* make text itself transparent */
+  background-clip: text;                   /* for non-webkit browsers */
+  color: transparent;                      /* fallback */
+}
+
+/* ===== CARDS ===== */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== FOOTER ===== */
+.professional-footer {
+  background: var(--primary-gradient) !important;
+  color: #fff;
+  transition: all 0.4s ease;
+}
+.dark-mode .professional-footer {
+  background: linear-gradient(135deg, #0f0f1a 0%, #1f1f3d 100%) !important;
+}
+
+/* ===== CTA BUTTON ===== */
+.btn-primary-cta, 
+.hero-cta {
+  background: var(--primary-gradient);
+  color: #fff !important;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-primary-cta:hover,
+.hero-cta:hover {
+  opacity: 0.85;
+}
+
+#darkModeToggle {
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: #000;   /* visible in light mode */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dark-mode #darkModeToggle {
+  color: #fff;   /* visible in dark mode */
+}
+
+
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero {
@@ -692,6 +806,12 @@
                     <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="../work.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item">
+  <button id="darkModeToggle" class="btn btn-sm ms-3" style="background:none; border:none; font-weight:600;">
+    🌙 Dark Mode
+  </button>
+</li>
+
                 </ul>
             </div>
         </div>
@@ -1196,6 +1316,31 @@
             document.body.classList.add('loaded');
         });
     </script>
+    <script>
+  const toggleBtn = document.getElementById("darkModeToggle");
+  const body = document.body;
+
+  function setDarkMode(enabled) {
+    if (enabled) {
+      body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️ Light Mode";
+      localStorage.setItem("dark-mode", "enabled");
+    } else {
+      body.classList.remove("dark-mode");
+      toggleBtn.textContent = "🌙 Dark Mode";
+      localStorage.setItem("dark-mode", "disabled");
+    }
+  }
+
+  // Load preference
+  setDarkMode(localStorage.getItem("dark-mode") === "enabled");
+
+  // Toggle
+  toggleBtn.addEventListener("click", () => {
+    setDarkMode(!body.classList.contains("dark-mode"));
+  });
+</script>
+
 
 </body>
 </html>

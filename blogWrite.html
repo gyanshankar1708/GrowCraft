@@ -44,6 +44,36 @@
       border-bottom: 1px solid rgba(0, 0, 0, 0.1);
       box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
     }
+    
+    .dark .btn-secondary {
+  border-color: #2563eb;
+  background-color: #2563eb;  /* Blue background */
+  color: #ffffff;             /* White text */
+}
+
+.dark .btn-secondary:hover {
+  background-color: #1e40af;  /* Darker blue on hover */
+  color: #ffffff;
+}
+
+.dark .btn-back, .dark .btn-back i{
+  color:#0c0c0c !important
+}
+
+/* Dark mode Back to Blogs button */
+.dark .btn-back,
+.dark .btn-back i {
+  background-color: #3b82f6;   /* nice blue */
+  color: #ffffff !important;   /* white text/icon */
+  transition: all 0.3s ease;
+}
+
+/* Hover effect */
+.dark .btn-back:hover,
+.dark .btn-back:hover i {
+  background-color: #2563eb;   /* deeper blue on hover */
+  color: #facc15 !important;   /* golden yellow text/icon */
+}
 
     /* Dark Mode Support */
     html[data-bs-theme="dark"], html.dark, html.dark-mode {
@@ -901,11 +931,6 @@
           <li class="nav-item"><a class="nav-link active" href="./index.html#about">About Us</a></li>
           <li class="nav-item"><a class="nav-link active" href="./index.html#work">Our Work</a></li>
           <li class="nav-item"><a class="nav-link active" href="src/contact.html">Contact Us</a></li>
-          <li class="nav-item">
-            <button class="btn btn-link nav-link" id="darkModeToggle" title="Toggle dark mode">
-              <img src="images/dark-mode-icon.png" alt="Dark Mode" width="24" height="24" id="darkModeIcon">
-            </button>
-          </li>
         </ul>
       </div>
       

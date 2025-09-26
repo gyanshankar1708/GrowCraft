@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>SevaMittra Chatbot</title>
+    <link rel="stylesheet" href="chatbot.css" />
+    <style>
+      /* Copy your chatbot CSS here */
+      body {
+        font-family: "Jost", system-ui, sans-serif;
+      }
+      .chatbot-container {
+        position: fixed;
+        bottom: 40px;
+        left: 40px;
+        z-index: 1000;
+      }
+      .chatbot-toggle-btn {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: orange;
+        color: white;
+        font-size: 24px;
+        border: none;
+        cursor: pointer;
+      }
+      .chatbot-window {
+        width: 320px;
+        height: 450px;
+        background: #fff;
+        border-radius: 16px;
+        border: 1px solid #ddd;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        position: absolute;
+        bottom: 85px;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        transform: scale(0);
+        opacity: 0;
+        transition: all 0.3s;
+        pointer-events: none;
+      }
+      .chatbot-window.open {
+        transform: scale(1);
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .chatbot-header {
+        background: orange;
+        color: white;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .chatbot-body {
+        flex: 1;
+        padding: 10px;
+        overflow-y: auto;
+      }
+      .chatbot-msg {
+        margin: 6px 0;
+        padding: 8px 12px;
+        border-radius: 12px;
+        max-width: 75%;
+      }
+      .bot-msg {
+        background: #f1f1f1;
+      }
+      .user-msg {
+        background: #ffe6cc;
+        align-self: flex-end;
+      }
+      .chatbot-input-container {
+        display: flex;
+        padding: 8px;
+        border-top: 1px solid #ddd;
+      }
+      .chatbot-input-container input {
+        flex: 1;
+        padding: 6px;
+      }
+      .quick-questions {
+        padding: 8px;
+        border-top: 1px solid #ddd;
+      }
+      .quick-question-btn {
+        margin: 3px;
+        padding: 5px 10px;
+        background: orange;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chatbot-container">
+      <div class="chatbot-window" id="chatWindow">
+        <div class="chatbot-header">
+           <img src="images/Logo.png" alt="GrowCraft Logo" class="chatbot-header-logo">
+          <span>GrowCraft</span>
+          <button onclick="toggleChat()">X</button>
+        </div>
+        <div class="chatbot-body" id="chatBody">
+          <div class="chatbot-msg bot-msg">
+            Hello! I am GrowCraft. How can I assist you today?
+          </div>
+        </div>
+        <div class="quick-questions" id="quickQuestions"></div>
+        <div class="chatbot-input-container">
+          <input id="chatInput" type="text" placeholder="Type your query..." />
+          <button onclick="sendMessage()">Send</button>
+        </div>
+      </div>
+      <button class="chatbot-toggle-btn" onclick="toggleChat()">💬</button>
+    </div>
+
+    <script src="components/chatbot.js"></script>
+  </body>
+</html>
