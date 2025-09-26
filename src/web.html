@@ -144,7 +144,8 @@
         font-size: 3rem;
         margin-bottom: 1rem;
         background: linear-gradient(to right, #2563eb, #3b82f6);
-        -webkit-background-clip: text;
+        background-clip: text;
+         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
 
@@ -316,6 +317,7 @@
         font-size: 3rem;
         margin-bottom: 1rem;
         background: linear-gradient(to right, #2563eb, #3b82f6);
+        background-clip: text; 
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
       }
@@ -753,6 +755,7 @@
     #b91c1c,  
     #7c3aed  
        );
+        background-clip: text; 
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
    }
@@ -1228,7 +1231,7 @@
       content: '';
       position: absolute;
       bottom: 0;
-      left: 0;
+      left: 45%;
       width: 30px;
       height: 2px;
       background: linear-gradient(45deg, #007bff, #0056b3);
@@ -1282,9 +1285,10 @@
 
     .contact-item {
       display: flex;
+      justify-self: center;
       align-items: center;
       margin-bottom: 0.75rem;
-      gap: 10px;
+      gap: 5px;
     }
 
     .contact-item i {
