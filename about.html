@@ -9,20 +9,23 @@
   <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="components/chatbot.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
     /* Brand Tokens */
     :root {
-      --brand: #16a34a;           /* Grow green */
-      --brand-2: #22c55e;         /* lighter green */
-      --accent: #60a5fa;          /* blue accent */
-      --bg: #0b0f14;              /* dark base */
-      --bg-soft: #101720;         /* dark elevated */
+      --brand: #16a34a;          /* Grow green */
+      --brand-2: #22c55e;        /* lighter green */
+      --accent: #60a5fa;         /* blue accent */
+      --bg: #0b0f14;             /* dark base */
+      --bg-soft: #101720;        /* dark elevated */
       --card: rgba(255,255,255,0.06);
       --border: rgba(255,255,255,0.12);
-      --text: #e5e7eb;            /* light text */
-      --muted: #9ca3af;           /* muted text */
+      --text: #e5e7eb;           /* light text */
+      --muted: #9ca3af;          /* muted text */
       --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
 
@@ -112,7 +115,7 @@
     align-items: stretch !important;
 }
 
-     /* Professional Footer */
+      /* Professional Footer */
   .professional-footer {
     background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
     color: #ffffff;
@@ -299,8 +302,8 @@
   }
 
   /* =====================
-   FOOTER RESPONSIVE FIX
-   ===================== */
+    FOOTER RESPONSIVE FIX
+    ===================== */
 
 /* Tablet (max 992px) */
 @media (max-width: 992px) {
@@ -326,7 +329,7 @@
   }
 }
 /* ================================
-   Responsive Footer Fixes
+    Responsive Footer Fixes
 ================================ */
 
 /* Tablet and below */
@@ -542,10 +545,8 @@
     .scroll-cue { margin-top: clamp(22px, 4vw, 34px); color: var(--muted); display: inline-flex; align-items: center; gap: 10px; font-size: 14px; }
     .scroll-cue svg { width: 18px; height: 18px; animation: bounce 1.4s ease-in-out infinite; }
     @keyframes bounce { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(4px);} }
-
-    /* Reveal animations */
-    .reveal { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
-    .reveal.in { opacity: 1; transform: none; }
+    
+    /* ❌ 3. REMOVED OLD REVEAL ANIMATION CSS */
 
     /* Accessibility improvements */
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
@@ -656,7 +657,6 @@
 </head>
 
 <body class="theme-light">
-  <!-- Navbar starts here -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
       <a class="navbar-brand" href="index.html"><img src="images/Logo_new.png" alt="GrowCraft" width="200" id="logo"></a>
@@ -689,21 +689,16 @@
       </div>
     </div>
   </nav>
-  <!-- Navbar ends here -->
-
   <section class="hero" id="about-hero" aria-labelledby="about-hero-title">
-    <!-- Background layers -->
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="grid-lines" aria-hidden="true"></div>
     <div class="orb one" data-parallax="-12" aria-hidden="true"></div>
     <div class="orb two blue" data-parallax="8" aria-hidden="true"></div>
 
     <div class="container">
-      <!-- Topbar -->
       <div class="topbar">
-        <div class="brand reveal in">
+        <div class="brand" data-aos="fade-down">
           <span class="sprout" aria-hidden="true">
-            <!-- sprout icon -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M12 21v-8"></path>
               <path d="M7 8c3-4 10-4 10 2 0 3-2 5-5 5S7 13 7 10V8Z"></path>
@@ -714,23 +709,22 @@
           <span class="eyebrow" style="margin-left:10px"><span class="dot"></span> GSSoC'25</span>
         </div>
         <div class="actions">
-          <button class="ghost reveal in" id="learnMoreBtn" aria-label="Skip to story">Our Story</button>
+          <button class="ghost" id="learnMoreBtn" aria-label="Skip to story" data-aos="fade-down">Our Story</button>
         </div>
       </div>
 
-      <!-- Content -->
       <div class="content">
         <div class="copy">
-          <span class="eyebrow reveal in">About Us</span>
-          <h1 class="reveal in" id="about-hero-title">Empowering <span class="highlight">Businesses</span> &amp; Enabling <span class="highlight">Students</span>.</h1>
-          <p class="sub reveal in">GrowCraft is a service-based platform that helps brands grow online while giving students real-world experience through training, internships, and open-source collaboration.</p>
+          <span class="eyebrow" data-aos="fade-up" data-aos-delay="100">About Us</span>
+          <h1 data-aos="fade-up" data-aos-delay="200" id="about-hero-title">Empowering <span class="highlight">Businesses</span> &amp; Enabling <span class="highlight">Students</span>.</h1>
+          <p class="sub" data-aos="fade-up" data-aos-delay="300">GrowCraft is a service-based platform that helps brands grow online while giving students real-world experience through training, internships, and open-source collaboration.</p>
 
-          <div class="cta-row reveal in" style="margin-top:10px;">
+          <div class="cta-row" data-aos="fade-up" data-aos-delay="400" style="margin-top:10px;">
             <button class="btn-primary" id="exploreServices">Explore Services</button>
             <button class="btn-outline" id="joinContrib">Join as Contributor</button>
           </div>
 
-          <div class="badges reveal in" aria-label="Key areas">
+          <div class="badges" data-aos="fade-up" data-aos-delay="500" aria-label="Key areas">
             <span class="chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18"></path><path d="M3 6h18"></path><path d="M3 18h18"></path></svg>
               Website Development
@@ -745,13 +739,13 @@
             </span>
           </div>
 
-          <div class="scroll-cue reveal in" role="note">
+          <div class="scroll-cue" data-aos="fade-up" data-aos-delay="600" role="note">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
             Scroll to learn more
           </div>
         </div>
 
-        <div class="visual reveal in" id="visualCard" data-parallax="4" aria-label="Impact metrics">
+        <div class="visual" data-aos="zoom-in" data-aos-delay="200" id="visualCard" data-parallax="4" aria-label="Impact metrics">
           <div class="ring" aria-hidden="true"></div>
           <div class="metric-grid">
             <div class="metric">
@@ -787,19 +781,19 @@
     <div class="container">
       <div class="wrap">
 
-        <div>
-          <span class="eyebrow reveal in"><span class="seed" aria-hidden="true"></span> About Us</span>
-          <h2 class="reveal in">Who We Are — <span class="em">GrowCraft</span></h2>
-          <p class="lead reveal in">GrowCraft is a <strong>service-based platform</strong> designed to help businesses grow their online presence while also empowering students and contributors to gain hands-on experience in real-world projects. We pair client work with mentorship-driven contributor flows so learning happens by doing.</p>
+        <div data-aos="fade-right">
+          <span class="eyebrow"><span class="seed" aria-hidden="true"></span> About Us</span>
+          <h2>Who We Are — <span class="em">GrowCraft</span></h2>
+          <p class="lead">GrowCraft is a <strong>service-based platform</strong> designed to help businesses grow their online presence while also empowering students and contributors to gain hands-on experience in real-world projects. We pair client work with mentorship-driven contributor flows so learning happens by doing.</p>
 
-          <p class="lead reveal in"><strong>This project is proudly part of <span class="em">GirlScript Summer of Code 2025 (GSSoC'25)</span></strong> — a nationwide open-source program where contributors collaborate, learn, and build impactful solutions.</p>
+          <p class="lead"><strong>This project is proudly part of <span class="em">GirlScript Summer of Code 2025 (GSSoC'25)</span></strong> — a nationwide open-source program where contributors collaborate, learn, and build impactful solutions.</p>
 
-          <div class="row reveal in" style="margin-top:18px">
+          <div class="row" style="margin-top:18px">
             <button class="btn primary" id="exploreBtn">Explore Services</button>
             <button class="btn ghost" id="guideBtn">Read Contribution Guide</button>
           </div>
 
-          <div class="mini-timeline reveal in" aria-hidden="true" style="margin-top:18px">
+          <div class="mini-timeline" aria-hidden="true" style="margin-top:18px">
             <div class="step active" aria-hidden="true"></div>
             <div class="step" aria-hidden="true"></div>
             <div class="step" aria-hidden="true"></div>
@@ -808,7 +802,7 @@
           </div>
         </div>
 
-        <aside class="card reveal in" aria-labelledby="whoCardTitle">
+        <aside class="card" data-aos="fade-left" aria-labelledby="whoCardTitle">
           <div class="kicker">GrowCraft Snapshot</div>
           <h3 id="whoCardTitle">Services + Student Experience</h3>
           <p class="muted">We deliver digital services for clients while offering contributors mentorship, review, and real project work to boost learning and portfolios.</p>
@@ -839,7 +833,6 @@
   </section>
 
 
-    <!-- Chatbot button-->
     <div class="chatbot-container">
       <div class="chatbot-window" id="chatWindow">
         <div class="chatbot-header">
@@ -860,18 +853,6 @@
       </div>
       <button class="chatbot-toggle-btn" onclick="toggleChat()"><i class="fas fa-leaf"></i></button>
     </div>
-  <!-- Chatbot button ends here-->
-
- <!-- Footer -->
-  
-  
-
-
-<script>
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
-</script>
-
-  <!-- Enhanced Scroll to Top Button -->
   <button id="backToTop" title="Go to top" type="button">
     <i class="fas fa-chevron-up"></i>
   </button>
@@ -889,9 +870,17 @@
   <script src="src/utils.js"></script>
   <script src="components/chatbot.js"></script>
   <script src="src/darkMode.js"></script>
- 
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
+    // ✅ 2. INITIALIZED AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+    });
+  
     // Theme handling
     (function() {
       const stored = localStorage.getItem('gc-theme');
@@ -944,25 +933,8 @@
       requestAnimationFrame(tick);
     })();
 
-    // Reveal on view (IO-based)
-    (function(){
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const items = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window) || reduce) {
-        items.forEach(el => el.classList.add('in'));
-        return;
-      }
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      items.forEach(el => io.observe(el));
-    })();
-
+    // ❌ 3. REMOVED OLD REVEAL ON VIEW SCRIPT (IntersectionObserver)
+    
     // CTA demo handlers
     document.getElementById('exploreServices')?.addEventListener('click', ()=>{
       window.location.href = 'index.html#services';
@@ -1041,4 +1013,3 @@
 
 </body>
 </html>
-   

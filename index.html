@@ -5,20 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GrowCraft - Gateway to Digital Success</title>
-  <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
   <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
-  
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-    
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    
+
     :root {
       --primary-green: #27ae60;
       --secondary-green: #388e3c;
@@ -34,7 +35,7 @@
       --border-radius: 20px;
       --spacing: 2rem;
     }
-    
+
     body {
       font-family: 'Poppins', sans-serif;
       line-height: 1.6;
@@ -42,58 +43,9 @@
       overflow-x: hidden;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
-    
-    /* Enhanced Animations */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-    
-    @keyframes scaleIn {
-      from {
-        opacity: 0;
-        transform: scale(0.9);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
-    
-    @keyframes slideInRight {
-      from {
-        opacity: 0;
-        transform: translateX(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-    
-    @keyframes floatAnimation {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    
-    .fade-in-up {
-      animation: fadeInUp 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    
-    .scale-in {
-      animation: scaleIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    
-    .slide-in-right {
-      animation: slideInRight 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    
+
+    /* ❌ STEP 3: REMOVED OLD @keyframes and animation classes (.fade-in-up, etc.) */
+
     /* Enhanced Navbar */
     .navbar {
       padding: 1.2rem 0;
@@ -106,19 +58,19 @@
       z-index: 1000;
       transition: var(--transition);
     }
-    
+
     .navbar.scrolled {
       padding: 0.8rem 0;
       background: rgba(255, 255, 255, 0.98) !important;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     }
-    
+
     .navbar-brand img {
       max-height: 50px;
       transition: var(--transition);
       filter: drop-shadow(2px 2px 8px rgba(39, 174, 96, 0.2));
     }
-    
+
     .navbar-nav .nav-link {
       font-weight: 500;
       color: #2e7d32 !important;
@@ -129,7 +81,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .navbar-nav .nav-link::before {
       content: '';
       position: absolute;
@@ -141,11 +93,11 @@
       transition: var(--transition);
       z-index: -1;
     }
-    
+
     .navbar-nav .nav-link:hover::before {
       left: 0;
     }
-    
+
     /* Theme Toggle Button */
     .theme-toggle {
       background: rgba(39, 174, 96, 0.1);
@@ -161,7 +113,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .theme-toggle::before {
       content: '';
       position: absolute;
@@ -173,40 +125,40 @@
       transition: var(--transition);
       z-index: -1;
     }
-    
+
     .theme-toggle:hover::before {
       left: 0;
     }
-    
+
     .theme-toggle:hover {
       color: white;
       border-color: var(--primary-green);
       transform: scale(1.1);
       box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
     }
-    
+
     .theme-toggle i {
       font-size: 18px;
       transition: var(--transition);
     }
-    
+
     .theme-toggle:hover i {
       transform: rotate(20deg) scale(1.1);
     }
-    
+
     .navbar-nav .nav-link:hover {
       color: #ffffff !important;
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
     }
-    
+
     /* Training Program Section */
     .training-section {
       background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
       padding: 3rem 0;
       position: relative;
     }
-    
+
     .training-section::before {
       content: '';
       position: absolute;
@@ -217,7 +169,7 @@
       background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="10" cy="10" r="1" fill="rgba(39,174,96,0.1)"/><circle cx="90" cy="90" r="1" fill="rgba(39,174,96,0.1)"/><circle cx="30" cy="70" r="1" fill="rgba(39,174,96,0.1)"/><circle cx="70" cy="30" r="1" fill="rgba(39,174,96,0.1)"/></svg>');
       opacity: 0.5;
     }
-    
+
     .head-training {
       font-size: 2.5rem;
       font-weight: 700;
@@ -226,7 +178,7 @@
       margin-bottom: 2rem;
       position: relative;
     }
-    
+
     .head-training::after {
       content: '';
       position: absolute;
@@ -238,7 +190,7 @@
       background: linear-gradient(90deg, var(--primary-green), var(--light-green));
       border-radius: 2px;
     }
-    
+
     .program-card {
       background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(15px);
@@ -250,7 +202,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .program-card::before {
       content: '';
       position: absolute;
@@ -262,50 +214,50 @@
       transition: var(--transition);
       z-index: -1;
     }
-    
+
     .program-card:hover::before {
       left: 0;
     }
-    
+
     .program-card:hover {
       transform: translateY(-8px) scale(1.02);
       box-shadow: var(--shadow-hover);
       border-color: var(--primary-green);
     }
-    
+
     .program-card .icon {
       width: 40px;
       height: 40px;
       transition: var(--transition);
     }
-    
+
     .program-card:hover .icon {
       transform: scale(1.1) rotate(5deg);
     }
-    
+
     .program-card h6 {
       font-weight: 600;
       color: #333;
       margin: 0;
     }
-    
+
     /* Carousel Enhancements */
     .carousel-section {
       position: relative;
       margin: 2rem 0;
     }
-    
+
     .carousel-inner {
       border-radius: var(--border-radius);
       overflow: hidden;
     }
-    
+
     .carousel-item {
       position: relative;
       height: 70vh;
       min-height: 500px;
     }
-    
+
     .carousel-overlay img {
       width: 100%;
       height: 100%;
@@ -313,12 +265,12 @@
       filter: brightness(0.7);
       transition: var(--transition);
     }
-    
+
     .carousel-item:hover .carousel-overlay img {
       filter: brightness(0.8);
       transform: scale(1.02);
     }
-    
+
     .carousel-caption {
       position: absolute;
       top: 50%;
@@ -330,7 +282,7 @@
       padding: 2rem;
       border: 1px solid rgba(255, 255, 255, 0.2);
     }
-    
+
     .carousel-caption h2 {
       font-size: 3rem;
       font-weight: 700;
@@ -338,7 +290,7 @@
       margin-bottom: 1.5rem;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     }
-    
+
     .redirect-btns .btn {
       padding: 12px 24px;
       margin: 0 8px;
@@ -347,31 +299,31 @@
       transition: var(--transition);
       border: 2px solid transparent;
     }
-    
+
     .btn-primary {
       background: linear-gradient(135deg, var(--primary-green), var(--light-green));
       border: none;
       color: white;
     }
-    
+
     .btn-primary:hover {
       background: linear-gradient(135deg, var(--light-green), var(--accent-green));
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
     }
-    
+
     .btn-custom-purple {
       background: linear-gradient(135deg, #6c5ce7, #a29bfe);
       border: none;
       color: white;
     }
-    
+
     .btn-custom-purple:hover {
       background: linear-gradient(135deg, #5a4fcf, #6c5ce7);
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
     }
-    
+
     /* Custom Carousel Arrow */
     .arrow-slide-btn {
       position: absolute;
@@ -392,28 +344,28 @@
       transition: var(--transition);
       z-index: 10;
     }
-    
+
     .arrow-slide-btn:hover {
       background: rgba(255, 255, 255, 0.25);
       transform: translateY(-50%) scale(1.1);
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     }
-    
+
     .arrow-icon {
       font-size: 24px;
       transition: var(--transition);
     }
-    
+
     .arrow-slide-btn:hover .arrow-icon {
       transform: translateX(3px);
     }
-    
+
     /* Services Section */
     .services-section {
       padding: 4rem 0;
       background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     }
-    
+
     .heading-text {
       font-size: 3rem;
       font-weight: 800;
@@ -422,7 +374,7 @@
       margin-bottom: 1rem;
       position: relative;
     }
-    
+
     .heading-text::after {
       content: '';
       position: absolute;
@@ -434,7 +386,7 @@
       background: linear-gradient(90deg, var(--primary-green), var(--light-green));
       border-radius: 2px;
     }
-    
+
     .services-subtitle {
       font-size: 1.2rem;
       color: #666;
@@ -442,7 +394,7 @@
       margin-bottom: 3rem;
       font-style: italic;
     }
-    
+
     /* Enhanced Service Cards */
     .card-services {
       background: rgba(255, 255, 255, 0.9);
@@ -454,7 +406,7 @@
       overflow: hidden;
       height: 100%;
     }
-    
+
     .card-services::before {
       content: '';
       position: absolute;
@@ -466,46 +418,46 @@
       transform: scaleX(0);
       transition: var(--transition);
     }
-    
+
     .card-services:hover::before {
       transform: scaleX(1);
     }
-    
+
     .card-services:hover {
       transform: translateY(-10px);
       box-shadow: var(--shadow-hover);
       border-color: var(--primary-green);
     }
-    
+
     .card-services .card-title {
       color: var(--primary-green);
       font-weight: 700;
       font-size: 1.4rem;
       margin-bottom: 1rem;
     }
-    
+
     .card-services .svg-img svg {
       width: 60px;
       height: 60px;
       transition: var(--transition);
     }
-    
+
     .card-services:hover .svg-img svg {
       transform: scale(1.1) rotate(10deg);
     }
-    
+
     .service-features {
       list-style: none;
       padding: 0;
     }
-    
+
     .service-features li {
       position: relative;
       padding-left: 20px;
       margin-bottom: 8px;
       color: #555;
     }
-    
+
     .service-features li::before {
       content: '✓';
       position: absolute;
@@ -513,7 +465,7 @@
       color: var(--primary-green);
       font-weight: 600;
     }
-    
+
     .service-stats {
       display: flex;
       gap: 8px;
@@ -521,7 +473,7 @@
       flex-wrap: wrap;
       margin-top: 1rem;
     }
-    
+
     .stat-badge {
       background: linear-gradient(135deg, var(--primary-green), var(--light-green));
       color: white;
@@ -531,7 +483,7 @@
       font-weight: 600;
       white-space: nowrap;
     }
-    
+
     .toggle-btn {
       background: linear-gradient(135deg, var(--primary-green), var(--light-green));
       color: white;
@@ -541,35 +493,35 @@
       font-size: 0.9rem;
       transition: var(--transition);
     }
-    
+
     .toggle-btn:hover {
       background: linear-gradient(135deg, var(--light-green), var(--accent-green));
       transform: scale(1.05);
     }
-    
+
     .extra {
       transition: all 0.5s ease;
       overflow: hidden;
     }
-    
+
     .extra.d-none {
       max-height: 0;
       opacity: 0;
       padding: 0;
     }
-    
+
     .extra:not(.d-none) {
       max-height: 500px;
       opacity: 1;
       padding: 1rem 0;
     }
-    
+
     /* About Section */
     .about-section {
       padding: 4rem 0;
       background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     }
-    
+
     .about-title {
       font-size: 3rem;
       font-weight: 800;
@@ -577,7 +529,7 @@
       text-align: center;
       margin-bottom: 1rem;
     }
-    
+
     .about-subtitle {
       font-size: 1.2rem;
       color: #666;
@@ -585,7 +537,7 @@
       margin-bottom: 3rem;
       font-style: italic;
     }
-    
+
     .about-card {
       background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(15px);
@@ -596,7 +548,7 @@
       position: relative;
       overflow: hidden;
     }
-    
+
     .about-card::before {
       content: '';
       position: absolute;
@@ -608,17 +560,17 @@
       transition: var(--transition);
       z-index: -1;
     }
-    
+
     .about-card:hover::before {
       left: 0;
     }
-    
+
     .about-card:hover {
       transform: translateY(-8px);
       box-shadow: var(--shadow-hover);
       border-color: var(--primary-green);
     }
-    
+
     .about-card h4 {
       color: var(--primary-green);
       font-weight: 700;
@@ -627,18 +579,18 @@
       align-items: center;
       gap: 10px;
     }
-    
+
     .about-card .icon {
       color: var(--primary-green);
       font-size: 1.2em;
     }
-    
+
     .about-para {
       color: #555;
       line-height: 1.6;
       font-size: 1rem;
     }
-    
+
     /* Feedback Section */
     .feedback-section {
       padding: 4rem 0;
@@ -646,7 +598,7 @@
       color: white;
       position: relative;
     }
-    
+
     .feedback-section::before {
       content: '';
       position: absolute;
@@ -656,7 +608,7 @@
       bottom: 0;
       background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
     }
-    
+
     .feedback-title {
       font-size: 3rem;
       font-weight: 800;
@@ -664,14 +616,14 @@
       margin-bottom: 1rem;
       color: white;
     }
-    
+
     .feedback-subtitle {
       font-size: 1.2rem;
       text-align: center;
       margin-bottom: 3rem;
       opacity: 0.9;
     }
-    
+
     .feedback-form-container {
       background: rgba(255, 255, 255, 0.15);
       backdrop-filter: blur(20px);
@@ -682,14 +634,14 @@
       margin: 0 auto;
       position: relative;
     }
-    
+
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
       margin-bottom: 1.5rem;
     }
-    
+
     .form-input,
     .form-textarea {
       width: 100%;
@@ -701,12 +653,12 @@
       font-size: 1rem;
       transition: var(--transition);
     }
-    
+
     .form-input::placeholder,
     .form-textarea::placeholder {
       color: rgba(255, 255, 255, 0.7);
     }
-    
+
     .form-input:focus,
     .form-textarea:focus {
       outline: none;
@@ -714,20 +666,20 @@
       border-color: rgba(255, 255, 255, 0.5);
       box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
     }
-    
+
     .form-textarea {
       resize: vertical;
       min-height: 120px;
       grid-column: 1 / -1;
     }
-    
+
     .form-buttons {
       display: flex;
       gap: 1rem;
       justify-content: center;
       margin-top: 2rem;
     }
-    
+
     .btn-submit {
       background: linear-gradient(135deg, #2196f3, #1976d2);
       color: white;
@@ -737,13 +689,13 @@
       font-weight: 600;
       transition: var(--transition);
     }
-    
+
     .btn-submit:hover {
       background: linear-gradient(135deg, #1976d2, #1565c0);
       transform: translateY(-3px);
       box-shadow: 0 8px 25px rgba(33, 150, 243, 0.4);
     }
-    
+
     .btn-cancel {
       background: rgba(255, 255, 255, 0.2);
       color: white;
@@ -753,12 +705,12 @@
       font-weight: 600;
       transition: var(--transition);
     }
-    
+
     .btn-cancel:hover {
       background: rgba(255, 255, 255, 0.3);
       transform: translateY(-3px);
     }
-    
+
     .success-message {
       background: rgba(76, 175, 80, 0.9);
       backdrop-filter: blur(15px);
@@ -771,13 +723,13 @@
       font-weight: 600;
       display: none;
     }
-    
+
     .success-message i {
       font-size: 3rem;
       margin-bottom: 1rem;
       color: white;
     }
-    
+
     /* Scroll to Top Button */
     #backToTop {
       position: fixed;
@@ -801,50 +753,50 @@
       align-items: center;
       justify-content: center;
     }
-    
+
     #backToTop:hover {
       background: linear-gradient(135deg, var(--light-green), var(--accent-green));
       transform: translateY(-3px) scale(1.1);
       box-shadow: 0 8px 32px rgba(39, 174, 96, 0.4);
     }
-    
+
     #backToTop.show {
       opacity: 1;
       visibility: visible;
       transform: translateY(0) scale(1);
     }
-    
+
     /* Dark Mode Styles */
     [data-bs-theme="dark"] body {
       background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
       color: #ffffff;
     }
-    
+
     [data-bs-theme="dark"] .navbar {
       background: rgba(26, 26, 26, 0.95) !important;
       border-bottom: 3px solid var(--primary-green);
     }
-    
+
     [data-bs-theme="dark"] .navbar-nav .nav-link {
       color: #ffffff !important;
     }
-    
+
     [data-bs-theme="dark"] .theme-toggle {
       background: rgba(255, 255, 255, 0.1);
       border-color: rgba(255, 255, 255, 0.3);
       color: #ffffff;
     }
-    
+
     [data-bs-theme="dark"] .theme-toggle::before {
       background: linear-gradient(135deg, var(--accent-green), var(--light-green));
     }
-    
+
     [data-bs-theme="dark"] .theme-toggle:hover {
       color: #000000;
       border-color: var(--accent-green);
       box-shadow: 0 4px 15px rgba(129, 199, 132, 0.4);
     }
-    
+
     [data-bs-theme="dark"] .program-card,
     [data-bs-theme="dark"] .card-services,
     [data-bs-theme="dark"] .about-card {
@@ -852,7 +804,7 @@
       border-color: rgba(39, 174, 96, 0.3);
       color: #ffffff;
     }
-    
+
     [data-bs-theme="dark"] .program-card h6,
     [data-bs-theme="dark"] .program-card p,
     [data-bs-theme="dark"] .card-services .card-title,
@@ -862,89 +814,89 @@
     [data-bs-theme="dark"] .about-para {
       color: #ffffff !important;
     }
-    
+
     [data-bs-theme="dark"] .service-features li {
       color: #e0e0e0 !important;
     }
-    
+
     [data-bs-theme="dark"] .text-muted {
       color: #b0b0b0 !important;
     }
-    
+
     [data-bs-theme="dark"] .training-section,
     [data-bs-theme="dark"] .services-section,
     [data-bs-theme="dark"] .about-section {
       background: linear-gradient(135deg, var(--dark-bg) 0%, #2d2d2d 100%);
     }
-    
+
     [data-bs-theme="dark"] .heading-text,
     [data-bs-theme="dark"] .about-title,
     [data-bs-theme="dark"] .head-training {
       color: var(--accent-green) !important;
     }
-    
+
     [data-bs-theme="dark"] .services-subtitle,
     [data-bs-theme="dark"] .about-subtitle {
       color: #cccccc !important;
     }
-    
+
     [data-bs-theme="dark"] .card-services .card-title {
       color: var(--accent-green) !important;
     }
-    
+
     [data-bs-theme="dark"] .about-card h4 {
       color: var(--accent-green) !important;
     }
-    
+
     [data-bs-theme="dark"] .about-card .icon {
       color: var(--accent-green) !important;
     }
-    
+
     /* Additional Dark Mode Text Visibility Fixes */
     [data-bs-theme="dark"] .program-card {
       background: rgba(255, 255, 255, 0.12) !important;
       border: 1px solid rgba(129, 199, 132, 0.3) !important;
     }
-    
+
     [data-bs-theme="dark"] .program-card h6 {
       color: #ffffff !important;
       font-weight: 600;
     }
-    
+
     [data-bs-theme="dark"] .program-card .text-muted {
       color: #cccccc !important;
     }
-    
+
     [data-bs-theme="dark"] .card-services {
       background: rgba(255, 255, 255, 0.12) !important;
       border: 1px solid rgba(129, 199, 132, 0.3) !important;
     }
-    
+
     [data-bs-theme="dark"] .about-card {
       background: rgba(255, 255, 255, 0.12) !important;
       border: 1px solid rgba(129, 199, 132, 0.3) !important;
     }
-    
+
     [data-bs-theme="dark"] .service-features li::before {
       color: var(--accent-green) !important;
     }
-    
+
     [data-bs-theme="dark"] .extra-cta .btn-outline-primary {
       color: #ffffff !important;
       border-color: rgba(255, 255, 255, 0.5) !important;
     }
-    
+
     [data-bs-theme="dark"] .extra-cta .btn-outline-primary:hover {
       background: rgba(255, 255, 255, 0.1) !important;
       color: #ffffff !important;
     }
-    
+
     /* Footer Dark Mode Styles */
     [data-bs-theme="dark"] .professional-footer {
       background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%) !important;
       color: #ffffff !important;
     }
-    
+
     [data-bs-theme="dark"] .footer-brand h3,
     [data-bs-theme="dark"] .footer-brand p,
     [data-bs-theme="dark"] .footer-links h5,
@@ -956,135 +908,136 @@
     [data-bs-theme="dark"] .newsletter-text {
       color: #ffffff !important;
     }
-    
+
     [data-bs-theme="dark"] .footer-links a:hover,
     [data-bs-theme="dark"] .contact-item a:hover {
       color: var(--accent-green) !important;
     }
-    
+
     [data-bs-theme="dark"] .contact-item i {
       color: var(--accent-green) !important;
     }
-    
+
     [data-bs-theme="dark"] .stat-number {
       color: var(--accent-green) !important;
     }
-    
+
     [data-bs-theme="dark"] .stat-label {
       color: #cccccc !important;
     }
-    
+
     [data-bs-theme="dark"] .social-link {
       background: rgba(255, 255, 255, 0.1) !important;
       border-color: rgba(255, 255, 255, 0.2) !important;
       color: #cccccc !important;
     }
-    
+
     [data-bs-theme="dark"] .social-link:hover {
       background: var(--accent-green) !important;
       border-color: var(--accent-green) !important;
       color: #000000 !important;
     }
-    
+
     [data-bs-theme="dark"] .newsletter-input {
       background: rgba(255, 255, 255, 0.1) !important;
       border-color: rgba(255, 255, 255, 0.3) !important;
       color: #ffffff !important;
     }
-    
+
     [data-bs-theme="dark"] .newsletter-input::placeholder {
       color: rgba(255, 255, 255, 0.6) !important;
     }
-    
+
     [data-bs-theme="dark"] .newsletter-input:focus {
       border-color: var(--accent-green) !important;
       background: rgba(255, 255, 255, 0.15) !important;
     }
-    
+
     [data-bs-theme="dark"] .newsletter-btn {
       background: var(--accent-green) !important;
       color: #000000 !important;
     }
-    
+
     [data-bs-theme="dark"] .newsletter-btn:hover {
       background: var(--light-green) !important;
     }
-    
+
     [data-bs-theme="dark"] .footer-bottom {
       border-top: 1px solid rgba(255, 255, 255, 0.2) !important;
       background: rgba(0, 0, 0, 0.3) !important;
     }
-    
+
     [data-bs-theme="dark"] .copyright,
     [data-bs-theme="dark"] .footer-nav a {
       color: #cccccc !important;
     }
-    
+
     [data-bs-theme="dark"] .copyright strong,
     [data-bs-theme="dark"] .footer-nav a:hover {
       color: var(--accent-green) !important;
     }
-    
+
     [data-bs-theme="dark"] .footer-nav a:hover {
       background: rgba(129, 199, 132, 0.2) !important;
       border-color: rgba(129, 199, 132, 0.3) !important;
     }
-    
+
     [data-bs-theme="dark"] .form-input,
     [data-bs-theme="dark"] .form-textarea {
       background: rgba(255, 255, 255, 0.05);
       border-color: rgba(255, 255, 255, 0.2);
       color: #ffffff;
     }
-    
+
     /* Responsive Design */
     @media (max-width: 768px) {
+
       .head-training,
       .heading-text,
       .about-title,
       .feedback-title {
         font-size: 2rem;
       }
-      
+
       .carousel-caption h2 {
         font-size: 2rem;
       }
-      
+
       .carousel-item {
         height: 50vh;
         min-height: 400px;
       }
-      
+
       .form-row {
         grid-template-columns: 1fr;
       }
-      
+
       .arrow-slide-btn {
         width: 50px;
         height: 50px;
         right: 20px;
       }
-      
+
       .program-card {
         margin-bottom: 1rem;
       }
     }
-    
+
     /* Utility Classes */
     .glass-effect {
       background: var(--glass-bg);
       backdrop-filter: blur(15px);
       border: 1px solid var(--glass-border);
     }
-    
+
     .smooth-transition {
       transition: var(--transition);
     }
-    
+
     .hover-lift:hover {
       transform: translateY(-5px);
     }
-    
+
     .hover-scale:hover {
       transform: scale(1.05);
     }
@@ -1092,7 +1045,6 @@
 </head>
 
 <body id="main-body">
-  <!-- Enhanced Navbar -->
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid d-flex justify-content-between align-items-center px-4">
       <a class="navbar-brand hover-scale" href="#">
@@ -1128,7 +1080,6 @@
           </li>
         </ul>
 
-        <!-- Dark Mode Toggle Button -->
         <button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
           <i class="fas fa-moon" id="themeIcon"></i>
         </button>
@@ -1136,14 +1087,12 @@
     </div>
   </nav>
 
-  <!-- Enhanced Training Program Section -->
   <section class="training-section">
     <div class="container-fluid">
-      <h2 class="head-training fade-in-up">Training & Internship Programs</h2>
+      <h2 class="head-training" data-aos="fade-up">Training & Internship Programs</h2>
       <div class="row g-4 justify-content-center px-4">
 
-        <!-- Website Development -->
-        <div class="col-sm-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
           <a href="src/web.html" class="training-links text-decoration-none">
             <div class="program-card hover-lift">
               <img src="images/icons/WebDev.png" alt="Web Development" class="icon" />
@@ -1153,8 +1102,7 @@
           </a>
         </div>
 
-        <!-- Digital Marketing -->
-        <div class="col-sm-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.2s;">
+        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
           <a href="src/digital-marketing.html" class="training-links text-decoration-none">
             <div class="program-card hover-lift">
               <img src="images/icons/DigitalMarketing.png" alt="Digital Marketing" class="icon" />
@@ -1164,8 +1112,7 @@
           </a>
         </div>
 
-        <!-- Content Writing -->
-        <div class="col-sm-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.3s;">
+        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
           <a href="src/content-writing.html" class="training-links text-decoration-none">
             <div class="program-card hover-lift">
               <img src="images/icons/Content.png" alt="Content Writing" class="icon" />
@@ -1175,8 +1122,7 @@
           </a>
         </div>
 
-        <!-- Social Media Management -->
-        <div class="col-sm-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.4s;">
+        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
           <a href="src/social-media.html" class="training-links text-decoration-none">
             <div class="program-card hover-lift">
               <img src="images/icons/SocialMediaMaganement.png" alt="Social Media Management" class="icon" />
@@ -1186,8 +1132,7 @@
           </a>
         </div>
 
-        <!-- Graphic Designing -->
-        <div class="col-sm-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.5s;">
+        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
           <a href="src/graphic_design.html" class="training-links text-decoration-none">
             <div class="program-card hover-lift">
               <img src="images/icons/GraphicDesign.png" alt="Graphic Designing" class="icon" />
@@ -1197,8 +1142,7 @@
           </a>
         </div>
 
-        <!-- Cyber Analyst -->
-        <div class="col-sm-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.6s;">
+        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
           <a href="src/cyber-analyst.html" class="training-links text-decoration-none">
             <div class="program-card hover-lift">
               <img src="images/icons/Cyb-security.png" alt="Cyber Analyst" class="icon" />
@@ -1212,10 +1156,8 @@
     </div>
   </section>
 
-  <!-- Enhanced Carousel Section -->
   <main class="carousel-section" id="home">
-    <div id="carouselExampleDark" class="carousel carousel-dark slide scale-in" data-bs-ride="carousel" data-bs-wrap="true">
-      <!-- Indicators -->
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-aos="zoom-in" data-bs-ride="carousel" data-bs-wrap="true">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true"></button>
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
@@ -1225,9 +1167,7 @@
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"></button>
       </div>
 
-      <!-- Slides -->
       <div class="carousel-inner">
-        <!-- Slide 1 -->
         <div class="carousel-item active" data-bs-interval="8000">
           <div class="carousel-overlay">
             <img src="images/WebDev.png" class="d-block w-100" alt="Website Development">
@@ -1241,7 +1181,6 @@
           </div>
         </div>
 
-        <!-- Slide 2 -->
         <div class="carousel-item" data-bs-interval="8000">
           <div class="carousel-overlay">
             <img src="images/GraphicDesign.png" class="d-block w-100" alt="Graphic Design">
@@ -1255,7 +1194,6 @@
           </div>
         </div>
 
-        <!-- Slide 3 -->
         <div class="carousel-item" data-bs-interval="8000">
           <div class="carousel-overlay">
             <img src="images/DigitalMarketing.png" class="d-block w-100" alt="Digital Marketing">
@@ -1269,7 +1207,6 @@
           </div>
         </div>
 
-        <!-- Slide 4 -->
         <div class="carousel-item" data-bs-interval="8000">
           <div class="carousel-overlay">
             <img src="images/SocialMediaManagement.png" class="d-block w-100" alt="Social Media Management">
@@ -1283,7 +1220,6 @@
           </div>
         </div>
 
-        <!-- Slide 5 -->
         <div class="carousel-item" data-bs-interval="8000">
           <div class="carousel-overlay">
             <img src="images/ContentWriting.png" class="d-block w-100" alt="Content Writing">
@@ -1297,7 +1233,6 @@
           </div>
         </div>
 
-        <!-- Slide 6 -->
         <div class="carousel-item" data-bs-interval="8000">
           <div class="carousel-overlay">
             <img src="images/Cybersecurity.png" class="d-block w-100" alt="Cyber Analyst">
@@ -1311,7 +1246,6 @@
           </div>
         </div>
 
-        <!-- Custom Arrow Button -->
         <button class="arrow-slide-btn" id="customNextButton">
           <span class="arrow-icon">
             <i class="fas fa-arrow-right"></i>
@@ -1319,7 +1253,6 @@
         </button>
       </div>
 
-      <!-- Controls -->
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
@@ -1332,48 +1265,39 @@
     </div>
   </main>
 
-  <!-- Enhanced Services Section -->
   <section class="services-section" id="services">
     <div class="container">
-      <h2 class="heading-text fade-in-up">SERVICES</h2>
-      <p class="services-subtitle fade-in-up" style="animation-delay: 0.2s;">
+      <h2 class="heading-text" data-aos="fade-up">SERVICES</h2>
+      <p class="services-subtitle" data-aos="fade-up" data-aos-delay="100">
         In the realm of software, we excel at transmuting the ordinary into the extraordinary
       </p>
-      
+
       <div class="row g-4 justify-content-center">
 
-        <!-- Digital Marketing -->
-        <div class="col-12 col-md-6 col-lg-5 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="col-12 col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="100">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
-              
-              <!-- Icon -->
+
               <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"
-                  style="color: #ff689b">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2" style="color: #ff689b">
                   <line x1="18" y1="20" x2="18" y2="10"></line>
                   <line x1="12" y1="20" x2="12" y2="4"></line>
                   <line x1="6" y1="20" x2="6" y2="14"></line>
                 </svg>
               </div>
 
-              <!-- Title -->
               <h5 class="card-title mt-2">Digital Marketing</h5>
 
-              <!-- Summary -->
               <p class="card-text summary text-center">
                 In today's digital-driven age, Marketing means Digital Marketing...
               </p>
 
-              <!-- Extra Interactive Content -->
               <div class="card-text extra d-none text-center w-100">
                 <p>
                   Digital Marketing plays a vital role in reaching target customers and enhancing brand visibility.
                   Our team specializes in SEO, PPC, social media, email campaigns, and content marketing.
                 </p>
 
-                <!-- Features -->
                 <ul class="service-features text-start px-3">
                   <li>SEO Optimization for higher search rankings</li>
                   <li>Targeted PPC Campaigns</li>
@@ -1382,21 +1306,18 @@
                   <li>Content Marketing for brand awareness</li>
                 </ul>
 
-                <!-- Stats -->
                 <div class="service-stats">
                   <span class="stat-badge">100+ Campaigns</span>
                   <span class="stat-badge">50K+ Leads</span>
                   <span class="stat-badge">30% Avg ROI</span>
                 </div>
 
-                <!-- Call to Actions -->
                 <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
                   <a class="btn btn-sm btn-custom-purple">Case Study</a>
                   <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
                 </div>
               </div>
 
-              <!-- Buttons -->
               <div class="btn-group mt-3 d-flex gap-2">
                 <button class="toggle-btn">Read More</button>
                 <a href="src/digital-marketing.html" class="btn btn-sm btn-outline-primary hover-scale">Explore</a>
@@ -1405,38 +1326,30 @@
           </div>
         </div>
 
-        <!-- Website Development -->
-        <div class="col-12 col-md-6 col-lg-5 fade-in-up" style="animation-delay: 0.2s;">
+        <div class="col-12 col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="200">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
-              
-              <!-- Icon -->
+
               <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout"
-                  style="color: #41cf2e">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout" style="color: #41cf2e">
                   <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
                   <line x1="3" y1="9" x2="21" y2="9"></line>
                   <line x1="9" y1="21" x2="9" y2="9"></line>
                 </svg>
               </div>
 
-              <!-- Title -->
               <h5 class="card-title mt-2">Website Development</h5>
 
-              <!-- Summary -->
               <p class="card-text summary text-center">
                 A website is often the first impression. We make it exceptional...
               </p>
 
-              <!-- Extra Interactive Content -->
               <div class="card-text extra d-none text-center w-100">
                 <p>
-                  A well-designed website increases brand trust and customer engagement. We deliver responsive, aesthetic, 
+                  A well-designed website increases brand trust and customer engagement. We deliver responsive, aesthetic,
                   and performance-optimized websites aligned with your business goals.
                 </p>
 
-                <!-- Features -->
                 <ul class="service-features text-start px-3">
                   <li>Responsive design for all devices</li>
                   <li>High-performance and fast loading</li>
@@ -1445,21 +1358,18 @@
                   <li>Integration with APIs and third-party tools</li>
                 </ul>
 
-                <!-- Stats -->
                 <div class="service-stats">
                   <span class="stat-badge">50+ Projects</span>
                   <span class="stat-badge">20K+ Visitors/month</span>
                   <span class="stat-badge">95% Client Satisfaction</span>
                 </div>
 
-                <!-- Call to Actions -->
                 <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
                   <a class="btn btn-sm btn-custom-purple">Portfolio</a>
                   <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
                 </div>
               </div>
 
-              <!-- Buttons -->
               <div class="btn-group mt-3 d-flex gap-2">
                 <button class="toggle-btn">Read More</button>
                 <a href="src/web.html" class="btn btn-sm btn-outline-primary hover-scale">Explore</a>
@@ -1468,38 +1378,30 @@
           </div>
         </div>
 
-        <!-- Graphic Design -->
-        <div class="col-12 col-md-6 col-lg-5 fade-in-up" style="animation-delay: 0.3s;">
+        <div class="col-12 col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="300">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
-              
-              <!-- Icon -->
+
               <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"
-                  style="color: #2282ff">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers" style="color: #2282ff">
                   <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
                   <polyline points="2 17 12 22 22 17"></polyline>
                   <polyline points="2 12 12 17 22 12"></polyline>
                 </svg>
               </div>
 
-              <!-- Title -->
               <h5 class="card-title mt-2">Graphic Design</h5>
 
-              <!-- Summary -->
               <p class="card-text summary text-center">
                 Stunning visuals to elevate your brand in a crowded space...
               </p>
 
-              <!-- Extra Interactive Content -->
               <div class="card-text extra d-none text-center w-100">
                 <p>
-                  From branding to social media, our designers craft engaging graphics that communicate effectively 
+                  From branding to social media, our designers craft engaging graphics that communicate effectively
                   and leave a lasting impression.
                 </p>
 
-                <!-- Features -->
                 <ul class="service-features text-start px-3">
                   <li>Logo and Brand Identity Design</li>
                   <li>Social Media Graphics & Banners</li>
@@ -1508,21 +1410,18 @@
                   <li>UI/UX Visual Design for Web & Apps</li>
                 </ul>
 
-                <!-- Stats -->
                 <div class="service-stats">
                   <span class="stat-badge">200+ Projects</span>
                   <span class="stat-badge">150+ Happy Clients</span>
                   <span class="stat-badge">5 Awards Won</span>
                 </div>
 
-                <!-- Call to Actions -->
                 <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
                   <a class="btn btn-sm btn-custom-purple">Portfolio</a>
                   <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
                 </div>
               </div>
 
-              <!-- Buttons -->
               <div class="btn-group mt-3 d-flex gap-2">
                 <button class="toggle-btn">Read More</button>
                 <a href="src/graphic_design.html" class="btn btn-sm btn-outline-primary hover-scale">Explore</a>
@@ -1531,38 +1430,30 @@
           </div>
         </div>
 
-        <!-- Social Media Management -->
-        <div class="col-12 col-md-6 col-lg-5 fade-in-up" style="animation-delay: 0.4s;">
+        <div class="col-12 col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="400">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
-              
-              <!-- Icon -->
+
               <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram"
-                  style="color: #8660fe">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram" style="color: #8660fe">
                   <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                   <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
               </div>
 
-              <!-- Title -->
               <h5 class="card-title mt-2">Social Media Management</h5>
 
-              <!-- Summary -->
               <p class="card-text summary text-center">
                 From posts to stories, we manage your online presence with style...
               </p>
 
-              <!-- Extra Interactive Content -->
               <div class="card-text extra d-none text-center w-100">
                 <p>
-                  We help you stay consistent and engaging on all platforms. Our strategies increase audience retention 
+                  We help you stay consistent and engaging on all platforms. Our strategies increase audience retention
                   and brand loyalty.
                 </p>
 
-                <!-- Features -->
                 <ul class="service-features text-start px-3">
                   <li>Content Creation & Scheduling</li>
                   <li>Audience Engagement & Monitoring</li>
@@ -1571,21 +1462,18 @@
                   <li>Platform-Specific Strategy</li>
                 </ul>
 
-                <!-- Stats -->
                 <div class="service-stats">
                   <span class="stat-badge">500+ Posts</span>
                   <span class="stat-badge">100K+ Followers Gained</span>
                   <span class="stat-badge">95% Engagement Rate</span>
                 </div>
 
-                <!-- Call to Actions -->
                 <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
                   <a class="btn btn-sm btn-custom-purple">Case Study</a>
                   <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
                 </div>
               </div>
 
-              <!-- Buttons -->
               <div class="btn-group mt-3 d-flex gap-2">
                 <button class="toggle-btn">Read More</button>
                 <a href="src/social-media.html" class="btn btn-sm btn-outline-primary hover-scale">Explore</a>
@@ -1594,37 +1482,29 @@
           </div>
         </div>
 
-        <!-- Content Writing -->
-        <div class="col-12 col-md-8 col-lg-5 fade-in-up" style="animation-delay: 0.5s;">
+        <div class="col-12 col-md-8 col-lg-5" data-aos="zoom-in-up" data-aos-delay="500">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
-              
-              <!-- Icon -->
+
               <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3"
-                  style="color: #f39c12">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3" style="color: #f39c12">
                   <path d="M12 20h9"></path>
                   <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
                 </svg>
               </div>
 
-              <!-- Title -->
               <h5 class="card-title mt-2">Content Writing</h5>
 
-              <!-- Summary -->
               <p class="card-text summary text-center">
                 Compelling content that connects, converts, and captivates your audience...
               </p>
 
-              <!-- Extra Interactive Content -->
               <div class="card-text extra d-none text-center w-100">
                 <p>
                   Our expert writers create engaging blog posts, web copy, articles, and marketing content
                   that drives results and builds your brand voice.
                 </p>
 
-                <!-- Features -->
                 <ul class="service-features text-start px-3">
                   <li>SEO-Optimized Blog Posts</li>
                   <li>Website Copy & Landing Pages</li>
@@ -1633,21 +1513,18 @@
                   <li>Social Media Captions & Storytelling</li>
                 </ul>
 
-                <!-- Stats -->
                 <div class="service-stats">
                   <span class="stat-badge">500+ Articles</span>
                   <span class="stat-badge">100+ Clients</span>
                   <span class="stat-badge">98% Satisfaction</span>
                 </div>
 
-                <!-- Call to Actions -->
                 <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
                   <a class="btn btn-sm btn-custom-purple">Case Study</a>
                   <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
                 </div>
               </div>
 
-              <!-- Buttons -->
               <div class="btn-group mt-3 d-flex gap-2">
                 <button class="toggle-btn">Read More</button>
                 <a href="learn/contentwriting.html" class="btn btn-sm btn-outline-primary hover-scale">Explore</a>
@@ -1656,35 +1533,27 @@
           </div>
         </div>
 
-        <!-- Cyber Analyst -->
-        <div class="col-12 col-md-8 col-lg-5 fade-in-up" style="animation-delay: 0.6s;">
+        <div class="col-12 col-md-8 col-lg-5" data-aos="zoom-in-up" data-aos-delay="600">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
-              
-              <!-- Icon -->
+
               <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield"
-                  style="color: #e74c3c">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield" style="color: #e74c3c">
                   <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
                 </svg>
               </div>
 
-              <!-- Title -->
               <h5 class="card-title mt-2">Cyber Analyst</h5>
 
-              <!-- Summary -->
               <p class="card-text summary text-center">
                 In the digital age, a cyber analyst is the silent guardian — turning data into defense...
               </p>
 
-              <!-- Extra Interactive Content -->
               <div class="card-text extra d-none text-center w-100">
                 <p>
                   Think smart, click safe, and stay vigilant — because a cyber-strong society is a future-proof society.
                 </p>
 
-                <!-- Features -->
                 <ul class="service-features text-start px-3">
                   <li>Threat Monitoring & Analysis</li>
                   <li>Network Security & Penetration Testing</li>
@@ -1693,21 +1562,18 @@
                   <li>Cyber Intelligence & Risk Assessment</li>
                 </ul>
 
-                <!-- Stats -->
                 <div class="service-stats">
                   <span class="stat-badge">100+ Threats Neutralized</span>
                   <span class="stat-badge">50+ Security Audits</span>
                   <span class="stat-badge">99% Protection Success</span>
                 </div>
 
-                <!-- Call to Actions -->
                 <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
                   <a class="btn btn-sm btn-custom-purple">Case Study</a>
                   <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
                 </div>
               </div>
 
-              <!-- Buttons -->
               <div class="btn-group mt-3 d-flex gap-2">
                 <button class="toggle-btn">Read More</button>
                 <a href="learn/cyberanalyst.html" class="btn btn-sm btn-outline-primary hover-scale">Explore</a>
@@ -1720,17 +1586,15 @@
     </div>
   </section>
 
-  <!-- Enhanced About Section -->
   <section class="about-section" id="about">
     <div class="container">
-      <h2 class="about-title fade-in-up">About Us</h2>
-      <p class="about-subtitle fade-in-up" style="animation-delay: 0.2s;">
+      <h2 class="about-title" data-aos="fade-up">About Us</h2>
+      <p class="about-subtitle" data-aos="fade-up" data-aos-delay="100">
         Gateway to <em>Go Digital and Grow Business</em>
       </p>
 
       <div class="row justify-content-center g-4">
-        <!-- Card 1 -->
-        <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="100">
           <div class="about-card p-4 h-100 shadow-sm hover-lift">
             <h4 class="mb-3">
               <i class="fas fa-users icon"></i>
@@ -1743,8 +1607,7 @@
           </div>
         </div>
 
-        <!-- Card 2 -->
-        <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.2s;">
+        <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
           <div class="about-card p-4 h-100 shadow-sm hover-lift">
             <h4 class="mb-3">
               <i class="fas fa-microchip icon"></i>
@@ -1757,8 +1620,7 @@
           </div>
         </div>
 
-        <!-- Card 3 -->
-        <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.3s;">
+        <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="300">
           <div class="about-card p-4 h-100 shadow-sm hover-lift">
             <h4 class="mb-3">
               <i class="fas fa-handshake icon"></i>
@@ -1771,8 +1633,7 @@
           </div>
         </div>
 
-        <!-- Card 4 -->
-        <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.4s;">
+        <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="400">
           <div class="about-card p-4 h-100 shadow-sm hover-lift">
             <h4 class="mb-3">
               <i class="fas fa-shield-alt icon"></i>
@@ -1785,8 +1646,7 @@
           </div>
         </div>
 
-        <!-- Card 5 -->
-        <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.5s;">
+        <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="500">
           <div class="about-card p-4 h-100 shadow-sm hover-lift">
             <h4 class="mb-3">
               <i class="fas fa-award icon"></i>
@@ -1802,16 +1662,15 @@
     </div>
   </section>
 
-  <!-- Enhanced Feedback Section -->
   <section class="feedback-section" id="feedback">
     <div class="container">
-      <div class="feedback-content fade-in-up">
+      <div class="feedback-content" data-aos="fade-up">
         <h2 class="feedback-title">Feedback & Reviews</h2>
         <p class="feedback-subtitle">
           We value your feedback! Share your experience and help us improve our services.
         </p>
-        
-        <div class="feedback-form-container scale-in" style="animation-delay: 0.3s;">
+
+        <div class="feedback-form-container" data-aos="zoom-in" data-aos-delay="200">
           <form id="feedbackForm" class="feedback-form">
             <div class="form-row">
               <div class="form-group">
@@ -1834,8 +1693,7 @@
             </div>
           </form>
         </div>
-        
-        <!-- Success Message -->
+
         <div id="successMessage" class="success-message">
           <i class="fas fa-check-circle"></i>
           <p>Thank you for your feedback! Submitted successfully.</p>
@@ -1844,55 +1702,40 @@
     </div>
   </section>
 
-  <!-- Footer Placeholder -->
   <div id="footer-placeholder"></div>
 
-  <!-- Enhanced Scroll to Top Button -->
   <button id="backToTop" title="Go to top" type="button" class="hover-scale">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-  
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // values from 0 to 3000, with step 50ms
+      once: true, // whether animation should happen only once - while scrolling down
+    });
+  </script>
+
   <script>
     document.addEventListener("DOMContentLoaded", function () {
-      /* Enhanced Animation Observer */
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-      };
-
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-          }
-        });
-      }, observerOptions);
-
-      // Observe all animated elements
-      document.querySelectorAll('.fade-in-up, .scale-in, .slide-in-right').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        observer.observe(el);
-      });
+      /* ❌ STEP 3: REMOVED the old IntersectionObserver script */
 
       /* Enhanced Theme Toggle Functionality */
       const themeToggle = document.getElementById('themeToggle');
       const themeIcon = document.getElementById('themeIcon');
-      
+
       // Get current theme from localStorage or default to 'light'
       let currentTheme = localStorage.getItem('theme') || 'light';
-      
+
       // Apply theme on page load
       document.documentElement.setAttribute('data-bs-theme', currentTheme);
       updateThemeIcon(currentTheme);
-      
+
       // Theme toggle event listener
       if (themeToggle) {
-        themeToggle.addEventListener('click', function() {
+        themeToggle.addEventListener('click', function () {
           // Add click animation
           this.style.transform = 'scale(0.95)';
           setTimeout(() => {
@@ -1901,7 +1744,7 @@
               this.style.transform = '';
             }, 150);
           }, 100);
-          
+
           // Toggle theme
           currentTheme = currentTheme === 'light' ? 'dark' : 'light';
           document.documentElement.setAttribute('data-bs-theme', currentTheme);
@@ -1909,7 +1752,7 @@
           updateThemeIcon(currentTheme);
         });
       }
-      
+
       function updateThemeIcon(theme) {
         if (themeIcon) {
           if (theme === 'dark') {
@@ -1946,7 +1789,7 @@
 
       window.addEventListener('scroll', () => {
         const currentScrollY = window.scrollY;
-        
+
         if (currentScrollY > 100) {
           navbar.classList.add('scrolled');
         } else {
@@ -1972,7 +1815,7 @@
           if (activeCaption) {
             activeCaption.style.opacity = '0';
             activeCaption.style.transform = 'translateX(50px)';
-            
+
             setTimeout(() => {
               activeCaption.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
               activeCaption.style.opacity = '1';
@@ -1997,28 +1840,28 @@
       /* Enhanced Service Cards Toggle */
       const toggleButtons = document.querySelectorAll('.toggle-btn');
       toggleButtons.forEach(btn => {
-        btn.addEventListener('click', function(e) {
+        btn.addEventListener('click', function (e) {
           e.stopPropagation();
           const card = this.closest('.card-services');
           const extraContent = card.querySelector('.extra');
-          
+
           if (!extraContent) return;
-          
+
           const isExpanded = !extraContent.classList.contains('d-none');
-          
+
           // Enhanced animation
           if (isExpanded) {
             extraContent.style.maxHeight = extraContent.scrollHeight + 'px';
             extraContent.offsetHeight; // Force reflow
             extraContent.style.maxHeight = '0px';
             extraContent.style.opacity = '0';
-            
+
             setTimeout(() => {
               extraContent.classList.add('d-none');
               extraContent.style.maxHeight = '';
               extraContent.style.opacity = '';
             }, 400);
-            
+
             this.textContent = 'Read More';
             card.style.transform = 'translateY(0)';
           } else {
@@ -2026,15 +1869,15 @@
             extraContent.style.maxHeight = '0px';
             extraContent.style.opacity = '0';
             extraContent.offsetHeight; // Force reflow
-            
+
             extraContent.style.transition = 'max-height 0.5s ease, opacity 0.5s ease';
             extraContent.style.maxHeight = extraContent.scrollHeight + 'px';
             extraContent.style.opacity = '1';
-            
+
             setTimeout(() => {
               extraContent.style.maxHeight = '';
             }, 500);
-            
+
             this.textContent = 'Read Less';
             card.style.transform = 'translateY(-5px)';
           }
@@ -2049,12 +1892,12 @@
         // Add input focus animations
         const inputs = feedbackForm.querySelectorAll('.form-input, .form-textarea');
         inputs.forEach(input => {
-          input.addEventListener('focus', function() {
+          input.addEventListener('focus', function () {
             this.parentElement.style.transform = 'translateY(-2px)';
             this.style.borderColor = 'rgba(255, 255, 255, 0.6)';
           });
-          
-          input.addEventListener('blur', function() {
+
+          input.addEventListener('blur', function () {
             this.parentElement.style.transform = 'translateY(0)';
             this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
           });
@@ -2083,7 +1926,7 @@
           const formContainer = document.querySelector('.feedback-form-container');
           formContainer.style.transform = 'scale(0.95)';
           formContainer.style.opacity = '0.7';
-          
+
           setTimeout(() => {
             // Save to localStorage (if needed for functionality)
             const data = {
@@ -2097,7 +1940,7 @@
             successMessage.style.display = 'block';
             successMessage.style.transform = 'scale(0.8)';
             successMessage.style.opacity = '0';
-            
+
             setTimeout(() => {
               successMessage.style.transition = 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
               successMessage.style.transform = 'scale(1)';
@@ -2110,7 +1953,7 @@
               formContainer.style.transform = 'scale(1)';
               formContainer.style.opacity = '1';
               feedbackForm.reset();
-              
+
               setTimeout(() => {
                 successMessage.style.display = 'none';
                 formContainer.style.transition = '';
@@ -2127,7 +1970,7 @@
 
       /* Enhanced Scroll to Top Button */
       const backToTop = document.getElementById('backToTop');
-      
+
       window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
           backToTop.classList.add('show');
@@ -2138,12 +1981,12 @@
 
       backToTop.addEventListener('click', () => {
         backToTop.style.transform = 'translateY(-3px) scale(0.95)';
-        
+
         window.scrollTo({
           top: 0,
           behavior: 'smooth'
         });
-        
+
         setTimeout(() => {
           backToTop.style.transform = '';
         }, 200);
@@ -2158,19 +2001,19 @@
         .catch(() => {
           // Fallback footer if file doesn't exist
           document.getElementById('footer-placeholder').innerHTML = `
-            <footer class="bg-dark text-light py-4 mt-5">
-              <div class="container text-center">
-                <p>&copy; ${new Date().getFullYear()} GrowCraft. All rights reserved.</p>
-              </div>
-            </footer>
-          `;
+             <footer class="bg-dark text-light py-4 mt-5">
+               <div class="container text-center">
+                 <p>&copy; ${new Date().getFullYear()} GrowCraft. All rights reserved.</p>
+               </div>
+             </footer>
+           `;
         });
 
       /* Global Clear Form Function */
-      window.clearForm = function() {
+      window.clearForm = function () {
         const form = document.getElementById('feedbackForm');
         const inputs = form.querySelectorAll('.form-input, .form-textarea');
-        
+
         inputs.forEach((input, index) => {
           setTimeout(() => {
             input.style.transform = 'translateX(-10px)';
@@ -2180,7 +2023,7 @@
             }, 100);
           }, index * 50);
         });
-        
+
         const successMsg = document.getElementById('successMessage');
         if (successMsg && successMsg.style.display !== 'none') {
           successMsg.style.display = 'none';
@@ -2195,21 +2038,21 @@
 
       /* Enhanced Hover Effects */
       document.querySelectorAll('.hover-lift').forEach(el => {
-        el.addEventListener('mouseenter', function() {
+        el.addEventListener('mouseenter', function () {
           this.style.transform = 'translateY(-8px) scale(1.02)';
         });
-        
-        el.addEventListener('mouseleave', function() {
+
+        el.addEventListener('mouseleave', function () {
           this.style.transform = 'translateY(0) scale(1)';
         });
       });
 
       document.querySelectorAll('.hover-scale').forEach(el => {
-        el.addEventListener('mouseenter', function() {
+        el.addEventListener('mouseenter', function () {
           this.style.transform = 'scale(1.05)';
         });
-        
-        el.addEventListener('mouseleave', function() {
+
+        el.addEventListener('mouseleave', function () {
           this.style.transform = 'scale(1)';
         });
       });
