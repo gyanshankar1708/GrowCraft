@@ -8,13 +8,9 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
     crossorigin="anonymous" />
-  <link rel="stylesheet" href="src/style.css" />
-  <link rel="stylesheet" href="src/css/style.css" />
-  <link rel="stylesheet" href="./faq.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     crossorigin="anonymous" />
   <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
-  <!-- Bootstrap Bundle JS + Popper -->
 
   <style>
     /* Enhanced Navbar Design */
@@ -38,7 +34,6 @@
     .navbar-nav .nav-item {
       display: flex;
       align-items: center;
-      /* Reduce from 20px or more if it's higher */
     }
 
     .navbar-nav {
@@ -98,24 +93,6 @@
       box-shadow: 0 4px 15px rgba(56, 142, 60, 0.25);
     }
 
-    /* Elegant underline animation */
-    .navbar-nav .nav-link::before {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: linear-gradient(90deg, #4caf50, #388e3c);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-      border-radius: 2px;
-    }
-
-    .navbar-nav .nav-link:not(.active):hover::before {
-      width: 80%;
-    }
-
     /* Enhanced search bar */
     .search-container {
       display: flex;
@@ -132,25 +109,6 @@
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
-    }
-
-    .search-container::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, #4caf50, #388e3c);
-      border-radius: 30px;
-      padding: 2px;
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .search-container:focus-within::before {
-      opacity: 1;
     }
 
     .search-container:focus-within {
@@ -196,84 +154,251 @@
       box-shadow: 0 4px 15px rgba(56, 142, 60, 0.4);
     }
 
-    /* Spacing between toggle and search - match navbar gap */
-    .navbar-toggler {
-      margin-right: 2rem;
+    /* FAQ Styles */
+    .faq-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      min-height: 100vh;
+      padding: 60px 0;
     }
 
-    @media screen and (min-width: 992px) {
-      .search-container {
-        margin-left: auto;
-        margin-right: 20px;
-      }
+    .faq-header {
+      margin-bottom: 60px;
     }
 
-    /* Mobile responsive improvements */
-    @media screen and (max-width: 991.98px) {
-      .navbar {
-        padding: 0.75rem 0;
-      }
-
-      .navbar-nav {
-        gap: 0.5rem;
-        margin-top: 1rem;
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: 15px;
-        box-shadow: 0 8px 32px rgba(56, 142, 60, 0.15);
-        backdrop-filter: blur(10px);
-      }
-
-      .navbar-nav .nav-link {
-        justify-content: center;
-        margin: 0.25rem 0;
-        padding: 0.75rem 1rem !important;
-      }
-
-      .search-container {
-        max-width: 100%;
-        margin: 1rem 0 0 0;
-        order: 3;
-      }
-
-      .navbar-toggler {
-        margin-right: 2rem;
-      }
+    .faq-title {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #2e7d32;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
-    @media screen and (max-width: 600px) {
-      .search-container {
-        max-width: 100%;
-      }
-
-      .search-input {
-        font-size: 14px;
-      }
-    }
-
-    /* FAQ Title centering */
     .faq-subtitle {
-      text-align: center !important;
+      font-size: 1.2rem;
+      color: #666;
+      max-width: 600px;
+      margin: 0 auto;
+      line-height: 1.6;
     }
 
-    /* FAQ Call to Action centering */
-    .faq-cta p {
-      text-align: center !important;
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
     }
 
-    /* Professional Footer */
-    .professional-footer {
-      background: linear-gradient(135deg,
-          #f8f9fa 0%,
-          #e9ecef 50%,
-          #f8f9fa 100%);
-      color: #fff !important;
-      position: relative;
+    .faq-item {
+      background: white;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
       overflow: hidden;
       transition: all 0.3s ease;
     }
 
-    /* Brand Section */
+    .faq-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+
+    .faq-question {
+      padding: 25px 30px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      transition: all 0.3s ease;
+      user-select: none;
+    }
+
+    .faq-question:hover {
+      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+      color: white;
+    }
+
+    .faq-question h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+      color: #2e7d32;
+      transition: color 0.3s ease;
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .faq-question:hover h3 {
+      color: white;
+    }
+
+    .faq-icon {
+      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+      color: white;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .faq-question:hover .faq-icon {
+      background: white;
+      color: #4caf50;
+      transform: rotate(45deg);
+    }
+
+    .faq-icon.rotated {
+      transform: rotate(45deg);
+      background: white !important;
+      color: #4caf50 !important;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 0.5s ease;
+      background: white;
+    }
+
+    .faq-answer.show {
+      max-height: 1000px;
+      padding: 0 30px 30px 30px;
+    }
+
+    .faq-answer p {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 15px;
+    }
+
+    .faq-answer ul, .faq-answer ol {
+      color: #555;
+      line-height: 1.7;
+      margin-bottom: 15px;
+      padding-left: 20px;
+    }
+
+    .faq-answer li {
+      margin-bottom: 8px;
+    }
+
+    .faq-answer strong {
+      color: #2e7d32;
+      font-weight: 600;
+    }
+
+    .faq-answer a {
+      color: #4caf50;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .faq-answer a:hover {
+      color: #2e7d32;
+      text-decoration: underline;
+    }
+
+    .internship-types, .contact-methods {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .internship-type, .contact-method {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 20px;
+      border-radius: 10px;
+      border-left: 4px solid #4caf50;
+    }
+
+    .internship-type h4, .contact-method h4 {
+      color: #2e7d32;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .internship-type i, .contact-method i {
+      color: #4caf50;
+    }
+
+    .faq-cta {
+      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+      color: white;
+      padding: 40px;
+      border-radius: 20px;
+      margin-top: 60px;
+      box-shadow: 0 10px 30px rgba(56, 142, 60, 0.3);
+    }
+
+    .faq-cta h3 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .faq-cta p {
+      font-size: 1.1rem;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+      color: #2e7d32;
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4);
+      color: #1b5e20;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+    }
+
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: #4caf50;
+      color: white;
+      border-radius: 50%;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      transform: scale(1.1);
+      background: #2e7d32;
+    }
+
+    /* Professional Footer */
+    .professional-footer {
+      background: linear-gradient(135deg, rgba(132, 234, 132, 0.85), rgba(135, 210, 161, 0.59));
+      color: #333;
+      padding: 60px 0 0 0;
+    }
+
     .footer-brand {
       text-align: center;
     }
@@ -282,30 +407,22 @@
       max-height: 60px;
       object-fit: contain;
       vertical-align: middle;
+      transition: transform 0.3s ease-in-out;
     }
 
-    .brand-name {
-      font-size: 1.8rem;
-      font-weight: 700;
-      margin-bottom: 0.5rem;
-      background: linear-gradient(45deg, #007bff, #0056b3);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      transition: all 0.3s ease;
+    .footer-logo:hover {
+      transform: scale(1.25);
     }
 
     .brand-description {
       font-size: 1.2rem;
       margin-bottom: 1.5rem;
       line-height: 1.5;
-      transition: all 0.3s ease;
       text-align: center;
       font-weight: bold;
       color: #333;
     }
 
-    /* Quick Stats */
     .quick-stats {
       display: flex;
       gap: 20px;
@@ -321,7 +438,7 @@
       display: block;
       font-size: 1.4rem;
       font-weight: 700;
-      color: #fff;
+      color: maroon;
       margin-bottom: 2px;
     }
 
@@ -333,7 +450,6 @@
       letter-spacing: 0.5px;
     }
 
-    /* Footer Titles */
     .footer-title {
       color: #333;
       font-weight: 600;
@@ -341,7 +457,12 @@
       margin-bottom: 15px;
       position: relative;
       padding-bottom: 8px;
-      text-align: justify;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .footer-title:hover {
+      transform: scale(1.15);
+      color: maroon;
     }
 
     .footer-title::after {
@@ -355,19 +476,10 @@
       border-radius: 2px;
     }
 
-    /* Footer Links */
     .footer-links {
       list-style: none;
       padding: 0;
       margin: 0;
-      text-align: justify;
-    }
-
-    .main-footer {
-      display: flex;
-      justify-content: center;
-      align-items: stretch;
-      padding-top: 2.5rem;
     }
 
     .footer-links li {
@@ -384,32 +496,13 @@
       display: inline-block;
     }
 
-    .first-grid {
-      margin-right: 2rem;
-    }
-
     .footer-links a:hover {
-      color: #007bff;
+      color: black;
       padding-left: 8px;
+      transform: scale(1.05);
+      font-weight: 450;
     }
 
-    .footer-links a::before {
-      content: "";
-      position: absolute;
-      left: -8px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 0;
-      height: 2px;
-      background: #667eea;
-      transition: width 0.3s ease;
-    }
-
-    .footer-links a:hover::before {
-      width: 4px;
-    }
-
-    /* Contact Info */
     .contact-info {
       margin-bottom: 15px;
     }
@@ -420,11 +513,10 @@
       gap: 10px;
       margin-bottom: 10px;
       font-size: 0.9rem;
-      white-space: nowrap;
     }
 
     .contact-item i {
-      color: #007bff;
+      color: maroon;
       width: 16px;
       font-size: 0.9rem;
     }
@@ -432,61 +524,20 @@
     .contact-item a {
       color: #333;
       text-decoration: none;
-      transition: color 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .contact-item a:hover {
-      color: #007bff;
+      color: black;
+      transform: scale(1.05);
+      font-weight: 600;
     }
 
-    .contact-item span {
-      color: #333;
-    }
-
-    /* Social Section */
-    .social-title {
-      color: #ffffff;
-      font-size: 0.95rem;
-      margin-bottom: 10px;
-      font-weight: 500;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 8px;
-    }
-
-    .social-link {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.08);
-      color: #b8b9c7;
-      text-decoration: none;
-      transition: all 0.3s ease;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .social-link:hover {
-      background: #667eea;
-      color: #ffffff;
-      transform: translateY(-2px);
-      border-color: #667eea;
-      box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
-    }
-
-    .social-link i {
-      font-size: 0.9rem;
-    }
-
-    /* Footer Bottom */
     .footer-bottom {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       background: rgba(0, 0, 0, 0.05);
       margin-top: 30px;
+      padding: 20px 0;
     }
 
     .copyright {
@@ -518,126 +569,9 @@
     .footer-nav a:hover {
       color: #007bff;
       background: rgba(0, 123, 255, 0.1);
-      border: 1px solid rgba(0, 123, 255, 0.2);
     }
 
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .professional-footer {
-        margin-top: 40px;
-      }
-
-      .quick-stats {
-        justify-content: center;
-        gap: 15px;
-      }
-
-      .footer-brand,
-      .footer-links,
-      .contact-info,
-      .social-section {
-        text-align: center;
-      }
-
-      .footer-title::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-
-      .footer-nav {
-        justify-content: center;
-        margin-top: 15px;
-        gap: 15px;
-        flex-wrap: wrap;
-      }
-
-      .footer-nav a {
-        font-size: 0.8rem;
-        padding: 4px 8px;
-      }
-
-      .social-links {
-        justify-content: center;
-      }
-
-      .footer-bottom .row {
-        text-align: center;
-      }
-
-      .footer-bottom .col-md-6:first-child {
-        margin-bottom: 10px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .quick-stats {
-        flex-direction: column;
-        gap: 10px;
-        align-items: center;
-      }
-
-      .stat-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-      }
-
-      .stat-number {
-        font-size: 1.2rem;
-        margin-bottom: 0;
-      }
-
-      .stat-label {
-        font-size: 0.7rem;
-      }
-    }
-
-    .footer-brand img {
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .footer-brand img:hover {
-      transform: scale(1.25);
-    }
-
-    .footer-title {
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .footer-title:hover {
-      transform: scale(1.15);
-      color: maroon;
-    }
-
-    .contact-item a {
-      transition: font-weight 0.2s ease-in-out, transform 0.3s ease-in;
-    }
-
-    .contact-item a:hover {
-      transform: scale(1.05);
-      font-weight: 600;
-      color: black;
-    }
-
-    .footer-links a {
-      transition: font-weight 0.3s ease-in, transform 0.4s ease-in;
-    }
-
-    .footer-links a:hover {
-      transform: scale(1.05);
-      font-weight: 450;
-      color: black;
-    }
-
-    .contact-item i {
-      color: maroon;
-    }
-
-    .stat-number {
-      color: maroon;
-    }
-
-    /* Enhanced Scroll to Top Button - Fixed Right Position */
+    /* Enhanced Scroll to Top Button */
     #backToTop {
       position: fixed;
       bottom: 30px;
@@ -656,13 +590,9 @@
       transform: translateY(20px) scale(0.8);
       transition: all 0.4s ease;
       box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
-      display: flex !important;
+      display: flex;
       align-items: center;
       justify-content: center;
-      outline: none;
-      user-select: none;
-      pointer-events: auto;
-      -webkit-tap-highlight-color: transparent;
     }
 
     #backToTop:hover {
@@ -671,73 +601,70 @@
       box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
     }
 
-    #backToTop:active {
-      transform: translateY(-1px) scale(0.95);
-      transition: all 0.1s ease;
-    }
-
     #backToTop.show {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: translateY(0) scale(1) !important;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
     }
 
-    #backToTop.bounce {
-      animation: bounceIn 0.6s ease;
-    }
-
-    #backToTop.show {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: translateY(0) scale(1) !important;
-    }
-
-    #backToTop.bounce {
-      animation: bounceIn 0.6s ease;
-    }
-
-   
-
-   
-
-    @keyframes bounceIn {
-      0% {
-        transform: scale(0.3) translateY(20px);
-        opacity: 0;
+    /* Mobile responsive improvements */
+    @media screen and (max-width: 991.98px) {
+      .navbar-nav {
+        gap: 0.5rem;
+        margin-top: 1rem;
+        padding: 1rem;
+        background: rgba(255, 255, 255, 0.98);
+        border-radius: 15px;
+        box-shadow: 0 8px 32px rgba(56, 142, 60, 0.15);
+        backdrop-filter: blur(10px);
       }
 
-      50% {
-        transform: scale(1.1) translateY(-10px);
-        opacity: 1;
+      .search-container {
+        max-width: 100%;
+        margin: 1rem 0 0 0;
       }
 
-      70% {
-        transform: scale(0.9) translateY(5px);
-        opacity: 1;
+      .faq-title {
+        font-size: 2.2rem;
       }
 
-      100% {
-        transform: scale(1) translateY(0);
-        opacity: 1;
+      .faq-question {
+        padding: 20px 25px;
+      }
+
+      .faq-question h3 {
+        font-size: 1.1rem;
+      }
+
+      .internship-types, .contact-methods {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-nav {
+        justify-content: center;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+
+      .quick-stats {
+        flex-direction: column;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .stat-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
       }
     }
 
-    #backToTop i {
-      font-size: 22px;
-    }
-
-    /* Responsive positioning for scroll button */
     @media (max-width: 768px) {
       #backToTop {
         bottom: 20px;
         right: 20px;
         width: 50px;
         height: 50px;
-        font-size: 18px;
-      }
-
-      #backToTop i {
-        font-size: 20px;
       }
     }
   </style>
@@ -748,8 +675,7 @@
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
       <a class="navbar-brand" href="index.html">
-        <img src="../images/Logo_new.png" alt="GrowCraft" width="200" class="theme-aware-logo"
-          data-light-src="images/Logo_new.png" data-dark-src="images/Logo.png" />
+        <img src="../images/Logo_new.png" alt="GrowCraft" width="200" />
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -760,26 +686,25 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="services.html">Services</a>
+            <a class="nav-link" href="services.html">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="blogListing.html">Blogs</a>
+            <a class="nav-link" href="blogListing.html">Blogs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="about.html">About Us</a>
-          </li>
-          <!-- Added new "Our Work" link to navigate to the new work section on same page -->
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="work.html">Our Work</a>
+            <a class="nav-link" href="about.html">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="faq.html">FAQ</a>
+            <a class="nav-link" href="work.html">Our Work</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="src/contact.html">Contact Us</a>
+            <a class="nav-link active" href="faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="src/contact.html">Contact Us</a>
           </li>
         </ul>
       </div>
@@ -788,7 +713,6 @@
         <input type="text" placeholder="Search..." class="search-input" />
         <button class="search-button">
           <i class="fas fa-search"></i>
-          <!-- Font Awesome icon -->
         </button>
       </div>
     </div>
@@ -813,13 +737,13 @@
             
             <!-- FAQ Item 1 -->
             <div class="faq-item" data-faq="1">
-              <div class="faq-question">
+              <div class="faq-question" onclick="toggleFaq(1)">
                 <h3>What training and internship programs does GrowCraft offer?</h3>
                 <span class="faq-icon">
                   <i class="fas fa-plus"></i>
                 </span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" id="faq-answer-1">
                 <p>GrowCraft offers comprehensive training and internship programs in:</p>
                 <ul>
                   <li><strong>Website Development</strong> - Learn HTML, CSS, JavaScript, and modern frameworks</li>
@@ -835,13 +759,13 @@
 
             <!-- FAQ Item 2 -->
             <div class="faq-item" data-faq="2">
-              <div class="faq-question">
+              <div class="faq-question" onclick="toggleFaq(2)">
                 <h3>How can I apply for a training or internship program?</h3>
                 <span class="faq-icon">
                   <i class="fas fa-plus"></i>
                 </span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" id="faq-answer-2">
                 <p>Applying for our programs is simple:</p>
                 <ol>
                   <li><strong>Browse Programs</strong> - Visit our homepage to explore available training programs</li>
@@ -857,13 +781,13 @@
 
             <!-- FAQ Item 3 -->
             <div class="faq-item" data-faq="3">
-              <div class="faq-question">
+              <div class="faq-question" onclick="toggleFaq(3)">
                 <h3>Do the programs provide certification upon completion?</h3>
                 <span class="faq-icon">
                   <i class="fas fa-plus"></i>
                 </span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" id="faq-answer-3">
                 <p><strong>Yes!</strong> All GrowCraft training and internship programs provide official certification:</p>
                 <ul>
                   <li><strong>Industry-Recognized Certificates</strong> - Validate your skills with employers</li>
@@ -878,13 +802,13 @@
 
             <!-- FAQ Item 4 -->
             <div class="faq-item" data-faq="4">
-              <div class="faq-question">
+              <div class="faq-question" onclick="toggleFaq(4)">
                 <h3>Are GrowCraft internships paid or unpaid?</h3>
                 <span class="faq-icon">
                   <i class="fas fa-plus"></i>
                 </span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" id="faq-answer-4">
                 <p>GrowCraft offers both <strong>paid and unpaid internship opportunities</strong>:</p>
                 <div class="internship-types">
                   <div class="internship-type">
@@ -912,13 +836,13 @@
 
             <!-- FAQ Item 5 -->
             <div class="faq-item" data-faq="5">
-              <div class="faq-question">
+              <div class="faq-question" onclick="toggleFaq(5)">
                 <h3>How can I contact GrowCraft for more details?</h3>
                 <span class="faq-icon">
                   <i class="fas fa-plus"></i>
                 </span>
               </div>
-              <div class="faq-answer">
+              <div class="faq-answer" id="faq-answer-5">
                 <p>We're here to help! You can reach us through multiple channels:</p>
                 <div class="contact-methods">
                   <div class="contact-method">
@@ -974,20 +898,17 @@
   <!-- FAQ Section ends here -->
 
   <!-- Professional Footer -->
-  <footer class="professional-footer fade-in"
-    style="    background: linear-gradient(135deg, rgba(132, 234, 132, 0.85), rgba(135, 210, 161, 0.59));">
+  <footer class="professional-footer">
     <div class="container">
-      <div class="main-footer row g-4 fade-in">
+      <div class="main-footer row g-4">
         <!-- Footer Columns -->
-        <div class="col-lg-4 col-md-6 fade-in first-grid">
-          <div class="footer-brand fade-in">
-            <img src="images/logo_bg_transparent.png" alt="GrowCraft Logo" class="footer-logo mb-3 theme-aware-logo"
-              data-light-src="images/logo_bg_transparent.png" data-dark-src="images/logo-transparent-dark-mode.png" />
+        <div class="col-lg-4 col-md-6 first-grid">
+          <div class="footer-brand">
+            <img src="images/logo_bg_transparent.png" alt="GrowCraft Logo" class="footer-logo mb-3" />
             <p class="brand-description">
-              Empowering businesses with innovative digital solutions and
-              creative excellence.
+              Empowering businesses with innovative digital solutions and creative excellence.
             </p>
-            <div class="quick-stats fade-in">
+            <div class="quick-stats">
               <div class="stat-item">
                 <span class="stat-number">500+</span>
                 <span class="stat-label">Projects</span>
@@ -1005,14 +926,12 @@
         </div>
 
         <!-- Services Links -->
-        <div class="col-lg-2 col-md-3 col-6 fade-in">
+        <div class="col-lg-2 col-md-3 col-6">
           <h5 class="footer-title">Services</h5>
           <ul class="footer-links">
             <li><a href="learn/webdev.html">Web Development</a></li>
             <li><a href="learn/graphic.html">Graphic Design</a></li>
-            <li>
-              <a href="src/digital-marketing.html">Digital Marketing</a>
-            </li>
+            <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
             <li><a href="learn/contentwriting.html">Content Writing</a></li>
             <li><a href="learn/socialmedia.html">Social Media</a></li>
             <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
@@ -1020,7 +939,7 @@
         </div>
 
         <!-- Quick Links -->
-        <div class="col-lg-2 col-md-3 col-6 fade-in">
+        <div class="col-lg-2 col-md-3 col-6">
           <h5 class="footer-title">Quick Links</h5>
           <ul class="footer-links">
             <li><a href="#about">About Us</a></li>
@@ -1032,9 +951,9 @@
         </div>
 
         <!-- Contact -->
-        <div class="col-lg-2 col-md-3 col-6 fade-in">
+        <div class="col-lg-2 col-md-3 col-6">
           <h5 class="footer-title">Get In Touch</h5>
-          <div class="contact-info mb-3 fade-in">
+          <div class="contact-info mb-3">
             <div class="contact-item">
               <i class="fas fa-envelope"></i>
               <a href="mailto:info@growcraft.com">info@growcraft.com</a>
@@ -1048,13 +967,13 @@
               <span>ABC Street, XYZ City, India</span>
             </div>
             <div class="contact-item d-flex justify-content-around mt-4">
-              <a href="https://discord.gg/vk5zFm56" target="_blank" >
+              <a href="https://discord.gg/vk5zFm56" target="_blank">
                 <i class="fa-brands fa-discord" style="color: #a22a2a; font-size: 24px;"></i>
               </a>
-              <a href="https://github.com/gyanshankar1708/GrowCraft" target="_blank" >
+              <a href="https://github.com/gyanshankar1708/GrowCraft" target="_blank">
                 <i class="fa-brands fa-github" style="color: #a22a2a; font-size: 24px;"></i>
               </a>
-              <a href="https://www.instagram.com/GrowCraft" target="_blank" >
+              <a href="https://www.instagram.com/GrowCraft" target="_blank">
                 <i class="fa-brands fa-instagram" style="color: #a22a2a; font-size: 24px;"></i>
               </a>
             </div>
@@ -1064,17 +983,16 @@
     </div>
 
     <!-- Footer Bottom -->
-    <div class="footer-bottom fade-in">
+    <div class="footer-bottom">
       <div class="container">
-        <div class="row align-items-center py-3 fade-in">
+        <div class="row align-items-center py-3">
           <div class="col-md-6">
             <p class="copyright mb-0">
-              © <span id="currentYear"></span> <strong>GrowCraft</strong>. All
-              rights reserved.
+              © <span id="currentYear">2024</span> <strong>GrowCraft</strong>. All rights reserved.
             </p>
           </div>
           <div class="col-md-6">
-            <div class="footer-nav fade-in">
+            <div class="footer-nav">
               <a href="privacy.html">Privacy</a>
               <a href="terms.html">Terms</a>
               <a href="#sitemap">Sitemap</a>
@@ -1091,8 +1009,38 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <!-- Enhanced Navbar Scroll Effect -->
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  
   <script>
+    // FAQ Toggle Function
+    function toggleFaq(faqNumber) {
+      const answer = document.getElementById(`faq-answer-${faqNumber}`);
+      const icon = document.querySelector(`[data-faq="${faqNumber}"] .faq-icon i`);
+      const iconContainer = document.querySelector(`[data-faq="${faqNumber}"] .faq-icon`);
+      const question = document.querySelector(`[data-faq="${faqNumber}"] .faq-question`);
+      
+      // Toggle the answer visibility
+      answer.classList.toggle('show');
+      
+      // Toggle icon rotation and styling
+      if (answer.classList.contains('show')) {
+        icon.classList.remove('fa-plus');
+        icon.classList.add('fa-minus');
+        iconContainer.classList.add('rotated');
+        question.style.background = 'linear-gradient(135deg, #4caf50 0%, #388e3c 100%)';
+        question.style.color = 'white';
+        question.querySelector('h3').style.color = 'white';
+      } else {
+        icon.classList.remove('fa-minus');
+        icon.classList.add('fa-plus');
+        iconContainer.classList.remove('rotated');
+        question.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)';
+        question.style.color = '';
+        question.querySelector('h3').style.color = '#2e7d32';
+      }
+    }
+
     // Add scroll effect to navbar
     window.addEventListener("scroll", function () {
       const navbar = document.querySelector(".navbar");
@@ -1103,39 +1051,55 @@
       }
     });
 
-    // Set active nav link based on current page
-    document.addEventListener("DOMContentLoaded", function () {
-      const currentLocation = location.pathname;
-      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-
-      navLinks.forEach((link) => {
-        link.classList.remove("active");
-        const linkPath = new URL(link.href).pathname;
-
-        if (
-          currentLocation === linkPath ||
-          (currentLocation === "/" && linkPath.includes("index.html")) ||
-          (currentLocation === "/index.html" &&
-            linkPath.includes("index.html"))
-        ) {
-          link.classList.add("active");
-        }
+    // Scroll to top functionality
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+    
+    backToTopButton.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
     });
-  </script>
 
-  <!-- Copyright section ends here  -->
-  <script src="src/script.js"></script>
-  <script src="src/utils.js"></script>
-  <script src="src/darkMode.js"></script>
-  <script src="src/faq.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"
-    defer></script>
-  
-  <script>
+    // Set current year
     document.addEventListener("DOMContentLoaded", function () {
       const yearSpan = document.getElementById("currentYear");
       yearSpan.textContent = new Date().getFullYear();
+    });
+
+    // Search functionality
+    document.querySelector('.search-button').addEventListener('click', function() {
+      const searchTerm = document.querySelector('.search-input').value.toLowerCase();
+      if (searchTerm.trim() !== '') {
+        // Simple search implementation - highlights FAQ items that match
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+          const questionText = item.querySelector('.faq-question h3').textContent.toLowerCase();
+          const answerText = item.querySelector('.faq-answer').textContent.toLowerCase();
+          
+          if (questionText.includes(searchTerm) || answerText.includes(searchTerm)) {
+            item.style.border = '3px solid #4caf50';
+            item.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          } else {
+            item.style.border = 'none';
+          }
+        });
+      }
+    });
+
+    // Allow Enter key for search
+    document.querySelector('.search-input').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        document.querySelector('.search-button').click();
+      }
     });
   </script>
 </body>
