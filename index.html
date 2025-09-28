@@ -567,40 +567,172 @@
       padding: 1rem 0;
     }
     
-    /* About Section */
+    /* Revolutionary About Section */
     .about-section {
-      padding: 4rem 0;
-      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-    }
-    
-    .about-title {
-      font-size: 3rem;
-      font-weight: 800;
-      color: var(--primary-green);
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-    
-    .about-subtitle {
-      font-size: 1.2rem;
-      color: #666;
-      text-align: center;
-      margin-bottom: 3rem;
-      font-style: italic;
-    }
-    
-    .about-card {
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(39, 174, 96, 0.2);
-      border-radius: var(--border-radius);
-      transition: var(--transition);
-      height: 100%;
+      padding: 5rem 0;
+      background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f0f8ff 100%);
       position: relative;
       overflow: hidden;
     }
     
-    .about-card::before {
+    /* Background Animation */
+    .about-background-animation {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 80%, rgba(39, 174, 96, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(76, 175, 80, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(129, 199, 132, 0.05) 0%, transparent 50%);
+      animation: backgroundPulse 8s ease-in-out infinite;
+    }
+    
+    @keyframes backgroundPulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.02); }
+    }
+    
+    /* About Hero Section */
+    .about-hero {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .about-tagline {
+      position: relative;
+    }
+    
+    .tagline-highlight {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      color: white;
+      padding: 8px 24px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+      position: relative;
+      overflow: hidden;
+      animation: taglinePulse 3s ease-in-out infinite;
+    }
+    
+    .tagline-highlight::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      animation: shimmer 2s infinite;
+    }
+    
+    @keyframes taglinePulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    @keyframes shimmer {
+      0% { left: -100%; }
+      100% { left: 100%; }
+    }
+    
+    .about-title-main {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #333;
+      position: relative;
+      line-height: 1.2;
+    }
+    
+    .text-gradient {
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green), var(--accent-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      animation: gradientShift 4s ease-in-out infinite;
+    }
+    
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .about-mission-statement {
+      font-size: 1.3rem;
+      color: #555;
+      font-style: italic;
+      line-height: 1.7;
+      max-width: 700px;
+      position: relative;
+      padding: 0 2rem;
+    }
+    
+    .gateway-tagline {
+      margin-top: 1.5rem;
+    }
+    
+    .gateway-text {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green), var(--accent-green));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 1.1rem;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      padding: 8px 16px;
+      border: 2px solid var(--primary-green);
+      border-radius: 25px;
+      position: relative;
+      animation: pulseGlow 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulseGlow {
+      0%, 100% { 
+        box-shadow: 0 0 5px rgba(39, 174, 96, 0.5);
+        transform: scale(1);
+      }
+      50% { 
+        box-shadow: 0 0 20px rgba(39, 174, 96, 0.8);
+        transform: scale(1.02);
+      }
+    }
+    
+    .quote-icon {
+      color: var(--primary-green);
+      font-size: 1rem;
+      opacity: 0.7;
+      margin: 0 8px;
+    }
+    
+    /* Value Items */
+    .about-values-container {
+      position: relative;
+    }
+    
+    .value-item {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      border: 1px solid rgba(39, 174, 96, 0.1);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .value-item::before {
       content: '';
       position: absolute;
       top: 0;
@@ -612,34 +744,672 @@
       z-index: -1;
     }
     
-    .about-card:hover::before {
+    .hover-morph:hover::before {
       left: 0;
     }
     
-    .about-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
+    .hover-morph:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(39, 174, 96, 0.2);
       border-color: var(--primary-green);
     }
     
-    .about-card h4 {
+    .value-icon-container {
+      position: relative;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .value-icon-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      border-radius: 50%;
+      opacity: 0.1;
+      transition: var(--transition);
+    }
+    
+    .value-icon {
+      font-size: 1.8rem;
+      color: var(--primary-green);
+      z-index: 1;
+      transition: var(--transition);
+    }
+    
+    .hover-morph:hover .value-icon-bg {
+      opacity: 0.2;
+      transform: scale(1.1);
+    }
+    
+    .hover-morph:hover .value-icon {
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .value-content h4 {
       color: var(--primary-green);
       font-weight: 700;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+    
+    .value-content p {
+      color: #666;
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    /* Clean Minimal Stats Section - Matching Screenshot */
+    .about-stats-section-clean {
+      margin-top: 4rem;
+      padding: 0;
+    }
+    
+    .clean-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .clean-stat-card {
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      padding: 2.5rem 1.5rem;
+      text-align: center;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+      position: relative;
+      backdrop-filter: blur(10px);
+    }
+    
+    .clean-stat-card.highlighted-clean {
+      border-color: var(--primary-green);
+      border-width: 2px;
+    }
+    
+    .clean-stat-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    }
+    
+    .clean-stat-number {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--primary-green);
+      line-height: 1;
       margin-bottom: 1rem;
+    }
+    
+    .clean-stat-suffix {
+      font-size: 4rem;
+      font-weight: 900;
+      color: var(--primary-green);
+    }
+    
+    .clean-stat-label {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #888;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 1rem;
+    }
+    
+    .clean-stat-underline {
+      width: 60px;
+      height: 4px;
+      background: var(--primary-green);
+      margin: 0 auto;
+      border-radius: 2px;
+      opacity: 0.3;
+      transition: var(--transition);
+    }
+    
+    .clean-stat-underline.highlighted-line {
+      opacity: 1;
+      width: 80px;
+    }
+    
+    .clean-stat-card:hover .clean-stat-underline {
+      opacity: 1;
+      width: 80px;
+    }
+    
+    /* Clean Achievement Badges */
+    .clean-achievement-badges {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin-top: 3rem;
+    }
+    
+    .clean-badge {
       display: flex;
       align-items: center;
       gap: 10px;
-    }
-    
-    .about-card .icon {
-      color: var(--primary-green);
-      font-size: 1.2em;
-    }
-    
-    .about-para {
-      color: #555;
-      line-height: 1.6;
+      padding: 16px 28px;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      color: white;
+      border-radius: 50px;
       font-size: 1rem;
+      font-weight: 600;
+      box-shadow: 0 6px 20px rgba(39, 174, 96, 0.3);
+      transition: var(--transition);
+      animation: floating 3s ease-in-out infinite;
+      border: none;
+    }
+    
+    .clean-badge:nth-child(2) { animation-delay: 1s; }
+    .clean-badge:nth-child(3) { animation-delay: 2s; }
+    
+    .clean-badge:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4);
+    }
+    
+    .clean-badge i {
+      font-size: 1.1rem;
+    }
+    
+    /* Clean About Hero Section - Matching Screenshot */
+    .clean-about-hero {
+      padding: 3rem 0;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    /* Top Tagline Pill */
+    .clean-tagline-pill {
+      display: inline-block;
+    }
+    
+    .clean-tagline-pill span {
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      color: white;
+      padding: 12px 32px;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+      display: inline-block;
+    }
+    
+    /* Main About Heading */
+    .clean-about-heading {
+      font-size: 4rem;
+      font-weight: 900;
+      color: #333;
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      margin: 0;
+    }
+    
+    .clean-heading-highlight {
+      color: var(--primary-green);
+    }
+    
+    /* Mission Statement Container */
+    .clean-mission-container {
+      position: relative;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 3rem;
+    }
+    
+    .clean-quote-mark {
+      font-size: 3rem;
+      color: var(--primary-green);
+      font-family: Georgia, serif;
+      font-weight: bold;
+      opacity: 0.8;
+      position: absolute;
+    }
+    
+    .left-quote {
+      top: -10px;
+      left: 0;
+    }
+    
+    .right-quote {
+      bottom: -20px;
+      right: 0;
+    }
+    
+    .clean-mission-text {
+      font-size: 1.4rem;
+      color: #666;
+      font-style: italic;
+      line-height: 1.7;
+      margin: 0;
+      padding: 1rem 0;
+      font-weight: 400;
+    }
+    
+    /* Gateway Button */
+    .clean-gateway-container {
+      margin-top: 2rem;
+    }
+    
+    .clean-gateway-button {
+      display: inline-block;
+      padding: 16px 40px;
+      border: 2px solid var(--primary-green);
+      border-radius: 50px;
+      color: var(--primary-green);
+      font-size: 0.9rem;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: transparent;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .clean-gateway-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+    
+    .clean-gateway-button:hover {
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+    }
+    
+    .clean-gateway-button:hover::before {
+      left: 0;
+    }
+    
+    /* Clean About Responsive */
+    @media (max-width: 768px) {
+      .clean-about-heading {
+        font-size: 2.8rem;
+      }
+      
+      .clean-mission-text {
+        font-size: 1.2rem;
+        padding: 0.5rem 0;
+      }
+      
+      .clean-mission-container {
+        padding: 0 2rem;
+      }
+      
+      .clean-quote-mark {
+        font-size: 2.5rem;
+      }
+      
+      .clean-gateway-button {
+        padding: 14px 28px;
+        font-size: 0.8rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .clean-about-heading {
+        font-size: 2.2rem;
+      }
+      
+      .clean-mission-text {
+        font-size: 1.1rem;
+      }
+      
+      .clean-mission-container {
+        padding: 0 1rem;
+      }
+      
+      .clean-tagline-pill span {
+        padding: 10px 24px;
+        font-size: 0.8rem;
+      }
+      
+      .clean-gateway-button {
+        padding: 12px 24px;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+      }
+    }
+    
+    /* Clean Stats Responsive */
+    @media (max-width: 768px) {
+      .clean-stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        max-width: 400px;
+      }
+      
+      .clean-stat-number {
+        font-size: 3rem;
+      }
+      
+      .clean-stat-suffix {
+        font-size: 3rem;
+      }
+      
+      .clean-achievement-badges {
+        gap: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .clean-achievement-badges {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .clean-badge {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+      }
+      
+      .clean-stat-number {
+        font-size: 2.5rem;
+      }
+      
+      .clean-stat-suffix {
+        font-size: 2.5rem;
+      }
+    }
+    
+    .stat-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--primary-green), var(--light-green));
+      transform: scaleX(0);
+      transition: var(--transition);
+    }
+    
+    .hover-pulse:hover::before {
+      transform: scaleX(1);
+    }
+    
+    .hover-pulse:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(39, 174, 96, 0.3);
+      border-color: var(--primary-green);
+    }
+    
+    .stat-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--primary-green);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+    
+    .stat-label {
+      font-size: 0.9rem;
+      color: #666;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .stat-border {
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary-green), var(--light-green));
+      border-radius: 2px;
+    }
+    
+    /* New Achievement Badges */
+    .achievement-badges-new {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .badge-pill {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      color: white;
+      border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+      transition: var(--transition);
+      animation: floating 3s ease-in-out infinite;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .badge-pill:nth-child(2) { animation-delay: 1s; }
+    .badge-pill:nth-child(3) { animation-delay: 2s; }
+    
+    .badge-pill:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+    }
+    
+    .badge-pill i {
+      font-size: 1rem;
+    }
+    
+    /* Achievement Badges (Keep old ones for other sections) */
+    .achievement-badges {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    
+    .badge-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      color: white;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+      transition: var(--transition);
+      animation: floating 3s ease-in-out infinite;
+    }
+    
+    .badge-item:nth-child(2) { animation-delay: 1s; }
+    .badge-item:nth-child(3) { animation-delay: 2s; }
+    
+    @keyframes floating {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    .badge-item:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+    }
+    
+    /* CTA Section */
+    .about-cta-section {
+      position: relative;
+      margin-top: 4rem;
+    }
+    
+    .cta-container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(39, 174, 96, 0.2);
+      border-radius: 30px;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-container::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(39, 174, 96, 0.1), transparent);
+      animation: rotate 6s linear infinite;
+      z-index: -1;
+    }
+    
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    
+    .cta-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--primary-green);
+      line-height: 1.3;
+    }
+    
+    .cta-subtitle {
+      font-size: 1.1rem;
+      color: #666;
+      line-height: 1.6;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn-cta-primary, .btn-cta-secondary {
+      position: relative;
+      padding: 15px 30px;
+      border-radius: 25px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      overflow: hidden;
+      display: inline-flex;
+      align-items: center;
+      border: 2px solid transparent;
+    }
+    
+    .btn-cta-primary {
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      color: white;
+    }
+    
+    .btn-cta-secondary {
+      background: transparent;
+      color: var(--primary-green);
+      border-color: var(--primary-green);
+    }
+    
+    .btn-shine {
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: var(--transition);
+    }
+    
+    .hover-glow:hover .btn-shine {
+      left: 100%;
+    }
+    
+    .hover-glow:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(39, 174, 96, 0.4);
+    }
+    
+    .btn-cta-secondary:hover {
+      background: var(--primary-green);
+      color: white;
+      border-color: var(--primary-green);
+    }
+    
+    /* Floating Elements */
+    .floating-elements {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+    
+    .floating-shape {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: floatUp 8s ease-in-out infinite;
+    }
+    
+    .shape-1 {
+      top: 80%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+    
+    .shape-2 {
+      top: 60%;
+      right: 15%;
+      animation-delay: 2s;
+    }
+    
+    .shape-3 {
+      top: 30%;
+      left: 80%;
+      animation-delay: 4s;
+    }
+    
+    @keyframes floatUp {
+      0%, 100% {
+        transform: translateY(0px) scale(1);
+        opacity: 0.3;
+      }
+      25% {
+        transform: translateY(-20px) scale(1.2);
+        opacity: 0.6;
+      }
+      50% {
+        transform: translateY(-40px) scale(0.8);
+        opacity: 0.4;
+      }
+      75% {
+        transform: translateY(-20px) scale(1.1);
+        opacity: 0.5;
+      }
     }
     
     /* Feedback Section */
@@ -1044,9 +1814,80 @@
     @media (max-width: 768px) {
       .head-training,
       .heading-text,
-      .about-title,
       .feedback-title {
         font-size: 2rem;
+      }
+      
+      /* Enhanced About Us Mobile Styles */
+      .about-title-main {
+        font-size: 2.5rem !important;
+      }
+      
+      .about-mission-statement {
+        font-size: 1.1rem;
+        padding: 0 1rem;
+      }
+      
+      .value-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 1.5rem 1rem;
+      }
+      
+      .value-icon-container {
+        margin-bottom: 0.5rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      
+      .stat-item {
+        padding: 1.5rem 1rem;
+      }
+      
+      .stat-number {
+        font-size: 2rem;
+      }
+      
+      .achievement-badges {
+        gap: 0.5rem;
+      }
+      
+      .badge-item {
+        padding: 10px 15px;
+        font-size: 0.8rem;
+      }
+      
+      .cta-container {
+        padding: 2rem 1.5rem;
+      }
+      
+      .cta-title {
+        font-size: 1.8rem;
+      }
+      
+      .cta-subtitle {
+        font-size: 1rem;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+      }
+      
+      .btn-cta-primary, .btn-cta-secondary {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+        padding: 12px 20px;
+      }
+      
+      .floating-shape {
+        display: none;
       }
       
       .carousel-caption h2 {
@@ -1070,6 +1911,53 @@
       
       .program-card {
         margin-bottom: 1rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .about-section {
+        padding: 3rem 0;
+      }
+      
+      .about-title-main {
+        font-size: 2rem !important;
+      }
+      
+      .tagline-highlight {
+        font-size: 0.8rem;
+        padding: 6px 18px;
+      }
+      
+      .about-mission-statement {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+      }
+      
+      .value-item {
+        margin-bottom: 1.5rem;
+        padding: 1.2rem 0.8rem;
+      }
+      
+      .value-icon-container {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .value-icon {
+        font-size: 1.5rem;
+      }
+      
+      .value-content h4 {
+        font-size: 1.2rem;
+      }
+      
+      .stat-number {
+        font-size: 1.8rem;
+      }
+      
+      .cta-title {
+        font-size: 1.5rem;
+        line-height: 1.4;
       }
     }
     
@@ -1648,87 +2536,191 @@ Boost your career with skill-focused training and internship opportunities.    <
   </div>
 </section>
 
-  <!-- Enhanced About Section -->
-<section class="about-section" id="about">
-  <div class="container">
-    <h2 class="heading-text fade-in-up">About Us</h2>
-    <p class="services-subtitle fade-in-up" style="animation-delay: 0.2s;">
-      Gateway to <em>Go Digital and Grow Business</em>
-    </p>
+  <!-- Revolutionary About Us Section -->
+  <section class="about-section" id="about">
+    <div class="about-background-animation"></div>
+    <div class="container position-relative">
+      <!-- Clean Hero Introduction - Matching Screenshot -->
+      <div class="clean-about-hero text-center mb-5 fade-in-up">
+        <!-- Top Tagline Pill -->
+        <div class="clean-tagline-pill mb-4">
+          <span>EMPOWERING DIGITAL DREAMS</span>
+        </div>
+        
+        <!-- Main Heading -->
+        <h2 class="clean-about-heading mb-5">
+          About <span class="clean-heading-highlight">GrowCraft</span>
+        </h2>
+        
+        <!-- Mission Statement -->
+        <div class="clean-mission-container mb-5">
+          <span class="clean-quote-mark left-quote">&ldquo;</span>
+          <p class="clean-mission-text">
+            We transform businesses through innovative digital solutions, blending creativity with cutting-edge technology to deliver exceptional results.
+          </p>
+          <span class="clean-quote-mark right-quote">&rdquo;</span>
+        </div>
+        
+        <!-- Bottom Tagline Outline Button -->
+        <div class="clean-gateway-container">
+          <a href="#services" class="clean-gateway-button">GATEWAY TO GO DIGITAL AND GROW BUSINESS</a>
+        </div>
+      </div>
 
-    <div class="row justify-content-center g-4">
-      <!-- Card 1 -->
-      <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.1s;">
-        <div class="about-card">
-          <div class="icon mb-3">
-            <i class="fas fa-users"></i>
+      <!-- Value Items Grid -->
+      <div class="row g-4 mb-5">
+        <!-- Left Column: 3 Value Items -->
+        <div class="col-lg-6">
+          <div class="about-values-container fade-in-up" style="animation-delay: 0.2s;">
+            <div class="value-item hover-morph" style="animation-delay: 0.1s;">
+              <div class="value-icon-container">
+                <div class="value-icon-bg"></div>
+                <i class="fas fa-rocket value-icon"></i>
+              </div>
+              <div class="value-content">
+                <h4>Innovation First</h4>
+                <p>Pioneering solutions with cutting-edge technology trends and creative excellence</p>
+              </div>
+            </div>
+
+            <div class="value-item hover-morph" style="animation-delay: 0.2s;">
+              <div class="value-icon-container">
+                <div class="value-icon-bg"></div>
+                <i class="fas fa-heart value-icon"></i>
+              </div>
+              <div class="value-content">
+                <h4>Client Success</h4>
+                <p>Your growth is our mission - every client has unique needs and goals we fulfill</p>
+              </div>
+            </div>
+
+            <div class="value-item hover-morph" style="animation-delay: 0.3s;">
+              <div class="value-icon-container">
+                <div class="value-icon-bg"></div>
+                <i class="fas fa-cogs value-icon"></i>
+              </div>
+              <div class="value-content">
+                <h4>Tech-Driven Solutions</h4>
+                <p>Latest technologies & best practices evolving to meet changing client needs</p>
+              </div>
+            </div>
           </div>
-          <h4 class="mb-3">Who We Are</h4>
-          <div class="about-para">
-            GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design &
-            Social Media. We deliver high-quality services that align with market trends.
+        </div>
+
+        <!-- Right Column: 3 Value Items -->
+        <div class="col-lg-6">
+          <div class="about-values-container fade-in-up" style="animation-delay: 0.3s;">
+            <div class="value-item hover-morph" style="animation-delay: 0.4s;">
+              <div class="value-icon-container">
+                <div class="value-icon-bg"></div>
+                <i class="fas fa-users value-icon"></i>
+              </div>
+              <div class="value-content">
+                <h4>Client-Centric Approach</h4>
+                <p>Custom solutions with complete client involvement throughout development</p>
+              </div>
+            </div>
+
+            <div class="value-item hover-morph" style="animation-delay: 0.5s;">
+              <div class="value-icon-container">
+                <div class="value-icon-bg"></div>
+                <i class="fas fa-shield-alt value-icon"></i>
+              </div>
+              <div class="value-content">
+                <h4>Reliable & Transparent</h4>
+                <p>Clear communication, timely delivery ensuring success for clients and us</p>
+              </div>
+            </div>
+
+            <div class="value-item hover-morph" style="animation-delay: 0.6s;">
+              <div class="value-icon-container">
+                <div class="value-icon-bg"></div>
+                <i class="fas fa-dollar-sign value-icon"></i>
+              </div>
+              <div class="value-content">
+                <h4>Affordable & Proven</h4>
+                <p>Cost-effective services with proven track record - your reliable digital partner</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      <!-- Card 2 -->
-      <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.2s;">
-        <div class="about-card">
-          <div class="icon mb-3">
-            <i class="fas fa-microchip"></i>
+      <!-- Stats Section - Clean Minimal Design -->
+      <div class="about-stats-section-clean fade-in-up" style="animation-delay: 0.7s;">
+        <!-- Main Stats Grid -->
+        <div class="clean-stats-grid">
+          <div class="clean-stat-card hover-lift" style="animation-delay: 0.1s;">
+            <div class="clean-stat-number">150<span class="clean-stat-suffix">+</span></div>
+            <div class="clean-stat-label">HAPPY CLIENTS</div>
+            <div class="clean-stat-underline"></div>
           </div>
-          <h4 class="mb-3">Tech-Driven Solutions</h4>
-          <div class="about-para">
-            We use the latest technologies & best practices to deliver innovative solutions. Our services evolve
-            constantly to meet clients' changing needs.
+          <div class="clean-stat-card hover-lift" style="animation-delay: 0.2s;">
+            <div class="clean-stat-number">500<span class="clean-stat-suffix">+</span></div>
+            <div class="clean-stat-label">PROJECTS COMPLETED</div>
+            <div class="clean-stat-underline"></div>
           </div>
-        </div>
-      </div>
-
-      <!-- Card 3 -->
-      <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.3s;">
-        <div class="about-card">
-          <div class="icon mb-3">
-            <i class="fas fa-handshake"></i>
+          <div class="clean-stat-card hover-lift highlighted-clean" style="animation-delay: 0.3s;">
+            <div class="clean-stat-number">5</div>
+            <div class="clean-stat-label">YEARS EXPERIENCE</div>
+            <div class="clean-stat-underline highlighted-line"></div>
           </div>
-          <h4 class="mb-3">Client-Centric Approach</h4>
-          <div class="about-para">
-            Every client has unique needs. We understand their goals before creating custom solutions and involve them
-            throughout the development process.
-          </div>
-        </div>
-      </div>
-
-      <!-- Card 4 -->
-      <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.4s;">
-        <div class="about-card">
-          <div class="icon mb-3">
-            <i class="fas fa-shield-alt"></i>
-          </div>
-          <h4 class="mb-3">Reliable & Transparent</h4>
-          <div class="about-para">
-            With clear communication, timely delivery, and transparent processes, we ensure success for both our
-            clients and ourselves.
+          <div class="clean-stat-card hover-lift" style="animation-delay: 0.4s;">
+            <div class="clean-stat-number">99<span class="clean-stat-suffix">%</span></div>
+            <div class="clean-stat-label">SATISFACTION RATE</div>
+            <div class="clean-stat-underline"></div>
           </div>
         </div>
-      </div>
 
-      <!-- Card 5 -->
-      <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.5s;">
-        <div class="about-card">
-          <div class="icon mb-3">
+        <!-- Achievement Badges -->
+        <div class="clean-achievement-badges mt-5">
+          <div class="clean-badge floating" style="animation-delay: 0.1s;">
             <i class="fas fa-award"></i>
+            <span>Industry Leader</span>
           </div>
-          <h4 class="mb-3">Affordable & Proven</h4>
-          <div class="about-para">
-            We offer cost-effective services and have a history of successful projects. For a reliable digital
-            partner, GrowCraft is your best choice.
+          <div class="clean-badge floating" style="animation-delay: 0.2s;">
+            <i class="fas fa-certificate"></i>
+            <span>Certified Team</span>
           </div>
+          <div class="clean-badge floating" style="animation-delay: 0.3s;">
+            <i class="fas fa-star"></i>
+            <span>5-Star Rating</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Call-to-Action Section -->
+      <div class="about-cta-section text-center fade-in-up" style="animation-delay: 0.6s;">
+        <div class="cta-container hover-lift">
+          <h3 class="cta-title mb-3">
+            Ready to Transform Your Digital Presence?
+          </h3>
+          <p class="cta-subtitle mb-4">
+            Join hundreds of satisfied clients who've experienced the GrowCraft difference
+          </p>
+          <div class="cta-buttons">
+            <a href="about.html" class="btn btn-cta-primary hover-glow">
+              <i class="fas fa-info-circle me-2"></i>
+              <span>Learn More About Us</span>
+              <div class="btn-shine"></div>
+            </a>
+            <a href="src/contact.html" class="btn btn-cta-secondary hover-glow">
+              <i class="fas fa-paper-plane me-2"></i>
+              <span>Start Your Project</span>
+              <div class="btn-shine"></div>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Floating Elements -->
+        <div class="floating-elements">
+          <div class="floating-shape shape-1"></div>
+          <div class="floating-shape shape-2"></div>
+          <div class="floating-shape shape-3"></div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
   <!-- Enhanced Feedback Section -->
@@ -2122,6 +3114,52 @@ Boost your career with skill-focused training and internship opportunities.    <
         yearSpan.textContent = new Date().getFullYear();
       }
 
+      /* Enhanced Counter Animation for About Us Stats */
+      const statNumbers = document.querySelectorAll('.stat-number[data-count]');
+      const aboutSection = document.querySelector('.about-section');
+      let hasAnimated = false;
+
+      // Intersection Observer for stats animation
+      const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting && !hasAnimated) {
+            hasAnimated = true;
+            animateCounters();
+          }
+        });
+      }, { threshold: 0.5 });
+
+      if (aboutSection) {
+        statsObserver.observe(aboutSection);
+      }
+
+      function animateCounters() {
+        statNumbers.forEach(stat => {
+          const target = parseInt(stat.dataset.count);
+          const duration = 2000;
+          const increment = target / (duration / 16);
+          let current = 0;
+
+          const updateCounter = () => {
+            if (current < target) {
+              current += increment;
+              if (current > target) current = target;
+              
+              // Format number based on value
+              if (stat.dataset.count === '99') {
+                stat.textContent = Math.floor(current) + '%';
+              } else {
+                stat.textContent = Math.floor(current) + (target >= 100 ? '+' : '');
+              }
+              
+              requestAnimationFrame(updateCounter);
+            }
+          };
+          
+          setTimeout(() => updateCounter(), Math.random() * 200);
+        });
+      }
+
       /* Enhanced Hover Effects */
       document.querySelectorAll('.hover-lift').forEach(el => {
         el.addEventListener('mouseenter', function() {
@@ -2142,6 +3180,69 @@ Boost your career with skill-focused training and internship opportunities.    <
           this.style.transform = 'scale(1)';
         });
       });
+
+      /* Enhanced Morph and Pulse Effects */
+      document.querySelectorAll('.hover-morph').forEach(el => {
+        el.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-5px) scale(1.02)';
+        });
+        
+        el.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      document.querySelectorAll('.hover-pulse').forEach(el => {
+        el.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-8px)';
+        });
+        
+        el.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      /* Enhanced Glow Effects for CTA Buttons */
+      document.querySelectorAll('.hover-glow').forEach(el => {
+        el.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-3px)';
+          
+          // Add particle effect on hover
+          const particles = document.createElement('div');
+          particles.className = 'button-particles';
+          particles.innerHTML = '✨';
+          particles.style.position = 'absolute';
+          particles.style.top = '-10px';
+          particles.style.right = '-10px';
+          particles.style.fontSize = '12px';
+          particles.style.opacity = '0';
+          particles.style.animation = 'sparkle 0.6s ease-out forwards';
+          
+          this.style.position = 'relative';
+          this.appendChild(particles);
+          
+          setTimeout(() => {
+            if (particles.parentElement) {
+              particles.remove();
+            }
+          }, 600);
+        });
+        
+        el.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0)';
+        });
+      });
+
+      /* Add sparkle animation CSS */
+      const sparkleStyle = document.createElement('style');
+      sparkleStyle.textContent = `
+        @keyframes sparkle {
+          0% { opacity: 0; transform: scale(0) rotate(0deg); }
+          50% { opacity: 1; transform: scale(1) rotate(180deg); }
+          100% { opacity: 0; transform: scale(0) rotate(360deg); }
+        }
+      `;
+      document.head.appendChild(sparkleStyle);
     });
   </script>
 </body>
