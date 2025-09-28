@@ -1,137 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Writing Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    :root {
-      --bg: #ffffff;
-      --fg: #0f172a;        /* text color light */
-      --card: #f8fafc;
-      --border: #e5e7eb;
-      --link: #0d6efd;
-    }
-    :root[data-theme="dark"] {
-      --bg: #0b1120;
-      --fg: #e2e8f0;        /* text color dark */
-      --card: #111827;
-      --border: #1f2937;
-      --link: #93c5fd;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Writing Portfolio</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-    html, body { background: var(--bg); color: var(--fg); }
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="contentWriting.css" />
+  </head>
+  <body>
+    <!-- background  -->
+    <div
+      class="background-circle"
+      style="
+        top: 10%;
+        left: 20%;
+        width: 50px;
+        height: 50px;
+        animation-delay: 0s;
+      "
+    ></div>
+    <div
+      class="background-circle"
+      style="
+        top: 50%;
+        left: 70%;
+        width: 65px;
+        height: 65px;
+        animation-delay: 1s;
+      "
+    ></div>
+    <div
+      class="background-circle"
+      style="
+        top: 80%;
+        left: 30%;
+        width: 40px;
+        height: 40px;
+        animation-delay: 2s;
+      "
+    ></div>
+    <div
+      class="background-circle"
+      style="
+        top: 25%;
+        left: 50%;
+        width: 60px;
+        height: 60px;
+        animation-delay: 0.5s;
+      "
+    ></div>
+    <div
+      class="background-circle"
+      style="
+        top: 60%;
+        left: 10%;
+        width: 30px;
+        height: 30px;
+        animation-delay: 1.5s;
+      "
+    ></div>
+    <div
+      class="background-circle"
+      style="
+        top: 30%;
+        left: 80%;
+        width: 30px;
+        height: 30px;
+        animation-delay: 1.6s;
+      "
+    ></div>
+    <!-- background end -->
 
-    /* back button + links */
-    a:not(.btn-link) { color: var(--link); }
-    a:not(.btn-link):hover { opacity: 0.9; }
-    .btn-link { color: var(--fg) !important; }
-    .btn-link:hover { text-decoration: underline; opacity: 0.9; }
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center px-4"
+      >
+        <a class="navbar-brand hover-scale" href="#">
+          <img
+            src="../images/Logo_new.png"
+            alt="GrowCraft"
+            id="logo"
+            class="smooth-transition"
+          />
+        </a>
 
-    .card {
-      border: none;
-      border-radius: 16px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      background: var(--card);
-    }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
-    .card-img-top { height: 220px; object-fit: cover; border-bottom: 1px solid var(--border); }
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-    h1, h2, h3, h4, h5, h6,
-    .card-title, .card-text, p { color: var(--fg); }
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#service">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../blogListing.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../work.html">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../src/faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../src/contact.html">Contact Us</a>
+            </li>
+          </ul>
 
-    h1 { font-weight: 700; }
-    .card-title { font-size: 1.25rem; font-weight: 600; }
-    .card-text { font-size: 0.95rem; }
-    section.container { padding-top: 3rem; padding-bottom: 3rem; }
-
-    /* Big toggle button */
-    #themeToggle {
-      border: 0;
-      background: transparent;
-      cursor: pointer;
-      font-size: 2.2rem;
-      padding: 0.4rem 0.8rem;
-      border-radius: 8px;
-      transition: background 0.2s ease;
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      line-height: 1;
-    }
-    #themeToggle:hover { background: rgba(0,0,0,0.05); }
-  </style>
-</head>
-<body>
-  <!-- Back link -->
-  <div class="container mt-4">
-    <a href="../index.html" class="btn btn-link text-decoration-none d-flex align-items-center" style="font-size: 1.1rem;">
-      &#8592; <span class="ms-2">Back</span>
-    </a>
-  </div>
-
-  <!-- Theme toggle button -->
-  <button id="themeToggle" aria-label="Toggle theme">
-    <span id="themeIcon">🌙</span>
-  </button>
-
-  <section class="container mt-5">
-    <h1 class="mb-4 text-center">Content Writing Samples</h1>
-    <p class="text-center mb-5">Every word crafted to inform, inspire, and convert.</p>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="../images/img1cw.png" class="card-img-top" alt="Tech Blog">
-          <div class="card-body">
-            <h5 class="card-title">AI & Healthcare Blog</h5>
-            <p class="card-text">Thought leadership post on emerging trends, published on Medium with 10k+ reads.</p>
-          </div>
+          <!-- Dark Mode Toggle Button -->
+          <button
+            class="btn theme-toggle ms-3"
+            type="button"
+            id="themeToggle"
+            title="Toggle Dark/Light Mode"
+          >
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="../images/img2cw.webp" class="card-img-top" alt="Sales Copy">
-          <div class="card-body">
-            <h5 class="card-title">Product Landing Page</h5>
-            <p class="card-text">Persuasive writing that increased sign-ups by 38% on a new SaaS platform.</p>
+    </nav>
+    <!-- navBar ended -->
+
+    <!-- hero section -->
+    <div class="text-center my-5">
+      <h1 class="display-6 mx-5 px-5 fw-bold quote scale-in">
+        Words That Work Harder—Content Designed to Drive Traffic & Sales
+      </h1>
+      <div class="mt-5 scale-in">
+        <a
+          href="#quote"
+          class="btn btn-success btn-lg me-2"
+          data-bs-toggle="modal"
+          data-bs-target="#quoteModal"
+          id="getQuoteBtn"
+          >Get a Free Quote</a
+        >
+        <!-- popup for free quote -->
+        <div
+          class="modal fade"
+          id="quoteModal"
+          tabindex="-1"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Your Free Quote</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+
+              <div class="modal-body">
+                <p id="quoteText" class="fs-5 text-center">Loading…</p>
+                <p id="quoteAuthor" class="text-end fst-italic"></p>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="../images/img3cw.jpg" class="card-img-top" alt="Ebook">
-          <div class="card-body">
-            <h5 class="card-title">B2B Ebook</h5>
-            <p class="card-text">Comprehensive guide with storytelling and industry data written for lead magnets.</p>
-          </div>
-        </div>
+
+        <a href="#sample" class="btn btn-outline-secondary btn-lg"
+          >Request Sample</a
+        >
       </div>
     </div>
-  </section>
+    <!-- hero section ended -->
 
-  <!-- Theme toggle script -->
-  <script>
-    (function() {
-      const root = document.documentElement;
-      const btn = document.getElementById('themeToggle');
-      const icon = document.getElementById('themeIcon');
+    <!-- services -->
+    <section class="container my-3">
+      <h2 class="text-center mb-3 scale-in">Service Packages</h2>
+      <p class="text-center mb-4 scale-in">
+        Choose a plan that fits your content needs. All packages include SEO
+        optimization and two free revisions.
+      </p>
 
-      function applyTheme(t) {
-        root.setAttribute('data-theme', t);
-        localStorage.setItem('theme', t);
-        icon.textContent = (t === 'dark') ? '☀️' : '🌙';
-      }
+      <div class="table-responsive fade-in-up">
+        <table class="table table-bordered text-center align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Features</th>
+              <th scope="col">Starter</th>
+              <th scope="col">
+                Growth <span class="badge mx-2 bg-success">Most Popular</span>
+              </th>
+              <th scope="col">Premium</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Word Count</th>
+              <td>Up to 1,000 words</td>
+              <td>Up to 3,000 words</td>
+              <td>Up to 6,000 words</td>
+            </tr>
+            <tr>
+              <th scope="row">Delivery Time</th>
+              <td>3–4 business days</td>
+              <td>5–7 business days</td>
+              <td>7–10 business days</td>
+            </tr>
+            <tr>
+              <th scope="row">Revisions</th>
+              <td>1 revision</td>
+              <td>2 revisions</td>
+              <td>Unlimited (within 14 days)</td>
+            </tr>
+            <tr>
+              <th scope="row">SEO Optimization</th>
+              <td>
+                <i class="bi bi-airplane-fill text-success"></i>
+              </td>
+              <td>
+                <i class="bi bi-star-fill text-success"></i>
+              </td>
+              <td>
+                <i class="bi bi-twitter text-success"></i>
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">Price</th>
+              <td><strong>$99</strong></td>
+              <td><strong>$249</strong></td>
+              <td><strong>$499</strong></td>
+            </tr>
+            <tr>
+              <th scope="row"></th>
+              <td>
+                <a href="#quote" class="btn btn-outline-success btn-sm"
+                  >Choose Starter</a
+                >
+              </td>
+              <td>
+                <a href="#quote" class="btn btn-success btn-sm"
+                  >Choose Growth</a
+                >
+              </td>
+              <td>
+                <a href="#quote" class="btn btn-outline-success btn-sm"
+                  >Choose Premium</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    <!-- services ended-->
 
-      const saved = localStorage.getItem('theme') || 'light';
-      applyTheme(saved);
+    <!-- process section -->
+    <section class="container my-3">
+      <h2 class="text-center mb-4 scale-in">Our Process</h2>
+      <p class="text-center mb-5 scale-in">
+        A simple 4-step workflow to deliver high-impact content on time.
+      </p>
 
-      btn.addEventListener('click', () => {
-        const next = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
-        applyTheme(next);
+      <div class="row text-center g-4">
+        <!-- Step 1 -->
+        <div class="col-md-3 fade-in-up">
+          <div class="p-4 border rounded-3 h-100 process-card">
+            <i class="bi bi-chat-square-text display-4 text-success mb-3"></i>
+            <h5 class="fw-bold mt-3">1. Brief</h5>
+            <p class="mb-0">
+              We discuss your goals, target audience, and key topics to set a
+              clear direction.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-3 fade-in-up">
+          <div class="p-4 border rounded-3 h-100 process-card">
+            <i class="bi bi-pencil-square display-4 text-success mb-3"></i>
+            <h5 class="fw-bold mt-3">2. Draft</h5>
+            <p class="mb-0">
+              Our writers craft an initial draft tailored to your brand voice
+              and strategy.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-3 fade-in-up">
+          <div class="p-4 border rounded-3 h-100 process-card">
+            <i class="bi bi-arrow-repeat display-4 text-success mb-3"></i>
+            <h5 class="fw-bold mt-3">3. Revisions</h5>
+            <p class="mb-0">
+              We refine the content based on your feedback to ensure it hits the
+              mark.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="col-md-3 fade-in-up">
+          <div class="p-4 border rounded-3 h-100 process-card">
+            <i class="bi bi-check2-circle display-4 text-success mb-3"></i>
+            <h5 class="fw-bold mt-3">4. Final Delivery</h5>
+            <p class="mb-0">
+              Receive polished, ready-to-publish content in your preferred
+              format.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- process section ended -->
+
+    <!-- sample -->
+    <section class="container mt-5">
+      <h1 class="mb-4 text-center main-head scale-in">
+        Content Writing Samples
+      </h1>
+      <p class="text-center mb-5 scale-in">
+        Every word crafted to inform, inspire, and convert.
+      </p>
+      <div class="row">
+        <div class="col-md-4 mb-4 d-flex fade-in-up">
+          <div class="card shadow h-100">
+            <img
+              src="../images/img1cw.png"
+              class="card-img-top"
+              alt="Tech Blog"
+            />
+            <div class="card-body">
+              <h5 class="card-title">AI & Healthcare Blog</h5>
+              <p class="card-text">
+                Thought leadership post on emerging trends, published on Medium
+                with 10k+ reads.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 d-flex fade-in-up">
+          <div class="card shadow h-100">
+            <img
+              src="../images/img2cw.webp"
+              class="card-img-top"
+              alt="Sales Copy"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Product Landing Page</h5>
+              <p class="card-text">
+                Persuasive writing that increased sign-ups by 38% on a new SaaS
+                platform.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4 d-flex fade-in-up">
+          <div class="card shadow h-100">
+            <img src="../images/img3cw.jpg" class="card-img-top" alt="Ebook" />
+            <div class="card-body">
+              <h5 class="card-title">B2B Ebook</h5>
+              <p class="card-text">
+                Comprehensive guide with storytelling and industry data written
+                for lead magnets.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- sample ended -->
+
+    <!-- free content -->
+    <section class="container my-5">
+      <div class="row justify-content-center">
+        <div
+          class="col-lg-8 text-center p-4 border rounded-4 shadow-sm bg-light get-content fade-in-up"
+        >
+          <h2 class="mb-3">Get Your Free Content Pack!</h2>
+          <p class="mb-4">
+            Download our
+            <strong>“10 Blog Ideas for Your Niche”</strong> PDF—absolutely free.
+            Enter your email and we’ll send it straight to your inbox.
+          </p>
+
+          <!-- Email Signup Form -->
+          <form id="leadForm" class="row g-2 justify-content-center">
+            <div class="col-md-6">
+              <input
+                type="email"
+                class="form-control"
+                name="email"
+                placeholder="Your email address"
+                required
+              />
+            </div>
+            <div class="col-auto">
+              <button type="submit" class="btn btn-success">
+                Get My Free PDF
+              </button>
+            </div>
+          </form>
+
+          <!-- Confirmation Message -->
+          <div id="leadMsg" class="mt-3 text-success fw-bold d-none">
+            ✅ Thanks! Check your email for the download link.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enhanced Scroll to Top Button -->
+    <button id="backToTop" title="Go to top" type="button" class="hover-scale">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* Enhanced Animation Observer */
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const cards = document.querySelectorAll(
+          ".fade-in-up, .scale-in, .slide-in-right"
+        );
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target); // run once per card
+            }
+          });
+        }, observerOptions);
+
+        // Observe all animated elements
+        cards.forEach((card) => observer.observe(card));
+
+        /* Enhanced Theme Toggle Functionality */
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+
+        // Get current theme from localStorage or default to 'light'
+        let currentTheme = localStorage.getItem("theme") || "light";
+
+        // Apply theme on page load
+        document.documentElement.setAttribute("data-bs-theme", currentTheme);
+        updateThemeIcon(currentTheme);
+
+        // Theme toggle event listener
+        if (themeToggle) {
+          themeToggle.addEventListener("click", function () {
+            // Add click animation
+            this.style.transform = "scale(0.95)";
+            setTimeout(() => {
+              this.style.transform = "scale(1.1)";
+              setTimeout(() => {
+                this.style.transform = "";
+              }, 150);
+            }, 100);
+
+            // Toggle theme
+            currentTheme = currentTheme === "light" ? "dark" : "light";
+            document.documentElement.setAttribute(
+              "data-bs-theme",
+              currentTheme
+            );
+            localStorage.setItem("theme", currentTheme);
+            updateThemeIcon(currentTheme);
+          });
+        }
+
+        function updateThemeIcon(theme) {
+          if (themeIcon) {
+            if (theme === "dark") {
+              themeIcon.className = "fas fa-sun";
+              themeIcon.style.transform = "rotate(180deg)";
+            } else {
+              themeIcon.className = "fas fa-moon";
+              themeIcon.style.transform = "rotate(0deg)";
+            }
+          }
+        }
+        const logo = document.querySelector("#logo");
+        function updateLogo() {
+          const isDark =
+            document.documentElement.getAttribute("data-bs-theme") === "dark";
+          logo.src = isDark ? "../images/Logo.png" : "../images/Logo_new.png";
+        }
+
+        updateLogo();
+        const themeObserver = new MutationObserver(function (mutations) {
+          for (const mutation of mutations) {
+            if (
+              mutation.type === "attributes" &&
+              mutation.attributeName === "data-bs-theme"
+            ) {
+              updateLogo();
+            }
+          }
+        });
+        themeObserver.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["data-bs-theme"],
+        });
+
+        // navBAr scroll effect
+        const navbar = document.querySelector(".navbar");
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", () => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY > 100) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+
+          lastScrollY = currentScrollY;
+        });
+
+        // Quote generation
+        document
+          .getElementById("getQuoteBtn")
+          .addEventListener("click", async () => {
+            const textEl = document.getElementById("quoteText");
+            const authorEl = document.getElementById("quoteAuthor");
+
+            textEl.textContent = "Fetching Your Quote";
+            authorEl.textContent = "";
+
+            try {
+              const response = await fetch(
+                "https://api.allorigins.win/raw?url=" +
+                  encodeURIComponent("https://zenquotes.io/api/random")
+              );
+              const data = await response.json();
+              console.log(data[0].q);
+              const quote = data[0].q;
+              const author = data[0].a;
+
+              textEl.textContent = `"${quote}"`;
+              authorEl.textContent = `— ${author}`;
+            } catch (err) {
+              textEl.textContent =
+                "Sorry, could not load a quote at the moment.";
+            }
+          });
+
+        /* Enhanced Scroll to Top Button */
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTop.classList.add("show");
+          } else {
+            backToTop.classList.remove("show");
+          }
+        });
+
+        backToTop.addEventListener("click", () => {
+          backToTop.style.transform = "translateY(-3px) scale(0.95)";
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+
+          setTimeout(() => {
+            backToTop.style.transform = "";
+          }, 200);
+        });
+
+        document
+          .getElementById("leadForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            // Normally you’d send the email to your backend here
+            document.getElementById("leadMsg").classList.remove("d-none");
+            this.reset();
+          });
       });
-    })();
-  </script>
-</body>
+    </script>
+  </body>
 </html>

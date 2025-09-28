@@ -1099,6 +1099,56 @@
 
       [data-bs-theme="dark"] .newsletter-btn:hover {
         background: var(--light-green) !important;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GrowCraft - Gateway to Digital Success</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+  <!-- Include Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --primary-green: #27ae60;
+      --secondary-green: #388e3c;
+      --light-green: #4caf50;
+      --accent-green: #81c784;
+      --dark-bg: #1a1a1a;
+      --darker-bg: #0f0f0f;
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --shadow-light: 0 8px 32px rgba(39, 174, 96, 0.15);
+      --shadow-hover: 0 16px 64px rgba(39, 174, 96, 0.25);
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --border-radius: 20px;
+      --spacing: 2rem;
+    }
+    
+    body {
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
+      color: #333;
+      overflow-x: hidden;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    /* Enhanced Animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
 
       [data-bs-theme="dark"] .footer-bottom {
@@ -1205,6 +1255,263 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
+    }
+    
+    /* Utility Classes */
+    .glass-effect {
+      background: var(--glass-bg);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--glass-border);
+    }
+    
+    .smooth-transition {
+      transition: var(--transition);
+    }
+    
+    .hover-lift:hover {
+      transform: translateY(-5px);
+    }
+    
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+    .about-card {
+  background-color: #fff;                        /* Card background */
+  border-radius: 12px;                           /* Rounded corners */
+  padding: 2rem;                                 /* Inner spacing */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);    /* Soft shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.about-card .icon {
+  font-size: 2.5rem;         /* Icon size */
+  color:green;            /* Icon color */
+}
+
+.about-card h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.about-card .about-para {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+/* Hover effect */
+.about-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.about-card h4 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #28a745; /* Green color */
+}
+/* 3 Cards per Row */
+.services-section .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.services-section .col-12 {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+}
+
+/* Card Styling */
+.card-services {
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background: #fff;
+}
+
+.card-services:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Icon Styling */
+.card-services .icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+  color: #28a745; /* Default green */
+}
+
+/* Read More Button */
+.toggle-btn {
+  background-color: #28a745;
+  color: #fff !important;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.toggle-btn:hover {
+  background-color: #218838;
+}
+
+/* Explore Button */
+.btn-outline-primary.hover-scale {
+  background-color: #007bff;
+  color: #fff !important;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.btn-outline-primary.hover-scale:hover {
+  background-color: #0056b3;
+}
+
+/* Responsive Fix for Small Screens */
+@media (max-width: 992px) {
+  .services-section .col-12 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-section .col-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Training and Internship Program Section */
+/* Training Section */
+.training-section {
+  padding: 60px 20px;
+}
+
+.training-section .head-training {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: #28a745; /* Green */
+}
+
+/* Program Card */
+.program-card {
+  background: #fff;
+  border: 1px solid #eaeaea;
+  border-radius: 12px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 100%;
+}
+
+.program-card img.icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  filter: brightness(0) saturate(100%) invert(41%) sepia(93%) saturate(360%) hue-rotate(89deg) brightness(95%) contrast(92%);
+  /* Makes icons appear green */
+}
+
+.program-card h6 {
+  font-weight: 600;
+  color: #28a745; /* Green title */
+}
+
+.program-card p {
+  font-size: 14px;
+  color: #000; /* Black text */
+  margin-top: 10px;
+}
+
+/* Hover Effect */
+.program-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-color: #28a745;
+}
+
+
+  </style>
+</head>
+
+<body id="main-body">
+  <!-- Enhanced Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+      <a class="navbar-brand hover-scale" href="#">
+        <img src="images/Logo.png" alt="GrowCraft" id="logo" class="smooth-transition" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#" aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blogListing.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./work.html">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./src/faq.html">FAQ</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="src/contact.html">Contact Us</a>
+          </li>
+        </ul>
+
+        <!-- Dark Mode Toggle Button -->
+        <button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Enhanced Training Program Section -->
+  <section class="training-section">
+    <div class="container-fluid">
+      <h2 class="head-training fade-in-up">Training & Internship Programs</h2>
+      <p class="services-subtitle fade-in-up" style="animation-delay: 0.2s;">
+Boost your career with skill-focused training and internship opportunities.    </p>
+
+      <div class="row g-4 justify-content-center px-4">
+
+        <!-- Website Development -->
+        <div class="col-sm-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.1s;">
+          <a href="src/web.html" class="training-links text-decoration-none">
+            <div class="program-card hover-lift">
+              <img src="images/icons/WebDev.png" alt="Web Development" class="icon" />
+              <h6 class="mb-0 mt-2">Website Development</h6>
+              <p class="text-muted small mt-2">Build responsive, modern websites</p>
+            </div>
+          </a>
+        </div>
 
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
@@ -1601,7 +1908,6 @@
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
           <span class="visually-hidden">Previous</span>
         </button>
-
         <button
           class="carousel-control-next"
           type="button"
@@ -2154,6 +2460,151 @@
                   >
                 </div>
               </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </main>
+
+<!-- Enhanced Services Section -->
+<section class="services-section" id="services">
+  <div class="container">
+    <h2 class="heading-text fade-in-up">SERVICES</h2>
+    <p class="services-subtitle fade-in-up" style="animation-delay: 0.2s;">
+      In the realm of software, we excel at transmuting the ordinary into the extraordinary
+    </p>
+
+    <div class="row g-4 justify-content-center">
+
+      <!-- Digital Marketing -->
+      <div class="col-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="card card-services h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column align-items-center">
+            
+            <!-- Icon -->
+            <div class="icon"><i class="fas fa-chart-line"></i></div>
+
+            <!-- Title -->
+            <h5 class="card-title mt-2">Digital Marketing</h5>
+
+            <!-- Summary -->
+            <p class="card-text summary text-center">
+              In today's digital-driven age, Marketing means Digital Marketing...
+            </p>
+
+            <!-- Buttons -->
+            <div class="btn-group mt-3 d-flex gap-2">
+              <button class="toggle-btn">Read More</button>
+              <a href="src/digital-marketing.html" class="btn btn-outline-primary hover-scale">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Website Development -->
+      <div class="col-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.2s;">
+        <div class="card card-services h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column align-items-center">
+            
+            <!-- Icon -->
+            <div class="icon"><i class="fas fa-laptop-code"></i></div>
+
+            <h5 class="card-title mt-2">Website Development</h5>
+            <p class="card-text summary text-center">
+              A website is often the first impression. We make it exceptional...
+            </p>
+
+            <div class="btn-group mt-3 d-flex gap-2">
+              <button class="toggle-btn">Read More</button>
+              <a href="src/web.html" class="btn btn-outline-primary hover-scale">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Graphic Design -->
+      <div class="col-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.3s;">
+        <div class="card card-services h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column align-items-center">
+            
+            <div class="icon"><i class="fas fa-paint-brush"></i></div>
+
+            <h5 class="card-title mt-2">Graphic Design</h5>
+            <p class="card-text summary text-center">
+              Stunning visuals to elevate your brand in a crowded space...
+            </p>
+
+            <div class="btn-group mt-3 d-flex gap-2">
+              <button class="toggle-btn">Read More</button>
+              <a href="src/graphic_design.html" class="btn btn-outline-primary hover-scale">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Social Media Management -->
+      <div class="col-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.4s;">
+        <div class="card card-services h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column align-items-center">
+            
+            <div class="icon"><i class="fab fa-instagram"></i></div>
+
+            <h5 class="card-title mt-2">Social Media Management</h5>
+            <p class="card-text summary text-center">
+              From posts to stories, we manage your online presence with style...
+            </p>
+
+            <div class="btn-group mt-3 d-flex gap-2">
+              <button class="toggle-btn">Read More</button>
+              <a href="src/social-media.html" class="btn btn-outline-primary hover-scale">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content Writing -->
+      <div class="col-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.5s;">
+        <div class="card card-services h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column align-items-center">
+            
+            <div class="icon"><i class="fas fa-pen-nib"></i></div>
+
+            <h5 class="card-title mt-2">Content Writing</h5>
+            <p class="card-text summary text-center">
+              Compelling content that connects, converts, and captivates your audience...
+            </p>
+
+            <div class="btn-group mt-3 d-flex gap-2">
+              <button class="toggle-btn">Read More</button>
+              <a href="learn/contentwriting.html" class="btn btn-outline-primary hover-scale">Explore</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cyber Analyst -->
+      <div class="col-12 col-md-6 col-lg-4 fade-in-up" style="animation-delay: 0.6s;">
+        <div class="card card-services h-100 d-flex flex-column">
+          <div class="card-body d-flex flex-column align-items-center">
+            
+            <div class="icon"><i class="fas fa-shield-alt"></i></div>
+
+            <h5 class="card-title mt-2">Cyber Analyst</h5>
+            <p class="card-text summary text-center">
+              In the digital age, a cyber analyst is the silent guardian — turning data into defense...
+            </p>
+
+            <div class="btn-group mt-3 d-flex gap-2">
+              <button class="toggle-btn">Read More</button>
+              <a href="learn/cyberanalyst.html" class="btn btn-outline-primary hover-scale">Explore</a>
             </div>
           </div>
         </div>
@@ -2297,6 +2748,108 @@
                     class="form-input"
                   />
                 </div>
+
+    </div>
+  </div>
+</section>
+
+  <!-- Enhanced About Section -->
+<section class="about-section" id="about">
+  <div class="container">
+    <h2 class="heading-text fade-in-up">About Us</h2>
+    <p class="services-subtitle fade-in-up" style="animation-delay: 0.2s;">
+      Gateway to <em>Go Digital and Grow Business</em>
+    </p>
+
+    <div class="row justify-content-center g-4">
+      <!-- Card 1 -->
+      <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.1s;">
+        <div class="about-card">
+          <div class="icon mb-3">
+            <i class="fas fa-users"></i>
+          </div>
+          <h4 class="mb-3">Who We Are</h4>
+          <div class="about-para">
+            GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design &
+            Social Media. We deliver high-quality services that align with market trends.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.2s;">
+        <div class="about-card">
+          <div class="icon mb-3">
+            <i class="fas fa-microchip"></i>
+          </div>
+          <h4 class="mb-3">Tech-Driven Solutions</h4>
+          <div class="about-para">
+            We use the latest technologies & best practices to deliver innovative solutions. Our services evolve
+            constantly to meet clients' changing needs.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.3s;">
+        <div class="about-card">
+          <div class="icon mb-3">
+            <i class="fas fa-handshake"></i>
+          </div>
+          <h4 class="mb-3">Client-Centric Approach</h4>
+          <div class="about-para">
+            Every client has unique needs. We understand their goals before creating custom solutions and involve them
+            throughout the development process.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.4s;">
+        <div class="about-card">
+          <div class="icon mb-3">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h4 class="mb-3">Reliable & Transparent</h4>
+          <div class="about-para">
+            With clear communication, timely delivery, and transparent processes, we ensure success for both our
+            clients and ourselves.
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="col-sm-6 col-lg-4 fade-in-up" style="animation-delay: 0.5s;">
+        <div class="about-card">
+          <div class="icon mb-3">
+            <i class="fas fa-award"></i>
+          </div>
+          <h4 class="mb-3">Affordable & Proven</h4>
+          <div class="about-para">
+            We offer cost-effective services and have a history of successful projects. For a reliable digital
+            partner, GrowCraft is your best choice.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Enhanced Feedback Section -->
+  <section class="feedback-section" id="feedback">
+    <div class="container">
+      <div class="feedback-content fade-in-up">
+        <h2 class="feedback-title">Feedback & Reviews</h2>
+        <p class="feedback-subtitle">
+          We value your feedback! Share your experience and help us improve our services.
+        </p>
+        
+        <div class="feedback-form-container scale-in" style="animation-delay: 0.3s;">
+          <form id="feedbackForm" class="feedback-form">
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="userName" name="userName" placeholder="Your Name *" required class="form-input">
               </div>
               <div class="form-group">
                 <textarea
