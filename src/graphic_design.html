@@ -1289,6 +1289,172 @@
       }
     }
 
+    /* 🌙 Dark Mode */
+.dark-mode body {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+.dark-mode .navbar {
+  background: #1e1e1e !important;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.6);
+}
+
+.dark-mode .navbar .nav-link {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .navbar .nav-link:hover,
+.dark-mode .navbar .nav-link.active {
+  color: #4dabf7 !important;
+}
+
+.dark-mode .hero {
+  background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+  color: #ffffff;
+}
+
+.dark-mode .hero-text h1 {
+  color: #ffffff;
+}
+
+.dark-mode .hero-text p {
+  color: #cfcfcf;
+}
+
+.dark-mode .cta-btn {
+  background: #4dabf7;
+  color: #ffffff;
+  border: none;
+}
+
+.dark-mode .cta-btn:hover {
+  background: #339af0;
+}
+
+/* Services */
+.dark-mode .service-overview {
+  background: #1a1a1a;
+  color: #e0e0e0;
+}
+
+.dark-mode .service-card {
+  background: #222;
+  border: 1px solid #333;
+  color: #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+.dark-mode .service-card h3 {
+  color: #4dabf7;
+}
+
+/* Benefits Section */
+.dark-mode .benefits-modern {
+  background: #181818;
+  color: #e0e0e0;
+}
+
+.dark-mode .circle-icon {
+  background: #333;
+  color: #4dabf7;
+}
+
+/* Design Process */
+.dark-mode .design-process {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.dark-mode .step {
+  background: #252525;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+/* Testimonials */
+.dark-mode .testimonials {
+  background: #141414;
+  color: #e0e0e0;
+}
+
+/* Default (light mode) toggle text */
+#darkModeToggle {
+  background: transparent;
+  color: #000;   /* black text in light mode */
+  border: 1px solid #888;
+}
+
+/* Dark mode toggle text */
+.dark-mode #darkModeToggle {
+  color: #fff;   /* white text in dark mode */
+  border: 1px solid #aaa;
+}
+
+
+.dark-mode .testimonial {
+  background: #1f1f1f;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
+
+/* CTA Section */
+.dark-mode .cta-section {
+  background: linear-gradient(135deg, #0d0d0d, #1e1e1e);
+  color: #fff;
+}
+
+.dark-mode .btn-primary {
+  background: #4dabf7;
+  color: #fff;
+}
+
+.dark-mode .btn-outline {
+  border: 1px solid #4dabf7;
+  color: #4dabf7;
+}
+
+.dark-mode .btn-outline:hover {
+  background: #4dabf7;
+  color: #fff;
+}
+
+/* Footer */
+.dark-mode .professional-footer {
+  background: #101010;
+  color: #cfcfcf;
+}
+
+.dark-mode .footer-title {
+  color: #4dabf7;
+}
+
+.dark-mode .footer-links a {
+  color: #cfcfcf;
+}
+
+.dark-mode .footer-links a:hover {
+  color: #4dabf7;
+}
+
+.dark-mode .footer-bottom {
+  border-top: 1px solid #333;
+}
+
+/* Scroll to Top */
+.dark-mode #scrollToTopBtn {
+  background: #4dabf7;
+  color: #fff;
+  border: none;
+}
+
+.dark-mode #scrollToTopBtn:hover {
+  background: #339af0;
+}
+
+
     /* Additional Animations */
     .fade-in {
       opacity: 0;
@@ -1371,6 +1537,12 @@
               <i class="fas fa-envelope me-1"></i>Contact Us
             </a>
           </li>
+          <li class="nav-item" >
+  <button id="darkModeToggle" class="btn btn-sm btn-outline-light ms-3">
+    🌙 Dark Mode
+  </button>
+</li>
+
         </ul>
       </div>
     </div>
@@ -1810,6 +1982,29 @@
 
     console.log('🎨 Enhanced GrowCraft Design Page Loaded Successfully!');
   </script>
+  <script>
+  const toggleBtn = document.getElementById("darkModeToggle");
+  const body = document.body;
+
+  // Load saved mode from localStorage
+  if (localStorage.getItem("dark-mode") === "enabled") {
+    body.classList.add("dark-mode");
+    toggleBtn.textContent = "☀️ Light Mode";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    body.classList.toggle("dark-mode");
+
+    if (body.classList.contains("dark-mode")) {
+      toggleBtn.textContent = "☀️ Light Mode";
+      localStorage.setItem("dark-mode", "enabled");
+    } else {
+      toggleBtn.textContent = "🌙 Dark Mode";
+      localStorage.setItem("dark-mode", "disabled");
+    }
+  });
+</script>
+
 </body>
 
 </html>

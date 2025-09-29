@@ -1,0 +1,1473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers - GrowCraft</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
+
+  <style>
+    /* Modern CSS Variables */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.12);
+      --text-primary: #2d3748;
+      --text-secondary: #4a5568;
+      --border-radius: 20px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark mode variables */
+    [data-bs-theme="dark"] {
+      --primary-gradient: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
+      --secondary-gradient: linear-gradient(135deg, #d946ef 0%, #f43f5e 100%);
+      --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+      --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.4);
+      --text-primary: #f7fafc;
+      --text-secondary: #e2e8f0;
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: var(--transition);
+    }
+
+    [data-bs-theme="dark"] body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    /* Animated Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 119, 198, 0.1) 0%, transparent 50%);
+      z-index: -1;
+      animation: backgroundFloat 20s ease-in-out infinite;
+    }
+
+    [data-bs-theme="dark"] body::before {
+      background: 
+        radial-gradient(circle at 25% 25%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+    }
+
+    @keyframes backgroundFloat {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(120deg); }
+      66% { transform: translate(-20px, 20px) rotate(240deg); }
+    }
+
+    /* Navbar Styles */
+    .navbar {
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      transition: var(--transition);
+    }
+
+    [data-bs-theme="dark"] .navbar {
+      background: rgba(15, 23, 42, 0.95) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .navbar-brand img {
+      max-height: 50px;
+      transition: var(--transition);
+    }
+
+    .navbar-nav .nav-link {
+      font-weight: 600;
+      color: var(--text-primary) !important;
+      margin: 0 0.5rem;
+      padding: 0.75rem 1rem !important;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition);
+    }
+
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: var(--primary-gradient);
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .navbar-nav .nav-link:hover::before {
+      left: 0;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: white !important;
+      transform: translateY(-2px);
+    }
+
+    /* Hero Section */
+    .hero-section {
+      background: var(--primary-gradient);
+      color: white;
+      padding: 100px 0 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.1"><circle cx="30" cy="30" r="2"/></g></svg>') repeat;
+      animation: heroPattern 20s linear infinite;
+    }
+
+    @keyframes heroPattern {
+      0% { transform: translate(0, 0); }
+      100% { transform: translate(60px, 60px); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #ffffff, #f0f8ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: slideUp 1s ease-out;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      animation: slideUp 1s ease-out 0.2s both;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Section Styles */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 4px;
+      background: var(--primary-gradient);
+      border-radius: 2px;
+    }
+
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-secondary);
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 3rem;
+      opacity: 0.8;
+    }
+
+    /* Culture Cards */
+    .culture-card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 2.5rem 2rem;
+      text-align: center;
+      transition: var(--transition);
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    [data-bs-theme="dark"] .culture-card {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .culture-card::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: var(--primary-gradient);
+      opacity: 0;
+      transform: rotate(45deg);
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .culture-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--card-shadow-hover);
+      color: white;
+    }
+
+    .culture-card:hover::before {
+      opacity: 0.7;
+    }
+
+    .culture-icon {
+      font-size: 3rem;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+
+    .culture-card:hover .culture-icon {
+      -webkit-text-fill-color: white;
+    }
+
+    .culture-card h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: var(--text-primary);
+    }
+
+    .culture-card:hover h4 {
+      color: white;
+    }
+
+    .culture-card p {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .culture-card:hover p {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    /* Benefits Section */
+    .benefits-section {
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(20px);
+    }
+
+    [data-bs-theme="dark"] .benefits-section {
+      background: rgba(15, 23, 42, 0.5);
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 15px;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    [data-bs-theme="dark"] .benefit-item {
+      background: rgba(30, 41, 59, 0.8);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .benefit-item:hover {
+      transform: translateX(10px);
+      box-shadow: var(--card-shadow);
+    }
+
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--accent-gradient);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .benefit-content h5 {
+      color: var(--text-primary);
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .benefit-content p {
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* No Openings Section */
+    .no-openings {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      padding: 3rem;
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin: 3rem 0;
+    }
+
+    [data-bs-theme="dark"] .no-openings {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .no-openings-icon {
+      font-size: 4rem;
+      background: var(--secondary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Application Form */
+    .application-form {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(20px);
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      padding: 3rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: -50px;
+      position: relative;
+      z-index: 3;
+    }
+
+    [data-bs-theme="dark"] .application-form {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .form-label {
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+
+    .form-control,
+    .form-select {
+      padding: 1rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.8);
+      color: var(--text-primary);
+      font-size: 1rem;
+      transition: var(--transition);
+      backdrop-filter: blur(10px);
+    }
+
+    [data-bs-theme="dark"] .form-control,
+    [data-bs-theme="dark"] .form-select {
+      background: rgba(51, 65, 85, 0.8);
+      border-color: #374151;
+      color: var(--text-primary);
+    }
+
+    .form-control:focus,
+    .form-select:focus {
+      border-color: transparent;
+      box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+      background: rgba(255, 255, 255, 1);
+      transform: translateY(-2px);
+    }
+
+    [data-bs-theme="dark"] .form-control:focus,
+    [data-bs-theme="dark"] .form-select:focus {
+      background: rgba(51, 65, 85, 1);
+      box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.3);
+    }
+
+    /* Submit Button */
+    .submit-btn {
+      background: var(--success-gradient);
+      border: none;
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      box-shadow: 0 10px 30px rgba(17, 153, 142, 0.3);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .submit-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #38ef7d 0%, #11998e 100%);
+      transition: var(--transition);
+    }
+
+    .submit-btn:hover::before {
+      left: 0;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 50px rgba(17, 153, 142, 0.4);
+    }
+
+    .submit-btn span {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Team Stats */
+    .team-stats {
+      background: var(--accent-gradient);
+      color: white;
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* File Preview */
+    #resumePreview, #portfolioPreview {
+      margin-top: 1rem;
+    }
+
+    #resumePreview div, #portfolioPreview div {
+      background: rgba(102, 126, 234, 0.1);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      border-left: 4px solid var(--primary-gradient);
+      animation: fadeIn 0.3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Thank You Section */
+    #thankYouSection {
+      background: var(--success-gradient);
+      color: white;
+      padding: 2rem;
+      border-radius: var(--border-radius);
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-top: 2rem;
+      box-shadow: var(--card-shadow);
+      animation: slideUp 0.5s ease-out;
+    }
+
+    /* Dark Mode Toggles */
+    .theme-toggle {
+      position: fixed;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      background: var(--primary-gradient);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 1000;
+      transition: var(--transition);
+      box-shadow: var(--card-shadow);
+    }
+
+    .theme-toggle:hover {
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    /* Professional Footer */
+    .professional-footer {
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      color: #e2e8f0;
+      padding: 4rem 0 2rem;
+      margin-top: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .professional-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.02"><circle cx="30" cy="30" r="1"/></g></svg>') repeat;
+    }
+
+    .footer-brand {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-logo {
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .brand-name {
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .brand-description {
+      color: #a0aec0;
+      margin-bottom: 2rem;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .footer-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      color: white;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--primary-gradient);
+      border-radius: 2px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: #a0aec0 !important;
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .footer-links a::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      transition: var(--transition);
+      color: #667eea;
+    }
+
+    .footer-links a:hover {
+      color: white !important;
+      transform: translateX(10px);
+    }
+
+    .footer-links a:hover::before {
+      opacity: 1;
+    }
+
+    .contact-info {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+
+    .contact-item i {
+      width: 20px;
+      color: #667eea;
+      font-size: 1rem;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      color: #a0aec0;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-item a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 2rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+      text-align: center;
+      color: #a0aec0;
+    }
+
+    .footer-nav {
+      text-align: center;
+    }
+
+    .footer-nav a {
+      color: #a0aec0;
+      text-decoration: none;
+      margin: 0 1rem;
+      transition: var(--transition);
+    }
+
+    .footer-nav a:hover {
+      color: white;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .application-form {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+      }
+      
+      .section-title {
+        font-size: 2rem;
+      }
+      
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+      }
+
+      .theme-toggle {
+        right: 10px;
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+      
+      .application-form {
+        padding: 1.5rem 1rem;
+      }
+      
+      .culture-card {
+        padding: 2rem 1rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Loading Animation */
+    .submit-btn.loading {
+      opacity: 0.7;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    .submit-btn.loading::after {
+      content: "";
+      width: 16px;
+      height: 16px;
+      border: 2px solid transparent;
+      border-top: 2px solid white;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin-left: 0.5rem;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+
+<body id="main-body">
+  <!-- Theme Toggle Button -->
+  <button class="theme-toggle" onclick="toggleTheme()" title="Toggle Theme">
+    <i class="fas fa-moon" id="theme-icon"></i>
+  </button>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid px-2 px-sm-5">
+      <a class="navbar-brand" href="../index.html">
+        <img src="images/logo_bg_transparent.png" alt="GrowCraft" id="logo" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../blogListing.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../work.html">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="careers.html">Careers</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Join Our Team</h1>
+      <p class="hero-subtitle">Be part of a dynamic team that's passionate about creating innovative digital solutions and making a real impact in the industry.</p>
+    </div>
+  </section>
+
+  <!-- Company Culture Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Why GrowCraft?</h2>
+      <p class="section-subtitle">Discover what makes our workplace special and why talented professionals choose to build their careers with us.</p>
+      
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="culture-card">
+            <i class="fas fa-lightbulb culture-icon"></i>
+            <h4>Innovation First</h4>
+            <p>We encourage creative thinking and provide the tools and freedom to bring innovative ideas to life. Your creativity drives our success.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="culture-card">
+            <i class="fas fa-users culture-icon"></i>
+            <h4>Collaborative Team</h4>
+            <p>Work alongside passionate professionals who support each other's growth and celebrate collective achievements.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="culture-card">
+            <i class="fas fa-chart-line culture-icon"></i>
+            <h4>Growth Mindset</h4>
+            <p>Continuous learning and development opportunities to help you advance your career and expand your skillset.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="culture-card">
+            <i class="fas fa-balance-scale culture-icon"></i>
+            <h4>Work-Life Balance</h4>
+            <p>Flexible working arrangements and a culture that values your personal time and well-being.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="culture-card">
+            <i class="fas fa-medal culture-icon"></i>
+            <h4>Recognition</h4>
+            <p>Your contributions are valued and recognized. We celebrate achievements and reward excellence.</p>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <div class="culture-card">
+            <i class="fas fa-rocket culture-icon"></i>
+            <h4>Cutting-Edge Tech</h4>
+            <p>Work with the latest technologies and tools in a modern, well-equipped environment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team Stats Section -->
+  <section class="team-stats">
+    <div class="container">
+      <h2 class="section-title" style="color: white;">Our Growing Team</h2>
+      <p style="color: rgba(255,255,255,0.9); text-align: center; max-width: 600px; margin: 0 auto;">Join a diverse and talented team that's making waves in the digital industry.</p>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <span class="stat-number">50+</span>
+          <span class="stat-label">Team Members</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">8</span>
+          <span class="stat-label">Departments</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">15</span>
+          <span class="stat-label">Countries</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number">95%</span>
+          <span class="stat-label">Satisfaction</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="section benefits-section">
+    <div class="container">
+      <h2 class="section-title">Benefits & Perks</h2>
+      <p class="section-subtitle">We invest in our people because they are our greatest asset. Enjoy comprehensive benefits designed to support your professional and personal life.</p>
+      
+      <div class="row">
+        <div class="col-lg-6">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <div class="benefit-content">
+              <h5>Health & Wellness</h5>
+              <p>Comprehensive health insurance, mental health support, and wellness programs.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-graduation-cap"></i>
+            </div>
+            <div class="benefit-content">
+              <h5>Learning & Development</h5>
+              <p>Training budgets, conference attendance, and professional certification support.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-clock"></i>
+            </div>
+            <div class="benefit-content">
+              <h5>Flexible Schedule</h5>
+              <p>Hybrid work options, flexible hours, and unlimited PTO policy.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-laptop"></i>
+            </div>
+            <div class="benefit-content">
+              <h5>Equipment & Tools</h5>
+              <p>Latest MacBook/PC, software licenses, and home office setup allowance.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-coffee"></i>
+            </div>
+            <div class="benefit-content">
+              <h5>Office Perks</h5>
+              <p>Free meals, snacks, gaming zone, and team events throughout the year.</p>
+            </div>
+          </div>
+          <div class="benefit-item">
+            <div class="benefit-icon">
+              <i class="fas fa-piggy-bank"></i>
+            </div>
+            <div class="benefit-content">
+              <h5>Financial Benefits</h5>
+              <p>Competitive salary, performance bonuses, and retirement savings plan.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Current Openings Section -->
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Current Openings</h2>
+      <div class="no-openings">
+        <i class="fas fa-search no-openings-icon"></i>
+        <h3 style="margin-bottom: 1rem; color: var(--text-primary);">No Current Openings</h3>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">
+          We're not actively hiring right now, but we're always interested in connecting with talented individuals who share our passion for innovation and excellence.
+        </p>
+        <p style="font-size: 1rem; color: var(--text-secondary);">
+          <strong>Keep checking back!</strong> New opportunities arise regularly as we continue to grow and expand our services.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Application Form Section -->
+  <div class="container">
+    <div class="application-form">
+      <h2 class="section-title">Join Our Talent Pool</h2>
+      <p style="text-align: center; color: var(--text-secondary); margin-bottom: 2rem;">
+        Interested in future opportunities? Submit your information and we'll reach out when a position matches your skills and interests.
+      </p>
+
+      <form id="talentForm">
+        <div class="row g-4">
+          <div class="col-md-6">
+            <label class="form-label">Full Name *</label>
+            <input type="text" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Email Address *</label>
+            <input type="email" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Phone Number</label>
+            <input type="tel" class="form-control" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Location (City, Country) *</label>
+            <input type="text" class="form-control" required />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Area of Interest *</label>
+            <select class="form-select" required>
+              <option selected disabled>Select your area of interest</option>
+              <option>Frontend Development</option>
+              <option>Backend Development</option>
+              <option>Full Stack Development</option>
+              <option>Mobile App Development</option>
+              <option>UI/UX Design</option>
+              <option>Graphic Design</option>
+              <option>Digital Marketing</option>
+              <option>SEO Specialist</option>
+              <option>Content Writing</option>
+              <option>Social Media Management</option>
+              <option>Cyber Security</option>
+              <option>Project Management</option>
+              <option>Business Development</option>
+              <option>Quality Assurance</option>
+              <option>DevOps</option>
+              <option>Data Analytics</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Experience Level *</label>
+            <select class="form-select" required>
+              <option selected disabled>Select experience level</option>
+              <option>Entry Level (0-1 years)</option>
+              <option>Junior (1-3 years)</option>
+              <option>Mid-Level (3-5 years)</option>
+              <option>Senior (5-8 years)</option>
+              <option>Lead/Principal (8+ years)</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Current Job Title</label>
+            <input type="text" class="form-control" placeholder="e.g., Senior Frontend Developer" />
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Preferred Work Type</label>
+            <select class="form-select">
+              <option selected disabled>Select work preference</option>
+              <option>Remote</option>
+              <option>Hybrid</option>
+              <option>On-site</option>
+              <option>Flexible</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Expected Salary Range (Optional)</label>
+            <select class="form-select">
+              <option selected disabled>Select salary range</option>
+              <option>₹3-5 LPA</option>
+              <option>₹5-8 LPA</option>
+              <option>₹8-12 LPA</option>
+              <option>₹12-18 LPA</option>
+              <option>₹18+ LPA</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Availability</label>
+            <select class="form-select">
+              <option selected disabled>When can you start?</option>
+              <option>Immediately</option>
+              <option>Within 2 weeks</option>
+              <option>Within 1 month</option>
+              <option>Within 2-3 months</option>
+              <option>Just exploring</option>
+            </select>
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">Key Skills & Technologies *</label>
+            <textarea class="form-control" rows="3" placeholder="List your key skills, technologies, and tools you're proficient in..." required></textarea>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Resume/CV *</label>
+            <input type="file" id="resumeUpload" class="form-control" accept=".pdf,.doc,.docx" required />
+            <div id="resumePreview" class="mt-2"></div>
+            <small class="text-muted">Accepted formats: PDF, DOC, DOCX (Max 5MB)</small>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Portfolio/Work Samples (Optional)</label>
+            <input type="file" id="portfolioUpload" class="form-control" accept=".pdf,.doc,.docx,.zip" />
+            <div id="portfolioPreview" class="mt-2"></div>
+            <small class="text-muted">Portfolio, GitHub link, or work samples</small>
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">LinkedIn Profile URL</label>
+            <input type="url" class="form-control" placeholder="https://linkedin.com/in/your-profile" />
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">GitHub/Portfolio Website (Optional)</label>
+            <input type="url" class="form-control" placeholder="https://github.com/your-username or your-portfolio.com" />
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">Tell Us About Yourself *</label>
+            <textarea class="form-control" rows="4" placeholder="What makes you unique? What are you passionate about? What kind of projects excite you?" required></textarea>
+          </div>
+          <div class="col-md-12">
+            <label class="form-label">Why GrowCraft? *</label>
+            <textarea class="form-control" rows="3" placeholder="What interests you about working with GrowCraft? What do you hope to achieve here?" required></textarea>
+          </div>
+          <div class="col-md-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="newsletter" />
+              <label class="form-check-label" for="newsletter">
+                I'd like to receive updates about new job openings and company news
+              </label>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="terms" required />
+              <label class="form-check-label" for="terms">
+                I agree to the <a href="#" style="color: var(--primary-color);">Terms of Service</a> and <a href="#" style="color: var(--primary-color);">Privacy Policy</a> *
+              </label>
+            </div>
+          </div>
+          <div class="col-md-12 text-center">
+            <button type="submit" class="submit-btn">
+              <span>Submit Application</span>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <div id="thankYouSection" style="display: none;">
+        <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 1rem;"></i>
+        <h4>Thank You for Your Interest!</h4>
+        <p>Your application has been successfully submitted. We'll review your profile and reach out if there's a good fit for current or future opportunities.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Footer -->
+  <footer class="professional-footer">
+    <div class="container">
+      <div class="row g-4 py-4">
+        <!-- Footer Brand -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <img src="../images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
+            <h4 class="brand-name">GrowCraft</h4>
+            <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence.</p>
+          </div>
+        </div>
+
+        <!-- Services Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="../learn/webdev.html">Web Development</a></li>
+            <li><a href="../learn/graphic.html">Graphic Design</a></li>
+            <li><a href="../learn/marketing.html">Digital Marketing</a></li>
+            <li><a href="../learn/contentwriting.html">Content Writing</a></li>
+            <li><a href="../learn/socialmedia.html">Social Media</a></li>
+            <li><a href="../learn/cyberanalyst.html">Cyber Analyst</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html#about">About Us</a></li>
+            <li><a href="../index.html#work">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="../blogListing.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-title">Get In Touch</h5>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919999999999">+91 999 999 999</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>ABC Street, XYZ City, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center py-3">
+          <div class="col-md-6">
+            <p class="copyright">© 2024 <strong>GrowCraft</strong>. All rights reserved.</p>
+          </div>
+          <div class="col-md-6">
+            <div class="footer-nav">
+              <a href="#privacy">Privacy</a>
+              <a href="#terms">Terms</a>
+              <a href="#sitemap">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Theme Toggle Functionality
+    function toggleTheme() {
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      document.documentElement.setAttribute('data-bs-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateLogo(newTheme);
+      updateThemeIcon(newTheme);
+    }
+
+    function updateLogo(theme) {
+      const logo = document.querySelector("#logo");
+      if (theme === 'dark') {
+        logo.src = 'images/logo-transparent-dark-mode.png';
+      } else {
+        logo.src = 'images/logo_bg_transparent.png';
+      }
+    }
+
+    function updateThemeIcon(theme) {
+      const icon = document.querySelector("#theme-icon");
+      if (theme === 'dark') {
+        icon.className = 'fas fa-sun';
+      } else {
+        icon.className = 'fas fa-moon';
+      }
+    }
+
+    // Initialize theme
+    document.addEventListener('DOMContentLoaded', function () {
+      const currentTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-bs-theme', currentTheme);
+      updateLogo(currentTheme);
+      updateThemeIcon(currentTheme);
+    });
+
+    // File upload preview
+    document.getElementById("resumeUpload").addEventListener("change", function (e) {
+      const preview = document.getElementById("resumePreview");
+      preview.innerHTML = "";
+      for (let file of e.target.files) {
+        const div = document.createElement("div");
+        div.innerHTML = `📄 ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+        preview.appendChild(div);
+      }
+    });
+
+    document.getElementById("portfolioUpload").addEventListener("change", function (e) {
+      const preview = document.getElementById("portfolioPreview");
+      preview.innerHTML = "";
+      for (let file of e.target.files) {
+        const div = document.createElement("div");
+        div.innerHTML = `📎 ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)`;
+        preview.appendChild(div);
+      }
+    });
+
+    // Form validation and submission
+    document.getElementById("talentForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      
+      if (!this.checkValidity()) {
+        e.stopPropagation();
+        this.classList.add('was-validated');
+        
+        // Find first invalid field and scroll to it
+        const firstInvalid = this.querySelector(':invalid');
+        if (firstInvalid) {
+          firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstInvalid.focus();
+        }
+        return;
+      }
+
+      // Show loading state
+      const submitBtn = this.querySelector('.submit-btn');
+      submitBtn.classList.add('loading');
+      submitBtn.disabled = true;
+
+      // Simulate form submission
+      setTimeout(() => {
+        // Hide form and show thank you message
+        this.style.display = 'none';
+        document.getElementById("thankYouSection").style.display = 'block';
+        
+        // Scroll to thank you message
+        document.getElementById("thankYouSection").scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'center'
+        });
+      }, 2000);
+    });
+
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Add scroll animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for animations
+    document.querySelectorAll('.culture-card, .application-form, .benefit-item').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+      observer.observe(el);
+    });
+
+    // Counter animation for stats
+    function animateCounters() {
+      const counters = document.querySelectorAll('.stat-number');
+      const speed = 200; // Animation speed
+
+      counters.forEach(counter => {
+        const animate = () => {
+          const value = +counter.getAttribute('data-target') || +counter.innerText.replace(/\D/g, '');
+          const data = +counter.innerText.replace(/\D/g, '') || 0;
+          const time = value / speed;
+          
+          if (data < value) {
+            counter.innerText = Math.ceil(data + time) + (counter.innerText.includes('+') ? '+' : '') + (counter.innerText.includes('%') ? '%' : '');
+            setTimeout(animate, 1);
+          } else {
+            counter.innerText = counter.getAttribute('data-original') || counter.innerText;
+          }
+        };
+        
+        // Store original text
+        counter.setAttribute('data-original', counter.innerText);
+        counter.setAttribute('data-target', counter.innerText.replace(/\D/g, ''));
+        
+        // Start animation when element is visible
+        const statsObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              animate();
+              statsObserver.unobserve(entry.target);
+            }
+          });
+        });
+        
+        statsObserver.observe(counter);
+      });
+    }
+
+    // Initialize counter animation
+    animateCounters();
+
+    // Form field enhancements
+    document.querySelectorAll('.form-control, .form-select').forEach(field => {
+      field.addEventListener('focus', function() {
+        this.parentElement.classList.add('focused');
+      });
+      
+      field.addEventListener('blur', function() {
+        if (!this.value) {
+          this.parentElement.classList.remove('focused');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

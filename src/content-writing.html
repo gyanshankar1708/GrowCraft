@@ -614,6 +614,112 @@
             box-shadow: var(--shadow-hover);
         }
 
+        /* ===== THEME VARIABLES ===== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --text-secondary: #555;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark-mode {
+  --bg-color: #0f0f1a;
+  --text-color: #f2f2f7;
+  --text-secondary: #aaa;
+  --card-bg: rgba(20, 20, 40, 0.6);
+  --primary-gradient: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* ===== BASE ===== */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: var(--bg-color);
+  transition: all 0.4s ease;
+}
+.nav-link {
+  color: var(--text-color) !important;
+}
+.dark-mode .navbar {
+  background: #1a1a2e;
+}
+.dark-mode .nav-link {
+  color: var(--text-color) !important;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.hero-title {
+  background: var(--primary-gradient);      /* apply gradient */
+  -webkit-background-clip: text;           /* clip background to text */
+  -webkit-text-fill-color: transparent;    /* make text itself transparent */
+  background-clip: text;                   /* for non-webkit browsers */
+  color: transparent;                      /* fallback */
+}
+
+/* ===== CARDS ===== */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  transform: translateY(-5px);
+}
+
+
+
+/* ===== CTA BUTTON ===== */
+.btn-primary-cta, 
+.hero-cta {
+  background: var(--primary-gradient);
+  color: #fff !important;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-primary-cta:hover,
+.hero-cta:hover {
+  opacity: 0.85;
+}
+
+#darkModeToggle {
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: #000;   /* visible in light mode */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dark-mode #darkModeToggle {
+  color: #fff;   /* visible in dark mode */
+}
+
+
+
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero {
@@ -668,7 +774,201 @@
         @keyframes skeleton-loading {
             0% { background-position: 200% 0; }
             100% { background-position: -200% 0; }
+
         }
+
+        /* Professional Footer */
+    .professional-footer {
+      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      color: #e2e8f0;
+      padding: 4rem 0 0;
+      margin-top: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .professional-footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.02"><circle cx="30" cy="30" r="1"/></g></svg>') repeat;
+    }
+
+    .footer-brand {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-logo {
+      height: 60px;
+      margin-bottom: 1rem;
+    }
+
+    .brand-name {
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--primary-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 1rem;
+    }
+
+    .brand-description {
+      color: #a0aec0;
+      margin-bottom: 2rem;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: #a0aec0;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .footer-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      color: white;
+    }
+
+    .footer-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--primary-gradient);
+      border-radius: 2px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-links a {
+      color: #a0aec0 !important;
+      text-decoration: none;
+      transition: var(--transition);
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .footer-links a::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      opacity: 0;
+      transition: var(--transition);
+      color: #667eea;
+    }
+
+    .footer-links a:hover {
+      color: white !important;
+      transform: translateX(10px);
+    }
+
+    .footer-links a:hover::before {
+      opacity: 1;
+    }
+
+    .contact-info {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
+    }
+
+    .contact-item i {
+      width: 20px;
+      color: #667eea;
+      font-size: 1rem;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      color: #a0aec0;
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .contact-item a:hover {
+      color: white;
+    }
+   .footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 0;
+  padding-top: 12px;
+  margin-bottom: 10px;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-bottom a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.footer-bottom a:last-child {
+  margin-right: 0; /* remove extra spacing on last link */
+}
+
+.footer-bottom a:hover {
+  color: #ffffff; /* highlight on hover */
+}
+
+
     </style>
 </head>
 
@@ -692,6 +992,12 @@
                     <li class="nav-item"><a class="nav-link" href="../index.html#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="../work.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                    <li class="nav-item">
+  <button id="darkModeToggle" class="btn btn-sm ms-3" style="background:none; border:none; font-weight:600;">
+    🌙 Dark Mode
+  </button>
+</li>
+
                 </ul>
             </div>
         </div>
@@ -950,89 +1256,94 @@
             </form>
         </div>
     </div>
-    <!-- Enhanced Footer -->
-    <footer class="professional-footer" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0 20px;">
-        <div class="container">
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="footer-brand text-center text-md-start">
-                        <img src="../images/Logo_new.png" alt="GrowCraft Logo" style="width: 120px; margin-bottom: 20px; filter: brightness(0) invert(1);">
-                        <h4 style="font-size: 1.8rem; font-weight: 700; margin-bottom: 15px;">GrowCraft</h4>
-                        <p style="font-size: 1rem; opacity: 0.9; line-height: 1.6;">Transforming businesses through innovative content strategies and creative excellence.</p>
-                        
-                        <div class="quick-stats" style="display: flex; gap: 30px; margin-top: 25px; justify-content: center; justify-content: md-start;">
-                            <div class="stat-item text-center">
-                                <span style="display: block; font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">500+</span>
-                                <span style="font-size: 0.8rem; opacity: 0.8;">Projects</span>
-                            </div>
-                            <div class="stat-item text-center">
-                                <span style="display: block; font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">150+</span>
-                                <span style="font-size: 0.8rem; opacity: 0.8;">Clients</span>
-                            </div>
-                            <div class="stat-item text-center">
-                                <span style="display: block; font-size: 1.5rem; font-weight: 700; margin-bottom: 5px;">5+</span>
-                                <span style="font-size: 0.8rem; opacity: 0.8;">Years</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-2 col-md-3 col-6">
-                    <h5 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px;">Services</h5>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease;">Web Development</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease;">Graphic Design</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease;">Digital Marketing</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease;">Content Writing</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease;">Social Media</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-2 col-md-3 col-6">
-                    <h5 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px;">Quick Links</h5>
-                    <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease;">About Us</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease;">Portfolio</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease;">Contact</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease;">Blog</a></li>
-                        <li style="margin-bottom: 10px;"><a href="#" style="color: rgba(255,255,255,0.8); text-decoration: none; transition: all 0.3s ease;">Careers</a></li>
-                    </ul>
-                </div>
-                
-                <div class="col-lg-4 col-md-6">
-                    <h5 style="font-size: 1.1rem; font-weight: 600; margin-bottom: 20px;">Get In Touch</h5>
-                    <div class="contact-info">
-                        <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 12px;">
-                            <i class="fas fa-envelope" style="color: rgba(255,255,255,0.8); font-size: 1rem;"></i>
-                            <a href="mailto:info@growcraft.com" style="color: rgba(255,255,255,0.8); text-decoration: none;">info@growcraft.com</a>
-                        </div>
-                        <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 12px;">
-                            <i class="fas fa-phone" style="color: rgba(255,255,255,0.8); font-size: 1rem;"></i>
-                            <a href="tel:+919999999999" style="color: rgba(255,255,255,0.8); text-decoration: none;">+91 999 999 999</a>
-                        </div>
-                        <div style="display: flex; align-items: center; margin-bottom: 15px; gap: 12px;">
-                            <i class="fas fa-map-marker-alt" style="color: rgba(255,255,255,0.8); font-size: 1rem;"></i>
-                            <span style="color: rgba(255,255,255,0.8);">ABC Street, XYZ City, India</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- Professional Footer -->
+  <footer class="professional-footer">
+    <div class="container">
+      <div class="row g-4 py-4">
+        <!-- Footer Brand -->
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <img src="../images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
+            <h4 class="brand-name">GrowCraft</h4>
+            <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence.</p>
+            <div class="quick-stats">
+              <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Clients</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years</span>
+              </div>
             </div>
-            
-            <div style="border-top: 1px solid rgba(255,255,255,0.2); margin-top: 40px; padding-top: 20px;">
-                <div class="row align-items-center">
-                    <div class="col-md-6">
-                        <p style="margin: 0; color: rgba(255,255,255,0.8);">© 2024 <strong>GrowCraft</strong>. All rights reserved.</p>
-                    </div>
-                    <div class="col-md-6 text-md-end">
-                        <a href="#privacy" style="color: rgba(255,255,255,0.8); text-decoration: none; margin-right: 20px;">Privacy</a>
-                        <a href="#terms" style="color: rgba(255,255,255,0.8); text-decoration: none; margin-right: 20px;">Terms</a>
-                        <a href="#sitemap" style="color: rgba(255,255,255,0.8); text-decoration: none;">Sitemap</a>
-                    </div>
-                </div>
-
-            </div>
+          </div>
         </div>
-    </footer>
+
+        <!-- Services Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="../learn/webdev.html">Web Development</a></li>
+            <li><a href="../learn/graphic.html">Graphic Design</a></li>
+            <li><a href="../learn/marketing.html">Digital Marketing</a></li>
+            <li><a href="../learn/contentwriting.html">Content Writing</a></li>
+            <li><a href="../learn/socialmedia.html">Social Media</a></li>
+            <li><a href="../learn/cyberanalyst.html">Cyber Analyst</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="../index.html#about">About Us</a></li>
+            <li><a href="../index.html#work">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="../blogListing.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-title">Get In Touch</h5>
+          <div class="contact-info">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919999999999">+91 999 999 999</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>ABC Street, XYZ City, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <p>© 2024 <strong>GrowCraft</strong>. All rights reserved.</p>
+    </div>
+    <div class="col-md-6 text-md-end">
+      <a href="#privacy">Privacy</a>
+      <a href="#terms">Terms</a>
+      <a href="#sitemap">Sitemap</a>
+    </div>
+  </div>
+</div>
+
+  </footer>
+    
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTopBtn">
@@ -1196,6 +1507,31 @@
             document.body.classList.add('loaded');
         });
     </script>
+    <script>
+  const toggleBtn = document.getElementById("darkModeToggle");
+  const body = document.body;
+
+  function setDarkMode(enabled) {
+    if (enabled) {
+      body.classList.add("dark-mode");
+      toggleBtn.textContent = "☀️ Light Mode";
+      localStorage.setItem("dark-mode", "enabled");
+    } else {
+      body.classList.remove("dark-mode");
+      toggleBtn.textContent = "🌙 Dark Mode";
+      localStorage.setItem("dark-mode", "disabled");
+    }
+  }
+
+  // Load preference
+  setDarkMode(localStorage.getItem("dark-mode") === "enabled");
+
+  // Toggle
+  toggleBtn.addEventListener("click", () => {
+    setDarkMode(!body.classList.contains("dark-mode"));
+  });
+</script>
+
 
 </body>
 </html>
