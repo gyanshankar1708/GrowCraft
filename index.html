@@ -11,6 +11,7 @@
   <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
   <!-- Include Font Awesome -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   
   <style>
@@ -1259,7 +1260,96 @@
   box-shadow: 0 8px 20px rgba(0,0,0,0.15);
   border-color: #28a745;
 }
+ /* ===== FOOTER STYLES ===== */
+  footer {
+    background: #111827;
+    color: #fff;
+    padding: 2rem;
+  }
 
+  .footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .footer-col h3 {
+    margin-bottom: 1rem;
+    color: #28a745;
+    font-size: 1.2rem;
+  }
+
+  .footer-col a {
+    display: block;
+    color: #d1d5db;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+  }
+
+  .footer-col a:hover {
+    color: #28a745;
+  }
+
+  .footer-col p {
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .social-icons {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .social-icons a:hover {
+    color: #28a745;
+  }
+
+  .footer-credit {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.85rem;
+    color: #9ca3af;
+  }
+
+  /* ===== MEDIA QUERIES ===== */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr;
+      text-align: center;
+      gap: 1.5rem;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .social-icons {
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-col p {
+      text-align: center;
+      justify-content: center;
+    }
+  }
 
   </style>
 </head>
@@ -1773,9 +1863,43 @@ Boost your career with skill-focused training and internship opportunities.    <
     </div>
   </section>
 
-  <!-- Footer Placeholder -->
-  <div id="footer-placeholder"></div>
+  <!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-container">
+    <div class="footer-col">
+      <h3><i class="fa-solid fa-briefcase"></i> GrowCraft</h3>
+      <p>Boost your career with skill-focused training and internship opportunities.
 
+</p>
+    </div>
+    <div class="footer-col">
+      <h3>Important Links</h3>
+      <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+      <a href="about.html"><i class="fa-solid fa-building"></i> About Us</a>
+      <a href="#services"><i class="fa-solid fa-laptop-code"></i> Services</a>
+      <a href="work.html"><i class="fa-solid fa-graduation-cap"></i> Our Works</a>
+      <a href="src/faq.html"><i class="fa-solid fa-clock"></i> FAQ</a>
+
+    </div>
+    <div class="footer-col">
+      <h3>Contact</h3>
+      <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+      <p><i class="fa-solid fa-envelope"></i> support@GrowCraft.com</p>
+    </div>
+    <div class="footer-col">
+      <h3>Follow Us</h3>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+        <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+        <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-credit">
+    &copy; © 2025 GrowCraft. All rights reserved.
+  </div>
+</footer>
   <!-- Enhanced Scroll to Top Button -->
   <button id="backToTop" title="Go to top" type="button" class="hover-scale">
     <i class="fas fa-chevron-up"></i>
@@ -2078,22 +2202,7 @@ Boost your career with skill-focused training and internship opportunities.    <
         }, 200);
       });
 
-      /* Load Footer */
-      fetch('src/components/footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(() => {
-          // Fallback footer if file doesn't exist
-          document.getElementById('footer-placeholder').innerHTML = `
-            <footer class="bg-dark text-light py-4 mt-5">
-              <div class="container text-center">
-                <p>&copy; ${new Date().getFullYear()} GrowCraft. All rights reserved.</p>
-              </div>
-            </footer>
-          `;
-        });
+      
 
       /* Global Clear Form Function */
       window.clearForm = function() {
