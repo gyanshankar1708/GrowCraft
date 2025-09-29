@@ -1038,6 +1038,54 @@
     .hover-scale:hover {
       transform: scale(1.05);
     }
+    .card-services {
+  position: relative;
+  overflow: hidden;
+  background: rgba(168, 224, 99, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  transition: all 0.5s ease-in-out;
+  z-index: 1; /* Ensure the content is above the glowing effect */
+}
+
+.card-services:hover {
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  background: rgba(168, 224, 99, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  transform: scale(1.02);
+}
+
+.card-services::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(transparent, rgba(144, 238, 144, 0.6), transparent);
+  animation: rotate 4s linear infinite;
+  z-index: -1; /* Place the glow behind the content */
+  opacity: 0; /* Initially hide the glow */
+  transition: opacity 0.5s ease-in-out;
+}
+
+.card-services:hover::before {
+  opacity: 1; /* Show the glow on hover */
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
   </style>
 </head>
 
