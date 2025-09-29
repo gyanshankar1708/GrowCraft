@@ -1350,6 +1350,189 @@
       justify-content: center;
     }
   }
+/* ===== Custom Feedback Section CSS ===== */
+
+.feedback-wrap {
+  padding: 60px 20px;
+  background-color: #ffffff; /* outside section color */
+  border: 3px solid #28a745; /* main section border */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+  max-width: 900px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-top: 40px;
+  margin-bottom: 80px;
+}
+
+.feedback-wrap:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+
+.feedback-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.feedback-header h2 {
+  font-size: 2rem;
+  color: #28a745;
+  font-weight: 700;
+}
+
+.feedback-header p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Form container */
+.feedback-form-container {
+  border: 2px solid #28a745; /* solid border instead of dashed */
+  border-radius: 12px;
+  padding: 25px;
+  background-color: #ffffff; /* card background */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feedback-form-container:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.feedback-inputs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+}
+
+.feedback-input {
+  flex: 1;
+  padding: 12px 15px;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.feedback-input:focus {
+  outline: none;
+  border-color: #218838;
+  box-shadow: 0 0 8px rgba(40,167,69,0.4);
+}
+
+.feedback-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #28a745;
+  border-radius: 8px;
+  font-size: 1rem;
+  resize: vertical;
+  transition: all 0.3s ease;
+}
+
+.feedback-textarea:focus {
+  outline: none;
+  border-color: #218838;
+  box-shadow: 0 0 8px rgba(40,167,69,0.4);
+}
+
+.feedback-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.btn-feedback {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-feedback-submit {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+}
+
+.btn-feedback-submit:hover {
+  background-color: #218838;
+  transform: translateY(-2px);
+}
+
+.btn-feedback-cancel {
+  background-color: #fff;
+  color: #28a745;
+  border: 2px solid #28a745;
+}
+
+.btn-feedback-cancel:hover {
+  background-color: #28a745;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.feedback-success {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  color: #28a745;
+  font-weight: 600;
+}
+
+.feedback-success i {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+/* Animations */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUpAnim 0.6s forwards;
+}
+
+@keyframes fadeUpAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== Media Queries ===== */
+@media (max-width: 768px) {
+  .feedback-wrap {
+    padding: 40px 15px;
+  }
+
+  .feedback-form-container {
+    padding: 20px;
+  }
+
+  .feedback-inputs {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .feedback-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-feedback {
+    width: 100%;
+    justify-content: center;
+  }
+}
+</style>
 
   </style>
 </head>
@@ -1818,51 +2001,46 @@ Boost your career with skill-focused training and internship opportunities.    <
       </div>
     </div>
   </div>
+
+  <!-- ===== Feedback Section ===== -->
+    <h2 class="heading-text fade-in-up" style="margin-top: 100px;">Feedback & Reviews</h2>
+    <p class="services-subtitle fade-in-up" style="animation-delay: 0.2s;">
+      We value your feedback! Share your experience and help us improve our services.</em>
+    </p>
+<section class="feedback-wrap" id="feedback">
+  <div class="feedback-header fade-up">
+    <h2>Write  Your Feedback</h2>
+  </div>
+
+  <div class="feedback-form-container fade-up" style="animation-delay: 0.2s;">
+    <form id="feedbackForm">
+      <div class="feedback-inputs">
+        <input type="text" id="userName" name="userName" placeholder="Your Name *" required class="feedback-input">
+        <input type="email" id="userEmail" name="userEmail" placeholder="Your Email *" required class="feedback-input">
+      </div>
+      <textarea id="userFeedback" name="userFeedback" placeholder="Share your thoughts, suggestions, or experience..." rows="4" required minlength="50" maxlength="100" class="feedback-textarea"></textarea>
+
+      <div class="feedback-buttons">
+        <button type="submit" class="btn-feedback btn-feedback-submit">
+          <i class="fas fa-paper-plane"></i> Submit
+        </button>
+        <button type="button" class="btn-feedback btn-feedback-cancel" onclick="clearForm()">
+          <i class="fas fa-times"></i> Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <div id="successMessage" class="feedback-success fade-up">
+    <i class="fas fa-check-circle"></i>
+    <p>Thank you for your feedback! Submitted successfully.</p>
+  </div>
+</section>
 </section>
 
 
   <!-- Enhanced Feedback Section -->
-  <section class="feedback-section" id="feedback">
-    <div class="container">
-      <div class="feedback-content fade-in-up">
-        <h2 class="feedback-title">Feedback & Reviews</h2>
-        <p class="feedback-subtitle">
-          We value your feedback! Share your experience and help us improve our services.
-        </p>
-        
-        <div class="feedback-form-container scale-in" style="animation-delay: 0.3s;">
-          <form id="feedbackForm" class="feedback-form">
-            <div class="form-row">
-              <div class="form-group">
-                <input type="text" id="userName" name="userName" placeholder="Your Name *" required class="form-input">
-              </div>
-              <div class="form-group">
-                <input type="email" id="userEmail" name="userEmail" placeholder="Your Email *" required class="form-input">
-              </div>
-            </div>
-            <div class="form-group">
-              <textarea id="userFeedback" name="userFeedback" placeholder="Share your thoughts, suggestions, or experience with us..." rows="4" required class="form-textarea" minlength="50" maxlength="100"></textarea>
-            </div>
-            <div class="form-buttons">
-              <button type="submit" class="btn btn-submit hover-scale">
-                <i class="fas fa-paper-plane me-2"></i>Submit
-              </button>
-              <button type="button" class="btn btn-cancel hover-scale" onclick="clearForm()">
-                <i class="fas fa-times me-2"></i>Cancel
-              </button>
-            </div>
-          </form>
-        </div>
-        
-        <!-- Success Message -->
-        <div id="successMessage" class="success-message">
-          <i class="fas fa-check-circle"></i>
-          <p>Thank you for your feedback! Submitted successfully.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
+  
   <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-container">
@@ -2202,6 +2380,9 @@ Boost your career with skill-focused training and internship opportunities.    <
         }, 200);
       });
 
+function clearForm() {
+  document.getElementById('feedbackForm').reset();
+}
       
 
       /* Global Clear Form Function */
