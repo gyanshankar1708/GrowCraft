@@ -108,45 +108,137 @@
       box-shadow: 0 4px 15px rgba(56, 142, 60, 0.25);
     }
 
-    /* Privacy Hero Section */
-    .privacy-hero {
-      background: var(--primary-gradient);
-      padding: 120px 0 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
+ /* Privacy Hero Section */
+.privacy-hero {
+  margin-top: 2px;
+  background: var(--primary-gradient);
+  padding: 70px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
 
-    .privacy-hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-      opacity: 0.3;
-    }
+/* Grain background */
+.privacy-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  opacity: 0.3;
+  z-index: 1;
+}
 
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 800;
-      color: white;
-      margin-bottom: 1.5rem;
-      position: relative;
-      z-index: 2;
-    }
+/* Floating Background Icons */
+.bg-icons {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+.bg-icons .icon {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.15;
+  color: white;
+  animation: float 10s infinite ease-in-out;
+}
+.bg-icons .icon:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+.bg-icons .icon:nth-child(2) { top: 40%; right: 20%; animation-delay: 2s; }
+.bg-icons .icon:nth-child(3) { bottom: 25%; left: 25%; animation-delay: 4s; }
+.bg-icons .icon:nth-child(4) { bottom: 10%; right: 15%; animation-delay: 6s; }
 
-    .hero-subtitle {
-      font-size: 1.25rem;
-      color: rgba(255, 255, 255, 0.9);
-      margin-bottom: 2rem;
-      position: relative;
-      z-index: 2;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-    }
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+/* Title */
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 1s ease forwards;
+  transition: text-shadow 0.3s ease;
+}
+.hero-title:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+/* Subtitle */
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  animation: fadeUp 1.2s ease forwards;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating Background Icons */
+.bg-icons {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+.bg-icons .icon {
+  position: absolute;
+  font-size: 2.5rem;
+  opacity: 0.15;
+  color: white;
+  animation: float 10s infinite ease-in-out, pulse 6s infinite ease-in-out;
+}
+.bg-icons .icon:nth-child(1) { top: 20%; left: 15%; animation-delay: 0s; }
+.bg-icons .icon:nth-child(2) { top: 40%; right: 20%; animation-delay: 2s; }
+.bg-icons .icon:nth-child(3) { bottom: 25%; left: 25%; animation-delay: 4s; }
+.bg-icons .icon:nth-child(4) { bottom: 10%; right: 15%; animation-delay: 6s; }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.15; transform: scale(1); }
+  50% { opacity: 0.3; transform: scale(1.2); }
+}
+
+/* Fade-up animation for text */
+.hero-title, .hero-subtitle {
+  position: relative;
+  z-index: 2;
+  animation: fadeUp 1s ease forwards;
+}
+
+.hero-subtitle {
+  animation-delay: 0.2s;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hover glow on title */
+.hero-title {
+  transition: text-shadow 0.3s ease;
+}
+
+.hero-title:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
 
     /* Privacy Content */
     .privacy-content {
@@ -790,15 +882,22 @@
   </nav>
   <!-- Navbar ends here -->
 
-  <!-- Privacy Hero Section -->
-  <section class="privacy-hero">
-    <div class="container">
-      <h1 class="hero-title">Privacy Policy</h1>
-      <p class="hero-subtitle">
-        Your privacy is important to us. Learn how we collect, use, and protect your personal information.
-      </p>
-    </div>
-  </section>
+ <!-- Privacy Hero Section -->
+<section class="privacy-hero">
+  <div class="bg-icons">
+    <span class="icon">🔒</span>
+    <span class="icon">🛡️</span>
+    <span class="icon">🔑</span>
+    <span class="icon">📜</span>
+  </div>
+  <div class="container">
+    <h1 class="hero-title">Privacy Policy</h1>
+    <p class="hero-subtitle">
+      Your privacy is important to us. Learn how we collect, use, and protect your personal information.
+    </p>
+  </div>
+</section>
+
 
   <!-- Privacy Content -->
   <section class="privacy-content">
