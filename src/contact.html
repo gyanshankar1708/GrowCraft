@@ -7,7 +7,7 @@
   <title>Contact Us - GrowCraft</title>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
-  <link rel="stylesheet" href="components/chatbot.css"/>
+  <link rel="stylesheet" href="components/chatbot.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
@@ -63,13 +63,15 @@
     [data-bs-theme="dark"] body {
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     }
+
     [data-bs-theme="dark"] footer {
-      background: linear-gradient(135deg,#131313 0%, #1e293b 100%);
+      background: linear-gradient(135deg, #131313 0%, #1e293b 100%);
     }
+
     [data-bs-theme="dark"] footer .footer-title {
       color: #f2f2f2;
 
-    } 
+    }
 
     /* Animated Background */
     body::before {
@@ -79,7 +81,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: 
+      background:
         radial-gradient(circle at 25% 25%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 75% 75%, rgba(255, 119, 198, 0.1) 0%, transparent 50%);
       z-index: -1;
@@ -87,15 +89,25 @@
     }
 
     [data-bs-theme="dark"] body::before {
-      background: 
+      background:
         radial-gradient(circle at 25% 25%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
         radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
     }
 
     @keyframes backgroundFloat {
-      0%, 100% { transform: translate(0, 0) rotate(0deg); }
-      33% { transform: translate(30px, -30px) rotate(120deg); }
-      66% { transform: translate(-20px, 20px) rotate(240deg); }
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      33% {
+        transform: translate(30px, -30px) rotate(120deg);
+      }
+
+      66% {
+        transform: translate(-20px, 20px) rotate(240deg);
+      }
     }
 
     /* Navbar Styles */
@@ -172,8 +184,13 @@
     }
 
     @keyframes heroPattern {
-      0% { transform: translate(0, 0); }
-      100% { transform: translate(60px, 60px); }
+      0% {
+        transform: translate(0, 0);
+      }
+
+      100% {
+        transform: translate(60px, 60px);
+      }
     }
 
     .hero-content {
@@ -206,6 +223,7 @@
         opacity: 0;
         transform: translateY(30px);
       }
+
       to {
         opacity: 1;
         transform: translateY(0);
@@ -362,6 +380,7 @@
         opacity: 0;
         transform: translateX(-20px);
       }
+
       to {
         opacity: 1;
         transform: translateX(0);
@@ -617,16 +636,16 @@
       .hero-title {
         font-size: 2.5rem;
       }
-      
+
       .form-card {
         padding: 2rem 1.5rem;
         margin: 1rem;
       }
-      
+
       .section-title {
         font-size: 2rem;
       }
-      
+
       .quick-stats {
         flex-direction: column;
         gap: 1rem;
@@ -637,15 +656,15 @@
       .hero-title {
         font-size: 2rem;
       }
-      
+
       .hero-subtitle {
         font-size: 1rem;
       }
-      
+
       .form-card {
         padding: 1.5rem 1rem;
       }
-      
+
       .info-box {
         padding: 2rem 1rem;
       }
@@ -695,7 +714,8 @@
   <section class="hero-section">
     <div class="hero-content">
       <h1 class="hero-title">Get In Touch</h1>
-      <p class="hero-subtitle">Ready to transform your digital presence? Let's create something amazing together. We're here to bring your vision to life.</p>
+      <p class="hero-subtitle">Ready to transform your digital presence? Let's create something amazing together. We're
+        here to bring your vision to life.</p>
     </div>
   </section>
 
@@ -822,37 +842,39 @@
     </div>
   </section>
 
-    
+
 
   <div id="footer-placeholder"></div>
-<script>
-  fetch('components/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-</script>
+  <script>
+    fetch('components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+        updatelogo()
+      });
+      function updatelogo(){
+        const theme = document.documentElement.getAttribute('data-bs-theme');
+          const logo = document.getElementById("footer-logo");
+
+          if (theme === 'dark') {
+            logo.src = "../images/Logo.png"
+          } else {
+            logo.src = "../images/Logo_new.png"
+          }
+      }
+  </script>
 
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
-  
+
   <script>
     // Dark mode toggle functionality
     document.addEventListener('DOMContentLoaded', function () {
       // Check for saved theme preference or default to light
       const currentTheme = localStorage.getItem('theme') || 'light';
       document.documentElement.setAttribute('data-bs-theme', currentTheme);
-      updateLogo(currentTheme);
-
-      function updateLogo(theme) {
-        const logo = document.querySelector("#logo");
-        if (theme === 'dark') {
-          logo.src = 'images/logo-transparent-dark-mode.png';
-        } else {
-          logo.src = 'images/logo_bg_transparent.png';
-        }
-      }
+     
     });
 
     // File upload preview
@@ -869,7 +891,7 @@
     // Form validation and submission
     document.getElementById("contactForm").addEventListener("submit", function (e) {
       e.preventDefault();
-      
+
       if (!this.checkValidity()) {
         e.stopPropagation();
         alert("Please fill all required fields.");
@@ -879,9 +901,9 @@
       // Hide form and show thank you message
       this.style.display = 'none';
       document.getElementById("thankYouSection").style.display = 'block';
-      
+
       // Scroll to thank you message
-      document.getElementById("thankYouSection").scrollIntoView({ 
+      document.getElementById("thankYouSection").scrollIntoView({
         behavior: 'smooth',
         block: 'center'
       });
@@ -917,7 +939,7 @@
       rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver(function (entries) {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.style.opacity = '1';
@@ -933,6 +955,8 @@
       el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
       observer.observe(el);
     });
+
   </script>
 </body>
+
 </html>

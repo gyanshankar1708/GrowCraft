@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
@@ -7,401 +8,598 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="components/chatbot.css" />
-  <meta name="description" content="GrowCraft — creative agency: web development, graphic design, digital marketing, content & social media case studies and services." />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta name="description"
+    content="GrowCraft — creative agency: web development, graphic design, digital marketing, content & social media case studies and services." />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    :root{
+    :root {
       --bg: 248 250 252;
       --card-radius: 14px;
-      --glass: rgba(255,255,255,0.65);
+      --glass: rgba(255, 255, 255, 0.65);
       --muted: #6b7280;
-      --accent: 99 102 241; /* indigo */
-      --accent-2: 16 185 129; /* emerald */
-      --shadow-1: 0 6px 18px rgba(2,6,23,0.08);
-      --shadow-2: 0 10px 30px rgba(2,6,23,0.12);
+      --accent: 99 102 241;
+      /* indigo */
+      --accent-2: 16 185 129;
+      /* emerald */
+      --shadow-1: 0 6px 18px rgba(2, 6, 23, 0.08);
+      --shadow-2: 0 10px 30px rgba(2, 6, 23, 0.12);
       font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
       color-scheme: light;
     }
-    [data-theme="dark"]{ --glass: rgba(12,18,28,0.6); --muted:#9ca3af; --bg: 10 12 16; }
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;background: linear-gradient(180deg, rgba(var(--bg),1) 0%, #fff 60%);-webkit-font-smoothing:antialiased;color:#09122a}
 
-     .navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    [data-theme="dark"] {
+      --glass: rgba(12, 18, 28, 0.6);
+      --muted: #9ca3af;
+      --bg: 10 12 16;
+    }
 
-  }
+    * {
+      box-sizing: border-box
+    }
 
-  .navbar-brand img {
-    max-height: 60px;
-    object-fit: contain;
-    vertical-align: middle;
-    transition: all 0.3s ease;
-  }
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      background: linear-gradient(180deg, rgba(var(--bg), 1) 0%, #fff 60%);
+      -webkit-font-smoothing: antialiased;
+      color: #09122a
+    }
 
-  .navbar-nav .nav-link {
-    font-weight: 500;
-    padding: 0.75rem 1rem;
-    color: #333;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
+    .navbar {
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      background-color: #ffffff !important;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 
-  .navbar-nav .nav-link:hover,
-  .navbar-nav .nav-link.active {
-    color: #463896;
-  }
+    }
 
-  /* Dark Mode Toggle Switch Alignment */
-  .navbar .toggle-switch {
-    display: flex;
-    align-items: center;
-    padding-left: 1rem;
-  }
+    .navbar-brand img {
+      max-height: 60px;
+      object-fit: contain;
+      vertical-align: middle;
+      transition: all 0.3s ease;
+    }
 
-  /* search bar */
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      padding: 0.75rem 1rem;
+      color: #333;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #463896;
+    }
+
+    /* Dark Mode Toggle Switch Alignment */
+    .navbar .toggle-switch {
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
+    }
+
+    /* search bar */
 
     .search-container {
-  display: flex;
-  align-items: center;
-  background-color: white;
-  border-radius: 25px;
-  padding: 5px 10px;
-  width: 100%;
-  max-width: 300px;
-  margin-left: auto;
-  margin-right: 20px;
-}
-
-.search-input {
-  border: none;
-  outline: none;
-  padding: 8px;
-  font-size: 16px;
-  flex: 1;
-  color: #333;
-}
-
-.search-input::placeholder {
-  color: #aaa;
-}
-
-.search-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: #555;
-  font-size: 18px;
-}
-
-@media screen and (max-width: 600px) {
-  .search-container {
-    max-width: 200px;
-  }
-
-  .search-input {
-    font-size: 14px;
-  }
-}
-
-
-  /* Responsive logo alignment fix */
-  @media (max-width: 991.98px) {
-    .navbar .navbar-brand {
-      margin-right: auto;
+      display: flex;
+      align-items: center;
+      background-color: white;
+      border-radius: 25px;
+      padding: 5px 10px;
+      width: 100%;
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: 20px;
     }
 
-    .navbar-collapse {
-      margin-top: 0.8rem;
+    .search-input {
+      border: none;
+      outline: none;
+      padding: 8px;
+      font-size: 16px;
+      flex: 1;
+      color: #333;
     }
-  }
 
-  .btn-custom-purple:focus,
-  .btn-custom-purple:active {
-    background-color: #1f0d66 !important;
-    border-color: #1f0d66 !important;
-    color: white !important;
-    box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
-  }
+    .search-input::placeholder {
+      color: #aaa;
+    }
 
-  /* === Navbar Custom Styling === */
+    .search-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      font-size: 18px;
+    }
 
-  .navbar {
-    padding-top: 0.8rem;
-    padding-bottom: 0.8rem;
-    background-color: #ffffff !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    @media screen and (max-width: 600px) {
+      .search-container {
+        max-width: 200px;
+      }
 
-
-  }
-
-  .navbar-nav li {
-    margin: 0 10px;
-    /* Reduce from 20px or more if it’s higher */
-  }
-
-  .navbar-nav {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    gap: 20px;
-  }
+      .search-input {
+        font-size: 14px;
+      }
+    }
 
 
+    /* Responsive logo alignment fix */
+    @media (max-width: 991.98px) {
+      .navbar .navbar-brand {
+        margin-right: auto;
+      }
 
-  .navbar-brand img {
-    max-height: 60px;
-    object-fit: contain;
-    vertical-align: middle;
-    transition: all 0.3s ease;
-  }
+      .navbar-collapse {
+        margin-top: 0.8rem;
+      }
+    }
 
-  .navbar-nav .nav-item {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
+    .btn-custom-purple:focus,
+    .btn-custom-purple:active {
+      background-color: #1f0d66 !important;
+      border-color: #1f0d66 !important;
+      color: white !important;
+      box-shadow: 0 0 0 0.2rem rgba(41, 25, 135, 0.25) !important;
+    }
 
-  }
+    /* === Navbar Custom Styling === */
 
-  .nav-item .nav-link {
-    font-weight: 900;
-    color: #7a5a08 !important;
-    font-family: "Lora", serif;
-    display: flex;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
+    .navbar {
+      padding-top: 0.8rem;
+      padding-bottom: 0.8rem;
+      background-color: #ffffff !important;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 
-  /* Navbar link hover effect */
-  .navbar-nav .nav-link {
-    position: relative;
-    color: #333;
-    /* Default link color */
-    font-weight: 500;
-    transition: color 0.3s ease;
-  }
 
-  .navbar-nav .nav-link:hover {
-    color: #007bff;
-    /* Change text color on hover */
-  }
+    }
 
-  /* Underline animation */
-  .navbar-nav .nav-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0%;
-    height: 2px;
-    background-color: #007bff;
-    transition: width 0.3s ease;
-  }
+    .navbar-nav li {
+      margin: 0 10px;
+    }
 
-  .navbar-nav .nav-link:hover::after {
-    width: 100%;
-  }
+    .navbar-nav {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      gap: 20px;
+    }
+
+
+
+    .navbar-brand img {
+      max-height: 60px;
+      object-fit: contain;
+      vertical-align: middle;
+      transition: all 0.3s ease;
+    }
+
+    .navbar-nav .nav-item {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+
+    }
+
+    .nav-item .nav-link {
+      font-weight: 900;
+      color: #7a5a08 !important;
+      font-family: "Lora", serif;
+      display: flex;
+      align-items: center;
+      transition: color 0.3s ease;
+    }
+
+    /* Navbar link hover effect */
+    .navbar-nav .nav-link {
+      position: relative;
+      color: #333;
+      /* Default link color */
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #007bff;
+      /* Change text color on hover */
+    }
+
+    /* Underline animation */
+    .navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 0%;
+      height: 2px;
+      background-color: #007bff;
+      transition: width 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover::after {
+      width: 100%;
+    }
 
     /* Page container */
-    .page{max-width:1200px;margin:28px auto;padding:20px}
-    .hero{display:grid;grid-template-columns:1fr;gap:18px;align-items:center}
-    @media(min-width:920px){.hero{grid-template-columns:1fr 420px}}
+    .page {
+      max-width: 1200px;
+      margin: 28px auto;
+      padding: 20px
+    }
 
-    .hero-left h2{font-size:32px;margin:0;line-height:1.02}
-    .lead{color:var(--muted);margin-top:8px}
-    .hero-ctas{display:flex;gap:10px;margin-top:16px}
-    .btn{padding:10px 14px;border-radius:12px;border:0;cursor:pointer;font-weight:700}
-    .btn-primary{background:linear-gradient(90deg, rgb(var(--accent)), rgb(var(--accent-2)));color:#fff}
-    .btn-ghost{background:transparent;border:1px solid rgba(2,6,23,0.06)}
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      align-items: center
+    }
 
-    .stats{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
-    .stat{background:linear-gradient(180deg, rgba(var(--accent),0.06), rgba(255,255,255,0.6));padding:12px;border-radius:10px;font-weight:700;min-width:120px;text-align:center}
+    @media(min-width:920px) {
+      .hero {
+        grid-template-columns: 1fr 420px
+      }
+    }
+
+    .hero-left h2 {
+      font-size: 32px;
+      margin: 0;
+      line-height: 1.02
+    }
+
+    .lead {
+      color: var(--muted);
+      margin-top: 8px
+    }
+
+    .hero-ctas {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px
+    }
+
+    .btn {
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 0;
+      cursor: pointer;
+      font-weight: 700
+    }
+
+    .btn-primary {
+      background: linear-gradient(90deg, rgb(var(--accent)), rgb(var(--accent-2)));
+      color: #fff
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(2, 6, 23, 0.06)
+    }
+
+    .stats {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 16px
+    }
+
+    .stat {
+      background: linear-gradient(180deg, rgba(var(--accent), 0.06), rgba(255, 255, 255, 0.6));
+      padding: 12px;
+      border-radius: 10px;
+      font-weight: 700;
+      min-width: 120px;
+      text-align: center
+    }
 
     /* Clients */
-    .clients{display:flex;gap:18px;align-items:center;overflow:auto;padding:10px 0;margin-top:18px}
-    .clients img{height:32px;opacity:0.85}
+    .clients {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      overflow: auto;
+      padding: 10px 0;
+      margin-top: 18px
+    }
 
-    /* Filters */
-    .filters{display:flex;gap:8px;align-items:center;margin-top:20px;flex-wrap:wrap}
-        .filters:hover{display:flex;gap:8px;align-items:center;margin-top:20px;flex-wrap:wrap;}
+    .clients img {
+      height: 32px;
+      opacity: 0.85
+    }
 
-    .chip{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid rgba(2,6,23,0.06);font-weight:700;cursor:pointer}
-    .chip[data-active="true"]{background:linear-gradient(90deg, rgba(var(--accent),0.12), rgba(var(--accent-2),0.06));border-color:rgba(var(--accent),0.18)}
-    .chip:hover{padding:8px 12px;border-radius:999px;background:transparent;border:1px solid rgba(2,6,23,0.06);font-weight:700;cursor:pointer;background-color: #0056b3;color: wheat;}
 
     /* Grid */
-    .works-grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
-    @media(min-width:640px){.works-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(min-width:1000px){.works-grid{grid-template-columns:repeat(3,1fr)}}
+    .works-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 18px
+    }
 
-    .card{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.7));border-radius:var(--card-radius);overflow:hidden;box-shadow:var(--shadow-1);transition:transform .28s,box-shadow .28s;border:1px solid rgba(2,6,23,0.04)}
-    [data-theme="dark"] .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
-    .card:hover{transform:translateY(-8px);box-shadow:var(--shadow-2)}
-    .card-figure{height:160px;overflow:hidden}
-    .card-figure img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s}
-    .card:hover .card-figure img{transform:scale(1.06)}
-    .card-body{padding:14px}
-    .kicker{display:inline-block;font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(var(--accent),0.08);color:rgb(var(--accent-2));font-weight:700;margin-bottom:8px}
-    .card-title{font-size:16px;margin:6px 0}
-    .card-desc{color:var(--muted);font-size:14px;margin:0 0 12px}
-    .meta{font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+    @media(min-width:640px) {
+      .works-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+    }
+
+    @media(min-width:1000px) {
+      .works-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-1);
+      transition: transform .28s, box-shadow .28s;
+      border: 1px solid rgba(2, 6, 23, 0.04)
+    }
+
+    [data-theme="dark"] .card {
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
+      border: 1px solid rgba(255, 255, 255, 0.03)
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-2)
+    }
+
+    .card-figure {
+      height: 160px;
+      overflow: hidden
+    }
+
+    .card-figure img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform .6s
+    }
+
+    .card:hover .card-figure img {
+      transform: scale(1.06)
+    }
+
+    .card-body {
+      padding: 14px
+    }
+
+    .kicker {
+      display: inline-block;
+      font-size: 12px;
+      padding: 6px 8px;
+      border-radius: 999px;
+      background: rgba(var(--accent), 0.08);
+      color: rgb(var(--accent-2));
+      font-weight: 700;
+      margin-bottom: 8px
+    }
+
+    .card-title {
+      font-size: 16px;
+      margin: 6px 0
+    }
+
+    .card-desc {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 12px
+    }
+
+    .meta {
+      font-size: 13px;
+      color: var(--muted);
+      display: flex;
+      gap: 8px;
+      align-items: center
+    }
 
     /* =====================
    Modal Styling
 ===================== */
-.modal-root {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.55); /* dark overlay */
-  backdrop-filter: blur(6px);      /* glass blur effect */
-  display: none;                   /* hidden by default */
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  z-index: 9999;
-}
-.modal-root[aria-hidden="false"] {
-  display: flex !important; /* force visible on open */
-  z-index: 9999;
-}
-.modal {
-  background: var(--bg);
-  color: var(--text);
-  max-width: 760px;
-  width: 100%;
-  border-radius: 18px;
-  padding: 24px 28px;
-  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
-  animation: fadeUp 0.3s ease;
-  overflow-y: auto;
-  max-height: 85vh;
-}
+    .modal-root {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.55);
+      /* dark overlay */
+      backdrop-filter: blur(6px);
+      /* glass blur effect */
+      display: none;
+      /* hidden by default */
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 9999;
+    }
 
-.modal h3 {
-  font-size: 22px;
-  font-weight: 600;
-  margin: 0;
-  color: var(--text);
-}
+    .modal-root[aria-hidden="false"] {
+      display: flex !important;
+      /* force visible on open */
+      z-index: 9999;
+    }
 
-#modalKicker {
-  font-size: 14px;
-  margin-top: 4px;
-  color: var(--muted);
-}
+    .modal {
+      background: var(--bg);
+      color: var(--text);
+      max-width: 760px;
+      width: 100%;
+      border-radius: 18px;
+      padding: 24px 28px;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+      animation: fadeUp 0.3s ease;
+      overflow-y: auto;
+      max-height: 85vh;
+    }
 
-/* Close button */
-.close {
-  background: transparent;
-  border: none;
-  font-size: 22px;
-  line-height: 1;
-  cursor: pointer;
-  color: var(--muted);
-  transition: color 0.2s;
-}
-.close:hover {
-  color: var(--primary);
-}
+    .modal h3 {
+      font-size: 22px;
+      font-weight: 600;
+      margin: 0;
+      color: var(--text);
+    }
 
-/* Gallery image */
-.gallery img {
-  width: 100%;
-  max-height: 320px;
-  border-radius: 14px;
-  object-fit: cover;
-  margin-top: 12px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-}
+    #modalKicker {
+      font-size: 14px;
+      margin-top: 4px;
+      color: var(--muted);
+    }
 
-/* Content sections */
-.modal strong {
-  display: block;
-  font-size: 15px;
-  margin-bottom: 4px;
-  color: var(--text);
-}
+    /* Close button */
+    .close {
+      background: transparent;
+      border: none;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
 
-#modalProblem, #modalApproach, #modalResult {
-  font-size: 14px;
-  line-height: 1.5;
-  color: var(--muted);
-}
+    .close:hover {
+      color: var(--primary);
+    }
 
-/* Footer buttons */
-.modal .btn {
-  font-size: 14px;
-  padding: 8px 16px;
-}
+    /* Gallery image */
+    .gallery img {
+      width: 100%;
+      max-height: 320px;
+      border-radius: 14px;
+      object-fit: cover;
+      margin-top: 12px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    }
 
-/* Animation */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px) scale(0.96);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
+    /* Content sections */
+    .modal strong {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    #modalProblem,
+    #modalApproach,
+    #modalResult {
+      font-size: 14px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+
+    /* Footer buttons */
+    .modal .btn {
+      font-size: 14px;
+      padding: 8px 16px;
+    }
+
+    /* Animation */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.96);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
 
 
     /* footer */
-    .site-footer{margin-top:34px;padding:28px;text-align:center;color:var(--muted);font-size:14px}
+    .site-footer {
+      margin-top: 34px;
+      padding: 28px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px
+    }
 
     /* utilities */
-    .flex{display:flex;gap:12px;align-items:center}
-    .spacer{flex:1}
-    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+    .flex {
+      display: flex;
+      gap: 12px;
+      align-items: center
+    }
+
+    .spacer {
+      flex: 1
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0
+    }
+
     /* Global spacing improvements */
-section {
-  margin-top: 60px; /* space between sections */
-}
-.hero {
-  margin-top: 40px;
-  margin-bottom: 60px;
-}
-.filters {
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-.works-grid {
-  margin-top: 30px;
-  gap: 28px; /* bigger gaps between cards */
-}
-.site-footer {
-  margin-top: 80px;
-  padding: 40px 20px;
-}
+    section {
+      margin-top: 60px;
+      /* space between sections */
+    }
 
-/* Better padding inside hero aside */
-.hero aside {
-  padding: 24px;
-  border-radius: 16px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.65), #fff);
-  box-shadow: var(--shadow-1);
-}
+    .hero {
+      margin-top: 40px;
+      margin-bottom: 60px;
+    }
 
-/* Card tweaks */
-.card {
-  padding: 0;
-}
-.card-body {
-  padding: 18px;
-}
-.card-title {
-  font-size: 18px;
-  font-weight: 700;
-}
-.card-desc {
-  margin-bottom: 16px;
-  line-height: 1.5;
-}
- /* Professional Footer Styles */
+    .filters {
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    .works-grid {
+      margin-top: 30px;
+      gap: 28px;
+      /* bigger gaps between cards */
+    }
+
+    .site-footer {
+      margin-top: 80px;
+      padding: 40px 20px;
+    }
+
+    /* Better padding inside hero aside */
+    .hero aside {
+      padding: 24px;
+      border-radius: 16px;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.65), #fff);
+      box-shadow: var(--shadow-1);
+    }
+
+    /* Card tweaks */
+    .card {
+      padding: 0;
+    }
+
+    .card-body {
+      padding: 18px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .card-desc {
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    /* Professional Footer Styles */
     .professional-footer {
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
       color: #333;
@@ -410,7 +608,8 @@ section {
       overflow: hidden;
       transition: all 0.3s ease;
     }
-     .footer-brand {
+
+    .footer-brand {
       text-align: center;
     }
 
@@ -431,14 +630,16 @@ section {
       background-clip: text;
       transition: all 0.3s ease;
     }
-     .brand-description {
+
+    .brand-description {
       font-size: 0.95rem;
       color: #666;
       margin-bottom: 1.5rem;
       line-height: 1.5;
       transition: all 0.3s ease;
     }
-     .quick-stats {
+
+    .quick-stats {
       display: flex;
       justify-content: center;
       gap: 20px;
@@ -458,13 +659,15 @@ section {
       margin-bottom: 0.25rem;
       transition: all 0.3s ease;
     }
-     .stat-label {
+
+    .stat-label {
       font-size: 0.8rem;
       color: #666;
       text-transform: uppercase;
       letter-spacing: 0.5px;
       transition: all 0.3s ease;
     }
+
     /* Footer Titles */
     .footer-title {
       font-size: 1.1rem;
@@ -475,6 +678,7 @@ section {
       padding-bottom: 0.5rem;
       transition: all 0.3s ease;
     }
+
     .footer-title::after {
       content: '';
       position: absolute;
@@ -486,7 +690,8 @@ section {
       border-radius: 2px;
       transition: all 0.3s ease;
     }
-     /* Footer Links */
+
+    /* Footer Links */
     .footer-links {
       list-style: none;
       padding: 0;
@@ -506,11 +711,13 @@ section {
       padding-left: 15px;
       display: inline-block;
     }
+
     .footer-links a:hover {
       color: #007bff;
       transform: translateX(5px);
     }
-     .footer-links a::before {
+
+    .footer-links a::before {
       content: '▶';
       position: absolute;
       left: 0;
@@ -521,6 +728,7 @@ section {
       opacity: 0;
       transform: translateX(-5px);
     }
+
     .footer-links a:hover::before {
       opacity: 1;
       transform: translateX(0);
@@ -545,22 +753,26 @@ section {
       transition: all 0.3s ease;
       flex-shrink: 0;
     }
-     .contact-item a {
+
+    .contact-item a {
       color: #666;
       text-decoration: none;
       font-size: 0.9rem;
       transition: color 0.3s ease;
       flex: 1;
     }
+
     .contact-item a:hover {
       color: #007bff;
     }
-     .contact-item span {
+
+    .contact-item span {
       color: #666;
       font-size: 0.9rem;
       transition: all 0.3s ease;
       flex: 1;
     }
+
     /* Footer Bottom */
     .footer-bottom {
       background: rgba(0, 0, 0, 0.05);
@@ -569,13 +781,15 @@ section {
       border-top: 1px solid rgba(0, 0, 0, 0.1);
       transition: all 0.3s ease;
     }
-     .copyright {
+
+    .copyright {
       color: #666;
       font-size: 0.9rem;
       margin: 0;
       transition: all 0.3s ease;
     }
-     .footer-nav {
+
+    .footer-nav {
       display: flex;
       gap: 20px;
       justify-content: flex-end;
@@ -588,9 +802,11 @@ section {
       font-size: 0.9rem;
       transition: color 0.3s ease;
     }
+
     .footer-nav a:hover {
       color: #007bff;
     }
+
     /* Responsive Design */
     @media (max-width: 768px) {
       .professional-footer {
@@ -637,186 +853,16 @@ section {
         font-size: 0.7rem;
       }
     }
-  
-
-/* Card Container */
-.works-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 28px;
-  margin-top: 30px;
-  padding: 0;
-}
-
-@media (min-width: 640px) {
-  .works-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1000px) {
-  .works-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Card Styles */
-.card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.7));
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.08);
-  transition: transform 0.28s ease, box-shadow 0.28s ease;
-  display: flex;
-  flex-direction: column;
-}
-
-[data-theme="dark"] .card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.01));
-  border: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-/* Hover Effects */
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
-}
-
-/* Image Section */
-.card-figure {
-  height: 180px;
-  overflow: hidden;
-}
-
-.card-figure img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.card:hover .card-figure img {
-  transform: scale(1.06);
-}
-
-/* Card Body */
-.card-body {
-  padding: 18px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-    text-align: center;
-}
-
-.kicker {
-  display: inline-block;
-  font-size: 18px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  background: rgba(63, 65, 187, 0.08);
-  color: rgb(16, 185, 129);
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.card-title {
-  font-size: 18px;
-  font-weight: 700;
-  margin: 6px 0;
-
-}
-
-.card-desc {
-  font-size: 14px;
-  color: #6b7280;
-  margin-bottom: 16px;
-  line-height: 1.5;
-  flex-grow: 1;
-}
-
-.meta {
-  display: flex;
-  align-items: center;
-  font-size: 13px;
-  color: #6b7280;
-}
-
-.meta .spacer {
-  flex: 1;
-}
-
-/* Button inside card */
-.card .btn {
-  font-size: 18px;
-  padding: 6px 12px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-}
-
-/* Category Colors */
-.kicker[data-category="web"] {
-  background: rgba(16, 185, 129, 0.08);
-  color: rgb(99, 102, 241);
-}
-
-.kicker[data-category="design"] {
-  background: rgba(255, 99, 71, 0.08);
-  color: rgb(255, 99, 71);
-}
-
-.kicker[data-category="marketing"] {
-  background: rgba(99, 102, 241, 0.08);
-  color: rgb(99, 102, 241);
-}
-
-.kicker[data-category="social"] {
-  background: rgba(255, 165, 0, 0.08);
-  color: rgb(255, 165, 0);
-}
-
-.kicker[data-category="content"] {
-  background: rgba(128, 0, 128, 0.08);
-  color: rgb(128, 0, 128);
-}
-/* Card Hover Effects */
-.card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.12);
-  background: linear-gradient(180deg, #f0f4ff, #e0e7ff); /* light blue gradient on hover */
-}
-
-/* Kicker badge hover color */
-.card:hover .kicker {
-  background-color: #6366f1; /* Indigo background */
-  color: #ffffff; /* White text */
-}
-
-/* Button hover */
-.card .btn:hover {
-  background-color: #10b981; /* Green shade */
-  color: white;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-
 
   </style>
 </head>
+
 <body data-theme="light">
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
       <a class="navbar-brand" href="index.html">
-        <img 
-          src="images/logo_bg_transparent.png" 
-          alt="GrowCraft" 
-          width="200" 
-          class="theme-aware-logo"
-          data-light-src="images/logo_bg_transparent.png"
-          data-dark-src="images/logo-transparent-dark-mode.png" 
-        />
+        <img src="images/logo_bg_transparent.png" alt="GrowCraft" width="200" class="theme-aware-logo"
+          data-light-src="images/logo_bg_transparent.png" data-dark-src="images/logo-transparent-dark-mode.png" />
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -827,46 +873,43 @@ section {
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active visited" aria-current="page" href="index.html">Home</a>
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html#services">Services</a>
+            <a class="nav-link" aria-current="page" href="index.html#services">Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="blogListing.html">Blogs</a>
+            <a class="nav-link" aria-current="page" href="blogListing.html">Blogs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html#about">About Us</a>
+            <a class="nav-link" aria-current="page" href="index.html#about">About Us</a>
           </li>
-          <!-- Added new "Our Work" link to navigate to the new work section on same page -->
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Our Work</a>
+            <a class="nav-link active visited" aria-current="page" href="#">Our Work</a>
           </li>
-
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="src/contact.html">Contact Us</a>
+            <a class="nav-link" aria-current="page" href="src/contact.html">Contact Us</a>
           </li>
         </ul>
       </div>
-     
-      <!-- Responsive Search Bar -->
- <div class="search-container">
-  <input type="text" placeholder="Search..." class="search-input">
-  <button class="search-button">
-    <i class="fas fa-search"></i> <!-- Font Awesome icon -->
-  </button>
-</div>
+
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input">
+        <button class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
 
     </div>
 
   </nav>
 
-
   <main class="page">
-    <section class="hero">
+    <section class="hero" data-aos="fade-up">
       <div class="hero-left">
         <h2>We craft digital experiences that <span style="color:rgb(var(--accent));">grow</span> businesses</h2>
-        <p class="lead">Design-led websites, high-converting digital marketing, and visual systems that help customers trust your brand. Explore our selected case studies and studio services.</p>
+        <p class="lead">Design-led websites, high-converting digital marketing, and visual systems that help customers
+          trust your brand. Explore our selected case studies and studio services.</p>
         <div class="hero-ctas">
           <a class="btn btn-primary" href="./services.html">Explore Services</a>
           <a class="btn btn-ghost" href="src/contact.html">Get a free quote</a>
@@ -886,14 +929,16 @@ section {
         </div>
       </div>
 
-      <aside style="padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.6),#fff);box-shadow:var(--shadow-1)">
+      <aside
+        style="padding:18px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.6),#fff);box-shadow:var(--shadow-1)">
         <h4 style="margin:0 0 8px">Featured case study</h4>
-        <p style="margin:0 0 12px;color:var(--muted)">UX overhaul for a fintech startup — reduced onboarding drop-off and increased activation.</p>
+        <p style="margin:0 0 12px;color:var(--muted)">UX overhaul for a fintech startup — reduced onboarding drop-off
+          and increased activation.</p>
         <a class="btn btn-primary" href="#works" style="display:inline-block">View Work</a>
       </aside>
     </section>
 
-    <section class="filters" aria-label="Project filters">
+    <section class="filters" aria-label="Project filters" data-aos="fade-up" data-aos-delay="100">
       <button class="chip" data-filter="all" data-active="true">All</button>
       <button class="chip" data-filter="web">Web Dev</button>
       <button class="chip" data-filter="design">Graphic</button>
@@ -904,542 +949,420 @@ section {
 
     <section id="works" class="works-grid" aria-live="polite">
 
-      <!-- Card: Digital Marketing -->
-      <article class="card" data-category="marketing" tabindex="0" data-images="./images/DigitalMarketing2.png">
-        <figure class="card-figure"><img src="./images/DigitalMarketing2.png" alt="Digital marketing campaign preview"></figure>
+      <article class="card" data-category="marketing" tabindex="0" data-images="./images/DigitalMarketing2.png" data-aos="fade-up">
+        <figure class="card-figure"><img src="./images/DigitalMarketing2.png" alt="Digital marketing campaign preview">
+        </figure>
         <div class="card-body">
           <div class="kicker">Digital</div>
           <h3 class="card-title">Performance Marketing for E‑commerce</h3>
-          <p class="card-desc">Scaled paid media and SEO to lower CAC and lift repeat purchases via omnichannel funnels.</p>
-          <div class="meta"><span>📈 +40% conversions</span><div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-          <!-- Data attributes for modal details -->
-          <div class="sr-only case-data" data-title="Performance Marketing for E‑commerce" data-problem="Low acquisition efficiency and high CAC." data-approach="Built conversion-focused funnels, creative testing, and SEO content roadmap." data-result="40% uplift in conversions, 28% lower CAC, and +3x ROAS." aria-hidden="true"></div>
+          <p class="card-desc">Scaled paid media and SEO to lower CAC and lift repeat purchases via omnichannel funnels.
+          </p>
+          <div class="meta"><span>📈 +40% conversions</span>
+            <div class="spacer"></div>
+            <button class="btn btn-primary open-case">View Case</button>
+          </div>
+          <div class="sr-only case-data" data-title="Performance Marketing for E‑commerce"
+            data-problem="Low acquisition efficiency and high CAC."
+            data-approach="Built conversion-focused funnels, creative testing, and SEO content roadmap."
+            data-result="40% uplift in conversions, 28% lower CAC, and +3x ROAS." aria-hidden="true"></div>
         </div>
       </article>
 
-      <!-- Card: Website -->
-      <article class="card" data-category="web" tabindex="0" data-images="./images/WebDev1.png">
+      <article class="card" data-category="web" tabindex="0" data-images="./images/WebDev1.png" data-aos="fade-up" data-aos-delay="100">
         <figure class="card-figure"><img src="./images/WebDev1.png" alt="Website project preview"></figure>
         <div class="card-body">
           <div class="kicker">Web</div>
           <h3 class="card-title">SaaS Website & Onboarding UX</h3>
-          <p class="card-desc">Redesigned onboarding with product-led flows, faster load times and clear value propositions.</p>
-          <div class="meta">⚡ 60% faster load • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-          <div class="sr-only case-data" data-title="SaaS Website & Onboarding UX" data-problem="High drop-offs during sign-up." data-approach="Rewrote flows, modular components and performance optimizations." data-result="60% faster load, 45% lower drop-off, higher activation." aria-hidden="true"></div>
+          <p class="card-desc">Redesigned onboarding with product-led flows, faster load times and clear value
+            propositions.</p>
+          <div class="meta">⚡ 60% faster load • <div class="spacer"></div>
+            <button class="btn btn-primary open-case">View Case</button>
+          </div>
+          <div class="sr-only case-data" data-title="SaaS Website & Onboarding UX"
+            data-problem="High drop-offs during sign-up."
+            data-approach="Rewrote flows, modular components and performance optimizations."
+            data-result="60% faster load, 45% lower drop-off, higher activation." aria-hidden="true"></div>
         </div>
       </article>
 
-      <!-- Card: Graphic Design -->
-      <article class="card" data-category="design" tabindex="0" data-images="./images/GraphicDesign2.png">
+      <article class="card" data-category="design" tabindex="0" data-images="./images/GraphicDesign2.png" data-aos="fade-up" data-aos-delay="200">
         <figure class="card-figure"><img src="./images/GraphicDesign2.png" alt="Graphic design preview"></figure>
         <div class="card-body">
           <div class="kicker">Design</div>
           <h3 class="card-title">Brand Identity & Visual System</h3>
           <p class="card-desc">Logos, color systems, and brand guidelines that scale across digital and print.</p>
-          <div class="meta">🎨 Brand kit • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-          <div class="sr-only case-data" data-title="Brand Identity & Visual System" data-problem="Inconsistent brand assets across channels." data-approach="Created a cohesive brand language and flexible component library." data-result="Improved recognition and consistent user experience." aria-hidden="true"></div>
+          <div class="meta">🎨 Brand kit • <div class="spacer"></div>
+            <button class="btn btn-primary open-case">View Case</button>
+          </div>
+          <div class="sr-only case-data" data-title="Brand Identity & Visual System"
+            data-problem="Inconsistent brand assets across channels."
+            data-approach="Created a cohesive brand language and flexible component library."
+            data-result="Improved recognition and consistent user experience." aria-hidden="true"></div>
         </div>
       </article>
 
-      <!-- Card: Social -->
-      <article class="card" data-category="social" tabindex="0" data-images="./images/SocialMediaManagement1.png">
+      <article class="card" data-category="social" tabindex="0" data-images="./images/SocialMediaManagement1.png" data-aos="fade-up">
         <figure class="card-figure"><img src="./images/SocialMediaManagement1.png" alt="Social media preview"></figure>
         <div class="card-body">
           <div class="kicker">Social</div>
           <h3 class="card-title">Social Growth & Content Strategy</h3>
-          <p class="card-desc">From content calendars to short-form creative — we help brands find their voice and grow audiences.</p>
-          <div class="meta">📣 +120% engagement • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-          <div class="sr-only case-data" data-title="Social Growth & Content Strategy" data-problem="Flat engagement and poor content cadence." data-approach="Data-informed content plan, batch creative and A/B testing." data-result="120% higher engagement and follower growth." aria-hidden="true"></div>
+          <p class="card-desc">From content calendars to short-form creative — we help brands find their voice and grow
+            audiences.</p>
+          <div class="meta">📣 +120% engagement • <div class="spacer"></div>
+            <button class="btn btn-primary open-case">View Case</button>
+          </div>
+          <div class="sr-only case-data" data-title="Social Growth & Content Strategy"
+            data-problem="Flat engagement and poor content cadence."
+            data-approach="Data-informed content plan, batch creative and A/B testing."
+            data-result="120% higher engagement and follower growth." aria-hidden="true"></div>
         </div>
       </article>
 
-      <!-- Card: Content -->
-      <article class="card" data-category="content" tabindex="0" data-images="./images/ContentWriting1.png">
+      <article class="card" data-category="content" tabindex="0" data-images="./images/ContentWriting1.png" data-aos="fade-up" data-aos-delay="100">
         <figure class="card-figure"><img src="./images/ContentWriting1.png" alt="Content writing preview"></figure>
         <div class="card-body">
           <div class="kicker">Content</div>
           <h3 class="card-title">Content Strategy & SEO</h3>
           <p class="card-desc">SEO-first articles and product copy that attract organic traffic and convert readers.</p>
-          <div class="meta">✍️ +55% Organic Traffic • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-          <div class="sr-only case-data" data-title="Content Strategy & SEO" data-problem="Low organic visibility." data-approach="Topical clusters, on-page SEO and content promotion." data-result="55% uplift in organic traffic." aria-hidden="true"></div>
+          <div class="meta">✍️ +55% Organic Traffic • <div class="spacer"></div>
+            <button class="btn btn-primary open-case">View Case</button>
+          </div>
+          <div class="sr-only case-data" data-title="Content Strategy & SEO" data-problem="Low organic visibility."
+            data-approach="Topical clusters, on-page SEO and content promotion."
+            data-result="55% uplift in organic traffic." aria-hidden="true"></div>
         </div>
       </article>
-      <!-- Card: App Development -->
-<article class="card" data-category="web" tabindex="0" data-images="./images/AppDev1.jpeg">
-  <figure class="card-figure"><img src="./images/AppDev1.jpeg" alt="Mobile app development preview"></figure>
-  <div class="card-body">
-    <div class="kicker">Web</div>
-    <h3 class="card-title">Mobile App Development</h3>
-    <p class="card-desc">Built scalable cross-platform mobile apps with seamless user experience and secure architecture.</p>
-    <div class="meta">📱 50K+ downloads • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-    <div class="sr-only case-data" data-title="Mobile App Development" data-problem="Low adoption due to poor mobile performance." data-approach="Developed fast, lightweight React Native app with offline-first design." data-result="50K+ downloads, 4.8★ rating, and 70% retention." aria-hidden="true"></div>
-  </div>
-</article>
 
-<!-- Card: UI/UX Redesign -->
-<article class="card" data-category="design" tabindex="0" data-images="./images/UIUX1.jpeg">
-  <figure class="card-figure"><img src="./images/UIUX1.jpeg" alt="UI/UX redesign preview"></figure>
-  <div class="card-body">
-    <div class="kicker">Design</div>
-    <h3 class="card-title">UI/UX Redesign for EdTech</h3>
-    <p class="card-desc">Complete overhaul of user flows, dashboards, and interactions to boost engagement in learning apps.</p>
-    <div class="meta">🎓 +35% retention • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-    <div class="sr-only case-data" data-title="UI/UX Redesign for EdTech" data-problem="Confusing flows leading to student drop-offs." data-approach="Redesigned navigation, gamified progress tracking, simplified onboarding." data-result="35% higher student retention, smoother learning journey." aria-hidden="true"></div>
-  </div>
-</article>
-
-<!-- Card: Branding Campaign -->
-<article class="card" data-category="marketing" tabindex="0" data-images="./images/BrandingCampaign1.jpeg">
-  <figure class="card-figure"><img src="./images/BrandingCampaign1.jpeg" alt="Branding campaign preview"></figure>
-  <div class="card-body">
-    <div class="kicker">Marketing</div>
-    <h3 class="card-title">Global Branding Campaign</h3>
-    <p class="card-desc">Launched integrated ad campaigns across digital, print, and outdoor media for maximum brand visibility.</p>
-    <div class="meta">🌍 15M impressions • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-    <div class="sr-only case-data" data-title="Global Branding Campaign" data-problem="Weak international presence." data-approach="Multi-channel campaign, influencer partnerships, and targeted media buys." data-result="15M+ impressions, 4x brand recall lift." aria-hidden="true"></div>
-  </div>
-</article>
-
-<!-- Card: Video Production -->
-<article class="card" data-category="content" tabindex="0" data-images="./images/VideoProduction1.jpeg">
-  <figure class="card-figure"><img src="./images/VideoProduction1.jpeg" alt="Video production preview"></figure>
-  <div class="card-body">
-    <div class="kicker">Content</div>
-    <h3 class="card-title">Brand Video Production</h3>
-    <p class="card-desc">Produced high-quality explainer and promo videos to humanize the brand and drive engagement.</p>
-    <div class="meta">🎥 500K+ views • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-    <div class="sr-only case-data" data-title="Brand Video Production" data-problem="Lack of engaging video assets for campaigns." data-approach="Scriptwriting, animation, and production tailored to brand story." data-result="500K+ organic views, +3x engagement on social campaigns." aria-hidden="true"></div>
-  </div>
-</article>
-
-<!-- Card: Email Marketing -->
-<article class="card" data-category="marketing" tabindex="0" data-images="./images/EmailMarketing1.jpeg">
-  <figure class="card-figure"><img src="./images/EmailMarketing1.jpeg" alt="Email marketing campaign preview"></figure>
-  <div class="card-body">
-    <div class="kicker">Marketing</div>
-    <h3 class="card-title">Email Marketing Automation</h3>
-    <p class="card-desc">Automated lifecycle campaigns and A/B tested newsletters to maximize open and click-through rates.</p>
-    <div class="meta">✉️ +65% open rate • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-    <div class="sr-only case-data" data-title="Email Marketing Automation" data-problem="Low engagement from email campaigns." data-approach="Set up segmented drip campaigns, optimized subject lines, and responsive templates." data-result="65% higher open rates, 40% higher CTR." aria-hidden="true"></div>
-  </div>
-</article>
-<!-- Card: Digital Marketing -->
-  <article class="card" data-category="marketing" tabindex="0" data-images="./images/DigitalMarketing2.png">
-    <figure class="card-figure"><img src="./images/DigitalMarketing2.png" alt="Digital marketing campaign preview"></figure>
-    <div class="card-body">
-      <div class="kicker">Digital</div>
-      <h3 class="card-title">Performance Marketing for E-commerce</h3>
-      <p class="card-desc">Scaled paid media and SEO to lower CAC and lift repeat purchases via omnichannel funnels.</p>
-      <div class="meta"><span>📈 +40% conversions</span><div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-      <div class="sr-only case-data" data-title="Performance Marketing for E-commerce" data-problem="Low acquisition efficiency and high CAC." data-approach="Built conversion-focused funnels, creative testing, and SEO content roadmap." data-result="40% uplift in conversions, 28% lower CAC, and +3x ROAS." aria-hidden="true"></div>
-    </div>
-  </article>
-
-  <!-- Card: Website -->
-  <article class="card" data-category="web" tabindex="0" data-images="./images/WebDev1.png">
-    <figure class="card-figure"><img src="./images/WebDev1.png" alt="Website project preview"></figure>
-    <div class="card-body">
-      <div class="kicker">Web</div>
-      <h3 class="card-title">SaaS Website & Onboarding UX</h3>
-      <p class="card-desc">Redesigned onboarding with product-led flows, faster load times and clear value propositions.</p>
-      <div class="meta">⚡ 60% faster load • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-      <div class="sr-only case-data" data-title="SaaS Website & Onboarding UX" data-problem="High drop-offs during sign-up." data-approach="Rewrote flows, modular components and performance optimizations." data-result="60% faster load, 45% lower drop-off, higher activation." aria-hidden="true"></div>
-    </div>
-  </article>
-
-  <!-- Card: Graphic Design -->
-  <article class="card" data-category="design" tabindex="0" data-images="./images/GraphicDesign2.png">
-    <figure class="card-figure"><img src="./images/GraphicDesign2.png" alt="Graphic design preview"></figure>
-    <div class="card-body">
-      <div class="kicker">Design</div>
-      <h3 class="card-title">Brand Identity & Visual System</h3>
-      <p class="card-desc">Logos, color systems, and brand guidelines that scale across digital and print.</p>
-      <div class="meta">🎨 Brand kit • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-      <div class="sr-only case-data" data-title="Brand Identity & Visual System" data-problem="Inconsistent brand assets across channels." data-approach="Created a cohesive brand language and flexible component library." data-result="Improved recognition and consistent user experience." aria-hidden="true"></div>
-    </div>
-  </article>
-
-  <!-- Card: Social -->
-  <article class="card" data-category="social" tabindex="0" data-images="./images/SocialMediaManagement1.png">
-    <figure class="card-figure"><img src="./images/SocialMediaManagement1.png" alt="Social media preview"></figure>
-    <div class="card-body">
-      <div class="kicker">Social</div>
-      <h3 class="card-title">Social Growth & Content Strategy</h3>
-      <p class="card-desc">From content calendars to short-form creative — we help brands find their voice and grow audiences.</p>
-      <div class="meta">📣 +120% engagement • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-      <div class="sr-only case-data" data-title="Social Growth & Content Strategy" data-problem="Flat engagement and poor content cadence." data-approach="Data-informed content plan, batch creative and A/B testing." data-result="120% higher engagement and follower growth." aria-hidden="true"></div>
-    </div>
-  </article>
-
-  <!-- Card: Content -->
-  <article class="card" data-category="content" tabindex="0" data-images="./images/ContentWriting1.png">
-    <figure class="card-figure"><img src="./images/ContentWriting1.png" alt="Content writing preview"></figure>
-    <div class="card-body">
-      <div class="kicker">Content</div>
-      <h3 class="card-title">Content Strategy & SEO</h3>
-      <p class="card-desc">SEO-first articles and product copy that attract organic traffic and convert readers.</p>
-      <div class="meta">✍️ +55% Organic Traffic • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-      <div class="sr-only case-data" data-title="Content Strategy & SEO" data-problem="Low organic visibility." data-approach="Topical clusters, on-page SEO and content promotion." data-result="55% uplift in organic traffic." aria-hidden="true"></div>
-    </div>
-  </article>
-
-  <!-- 🔥 New Cards -->
-
-  <!-- Card: App Development -->
-  <article class="card" data-category="app" tabindex="0" data-images="./images/AppDev1.jpeg">
-    <figure class="card-figure"><img src="./images/AppDev1.jpeg" alt="Mobile app project preview"></figure>
-    <div class="card-body">
-      <div class="kicker">App</div>
-      <h3 class="card-title">Mobile Banking App</h3>
-      <p class="card-desc">Designed and developed a secure, fast, and intuitive mobile app for digital banking.</p>
-      <div class="meta">📱 4.8⭐ app rating • <div class="spacer"></div><button class="btn btn-primary open-case">View Case</button></div>
-      <div class="sr-only case-data" data-title="Mobile Banking App" data-problem="Outdated banking UX with security gaps." data-approach="Created secure login, simplified navigation, and modern UI." data-result="4.8 app store rating and 60% higher retention." aria-hidden="true"></div>
-    </div>
-  </article>
-
-    </section>
-    <div class="hero-ctas" style="padding-top: 80px;">
-          <a class="btn btn-primary" href="src/contact.html">Work with us</a>
-          
+      <article class="card" data-category="web" tabindex="0" data-images="./images/AppDev1.jpeg" data-aos="fade-up" data-aos-delay="200">
+        <figure class="card-figure"><img src="./images/AppDev1.jpeg" alt="Mobile app development preview"></figure>
+        <div class="card-body">
+          <div class="kicker">Web</div>
+          <h3 class="card-title">Mobile App Development</h3>
+          <p class="card-desc">Built scalable cross-platform mobile apps with seamless user experience and secure
+            architecture.</p>
+          <div class="meta">📱 50K+ downloads • <div class="spacer"></div>
+            <button class="btn btn-primary open-case">View Case</button>
+          </div>
+          <div class="sr-only case-data" data-title="Mobile App Development"
+            data-problem="Low adoption due to poor mobile performance."
+            data-approach="Developed fast, lightweight React Native app with offline-first design."
+            data-result="50K+ downloads, 4.8★ rating, and 70% retention." aria-hidden="true"></div>
         </div>
-
-
+      </article>
+      
+    </section>
     
-
+    <div class="hero-ctas" style="padding-top: 80px;" data-aos="fade-up">
+        <a class="btn btn-primary" href="src/contact.html">Work with us</a>
+    </div>
 
   </main>
+
   <div id="modalRoot" class="modal-root" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
-  <div class="modal" role="document">
-    <div style="display:flex;align-items:start;justify-content:space-between;gap:12px">
-      <div style="flex:1">
-        <h3 id="modalTitle">Title</h3>
-        <div id="modalKicker" style="font-size:13px;color:var(--muted);margin-top:6px">Kicker</div>
+    <div class="modal" role="document">
+      <div style="display:flex;align-items:start;justify-content:space-between;gap:12px">
+        <div style="flex:1">
+          <h3 id="modalTitle">Title</h3>
+          <div id="modalKicker" style="font-size:13px;color:var(--muted);margin-top:6px">Kicker</div>
+        </div>
+        <button id="modalClose" class="close" aria-label="Close modal">✕</button>
       </div>
-      <button id="modalClose" class="close" aria-label="Close modal">✕</button>
-    </div>
 
-    <div class="gallery" id="modalGallery" style="margin-top:12px">
-      <img id="modalImage" src="" alt="case image" />
-    </div>
-
-    <div style="display:flex;gap:12px;margin-top:12px;align-items:center">
-      <div style="flex:1">
-        <strong>Problem</strong>
-        <div id="modalProblem" style="color:var(--muted);margin-top:6px">Problem summary</div>
+      <div class="gallery" id="modalGallery" style="margin-top:12px">
+        <img id="modalImage" src="" alt="case image" />
       </div>
-      <div style="flex:1">
-        <strong>Approach</strong>
-        <div id="modalApproach" style="color:var(--muted);margin-top:6px">Approach summary</div>
+
+      <div style="display:flex;gap:12px;margin-top:12px;align-items:center">
+        <div style="flex:1">
+          <strong>Problem</strong>
+          <div id="modalProblem" style="color:var(--muted);margin-top:6px">Problem summary</div>
+        </div>
+        <div style="flex:1">
+          <strong>Approach</strong>
+          <div id="modalApproach" style="color:var(--muted);margin-top:6px">Approach summary</div>
+        </div>
       </div>
-    </div>
 
-    <div style="margin-top:10px">
-      <strong>Result</strong>
-      <div id="modalResult" style="color:var(--muted);margin-top:6px">Measured results and impact</div>
-    </div>
+      <div style="margin-top:10px">
+        <strong>Result</strong>
+        <div id="modalResult" style="color:var(--muted);margin-top:6px">Measured results and impact</div>
+      </div>
 
-    <div style="display:flex;gap:8px;margin-top:14px;justify-content:flex-end">
-      <a id="caseStudyLink" class="btn btn-primary" href="#">Download report</a>
-      <button id="modalClose2" class="btn btn-ghost">Close</button>
+      <div style="display:flex;gap:8px;margin-top:14px;justify-content:flex-end">
+        <a id="caseStudyLink" class="btn btn-primary" href="#">Download report</a>
+        <button id="modalClose2" class="btn btn-ghost">Close</button>
+      </div>
     </div>
   </div>
-</div>
 
-  <!-- Professional Footer -->
-  <footer class="professional-footer fade-in">
+  <footer class="professional-footer" data-aos="fade-up">
     <div class="container">
-        <div class="row g-4 py-4 fade-in">
-            <!-- Footer Columns -->
-            <div class="col-lg-4 col-md-6 fade-in">
-                <div class="footer-brand fade-in">
-                    <img 
-                      src="images/Logo_new.png" 
-                      alt="GrowCraft Logo" 
-                      class="footer-logo mb-3 theme-aware-logo"
-                      data-light-src="images/Logo_new.png"
-                      data-dark-src="images/Logo.png" 
-                    />
-                    <h4 class="brand-name">GrowCraft</h4>
-                    <p class="brand-description">Empowering businesses with
-                        innovative digital solutions and creative excellence.</p>
-                    <div class="quick-stats fade-in">
-                        <div class="stat-item">
-                            <span class="stat-number">500+</span>
-                            <span class="stat-label">Projects</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">150+</span>
-                            <span class="stat-label">Clients</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Years</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Services Links -->
-            <div class="col-lg-2 col-md-3 col-6 fade-in">
-                <h5 class="footer-title">Services</h5>
-                <ul class="footer-links">
-                    <li><a href="learn/webdev.html">Web Development</a></li>
-                    <li><a href="learn/graphic.html">Graphic Design</a></li>
-                    <li><a href="learn/marketing.html">Digital Marketing</a></li>
-                    <li><a href="learn/contentwriting.html">Content Writing</a></li>
-                    <li><a href="learn/socialmedia.html">Social Media</a></li>
-                    <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
-                </ul>
-            </div>
-
-            <!-- Quick Links -->
-            <div class="col-lg-2 col-md-3 col-6 fade-in">
-                <h5 class="footer-title">Quick Links</h5>
-                <ul class="footer-links">
-                    <li><a href="index.html#about">About Us</a></li>
-                    <li><a href="index.html#work">Portfolio</a></li>
-                    <li><a href="src/contact.html">Contact</a></li>
-                    <li><a href="#careers">Careers</a></li>
-                    <li><a href="blogListing.html">Blog</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact -->
-            <div class="col-lg-4 col-md-6 fade-in">
-                <h5 class="footer-title">Get In Touch</h5>
-                <div class="contact-info mb-3 fade-in">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:info@growcraft.com">info@growcraft.com</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <a href="tel:+919999999999">+91 999 999 999</a>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>ABC Street, XYZ City, India</span>
-                    </div>
-                </div>
+      <div class="row g-4 py-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <img src="images/Logo_new.png" alt="GrowCraft Logo" class="footer-logo mb-3 theme-aware-logo"
+              data-light-src="images/Logo_new.png" data-dark-src="images/Logo.png" />
+            <h4 class="brand-name">GrowCraft</h4>
+            <p class="brand-description">Empowering businesses with
+              innovative digital solutions and creative excellence.</p>
+            <div class="quick-stats">
+              <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Clients</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years</span>
+              </div>
             </div>
           </div>
         </div>
-    </div>
 
-    <!-- Footer Bottom -->
-    <div class="footer-bottom fade-in">
-        <div class="container">
-            <div class="row align-items-center py-3 fade-in">
-                <div class="col-md-6">
-                    <p class="copyright mb-0">© 2024
-                        <strong>GrowCraft</strong>. All rights reserved.</p>
-                </div>
-                <div class="col-md-6">
-                    <div class="footer-nav fade-in">
-                        <a href="#privacy">Privacy</a>
-                        <a href="#terms">Terms</a>
-                        <a href="#sitemap">Sitemap</a>
-                    </div>
-                </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="learn/webdev.html">Web Development</a></li>
+            <li><a href="learn/graphic.html">Graphic Design</a></li>
+            <li><a href="learn/marketing.html">Digital Marketing</a></li>
+            <li><a href="learn/contentwriting.html">Content Writing</a></li>
+            <li><a href="learn/socialmedia.html">Social Media</a></li>
+            <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-3 col-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="index.html#work">Portfolio</a></li>
+            <li><a href="src/contact.html">Contact</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="blogListing.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-title">Get In Touch</h5>
+          <div class="contact-info mb-3">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919999999999">+91 999 999 999</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>ABC Street, XYZ City, India</span>
             </div>
           </div>
-        </div>
-    </div>
-  </footer>
-   <!-- Chatbot button-->
-    <div class="chatbot-container">
-      <div class="chatbot-window" id="chatWindow">
-        <div class="chatbot-header">
-          <img src="images/logo-transparent-dark-mode.png" alt="GrowCraft Logo" class="chatbot-header-logo" />
-          <span>GrowCraft</span>
-          <button onclick="toggleChat()"><img src="images/icons/close_small_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Close" /></button>
-        </div>
-        <div class="chatbot-body" id="chatBody">
-          <div class="chatbot-msg bot-msg">
-            Hello! I am GrowCraft. How can I assist you today?
-          </div>
-        </div>
-        <div class="quick-questions" id="quickQuestions"></div>
-        <div class="chatbot-input-container">
-          <input id="chatInput" type="text" placeholder="Type your query..." />
-          <button onclick="sendMessage()"><img src="images/icons/send.png" alt="Send" /></button>
         </div>
       </div>
-      <button class="chatbot-toggle-btn" onclick="toggleChat()"><i class="fas fa-leaf"></i></button>
     </div>
-  <!-- Chatbot button ends here-->
+    </div>
 
-  <!-- Professional Footer ends -->
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row align-items-center py-3">
+          <div class="col-md-6">
+            <p class="copyright mb-0">© 2024
+              <strong>GrowCraft</strong>. All rights reserved.</p>
+          </div>
+          <div class="col-md-6">
+            <div class="footer-nav">
+              <a href="#privacy">Privacy</a>
+              <a href="#terms">Terms</a>
+              <a href="#sitemap">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <div class="chatbot-container">
+    <div class="chatbot-window" id="chatWindow">
+      <div class="chatbot-header">
+        <img src="images/logo-transparent-dark-mode.png" alt="GrowCraft Logo" class="chatbot-header-logo" />
+        <span>GrowCraft</span>
+        <button onclick="toggleChat()"><img src="images/icons/close_small_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+            alt="Close" /></button>
+      </div>
+      <div class="chatbot-body" id="chatBody">
+        <div class="chatbot-msg bot-msg">
+          Hello! I am GrowCraft. How can I assist you today?
+        </div>
+      </div>
+      <div class="quick-questions" id="quickQuestions"></div>
+      <div class="chatbot-input-container">
+        <input id="chatInput" type="text" placeholder="Type your query..." />
+        <button onclick="sendMessage()"><img src="images/icons/send.png" alt="Send" /></button>
+      </div>
+    </div>
+    <button class="chatbot-toggle-btn" onclick="toggleChat()"><i class="fas fa-leaf"></i></button>
+  </div>
   <script src="src/darkMode.js"></script>
-    <script src="components/chatbot.js"></script>
+  <script src="components/chatbot.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
-    // Utilities
-const qs = (s, el = document) => el.querySelector(s);
-const qsa = (s, el = document) => Array.from(el.querySelectorAll(s));
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50
+    });
 
-// Set year if element exists
-if (qs('#year')) qs('#year').textContent = new Date().getFullYear();
+    const qs = (s, el = document) => el.querySelector(s);
+    const qsa = (s, el = document) => Array.from(el.querySelectorAll(s));
 
-/* =====================
-  FILTERING + SEARCH
-===================== */
-const chips = qsa('.chip');
-const cards = qsa('.card');
-const search = qs('.search-input');
-let activeFilter = 'all';
+    if (qs('#year')) qs('#year').textContent = new Date().getFullYear();
 
-function applyFilters() {
-  const query = search?.value.trim().toLowerCase() || "";
-  cards.forEach(card => {
-    const title = card.querySelector('.card-title')?.textContent.toLowerCase() || "";
-    const desc = card.querySelector('.card-desc')?.textContent.toLowerCase() || "";
-    const category = card.dataset.category;
-    const matchesFilter = activeFilter === 'all' || category === activeFilter;
-    const matchesQuery = !query || title.includes(query) || desc.includes(query) || category.includes(query);
-    card.style.display = (matchesFilter && matchesQuery) ? '' : 'none';
-  });
-}
+    const chips = qsa('.chip');
+    const cards = qsa('.card');
+    const search = qs('.search-input');
+    let activeFilter = 'all';
 
-chips.forEach(chip => {
-  chip.addEventListener('click', () => {
-    chips.forEach(c => c.dataset.active = 'false');
-    chip.dataset.active = 'true';
-    activeFilter = chip.dataset.filter;
-    applyFilters();
-  });
-});
-
-if (search) {
-  search.addEventListener('input', applyFilters);
-}
-
-/* =====================
-  MODAL FUNCTIONALITY
-===================== */
-const modalRoot = qs('#modalRoot');
-const modalTitle = qs('#modalTitle');
-const modalKicker = qs('#modalKicker');
-const modalImage = qs('#modalImage');
-const modalProblem = qs('#modalProblem');
-const modalApproach = qs('#modalApproach');
-const modalResult = qs('#modalResult');
-const modalCloseBtns = qsa('.modal .close, .modal .btn-ghost');
-let lastFocusedElement; // Variable to store the last focused element before modal opens
-
-function openModal(card) {
-  const caseData = card.querySelector('.case-data');
-  if (!caseData) return;
-
-  // Store the element that was focused right before the modal opened
-  lastFocusedElement = document.activeElement;
-
-  modalTitle.textContent = caseData.dataset.title;
-  modalKicker.textContent = card.querySelector('.kicker').textContent;
-  modalImage.src = card.dataset.images;
-  modalProblem.textContent = caseData.dataset.problem;
-  modalApproach.textContent = caseData.dataset.approach;
-  modalResult.textContent = caseData.dataset.result;
-
-  modalRoot.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-
-  // Set focus to the modal to enable keyboard navigation inside it
-  modalRoot.focus();
-}
-
-function closeModal() {
-  modalRoot.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-
-  // Return focus to the element that opened the modal
-  if (lastFocusedElement) {
-    lastFocusedElement.focus();
-  }
-}
-
-qsa('.open-case').forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    const card = e.target.closest('.card');
-    if (card) {
-      openModal(card);
-    }
-  });
-});
-
-modalCloseBtns.forEach(btn => {
-  btn.addEventListener('click', closeModal);
-});
-
-// Close modal on background click
-modalRoot.addEventListener('click', (e) => {
-  if (e.target === modalRoot) {
-    closeModal();
-  }
-});
-
-// Close modal on Esc key press
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && modalRoot.getAttribute('aria-hidden') === 'false') {
-    closeModal();
-  }
-});
-
-// Trap focus inside the modal
-modalRoot.addEventListener('keydown', (e) => {
-  if (e.key !== 'Tab') return;
-
-  const focusableElements = qsa('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])', modalRoot);
-  const firstFocusableElement = focusableElements[0];
-  const lastFocusableElement = focusableElements[focusableElements.length - 1];
-
-  if (e.shiftKey) { // Shift + Tab
-    if (document.activeElement === firstFocusableElement) {
-      lastFocusableElement.focus();
-      e.preventDefault();
-    }
-  } else { // Tab
-    if (document.activeElement === lastFocusableElement) {
-      firstFocusableElement.focus();
-      e.preventDefault();
-    }
-  }
-});
-  </script>
-  <script>
-  
-
-  /* =====================
-     TILT EFFECT (pointer devices only)
-  ===================== */
-  if(window.matchMedia('(pointer:fine)').matches){
-    qsa('.card').forEach(card => {
-      card.addEventListener('mousemove', ev => {
-        const rect = card.getBoundingClientRect();
-        const x = (ev.clientX - rect.left) / rect.width - 0.5;
-        const y = (ev.clientY - rect.top) / rect.height - 0.5;
-        const rx = (y * 10).toFixed(2);
-        const ry = (x * -10).toFixed(2);
-        card.style.transform = 
-          `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    function applyFilters() {
+      const query = search?.value.trim().toLowerCase() || "";
+      cards.forEach(card => {
+        const title = card.querySelector('.card-title')?.textContent.toLowerCase() || "";
+        const desc = card.querySelector('.card-desc')?.textContent.toLowerCase() || "";
+        const category = card.dataset.category;
+        const matchesFilter = activeFilter === 'all' || category === activeFilter;
+        const matchesQuery = !query || title.includes(query) || desc.includes(query) || category.includes(query);
+        card.style.display = (matchesFilter && matchesQuery) ? '' : 'none';
       });
-      card.addEventListener('mouseleave', ()=>{ card.style.transform = ''; });
-    });
-  }
+    }
 
-  /* =====================
-     REVEAL ON SCROLL
-  ===================== */
-  const reveals = qsa('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) entry.target.classList.add('visible');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => c.dataset.active = 'false');
+        chip.dataset.active = 'true';
+        activeFilter = chip.dataset.filter;
+        applyFilters();
+      });
     });
-  },{threshold:0.2});
-  reveals.forEach(r => io.observe(r));
-</script>
 
+    if (search) {
+      search.addEventListener('input', applyFilters);
+    }
+
+    const modalRoot = qs('#modalRoot');
+    const modalTitle = qs('#modalTitle');
+    const modalKicker = qs('#modalKicker');
+    const modalImage = qs('#modalImage');
+    const modalProblem = qs('#modalProblem');
+    const modalApproach = qs('#modalApproach');
+    const modalResult = qs('#modalResult');
+    const modalCloseBtns = qsa('.modal .close, .modal .btn-ghost');
+    let lastFocusedElement;
+
+    function openModal(card) {
+      const caseData = card.querySelector('.case-data');
+      if (!caseData) return;
+
+      lastFocusedElement = document.activeElement;
+
+      modalTitle.textContent = caseData.dataset.title;
+      modalKicker.textContent = card.querySelector('.kicker').textContent;
+      modalImage.src = card.dataset.images;
+      modalProblem.textContent = caseData.dataset.problem;
+      modalApproach.textContent = caseData.dataset.approach;
+      modalResult.textContent = caseData.dataset.result;
+
+      modalRoot.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      modalRoot.focus();
+    }
+
+    function closeModal() {
+      modalRoot.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    qsa('.open-case').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.target.closest('.card');
+        if (card) {
+          openModal(card);
+        }
+      });
+    });
+
+    modalCloseBtns.forEach(btn => {
+      btn.addEventListener('click', closeModal);
+    });
+
+    modalRoot.addEventListener('click', (e) => {
+      if (e.target === modalRoot) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalRoot.getAttribute('aria-hidden') === 'false') {
+        closeModal();
+      }
+    });
+
+    modalRoot.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+
+      const focusableElements = qsa('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])', modalRoot);
+      const firstFocusableElement = focusableElements[0];
+      const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusableElement) {
+          lastFocusableElement.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocusableElement) {
+          firstFocusableElement.focus();
+          e.preventDefault();
+        }
+      }
+    });
+
+    if (window.matchMedia('(pointer:fine)').matches) {
+      qsa('.card').forEach(card => {
+        card.addEventListener('mousemove', ev => {
+          const rect = card.getBoundingClientRect();
+          const x = (ev.clientX - rect.left) / rect.width - 0.5;
+          const y = (ev.clientY - rect.top) / rect.height - 0.5;
+          const rx = (y * 10).toFixed(2);
+          const ry = (x * -10).toFixed(2);
+          card.style.transform =
+            `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+        });
+        card.addEventListener('mouseleave', () => { card.style.transform = ''; });
+      });
+    }
+
+  </script>
   <style>
-    @keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(18px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
   </style>
 </body>
+
 </html>
