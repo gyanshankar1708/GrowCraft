@@ -85,6 +85,21 @@
 
     /* search bar */
 
+
+    .navbar-nav .nav-link:hover,
+    .navbar-nav .nav-link.active {
+      color: #463896;
+    }
+
+    /* Dark Mode Toggle Switch Alignment */
+    .navbar .toggle-switch {
+      display: flex;
+      align-items: center;
+      padding-left: 1rem;
+    }
+
+    /* search bar */
+
     .search-container {
       display: flex;
       align-items: center;
@@ -238,6 +253,19 @@
       gap: 18px;
       align-items: center
     }
+
+    @media(min-width:920px) {
+      .hero {
+        grid-template-columns: 1fr 420px
+      }
+    }
+
+    .hero-left h2 {
+      font-size: 32px;
+      margin: 0;
+      line-height: 1.02
+    }
+
 
     @media(min-width:920px) {
       .hero {
@@ -853,7 +881,7 @@
         font-size: 0.7rem;
       }
     }
-<<<<<<< HEAD
+
   
 
 /* Card Container */
@@ -1075,25 +1103,22 @@
     }
     
 
-=======
->>>>>>> origin/master
 
   </style>
 </head>
 
-<body data-theme="light">
-<<<<<<< HEAD
+
   <nav class="navbar navbar-expand-lg">
     <div class="container-fluid d-flex justify-content-between align-items-center px-4">
       <a class="navbar-brand hover-scale" href="#">
         <img src="images/Logo.png" alt="GrowCraft" id="logo" class="smooth-transition" />
-=======
+
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
       <a class="navbar-brand" href="index.html">
         <img src="images/logo_bg_transparent.png" alt="GrowCraft" width="200" class="theme-aware-logo"
           data-light-src="images/logo_bg_transparent.png" data-dark-src="images/logo-transparent-dark-mode.png" />
->>>>>>> origin/master
+
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -1103,7 +1128,7 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-<<<<<<< HEAD
+
             <a class="nav-link active" href="#" aria-current="page">Home</a>
           </li>
           <li class="nav-item">
@@ -1123,7 +1148,6 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="src/contact.html">Contact Us</a>
-=======
             <a class="nav-link" aria-current="page" href="index.html">Home</a>
           </li>
           <li class="nav-item">
@@ -1140,7 +1164,23 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" aria-current="page" href="src/contact.html">Contact Us</a>
->>>>>>> origin/master
+
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html#services">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="blogListing.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html#about">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active visited" aria-current="page" href="#">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="src/contact.html">Contact Us</a>
           </li>
         </ul>
 
@@ -1149,8 +1189,7 @@
           <i class="fas fa-moon" id="themeIcon"></i>
         </button>
       </div>
-<<<<<<< HEAD
-=======
+
 
       <div class="search-container">
         <input type="text" placeholder="Search..." class="search-input">
@@ -1159,7 +1198,14 @@
         </button>
       </div>
 
->>>>>>> origin/master
+
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input">
+        <button class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
     </div>
   </nav>
 
@@ -1504,6 +1550,95 @@
         activeFilter = chip.dataset.filter;
         applyFilters();
       });
+    });
+
+    if (search) {
+      search.addEventListener('input', applyFilters);
+    }
+
+    const modalRoot = qs('#modalRoot');
+    const modalTitle = qs('#modalTitle');
+    const modalKicker = qs('#modalKicker');
+    const modalImage = qs('#modalImage');
+    const modalProblem = qs('#modalProblem');
+    const modalApproach = qs('#modalApproach');
+    const modalResult = qs('#modalResult');
+    const modalCloseBtns = qsa('.modal .close, .modal .btn-ghost');
+    let lastFocusedElement;
+
+    function openModal(card) {
+      const caseData = card.querySelector('.case-data');
+      if (!caseData) return;
+
+      lastFocusedElement = document.activeElement;
+
+      modalTitle.textContent = caseData.dataset.title;
+      modalKicker.textContent = card.querySelector('.kicker').textContent;
+      modalImage.src = card.dataset.images;
+      modalProblem.textContent = caseData.dataset.problem;
+      modalApproach.textContent = caseData.dataset.approach;
+      modalResult.textContent = caseData.dataset.result;
+
+      modalRoot.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+
+      modalRoot.focus();
+    }
+
+    function closeModal() {
+      modalRoot.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+
+      if (lastFocusedElement) {
+        lastFocusedElement.focus();
+      }
+    }
+
+    qsa('.open-case').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const card = e.target.closest('.card');
+        if (card) {
+          openModal(card);
+        }
+      });
+    });
+
+    modalCloseBtns.forEach(btn => {
+      btn.addEventListener('click', closeModal);
+    });
+
+    modalRoot.addEventListener('click', (e) => {
+      if (e.target === modalRoot) {
+        closeModal();
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modalRoot.getAttribute('aria-hidden') === 'false') {
+        closeModal();
+      }
+    });
+
+    modalRoot.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+
+      const focusableElements = qsa('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])', modalRoot);
+      const firstFocusableElement = focusableElements[0];
+      const lastFocusableElement = focusableElements[focusableElements.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocusableElement) {
+          lastFocusableElement.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocusableElement) {
+          firstFocusableElement.focus();
+          e.preventDefault();
+        }
+      }
+    });
+
     });
 
     if (search) {
