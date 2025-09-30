@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GrowCraft - Login</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    *{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+    body{
+      background:linear-gradient(135deg,#e6f9ec,#c8f3d6);
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      min-height:100vh;
+      animation:fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from{opacity:0; transform:translateY(20px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    .auth-container{
+      display:flex;
+      width:850px;
+      max-width:95%;
+      background:#fff;
+      border-radius:12px;
+      overflow:hidden;
+      box-shadow:0 12px 30px rgba(0,0,0,0.2);
+      align-items:center;
+      transition:all 0.4s ease;
+      animation:slideUp 1s ease forwards;
+    }
+
+    @keyframes slideUp {
+      from{opacity:0; transform:translateY(30px);}
+      to{opacity:1; transform:translateY(0);}
+    }
+
+    .auth-image{
+      flex:1;
+      background:linear-gradient(160deg,#a8e6cf,#dcedc8);
+      padding:20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:20px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .auth-image img{
+      width:140px;
+      border-radius:8px;
+      margin-bottom:10px;
+      transition:transform 0.3s ease;
+    }
+    .auth-image img:hover{
+      transform:scale(1.05);
+    }
+
+    .info-card{
+      background:white;
+      border-radius:12px;
+      padding:12px 15px;
+      width:85%;
+      display:flex;
+      align-items:center;
+      gap:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:all 0.4s ease;
+      animation:float 3s ease-in-out infinite;
+    }
+    .info-card:hover{
+      transform:translateY(-10px) scale(1.03);
+      box-shadow:0 8px 20px rgba(0,0,0,0.2);
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-6px);}
+    }
+    .info-card i{font-size:20px; color:#2e7d32; min-width:25px;}
+    .info-card span{font-size:14px; color:#2e7d32; font-weight:500;}
+
+    .auth-form{
+      flex:1;
+      padding:40px 30px;
+      background:linear-gradient(135deg,#66bb6a,#43a047);
+      color:white;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      border-radius:0 12px 12px 0;
+      transition:all 0.4s ease;
+    }
+
+    .auth-form h2{text-align:center; font-size:28px; margin-bottom:5px;}
+    .auth-form p{text-align:center; font-size:14px; margin-bottom:20px; color:#dcedc8;}
+
+    .auth-form form{display:flex; flex-direction:column; gap:14px;}
+    .auth-form input, .auth-form select{
+      padding:14px;
+      border:none;
+      border-radius:6px;
+      outline:none;
+      font-size:14px;
+      transition:all 0.3s ease;
+    }
+    .auth-form input:focus, .auth-form select:focus{
+      border:2px solid #a5d6a7;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* Password wrapper for eye icon */
+    .password-wrapper{
+      position:relative;
+      display:flex;
+      align-items:center;
+    }
+    .password-wrapper input{
+      flex:1;
+      padding-right:40px;
+    }
+    .password-wrapper i{
+      position:absolute;
+      right:12px;
+      cursor:pointer;
+      color:#1b5e20;
+    }
+
+    .auth-form button{
+      padding:14px;
+      background:#1b5e20;
+      border:none;
+      border-radius:6px;
+      color:white;
+      font-size:16px;
+      cursor:pointer;
+      margin-top:5px;
+      transition:all 0.3s ease;
+    }
+    .auth-form button:hover{
+      background:#2e7d32;
+      transform:scale(1.05);
+    }
+
+    .forgot-pass{text-align:right; font-size:13px; margin-top:-5px;}
+    .forgot-pass a{color:#dcedc8; text-decoration:none;}
+    .forgot-pass a:hover{color:#ffffff;}
+
+    .social-login{
+      display:flex;
+      justify-content:center;
+      gap:10px;
+      margin-top:12px;
+    }
+    .social-login a{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      padding:10px;
+      border-radius:6px;
+      text-decoration:none;
+      font-weight:600;
+      color:#fff;
+      border:2px solid white;
+      transition:all 0.3s ease;
+    }
+    .social-login a.google:hover{
+      background:#fff;
+      color:#db4437;
+      transform:scale(1.05);
+    }
+    .social-login a.linkedin:hover{
+      background:#fff;
+      color:#0077b5;
+      transform:scale(1.05);
+    }
+
+    .signup-link{text-align:center; margin-top:14px; font-size:13px;}
+    .signup-link a{color:#dcedc8; text-decoration:none;}
+
+    @media(max-width:1024px){
+      .auth-container{flex-direction:column;width:90%;}
+      .auth-image{flex-direction:row; flex-wrap:wrap; justify-content:center; padding:15px; border-radius:12px 12px 0 0;}
+      .info-card{width:45%; margin-bottom:10px;}
+      .auth-form{border-radius:0 0 12px 12px; padding:25px 20px;}
+    }
+    @media(max-width:600px){
+      .auth-form h2{font-size:24px;}
+      .auth-form input, .auth-form select{padding:10px; font-size:13px;}
+      .auth-form button{padding:10px; font-size:14px;}
+      .info-card i{font-size:18px;}
+      .info-card span{font-size:12px;}
+      .social-login a{font-size:12px; padding:8px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="auth-container">
+    <div class="auth-image">
+      <img src="images/Logo_new.png" alt="GrowCraft Logo">
+      <div class="info-card"><i class="fas fa-laptop-code"></i><span>Website Development</span></div>
+      <div class="info-card"><i class="fas fa-bullhorn"></i><span>Digital Marketing</span></div>
+      <div class="info-card"><i class="fas fa-share-alt"></i><span>Social Media Management</span></div>
+    </div>
+
+    <div class="auth-form">
+      <h2>Login</h2>
+      <p>Welcome back! Login to your account.</p>
+      <form id="loginForm">
+        <input type="email" id="email" placeholder="Enter your email" required>
+        <div class="password-wrapper">
+          <input type="password" id="password" placeholder="Password" required>
+          <i class="fas fa-eye" onclick="togglePassword('password', this)"></i>
+        </div>
+
+        <div class="forgot-pass">
+          <a href="forgot_password.html">Forgot Password?</a>
+        </div>
+
+        <button type="submit">Login</button>
+
+        <p style="text-align:center;margin-top:10px;">or continue with</p>
+        <div class="social-login">
+          <a class="google" href="https://accounts.google.com" target="_blank"><i class="fab fa-google"></i> Google</a>
+          <a class="linkedin" href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        </div>
+
+        <div class="signup-link">
+          <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function togglePassword(id, icon){
+      const input = document.getElementById(id);
+      if(input.type === "password"){
+        input.type = "text";
+        icon.classList.replace('fa-eye','fa-eye-slash');
+      } else {
+        input.type = "password";
+        icon.classList.replace('fa-eye-slash','fa-eye');
+      }
+    }
+
+    document.getElementById("loginForm").addEventListener("submit", function(e){
+      e.preventDefault();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value;
+
+      if(!email){alert("Please enter your email."); return;}
+      if(!password){alert("Please enter your password."); return;}
+
+      alert("Login successful!\nEmail: "+email);
+    });
+  </script>
+</body>
+</html>
