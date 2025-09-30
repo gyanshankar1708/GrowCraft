@@ -11,7 +11,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Lora", serif;
+  font-family: "Poppins", serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -1442,14 +1442,14 @@ body.dark .mb-4:hover {
 }
 
 /* Dark Mode Toggle Switch Alignment */
-.navbar .toggle-switch {
+/* .navbar .toggle-switch {
   display: flex;
   align-items: center;
   padding-left: 1rem;
-}
+} */
 
 /* Responsive logo alignment fix */
-@media (max-width: 991.98px) {
+/* @media (max-width: 991.98px) {
   .navbar .navbar-brand {
     margin-right: auto;
   }
@@ -1466,7 +1466,7 @@ body.dark .mb-4:hover {
     margin-top: 1rem;
     padding-left: 0.5rem;
   }
-}
+} */
 
 /* Authentication Navbar Styles */
 #profile-section {

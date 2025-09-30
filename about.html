@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,21 +21,12 @@
       --bg-soft: #101720;         /* dark elevated */
       --card: rgba(255,255,255,0.06);
       --border: rgba(255,255,255,0.12);
-      --text: #e5e7eb;            /* light text */
+      --text: #9a9da2;            /* light text */
       --muted: #9ca3af;           /* muted text */
       --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
 
-    /* Light theme override */
-    .theme-light {
-      --bg: #f8fafc;
-      --bg-soft: #ffffff;
-      --card: rgba(0,0,0,0.04);
-      --border: rgba(0,0,0,0.08);
-      --text: #0b0f14;
-      --muted: #475569;
-      --shadow: 0 10px 24px rgba(2,6,23,0.08);
-    }
+    
 
     /* Global Resets */
     *,*::before,*::after { box-sizing: border-box; }
@@ -50,59 +41,7 @@
     button { font: inherit; }
 
     /* Navbar Custom Styling */
-    .navbar {
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
-      background-color: #ffffff !important;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .navbar-brand img {
-      max-height: 60px;
-      object-fit: contain;
-      vertical-align: middle;
-      transition: all 0.3s ease;
-    }
-
-    .navbar-nav .nav-link {
-      font-weight: 500;
-      padding: 0.75rem 1rem;
-      color: #333;
-      display: flex;
-      align-items: center;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: #463896;
-    }
-
-    .navbar-nav .nav-link {
-      position: relative;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #007bff;
-    }
-
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0%;
-      height: 2px;
-      background-color: #007bff;
-      transition: width 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover::after {
-      width: 100%;
-    }
+   
 
 
     .professional-footer .row {
@@ -297,6 +236,13 @@
   .footer-nav a:hover {
     color: #ffffff;
   }
+
+    /* Footer Dark Mode Styles */
+    [data-bs-theme="dark"] .professional-footer {
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-soft) 100%) !important;
+      color: #ffffff !important;
+    }
+    
 
   /* =====================
    FOOTER RESPONSIVE FIX
@@ -655,40 +601,10 @@
   </style>
 </head>
 
-<body class="theme-light">
+<body>
   <!-- Navbar starts here -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-      <a class="navbar-brand" href="index.html"><img src="images/Logo_new.png" alt="GrowCraft" width="200" id="logo"></a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a aria-current="page" class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a aria-current="page" class="nav-link" href="blogListing.html">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a aria-current="page" class="nav-link active visited" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html#work">Our Work</a>
-          </li>
-          <li class="nav-item">
-            <a aria-current="page" class="nav-link" href="src/contact.html">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+ 
+ <div id="navbar"></div>
   <!-- Navbar ends here -->
 
   <section class="hero" id="about-hero" aria-labelledby="about-hero-title">
@@ -878,6 +794,17 @@
 
   <div id="footer-placeholder"></div>
   <script>
+
+        
+      /* Load Footer */
+
+
+        fetch('src/components/navbar.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('navbar').innerHTML = data;
+    });
+
     fetch('src/components/footer.html')
     .then(response => response.text())
     .then(data => {
@@ -885,33 +812,16 @@
     });
   </script>
 
+<script src="src/components/navbar.js"></script>
   <script src="src/script.js"></script>
   <script src="src/utils.js"></script>
   <script src="components/chatbot.js"></script>
-  <script src="src/darkMode.js"></script>
+  <!-- <script src="src/darkMode.js"></script> -->
+
  
 
   <script>
     // Theme handling
-    (function() {
-      const stored = localStorage.getItem('gc-theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const mode = stored || (prefersDark ? 'dark' : 'light');
-      document.body.classList.toggle('theme-light', mode === 'light');
-      const btn = document.getElementById('themeToggle');
-      if (btn) {
-        const setLabel = (isDark)=>{
-          btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-          btn.textContent = isDark ? '🌙' : '☀️';
-        };
-        setLabel(mode !== 'light');
-        btn.addEventListener('click', () => {
-          const isLight = document.body.classList.toggle('theme-light');
-          localStorage.setItem('gc-theme', isLight ? 'light' : 'dark');
-          setLabel(!isLight);
-        });
-      }
-    })();
 
     // Parallax for decorative elements
     (function() {
