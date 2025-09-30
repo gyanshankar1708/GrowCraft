@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup | GrowCraft</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="auth-container">
+    <!-- Left Side Image -->
+    <div class="auth-image">
+      <img src="images/auth-bg.png" alt="Signup Illustration">
+    </div>
+
+    <!-- Right Side Form -->
+    <div class="auth-form">
+      <h2>Create Account</h2>
+      <form id="signupForm">
+        
+        <!-- User Type -->
+        <label>User Type</label>
+        <div class="radio-group">
+          <label><input type="radio" name="usertype" value="student" required> Student</label>
+          <label><input type="radio" name="usertype" value="client"> Client</label>
+        </div>
+
+        <!-- Username -->
+        <input type="text" id="name" placeholder="Full Name" required>
+
+        <!-- Email -->
+        <input type="email" id="email" placeholder="Email" required>
+
+        <!-- Phone -->
+        <input type="tel" id="phone" placeholder="Phone Number" maxlength="10" required>
+
+        <!-- Password -->
+        <input type="password" id="password" placeholder="Password (min 6 chars)" required>
+
+        <!-- Confirm Password -->
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+
+        <!-- Terms -->
+        <label class="terms">
+          <input type="checkbox" id="terms" required> I agree to the 
+          <a href="#">Terms & Conditions</a>
+        </label>
+
+        <!-- Submit -->
+        <button type="submit">Sign Up</button>
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
