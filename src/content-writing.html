@@ -30,6 +30,26 @@
             --animation-speed: 0.3s;
         }
 
+        /* ===== DARK MODE THEME VARIABLES ===== */
+        .dark-mode {
+            --bg-color: #0f0f1a;
+            --text-color: #f2f2f7;
+            --text-secondary: #aaa;
+            --card-bg: rgba(20, 20, 40, 0.8);
+            --primary-gradient: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            --text-primary: #f2f2f7;
+            --surface: #1a1a2e;
+            --surface-elevated: #2d3748;
+        }
+
+        /* Light mode defaults */
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #222;
+            --text-secondary: #555;
+            --card-bg: rgba(255, 255, 255, 0.9);
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -38,15 +58,15 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            color: var(--text-primary);
+            background: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.7;
             overflow-x: hidden;
+            transition: all 0.4s ease;
         }
 
-        /* Improve text contrast and visibility */
         h1, h2, h3, h4, h5, h6 {
-            color: var(--text-primary);
+            color: var(--text-color);
             font-weight: 600;
         }
 
@@ -54,9 +74,22 @@
             color: var(--text-secondary);
         }
 
+        /* Dark mode specific overrides */
+        .dark-mode body {
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+        }
+
+        .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
+            color: var(--text-color) !important;
+        }
+
+        .dark-mode p {
+            color: var(--text-secondary) !important;
+        }
+
         /* Modern Navbar */
         .navbar {
-            background: rgba(255, 255, 255, 0.98);
+            background: var(--bg-color);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             position: sticky;
@@ -64,6 +97,12 @@
             z-index: 1000;
             transition: all var(--animation-speed) ease;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .dark-mode .navbar {
+            background: var(--surface);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
 
         .navbar-brand img {
@@ -75,7 +114,7 @@
         }
 
         .nav-link {
-            color: var(--text-primary) !important;
+            color: var(--text-color) !important;
             font-weight: 500;
             position: relative;
             transition: all var(--animation-speed) ease;
@@ -104,7 +143,7 @@
             display: flex;
             align-items: center;
             padding: 80px 10%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            background: var(--bg-color);
             position: relative;
             overflow: hidden;
         }
@@ -151,7 +190,7 @@
 
         .hero-cta {
             background: var(--primary-gradient);
-            color: white;
+            color: white !important;
             padding: 16px 32px;
             border: none;
             border-radius: 50px;
@@ -166,6 +205,7 @@
         .hero-cta:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
+            opacity: 0.9;
         }
 
         .hero-image {
@@ -197,27 +237,14 @@
             }
         }
 
-        /* Glass Card Design */
-        .glass-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            border-radius: var(--border-radius);
-            padding: 32px;
-            transition: all var(--animation-speed) ease;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            background: rgba(255, 255, 255, 0.95);
-        }
-
         /* Services Section */
         .services-section {
             padding: 100px 10%;
-            background: linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(79, 172, 254, 0.1) 100%);
+            background: var(--bg-color);
+        }
+
+        .dark-mode .services-section {
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.3) 0%, rgba(30, 30, 60, 0.3) 100%);
         }
 
         .section-title {
@@ -245,10 +272,11 @@
             gap: 30px;
         }
 
-        .service-card {
-            background: rgba(255, 255, 255, 0.9);
+        /* Glass Card Design */
+        .service-card, .glass-card {
+            background: var(--card-bg);
             backdrop-filter: blur(20px);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: var(--border-radius);
             padding: 32px;
             text-align: center;
@@ -256,6 +284,13 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .dark-mode .service-card, .dark-mode .glass-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .service-card::before {
@@ -275,7 +310,7 @@
             opacity: 0.1;
         }
 
-        .service-card:hover {
+        .service-card:hover, .glass-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
         }
@@ -293,7 +328,11 @@
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 16px;
-            color: var(--text-primary);
+            color: var(--text-color);
+        }
+
+        .dark-mode .service-title {
+            color: var(--text-color) !important;
         }
 
         .service-card p {
@@ -302,61 +341,18 @@
             line-height: 1.6;
         }
 
-        /* Benefits Section */
-        .benefits-section {
-            padding: 100px 10%;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(20px);
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            padding: 32px;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 0, 0, 0.08);
-            border-radius: var(--border-radius);
-            margin-bottom: 24px;
-            transition: all var(--animation-speed) ease;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        }
-
-        .benefit-item:hover {
-            transform: translateX(10px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-        }
-
-        .benefit-item h3 {
-            color: var(--text-primary);
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .benefit-item p {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        .benefit-icon {
-            font-size: 2.5rem;
-            min-width: 60px;
-            text-align: center;
-            transition: transform var(--animation-speed) ease;
-        }
-
-        .benefit-item:hover .benefit-icon {
-            transform: rotate(5deg) scale(1.1);
+        .dark-mode .service-card p {
+            color: var(--text-secondary) !important;
         }
 
         /* Process Section */
         .process-section {
             padding: 100px 10%;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            background: var(--bg-color);
+        }
+
+        .dark-mode .process-section {
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.3) 0%, rgba(30, 30, 60, 0.3) 100%);
         }
 
         .process-timeline {
@@ -369,7 +365,7 @@
 
         .process-step {
             min-width: 320px;
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--card-bg);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: var(--border-radius);
@@ -379,11 +375,21 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
+        .dark-mode .process-step {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
         .process-step h3 {
-            color: var(--text-primary);
+            color: var(--text-color);
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 12px;
+        }
+
+        .dark-mode .process-step h3 {
+            color: var(--text-color) !important;
         }
 
         .process-step p {
@@ -391,6 +397,10 @@
             font-size: 1rem;
             line-height: 1.6;
             margin: 0;
+        }
+
+        .dark-mode .process-step p {
+            color: var(--text-secondary) !important;
         }
 
         .process-step::before {
@@ -418,11 +428,15 @@
         /* Case Studies */
         .case-studies-section {
             padding: 100px 10%;
-            background: rgba(240, 147, 251, 0.1);
+            background: var(--bg-color);
+        }
+
+        .dark-mode .case-studies-section {
+            background: linear-gradient(135deg, rgba(20, 20, 40, 0.3) 0%, rgba(30, 30, 60, 0.3) 100%);
         }
 
         .case-card {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--card-bg);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: var(--border-radius);
@@ -433,16 +447,26 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
+        .dark-mode .case-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
         .case-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .case-card h3 {
-            color: var(--text-primary);
+            color: var(--text-color);
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 16px;
+        }
+
+        .dark-mode .case-card h3 {
+            color: var(--text-color) !important;
         }
 
         .case-card p {
@@ -451,10 +475,18 @@
             line-height: 1.6;
         }
 
+        .dark-mode .case-card p {
+            color: var(--text-secondary) !important;
+        }
+
         .result-text {
-            color: var(--text-primary);
+            color: var(--text-color);
             font-weight: 600;
             font-size: 1rem;
+        }
+
+        .dark-mode .result-text {
+            color: var(--text-color) !important;
         }
 
         .progress-bar {
@@ -463,6 +495,10 @@
             border-radius: 6px;
             overflow: hidden;
             margin: 20px 0;
+        }
+
+        .dark-mode .progress-bar {
+            background: rgba(0, 0, 0, 0.3);
         }
 
         .progress-fill {
@@ -504,7 +540,7 @@
         .btn-primary-cta {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            color: white;
+            color: white !important;
             padding: 16px 32px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50px;
@@ -516,7 +552,7 @@
         .btn-primary-cta:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
-            color: white;
+            color: white !important;
         }
 
         /* Modal Enhancement */
@@ -535,15 +571,20 @@
         }
 
         .modal-content {
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--card-bg);
             backdrop-filter: blur(20px);
-            border: 1px solid var(--border-light);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: var(--border-radius);
             padding: 40px;
             max-width: 500px;
             width: 90%;
             position: relative;
             animation: modalAppear 0.3s ease-out;
+        }
+
+        .dark-mode .modal-content {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         @keyframes modalAppear {
@@ -565,7 +606,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
-            color: var(--text-primary);
+            color: var(--text-color);
         }
 
         .form-control {
@@ -574,13 +615,34 @@
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.8);
+            color: var(--text-color);
             transition: all var(--animation-speed) ease;
+        }
+
+        .dark-mode .form-control {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--text-color);
+        }
+
+        .dark-mode .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.5);
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--accent-color);
             box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
+        }
+
+        /* Dark Mode Toggle */
+        #darkModeToggle {
+            background: none;
+            border: none;
+            font-weight: 600;
+            color: var(--text-color);
+            cursor: pointer;
+            transition: color 0.3s ease;
         }
 
         /* Scroll to Top */
@@ -614,111 +676,196 @@
             box-shadow: var(--shadow-hover);
         }
 
-        /* ===== THEME VARIABLES ===== */
-:root {
-  --bg-color: #ffffff;
-  --text-color: #222;
-  --text-secondary: #555;
-  --card-bg: rgba(255, 255, 255, 0.7);
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
+        /* Professional Footer */
+        .professional-footer {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+            color: #e2e8f0;
+            padding: 4rem 0 0;
+            margin-top: 50px;
+            position: relative;
+            overflow: hidden;
+        }
 
-.dark-mode {
-  --bg-color: #0f0f1a;
-  --text-color: #f2f2f7;
-  --text-secondary: #aaa;
-  --card-bg: rgba(20, 20, 40, 0.6);
-  --primary-gradient: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-}
+        .professional-footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.02"><circle cx="30" cy="30" r="1"/></g></svg>') repeat;
+        }
 
-/* ===== BASE ===== */
-body {
-  background: var(--bg-color);
-  color: var(--text-color);
-  transition: all 0.4s ease;
-}
+        .footer-brand {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
 
-h1, h2, h3, h4, h5, h6 {
-  color: var(--text-color);
-}
+        .footer-logo {
+            height: 60px;
+            margin-bottom: 1rem;
+        }
 
-p {
-  color: var(--text-secondary);
-}
+        .brand-name {
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
 
-/* ===== NAVBAR ===== */
-.navbar {
-  background: var(--bg-color);
-  transition: all 0.4s ease;
-}
-.nav-link {
-  color: var(--text-color) !important;
-}
-.dark-mode .navbar {
-  background: #1a1a2e;
-}
-.dark-mode .nav-link {
-  color: var(--text-color) !important;
-}
+        .brand-description {
+            color: #a0aec0;
+            margin-bottom: 2rem;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-/* ===== HERO ===== */
-.hero {
-  background: var(--bg-color);
-  color: var(--text-color);
-}
-.hero-title {
-  background: var(--primary-gradient);      /* apply gradient */
-  -webkit-background-clip: text;           /* clip background to text */
-  -webkit-text-fill-color: transparent;    /* make text itself transparent */
-  background-clip: text;                   /* for non-webkit browsers */
-  color: transparent;                      /* fallback */
-}
+        .quick-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
 
-/* ===== CARDS ===== */
-.glass-card {
-  background: var(--card-bg);
-  backdrop-filter: blur(12px);
-  border-radius: 15px;
-  padding: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-  transition: all 0.3s ease;
-}
-.glass-card:hover {
-  transform: translateY(-5px);
-}
+        .stat-item {
+            text-align: center;
+        }
 
+        .stat-number {
+            display: block;
+            font-size: 2rem;
+            font-weight: 800;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
 
+        .stat-label {
+            color: #a0aec0;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-/* ===== CTA BUTTON ===== */
-.btn-primary-cta, 
-.hero-cta {
-  background: var(--primary-gradient);
-  color: #fff !important;
-  border: none;
-  border-radius: 8px;
-  padding: 12px 24px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-.btn-primary-cta:hover,
-.hero-cta:hover {
-  opacity: 0.85;
-}
+        .footer-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            position: relative;
+            color: white;
+        }
 
-#darkModeToggle {
-  background: none;
-  border: none;
-  font-weight: 600;
-  color: #000;   /* visible in light mode */
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--primary-gradient);
+            border-radius: 2px;
+        }
 
-.dark-mode #darkModeToggle {
-  color: #fff;   /* visible in dark mode */
-}
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            position: relative;
+            z-index: 2;
+        }
 
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
 
+        .footer-links a {
+            color: #a0aec0 !important;
+            text-decoration: none;
+            transition: var(--animation-speed);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .footer-links a::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            opacity: 0;
+            transition: var(--animation-speed);
+            color: #667eea;
+        }
+
+        .footer-links a:hover {
+            color: white !important;
+            transform: translateX(10px);
+        }
+
+        .footer-links a:hover::before {
+            opacity: 1;
+        }
+
+        .contact-info {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            gap: 1rem;
+        }
+
+        .contact-item i {
+            width: 20px;
+            color: #667eea;
+            font-size: 1rem;
+        }
+
+        .contact-item a,
+        .contact-item span {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: var(--animation-speed);
+        }
+
+        .contact-item a:hover {
+            color: white;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            margin-top: 0;
+            padding-top: 12px;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            margin-right: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-bottom a:last-child {
+            margin-right: 0;
+        }
+
+        .footer-bottom a:hover {
+            color: #ffffff;
+        }
 
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -730,11 +877,6 @@ p {
             
             .services-grid {
                 grid-template-columns: 1fr;
-            }
-            
-            .benefit-item {
-                flex-direction: column;
-                text-align: center;
             }
             
             .process-timeline {
@@ -763,212 +905,6 @@ p {
         .stagger-2 { animation-delay: 0.2s; animation-fill-mode: both; }
         .stagger-3 { animation-delay: 0.3s; animation-fill-mode: both; }
         .stagger-4 { animation-delay: 0.4s; animation-fill-mode: both; }
-
-        /* Loading States */
-        .skeleton {
-            background: linear-gradient(90deg, rgba(255,255,255,0.2) 25%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 75%);
-            background-size: 200% 100%;
-            animation: skeleton-loading 2s infinite;
-        }
-
-        @keyframes skeleton-loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
-
-        }
-
-        /* Professional Footer */
-    .professional-footer {
-      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-      color: #e2e8f0;
-      padding: 4rem 0 0;
-      margin-top: 50px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .professional-footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.02"><circle cx="30" cy="30" r="1"/></g></svg>') repeat;
-    }
-
-    .footer-brand {
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer-logo {
-      height: 60px;
-      margin-bottom: 1rem;
-    }
-
-    .brand-name {
-      font-size: 2rem;
-      font-weight: 800;
-      background: var(--primary-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 1rem;
-    }
-
-    .brand-description {
-      color: #a0aec0;
-      margin-bottom: 2rem;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .quick-stats {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-number {
-      display: block;
-      font-size: 2rem;
-      font-weight: 800;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      color: #a0aec0;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .footer-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      position: relative;
-      color: white;
-    }
-
-    .footer-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: var(--primary-gradient);
-      border-radius: 2px;
-    }
-
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer-links li {
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-links a {
-      color: #a0aec0 !important;
-      text-decoration: none;
-      transition: var(--transition);
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .footer-links a::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      opacity: 0;
-      transition: var(--transition);
-      color: #667eea;
-    }
-
-    .footer-links a:hover {
-      color: white !important;
-      transform: translateX(10px);
-    }
-
-    .footer-links a:hover::before {
-      opacity: 1;
-    }
-
-    .contact-info {
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      gap: 1rem;
-    }
-
-    .contact-item i {
-      width: 20px;
-      color: #667eea;
-      font-size: 1rem;
-    }
-
-    .contact-item a,
-    .contact-item span {
-      color: #a0aec0;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .contact-item a:hover {
-      color: white;
-    }
-   .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 0;
-  padding-top: 12px;
-  margin-bottom: 10px;
-}
-
-
-.footer-bottom p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.footer-bottom a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  margin-right: 20px;
-  transition: color 0.3s ease;
-}
-
-.footer-bottom a:last-child {
-  margin-right: 0; /* remove extra spacing on last link */
-}
-
-.footer-bottom a:hover {
-  color: #ffffff; /* highlight on hover */
-}
-
-
     </style>
 </head>
 
@@ -993,11 +929,10 @@ p {
                     <li class="nav-item"><a class="nav-link" href="../work.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item">
-  <button id="darkModeToggle" class="btn btn-sm ms-3" style="background:none; border:none; font-weight:600;">
-    🌙 Dark Mode
-  </button>
-</li>
-
+                        <button id="darkModeToggle" class="btn btn-sm ms-3" style="background:none; border:none; font-weight:600;">
+                            🌙 Dark Mode
+                        </button>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -1084,7 +1019,7 @@ p {
                 <div class="service-card glass-card fade-in-up stagger-3">
                     <div class="service-icon">✨</div>
                     <h3 class="service-title">Original & Unique</h3>
-                    <p></p>100% original content that stands out from the competition and builds brand authority.</p>
+                    <p>100% original content that stands out from the competition and builds brand authority.</p>
                 </div>
                 
                 <div class="service-card glass-card fade-in-up stagger-4">
@@ -1256,94 +1191,94 @@ p {
             </form>
         </div>
     </div>
+
     <!-- Professional Footer -->
-  <footer class="professional-footer">
-    <div class="container">
-      <div class="row g-4 py-4">
-        <!-- Footer Brand -->
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-brand">
-            <img src="../images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
-            <h4 class="brand-name">GrowCraft</h4>
-            <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence.</p>
-            <div class="quick-stats">
-              <div class="stat-item">
-                <span class="stat-number">500+</span>
-                <span class="stat-label">Projects</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Clients</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Years</span>
-              </div>
-            </div>
-          </div>
-        </div>
+    <footer class="professional-footer">
+        <div class="container">
+            <div class="row g-4 py-4">
+                <!-- Footer Brand -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">
+                        <img src="../images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
+                        <h4 class="brand-name">GrowCraft</h4>
+                        <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence.</p>
+                        <div class="quick-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">150+</span>
+                                <span class="stat-label">Clients</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">5+</span>
+                                <span class="stat-label">Years</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <!-- Services Links -->
-        <div class="col-lg-2 col-md-3 col-6">
-          <h5 class="footer-title">Services</h5>
-          <ul class="footer-links">
-            <li><a href="../learn/webdev.html">Web Development</a></li>
-            <li><a href="../learn/graphic.html">Graphic Design</a></li>
-            <li><a href="../learn/marketing.html">Digital Marketing</a></li>
-            <li><a href="../learn/contentwriting.html">Content Writing</a></li>
-            <li><a href="../learn/socialmedia.html">Social Media</a></li>
-            <li><a href="../learn/cyberanalyst.html">Cyber Analyst</a></li>
-          </ul>
-        </div>
+                <!-- Services Links -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="footer-title">Services</h5>
+                    <ul class="footer-links">
+                        <li><a href="../learn/webdev.html">Web Development</a></li>
+                        <li><a href="../learn/graphic.html">Graphic Design</a></li>
+                        <li><a href="../learn/marketing.html">Digital Marketing</a></li>
+                        <li><a href="../learn/contentwriting.html">Content Writing</a></li>
+                        <li><a href="../learn/socialmedia.html">Social Media</a></li>
+                        <li><a href="../learn/cyberanalyst.html">Cyber Analyst</a></li>
+                    </ul>
+                </div>
 
-        <!-- Quick Links -->
-        <div class="col-lg-2 col-md-3 col-6">
-          <h5 class="footer-title">Quick Links</h5>
-          <ul class="footer-links">
-            <li><a href="../index.html#about">About Us</a></li>
-            <li><a href="../index.html#work">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="../blogListing.html">Blog</a></li>
-          </ul>
-        </div>
+                <!-- Quick Links -->
+                <div class="col-lg-2 col-md-3 col-6">
+                    <h5 class="footer-title">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="../index.html#about">About Us</a></li>
+                        <li><a href="../index.html#work">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#careers">Careers</a></li>
+                        <li><a href="../blogListing.html">Blog</a></li>
+                    </ul>
+                </div>
 
-        <!-- Contact -->
-        <div class="col-lg-4 col-md-6">
-          <h5 class="footer-title">Get In Touch</h5>
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+                <!-- Contact -->
+                <div class="col-lg-4 col-md-6">
+                    <h5 class="footer-title">Get In Touch</h5>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <a href="tel:+919999999999">+91 999 999 999</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>ABC Street, XYZ City, India</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+919999999999">+91 999 999 999</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>ABC Street, XYZ City, India</span>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <p>© 2024 <strong>GrowCraft</strong>. All rights reserved.</p>
-    </div>
-    <div class="col-md-6 text-md-end">
-      <a href="#privacy">Privacy</a>
-      <a href="#terms">Terms</a>
-      <a href="#sitemap">Sitemap</a>
-    </div>
-  </div>
-</div>
-
-  </footer>
-    
+        
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p>© 2024 <strong>GrowCraft</strong>. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a href="#privacy">Privacy</a>
+                    <a href="#terms">Terms</a>
+                    <a href="#sitemap">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTopBtn">
@@ -1483,10 +1418,8 @@ p {
             const currentScroll = window.pageYOffset;
             
             if (currentScroll > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
                 navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             } else {
-                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
                 navbar.style.boxShadow = 'none';
             }
             
@@ -1506,32 +1439,30 @@ p {
         window.addEventListener('load', () => {
             document.body.classList.add('loaded');
         });
+
+        // Dark Mode Toggle
+        const toggleBtn = document.getElementById("darkModeToggle");
+        const body = document.body;
+
+        function setDarkMode(enabled) {
+            if (enabled) {
+                body.classList.add("dark-mode");
+                toggleBtn.textContent = "☀️ Light Mode";
+                localStorage.setItem("dark-mode", "enabled");
+            } else {
+                body.classList.remove("dark-mode");
+                toggleBtn.textContent = "🌙 Dark Mode";
+                localStorage.setItem("dark-mode", "disabled");
+            }
+        }
+
+        // Load preference
+        setDarkMode(localStorage.getItem("dark-mode") === "enabled");
+
+        // Toggle
+        toggleBtn.addEventListener("click", () => {
+            setDarkMode(!body.classList.contains("dark-mode"));
+        });
     </script>
-    <script>
-  const toggleBtn = document.getElementById("darkModeToggle");
-  const body = document.body;
-
-  function setDarkMode(enabled) {
-    if (enabled) {
-      body.classList.add("dark-mode");
-      toggleBtn.textContent = "☀️ Light Mode";
-      localStorage.setItem("dark-mode", "enabled");
-    } else {
-      body.classList.remove("dark-mode");
-      toggleBtn.textContent = "🌙 Dark Mode";
-      localStorage.setItem("dark-mode", "disabled");
-    }
-  }
-
-  // Load preference
-  setDarkMode(localStorage.getItem("dark-mode") === "enabled");
-
-  // Toggle
-  toggleBtn.addEventListener("click", () => {
-    setDarkMode(!body.classList.contains("dark-mode"));
-  });
-</script>
-
-
 </body>
 </html>

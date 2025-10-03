@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  data-bs-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,34 +9,27 @@
   <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="components/chatbot.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
     /* Brand Tokens */
     :root {
-      --brand: #16a34a;           /* Grow green */
-      --brand-2: #22c55e;         /* lighter green */
-      --accent: #60a5fa;          /* blue accent */
-      --bg: #0b0f14;              /* dark base */
-      --bg-soft: #101720;         /* dark elevated */
+      --brand: #16a34a;          /* Grow green */
+      --brand-2: #22c55e;        /* lighter green */
+      --accent: #60a5fa;         /* blue accent */
+      --bg: #0b0f14;             /* dark base */
+      --bg-soft: #101720;        /* dark elevated */
       --card: rgba(255,255,255,0.06);
       --border: rgba(255,255,255,0.12);
-      --text: #e5e7eb;            /* light text */
-      --muted: #9ca3af;           /* muted text */
+      --text: #e5e7eb;           /* light text */
+      --muted: #9ca3af;          /* muted text */
       --shadow: 0 10px 30px rgba(0,0,0,.35);
     }
 
-    /* Light theme override */
-    .theme-light {
-      --bg: #f8fafc;
-      --bg-soft: #ffffff;
-      --card: rgba(0,0,0,0.04);
-      --border: rgba(0,0,0,0.08);
-      --text: #0b0f14;
-      --muted: #475569;
-      --shadow: 0 10px 24px rgba(2,6,23,0.08);
-    }
-
+    
     /* Global Resets */
     *,*::before,*::after { box-sizing: border-box; }
     html,body { height: 100%; }
@@ -50,61 +43,7 @@
     button { font: inherit; }
 
     /* Navbar Custom Styling */
-    .navbar {
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
-      background-color: #ffffff !important;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .navbar-brand img {
-      max-height: 60px;
-      object-fit: contain;
-      vertical-align: middle;
-      transition: all 0.3s ease;
-    }
-
-    .navbar-nav .nav-link {
-      font-weight: 500;
-      padding: 0.75rem 1rem;
-      color: #333;
-      display: flex;
-      align-items: center;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: #463896;
-    }
-
-    .navbar-nav .nav-link {
-      position: relative;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #007bff;
-    }
-
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0%;
-      height: 2px;
-      background-color: #007bff;
-      transition: width 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover::after {
-      width: 100%;
-    }
-
-
+   
     .professional-footer .row {
     display: flex !important;
     flex-wrap: wrap !important;
@@ -112,7 +51,7 @@
     align-items: stretch !important;
 }
 
-     /* Professional Footer */
+      /* Professional Footer */
   .professional-footer {
     background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
     color: #ffffff;
@@ -299,8 +238,8 @@
   }
 
   /* =====================
-   FOOTER RESPONSIVE FIX
-   ===================== */
+    FOOTER RESPONSIVE FIX
+    ===================== */
 
 /* Tablet (max 992px) */
 @media (max-width: 992px) {
@@ -325,8 +264,15 @@
     justify-content: center;
   }
 }
+
+   /* Footer Dark Mode Styles */
+    [data-bs-theme="dark"] .professional-footer {
+      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-soft) 100%) !important;
+      color: #ffffff !important;
+    }
+
 /* ================================
-   Responsive Footer Fixes
+    Responsive Footer Fixes
 ================================ */
 
 /* Tablet and below */
@@ -542,10 +488,8 @@
     .scroll-cue { margin-top: clamp(22px, 4vw, 34px); color: var(--muted); display: inline-flex; align-items: center; gap: 10px; font-size: 14px; }
     .scroll-cue svg { width: 18px; height: 18px; animation: bounce 1.4s ease-in-out infinite; }
     @keyframes bounce { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(4px);} }
-
-    /* Reveal animations */
-    .reveal { opacity: 0; transform: translateY(10px); transition: opacity .5s ease, transform .5s ease; }
-    .reveal.in { opacity: 1; transform: none; }
+    
+    /* ❌ 3. REMOVED OLD REVEAL ANIMATION CSS */
 
     /* Accessibility improvements */
     .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
@@ -652,58 +596,220 @@
       }
 
     }
+
+     /* ===== FOOTER STYLES ===== */
+    footer {
+      background: #111827;
+      color: #fff;
+      padding: 3rem 2rem 2rem 2rem;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+
+    .footer-col h3 {
+      margin-bottom: 1rem;
+      color: #28a745;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      justify-content: flex-start;
+    }
+
+    .footer-col a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #d1d5db;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: #28a745;
+      transform: translateX(5px);
+    }
+
+    .footer-col p {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      justify-content: flex-start;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: #28a745;
+      transform: scale(1.05);
+    }
+
+    /* ===== FOOTER BOTTOM ROW ===== */
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-top: 1px solid #374151;
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+
+    .footer-left {
+      color: #9ca3af;
+      font-size: 0.9rem;
+    }
+
+    .footer-right a {
+      color: #9ca3af;
+      margin-left: 1rem;
+      text-decoration: none;
+      font-size: 0.9rem;
+      position: relative;
+      padding-bottom: 2px;
+      transition: all 0.3s ease;
+    }
+
+    .footer-right a:hover {
+      color: #28a745;
+    }
+
+    .footer-right a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      left: 0;
+      bottom: 0;
+      background-color: #28a745;
+      transition: width 0.3s ease;
+    }
+
+    .footer-right a:hover::after {
+      width: 100%;
+    }
+
+    /* ===== MEDIA QUERIES ===== */
+    /* Tablets */
+    @media (max-width: 1024px) {
+      .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+        gap: 1.5rem;
+      }
+      .footer-col h3 {
+        justify-content: center;
+      }
+      .footer-col p,
+      .footer-col a {
+        justify-content: center;
+      }
+      .social-icons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-col {
+        align-items: center;
+        margin-bottom: 1.5rem;
+      }
+      .footer-col h3 {
+        justify-content: center;
+      }
+      .footer-col p,
+      .footer-col a {
+        justify-content: center;
+      }
+      .social-icons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .footer-right a {
+        margin: 0.3rem 0.5rem;
+      }
+    }
+
+    /* Very small screens */
+    @media (max-width: 480px) {
+      .footer-col h3 {
+        font-size: 1rem;
+      }
+      .footer-col a,
+      .footer-right a {
+        font-size: 0.85rem;
+      }
+      .footer-left {
+        font-size: 0.85rem;
+      }
+    }
+    /* Important Links margin for large screens */
+.footer-col.important-links {
+  margin-left: 70px;  /* margin only on large screens */
+}
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+  .footer-col.important-links {
+    margin-left: 0; /* remove margin on smaller screens */
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  .footer-col.important-links {
+    margin-left: 0; /* remove margin on mobile too */
+  }
+}
   </style>
 </head>
 
-<body class="theme-light">
-  <!-- Navbar starts here -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-      <a class="navbar-brand" href="index.html"><img src="images/Logo_new.png" alt="GrowCraft" width="200" id="logo"></a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a aria-current="page" class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a aria-current="page" class="nav-link" href="blogListing.html">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a aria-current="page" class="nav-link active visited" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html#work">Our Work</a>
-          </li>
-          <li class="nav-item">
-            <a aria-current="page" class="nav-link" href="src/contact.html">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <!-- Navbar ends here -->
-
+<body>
+<div id="navbar"></div>
   <section class="hero" id="about-hero" aria-labelledby="about-hero-title">
-    <!-- Background layers -->
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="grid-lines" aria-hidden="true"></div>
     <div class="orb one" data-parallax="-12" aria-hidden="true"></div>
     <div class="orb two blue" data-parallax="8" aria-hidden="true"></div>
 
     <div class="container">
-      <!-- Topbar -->
       <div class="topbar">
-        <div class="brand reveal in">
+        <div class="brand" data-aos="fade-down">
           <span class="sprout" aria-hidden="true">
-            <!-- sprout icon -->
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M12 21v-8"></path>
               <path d="M7 8c3-4 10-4 10 2 0 3-2 5-5 5S7 13 7 10V8Z"></path>
@@ -714,23 +820,22 @@
           <span class="eyebrow" style="margin-left:10px"><span class="dot"></span> GSSoC'25</span>
         </div>
         <div class="actions">
-          <button class="ghost reveal in" id="learnMoreBtn" aria-label="Skip to story">Our Story</button>
+          <button class="ghost" id="learnMoreBtn" aria-label="Skip to story" data-aos="fade-down">Our Story</button>
         </div>
       </div>
 
-      <!-- Content -->
       <div class="content">
         <div class="copy">
-          <span class="eyebrow reveal in">About Us</span>
-          <h1 class="reveal in" id="about-hero-title">Empowering <span class="highlight">Businesses</span> &amp; Enabling <span class="highlight">Students</span>.</h1>
-          <p class="sub reveal in">GrowCraft is a service-based platform that helps brands grow online while giving students real-world experience through training, internships, and open-source collaboration.</p>
+          <span class="eyebrow" data-aos="fade-up" data-aos-delay="100">About Us</span>
+          <h1 data-aos="fade-up" data-aos-delay="200" id="about-hero-title">Empowering <span class="highlight">Businesses</span> &amp; Enabling <span class="highlight">Students</span>.</h1>
+          <p class="sub" data-aos="fade-up" data-aos-delay="300">GrowCraft is a service-based platform that helps brands grow online while giving students real-world experience through training, internships, and open-source collaboration.</p>
 
-          <div class="cta-row reveal in" style="margin-top:10px;">
+          <div class="cta-row" data-aos="fade-up" data-aos-delay="400" style="margin-top:10px;">
             <button class="btn-primary" id="exploreServices">Explore Services</button>
             <button class="btn-outline" id="joinContrib">Join as Contributor</button>
           </div>
 
-          <div class="badges reveal in" aria-label="Key areas">
+          <div class="badges" data-aos="fade-up" data-aos-delay="500" aria-label="Key areas">
             <span class="chip">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18"></path><path d="M3 6h18"></path><path d="M3 18h18"></path></svg>
               Website Development
@@ -745,13 +850,13 @@
             </span>
           </div>
 
-          <div class="scroll-cue reveal in" role="note">
+          <div class="scroll-cue" data-aos="fade-up" data-aos-delay="600" role="note">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
             Scroll to learn more
           </div>
         </div>
 
-        <div class="visual reveal in" id="visualCard" data-parallax="4" aria-label="Impact metrics">
+        <div class="visual" data-aos="zoom-in" data-aos-delay="200" id="visualCard" data-parallax="4" aria-label="Impact metrics">
           <div class="ring" aria-hidden="true"></div>
           <div class="metric-grid">
             <div class="metric">
@@ -787,19 +892,19 @@
     <div class="container">
       <div class="wrap">
 
-        <div>
-          <span class="eyebrow reveal in"><span class="seed" aria-hidden="true"></span> About Us</span>
-          <h2 class="reveal in">Who We Are — <span class="em">GrowCraft</span></h2>
-          <p class="lead reveal in">GrowCraft is a <strong>service-based platform</strong> designed to help businesses grow their online presence while also empowering students and contributors to gain hands-on experience in real-world projects. We pair client work with mentorship-driven contributor flows so learning happens by doing.</p>
+        <div data-aos="fade-right">
+          <span class="eyebrow"><span class="seed" aria-hidden="true"></span> About Us</span>
+          <h2>Who We Are — <span class="em">GrowCraft</span></h2>
+          <p class="lead">GrowCraft is a <strong>service-based platform</strong> designed to help businesses grow their online presence while also empowering students and contributors to gain hands-on experience in real-world projects. We pair client work with mentorship-driven contributor flows so learning happens by doing.</p>
 
-          <p class="lead reveal in"><strong>This project is proudly part of <span class="em">GirlScript Summer of Code 2025 (GSSoC'25)</span></strong> — a nationwide open-source program where contributors collaborate, learn, and build impactful solutions.</p>
+          <p class="lead"><strong>This project is proudly part of <span class="em">GirlScript Summer of Code 2025 (GSSoC'25)</span></strong> — a nationwide open-source program where contributors collaborate, learn, and build impactful solutions.</p>
 
-          <div class="row reveal in" style="margin-top:18px">
+          <div class="row" style="margin-top:18px">
             <button class="btn primary" id="exploreBtn">Explore Services</button>
             <button class="btn ghost" id="guideBtn">Read Contribution Guide</button>
           </div>
 
-          <div class="mini-timeline reveal in" aria-hidden="true" style="margin-top:18px">
+          <div class="mini-timeline" aria-hidden="true" style="margin-top:18px">
             <div class="step active" aria-hidden="true"></div>
             <div class="step" aria-hidden="true"></div>
             <div class="step" aria-hidden="true"></div>
@@ -808,7 +913,7 @@
           </div>
         </div>
 
-        <aside class="card reveal in" aria-labelledby="whoCardTitle">
+        <aside class="card" data-aos="fade-left" aria-labelledby="whoCardTitle">
           <div class="kicker">GrowCraft Snapshot</div>
           <h3 id="whoCardTitle">Services + Student Experience</h3>
           <p class="muted">We deliver digital services for clients while offering contributors mentorship, review, and real project work to boost learning and portfolios.</p>
@@ -838,8 +943,56 @@
     </div>
   </section>
 
+<!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container ">
+      <!-- About GrowCraft -->
+      <div class="footer-col">
+        <h3><i class="fa-solid fa-briefcase"></i> GrowCraft</h3>
+        <p>Boost your career with skill-focused training and internship opportunities.</p>
+      </div>
 
-    <!-- Chatbot button-->
+      <!-- Important Links -->
+<div class="footer-col important-links">
+  <h3>Important Links</h3>
+  <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+  <a href="about.html"><i class="fa-solid fa-building"></i> About Us</a>
+  <a href="#services"><i class="fa-solid fa-laptop-code"></i> Services</a>
+  <a href="work.html"><i class="fa-solid fa-graduation-cap"></i> Our Works</a>
+  <a href="src/faq.html"><i class="fa-solid fa-clock"></i> FAQ</a>
+</div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-envelope"></i> support@GrowCraft.com</p>
+      </div>
+
+      <!-- Social -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+          <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Row: Credit + Legal -->
+    <div class="footer-bottom">
+      <div class="footer-left">
+        &copy; 2025 GrowCraft. All rights reserved.
+      </div>
+      <div class="footer-right">
+        <a href="privacy.html"><i class="fa-solid fa-lock"></i> Privacy</a>
+        <a href="terms.html"><i class="fa-solid fa-file-lines"></i> Terms</a>
+        <a href="sitemap.html"><i class="fa-solid fa-map"></i> Sitemap</a>
+      </div>
+    </div>
+  </footer>
     <div class="chatbot-container">
       <div class="chatbot-window" id="chatWindow">
         <div class="chatbot-header">
@@ -860,58 +1013,26 @@
       </div>
       <button class="chatbot-toggle-btn" onclick="toggleChat()"><i class="fas fa-leaf"></i></button>
     </div>
-  <!-- Chatbot button ends here-->
-
- <!-- Footer -->
-  
-  
-
-
-<script>
-  document.getElementById("currentYear").textContent = new Date().getFullYear();
-</script>
-
-  <!-- Enhanced Scroll to Top Button -->
   <button id="backToTop" title="Go to top" type="button">
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <div id="footer-placeholder"></div>
-  <script>
-    fetch('src/components/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-  </script>
 
   <script src="src/script.js"></script>
   <script src="src/utils.js"></script>
   <script src="components/chatbot.js"></script>
-  <script src="src/darkMode.js"></script>
- 
+  
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
-    // Theme handling
-    (function() {
-      const stored = localStorage.getItem('gc-theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const mode = stored || (prefersDark ? 'dark' : 'light');
-      document.body.classList.toggle('theme-light', mode === 'light');
-      const btn = document.getElementById('themeToggle');
-      if (btn) {
-        const setLabel = (isDark)=>{
-          btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-          btn.textContent = isDark ? '🌙' : '☀️';
-        };
-        setLabel(mode !== 'light');
-        btn.addEventListener('click', () => {
-          const isLight = document.body.classList.toggle('theme-light');
-          localStorage.setItem('gc-theme', isLight ? 'light' : 'dark');
-          setLabel(!isLight);
-        });
-      }
-    })();
+    // ✅ 2. INITIALIZED AOS
+    AOS.init({
+      duration: 800,
+      once: true,
+      offset: 50,
+    });
+  
+   
 
     // Parallax for decorative elements
     (function() {
@@ -944,25 +1065,8 @@
       requestAnimationFrame(tick);
     })();
 
-    // Reveal on view (IO-based)
-    (function(){
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const items = document.querySelectorAll('.reveal');
-      if (!('IntersectionObserver' in window) || reduce) {
-        items.forEach(el => el.classList.add('in'));
-        return;
-      }
-      const io = new IntersectionObserver((entries)=>{
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in');
-            io.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.15 });
-      items.forEach(el => io.observe(el));
-    })();
-
+    // ❌ 3. REMOVED OLD REVEAL ON VIEW SCRIPT (IntersectionObserver)
+    
     // CTA demo handlers
     document.getElementById('exploreServices')?.addEventListener('click', ()=>{
       window.location.href = 'index.html#services';
@@ -974,13 +1078,7 @@
       window.location.href = 'index.html#our-story';
     });
 
-    // Current year in footer
-    document.addEventListener("DOMContentLoaded", function () {
-      const yearSpan = document.getElementById("currentYear");
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-      }
-    });
+   
 
     // Back to top button functionality
     (function() {
@@ -1041,4 +1139,3 @@
 
 </body>
 </html>
-   
