@@ -1,76 +1,590 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyber Analyst</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    .card {
-  border: none;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyber Analyst</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-}
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-.card-img-top {
-  height: 220px;
-  object-fit: cover;
-  border-bottom: 1px solid #eaeaea;
-}
+    <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="cyberanalyst.css" />
+    
+  </head>
+  <body>
+    <div class="grid-background"></div>
+    <canvas id="network"></canvas>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center px-4"
+      >
+        <a class="navbar-brand hover-scale" href="#">
+          <img
+            src="images/Logo.png"
+            alt="GrowCraft"
+            id="logo"
+            class="smooth-transition"
+          />
+        </a>
 
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #2d2d2d;
-}
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-.card-text {
-  font-size: 0.95rem;
-  color: #555;
-}
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blogListing.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./work.html">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./src/faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="src/contact.html">Contact Us</a>
+            </li>
+          </ul>
 
-h1 {
-  font-weight: 700;
-  color: #1f1f1f;
-}
+          <button
+            class="btn theme-toggle ms-3"
+            type="button"
+            id="themeToggle"
+            title="Toggle Dark/Light Mode"
+          >
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- navBar ended -->
+    <!-- hero section -->
+    <section class="cyber-grid fade-in-up">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <h1 class="display-4 fw-bold cyber-text">
+              Defending the Digital Frontier
+            </h1>
+            <p class="lead mb-4">
+              Cyber Analyst <span class="separation">|</span> Threat Detection
+              <span class="separation">|</span> Risk Mitigation
+            </p>
+            <a href="../src/contact.html" class="btn btn-lg btn-success"
+              >Contact Me</a
+            >
+          </div>
+        </div>
+        <div class="cyber-visual">
+          <div class="shield"></div>
+          <div class="lock lead">Make Your Credentials Safe</div>
+        </div>
+      </div>
+    </section>
+    <!-- hero section ended-->
 
-section.container {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-  </style>
-</head>
-<body>
-  <div class="container mt-4">
-    <a href="../index.html" class="btn btn-link text-decoration-none d-flex align-items-center" style="font-size: 1.1rem;">
-      &#8592; <span class="ms-2">Back</span>
-    </a>
-  </div>
+    <!-- core skills -->
+    <section class="core-skills py-1 text-center fade-in-up">
+      <div class="container">
+        <div class="divider"></div>
+        <h2 class="mb-5 mt-3 headline">Core Skills</h2>
+        <div class="row g-4">
+          <div class="col-12 col-sm-6 col-md-4 d-flex">
+            <div class="skill-card flex-fill">🔐 Network Security</div>
+          </div>
 
+          <div class="col-12 col-sm-6 col-md-4 d-flex">
+            <div class="skill-card flex-fill">📡 Threat Intelligence</div>
+          </div>
 
-<section class="container mt-5">
-    <h1 class="mb-4 text-center">Cyber Security Highlights</h1>
-    <p class="text-center mb-5">Think smart, click safe, and stay vigilant</p>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="../images/cybersecurity-pro.png" class="card-img-top" alt="Cyber">
-          <div class="card-body">
-            <h5 class="card-title"> Packet Sniffing and Network Traffic Analysis</h5>
-            <p class="card-text">Capturing and analyzing network traffic in real time, using tools like Wireshark or writing a basic packet sniffer in Python with the scapy library.</p>
+          <div class="col-12 col-sm-6 col-md-4 d-flex">
+            <div class="skill-card flex-fill">🛡️ Vulnerability Assessment</div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 d-flex">
+            <div class="skill-card flex-fill">⚡ Incident Response</div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 d-flex">
+            <div class="skill-card flex-fill">💻 Ethical Hacking</div>
+          </div>
+
+          <div class="col-12 col-sm-6 col-md-4 d-flex">
+            <div class="skill-card flex-fill">☁️ Cloud Security</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- core skills ended -->
+
+    <!-- case studies  -->
+    <div class="container fade-in-up">
+      <div class="divider"></div>
+      <h2 class="mb-4 mt-3 text-center headline">Case Studies</h2>
+
+      <!-- Grid Cards -->
+      <div class="row g-4">
+        <div class="col-md-4 d-flex">
+          <div class="project-card flex-fill">
+            <div class="project-title">
+              Incident Response for Banking Sector
+            </div>
+            <div class="project-desc">
+              Detailed analysis of threats and mitigation strategies to protect
+              banking infrastructure.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 d-flex">
+          <div class="project-card flex-fill">
+            <div class="project-title">Phishing Simulation & Training</div>
+            <div class="project-desc">
+              Conducted phishing simulations to train staff, achieving
+              measurable improvements in awareness.
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 d-flex">
+          <div class="project-card flex-fill">
+            <div class="project-title">Cloud Security Hardening</div>
+            <div class="project-desc">
+              Improved cloud infrastructure security through IAM policies,
+              encryption, and network segmentation.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Optional Timeline Style -->
+      <h3 class="mt-5 mb-4">Timeline View</h3>
+      <div class="timeline mb-3">
+        <div class="project-card mb-3">
+          <div class="project-title">Incident Response for Banking Sector</div>
+          <div class="project-desc">
+            Threats detected and mitigated quickly, avoiding downtime.
+          </div>
+        </div>
+        <div class="project-card mb-3">
+          <div class="project-title">Phishing Simulation & Training</div>
+          <div class="project-desc">
+            Staff awareness improved by 45% after training exercises.
+          </div>
+        </div>
+        <div class="project-card mb-3">
+          <div class="project-title">Cloud Security Hardening</div>
+          <div class="project-desc">
+            Implemented encryption, IAM controls, and secure VPC setup.
           </div>
         </div>
       </div>
     </div>
-</section>
-</body>
+    <!-- case studies ended -->
+    <!-- tool  -->
+    <div class="container fade-in-up">
+      <div class="divider"></div>
+      <h2 class="headline mt-3">Tools & Technologies</h2>
+      <div class="row g-4 tools-container">
+        <!-- Kali Linux -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-card">
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/kalilinux.svg"
+              alt="Kali Linux"
+            />
+
+            <div class="tool-info">
+              <div class="tool-name">Kali Linux</div>
+              <div class="tool-desc">
+                Penetration testing OS with multiple security tools.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Wireshark -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-card">
+            <!-- Wireshark -->
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/wireshark.svg"
+              alt="Wireshark"
+            />
+
+            <div class="tool-info">
+              <div class="tool-name">Wireshark</div>
+              <div class="tool-desc">
+                Network protocol analyzer for traffic inspection.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Splunk -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-card">
+            <!-- Splunk -->
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/splunk.svg"
+              alt="Splunk"
+            />
+            <div class="tool-info">
+              <div class="tool-name">Splunk</div>
+              <div class="tool-desc">
+                Data analytics & security monitoring platform.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Metasploit -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-card">
+            <!-- Metasploit -->
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/metasploit.svg"
+              alt="Metasploit"
+            />
+
+            <div class="tool-info">
+              <div class="tool-name">Metasploit</div>
+              <div class="tool-desc">
+                Exploit framework for security testing & pentesting.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Burp Suite -->
+        <div class="col-6 col-md-4 col-lg-2">
+          <div class="tool-card">
+            <!-- Burp Suite -->
+            <img
+              src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/burpsuite.svg"
+              alt="Burp Suite"
+            />
+            <div class="tool-info">
+              <div class="tool-name">Burp Suite</div>
+              <div class="tool-desc">
+                Web vulnerability scanner & security testing tool.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more tools here -->
+      </div>
+    </div>
+    <!-- tool ended -->
+
+    <!-- cyber highlight -->
+    <section class="cyber-highlights mt-4 fade-in-up">
+      <div class="divider"></div>
+      <h2 class="section-title headline mt-4">Cyber Security Highlights</h2>
+      <div class="highlights-grid">
+        <div class="highlight-card">
+          <h3>🔐 150+</h3>
+          <p>Critical Vulnerabilities Identified</p>
+        </div>
+        <div class="highlight-card">
+          <h3>💻 200+</h3>
+          <p>Systems Secured</p>
+        </div>
+        <div class="highlight-card">
+          <h3>⚡ 50+</h3>
+          <p>Incident Responses Completed</p>
+        </div>
+        <div class="highlight-card">
+          <h3>☁️ 30+</h3>
+          <p>Cloud Security Projects</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="footer-content">
+        <p class="footer-text headline">
+          Let’s build a safer digital world together.
+        </p>
+        <div class="social-icons">
+          <a href="mailto:your.email@example.com" target="_blank" class="icon">
+            <i class="fa fa-envelope"></i>
+          </a>
+          <a
+            href="https://linkedin.com/in/yourprofile"
+            target="_blank"
+            class="icon"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="https://github.com/yourprofile" target="_blank" class="icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a
+            href="https://twitter.com/yourprofile"
+            target="_blank"
+            class="icon"
+          >
+            <i class="fab fa-twitter"></i>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Font Awesome CDN for icons -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- footer ended -->
+    <!-- Scripts -->
+    <!-- Enhanced Scroll to Top Button -->
+    <button id="backToTop" title="Go to top" type="button" class="hover-scale">
+      <i class="fas fa-chevron-up"></i>
+    </button>
+    <!-- Scripts -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // values from 0 to 3000, with step 50ms
+        once: true, // whether animation should happen only once - while scrolling down
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* Enhanced Animation Observer */
+        const observerOptions = {
+          threshold: 0.1,
+          rootMargin: "0px 0px -50px 0px",
+        };
+
+        const cards = document.querySelectorAll(
+          ".fade-in-up, .scale-in, .slide-in-right"
+        );
+
+        const observer = new IntersectionObserver((entries, observer) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("show");
+              observer.unobserve(entry.target); // run once per card
+            }
+          });
+        }, observerOptions);
+
+        // Observe all animated elements
+        cards.forEach((card) => observer.observe(card));
+
+        /* Enhanced Theme Toggle Functionality */
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+
+        // Get current theme from localStorage or default to 'light'
+        let currentTheme = localStorage.getItem("theme") || "light";
+
+        // Apply theme on page load
+        document.documentElement.setAttribute("data-bs-theme", currentTheme);
+        updateThemeIcon(currentTheme);
+
+        // Theme toggle event listener
+        if (themeToggle) {
+          themeToggle.addEventListener("click", function () {
+            // Add click animation
+            this.style.transform = "scale(0.95)";
+            setTimeout(() => {
+              this.style.transform = "scale(1.1)";
+              setTimeout(() => {
+                this.style.transform = "";
+              }, 150);
+            }, 100);
+
+            // Toggle theme
+            currentTheme = currentTheme === "light" ? "dark" : "light";
+            document.documentElement.setAttribute(
+              "data-bs-theme",
+              currentTheme
+            );
+            localStorage.setItem("theme", currentTheme);
+            updateThemeIcon(currentTheme);
+          });
+        }
+
+        function updateThemeIcon(theme) {
+          if (themeIcon) {
+            if (theme === "dark") {
+              themeIcon.className = "fas fa-sun";
+              themeIcon.style.transform = "rotate(180deg)";
+            } else {
+              themeIcon.className = "fas fa-moon";
+              themeIcon.style.transform = "rotate(0deg)";
+            }
+          }
+        }
+        const logo = document.querySelector("#logo");
+        function updateLogo() {
+          const isDark =
+            document.documentElement.getAttribute("data-bs-theme") === "dark";
+          logo.src = isDark ? "../images/Logo.png" : "../images/Logo_new.png";
+        }
+
+        updateLogo();
+        const themeObserver = new MutationObserver(function (mutations) {
+          for (const mutation of mutations) {
+            if (
+              mutation.type === "attributes" &&
+              mutation.attributeName === "data-bs-theme"
+            ) {
+              updateLogo();
+            }
+          }
+        });
+        themeObserver.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["data-bs-theme"],
+        });
+
+        // navBAr scroll effect
+        const navbar = document.querySelector(".navbar");
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", () => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY > 100) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+
+          lastScrollY = currentScrollY;
+        });
+
+        /* Enhanced Scroll to Top Button */
+        const backToTop = document.getElementById("backToTop");
+
+        window.addEventListener("scroll", () => {
+          if (window.scrollY > 300) {
+            backToTop.classList.add("show");
+          } else {
+            backToTop.classList.remove("show");
+          }
+        });
+
+        backToTop.addEventListener("click", () => {
+          backToTop.style.transform = "translateY(-3px) scale(0.95)";
+
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+
+          setTimeout(() => {
+            backToTop.style.transform = "";
+          }, 200);
+        });
+      });
+    </script>
+    <!-- // Network nodes animation -->
+    <script>
+      const canvas = document.getElementById("network");
+      const ctx = canvas.getContext("2d");
+      let width, height;
+      const nodes = [];
+
+      function resizeCanvas() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = window.innerHeight;
+      }
+      window.addEventListener("resize", resizeCanvas);
+      resizeCanvas();
+
+      // Create nodes
+      for (let i = 0; i < 50; i++) {
+        nodes.push({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * 0.6,
+          vy: (Math.random() - 0.5) * 0.6,
+          radius: 2 + Math.random() * 2,
+        });
+      }
+
+      function animate() {
+        ctx.clearRect(0, 0, width, height);
+
+        // Draw nodes
+        nodes.forEach((node) => {
+          node.x += node.vx;
+          node.y += node.vy;
+
+          if (node.x < 0 || node.x > width) node.vx *= -1;
+          if (node.y < 0 || node.y > height) node.vy *= -1;
+
+          ctx.beginPath();
+          ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+          ctx.fillStyle = "#00ffcc";
+          ctx.fill();
+        });
+
+        // Draw connections
+        for (let i = 0; i < nodes.length; i++) {
+          for (let j = i + 1; j < nodes.length; j++) {
+            const dx = nodes[i].x - nodes[j].x;
+            const dy = nodes[i].y - nodes[j].y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 120) {
+              ctx.beginPath();
+              ctx.moveTo(nodes[i].x, nodes[i].y);
+              ctx.lineTo(nodes[j].x, nodes[j].y);
+              ctx.strokeStyle = "rgba(0,255,204," + (1 - dist / 120) + ")";
+              ctx.stroke();
+            }
+          }
+        }
+
+        requestAnimationFrame(animate);
+      }
+      animate();
+    </script>
+  </body>
 </html>
-
-
-
