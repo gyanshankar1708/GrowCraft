@@ -1672,11 +1672,11 @@ p {
         function setDarkMode(enabled) {
             if (enabled) {
                 body.classList.add("dark-mode");
-                toggleBtn.textContent = "☀️ Light Mode";
+                toggleBtn.textContent = "☀️";
                 localStorage.setItem("dark-mode", "enabled");
             } else {
                 body.classList.remove("dark-mode");
-                toggleBtn.textContent = "🌙 Dark Mode";
+                toggleBtn.textContent = "🌙";
                 localStorage.setItem("dark-mode", "disabled");
             }
         }
