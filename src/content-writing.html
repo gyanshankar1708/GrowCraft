@@ -1659,34 +1659,35 @@ p {
             document.body.classList.add('loaded');
         });
 
-        
-    </script>
-   <script>
+ </script>
 
+     <script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const body = document.body;
+  const logo = document.querySelector("#logo");
+  const themeIcon = document.getElementById("themeIcon");
 
-        // Dark Mode Toggle
-        const toggleBtn = document.getElementById("darkModeToggle");
-        const body = document.body;
+  function setDarkMode(enabled) {
+    if (enabled) {
+      body.classList.add("dark-mode");
+      themeIcon.className = 'fas fa-sun';
+      logo.src = "../images/logo-transparent-dark-mode.png"; // dark mode logo
+      localStorage.setItem("dark-mode", "enabled");
+    } else {
+      body.classList.remove("dark-mode");
+      themeIcon.className = 'fas fa-moon';
+      logo.src = "../images/Logo_new.png"; // light mode logo
+      localStorage.setItem("dark-mode", "disabled");
+    }
+  }
 
-        function setDarkMode(enabled) {
-            if (enabled) {
-                body.classList.add("dark-mode");
-                toggleBtn.textContent = "☀️";
-                localStorage.setItem("dark-mode", "enabled");
-            } else {
-                body.classList.remove("dark-mode");
-                toggleBtn.textContent = "🌙";
-                localStorage.setItem("dark-mode", "disabled");
-            }
-        }
+  // Load preference on page load
+  setDarkMode(localStorage.getItem("dark-mode") === "enabled");
 
-        // Load preference
-        setDarkMode(localStorage.getItem("dark-mode") === "enabled");
-
-        // Toggle
-        toggleBtn.addEventListener("click", () => {
-            setDarkMode(!body.classList.contains("dark-mode"));
-        });
+  // Toggle mode on button click
+  toggleBtn.addEventListener("click", () => {
+    setDarkMode(!body.classList.contains("dark-mode"));
+  });
     </script>
 </body>
 </html>
