@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sitemap | GrowCraft</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+  <style>
+    :root {
+      --green: #2e7d32;
+      --light-green: #66bb6a;
+      --dark-bg: #111827;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f5f5f5;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      padding: 1rem 2rem;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar-brand img {
+      max-height: 50px;
+      transition: 0.3s;
+    }
+
+    .navbar-nav {
+      display: flex;
+      list-style: none;
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-nav a {
+      text-decoration: none;
+      color: var(--green);
+      padding: 0.5rem 1rem;
+      border-radius: 25px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .navbar-nav a:hover {
+      background: var(--light-green);
+      color: #fff;
+    }
+
+    /* Hamburger Button */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--green);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      text-align: center;
+      margin: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      color: var(--green);
+    }
+
+    .breadcrumb {
+      text-align: center;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      color: #555;
+      margin-top: 2rem;
+    }
+
+    .breadcrumb a {
+      color: var(--green);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+      color: var(--light-green);
+    }
+
+    .breadcrumb span {
+      margin: 0 5px;
+      color: #888;
+    }
+
+    /* ===== SITEMAP SEARCH ===== */
+    .sitemap-search {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .sitemap-search input {
+      padding: 10px 15px;
+      width: 300px;
+      max-width: 90%;
+      border-radius: 25px;
+      border: 1px solid #ccc;
+      outline: none;
+    }
+
+    .sitemap-search button {
+      padding: 10px 20px;
+      border: none;
+      background-color: var(--green);
+      color: #fff;
+      border-radius: 25px;
+      margin-left: -5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .sitemap-search button:hover {
+      background-color: var(--light-green);
+    }
+
+    /* ===== SITEMAP CARDS ===== */
+    .sitemap-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .sitemap-card {
+      background: linear-gradient(145deg, #ffffff, #e8f5e9);
+      padding: 30px 25px;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.4s, box-shadow 0.4s;
+    }
+
+    .sitemap-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+
+    .sitemap-card h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: var(--green);
+    }
+
+    .sitemap-card ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sitemap-card ul li {
+      margin: 10px 0;
+      position: relative;
+      transition: background 0.3s;
+      border-radius: 8px;
+    }
+
+    .sitemap-card ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 5px 10px;
+    }
+
+    .sitemap-card ul li:hover {
+      background: #e0f2f1;
+    }
+
+    .sitemap-card ul ul {
+      padding-left: 20px;
+      margin-top: 5px;
+      display: none; /* collapsed by default */
+    }
+
+    .sitemap-card ul li.active > ul {
+      display: block;
+    }
+
+    .sitemap-card ul ul li a {
+      font-weight: 400;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark-bg);
+      color: #fff;
+      padding: 3rem 2rem 1rem 2rem;
+      position: relative;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-col h3 {
+      margin-bottom: 1rem;
+      color: var(--green);
+      font-size: 1.2rem;
+    }
+
+    .footer-col a {
+      display: block;
+      color: #d1d5db;
+      text-decoration: none;
+      margin-bottom: 0.5rem;
+      transition: all 0.3s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--green);
+      transform: translateX(5px);
+    }
+
+    .footer-col p {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #fff;
+      text-decoration: none;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: var(--green);
+      transform: scale(1.05);
+    }
+
+    .newsletter {
+      margin-top: 1rem;
+    }
+
+    .newsletter input {
+      padding: 10px 15px;
+      border-radius: 25px;
+      border: none;
+      outline: none;
+      width: 70%;
+      max-width: 200px;
+      margin-right: 10px;
+    }
+
+    .newsletter button {
+      padding: 10px 20px;
+      border-radius: 25px;
+      border: none;
+      background-color: var(--green);
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .newsletter button:hover {
+      background-color: var(--light-green);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    .footer-bottom a {
+      color: #d1d5db;
+      margin: 0 10px;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: var(--green);
+    }
+
+    /* ===== BACK TO TOP BUTTON ===== */
+    #back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--green);
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      z-index: 100;
+      font-size: 18px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transition: background 0.3s, transform 0.3s;
+    }
+
+    #back-to-top:hover {
+      background: var(--light-green);
+      transform: scale(1.1);
+    }
+
+    /* ===== MEDIA QUERIES ===== */
+    @media (max-width: 768px) {
+      /* Hamburger button visible */
+      .nav-toggle {
+        display: block;
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+      }
+
+      .navbar-nav {
+        display: none; /* hide by default */
+        flex-direction: column;
+        width: 100%;
+        gap: 0.5rem;
+        background: rgba(255, 255, 255, 0.95);
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 1rem 2rem;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      }
+
+      .navbar-nav.active {
+        display: flex;
+      }
+
+      .sitemap-container {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .social-icons {
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      .footer-bottom a {
+        display: block;
+        margin: 5px 0;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 0.8rem 1rem;
+      }
+
+      .navbar-nav a {
+        width: 100%;
+        padding: 0.5rem 0;
+        text-align: center;
+      }
+
+      .navbar-brand img {
+        max-height: 40px;
+        margin-bottom: 0.5rem;
+      }
+
+      .footer-col {
+        margin-bottom: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    }@media (max-width: 768px) {
+  /* Navbar hamburger */
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .navbar-nav {
+    display: none; /* hide by default */
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 100%;
+    left: 0;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  }
+
+  .navbar-nav.active {
+    display: flex;
+  }
+
+  .navbar-nav a {
+    width: 100%;
+    padding: 0.5rem 0;
+    text-align: center;
+  }
+
+  .sitemap-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer mobile layout */
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Make each link occupy full width (one per row) */
+  .footer-col a {
+    display: block;
+    margin: 5px 0;
+  }
+
+  /* Social icons row centered */
+  .social-icons {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  /* Newsletter input and button centered */
+  .newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+
+  .newsletter input {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  .newsletter button {
+    width: 80%;
+    max-width: 250px;
+  }
+
+  /* Footer bottom links stacked */
+  .footer-bottom a {
+    display: block;
+    margin: 5px 0;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a class="navbar-brand" href="#"><img src="images/Logo_new.png" alt="GrowCraft"></a>
+    <!-- Hamburger button -->
+    <button class="nav-toggle" aria-label="Toggle Navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="navbar-nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="blogListing.html">Blogs</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="work.html">Our Work</a></li>
+      <li><a href="src/faq.html">FAQ</a></li>
+      <li><a href="src/contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- BREADCRUMB -->
+  <div class="breadcrumb">
+    <a href="index.html">Home</a> <span>&gt;</span> <span>Sitemap</span>
+  </div>
+
+  <!-- SITEMAP SEARCH -->
+  <div class="sitemap-search">
+    <input type="text" placeholder="Search pages..." aria-label="Search Sitemap" id="sitemapSearch">
+    <button><i class="fas fa-search"></i></button>
+  </div>
+
+  <!-- PAGE TITLE -->
+  <header>
+    <h1><i class="fas fa-sitemap"></i> Website Sitemap</h1>
+  </header>
+
+  <div class="sitemap-container">
+    <div class="sitemap-card">
+      <h2><i class="fas fa-home fa-lg"></i> Main Pages</h2>
+      <ul>
+        <li><a href="index.html"><i class="fas fa-angle-right"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-angle-right"></i> About Us</a></li>
+        <li class="has-submenu">
+          <a href="work.html"><i class="fas fa-angle-right"></i> Our Work <i class="fas fa-caret-down"></i></a>
+          <ul>
+            <li><a href="blogListing.html"><i class="fas fa-circle-notch"></i> Blogs</a></li>
+            <li><a href="careers.html"><i class="fas fa-circle-notch"></i> Careers</a></li>
+            <li><a href="services-seo.html"><i class="fas fa-circle-notch"></i> SEO</a></li>
+          </ul>
+        </li>
+        <li><a href="src/digital-marketing.html"><i class="fas fa-angle-right"></i> Digital Marketing</a></li>
+        <li><a href="contact.html"><i class="fas fa-angle-right"></i> Contact Us</a></li>
+      </ul>
+    </div>
+
+    <div class="sitemap-card">
+      <h2><i class="fas fa-info-circle fa-lg"></i> About & Info</h2>
+      <ul>
+        <li><a href="login.html"><i class="fas fa-angle-right"></i> Login</a></li>
+        <li><a href="signup.html"><i class="fas fa-angle-right"></i> Sign Up</a></li>
+        <li><a href="terms.html"><i class="fas fa-angle-right"></i> Terms</a></li>
+        <li><a href="src/faq.html"><i class="fas fa-angle-right"></i> FAQ</a></li>
+        <li><a href="privacy.html"><i class="fas fa-angle-right"></i> Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="sitemap-card">
+      <h2><i class="fas fa-envelope fa-lg"></i> Contact</h2>
+      <ul>
+        <li><a href="contact.html"><i class="fas fa-angle-right"></i> Contact Form</a></li>
+        <li><a href="support.html"><i class="fas fa-angle-right"></i> Support</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-col">
+        <h3><i class="fa-solid fa-briefcase"></i> GrowCraft</h3>
+        <p>Boost your career with skill-focused training and internship opportunities.</p>
+        <div class="newsletter">
+          <input type="email" placeholder="Subscribe to newsletter">
+          <button>Subscribe</button>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Important Links</h3>
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html"><i class="fa-solid fa-building"></i> About Us</a>
+        <a href="#services"><i class="fa-solid fa-laptop-code"></i> Services</a>
+        <a href="work.html"><i class="fa-solid fa-graduation-cap"></i> Our Works</a>
+        <a href="src/faq.html"><i class="fa-solid fa-clock"></i> FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fa-solid fa-phone"></i> ‪+91 98765 43210‬</p>
+        <p><i class="fa-solid fa-envelope"></i> support@GrowCraft.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+          <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+          <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      &copy; 2025 GrowCraft. All rights reserved. |
+      <a href="privacy.html">Privacy</a> |
+      <a href="terms.html">Terms</a> |
+      <a href="sitemap.html">Sitemap</a>
+    </div>
+  </footer>
+
+  <!-- BACK TO TOP -->
+  <div id="back-to-top"><i class="fas fa-chevron-up"></i></div>
+
+  <script>
+    // Accordion submenu toggle
+    document.querySelectorAll('.has-submenu > a').forEach(item => {
+      item.addEventListener('click', e => {
+        e.preventDefault();
+        item.parentElement.classList.toggle('active');
+      });
+    });
+
+    // Back to top button
+    const backBtn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      backBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+    });
+
+    backBtn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ===== SEARCH FUNCTIONALITY =====
+    const searchInput = document.getElementById('sitemapSearch');
+    searchInput.addEventListener('keyup', () => {
+      const filter = searchInput.value.toLowerCase();
+      document.querySelectorAll('.sitemap-card ul li').forEach(li => {
+        li.style.display = li.textContent.toLowerCase().includes(filter) ? '' : 'none';
+      });
+    });
+
+    // Mobile nav toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.navbar-nav');
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
