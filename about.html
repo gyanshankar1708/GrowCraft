@@ -1,1004 +1,1595 @@
 <!DOCTYPE html>
-<html lang="en"  data-bs-theme="light">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>GrowCraft — About Us</title>
-  <link rel="stylesheet" href="src/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="components/chatbot.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
-  
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+<html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GrowCraft — About Us</title>
+    <link rel="stylesheet" href="src/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="components/chatbot.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <style>
-    /* Brand Tokens */
-    :root {
-      --brand: #16a34a;          /* Grow green */
-      --brand-2: #22c55e;        /* lighter green */
-      --accent: #60a5fa;         /* blue accent */
-      --bg: #0b0f14;             /* dark base */
-      --bg-soft: #101720;        /* dark elevated */
-      --card: rgba(255,255,255,0.06);
-      --border: rgba(255,255,255,0.12);
-      --text: #e5e7eb;           /* light text */
-      --muted: #9ca3af;          /* muted text */
-      --shadow: 0 10px 30px rgba(0,0,0,.35);
-    }
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
-    
-    /* Global Resets */
-    *,*::before,*::after { box-sizing: border-box; }
-    html,body { height: 100%; }
-    body {
-      margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-    }
-    a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
-    /* Navbar Custom Styling */
-   
-    .professional-footer .row {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0 !important; /* or any specific gap you need for the footer */
-    align-items: stretch !important;
-}
+    <style>
+      /* Brand Tokens */
+      :root {
+        --brand: #16a34a; /* Grow green */
+        --brand-2: #22c55e; /* lighter green */
+        --accent: #60a5fa; /* blue accent */
+        --bg: #0b0f14; /* dark base */
+        --bg-soft: #101720; /* dark elevated */
+        --card: rgba(255, 255, 255, 0.06);
+        --border: rgba(255, 255, 255, 0.12);
+        --text: #e5e7eb; /* light text */
+        --muted: #9ca3af; /* muted text */
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      }
+
+      /* Global Resets */
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto,
+          Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+          "Segoe UI Emoji";
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button {
+        font: inherit;
+      }
+
+      /* Navbar Custom Styling */
+
+      .professional-footer .row {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        gap: 0 !important; /* or any specific gap you need for the footer */
+        align-items: stretch !important;
+      }
 
       /* Professional Footer */
-  .professional-footer {
-    background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
-    color: #ffffff;
-    margin-top: 60px;
-    padding-top: 50px;
-    border-top: 3px solid transparent;
-    border-image: linear-gradient(90deg, #667eea, #764ba2, #667eea) 1;
-  }
+      .professional-footer {
+        background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
+        color: #ffffff;
+        margin-top: 60px;
+        padding-top: 50px;
+        border-top: 3px solid transparent;
+        border-image: linear-gradient(90deg, #667eea, #764ba2, #667eea) 1;
+      }
 
-  .professional-footer .container {
-    max-width: 1200px;
-    margin: auto;
-  }
+      .professional-footer .container {
+        max-width: 1200px;
+        margin: auto;
+      }
 
-  /* Brand Section */
-  .footer-logo {
-    max-width: 120px;
-    margin-bottom: 15px;
-  }
+      /* Brand Section */
+      .footer-logo {
+        max-width: 120px;
+        margin-bottom: 15px;
+      }
 
-  .brand-name {
-    color: #667eea;
-    font-weight: 700;
-    font-size: 1.6rem;
-    margin-bottom: 10px;
-  }
+      .brand-name {
+        color: #667eea;
+        font-weight: 700;
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+      }
 
-  .brand-description {
-    color: #b8b9c7;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    font-size: 0.95rem;
-  }
+      .brand-description {
+        color: #b8b9c7;
+        line-height: 1.6;
+        margin-bottom: 20px;
+        font-size: 0.95rem;
+      }
 
-  /* Quick Stats */
-  .quick-stats {
-    display: flex;
-    gap: 15px;
-    margin-top: 15px;
-  }
+      /* Quick Stats */
+      .quick-stats {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+      }
 
-  .stat-item {
-    flex: 1;
-    padding: 12px;
-    text-align: center;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    transition: all 0.3s ease;
-  }
+      .stat-item {
+        flex: 1;
+        padding: 12px;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 10px;
+        transition: all 0.3s ease;
+      }
 
-  .stat-item:hover {
-    background: rgba(102, 126, 234, 0.1);
-    transform: translateY(-3px);
-    border-color: #667eea;
-  }
+      .stat-item:hover {
+        background: rgba(102, 126, 234, 0.1);
+        transform: translateY(-3px);
+        border-color: #667eea;
+      }
 
-  .stat-number {
-    display: block;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #667eea;
-  }
+      .stat-number {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #667eea;
+      }
 
-  .stat-label {
-    font-size: 0.8rem;
-    color: #9ca3af;
-    text-transform: uppercase;
-  }
+      .stat-label {
+        font-size: 0.8rem;
+        color: #9ca3af;
+        text-transform: uppercase;
+      }
 
-  /* Footer Titles */
-  .footer-title {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    transition: color 0.3s ease;
-  }
+      /* Footer Titles */
+      .footer-title {
+        color: #ffffff;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        transition: color 0.3s ease;
+      }
 
-  .footer-title:hover {
-    color: #667eea;
-  }
+      .footer-title:hover {
+        color: #667eea;
+      }
 
-  /* Footer Links */
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
+      /* Footer Links */
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
 
-  .footer-links li {
-    margin-bottom: 8px;
-  }
+      .footer-links li {
+        margin-bottom: 8px;
+      }
 
-  .footer-links a {
-    color: #b8b9c7;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-  }
+      .footer-links a {
+        color: #b8b9c7;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
 
-  .footer-links a:hover {
-    color: #667eea;
-    padding-left: 5px;
-  }
+      .footer-links a:hover {
+        color: #667eea;
+        padding-left: 5px;
+      }
 
-  /* Contact Info */
-  .contact-item {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-    font-size: 0.9rem;
-    color: #b8b9c7;
-    transition: all 0.3s ease;
-  }
+      /* Contact Info */
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        color: #b8b9c7;
+        transition: all 0.3s ease;
+      }
 
-  .contact-item:hover {
-    color: #667eea;
-  }
+      .contact-item:hover {
+        color: #667eea;
+      }
 
-  .contact-item i {
-    color: #667eea;
-  }
+      .contact-item i {
+        color: #667eea;
+      }
 
-  /* Social Links */
-  .social-links {
-    display: flex;
-    gap: 10px;
-    margin-top: 10px;
-  }
+      /* Social Links */
+      .social-links {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+      }
 
-  .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 8px;
-    background: rgba(255, 255, 255, 0.08);
-    color: #b8b9c7;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 38px;
+        height: 38px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #b8b9c7;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
 
-  .social-link:hover {
-    background: #667eea;
-    color: #ffffff;
-    transform: translateY(-3px);
-    border-color: #667eea;
-  }
+      .social-link:hover {
+        background: #667eea;
+        color: #ffffff;
+        transform: translateY(-3px);
+        border-color: #667eea;
+      }
 
-  /* Footer Bottom */
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 0px;
-    padding: 15px 0;
-    text-align: center;
-  }
+      /* Footer Bottom */
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        margin-top: 0px;
+        padding: 15px 0;
+        text-align: center;
+      }
 
-  .copyright {
-    color: #9ca3af;
-    font-size: 0.85rem;
-  }
+      .copyright {
+        color: #9ca3af;
+        font-size: 0.85rem;
+      }
 
-  .copyright strong {
-    color: #667eea;
-  }
+      .copyright strong {
+        color: #667eea;
+      }
 
-  .footer-nav {
-    margin-top: 8px;
-  }
+      .footer-nav {
+        margin-top: 8px;
+      }
 
-  .footer-nav a {
-    color: #9ca3af;
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin: 0 10px;
-    transition: all 0.3s ease;
-  }
+      .footer-nav a {
+        color: #9ca3af;
+        text-decoration: none;
+        font-size: 0.85rem;
+        margin: 0 10px;
+        transition: all 0.3s ease;
+      }
 
-  .footer-nav a:hover {
-    color: #ffffff;
-  }
+      .footer-nav a:hover {
+        color: #ffffff;
+      }
 
-  /* =====================
+      /* =====================
     FOOTER RESPONSIVE FIX
     ===================== */
 
-/* Tablet (max 992px) */
-@media (max-width: 992px) {
-  .professional-footer .container {
-    padding: 0 20px;
-  }
+      /* Tablet (max 992px) */
+      @media (max-width: 992px) {
+        .professional-footer .container {
+          padding: 0 20px;
+        }
 
-  .footer-column {
-    margin: 20px 0 !important; /* override inline margins */
-    text-align: center;
-  }
+        .footer-column {
+          margin: 20px 0 !important; /* override inline margins */
+          text-align: center;
+        }
 
-  .footer-links li {
-    margin-bottom: 10px;
-  }
+        .footer-links li {
+          margin-bottom: 10px;
+        }
 
-  .contact-item {
-    justify-content: center;
-  }
+        .contact-item {
+          justify-content: center;
+        }
 
-  .social-links {
-    justify-content: center;
-  }
-}
+        .social-links {
+          justify-content: center;
+        }
+      }
 
-   /* Footer Dark Mode Styles */
-    [data-bs-theme="dark"] .professional-footer {
-      background: linear-gradient(135deg, var(--bg) 0%, var(--bg-soft) 100%) !important;
-      color: #ffffff !important;
-    }
+      /* Footer Dark Mode Styles */
+      [data-bs-theme="dark"] .professional-footer {
+        background: linear-gradient(
+          135deg,
+          var(--bg) 0%,
+          var(--bg-soft) 100%
+        ) !important;
+        color: #ffffff !important;
+      }
 
-/* ================================
+      /* ================================
     Responsive Footer Fixes
 ================================ */
 
-/* Tablet and below */
-@media (max-width: 992px) {
-  .professional-footer .col-lg-2,
-  .professional-footer .col-lg-3 {
-    margin-left: 0 !important;  /* remove hardcoded inline margin */
-    margin-right: 0 !important;
-    text-align: center;
-  }
+      /* Tablet and below */
+      @media (max-width: 992px) {
+        .professional-footer .col-lg-2,
+        .professional-footer .col-lg-3 {
+          margin-left: 0 !important; /* remove hardcoded inline margin */
+          margin-right: 0 !important;
+          text-align: center;
+        }
 
-  .professional-footer .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    padding: 0;
-  }
+        .professional-footer .footer-links {
+          display: flex;
+          flex-direction: column;
+          gap: 8px;
+          align-items: center;
+          padding: 0;
+        }
 
-  .professional-footer .contact-info {
-    text-align: center;
-  }
+        .professional-footer .contact-info {
+          text-align: center;
+        }
 
-  .professional-footer .social-links {
-    justify-content: center;
-    margin-top: 12px;
-  }
-}
-
-/* Mobile - narrow screens */
-@media (max-width: 576px) {
-  .professional-footer .brand-description {
-    font-size: 0.85rem;
-  }
-
-  .professional-footer .stat-item {
-    flex: none;
-    width: 100%;
-  }
-
-  .professional-footer .footer-title {
-    font-size: 1rem;
-  }
-
-  .professional-footer .footer-links a {
-    font-size: 0.85rem;
-  }
-
-  .professional-footer .copyright {
-    font-size: 0.75rem;
-  }
-}
-
-
-    /* Section Wrapper */
-    .hero {
-      position: relative;
-      isolation: isolate;
-      overflow: hidden;
-      padding: clamp(72px, 8vw, 120px) 24px 72px;
-    }
-
-    .container { max-width: 1140px; margin: 0 auto; }
-
-    /* Background aesthetics */
-    .bg-grid {
-      position: absolute; inset: 0; pointer-events: none; z-index: -2;
-      background-image:
-        radial-gradient(600px 300px at 10% -20%, rgba(34,197,94,.25), transparent 60%),
-        radial-gradient(600px 300px at 90% 0%, rgba(96,165,250,.28), transparent 60%),
-        radial-gradient(800px 500px at 50% 100%, rgba(34,197,94,.18), transparent 60%);
-    }
-
-    .grid-lines {
-      position: absolute; inset: -4px; z-index: -1; pointer-events: none;
-      background:
-        linear-gradient(transparent, transparent calc(100% - 1px), var(--border) calc(100% - 1px)),
-        linear-gradient(90deg, transparent, transparent calc(100% - 1px), var(--border) calc(100% - 1px));
-      background-size: 24px 24px, 24px 24px;
-      mask: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.75), rgba(255,255,255,0) 70%);
-      opacity: .6;
-    }
-
-    /* Floating orbs */
-    .orb {
-      position: absolute; width: 420px; height: 420px; filter: blur(64px); border-radius: 999px; opacity: .5;
-      background: radial-gradient(circle at 30% 30%, rgba(34,197,94,.6), transparent 60%);
-      animation: float 16s ease-in-out infinite alternate;
-      transform: translate3d(0,0,0);
-    }
-    .orb.blue { background: radial-gradient(circle at 60% 40%, rgba(96,165,250,.55), transparent 60%); }
-    .orb.one { top: -140px; left: -120px; }
-    .orb.two { bottom: -180px; right: -120px; animation-duration: 18s; }
-    @keyframes float {
-      from { transform: translate3d(0,0,0) scale(1); }
-      to   { transform: translate3d(0,-20px,0) scale(1.05); }
-    }
-
-    /* Top actions */
-    .topbar {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; margin-bottom: clamp(28px, 4vw, 48px);
-    }
-    .brand {
-      display: inline-flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px;
-    }
-    .sprout {
-      width: 28px; height: 28px; display: inline-grid; place-items: center; border-radius: 10px;
-      background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: var(--shadow);
-      transform: translateZ(0);
-    }
-    .sprout svg { width: 18px; height: 18px; color: white; }
-
-    .actions { display: flex; align-items: center; gap: 10px; }
-    .theme-toggle, .ghost {
-      border: 1px solid var(--border); background: color-mix(in oklab, var(--bg-soft), transparent 80%);
-      color: var(--text); padding: 10px 12px; border-radius: 12px; cursor: pointer;
-      transition: transform .15s ease, border-color .2s ease, background .2s ease;
-      backdrop-filter: saturate(120%) blur(8px);
-    }
-    .theme-toggle:hover, .ghost:hover { transform: translateY(-1px); border-color: color-mix(in oklab, var(--brand), transparent 70%); }
-
-    /* Hero content */
-    .content {
-      display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(24px, 6vw, 56px); align-items: center;
-    }
-    @media (max-width: 980px) {
-      .content { grid-template-columns: 1fr; }
-    }
-
-    .eyebrow {
-      display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted);
-      padding: 6px 10px; border-radius: 999px; border: 1px solid var(--border);
-      background: color-mix(in oklab, var(--bg-soft), transparent 70%);
-      backdrop-filter: blur(6px);
-    }
-    .eyebrow .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand), transparent 70%); }
-
-    h1 {
-      font-size: clamp(32px, 6vw, 62px); margin: 12px 0 8px; line-height: 1.03; letter-spacing: -0.02em;
-      background: linear-gradient(90deg, var(--text), color-mix(in oklab, var(--text), transparent 32%));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-    .highlight {
-      background: linear-gradient(90deg, var(--brand), var(--brand-2));
-      -webkit-background-clip: text; background-clip: text; color: transparent;
-    }
-
-    .sub {
-      color: var(--muted); font-size: clamp(15px, 2.2vw, 18px); max-width: 62ch; margin: 12px 0 22px;
-    }
-
-    /* CTAs */
-    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-
-    .btn-primary {
-      --btn-bg: linear-gradient(135deg, var(--brand), var(--brand-2));
-      border: 0; color: white; padding: 12px 18px; border-radius: 14px; font-weight: 600; cursor: pointer; box-shadow: var(--shadow);
-      background: var(--btn-bg);
-      transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
-    }
-    .btn-primary:hover { transform: translateY(-1px); filter: brightness(1.05); }
-
-    .btn-outline {
-      border: 1px solid var(--border); color: var(--text); padding: 11px 16px; border-radius: 14px; font-weight: 600; cursor: pointer;
-      background: color-mix(in oklab, var(--bg-soft), transparent 70%);
-      transition: transform .12s ease, border-color .2s ease;
-      backdrop-filter: blur(6px);
-    }
-    .btn-outline:hover { transform: translateY(-1px); border-color: color-mix(in oklab, var(--brand), transparent 60%); }
-
-    /* Quick badges */
-    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
-    .chip {
-      display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; font-size: 13px;
-      border: 1px solid var(--border); color: var(--muted);
-      background: color-mix(in oklab, var(--bg-soft), transparent 70%);
-    }
-    .chip svg { width: 14px; height: 14px; }
-
-    /* Card visual */
-    .visual {
-      position: relative; border-radius: 22px; padding: clamp(18px, 2.5vw, 28px);
-      background: linear-gradient(180deg, color-mix(in oklab, var(--bg-soft), transparent 10%), color-mix(in oklab, var(--bg-soft), transparent 0%));
-      border: 1px solid var(--border); box-shadow: var(--shadow);
-      overflow: hidden;
-      transform-style: preserve-3d;
-    }
-
-    .metric-grid {
-      display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 14px; margin-top: 6px;
-    }
-    @media (max-width: 520px) { .metric-grid { grid-template-columns: 1fr; } }
-
-    .metric {
-      padding: 16px; border-radius: 16px; border: 1px solid var(--border);
-      background: color-mix(in oklab, var(--bg-soft), transparent 70%);
-      backdrop-filter: blur(8px);
-    }
-    .metric b { font-size: clamp(18px, 3.6vw, 26px); }
-    .metric p { margin: 6px 0 0; color: var(--muted); font-size: 13px; }
-
-    /* Decorative ring */
-    .ring {
-      position: absolute; inset: -120px; border-radius: 40px; pointer-events: none; opacity: .7;
-      background: conic-gradient(from 180deg at 50% 50%, rgba(34,197,94,.25), rgba(96,165,250,.25), rgba(34,197,94,.25));
-      mask: radial-gradient(closest-side, transparent 62%, black 65%, black 80%, transparent 83%);
-      filter: blur(20px);
-      transform: translateZ(-1px);
-    }
-
-    /* Scroll cue */
-    .scroll-cue { margin-top: clamp(22px, 4vw, 34px); color: var(--muted); display: inline-flex; align-items: center; gap: 10px; font-size: 14px; }
-    .scroll-cue svg { width: 18px; height: 18px; animation: bounce 1.4s ease-in-out infinite; }
-    @keyframes bounce { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(4px);} }
-    
-    /* ❌ 3. REMOVED OLD REVEAL ANIMATION CSS */
-
-    /* Accessibility improvements */
-    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-    .section{padding:clamp(36px,6vw,72px) 18px;position:relative;overflow:hidden}
-
-    /* background accents */
-    .bg-layer{position:absolute;inset:0;pointer-events:none;z-index:-2}
-    .orb{position:absolute;border-radius:999px;filter:blur(64px);opacity:.45}
-    .orb.left{width:420px;height:420px;left:-140px;top:-120px;background:radial-gradient(circle at 30% 30%, rgba(34,197,94,.56), transparent 60%)}
-    .orb.right{width:360px;height:360px;right:-120px;bottom:-110px;background:radial-gradient(circle at 60% 40%, rgba(96,165,250,.48), transparent 60%)}
-    .sub-grid{position:absolute;inset:0;z-index:-1;background-size:26px 26px;background-image:linear-gradient(transparent,transparent calc(100% - 1px),var(--border) calc(100% - 1px));mask:radial-gradient(ellipse at 50% 50%, rgba(255,255,255,.9), rgba(255,255,255,0) 72%);opacity:.5}
-
-    /* layout */
-    .wrap{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center}
-    @media(max-width:980px){.wrap{grid-template-columns:1fr}}
-
-    /* left: copy */
-    .eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;border-radius:999px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border:1px solid var(--border);color:var(--muted);font-weight:600}
-    .eyebrow .seed{width:8px;height:8px;border-radius:50%;background:linear-gradient(90deg,var(--brand),var(--brand-2));}
-
-    h2{font-size:clamp(22px,4.4vw,34px);margin:14px 0 8px}
-    p.lead{color:var(--muted);margin:0 0 18px;max-width:70ch}
-
-    /* emphasis highlight */
-    .em{background:linear-gradient(90deg,var(--brand),var(--brand-2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:800}
-
-    /* small control row */
-    .row{display:flex;gap:10px;align-items:center}
-    .btn{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:var(--glass);cursor:pointer}
-    .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;border:0}
-    .ghost{background:transparent}
-
-    /* right: card */
-    .card{padding:18px;border-radius:16px;background:linear-gradient(180deg,color-mix(in oklab,var(--bg-soft),transparent 6%),color-mix(in oklab,var(--bg-soft),transparent 0%));border:1px solid var(--border);box-shadow:var(--shadow);min-height:340px;display:flex;flex-direction:column;gap:12px}
-    .kicker{font-size:13px;color:var(--muted);font-weight:700}
-    .card h3{margin:6px 0 0}
-    .card p{margin:0;color:var(--muted)}
-
-    .facts{display:flex;gap:10px;margin-top:8px}
-    .fact{flex:1;padding:12px;border-radius:12px;background:var(--card);border:1px solid var(--border);text-align:center}
-    .fact b{display:block;font-size:20px}
-    .muted{color:var(--muted)}
-
-    .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:linear-gradient(90deg,color-mix(in oklab,var(--brand),transparent 84%),color-mix(in oklab,var(--brand-2),transparent 84%));color:white;font-weight:700}
-
-    /* decorative timeline tiny */
-    .mini-timeline{display:flex;gap:8px;align-items:center;margin-top:12px}
-    .step{width:10px;height:10px;border-radius:50%;background:var(--card);border:1px solid var(--border)}
-    .step.active{background:linear-gradient(90deg,var(--brand),var(--brand-2));box-shadow:0 6px 18px rgba(22,163,74,.12)}
-
-    /* Enhanced Scroll to Top Button */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 99999;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      font-size: 20px;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px) scale(0.8);
-      transition: all 0.4s ease;
-      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-      outline: none;
-      user-select: none;
-      pointer-events: auto;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    #backToTop:hover {
-      background: linear-gradient(135deg, #5a67d8, #6b46c1);
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
-    }
-
-    #backToTop:active {
-      transform: translateY(-1px) scale(0.95);
-      transition: all 0.1s ease;
-    }
-
-    #backToTop.show {
-      opacity: 1 !important;
-      visibility: visible !important;
-      transform: translateY(0) scale(1) !important;
-    }
-
-    /* Responsive positioning for scroll button */
-    @media (max-width: 768px) {
-      #backToTop {
-        bottom: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        font-size: 18px;
+        .professional-footer .social-links {
+          justify-content: center;
+          margin-top: 12px;
+        }
       }
 
-    }
+      /* Mobile - narrow screens */
+      @media (max-width: 576px) {
+        .professional-footer .brand-description {
+          font-size: 0.85rem;
+        }
 
-     /* ===== FOOTER STYLES ===== */
-    footer {
-      background: #111827;
-      color: #fff;
-      padding: 3rem 2rem 2rem 2rem;
-    }
+        .professional-footer .stat-item {
+          flex: none;
+          width: 100%;
+        }
 
-    .footer-container {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
-      margin-bottom: 2rem;
-      text-align: left;
-    }
+        .professional-footer .footer-title {
+          font-size: 1rem;
+        }
 
-    .footer-col h3 {
-      margin-bottom: 1rem;
-      color: #28a745;
-      font-size: 1.2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      justify-content: flex-start;
-    }
+        .professional-footer .footer-links a {
+          font-size: 0.85rem;
+        }
 
-    .footer-col a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #d1d5db;
-      text-decoration: none;
-      margin-bottom: 0.5rem;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .footer-col a:hover {
-      color: #28a745;
-      transform: translateX(5px);
-    }
-
-    .footer-col p {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      justify-content: flex-start;
-    }
-
-    .social-icons {
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    .social-icons a {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #fff;
-      text-decoration: none;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .social-icons a:hover {
-      color: #28a745;
-      transform: scale(1.05);
-    }
-
-    /* ===== FOOTER BOTTOM ROW ===== */
-    .footer-bottom {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      border-top: 1px solid #374151;
-      padding-top: 1rem;
-      margin-top: 1rem;
-    }
-
-    .footer-left {
-      color: #9ca3af;
-      font-size: 0.9rem;
-    }
-
-    .footer-right a {
-      color: #9ca3af;
-      margin-left: 1rem;
-      text-decoration: none;
-      font-size: 0.9rem;
-      position: relative;
-      padding-bottom: 2px;
-      transition: all 0.3s ease;
-    }
-
-    .footer-right a:hover {
-      color: #28a745;
-    }
-
-    .footer-right a::after {
-      content: '';
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      left: 0;
-      bottom: 0;
-      background-color: #28a745;
-      transition: width 0.3s ease;
-    }
-
-    .footer-right a:hover::after {
-      width: 100%;
-    }
-
-    /* ===== MEDIA QUERIES ===== */
-    /* Tablets */
-    @media (max-width: 1024px) {
-      .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-        text-align: center;
-        gap: 1.5rem;
+        .professional-footer .copyright {
+          font-size: 0.75rem;
+        }
       }
-      .footer-col h3 {
-        justify-content: center;
+
+      /* Section Wrapper */
+      .hero {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+        padding: clamp(72px, 8vw, 120px) 24px 72px;
       }
-      .footer-col p,
-      .footer-col a {
-        justify-content: center;
+
+      .container {
+        max-width: 1140px;
+        margin: 0 auto;
       }
-      .social-icons {
-        flex-direction: row;
-        justify-content: center;
+
+      /* Background aesthetics */
+      .bg-grid {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: -2;
+        background-image: radial-gradient(
+            600px 300px at 10% -20%,
+            rgba(34, 197, 94, 0.25),
+            transparent 60%
+          ),
+          radial-gradient(
+            600px 300px at 90% 0%,
+            rgba(96, 165, 250, 0.28),
+            transparent 60%
+          ),
+          radial-gradient(
+            800px 500px at 50% 100%,
+            rgba(34, 197, 94, 0.18),
+            transparent 60%
+          );
+      }
+
+      .grid-lines {
+        position: absolute;
+        inset: -4px;
+        z-index: -1;
+        pointer-events: none;
+        background: linear-gradient(
+            transparent,
+            transparent calc(100% - 1px),
+            var(--border) calc(100% - 1px)
+          ),
+          linear-gradient(
+            90deg,
+            transparent,
+            transparent calc(100% - 1px),
+            var(--border) calc(100% - 1px)
+          );
+        background-size: 24px 24px, 24px 24px;
+        mask: radial-gradient(
+          ellipse at 50% 50%,
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0) 70%
+        );
+        opacity: 0.6;
+      }
+
+      /* Floating orbs */
+      .orb {
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        filter: blur(64px);
+        border-radius: 999px;
+        opacity: 0.5;
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(34, 197, 94, 0.6),
+          transparent 60%
+        );
+        animation: float 16s ease-in-out infinite alternate;
+        transform: translate3d(0, 0, 0);
+      }
+      .orb.blue {
+        background: radial-gradient(
+          circle at 60% 40%,
+          rgba(96, 165, 250, 0.55),
+          transparent 60%
+        );
+      }
+      .orb.one {
+        top: -140px;
+        left: -120px;
+      }
+      .orb.two {
+        bottom: -180px;
+        right: -120px;
+        animation-duration: 18s;
+      }
+      @keyframes float {
+        from {
+          transform: translate3d(0, 0, 0) scale(1);
+        }
+        to {
+          transform: translate3d(0, -20px, 0) scale(1.05);
+        }
+      }
+
+      /* Top actions */
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: clamp(28px, 4vw, 48px);
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      .sprout {
+        width: 28px;
+        height: 28px;
+        display: inline-grid;
+        place-items: center;
+        border-radius: 10px;
+        background: linear-gradient(135deg, var(--brand), var(--brand-2));
+        box-shadow: var(--shadow);
+        transform: translateZ(0);
+      }
+      .sprout svg {
+        width: 18px;
+        height: 18px;
+        color: white;
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .theme-toggle,
+      .ghost {
+        border: 1px solid var(--border);
+        background: color-mix(in oklab, var(--bg-soft), transparent 80%);
+        color: var(--text);
+        padding: 10px 12px;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: transform 0.15s ease, border-color 0.2s ease,
+          background 0.2s ease;
+        backdrop-filter: saturate(120%) blur(8px);
+      }
+      .theme-toggle:hover,
+      .ghost:hover {
+        transform: translateY(-1px);
+        border-color: color-mix(in oklab, var(--brand), transparent 70%);
+      }
+
+      /* Hero content */
+      .content {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: clamp(24px, 6vw, 56px);
+        align-items: center;
+      }
+      @media (max-width: 980px) {
+        .content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+        color: var(--muted);
+        padding: 6px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: color-mix(in oklab, var(--bg-soft), transparent 70%);
+        backdrop-filter: blur(6px);
+      }
+      .eyebrow .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--brand);
+        box-shadow: 0 0 0 4px color-mix(in oklab, var(--brand), transparent 70%);
+      }
+
+      h1 {
+        font-size: clamp(32px, 6vw, 62px);
+        margin: 12px 0 8px;
+        line-height: 1.03;
+        letter-spacing: -0.02em;
+        background: linear-gradient(
+          90deg,
+          var(--text),
+          color-mix(in oklab, var(--text), transparent 32%)
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+      .highlight {
+        background: linear-gradient(90deg, var(--brand), var(--brand-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+
+      .sub {
+        color: var(--muted);
+        font-size: clamp(15px, 2.2vw, 18px);
+        max-width: 62ch;
+        margin: 12px 0 22px;
+      }
+
+      /* CTAs */
+      .cta-row {
+        display: flex;
         flex-wrap: wrap;
-        gap: 1rem;
+        gap: 12px;
+        align-items: center;
       }
-    }
 
-    /* Mobile */
-    @media (max-width: 768px) {
-      .footer-container {
-        grid-template-columns: 1fr;
+      .btn-primary {
+        --btn-bg: linear-gradient(135deg, var(--brand), var(--brand-2));
+        border: 0;
+        color: white;
+        padding: 12px 18px;
+        border-radius: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        box-shadow: var(--shadow);
+        background: var(--btn-bg);
+        transition: transform 0.12s ease, box-shadow 0.2s ease, filter 0.2s ease;
+      }
+      .btn-primary:hover {
+        transform: translateY(-1px);
+        filter: brightness(1.05);
+      }
+
+      .btn-outline {
+        border: 1px solid var(--border);
+        color: var(--text);
+        padding: 11px 16px;
+        border-radius: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        background: color-mix(in oklab, var(--bg-soft), transparent 70%);
+        transition: transform 0.12s ease, border-color 0.2s ease;
+        backdrop-filter: blur(6px);
+      }
+      .btn-outline:hover {
+        transform: translateY(-1px);
+        border-color: color-mix(in oklab, var(--brand), transparent 60%);
+      }
+
+      /* Quick badges */
+      .badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 18px;
+      }
+      .chip {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 13px;
+        border: 1px solid var(--border);
+        color: var(--muted);
+        background: color-mix(in oklab, var(--bg-soft), transparent 70%);
+      }
+      .chip svg {
+        width: 14px;
+        height: 14px;
+      }
+
+      /* Card visual */
+      .visual {
+        position: relative;
+        border-radius: 22px;
+        padding: clamp(18px, 2.5vw, 28px);
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--bg-soft), transparent 10%),
+          color-mix(in oklab, var(--bg-soft), transparent 0%)
+        );
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        transform-style: preserve-3d;
+      }
+
+      .metric-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 14px;
+        margin-top: 6px;
+      }
+      @media (max-width: 520px) {
+        .metric-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .metric {
+        padding: 16px;
+        border-radius: 16px;
+        border: 1px solid var(--border);
+        background: color-mix(in oklab, var(--bg-soft), transparent 70%);
+        backdrop-filter: blur(8px);
+      }
+      .metric b {
+        font-size: clamp(18px, 3.6vw, 26px);
+      }
+      .metric p {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      /* Decorative ring */
+      .ring {
+        position: absolute;
+        inset: -120px;
+        border-radius: 40px;
+        pointer-events: none;
+        opacity: 0.7;
+        background: conic-gradient(
+          from 180deg at 50% 50%,
+          rgba(34, 197, 94, 0.25),
+          rgba(96, 165, 250, 0.25),
+          rgba(34, 197, 94, 0.25)
+        );
+        mask: radial-gradient(
+          closest-side,
+          transparent 62%,
+          black 65%,
+          black 80%,
+          transparent 83%
+        );
+        filter: blur(20px);
+        transform: translateZ(-1px);
+      }
+
+      /* Scroll cue */
+      .scroll-cue {
+        margin-top: clamp(22px, 4vw, 34px);
+        color: var(--muted);
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 14px;
+      }
+      .scroll-cue svg {
+        width: 18px;
+        height: 18px;
+        animation: bounce 1.4s ease-in-out infinite;
+      }
+      @keyframes bounce {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(4px);
+        }
+      }
+
+      /* ❌ 3. REMOVED OLD REVEAL ANIMATION CSS */
+
+      /* Accessibility improvements */
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      .section {
+        padding: clamp(36px, 6vw, 72px) 18px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* background accents */
+      .bg-layer {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: -2;
+      }
+      .orb {
+        position: absolute;
+        border-radius: 999px;
+        filter: blur(64px);
+        opacity: 0.45;
+      }
+      .orb.left {
+        width: 420px;
+        height: 420px;
+        left: -140px;
+        top: -120px;
+        background: radial-gradient(
+          circle at 30% 30%,
+          rgba(34, 197, 94, 0.56),
+          transparent 60%
+        );
+      }
+      .orb.right {
+        width: 360px;
+        height: 360px;
+        right: -120px;
+        bottom: -110px;
+        background: radial-gradient(
+          circle at 60% 40%,
+          rgba(96, 165, 250, 0.48),
+          transparent 60%
+        );
+      }
+      .sub-grid {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-size: 26px 26px;
+        background-image: linear-gradient(
+          transparent,
+          transparent calc(100% - 1px),
+          var(--border) calc(100% - 1px)
+        );
+        mask: radial-gradient(
+          ellipse at 50% 50%,
+          rgba(255, 255, 255, 0.9),
+          rgba(255, 255, 255, 0) 72%
+        );
+        opacity: 0.5;
+      }
+
+      /* layout */
+      .wrap {
+        display: grid;
+        grid-template-columns: 1fr 420px;
+        gap: 28px;
+        align-items: center;
+      }
+      @media (max-width: 980px) {
+        .wrap {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* left: copy */
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 999px;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0.02),
+          transparent
+        );
+        border: 1px solid var(--border);
+        color: var(--muted);
+        font-weight: 600;
+      }
+      .eyebrow .seed {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: linear-gradient(90deg, var(--brand), var(--brand-2));
+      }
+
+      h2 {
+        font-size: clamp(22px, 4.4vw, 34px);
+        margin: 14px 0 8px;
+      }
+      p.lead {
+        color: var(--muted);
+        margin: 0 0 18px;
+        max-width: 70ch;
+      }
+
+      /* emphasis highlight */
+      .em {
+        background: linear-gradient(90deg, var(--brand), var(--brand-2));
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        font-weight: 800;
+      }
+
+      /* small control row */
+      .row {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .btn {
+        padding: 10px 12px;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+        background: var(--glass);
+        cursor: pointer;
+      }
+      .btn.primary {
+        background: linear-gradient(90deg, var(--brand), var(--brand-2));
+        color: white;
+        border: 0;
+      }
+      .ghost {
+        background: transparent;
+      }
+
+      /* right: card */
+      .card {
+        padding: 18px;
+        border-radius: 16px;
+        background: linear-gradient(
+          180deg,
+          color-mix(in oklab, var(--bg-soft), transparent 6%),
+          color-mix(in oklab, var(--bg-soft), transparent 0%)
+        );
+        border: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+      }
+      .kicker {
+        font-size: 13px;
+        color: var(--muted);
+        font-weight: 700;
+      }
+      .card h3 {
+        margin: 6px 0 0;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .facts {
+        display: flex;
+        gap: 10px;
+        margin-top: 8px;
+      }
+      .fact {
+        flex: 1;
+        padding: 12px;
+        border-radius: 12px;
+        background: var(--card);
+        border: 1px solid var(--border);
         text-align: center;
       }
-      .footer-col {
+      .fact b {
+        display: block;
+        font-size: 20px;
+      }
+      .muted {
+        color: var(--muted);
+      }
+
+      .badge {
+        display: inline-flex;
         align-items: center;
-        margin-bottom: 1.5rem;
+        gap: 8px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: linear-gradient(
+          90deg,
+          color-mix(in oklab, var(--brand), transparent 84%),
+          color-mix(in oklab, var(--brand-2), transparent 84%)
+        );
+        color: white;
+        font-weight: 700;
       }
-      .footer-col h3 {
+
+      /* decorative timeline tiny */
+      .mini-timeline {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        margin-top: 12px;
+      }
+      .step {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: var(--card);
+        border: 1px solid var(--border);
+      }
+      .step.active {
+        background: linear-gradient(90deg, var(--brand), var(--brand-2));
+        box-shadow: 0 6px 18px rgba(22, 163, 74, 0.12);
+      }
+
+      /* Enhanced Scroll to Top Button */
+      #backToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 99999;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 55px;
+        height: 55px;
+        font-size: 20px;
+        cursor: pointer;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px) scale(0.8);
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+        display: flex !important;
+        align-items: center;
         justify-content: center;
+        outline: none;
+        user-select: none;
+        pointer-events: auto;
+        -webkit-tap-highlight-color: transparent;
       }
-      .footer-col p,
+
+      #backToTop:hover {
+        background: linear-gradient(135deg, #5a67d8, #6b46c1);
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+      }
+
+      #backToTop:active {
+        transform: translateY(-1px) scale(0.95);
+        transition: all 0.1s ease;
+      }
+
+      #backToTop.show {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) scale(1) !important;
+      }
+
+      /* Responsive positioning for scroll button */
+      @media (max-width: 768px) {
+        #backToTop {
+          bottom: 20px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          font-size: 18px;
+        }
+      }
+
+      /* ===== FOOTER STYLES ===== */
+      footer {
+        background: #111827;
+        color: #fff;
+        padding: 3rem 2rem 2rem 2rem;
+      }
+
+      .footer-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+        text-align: left;
+      }
+
+      .footer-col h3 {
+        margin-bottom: 1rem;
+        color: #28a745;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: flex-start;
+      }
+
       .footer-col a {
-        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #d1d5db;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s ease, transform 0.3s ease;
       }
+
+      .footer-col a:hover {
+        color: #28a745;
+        transform: translateX(5px);
+      }
+
+      .footer-col p {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: flex-start;
+      }
+
       .social-icons {
+        display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 0.5rem;
       }
+
+      .social-icons a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #28a745;
+        transform: scale(1.05);
+      }
+
+      /* ===== FOOTER BOTTOM ROW ===== */
       .footer-bottom {
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 0.5rem;
+        flex-wrap: wrap;
+        border-top: 1px solid #374151;
+        padding-top: 1rem;
+        margin-top: 1rem;
       }
-      .footer-right a {
-        margin: 0.3rem 0.5rem;
-      }
-    }
 
-    /* Very small screens */
-    @media (max-width: 480px) {
-      .footer-col h3 {
-        font-size: 1rem;
-      }
-      .footer-col a,
-      .footer-right a {
-        font-size: 0.85rem;
-      }
       .footer-left {
-        font-size: 0.85rem;
+        color: #9ca3af;
+        font-size: 0.9rem;
       }
-    }
-    /* Important Links margin for large screens */
-.footer-col.important-links {
-  margin-left: 70px;  /* margin only on large screens */
-}
 
-/* Tablets and smaller laptops */
-@media (max-width: 1024px) {
-  .footer-col.important-links {
-    margin-left: 0; /* remove margin on smaller screens */
-  }
-}
+      .footer-right a {
+        color: #9ca3af;
+        margin-left: 1rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+        position: relative;
+        padding-bottom: 2px;
+        transition: all 0.3s ease;
+      }
 
-/* Mobile devices */
-@media (max-width: 768px) {
-  .footer-col.important-links {
-    margin-left: 0; /* remove margin on mobile too */
-  }
-}
-  </style>
-</head>
+      .footer-right a:hover {
+        color: #28a745;
+      }
 
-<body>
-<div id="navbar"></div>
-  <section class="hero" id="about-hero" aria-labelledby="about-hero-title">
-    <div class="bg-grid" aria-hidden="true"></div>
-    <div class="grid-lines" aria-hidden="true"></div>
-    <div class="orb one" data-parallax="-12" aria-hidden="true"></div>
-    <div class="orb two blue" data-parallax="8" aria-hidden="true"></div>
+      .footer-right a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+        background-color: #28a745;
+        transition: width 0.3s ease;
+      }
 
-    <div class="container">
-      <div class="topbar">
-        <div class="brand" data-aos="fade-down">
-          <span class="sprout" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 21v-8"></path>
-              <path d="M7 8c3-4 10-4 10 2 0 3-2 5-5 5S7 13 7 10V8Z"></path>
-              <path d="M5 12c-1-3 1-7 5-7"></path>
-            </svg>
-          </span>
-          <span>GrowCraft</span>
-          <span class="eyebrow" style="margin-left:10px"><span class="dot"></span> GSSoC'25</span>
-        </div>
-        <div class="actions">
-          <button class="ghost" id="learnMoreBtn" aria-label="Skip to story" data-aos="fade-down">Our Story</button>
-        </div>
-      </div>
+      .footer-right a:hover::after {
+        width: 100%;
+      }
 
-      <div class="content">
-        <div class="copy">
-          <span class="eyebrow" data-aos="fade-up" data-aos-delay="100">About Us</span>
-          <h1 data-aos="fade-up" data-aos-delay="200" id="about-hero-title">Empowering <span class="highlight">Businesses</span> &amp; Enabling <span class="highlight">Students</span>.</h1>
-          <p class="sub" data-aos="fade-up" data-aos-delay="300">GrowCraft is a service-based platform that helps brands grow online while giving students real-world experience through training, internships, and open-source collaboration.</p>
+      /* ===== MEDIA QUERIES ===== */
+      /* Tablets */
+      @media (max-width: 1024px) {
+        .footer-container {
+          grid-template-columns: repeat(2, 1fr);
+          text-align: center;
+          gap: 1.5rem;
+        }
+        .footer-col h3 {
+          justify-content: center;
+        }
+        .footer-col p,
+        .footer-col a {
+          justify-content: center;
+        }
+        .social-icons {
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+      }
 
-          <div class="cta-row" data-aos="fade-up" data-aos-delay="400" style="margin-top:10px;">
-            <button class="btn-primary" id="exploreServices">Explore Services</button>
-            <button class="btn-outline" id="joinContrib">Join as Contributor</button>
-          </div>
+      /* Mobile */
+      @media (max-width: 768px) {
+        .footer-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .footer-col {
+          align-items: center;
+          margin-bottom: 1.5rem;
+        }
+        .footer-col h3 {
+          justify-content: center;
+        }
+        .footer-col p,
+        .footer-col a {
+          justify-content: center;
+        }
+        .social-icons {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .footer-bottom {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .footer-right a {
+          margin: 0.3rem 0.5rem;
+        }
+      }
 
-          <div class="badges" data-aos="fade-up" data-aos-delay="500" aria-label="Key areas">
-            <span class="chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h18"></path><path d="M3 6h18"></path><path d="M3 18h18"></path></svg>
-              Website Development
+      /* Very small screens */
+      @media (max-width: 480px) {
+        .footer-col h3 {
+          font-size: 1rem;
+        }
+        .footer-col a,
+        .footer-right a {
+          font-size: 0.85rem;
+        }
+        .footer-left {
+          font-size: 0.85rem;
+        }
+      }
+      /* Important Links margin for large screens */
+      .footer-col.important-links {
+        margin-left: 70px; /* margin only on large screens */
+      }
+
+      /* Tablets and smaller laptops */
+      @media (max-width: 1024px) {
+        .footer-col.important-links {
+          margin-left: 0; /* remove margin on smaller screens */
+        }
+      }
+
+      /* Mobile devices */
+      @media (max-width: 768px) {
+        .footer-col.important-links {
+          margin-left: 0; /* remove margin on mobile too */
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+    <section class="hero" id="about-hero" aria-labelledby="about-hero-title">
+      <div class="bg-grid" aria-hidden="true"></div>
+      <div class="grid-lines" aria-hidden="true"></div>
+      <div class="orb one" data-parallax="-12" aria-hidden="true"></div>
+      <div class="orb two blue" data-parallax="8" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="topbar">
+          <div class="brand" data-aos="fade-down">
+            <span class="sprout" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M12 21v-8"></path>
+                <path d="M7 8c3-4 10-4 10 2 0 3-2 5-5 5S7 13 7 10V8Z"></path>
+                <path d="M5 12c-1-3 1-7 5-7"></path>
+              </svg>
             </span>
-            <span class="chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .66.39 1.26 1 1.51.32.13.67.2 1.02.2"></path></svg>
-              Training &amp; Internships
-            </span>
-            <span class="chip">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9"></path><path d="M7 22h10"></path><path d="M12 17v5"></path></svg>
-              Open Source (GSSoC)
-            </span>
+            <span>GrowCraft</span>
+            <span class="eyebrow" style="margin-left: 10px"
+              ><span class="dot"></span> GSSoC'25</span
+            >
           </div>
-
-          <div class="scroll-cue" data-aos="fade-up" data-aos-delay="600" role="note">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            Scroll to learn more
-          </div>
-        </div>
-
-        <div class="visual" data-aos="zoom-in" data-aos-delay="200" id="visualCard" data-parallax="4" aria-label="Impact metrics">
-          <div class="ring" aria-hidden="true"></div>
-          <div class="metric-grid">
-            <div class="metric">
-              <b id="metricProjects">50+</b>
-              <p>Real projects delivered</p>
-            </div>
-            <div class="metric">
-              <b id="metricStudents">500+</b>
-              <p>Students trained &amp; mentored</p>
-            </div>
-            <div class="metric">
-              <b id="metricClients">30+</b>
-              <p>Happy client partners</p>
-            </div>
-            <div class="metric">
-              <b id="metricComm">Open</b>
-              <p>Community-first &amp; inclusive</p>
-            </div>
+          <div class="actions">
+            <button
+              class="ghost"
+              id="learnMoreBtn"
+              aria-label="Skip to story"
+              data-aos="fade-down"
+            >
+              Our Story
+            </button>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
+        <div class="content">
+          <div class="copy">
+            <span class="eyebrow" data-aos="fade-up" data-aos-delay="100"
+              >About Us</span
+            >
+            <h1 data-aos="fade-up" data-aos-delay="200" id="about-hero-title">
+              Empowering <span class="highlight">Businesses</span> &amp;
+              Enabling <span class="highlight">Students</span>.
+            </h1>
+            <p class="sub" data-aos="fade-up" data-aos-delay="300">
+              GrowCraft is a service-based platform that helps brands grow
+              online while giving students real-world experience through
+              training, internships, and open-source collaboration.
+            </p>
 
-  <section class="section" id="about-who">
-    <div class="bg-layer" aria-hidden="true">
-      <div class="orb left" data-parallax="-10"></div>
-      <div class="orb right" data-parallax="8"></div>
-      <div class="sub-grid"></div>
-    </div>
+            <div
+              class="cta-row"
+              data-aos="fade-up"
+              data-aos-delay="400"
+              style="margin-top: 10px"
+            >
+              <button class="btn-primary" id="exploreServices">
+                Explore Services
+              </button>
+              <button class="btn-outline" id="joinContrib">
+                Join as Contributor
+              </button>
+            </div>
 
-    <div class="container">
-      <div class="wrap">
+            <div
+              class="badges"
+              data-aos="fade-up"
+              data-aos-delay="500"
+              aria-label="Key areas"
+            >
+              <span class="chip">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M3 12h18"></path>
+                  <path d="M3 6h18"></path>
+                  <path d="M3 18h18"></path>
+                </svg>
+                Website Development
+              </span>
+              <span class="chip">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="3"></circle>
+                  <path
+                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .66.39 1.26 1 1.51.32.13.67.2 1.02.2"
+                  ></path>
+                </svg>
+                Training &amp; Internships
+              </span>
+              <span class="chip">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M21 15V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9"></path>
+                  <path d="M7 22h10"></path>
+                  <path d="M12 17v5"></path>
+                </svg>
+                Open Source (GSSoC)
+              </span>
+            </div>
 
-        <div data-aos="fade-right">
-          <span class="eyebrow"><span class="seed" aria-hidden="true"></span> About Us</span>
-          <h2>Who We Are — <span class="em">GrowCraft</span></h2>
-          <p class="lead">GrowCraft is a <strong>service-based platform</strong> designed to help businesses grow their online presence while also empowering students and contributors to gain hands-on experience in real-world projects. We pair client work with mentorship-driven contributor flows so learning happens by doing.</p>
-
-          <p class="lead"><strong>This project is proudly part of <span class="em">GirlScript Summer of Code 2025 (GSSoC'25)</span></strong> — a nationwide open-source program where contributors collaborate, learn, and build impactful solutions.</p>
-
-          <div class="row" style="margin-top:18px">
-            <button class="btn primary" id="exploreBtn">Explore Services</button>
-            <button class="btn ghost" id="guideBtn">Read Contribution Guide</button>
+            <div
+              class="scroll-cue"
+              data-aos="fade-up"
+              data-aos-delay="600"
+              role="note"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+              Scroll to learn more
+            </div>
           </div>
 
-          <div class="mini-timeline" aria-hidden="true" style="margin-top:18px">
-            <div class="step active" aria-hidden="true"></div>
-            <div class="step" aria-hidden="true"></div>
-            <div class="step" aria-hidden="true"></div>
-            <div class="step" aria-hidden="true"></div>
-            <div class="muted" style="margin-left:12px">GSSoC'25 • Contributor-first</div>
+          <div
+            class="visual"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+            id="visualCard"
+            data-parallax="4"
+            aria-label="Impact metrics"
+          >
+            <div class="ring" aria-hidden="true"></div>
+            <div class="metric-grid">
+              <div class="metric">
+                <b id="metricProjects">50+</b>
+                <p>Real projects delivered</p>
+              </div>
+              <div class="metric">
+                <b id="metricStudents">500+</b>
+                <p>Students trained &amp; mentored</p>
+              </div>
+              <div class="metric">
+                <b id="metricClients">30+</b>
+                <p>Happy client partners</p>
+              </div>
+              <div class="metric">
+                <b id="metricComm">Open</b>
+                <p>Community-first &amp; inclusive</p>
+              </div>
+            </div>
           </div>
         </div>
-
-        <aside class="card" data-aos="fade-left" aria-labelledby="whoCardTitle">
-          <div class="kicker">GrowCraft Snapshot</div>
-          <h3 id="whoCardTitle">Services + Student Experience</h3>
-          <p class="muted">We deliver digital services for clients while offering contributors mentorship, review, and real project work to boost learning and portfolios.</p>
-
-          <div style="display:flex;gap:12px;align-items:center;justify-content:space-between;margin-top:8px">
-            <div class="badge" aria-hidden="true">GSSoC'25</div>
-            <div style="font-size:13px;color:var(--muted)">Open for contributors • Learn by doing</div>
-          </div>
-
-          <div class="facts" aria-hidden="true">
-            <div class="fact"><b data-target="72">0</b><span class="muted">Projects</span></div>
-            <div class="fact"><b data-target="560">0</b><span class="muted">Students</span></div>
-            <div class="fact"><b data-target="35">0</b><span class="muted">Contributors</span></div>
-          </div>
-
-          <div style="margin-top:10px">
-            <p class="muted">Contributors can pick issues tagged <code>good-first-issue</code> or <code>GSSoC</code>, follow the contribution guide, and submit PRs. Mentors provide review and feedback.</p>
-          </div>
-
-          <div style="margin-top:auto;display:flex;gap:10px;justify-content:flex-end">
-            <button class="btn" id="contactBtn">Contact Us</button>
-            <button class="btn primary" id="contributeBtn">Contribute</button>
-          </div>
-        </aside>
-
       </div>
-    </div>
-  </section>
+    </section>
 
-<!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="footer-container ">
-      <!-- About GrowCraft -->
-      <div class="footer-col">
-        <h3><i class="fa-solid fa-briefcase"></i> GrowCraft</h3>
-        <p>Boost your career with skill-focused training and internship opportunities.</p>
+    <section class="section" id="about-who">
+      <div class="bg-layer" aria-hidden="true">
+        <div class="orb left" data-parallax="-10"></div>
+        <div class="orb right" data-parallax="8"></div>
+        <div class="sub-grid"></div>
       </div>
 
-      <!-- Important Links -->
-<div class="footer-col important-links">
-  <h3>Important Links</h3>
-  <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-  <a href="about.html"><i class="fa-solid fa-building"></i> About Us</a>
-  <a href="#services"><i class="fa-solid fa-laptop-code"></i> Services</a>
-  <a href="work.html"><i class="fa-solid fa-graduation-cap"></i> Our Works</a>
-  <a href="src/faq.html"><i class="fa-solid fa-clock"></i> FAQ</a>
-</div>
+      <div class="container">
+        <div class="wrap">
+          <div data-aos="fade-right">
+            <span class="eyebrow"
+              ><span class="seed" aria-hidden="true"></span> About Us</span
+            >
+            <h2>Who We Are — <span class="em">GrowCraft</span></h2>
+            <p class="lead">
+              GrowCraft is a <strong>service-based platform</strong> designed to
+              help businesses grow their online presence while also empowering
+              students and contributors to gain hands-on experience in
+              real-world projects. We pair client work with mentorship-driven
+              contributor flows so learning happens by doing.
+            </p>
 
-      <!-- Contact -->
-      <div class="footer-col">
-        <h3>Contact</h3>
-        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-        <p><i class="fa-solid fa-envelope"></i> support@GrowCraft.com</p>
-      </div>
+            <p class="lead">
+              <strong
+                >This project is proudly part of
+                <span class="em"
+                  >GirlScript Summer of Code 2025 (GSSoC'25)</span
+                ></strong
+              >
+              — a nationwide open-source program where contributors collaborate,
+              learn, and build impactful solutions.
+            </p>
 
-      <!-- Social -->
-      <div class="footer-col">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
-          <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
-          <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <div class="row" style="margin-top: 18px">
+              <button class="btn primary" id="exploreBtn">
+                Explore Services
+              </button>
+              <button class="btn ghost" id="guideBtn">
+                Read Contribution Guide
+              </button>
+            </div>
+
+            <div
+              class="mini-timeline"
+              aria-hidden="true"
+              style="margin-top: 18px"
+            >
+              <div class="step active" aria-hidden="true"></div>
+              <div class="step" aria-hidden="true"></div>
+              <div class="step" aria-hidden="true"></div>
+              <div class="step" aria-hidden="true"></div>
+              <div class="muted" style="margin-left: 12px">
+                GSSoC'25 • Contributor-first
+              </div>
+            </div>
+          </div>
+
+          <aside
+            class="card"
+            data-aos="fade-left"
+            aria-labelledby="whoCardTitle"
+          >
+            <div class="kicker">GrowCraft Snapshot</div>
+            <h3 id="whoCardTitle">Services + Student Experience</h3>
+            <p class="muted">
+              We deliver digital services for clients while offering
+              contributors mentorship, review, and real project work to boost
+              learning and portfolios.
+            </p>
+
+            <div
+              style="
+                display: flex;
+                gap: 12px;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 8px;
+              "
+            >
+              <div class="badge" aria-hidden="true">GSSoC'25</div>
+              <div style="font-size: 13px; color: var(--muted)">
+                Open for contributors • Learn by doing
+              </div>
+            </div>
+
+            <div class="facts" aria-hidden="true">
+              <div class="fact">
+                <b data-target="72">0</b><span class="muted">Projects</span>
+              </div>
+              <div class="fact">
+                <b data-target="560">0</b><span class="muted">Students</span>
+              </div>
+              <div class="fact">
+                <b data-target="35">0</b><span class="muted">Contributors</span>
+              </div>
+            </div>
+
+            <div style="margin-top: 10px">
+              <p class="muted">
+                Contributors can pick issues tagged
+                <code>good-first-issue</code> or <code>GSSoC</code>, follow the
+                contribution guide, and submit PRs. Mentors provide review and
+                feedback.
+              </p>
+            </div>
+
+            <div
+              style="
+                margin-top: auto;
+                display: flex;
+                gap: 10px;
+                justify-content: flex-end;
+              "
+            >
+              <button class="btn" id="contactBtn">Contact Us</button>
+              <button class="btn primary" id="contributeBtn">Contribute</button>
+            </div>
+          </aside>
         </div>
       </div>
-    </div>
+    </section>
 
-    <!-- Footer Bottom Row: Credit + Legal -->
-    <div class="footer-bottom">
-      <div class="footer-left">
-        &copy; 2025 GrowCraft. All rights reserved.
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-container">
+        <!-- About GrowCraft -->
+        <div class="footer-col">
+          <h3><i class="fa-solid fa-briefcase"></i> GrowCraft</h3>
+          <p>
+            Boost your career with skill-focused training and internship
+            opportunities.
+          </p>
+        </div>
+
+        <!-- Important Links -->
+        <div class="footer-col important-links">
+          <h3>Important Links</h3>
+          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="about.html"><i class="fa-solid fa-building"></i> About Us</a>
+          <a href="#services"
+            ><i class="fa-solid fa-laptop-code"></i> Services</a
+          >
+          <a href="work.html"
+            ><i class="fa-solid fa-graduation-cap"></i> Our Works</a
+          >
+          <a href="src/faq.html"><i class="fa-solid fa-clock"></i> FAQ</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fa-solid fa-envelope"></i> support@GrowCraft.com</p>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="#"><i class="fa-brands fa-twitter"></i> Twitter</a>
+            <a href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+          </div>
+        </div>
       </div>
-      <div class="footer-right">
-        <a href="privacy.html"><i class="fa-solid fa-lock"></i> Privacy</a>
-        <a href="terms.html"><i class="fa-solid fa-file-lines"></i> Terms</a>
-        <a href="sitemap.html"><i class="fa-solid fa-map"></i> Sitemap</a>
+
+      <!-- Footer Bottom Row: Credit + Legal -->
+      <div class="footer-bottom">
+        <div class="footer-left">
+          &copy; 2025 GrowCraft. All rights reserved.
+        </div>
+        <div class="footer-right">
+          <a href="privacy.html"><i class="fa-solid fa-lock"></i> Privacy</a>
+          <a href="terms.html"><i class="fa-solid fa-file-lines"></i> Terms</a>
+          <a href="sitemap.html"><i class="fa-solid fa-map"></i> Sitemap</a>
+        </div>
       </div>
-    </div>
-  </footer>
+    </footer>
     <div class="chatbot-container">
       <div class="chatbot-window" id="chatWindow">
         <div class="chatbot-header">
-          <img src="images/logo-transparent-dark-mode.png" alt="GrowCraft Logo" class="chatbot-header-logo" />
+          <img
+            src="images/logo-transparent-dark-mode.png"
+            alt="GrowCraft Logo"
+            class="chatbot-header-logo"
+          />
           <span>GrowCraft</span>
-          <button onclick="toggleChat()"><img src="images/icons/close_small_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Close" /></button>
+          <button onclick="toggleChat()">
+            <img
+              src="images/icons/close_small_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+              alt="Close"
+            />
+          </button>
         </div>
         <div class="chatbot-body" id="chatBody">
           <div class="chatbot-msg bot-msg">
@@ -1008,134 +1599,179 @@
         <div class="quick-questions" id="quickQuestions"></div>
         <div class="chatbot-input-container">
           <input id="chatInput" type="text" placeholder="Type your query..." />
-          <button onclick="sendMessage()"><img src="images/icons/send.png" alt="Send" /></button>
+          <button onclick="sendMessage()">
+            <img src="images/icons/send.png" alt="Send" />
+          </button>
         </div>
       </div>
-      <button class="chatbot-toggle-btn" onclick="toggleChat()"><i class="fas fa-leaf"></i></button>
+      <button class="chatbot-toggle-btn" onclick="toggleChat()">
+        <i class="fas fa-leaf"></i>
+      </button>
     </div>
-  <button id="backToTop" title="Go to top" type="button">
-    <i class="fas fa-chevron-up"></i>
-  </button>
+    <button id="backToTop" title="Go to top" type="button">
+      <i class="fas fa-chevron-up"></i>
+    </button>
 
-
-  <script src="src/script.js"></script>
-  <script src="src/utils.js"></script>
-  <script src="components/chatbot.js"></script>
-  
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-  <script>
-    // ✅ 2. INITIALIZED AOS
-    AOS.init({
-      duration: 800,
-      once: true,
-      offset: 50,
-    });
-  
-   
-
-    // Parallax for decorative elements
-    (function() {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce) return;
-
-      const tracked = Array.from(document.querySelectorAll('[data-parallax]'));
-      if (!tracked.length) return;
-
-      const bounds = { x: 0, y: 0 };
-      const lerp = (a, b, t) => a + (b - a) * t;
-      let rx = 0, ry = 0;
-
-      window.addEventListener('mousemove', (e) => {
-        const vw = window.innerWidth, vh = window.innerHeight;
-        const nx = (e.clientX / vw) * 2 - 1; // -1..1
-        const ny = (e.clientY / vh) * 2 - 1;
-        bounds.x = nx; bounds.y = ny;
-      }, { passive: true });
-
-      function tick() {
-        rx = lerp(rx, bounds.x, 0.06);
-        ry = lerp(ry, bounds.y, 0.06);
-        tracked.forEach(el => {
-          const amt = parseFloat(el.getAttribute('data-parallax')) || 8;
-          el.style.transform = `translate3d(${rx*amt}px, ${ry*amt}px, 0)`;
+    <!-- scripts -->
+    <script>
+      fetch("src/components/navbar.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("navbar").innerHTML = data;
         });
-        requestAnimationFrame(tick);
-      }
-      requestAnimationFrame(tick);
-    })();
+    </script>
+    <script src="src/script.js"></script>
+    <script src="src/utils.js"></script>
+    <script src="src/components/navbar.js"></script>
+    <script src="components/chatbot.js"></script>
 
-    // ❌ 3. REMOVED OLD REVEAL ON VIEW SCRIPT (IntersectionObserver)
-    
-    // CTA demo handlers
-    document.getElementById('exploreServices')?.addEventListener('click', ()=>{
-      window.location.href = 'index.html#services';
-    });
-    document.getElementById('joinContrib')?.addEventListener('click', ()=>{
-      window.location.href = 'index.html#contribute';
-    });
-    document.getElementById('learnMoreBtn')?.addEventListener('click', ()=>{
-      window.location.href = 'index.html#our-story';
-    });
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-   
-
-    // Back to top button functionality
-    (function() {
-      const backToTop = document.getElementById('backToTop');
-      if (!backToTop) return;
-
-      function toggleBackToTop() {
-        if (window.pageYOffset > 100) {
-          backToTop.classList.add('show');
-        } else {
-          backToTop.classList.remove('show');
-        }
-      }
-
-      window.addEventListener('scroll', toggleBackToTop);
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    <script>
+      // ✅ 2. INITIALIZED AOS
+      AOS.init({
+        duration: 800,
+        once: true,
+        offset: 50,
       });
-    })();
 
-    // Counter animation for facts
-    (function(){
-      const counters = document.querySelectorAll('[data-target]');
-      if('IntersectionObserver' in window){
-        const counterObserver = new IntersectionObserver((entries, o)=>{
-          entries.forEach(en => {
-            if(en.isIntersecting){
-              counters.forEach(el=>{
-                const target = Number(el.getAttribute('data-target')) || 0; 
-                let t0=null; 
-                const dur=1100;
-                function step(ts){ 
-                  if(!t0) t0=ts; 
-                  const p=Math.min((ts-t0)/dur, 1); 
-                  el.textContent = Math.floor(p*target); 
-                  if(p<1) requestAnimationFrame(step); 
-                  else el.textContent = target; 
-                }
-                requestAnimationFrame(step);
-              });
-              o.unobserve(en.target);
-            }
+      // Parallax for decorative elements
+      (function () {
+        const reduce = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+        if (reduce) return;
+
+        const tracked = Array.from(
+          document.querySelectorAll("[data-parallax]")
+        );
+        if (!tracked.length) return;
+
+        const bounds = { x: 0, y: 0 };
+        const lerp = (a, b, t) => a + (b - a) * t;
+        let rx = 0,
+          ry = 0;
+
+        window.addEventListener(
+          "mousemove",
+          (e) => {
+            const vw = window.innerWidth,
+              vh = window.innerHeight;
+            const nx = (e.clientX / vw) * 2 - 1; // -1..1
+            const ny = (e.clientY / vh) * 2 - 1;
+            bounds.x = nx;
+            bounds.y = ny;
+          },
+          { passive: true }
+        );
+
+        function tick() {
+          rx = lerp(rx, bounds.x, 0.06);
+          ry = lerp(ry, bounds.y, 0.06);
+          tracked.forEach((el) => {
+            const amt = parseFloat(el.getAttribute("data-parallax")) || 8;
+            el.style.transform = `translate3d(${rx * amt}px, ${ry * amt}px, 0)`;
           });
-        }, {threshold:0.25});
-        const factsWrap = document.querySelector('.facts'); 
-        if(factsWrap) counterObserver.observe(factsWrap);
-      } else {
-        counters.forEach(el => el.textContent = el.getAttribute('data-target'));
-      }
-    })();
+          requestAnimationFrame(tick);
+        }
+        requestAnimationFrame(tick);
+      })();
 
-    // CTA handlers
-    document.getElementById('exploreBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#services');
-    document.getElementById('guideBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#contributing');
-    document.getElementById('contactBtn')?.addEventListener('click', ()=> window.location.href = 'src/contact.html');
-    document.getElementById('contributeBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#contribute');
-  </script>
+      // ❌ 3. REMOVED OLD REVEAL ON VIEW SCRIPT (IntersectionObserver)
 
-</body>
+      // CTA demo handlers
+      document
+        .getElementById("exploreServices")
+        ?.addEventListener("click", () => {
+          window.location.href = "index.html#services";
+        });
+      document.getElementById("joinContrib")?.addEventListener("click", () => {
+        window.location.href = "index.html#contribute";
+      });
+      document.getElementById("learnMoreBtn")?.addEventListener("click", () => {
+        window.location.href = "index.html#our-story";
+      });
+
+      // Back to top button functionality
+      (function () {
+        const backToTop = document.getElementById("backToTop");
+        if (!backToTop) return;
+
+        function toggleBackToTop() {
+          if (window.pageYOffset > 100) {
+            backToTop.classList.add("show");
+          } else {
+            backToTop.classList.remove("show");
+          }
+        }
+
+        window.addEventListener("scroll", toggleBackToTop);
+        backToTop.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      })();
+
+      // Counter animation for facts
+      (function () {
+        const counters = document.querySelectorAll("[data-target]");
+        if ("IntersectionObserver" in window) {
+          const counterObserver = new IntersectionObserver(
+            (entries, o) => {
+              entries.forEach((en) => {
+                if (en.isIntersecting) {
+                  counters.forEach((el) => {
+                    const target = Number(el.getAttribute("data-target")) || 0;
+                    let t0 = null;
+                    const dur = 1100;
+                    function step(ts) {
+                      if (!t0) t0 = ts;
+                      const p = Math.min((ts - t0) / dur, 1);
+                      el.textContent = Math.floor(p * target);
+                      if (p < 1) requestAnimationFrame(step);
+                      else el.textContent = target;
+                    }
+                    requestAnimationFrame(step);
+                  });
+                  o.unobserve(en.target);
+                }
+              });
+            },
+            { threshold: 0.25 }
+          );
+          const factsWrap = document.querySelector(".facts");
+          if (factsWrap) counterObserver.observe(factsWrap);
+        } else {
+          counters.forEach(
+            (el) => (el.textContent = el.getAttribute("data-target"))
+          );
+        }
+      })();
+
+      // CTA handlers
+      document
+        .getElementById("exploreBtn")
+        ?.addEventListener(
+          "click",
+          () => (window.location.href = "index.html#services")
+        );
+      document
+        .getElementById("guideBtn")
+        ?.addEventListener(
+          "click",
+          () => (window.location.href = "index.html#contributing")
+        );
+      document
+        .getElementById("contactBtn")
+        ?.addEventListener(
+          "click",
+          () => (window.location.href = "src/contact.html")
+        );
+      document
+        .getElementById("contributeBtn")
+        ?.addEventListener(
+          "click",
+          () => (window.location.href = "index.html#contribute")
+        );
+    </script>
+  </body>
 </html>
