@@ -2032,6 +2032,45 @@
     })();
   </script>
   <script src="darkMode.js"></script>
+  <script>
+  // Select elements
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  const scrollWrapper = carouselWrapper.querySelector('.glass-scroll-wrapper');
+  const prevBtn = carouselWrapper.querySelector('.carousel-btn.prev');
+  const nextBtn = carouselWrapper.querySelector('.carousel-btn.next');
+
+  // Amount to scroll each click (width of one item)
+  const scrollAmount = scrollWrapper.querySelector('.glass-item').offsetWidth + 16; // 16px gap
+
+  // Function to update button state
+  function updateButtons() {
+    prevBtn.disabled = scrollWrapper.scrollLeft <= 0;
+    nextBtn.disabled = scrollWrapper.scrollLeft >= scrollWrapper.scrollWidth - scrollWrapper.clientWidth;
+  }
+
+  // Scroll left
+  prevBtn.addEventListener('click', () => {
+    scrollWrapper.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  // Scroll right
+  nextBtn.addEventListener('click', () => {
+    scrollWrapper.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  // Update buttons on scroll
+  scrollWrapper.addEventListener('scroll', updateButtons);
+
+  // Initial button state
+  updateButtons();
+</script>
+
 </body>
 
 </html>
