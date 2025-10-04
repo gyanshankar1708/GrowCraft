@@ -375,6 +375,7 @@
       display: flex;
       gap: 10px;
       margin-top: 15px;
+      
     }
 
     .social-links a {
@@ -392,14 +393,19 @@
 
     .social-links a:hover {
       transform: scale(1.1);
-      background: #2e7d32;
+      background:#8ed39a;
     }
 
     /* Professional Footer */
     .professional-footer {
-      background: linear-gradient(135deg, rgba(132, 234, 132, 0.85), rgba(135, 210, 161, 0.59));
-      color: #333;
-      padding: 60px 0 0 0;
+      background: #111827;
+      padding: 3rem 2rem 2rem 2rem;
+    }
+    .main-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: space-between;
     }
 
     .footer-brand {
@@ -423,7 +429,7 @@
       line-height: 1.5;
       text-align: center;
       font-weight: bold;
-      color: #333;
+      color: #f8f6f6;
     }
 
     .quick-stats {
@@ -441,31 +447,31 @@
       display: block;
       font-size: 1.4rem;
       font-weight: 700;
-      color: maroon;
+      color: rgba(47, 167, 57, 0.856);
       margin-bottom: 2px;
     }
 
     .stat-label {
       font-size: 1.1rem;
       font-weight: 500;
-      color: #333;
+      color: #b7cab7;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
     .footer-title {
-      color: #333;
+      color: #40c740;
       font-weight: 600;
       font-size: 1.1rem;
-      margin-bottom: 15px;
       position: relative;
       padding-bottom: 8px;
       transition: transform 0.3s ease-in-out;
+
     }
 
     .footer-title:hover {
       transform: scale(1.15);
-      color: maroon;
+      color: #79f78e;
     }
 
     .footer-title::after {
@@ -475,7 +481,6 @@
       left: 0;
       width: 30px;
       height: 2px;
-      background: linear-gradient(90deg, #667eea, #764ba2);
       border-radius: 2px;
     }
 
@@ -490,7 +495,7 @@
     }
 
     .footer-links a {
-      color: #333;
+      color: #c2d3c2;
       text-decoration: none;
       font-size: 0.9rem;
       transition: all 0.3s ease;
@@ -500,13 +505,14 @@
     }
 
     .footer-links a:hover {
-      color: black;
+      color: rgb(116, 190, 126);
       padding-left: 8px;
       transform: scale(1.05);
       font-weight: 450;
     }
 
     .contact-info {
+      color:rgb(238, 233, 233);
       margin-bottom: 15px;
     }
 
@@ -519,38 +525,38 @@
     }
 
     .contact-item i {
-      color: maroon;
+      color: rgb(31, 131, 28);
       width: 16px;
       font-size: 0.9rem;
     }
 
     .contact-item a {
-      color: #333;
+      color: rgb(238, 233, 233);
       text-decoration: none;
       transition: all 0.3s ease;
     }
 
     .contact-item a:hover {
-      color: black;
+      color: rgb(31, 131, 28);
       transform: scale(1.05);
       font-weight: 600;
     }
 
     .footer-bottom {
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      background: rgba(0, 0, 0, 0.05);
+      background: #111827;
+      color: #fff;
+      padding: 3rem 2rem 2rem 2rem;
       margin-top: 30px;
-      padding: 20px 0;
     }
 
     .copyright {
-      color: #333;
+      color: #d4dfd5;
       font-size: 0.85rem;
       margin: 0;
     }
 
     .copyright strong {
-      color: #007bff;
+      color: #5bc94dc5;
     }
 
     .footer-nav {
@@ -561,7 +567,7 @@
     }
 
     .footer-nav a {
-      color: #333;
+      color: #6bb368;
       text-decoration: none;
       font-size: 0.85rem;
       padding: 6px 12px;
@@ -570,8 +576,8 @@
     }
 
     .footer-nav a:hover {
-      color: #007bff;
-      background: rgba(0, 123, 255, 0.1);
+      color: #36c03a;
+      background: rgba(79, 190, 88, 0.1);
     }
 
     /* Enhanced Scroll to Top Button */
@@ -580,7 +586,7 @@
       bottom: 30px;
       right: 30px;
       z-index: 99999;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      background: linear-gradient(135deg,rgba(1, 59, 23, 0.85), rgba(6, 136, 51, 0.59));
       color: white;
       border: none;
       border-radius: 50%;
@@ -592,14 +598,14 @@
       visibility: hidden;
       transform: translateY(20px) scale(0.8);
       transition: all 0.4s ease;
-      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+      box-shadow: 0 4px 20px rgba(11, 129, 31, 0.3);
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
     #backToTop:hover {
-      background: linear-gradient(135deg, #5a67d8, #6b46c1);
+      background: linear-gradient(135deg,rgba(32, 87, 53, 0.85), rgba(43, 104, 62, 0.59));
       transform: translateY(-3px) scale(1.05);
       box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
     }
@@ -884,12 +890,12 @@
       </div>
     </div>
   </section>
-  <footer class="professional-footer" data-aos="fade-up" style="background: linear-gradient(135deg, rgba(132, 234, 132, 0.85), rgba(135, 210, 161, 0.59));">
+  <footer class="professional-footer" data-aos="fade-up" >
     <div class="container">
       <div class="main-footer row g-4">
         <div class="col-lg-4 col-md-6 first-grid">
           <div class="footer-brand">
-            <img src="images/logo_bg_transparent.png" alt="GrowCraft Logo" class="footer-logo mb-3 theme-aware-logo" data-light-src="images/logo_bg_transparent.png" data-dark-src="images/logo-transparent-dark-mode.png" />
+            <img src="../src\images\logo-transparent-dark-mode.png" alt="GrowCraft Logo" class="footer-logo mb-3 theme-aware-logo" data-light-src="images/logo_bg_transparent.png" data-dark-src="images/logo-transparent-dark-mode.png" />
             <p class="brand-description">
               Empowering businesses with innovative digital solutions and creative excellence.
             </p>
@@ -950,13 +956,13 @@
             </div>
             <div class="contact-item d-flex justify-content-around mt-4">
               <a href="https://discord.gg/vk5zFm56" target="_blank">
-                <i class="fa-brands fa-discord" style="color: #a22a2a; font-size: 24px;"></i>
+                <i class="fa-brands fa-discord" style=" font-size: 24px;"></i>
               </a>
               <a href="https://github.com/gyanshankar1708/GrowCraft" target="_blank">
-                <i class="fa-brands fa-github" style="color: #a22a2a; font-size: 24px;"></i>
+                <i class="fa-brands fa-github" style=" font-size: 24px;"></i>
               </a>
               <a href="https://www.instagram.com/GrowCraft" target="_blank">
-                <i class="fa-brands fa-instagram" style="color: #a22a2a; font-size: 24px;"></i>
+                <i class="fa-brands fa-instagram" style=" font-size: 24px;"></i>
               </a>
             </div>
           </div>
