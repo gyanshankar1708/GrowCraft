@@ -28,6 +28,9 @@
             --shadow-hover: 0 20px 40px rgba(31, 38, 135, 0.25);
             --border-radius: 16px;
             --animation-speed: 0.3s;
+            --primary-green: #27ae60;
+            --light-green: #4caf50;
+            --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
 
         /* ===== DARK MODE THEME VARIABLES ===== */
@@ -40,6 +43,8 @@
             --text-primary: #f2f2f7;
             --surface: #1a1a2e;
             --surface-elevated: #2d3748;
+            --light-green: #4caf50;
+      --accent-green: #81c784;
         }
 
         /* Light mode defaults */
@@ -89,53 +94,133 @@
 
         /* Modern Navbar */
         .navbar {
-            background: var(--bg-color);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            transition: all var(--animation-speed) ease;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-        }
+      padding: 1.2rem 0;
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
 
-        .dark-mode .navbar {
-            background: var(--surface);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
-        }
+    .navbar.scrolled {
+      padding: 0.8rem 0;
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    }
 
-        .navbar-brand img {
-            transition: transform var(--animation-speed) ease;
-        }
+    .navbar-brand img {
+      max-height: 50px;
+      transition: var(--transition);
+      filter: drop-shadow(2px 2px 8px rgba(39, 174, 96, 0.2));
+    }
 
-        .navbar-brand:hover img {
-            transform: scale(1.05);
-        }
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      color: #2e7d32 !important;
+      padding: 0.8rem 1.5rem !important;
+      border-radius: 25px;
+      margin: 0 0.3rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
 
-        .nav-link {
-            color: var(--text-color) !important;
-            font-weight: 500;
-            position: relative;
-            transition: all var(--animation-speed) ease;
-            padding: 0.5rem 1rem !important;
-        }
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
 
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 50%;
-            background: var(--primary-gradient);
-            transition: all var(--animation-speed) ease;
-            transform: translateX(-50%);
-        }
+    .navbar-nav .nav-link:hover::before {
+      left: 0;
+    }
 
-        .nav-link:hover::after {
-            width: 100%;
-        }
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: rgba(39, 174, 96, 0.1);
+      border: 1px solid rgba(39, 174, 96, 0.3);
+      color: var(--primary-green);
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .theme-toggle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .theme-toggle:hover::before {
+      left: 0;
+    }
+
+    .theme-toggle:hover {
+      color: white;
+      border-color: var(--primary-green);
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    }
+
+    .theme-toggle i {
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover i {
+      transform: rotate(20deg) scale(1.1);
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+    }
+    .dark-mode .navbar {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+    }
+
+   .dark-mode .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+
+    .dark-mode .theme-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    .dark-mode .theme-toggle::before {
+      background: linear-gradient(135deg, var(--accent-green), var(--light-green));
+    }
+
+    .dark-mode .theme-toggle:hover {
+      color: #000000;
+      border-color: var(--accent-green);
+      box-shadow: 0 4px 15px rgba(129, 199, 132, 0.4);
+    }
 
         /* Enhanced Hero Section */
         .hero {
@@ -913,7 +998,7 @@
     <nav class="navbar navbar-expand-lg">
         <div class="container-fluid px-5">
             <a class="navbar-brand" href="../index.html">
-                <img src="../images/Logo_new.png" alt="GrowCraft" style="color: black !important;" width="180">
+                <img src="../images/Logo_new.png" id="logo" alt="GrowCraft" style="color: black !important;" width="180">
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -929,9 +1014,9 @@
                     <li class="nav-item"><a class="nav-link" href="../work.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item">
-                        <button id="darkModeToggle" class="btn btn-sm ms-3" style="background:none; border:none; font-weight:600;">
-                            🌙 Dark Mode
-                        </button>
+                       <button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
                     </li>
                 </ul>
             </div>
@@ -1440,22 +1525,6 @@
             document.body.classList.add('loaded');
         });
 
-        // Dark Mode Toggle
-        const toggleBtn = document.getElementById("darkModeToggle");
-        const body = document.body;
-
-        function setDarkMode(enabled) {
-            if (enabled) {
-                body.classList.add("dark-mode");
-                toggleBtn.textContent = "☀️ Light Mode";
-                localStorage.setItem("dark-mode", "enabled");
-            } else {
-                body.classList.remove("dark-mode");
-                toggleBtn.textContent = "🌙 Dark Mode";
-                localStorage.setItem("dark-mode", "disabled");
-            }
-        }
-
         // Load preference
         setDarkMode(localStorage.getItem("dark-mode") === "enabled");
 
@@ -1464,5 +1533,34 @@
             setDarkMode(!body.classList.contains("dark-mode"));
         });
     </script>
+    <script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const body = document.body;
+  const logo = document.querySelector("#logo");
+  const themeIcon = document.getElementById("themeIcon");
+
+  function setDarkMode(enabled) {
+    if (enabled) {
+      body.classList.add("dark-mode");
+      themeIcon.className = 'fas fa-sun';
+      logo.src = "../images/logo-transparent-dark-mode.png"; // dark mode logo
+      localStorage.setItem("dark-mode", "enabled");
+    } else {
+      body.classList.remove("dark-mode");
+      themeIcon.className = 'fas fa-moon';
+      logo.src = "../images/Logo_new.png"; // light mode logo
+      localStorage.setItem("dark-mode", "disabled");
+    }
+  }
+
+  // Load preference on page load
+  setDarkMode(localStorage.getItem("dark-mode") === "enabled");
+
+  // Toggle mode on button click
+  toggleBtn.addEventListener("click", () => {
+    setDarkMode(!body.classList.contains("dark-mode"));
+  });
+</script>
+    
 </body>
 </html>
