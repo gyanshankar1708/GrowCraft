@@ -5,62 +5,414 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Social Media Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
   <style>
+    :root {
+      --primary-bg: #ffffff;
+      --secondary-bg: #f8f9fa;
+      --text-primary: #1f1f1f;
+      --text-secondary: #555;
+      --card-bg: #ffffff;
+      --border-color: #eaeaea;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --accent-color: #6c63ff;
+      --accent-hover: #5a52d5;
+    }
+
+    .dark-theme {
+      --primary-bg: #1a1a1a;
+      --secondary-bg: #2d2d2d;
+      --text-primary: #ffffff;
+      --text-secondary: #b0b0b0;
+      --card-bg: #2d2d2d;
+      --border-color: #404040;
+      --shadow-color: rgba(0, 0, 0, 0.3);
+      --accent-color: #8a84ff;
+      --accent-hover: #6c63ff;
+    }
+
+    body {
+      background-color: var(--primary-bg);
+      color: var(--text-primary);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      overflow-x: hidden;
+    }
+
+    /* Enhanced header section */
+    .page-header {
+      position: relative;
+      padding: 4rem 0 2rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary-bg) 0%, var(--secondary-bg) 100%);
+      margin-bottom: 2rem;
+    }
+
+    .page-header::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-color), #ff6b6b, var(--accent-color));
+    }
+
+    .page-title {
+      font-weight: 800;
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      background: linear-gradient(90deg, var(--accent-color), #ff6b6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .page-subtitle {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--text-secondary);
+    }
+
+    /* Enhanced card styles */
     .card {
-  border: none;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      background-color: var(--card-bg);
+      border: 1px solid var(--border-color);
+      position: relative;
+      cursor: pointer;
+    }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-}
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--accent-color) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 1;
+      pointer-events: none;
+    }
 
-.card-img-top {
-  height: 220px;
-  object-fit: cover;
-  border-bottom: 1px solid #eaeaea;
-}
+    .card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px var(--shadow-color);
+    }
 
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #2d2d2d;
-}
+    .card:hover::before {
+      opacity: 0.05;
+    }
 
-.card-text {
-  font-size: 0.95rem;
-  color: #555;
-}
+    .card-img-container {
+      position: relative;
+      overflow: hidden;
+      height: 240px;
+    }
 
-h1 {
-  font-weight: 700;
-  color: #1f1f1f;
-}
+    .card-img-top {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
 
-section.container {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
+    .card:hover .card-img-top {
+      transform: scale(1.1);
+    }
+
+    .card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+      padding: 1.5rem;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+      color: white;
+      z-index: 2;
+    }
+
+    .card:hover .card-overlay {
+      transform: translateY(0);
+    }
+
+    .card-body {
+      padding: 1.75rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.75rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .card-title::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+
+    .card:hover .card-title::after {
+      width: 100%;
+    }
+
+    .card-text {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .card-icon {
+      position: absolute;
+      top: -20px;
+      right: 20px;
+      background: var(--accent-color);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 1.2rem;
+      box-shadow: 0 4px 12px rgba(108, 99, 255, 0.3);
+      z-index: 3;
+    }
+
+    /* Back button enhancement */
+    .back-btn {
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      display: inline-flex;
+      align-items: center;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 8px var(--shadow-color);
+    }
+
+    .back-btn:hover {
+      color: var(--accent-color);
+      transform: translateX(-5px);
+      box-shadow: 0 4px 12px var(--shadow-color);
+    }
+
+    /* Theme toggle button enhancement */
+    .theme-toggle-btn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background: var(--card-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px var(--shadow-color);
+    }
+
+    .theme-toggle-btn:hover {
+      transform: scale(1.1) rotate(15deg);
+      box-shadow: 0 6px 20px var(--shadow-color);
+      background: var(--accent-color);
+    }
+
+    .theme-toggle-btn:hover i {
+      color: white;
+    }
+
+    .theme-toggle-btn i {
+      font-size: 1.3rem;
+      color: var(--text-primary);
+      transition: color 0.3s ease;
+    }
+
+    /* Enhanced animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .card {
+      animation: fadeInUp 0.6s ease-out both;
+    }
+
+    .card:nth-child(1) {
+      animation-delay: 0.1s;
+    }
+
+    .card:nth-child(2) {
+      animation-delay: 0.2s;
+    }
+
+    .card:nth-child(3) {
+      animation-delay: 0.3s;
+    }
+
+    /* Floating elements */
+    .floating-elements {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .floating-element {
+      position: absolute;
+      border-radius: 50%;
+      background: var(--accent-color);
+      opacity: 0.05;
+      animation: float 20s infinite linear;
+    }
+
+    .floating-element:nth-child(1) {
+      width: 100px;
+      height: 100px;
+      top: 10%;
+      left: 10%;
+      animation-duration: 25s;
+    }
+
+    .floating-element:nth-child(2) {
+      width: 150px;
+      height: 150px;
+      top: 60%;
+      right: 10%;
+      animation-duration: 30s;
+      animation-direction: reverse;
+    }
+
+    .floating-element:nth-child(3) {
+      width: 70px;
+      height: 70px;
+      bottom: 20%;
+      left: 20%;
+      animation-duration: 20s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+      25% {
+        transform: translate(20px, 20px) rotate(90deg);
+      }
+      50% {
+        transform: translate(0, 40px) rotate(180deg);
+      }
+      75% {
+        transform: translate(-20px, 20px) rotate(270deg);
+      }
+      100% {
+        transform: translate(0, 0) rotate(360deg);
+      }
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .page-title {
+        font-size: 2.2rem;
+      }
+      
+      .card-img-container {
+        height: 200px;
+      }
+      
+      .theme-toggle-btn {
+        width: 45px;
+        height: 45px;
+      }
+    }
+
+    /* Scroll animation */
+    .scroll-reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.6s ease;
+    }
+
+    .scroll-reveal.revealed {
+      opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Gradient text effect */
+    .gradient-text {
+      background: linear-gradient(90deg, var(--accent-color), #ff6b6b);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
   </style>
 </head>
 <body>
-  <div class="container mt-4">
-    <a href="../index.html" class="btn btn-link text-decoration-none d-flex align-items-center" style="font-size: 1.1rem;">
-      &#8592; <span class="ms-2">Back</span>
-    </a>
+  <!-- Floating background elements -->
+  <div class="floating-elements">
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
+    <div class="floating-element"></div>
   </div>
-  <!-- Navbar -->
-  <!-- ... Navbar code ... -->
-  <section class="container mt-5">
-    <h1 class="mb-4 text-center">Social Media Highlights</h1>
-    <p class="text-center mb-5">Campaigns that convert likes into loyal customers.</p>
+
+  <!-- Theme Toggle Button -->
+  <div class="theme-toggle-btn" id="themeToggle">
+    <i class="fas fa-moon"></i>
+  </div>
+
+  <div class="container mt-4">
+    <a href="../index.html" class="back-btn text-decoration-none d-inline-flex align-items-center">
+      <i class="fas fa-arrow-left me-2"></i> <span>Back</span>
+    </a>
+  </div><br>
+
+  <section class="container">
+    <div class="page-header">
+      <h1 class="page-title">Social Media Highlights</h1>
+      <p class="page-subtitle">Campaigns that convert likes into loyal customers.</p>
+    </div>
+    
     <div class="row">
       <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="../images/img1sm.jpg" class="card-img-top" alt="Instagram Campaign">
+        <div class="card shadow scroll-reveal">
+          <div class="card-img-container">
+            <img src="../images/img1sm.jpg" class="card-img-top" alt="Instagram Campaign">
+            <div class="card-overlay">
+              <h5 class="text-white">5x Engagement Boost</h5>
+              <p class="text-light mb-0">Trendy audio & carousel posts</p>
+            </div>
+          </div>
           <div class="card-body">
             <h5 class="card-title">Instagram Reels Strategy</h5>
             <p class="card-text">Boosted engagement 5x using trendy audio and carousel posts for a fashion brand.</p>
@@ -68,8 +420,14 @@ section.container {
         </div>
       </div>
       <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="../images/img2sm.jpg" class="card-img-top" alt="YouTube Strategy">
+        <div class="card shadow scroll-reveal">
+          <div class="card-img-container">
+            <img src="../images/img2sm.jpg" class="card-img-top" alt="YouTube Strategy">
+            <div class="card-overlay">
+              <h5 class="text-white">10x Subscriber Growth</h5>
+              <p class="text-light mb-0">From 5k to 50k subscribers</p>
+            </div>
+          </div>
           <div class="card-body">
             <h5 class="card-title">YouTube Creator Boost</h5>
             <p class="card-text">From 5k to 50k subscribers with storytelling, thumbnails, and SEO tagging.</p>
@@ -77,8 +435,14 @@ section.container {
         </div>
       </div>
       <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="../images/img3sm.jpg" class="card-img-top" alt="LinkedIn Growth">
+        <div class="card shadow scroll-reveal">
+          <div class="card-img-container">
+            <img src="../images/img3sm.jpg" class="card-img-top" alt="LinkedIn Growth">
+            <div class="card-overlay">
+              <h5 class="text-white">2x B2B Lead Growth</h5>
+              <p class="text-light mb-0">Thought leadership & scheduled publishing</p>
+            </div>
+          </div>
           <div class="card-body">
             <h5 class="card-title">LinkedIn Outreach</h5>
             <p class="card-text">Doubled B2B leads with thought leadership posts and scheduled publishing.</p>
@@ -87,5 +451,58 @@ section.container {
       </div>
     </div>
   </section>
+
+  <script>
+    // Theme toggle functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const themeToggle = document.getElementById('themeToggle');
+      const themeIcon = themeToggle.querySelector('i');
+      
+      // Check for saved theme preference or default to light
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      
+      // Apply saved theme
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-theme');
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
+      }
+      
+      // Toggle theme on button click
+      themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-theme');
+        
+        if (document.body.classList.contains('dark-theme')) {
+          themeIcon.classList.remove('fa-moon');
+          themeIcon.classList.add('fa-sun');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          themeIcon.classList.remove('fa-sun');
+          themeIcon.classList.add('fa-moon');
+          localStorage.setItem('theme', 'light');
+        }
+      });
+
+      // Scroll reveal animation
+      const scrollRevealElements = document.querySelectorAll('.scroll-reveal');
+      
+      const scrollReveal = function() {
+        scrollRevealElements.forEach(element => {
+          const elementTop = element.getBoundingClientRect().top;
+          const elementVisible = 150;
+          
+          if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('revealed');
+          }
+        });
+      };
+      
+      // Initial check
+      scrollReveal();
+      
+      // Listen for scroll events
+      window.addEventListener('scroll', scrollReveal);
+    });
+  </script>
 </body>
 </html>
