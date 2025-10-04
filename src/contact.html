@@ -20,7 +20,7 @@
   <style>
     /* Modern CSS Variables */
     :root {
-      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --primary-gradient: linear-gradient(135deg, #27ae60 0%, #388e3c 100%);
       --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
       --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
       --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
@@ -29,12 +29,14 @@
       --text-primary: #2d3748;
       --text-secondary: #4a5568;
       --border-radius: 20px;
+      --light-green: #4caf50;
       --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+       --primary-green: #27ae60;
     }
 
     /* Dark mode variables */
     [data-bs-theme="dark"] {
-      --primary-gradient: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
+      --primary-gradient: linear-gradient(135deg, #27ae60 0%, #388e3c 100%);
       --secondary-gradient: linear-gradient(135deg, #d946ef 0%, #f43f5e 100%);
       --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
       --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
@@ -42,6 +44,8 @@
       --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.4);
       --text-primary: #f7fafc;
       --text-secondary: #e2e8f0;
+       --light-green: #4caf50;
+      --accent-green: #81c784;
     }
 
     /* Base Styles */
@@ -93,53 +97,138 @@
 
     /* Navbar Styles */
     .navbar {
+      padding: 1.2rem 0;
       background: rgba(255, 255, 255, 0.95) !important;
       backdrop-filter: blur(20px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       transition: var(--transition);
     }
 
-    [data-bs-theme="dark"] .navbar {
-      background: rgba(15, 23, 42, 0.95) !important;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    .navbar.scrolled {
+      padding: 0.8rem 0;
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     }
 
-    .navbar-brand img { max-height: 50px; transition: var(--transition); }
+    .navbar-brand img {
+      max-height: 50px;
+      transition: var(--transition);
+      filter: drop-shadow(2px 2px 8px rgba(39, 174, 96, 0.2));
+    }
 
     .navbar-nav .nav-link {
-      font-weight: 600;
-      color: var(--text-primary) !important;
-      margin: 0 0.5rem;
-      padding: 0.75rem 1rem !important;
-      border-radius: 12px;
+      font-weight: 500;
+      color: #2e7d32 !important;
+      padding: 0.8rem 1.5rem !important;
+      border-radius: 25px;
+      margin: 0 0.3rem;
+      transition: var(--transition);
       position: relative;
       overflow: hidden;
-      transition: var(--transition);
     }
 
     .navbar-nav .nav-link::before {
       content: '';
       position: absolute;
-      top: 0; left: -100%;
-      width: 100%; height: 100%;
-      background: var(--primary-gradient);
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
       transition: var(--transition);
       z-index: -1;
     }
 
-    .navbar-nav .nav-link:hover::before { left: 0; }
+    .navbar-nav .nav-link:hover::before {
+      left: 0;
+    }
+
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: rgba(39, 174, 96, 0.1);
+      border: 1px solid rgba(39, 174, 96, 0.3);
+      color: var(--primary-green);
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .theme-toggle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .theme-toggle:hover::before {
+      left: 0;
+    }
+
+    .theme-toggle:hover {
+      color: white;
+      border-color: var(--primary-green);
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    }
+
+    .theme-toggle i {
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover i {
+      transform: rotate(20deg) scale(1.1);
+    }
 
     .navbar-nav .nav-link:hover {
-      color: white !important;
+      color: #ffffff !important;
       transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+    }
+
+     [data-bs-theme="dark"] .navbar {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+    }
+
+    [data-bs-theme="dark"] .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+
+    [data-bs-theme="dark"] .theme-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    [data-bs-theme="dark"] .theme-toggle::before {
+      background: linear-gradient(135deg, var(--accent-green), var(--light-green));
+    }
+
+    [data-bs-theme="dark"] .theme-toggle:hover {
+      color: #000000;
+      border-color: var(--accent-green);
+      box-shadow: 0 4px 15px rgba(129, 199, 132, 0.4);
     }
 
     /* Hero Section */
     .hero-section {
-      background: var(--primary-gradient);
+      background: #4c63d2;
       color: white;
       padding: 100px 0 50px;
       position: relative;
@@ -548,6 +637,9 @@
     margin-left: 0; /* remove margin on mobile too */
   }
 }
+
+ 
+
   </style>
 </head>
 
@@ -556,7 +648,7 @@
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid px-2 px-sm-5">
       <a class="navbar-brand" href="../index.html">
-        <img src="images/logo_bg_transparent.png" alt="GrowCraft" id="logo" />
+        <img  src="../images/Logo_new.png" id="logo" alt="GrowCraft" id="logo" />
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -587,15 +679,11 @@
         </ul>
 
         <!-- THEME TOGGLE (added) -->
-        <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
-          <button id="themeToggle"
-                  class="btn btn-outline-secondary rounded-pill px-3"
-                  type="button"
-                  aria-label="Toggle theme">
-            <i id="themeIcon" class="bi bi-moon-stars"></i>
-            <span class="ms-2 d-none d-sm-inline" id="themeLabel">Dark</span>
-          </button>
-        </div>
+        <button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+</div>
+
         <!-- /THEME TOGGLE -->
       </div>
     </div>
@@ -811,59 +899,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
 
   <!-- Theme Toggle Script (added / replaces old) -->
-  <script>
-    const THEME_KEY = 'theme';
-
-    function applyTheme(theme) {
-      // attribute for [data-bs-theme="dark"] rules
-      document.documentElement.setAttribute('data-bs-theme', theme);
-      // class for contact.css rules
-      document.body.classList.toggle('dark', theme === 'dark');
-
-      // update btn icon/label
-      const icon = document.getElementById('themeIcon');
-      const label = document.getElementById('themeLabel');
-      if (icon) {
-        if (theme === 'dark') {
-          icon.classList.remove('bi-sun');
-          icon.classList.add('bi-moon-stars');
-          if (label) label.textContent = 'Dark';
-        } else {
-          icon.classList.remove('bi-moon-stars');
-          icon.classList.add('bi-sun');
-          if (label) label.textContent = 'Light';
-        }
-      }
-
-      // update footer logo
-      if (typeof updatelogo === 'function') {
-        try { updatelogo(); } catch(_) {}
-      }
-    }
-
-    function pickInitialTheme() {
-      const saved = localStorage.getItem(THEME_KEY);
-      if (saved === 'light' || saved === 'dark') return saved;
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      return prefersDark ? 'dark' : 'light';
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      // initial apply
-      applyTheme(pickInitialTheme());
-
-      // wire button
-      const btn = document.getElementById('themeToggle');
-      if (btn) {
-        btn.addEventListener('click', function () {
-          const current = document.documentElement.getAttribute('data-bs-theme') === 'dark' ? 'dark' : 'light';
-          const next = current === 'dark' ? 'light' : 'dark';
-          localStorage.setItem(THEME_KEY, next);
-          applyTheme(next);
-        });
-      }
-    });
-  </script>
+  
 
   <!-- Your existing page behavior scripts (unchanged) -->
   <script>
@@ -946,6 +982,58 @@
       observer.observe(el);
     });
   </script>
+
+  <script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+  const logo = document.querySelector("#logo");
+
+  // Apply dark or light mode
+  function setDarkMode(enabled) {
+    if (enabled) {
+      document.documentElement.setAttribute("data-bs-theme", "dark");
+      localStorage.setItem("dark-mode", "enabled");
+      updateThemeIcon("dark");
+    } else {
+      document.documentElement.setAttribute("data-bs-theme", "light");
+      localStorage.setItem("dark-mode", "disabled");
+      updateThemeIcon("light");
+    }
+    updateLogo();
+  }
+
+  // Update the theme icon (FontAwesome version)
+  function updateThemeIcon(theme) {
+    if (themeIcon) {
+      if (theme === "dark") {
+        themeIcon.className = "fas fa-sun";  // sun for dark mode
+        themeIcon.style.transform = "rotate(180deg)";
+      } else {
+        themeIcon.className = "fas fa-moon"; // moon for light mode
+        themeIcon.style.transform = "rotate(0deg)";
+      }
+    }
+  }
+
+  // Update logo depending on theme
+  function updateLogo() {
+    const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+    logo.src = isDark
+      ? "../images/logo-transparent-dark-mode.png"
+      : "../images/Logo_new.png";
+  }
+
+  // Load preference on page load
+  setDarkMode(localStorage.getItem("dark-mode") === "enabled");
+
+  // Toggle mode on button click
+  toggleBtn.addEventListener("click", () => {
+    const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+    setDarkMode(!isDark);
+  });
+</script>
+
+  
 </body>
 
 </html>
