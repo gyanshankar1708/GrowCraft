@@ -884,16 +884,16 @@
 
   <body id="main-body">
     <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg">
       <div
-        class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5"
+        class="container-fluid d-flex justify-content-between align-items-center px-4"
       >
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand hover-scale" href="#">
           <img
-            src="images/Logo_new.png"
+            src="images/Logo.png"
             alt="GrowCraft"
-            width="200"
             id="logo"
+            class="smooth-transition"
           />
         </a>
 
@@ -902,9 +902,6 @@
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -912,45 +909,30 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              <a class="nav-link active" href="#" aria-current="page">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="index.html#services"
-                >Services</a
-              >
+              <a class="nav-link" href="#services">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="blogListing.html"
-                >Blogs</a
-              >
+              <a class="nav-link" href="blogListing.html">Blogs</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="about.html"
-                >About Us</a
-              >
+              <a class="nav-link" href="about.html">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="work.html"
-                >Our Work</a
-              >
+              <a class="nav-link" href="./work.html">Our Work</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="src/contact.html"
-                >Contact Us</a
-              >
+              <a class="nav-link" href="./src/faq.html">FAQ</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
+              <a class="nav-link" href="src/contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
           </ul>
-        </div>
-
-        <!-- Search Bar -->
-        <div class="search-container">
-          <input type="text" placeholder="Search..." class="search-input" />
-          <button class="search-button">
-            <i class="fas fa-search"></i>
-          </button>
         </div>
       </div>
     </nav>
