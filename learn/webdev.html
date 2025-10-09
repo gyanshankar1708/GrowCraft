@@ -25,8 +25,8 @@
         class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5"
       >
         <!-- Brand -->
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <img src="../src/images/logo_bg_transparent.png" alt="GrowCraft Logo" width="200" />
+        <a class="navbar-brand d-flex align-items-center" href="../index.html">
+          <img src="../images/Logo_new.png" alt="GrowCraft Logo" id="logo" width="200" />
         </a>
 
         <!-- Nav Links -->
@@ -349,7 +349,7 @@
     <!-- Button Section -->
     <div class="text-center my-5">
       <a
-        href="#contact"
+        href="../src/contact.html"
         class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-lg"
       >
         🚀 Let's Build Your Dream Website!
@@ -396,32 +396,32 @@
             </h5>
             <ul class="footer-links">
               <li>
-                <a href="learn/webdev.html"
+                <a href="webdev.html"
                   ><i class="fas fa-code"></i> Web Development</a
                 >
               </li>
               <li>
-                <a href="learn/graphic.html"
+                <a href="graphic.html"
                   ><i class="fas fa-paint-brush"></i> Graphic Design</a
                 >
               </li>
               <li>
-                <a href="learn/marketing.html"
+                <a href="marketing.html"
                   ><i class="fas fa-bullhorn"></i> Digital Marketing</a
                 >
               </li>
               <li>
-                <a href="learn/contentwriting.html"
+                <a href="contentwriting.html"
                   ><i class="fas fa-pen-nib"></i> Content Writing</a
                 >
               </li>
               <li>
-                <a href="learn/socialmedia.html"
+                <a href="socialmedia.html"
                   ><i class="fas fa-hashtag"></i> Social Media</a
                 >
               </li>
               <li>
-                <a href="learn/cyberanalyst.html"
+                <a href="cyberanalyst.html"
                   ><i class="fas fa-shield-alt"></i> Cyber Analyst</a
                 >
               </li>
@@ -434,13 +434,13 @@
               <i class="fas fa-link" style="margin-right: 8px"></i>Quick Links
             </h5>
             <ul class="footer-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="index.html#about">About Us</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="index.html#work">Portfolio</a></li>
-              <li><a href="src/contact.html">Contact</a></li>
-              <li><a href="#careers">Careers</a></li>
-              <li><a href="blogListing.html">Blog</a></li>
+              <li><a href="../index.html">Home</a></li>
+              <li><a href="../about.html">About Us</a></li>
+              <li><a href="../index.html#services">Services</a></li>
+              <li><a href="../index.html#work">Portfolio</a></li>
+              <li><a href="../src/contact.html">Contact</a></li>
+              <li><a href="../careers.html">Careers</a></li>
+              <li><a href="../blogListing.html">Blog</a></li>
             </ul>
           </div>
 
@@ -479,9 +479,9 @@
             </div>
             <div class="col-md-6">
               <div class="footer-nav">
-                <a href="#privacy">Privacy</a>
-                <a href="#terms">Terms</a>
-                <a href="#sitemap">Sitemap</a>
+                <a href="../privacy.html">Privacy</a>
+                <a href="../terms.html">Terms</a>
+                <a href="../sitemap.html">Sitemap</a>
               </div>
             </div>
           </div>
@@ -556,6 +556,28 @@ document.addEventListener('DOMContentLoaded', function() {
       navbar.classList.remove('scrolled');
     }
   });
+
+  // Logo update function for theme switching
+  const logo = document.querySelector("#logo");
+  
+  function updateLogo() {
+    const isDark = document.body.classList.contains('dark-mode');
+    logo.src = isDark ? "../images/Logo.png" : "../images/Logo_new.png";
+  }
+  
+  // Update logo on theme change
+  updateLogo();
+  
+  // Watch for theme changes
+  const themeObserver = new MutationObserver(function(mutations) {
+    for (const mutation of mutations) {
+      if (mutation.type === "attributes" && mutation.attributeName === "class") {
+        updateLogo();
+      }
+    }
+  });
+  
+  themeObserver.observe(document.body, { attributes: true });
 });
     </script>
     

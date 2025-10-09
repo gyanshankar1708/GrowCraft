@@ -189,6 +189,17 @@ h1 {
   margin: 0 5rem;
 }
 
+/* Client Testimonials text colors (light mode) */
+.client-container .card h5,
+.client-container .card p {
+  color: #000 !important;
+}
+
+/* Ensure muted subtitle in testimonials is also black in light mode */
+.client-container .card p.text-muted {
+  color: #000 !important;
+}
+
 /* footers styles */
 /* Ensure footer container is visible */
 #footer-container {
@@ -733,6 +744,12 @@ body.dark-mode .bg-light {
 body.dark-mode .client-container .card {
   background-color: #2d2d2d;
   border: 1px solid #404040;
+}
+
+/* Client Testimonials text colors (dark mode) */
+body.dark-mode .client-container .card h5,
+body.dark-mode .client-container .card p {
+  color: #ffffff !important;
 }
 
 body.dark-mode .text-muted {

@@ -19,6 +19,7 @@
 
   <style>
     /* Modern CSS Variables */
+     
     :root {
       --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
@@ -555,6 +556,10 @@
 
 <body id="main-body">
   <!-- Navbar -->
+  <!-- Scroll to Top Button -->
+  <button id="scrollTopBtn" title="Go to top">
+  <i class="bi bi-arrow-up"></i>
+  </button>
   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid px-2 px-sm-5">
       <a class="navbar-brand" href="../index.html">
@@ -585,6 +590,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html">Login</a>
           </li>
         </ul>
 
@@ -1001,7 +1009,26 @@ document.getElementById("year").textContent = new Date().getFullYear();
       el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
       observer.observe(el);
     });
+     const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+  // Show or hide the button based on scroll position
+  window.addEventListener("scroll", function () {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  });
+
+  // Smooth scroll to top when clicked
+  scrollTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
   </script>
+  
 </body>
 
 </html>
