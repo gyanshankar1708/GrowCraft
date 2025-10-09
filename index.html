@@ -890,17 +890,15 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
 #scrollToTopBtn {
   position: fixed;
   right: 2rem;
-  bottom: -5rem; /* initially hidden */
+  bottom: -5rem;
   z-index: 999;
   border: none;
   outline: none;
-  background: #51BE7F; /* Updated color */
-  color: white;
+  background: #51BE7F;
   cursor: pointer;
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  font-size: 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -915,6 +913,12 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
   opacity: 1;
   transform: translateY(0);
   bottom: 2rem;
+}
+
+#scrollToTopBtn svg {
+  width: 1.5rem;  
+  height: 1.5rem;
+  display: block;
 }
 
 
@@ -1786,8 +1790,16 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
       </div>
     </div>
   </footer>
-  <!-- Scroll to Top Button -->
-<button id="scrollToTopBtn" title="Go to top">↑</button>
+  <button id="scrollToTopBtn" title="Go to top">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none">
+      <path d="M12 5.5V19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M18 11C18 11 13.5811 5.00001 12 5C10.4188 4.99999 6 11 6 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</button>
+
+
+
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
