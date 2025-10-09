@@ -887,6 +887,37 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
     .footer-right a:hover::after {
       width: 100%;
     }
+#scrollToTopBtn {
+  position: fixed;
+  right: 2rem;
+  bottom: -5rem; /* initially hidden */
+  z-index: 999;
+  border: none;
+  outline: none;
+  background: #51BE7F; /* Updated color */
+  color: white;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),
+              0 4px 6px -2px rgba(0,0,0,0.05);
+  transition: transform 0.4s ease, opacity 0.4s ease, bottom 0.3s ease;
+  opacity: 0;
+  transform: translateY(50%);
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  transform: translateY(0);
+  bottom: 2rem;
+}
+
+
 
     /* ===== MEDIA QUERIES ===== */
     /* Tablets */
@@ -1755,6 +1786,9 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
       </div>
     </div>
   </footer>
+  <!-- Scroll to Top Button -->
+<button id="scrollToTopBtn" title="Go to top">↑</button>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
@@ -2117,6 +2151,39 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
         });
       });
     });
+
+   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const footerBottom = document.querySelector(".footer-bottom");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const footerTop = footerBottom.getBoundingClientRect().top;
+
+  // Show/hide button
+  if (scrollY > 300) {
+    scrollToTopBtn.classList.add("show");
+  } else {
+    scrollToTopBtn.classList.remove("show");
+  }
+
+  // If footer-bottom is visible, move button above it
+  if (footerTop < windowHeight) {
+    const overlap = windowHeight - footerTop;
+    scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px = small gap above footer
+  } else {
+    scrollToTopBtn.style.bottom = "2rem";
+  }
+});
+
+// Smooth scroll to top
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
   </script>
 </body>
 
