@@ -54,24 +54,26 @@ async function loadContributor() {
   const container = document.getElementById("contributor-grid");
   const errorMessage = document.getElementById("error-message");
 
-  // The new URL points to our own function, not directly to GitHub
+  // This is the new URL that points to our own secure function
   const functionUrl = "/.netlify/functions/getContributors";
 
   try {
-    // Notice: No more token or authorization headers here! It's much cleaner.
+    // Notice: No more token or authorization headers! This is much simpler.
     const res = await fetch(functionUrl);
-    
+
     if (!res.ok) {
-      const errorData = await res.json();
-      throw new Error(errorData.message || `API error: ${res.status}`);
+      // Try to get a more detailed error message from our function
+      const errorData = await res.json().catch(() => ({ message: `Server returned an error: ${res.status}` }));
+      throw new Error(errorData.message);
     }
 
     const contributors = await res.json();
     if (!Array.isArray(contributors) || contributors.length === 0) {
-      throw new Error("No contributors found for this repository.");
+      throw new Error("No contributors were found.");
     }
-    console.log(contributors);
+    console.log("Successfully loaded contributors:", contributors);
 
+    // This part is the same as before
     contributors.forEach((user) => {
       const card = document.createElement("div");
       card.className = "contributor";
@@ -86,7 +88,8 @@ async function loadContributor() {
     });
   } catch (err) {
     errorMessage.style.display = "block";
-    errorMessage.textContent = `⚠️ Unable to load contributors. Error: ${err.message}`;
+    errorMessage.textContent = `⚠️ Error loading contributors: ${err.message}`;
+    console.error(err); // Also log the full error to the console for debugging
   }
 }
 
