@@ -6,7 +6,8 @@ async function loadContributor() {
   const repoName = "GrowCraft";
   // 🔑 Replace "YOUR_GITHUB_TOKEN_HERE" with your own token
   // Get one at: https://github.com/settings/tokens
-  const token = "ghp_your_personal_access_token_here"; // ⚠️ Don't upload this to GitHub!
+  const token = GITHUB_TOKEN // ⚠️ Don't upload this to GitHub!
+  console.log(token)
   const errorMessage = document.getElementById("error-message");
 
   try {
