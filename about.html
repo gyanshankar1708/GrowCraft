@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GrowCraft — About Us</title>
-  <link rel="stylesheet" href="src/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="components/chatbot.css">
@@ -25,12 +24,23 @@
       --text: #e5e7eb;
       --muted: #9ca3af;
       --shadow: 0 10px 30px rgba(0, 0, 0, .35);
+       --primary-green: #27ae60;
+       --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --light-green: #4caf50;
     }
 
+     [data-bs-theme="dark"] {
+      
+       --light-green: #4caf50;
+      --accent-green: #81c784;
+      --primary-green: #27ae60;
+    }
+
+
     /* Enhanced Navbar */
-    .navbar {
+   .navbar {
       padding: 1.2rem 0;
-      background: #d4d498 !important;
+      background: rgba(255, 255, 255, 0.95) !important;
       backdrop-filter: blur(20px);
       border-bottom: none;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -40,11 +50,7 @@
       transition: var(--transition);
     }
 
-    .navbar.scrolled {
-      padding: 0.8rem 0;
-      background: rgba(255, 255, 255, 0.98) !important;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-    }
+    
 
     .navbar-brand img {
       max-height: 50px;
@@ -121,7 +127,6 @@
     .theme-toggle i {
       font-size: 18px;
       transition: var(--transition);
-      color: #0b0f14;
     }
 
     .theme-toggle:hover i {
@@ -132,8 +137,41 @@
       color: #ffffff !important;
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
-      background-color: #16a34a;
     }
+    
+
+     [data-bs-theme="dark"] .navbar {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+    }
+
+    [data-bs-theme="dark"] .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+
+    [data-bs-theme="dark"] .theme-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    [data-bs-theme="dark"] .theme-toggle::before {
+      background: linear-gradient(135deg, var(--accent-green), var(--light-green));
+    }
+
+    [data-bs-theme="dark"] .theme-toggle:hover {
+      color: #000000;
+      border-color: var(--accent-green);
+      box-shadow: 0 4px 15px rgba(129, 199, 132, 0.4);
+    }
+
+     [data-bs-theme="dark"] .learnMoreBtn {
+      color: black;
+    }
+
+    
+
+   
 
     *,
     *::before,
@@ -585,10 +623,10 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-4">
-      <a class="navbar-brand hover-scale" href="#">
-        <img src="images/Logo_new.png" alt="GrowCraft" id="logo" class="smooth-transition" />
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid px-2 px-sm-5">
+      <a class="navbar-brand" href="../index.html">
+        <img  src="images/Logo_new.png" id="logo" alt="GrowCraft"  />
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -770,6 +808,53 @@
     </div>
   </footer>
   <!-- <script src="src/darkMode.js"></script> -->
+   <script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const themeIcon = document.getElementById("themeIcon");
+  const logo = document.querySelector("#logo");
+
+  // Apply dark or light mode
+  function setDarkMode(enabled) {
+    if (enabled) {
+      document.documentElement.setAttribute("data-bs-theme", "dark");
+      localStorage.setItem("dark-mode", "enabled");
+      updateThemeIcon("dark");
+    } else {
+      document.documentElement.setAttribute("data-bs-theme", "light");
+      localStorage.setItem("dark-mode", "disabled");
+      updateThemeIcon("light");
+    }
+    updateLogo();
+  }
+
+  // Update the theme icon (FontAwesome version)
+  function updateThemeIcon(theme) {
+    if (themeIcon) {
+      if (theme === "dark") {
+        themeIcon.className = "fas fa-sun";  // sun for dark mode
+        themeIcon.style.transform = "rotate(180deg)";
+      } else {
+        themeIcon.className = "fas fa-moon"; // moon for light mode
+        themeIcon.style.transform = "rotate(0deg)";
+      }
+    }
+  }
+
+  // Update logo depending on theme
+  function updateLogo() {
+    const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+    logo.src = isDark ? "images/logo-transparent-dark-mode.png": "images/Logo_new.png";
+  }
+
+  // Load preference on page load
+  setDarkMode(localStorage.getItem("dark-mode") === "enabled");
+
+  // Toggle mode on button click
+  toggleBtn.addEventListener("click", () => {
+    const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+    setDarkMode(!isDark);
+  });
+</script>
 
 </body>
 
