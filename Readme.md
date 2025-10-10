@@ -6,8 +6,12 @@ GrowCraft is a **service-based platform** designed to help businesses grow onlin
 
 > 🏆 **This repository is part of GirlScript Summer of Code 2025 (GSSoC'25)**  
 > Contributions from the community are welcome!
-
+ **This repository is also a part of Hacktoberfest 2025 (HF'25)**  
+> Contributions of all kinds are welcome!
+  *Be part of the change — contribute today!*
+  
 ---
+
 ## 📑Table of Contents
 
 - [Features](#features)
@@ -44,23 +48,53 @@ This platform offers services to clients and creates opportunities for students 
 ```
 GrowCraft/
 ├── index.html
+├── login.html
+├── signup.html
+├── about.html
 ├── blogListing.html
-├── blogView.html
-├── blogWrite.html
+├── careers.html
+├── privacy.html
+├── terms.html
+├── work.html
+├── register_condition.html
+├── register_terms.html
+├── sitemap.html
+├── contact.html
+│
 ├── contact-handler.php
 ├── database_schema.sql
+│
 ├── images/
-│   ├── (images and icons used throughout the site)
+│ ├── (website images and icons)
+│
 ├── src/
-│   ├── contact.html
-│   ├── blogs.css / blogs.js
-│   ├── style.css / script.js
-│   ├── utils.js
-│   ├── web.html
-│   └── css/
-│       └── style.css
-└── (additional documentation and assets)
+│ ├── contact.html
+│ ├── blogs.css / blogs.js
+│ ├── style.css / script.js
+│ ├── utils.js
+│ ├── web.html
+│ └── css/
+│ └── style.css
 ```
+---
+
+## 🧭 Page Descriptions
+
+| Page | Description |
+|------|--------------|
+| **index.html** | Landing page introducing GrowCraft and its core services. |
+| **login.html** | User login page for returning users and contributors. |
+| **signup.html** | Registration page for new users or students joining programs. |
+| **about.html** | About GrowCraft, its mission, and team background. |
+| **blogListing.html** | Displays a list of all blogs shared on the platform. |
+| **careers.html** | Showcases current openings, internships, and career opportunities. |
+| **privacy.html** | Details GrowCraft’s privacy policy and data protection practices. |
+| **terms.html** | Displays terms of service for website and service usage. |
+| **work.html** | Portfolio page showing GrowCraft’s completed and ongoing projects. |
+| **register_condition.html** | Displays eligibility and participation conditions for programs. |
+| **register_terms.html** | Additional registration-specific terms for contributors. |
+| **sitemap.html** | Overview of the entire site structure for easy navigation. |
+| **contact.html** | Contact form for user queries and feedback. |
 
 ---
 ##  Contributors
@@ -159,7 +193,10 @@ Please read our [Contributing Guidelines](src/CONTRIBUTING.md) and [Code of Cond
 ### Services Section
 ![Services](images/services.png)
 
-*(Add more screenshots or a GIF preview here if available)*
+
+### Services Section
+![Registration](images/sign-up.png)
+
 
 ---
 
