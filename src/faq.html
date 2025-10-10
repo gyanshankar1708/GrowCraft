@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ - GrowCraft</title>
+  <link rel="stylesheet" href="faq.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
   <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
@@ -12,144 +13,164 @@
 
   <style>
     /* Enhanced Navbar Design */
+       :root {
+      --primary-green: #27ae60;
+      --secondary-green: #388e3c;
+      --light-green: #4caf50;
+      --accent-green: #81c784;
+      --dark-bg: #1a1a1a;
+      --darker-bg: #0f0f0f;
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --shadow-light: 0 8px 32px rgba(39, 174, 96, 0.15);
+      --shadow-hover: 0 16px 64px rgba(39, 174, 96, 0.25);
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --border-radius: 20px;
+      --spacing: 2rem;
+    }
+
+    /* Navbar */
     .navbar {
-      padding: 1rem 0;
-      background: linear-gradient(135deg,
-          #ffffff 0%,
-          #f8f9fa 100%) !important;
-      border-bottom: 3px solid #388e3c;
-      box-shadow: 0 8px 32px rgba(56, 142, 60, 0.1);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
+      padding: 1.2rem 0;
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
     }
 
     .navbar.scrolled {
-      padding: 0.5rem 0;
-      background: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: blur(20px);
-    }
-
-    .navbar-nav .nav-item {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar-nav {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .navbar-brand {
-      transition: transform 0.3s ease;
-    }
-
-    .navbar-brand:hover {
-      transform: scale(1.05);
+      padding: 0.8rem 0;
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     }
 
     .navbar-brand img {
-      max-height: 55px;
-      object-fit: contain;
-      vertical-align: middle;
-      filter: drop-shadow(2px 2px 4px rgba(56, 142, 60, 0.2));
-      transition: filter 0.3s ease;
-    }
-
-    .navbar-brand img:hover {
-      filter: drop-shadow(4px 4px 8px rgba(56, 142, 60, 0.3));
+      max-height: 50px;
+      transition: var(--transition);
+      filter: drop-shadow(2px 2px 8px rgba(39, 174, 96, 0.2));
     }
 
     .navbar-nav .nav-link {
-      position: relative;
-      font-weight: 600;
+      font-weight: 500;
       color: #2e7d32 !important;
-      font-family: "Poppins", sans-serif;
-      font-size: 0.75rem;
-      padding: 0.75rem 1.25rem !important;
+      padding: 0.8rem 1.5rem !important;
       border-radius: 25px;
-      display: flex;
-      align-items: center;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      background: transparent;
-    }
-
-    .navbar-nav .nav-link:hover {
-      color: #ffffff !important;
-      background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
-    }
-
-    .navbar-nav .nav-link.active {
-      color: #ffffff !important;
-      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
-      box-shadow: 0 4px 15px rgba(56, 142, 60, 0.25);
-    }
-
-    /* Enhanced search bar */
-    .search-container {
-      display: flex;
-      align-items: center;
-      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-      border: 2px solid transparent;
-      border-radius: 30px;
-      padding: 8px 15px;
-      width: 100%;
-      max-width: 320px;
-      margin-left: 20px;
-      margin-right: 20px;
-      box-shadow: 0 4px 15px rgba(56, 142, 60, 0.1);
-      transition: all 0.3s ease;
+      margin: 0 0.3rem;
+      transition: var(--transition);
       position: relative;
       overflow: hidden;
     }
 
-    .search-container:focus-within {
+    .navbar-nav .nav-link::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg,
+          var(--primary-green),
+          var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .navbar-nav .nav-link:hover::before {
+      left: 0;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.2);
+      box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
     }
 
-    .search-input {
-      border: none;
-      outline: none;
-      padding: 10px 12px;
-      font-size: 15px;
-      flex: 1;
-      color: #2e7d32;
-      background: transparent;
-      font-family: "Poppins", sans-serif;
-      font-weight: 500;
-    }
-
-    .search-input::placeholder {
-      color: #81c784;
-      font-weight: 400;
-    }
-
-    .search-button {
-      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
-      border: none;
+    /* Theme Toggle Button */
+    .theme-toggle {
+      background: rgba(39, 174, 96, 0.1);
+      border: 1px solid rgba(39, 174, 96, 0.3);
+      color: var(--primary-green);
       border-radius: 50%;
-      cursor: pointer;
-      color: white;
-      font-size: 16px;
-      width: 35px;
-      height: 35px;
+      width: 45px;
+      height: 45px;
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: all 0.3s ease;
-      box-shadow: 0 2px 8px rgba(56, 142, 60, 0.2);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
     }
 
-    .search-button:hover {
+    .theme-toggle::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg,
+          var(--primary-green),
+          var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .theme-toggle:hover::before {
+      left: 0;
+    }
+
+    .theme-toggle:hover {
+      color: white;
+      border-color: var(--primary-green);
       transform: scale(1.1);
-      box-shadow: 0 4px 15px rgba(56, 142, 60, 0.4);
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    }
+
+    .theme-toggle i {
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover i {
+      transform: rotate(20deg) scale(1.1);
+    }
+
+    /* Dark Mode */
+    [data-bs-theme="dark"] body {
+      background: linear-gradient(135deg,
+          var(--dark-bg) 0%,
+          var(--darker-bg) 100%);
+    }
+
+    [data-bs-theme="dark"] .navbar {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+    }
+
+    [data-bs-theme="dark"] .navbar-nav .nav-link {
+      color: #ffffff !important;
+    }
+
+    [data-bs-theme="dark"] .theme-toggle {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+    }
+
+    [data-bs-theme="dark"] .theme-toggle::before {
+      background: linear-gradient(135deg,
+          var(--accent-green),
+          var(--light-green));
+    }
+
+    [data-bs-theme="dark"] .theme-toggle:hover {
+      color: #000000;
+      border-color: var(--accent-green);
+      box-shadow: 0 4px 15px rgba(129, 199, 132, 0.4);
     }
 
     /* FAQ Styles */
@@ -242,11 +263,11 @@
       flex-shrink: 0;
     }
 
-    .faq-question:hover .faq-icon {
+     /* .faq-question:hover .faq-icon {
       background: white;
       color: #4caf50;
       transform: rotate(45deg);
-    }
+    }  */
 
     .faq-icon.rotated {
       transform: rotate(45deg);
@@ -612,21 +633,6 @@
 
     /* Mobile responsive improvements */
     @media screen and (max-width: 991.98px) {
-      .navbar-nav {
-        gap: 0.5rem;
-        margin-top: 1rem;
-        padding: 1rem;
-        background: rgba(255, 255, 255, 0.98);
-        border-radius: 15px;
-        box-shadow: 0 8px 32px rgba(56, 142, 60, 0.15);
-        backdrop-filter: blur(10px);
-      }
-
-      .search-container {
-        max-width: 100%;
-        margin: 1rem 0 0 0;
-      }
-
       .faq-title {
         font-size: 2.2rem;
       }
@@ -675,23 +681,24 @@
 </head>
 
 <body id="main-body">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-      <a class="navbar-brand" href="index.html">
-        <img src="../images/Logo_new.png" alt="GrowCraft" width="200" />
+  <!-- Enhanced Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+      <a class="navbar-brand hover-scale" href="./index.html">
+        <img src="../images/Logo.png" alt="GrowCraft" id="logo" class="smooth-transition" />
       </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link" href="../index.html">Home</a>
+            <a class="nav-link active" href="../index.html" aria-current="page">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="../index.html#services">Services</a>
+            <a class="nav-link" href="#services">Services</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="../blogListing.html">Blogs</a>
@@ -703,20 +710,19 @@
             <a class="nav-link" href="../work.html">Our Work</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="faq.html">FAQ</a>
+            <a class="nav-link" href="./faq.html">FAQ</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
+            <a class="nav-link" href="./contact.html">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
+            <a class="nav-link" href="../login.html">Login</a>
           </li>
         </ul>
-      </div>
-      <div class="search-container">
-        <input type="text" placeholder="Search..." class="search-input" />
-        <button class="search-button">
-          <i class="fas fa-search"></i>
+
+        <!-- Dark Mode Toggle Button -->
+        <button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
         </button>
       </div>
     </div>
@@ -993,6 +999,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src=""></script>
 
   <script>
     // Initialize AOS
@@ -1024,11 +1031,72 @@
         icon.classList.remove('fa-minus');
         icon.classList.add('fa-plus');
         iconContainer.classList.remove('rotated');
-        question.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)';
+        question.style.background = '';
         question.style.color = '';
-        question.querySelector('h3').style.color = '#2e7d32';
+        question.querySelector('h3').style.color = '';
       }
     }
+
+     const themeToggle = document.getElementById('themeToggle');
+  const themeIcon = document.getElementById('themeIcon');
+
+  let currentTheme = localStorage.getItem('theme') || 'light';
+  document.documentElement.setAttribute('data-bs-theme', currentTheme);
+  updateThemeIcon(currentTheme);
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      this.style.transform = 'scale(0.95)';
+      setTimeout(() => {
+        this.style.transform = 'scale(1.1)';
+        setTimeout(() => {
+          this.style.transform = '';
+        }, 150);
+      }, 100);
+
+      currentTheme = currentTheme === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-bs-theme', currentTheme);
+      localStorage.setItem('theme', currentTheme);
+      updateThemeIcon(currentTheme);
+      updateLogo(); // Optional but recommended
+    });
+  }
+
+  function updateThemeIcon(theme) {
+    if (themeIcon) {
+      if (theme === 'dark') {
+        themeIcon.className = 'fas fa-sun';
+        themeIcon.style.transform = 'rotate(180deg)';
+      } else {
+        themeIcon.className = 'fas fa-moon';
+        themeIcon.style.transform = 'rotate(0deg)';
+      }
+    }
+  }
+
+  const logo = document.querySelector("#logo");
+  function updateLogo() {
+    const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
+    if (logo) {
+      logo.src = isDark ? "../images/Logo.png" : "../images/Logo_new.png";
+    }
+  }
+
+  updateLogo();
+
+  const themeObserver = new MutationObserver(function (mutations) {
+    for (const mutation of mutations) {
+      if (mutation.type === "attributes" && mutation.attributeName === "data-bs-theme") {
+        updateLogo();
+      }
+    }
+  });
+
+  themeObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-bs-theme"],
+  });
+
 
     // Add scroll effect to navbar
     window.addEventListener("scroll", function() {
