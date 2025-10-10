@@ -989,6 +989,150 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
         /* remove margin on mobile too */
       }
     }
+    .about-card-style {
+  background: #fff; /* normal card background */
+  border: 1px solid rgba(144, 238, 144, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✅ Hover Effect */
+.about-card-style:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.25);
+  border: 1px solid var(--light-green);
+}
+
+/* ✅ Icon turns brighter green on hover */
+.about-card-style:hover img.icon {
+  filter: brightness(0) saturate(100%) invert(47%) sepia(74%) saturate(563%) hue-rotate(85deg) brightness(97%) contrast(94%);
+}
+
+
+
+
+
+.icon {
+  margin-right: 8px;
+  color: #2e7d32;
+}
+
+.about-para {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+}
+#backToTop {
+  position: fixed;       /* always visible relative to viewport */
+  bottom: 20px;          /* distance from bottom of viewport */
+  right: 20px;           /* distance from right edge */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #66eaaa, #1fec30);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+/* Login & Signup Cards */
+.auth-section {
+  padding: 80px 20px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.auth-section .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+.auth-section .section-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #4b5563;
+}
+
+.auth-card {
+  background: #ffffff;
+  padding: 40px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-height: 360px;
+  border: 2px solid rgba(144, 238, 144, 0.5) !important; /* 💚 Visible border */
+}
+
+
+.auth-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.18);
+    transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.25);
+  border: 1px solid var(--light-green);
+}
+
+.card-icon {
+  font-size: 48px;
+  color: #2e7d32;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.auth-card p {
+  font-size: 1rem;
+  color: #4b5563;
+  text-align: center;
+}
+
+.btn-card {
+  display: inline-block;
+  background: linear-gradient(135deg,#a8e6cf,#dcedc8);
+  color: #1b5e20;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+  background: linear-gradient(135deg,#dcedc8,#a8e6cf);
+  transform: scale(1.05);
+}
+
+/* Responsive */
+@media(max-width:768px) {
+  .auth-card { width: 100%; min-height: auto; padding: 30px 20px; }
+  .card-icon { font-size: 40px; }
+  .card-title { font-size: 1.4rem; }
+}
+
   </style>
 </head>
 
@@ -1037,6 +1181,44 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
       </div>
     </div>
   </nav>
+
+<!-- ✅ Login & Signup Section -->
+<section class="auth-section" id="auth">
+  <div class="container">
+    <h2 class="head-training" data-aos="fade-up">Login & Signup</h2>
+    <p class="services-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Access your account or create a new one to start using GrowCraft services
+    </p>
+
+    <div class="row justify-content-center g-4">
+
+      <!-- Login Card -->
+      <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="200">
+        <div class="auth-card hover-lift">
+          <div class="card-icon">
+            <i class="fas fa-sign-in-alt"></i>
+          </div>
+          <h3 class="card-title">Login</h3>
+          <p>Already have an account? Log in here to access your dashboard, projects, and personalized tools.</p>
+          <a href="login.html" class="btn-card">Go to Login</a>
+        </div>
+      </div>
+
+      <!-- Signup Card -->
+      <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="300">
+        <div class="auth-card hover-lift">
+          <div class="card-icon">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <h3 class="card-title">Signup</h3>
+          <p>New to GrowCraft? Create an account to start collaborating, exploring services, and growing your business.</p>
+          <a href="signup.html" class="btn-card">Create Account</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <section class="training-section">
     <div class="container-fluid">
@@ -1541,116 +1723,80 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
   </section>
 
   <section class="about-section" id="about">
-    <div class="container">
-      <h2 class="about-title" data-aos="fade-up">ABOUT US</h2>
-      <p class="about-subtitle" data-aos="fade-up" data-aos-delay="100">
-        Gateway to <em>Go Digital and Grow Business</em>
-      </p>
+  <div class="container">
+    <h2 class="about-title" data-aos="fade-up">ABOUT US</h2>
+    <p class="about-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Gateway to Go Digital and Grow Business
+    </p>
 
-      <div class="row justify-content-center g-4">
-        <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="100">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift" style="background: rgba(144, 238, 144, 0.25); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          
-            <h4 class="mb-3">
-              <i class="fas fa-users icon"></i>
-              Who We Are
-            </h4>
-            <div class="about-para">
-              GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design &
-              Social Media. We deliver high-quality services that align with market trends.
-            </div>
+    <div class="row justify-content-center g-4">
+      <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="100">
+        <div class="about-card about-card-style">
+          <h4 class="mb-3">
+            <i class="fas fa-users icon"></i>
+            Who We Are
+          </h4>
+          <div class="about-para">
+            GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design &
+            Social Media. We deliver high-quality services that align with market trends.
           </div>
         </div>
+      </div>
 
-        <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift"  style="background: rgba(144, 238, 144, 0.25); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;"
-          >
-            <h4 class="mb-3">
-              <i class="fas fa-microchip icon"></i>
-              Tech-Driven Solutions
-            </h4>
-            <div class="about-para">
-              We use the latest technologies & best practices to deliver innovative solutions. Our services evolve
-              constantly to meet clients' changing needs.
-            </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-card about-card-style">
+          <h4 class="mb-3">
+            <i class="fas fa-microchip icon"></i>
+            Tech-Driven Solutions
+          </h4>
+          <div class="about-para">
+            We use the latest technologies & best practices to deliver innovative solutions. Our services evolve
+            constantly to meet clients' changing needs.
           </div>
         </div>
+      </div>
 
-        <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="300">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift"  style="background: rgba(144, 238, 144, 0.25); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;"
-          >
-            <h4 class="mb-3">
-              <i class="fas fa-handshake icon"></i>
-              Client-Centric Approach
-            </h4>
-            <div class="about-para">
-              Every client has unique needs. We understand their goals before creating custom solutions and involve them
-              throughout the development process.
-            </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="300">
+        <div class="about-card about-card-style">
+          <h4 class="mb-3">
+            <i class="fas fa-handshake icon"></i>
+            Client-Centric Approach
+          </h4>
+          <div class="about-para">
+            Every client has unique needs. We understand their goals before creating custom solutions and involve them
+            throughout the development process.
           </div>
         </div>
+      </div>
 
-        <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="400">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift"  style="background: rgba(144, 238, 144, 0.25); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          >
-            <h4 class="mb-3">
-              <i class="fas fa-shield-alt icon"></i>
-              Reliable & Transparent
-            </h4>
-            <div class="about-para">
-              With clear communication, timely delivery, and transparent processes, we ensure success for both our
-              clients and ourselves.
-            </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="400">
+        <div class="about-card about-card-style">
+          <h4 class="mb-3">
+            <i class="fas fa-shield-alt icon"></i>
+            Reliable & Transparent
+          </h4>
+          <div class="about-para">
+            With clear communication, timely delivery, and transparent processes, we ensure success for both our
+            clients and ourselves.
           </div>
         </div>
+      </div>
 
-        <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="500">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift"  style="background: rgba(144, 238, 144, 0.25); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          >
-            <h4 class="mb-3">
-              <i class="fas fa-award icon"></i>
-              Affordable & Proven
-            </h4>
-            <div class="about-para">
-              We offer cost-effective services and have a history of successful projects. For a reliable digital
-              partner, GrowCraft is your best choice.
-            </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="500">
+        <div class="about-card about-card-style">
+          <h4 class="mb-3">
+            <i class="fas fa-award icon"></i>
+            Affordable & Proven
+          </h4>
+          <div class="about-para">
+            We offer cost-effective services and have a history of successful projects. For a reliable digital
+            partner, GrowCraft is your best choice.
           </div>
         </div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
 
   <section class="feedback-section" id="feedback">
   <div class="container">
@@ -1709,7 +1855,8 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
     <div class="footer-container ">
       <!-- About GrowCraft -->
       <div class="footer-col">
-        <img src="../images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3" style="height: 60px;">
+        <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3" style="height: 60px;">
+      
 
         <p>Boost your career with skill-focused training and internship opportunities.</p>
       </div>
@@ -2117,6 +2264,20 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
         });
       });
     });
+    const backToTop = document.getElementById('backToTop');
+const footer = document.querySelector('footer');
+
+window.addEventListener('scroll', () => {
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (footerTop <= windowHeight + 20) {  // 20px buffer
+    backToTop.style.display = 'none';   // hide when overlapping footer
+  } else {
+    backToTop.style.display = 'flex';   // show otherwise
+  }
+});
+
   </script>
 </body>
 
