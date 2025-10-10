@@ -1088,7 +1088,145 @@
   }
   .footer-links a:hover .link-arrow {
     display: inline-block;
+
   }
+  :root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  --icon-color: #667eea;
+}
+
+/* Modal overlay */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  padding: 50px 20px;
+  overflow-y: auto;
+}
+
+/* Modal wrapper */
+.modal-content-wrapper {
+  background: #fff;
+  max-width: 600px; /* Increased width */
+  width: 90%;       /* Responsive width */
+  margin: auto;
+  padding: 40px 30px; /* More padding */
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* More spacing between elements */
+}
+
+/* Close button */
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 2rem;
+  color: var(--icon-color);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  width: 50px;  /* Larger for visibility */
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: var(--primary-gradient);
+  color: #fff;
+  transform: rotate(90deg);
+}
+
+/* Modal title */
+.modal-title {
+  font-size: 2rem; /* Slightly bigger for better visual hierarchy */
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form styling */
+.modal-form label {
+  font-weight: 500;
+  margin-bottom: 8px;
+  display: block;
+  color: #555;
+}
+
+.modal-form input,
+.modal-form textarea {
+  width: 100%;
+  padding: 14px 16px; /* More padding */
+  margin-bottom: 22px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-form input:focus,
+.modal-form textarea:focus {
+  outline: none;
+  border: 2px solid #667eea;
+  box-shadow: 0 0 12px rgba(102, 126, 234, 0.3);
+}
+
+/* Submit button */
+.modal-submit {
+  width: 100%;
+  padding: 16px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary-gradient);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .modal-content-wrapper {
+    max-width: 90%;
+    padding: 30px 20px;
+  }
+  .modal-title {
+    font-size: 1.7rem;
+  }
+  .modal-close {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .modal-title {
+    font-size: 1.5rem;
+  }
+}
+
     </style>
 </head>
 
@@ -1171,22 +1309,25 @@
         </div>
     </section>
 
-    <!-- Modal Form -->
-    <div class="modal" id="contactModal">
-        <div class="modal-content">
-            <span class="close-btn" id="closeModal">&times;</span>
-            <h2>Request a Free Consultation</h2>
-            <form>
-                <label for="name">Full Name</label>
-                <input type="text" id="name" placeholder="Your Name" required>
-                <label for="email">Email Address</label>.
-                <input type="email" id="email" placeholder="you@example.com" required>
-                <label for="details">Project Details</label>
-                <textarea id="details" rows="4" placeholder="Tell us about your digital marketing goals..." required></textarea>
-                <button type="submit" class="submit-btn">Send Request</button>
-            </form>
-        </div>
-    </div>
+<!-- Modal Form -->
+<div class="modal" id="contactModal">
+  <div class="modal-content-wrapper">
+    <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
+    <h2 class="modal-title">Request a Free Consultation</h2>
+    <form class="modal-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your Name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="you@example.com" required>
+
+      <label for="details">Project Details</label>
+      <textarea id="details" rows="4" placeholder="Tell us about your digital marketing goals..." required></textarea>
+
+      <button type="submit" class="modal-submit">Send Request</button>
+    </form>
+  </div>
+</div>
 
     <!-- ===== Core Digital Pillars Section ===== -->
     <section class="gc-section gc-section-alt">
