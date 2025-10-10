@@ -22,6 +22,7 @@
       rel="stylesheet"
     />
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="./src/components/contributor.js" defer></script>
     <style>
       :root {
         --bg: rgb(248 250 252);
@@ -55,7 +56,7 @@
         margin: 0;
         background: linear-gradient(180deg, rgba(var(--bg), 1) 0%, #fff 60%);
         -webkit-font-smoothing: antialiased;
-        color: #09122a;
+        color: #09122a; 
       }
 
       /* Page container */
@@ -404,8 +405,12 @@
       }
 
       .filters {
-        margin-top: 40px;
-        margin-bottom: 20px;
+        margin: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 1rem;
       }
 
       .works-grid {
@@ -445,7 +450,27 @@
         margin-bottom: 16px;
         line-height: 1.5;
       }
-
+      /* project filter btn */
+      .chip {
+        display: inline-block;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        background-color: #f8f9fa;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .chip:hover {
+        background-color: #e2e6ea;
+      }
+      [data-bs-theme='dark'] .chip{
+        color: black; 
+      }
+      .chip.active {
+        background-color: #0d6efd;
+        color: white;
+        border-color: #0d6efd;
+      }
       /* Professional Footer Styles */
       .professional-footer {
         background: linear-gradient(
@@ -773,6 +798,66 @@
         transform: scale(1.05);
       }
 
+      /* contributors */
+      .contributors {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .contributors h1 {
+        color: #28a745;
+        font-weight: bold;
+      }
+      #contributor-grid {
+        display: flex; 
+        flex-wrap: wrap;
+        gap: 2rem;
+        justify-content: center;
+        margin: 1.5rem 2rem;
+      }
+      /* contributor-card */
+      .contributor{
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(12, 18, 28, 0.6); 
+        transition: all 0.3s ease;
+      }
+      .contributor:hover{
+        transform: translateY(-5px) scale(1.04);
+        box-shadow: 2 4px 20px rgba(12, 18, 28, 0.6);
+      }
+      .contri-card{
+        padding: 1rem .7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 250px;
+        text-decoration: none;
+      }
+      .contri-card img{
+        margin-bottom: 1rem;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        border: 2px solid #28a745;
+        box-shadow: 4px 2px 12px rgba(12, 18, 28, 0.6);
+        transition: all 0.3s ease;
+      }
+      .contri-card img:hover{
+        transform: translateY(-5px) scale(1.05);
+      }
+      .contri-card p{
+        text-align: center; 
+        font-weight: bold;
+        font-size: 1rem;
+        color: #28a745;
+      }
+      /* dark theme for contributors */
+      [data-bs-theme='dark'] .contributor{
+        background: #333;
+      }
+
       /* ===== FOOTER BOTTOM ROW ===== */
       .footer-bottom {
         display: flex;
@@ -1061,12 +1146,17 @@
         data-aos="fade-up"
         data-aos-delay="100"
       >
-        <button class="chip" data-filter="all" data-active="true">All</button>
-        <button class="chip" data-filter="web">Web Dev</button>
-        <button class="chip" data-filter="design">Graphic</button>
-        <button class="chip" data-filter="marketing">Digital</button>
-        <button class="chip" data-filter="social">Social</button>
-        <button class="chip" data-filter="content">Content</button>
+        <h1>Projects Of Our Teams</h1>
+        <div>
+          <button class="chip active" data-filter="all" data-active="true">
+            All
+          </button>
+          <button class="chip" data-filter="web">Web Dev</button>
+          <button class="chip" data-filter="design">Graphic</button>
+          <button class="chip" data-filter="marketing">Digital</button>
+          <button class="chip" data-filter="social">Social</button>
+          <button class="chip" data-filter="content">Content</button>
+        </div>
       </section>
 
       <section id="works" class="works-grid" aria-live="polite">
@@ -1291,6 +1381,14 @@
       <div class="hero-ctas" style="padding-top: 80px" data-aos="fade-up">
         <a class="btn btn-primary" href="src/contact.html">Work with us</a>
       </div>
+      <!-- contributors -->
+      <section class="contributors">
+        <h1>Member of Our Projects</h1>
+        <div id="contributor-grid">
+          <!-- load dynamically -->
+        </div>
+        <p id="error-message" style="color:red; display:none; text-align: center;"></p>
+      </section>
     </main>
 
     <div
@@ -1380,7 +1478,12 @@
       <div class="footer-container">
         <!-- About GrowCraft -->
         <div class="footer-col">
-          <img src="../images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3" style="height: 60px; width: auto;">
+          <img
+            src="./images/Logo.png"
+            alt="GrowCraft Logo"
+            class="footer-logo mb-3"
+            style="height: 60px; width: auto"
+          />
 
           <p>
             Boost your career with skill-focused training and internship
@@ -1465,7 +1568,7 @@
       <button class="chatbot-toggle-btn" onclick="toggleChat()">
         <i class="fas fa-leaf"></i>
       </button>
-    </div>
+    </div> 
 
     <script>
       fetch("src/components/navbar.html")
