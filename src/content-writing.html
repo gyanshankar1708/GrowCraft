@@ -967,6 +967,33 @@ p {
 .footer-bottom a:hover {
   color: #ffffff; /* highlight on hover */
 }
+.quick-stats {
+  display: flex;
+  gap: 2rem; /* spacing between items */
+  margin-top: 1rem;
+}
+
+.quick-stats .stat-item {
+  text-align: center;
+  color: #fff; /* makes labels visible */
+}
+
+.quick-stats .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #6a11cb, #2575fc); /* brand gradient */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+.quick-stats .stat-label {
+  font-size: 0.9rem;
+  color: #e0e0e0; /* light gray for labels */
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
 
 
     </style>
@@ -1266,20 +1293,24 @@ p {
             <img src="../images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
             <h4 class="brand-name">GrowCraft</h4>
             <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence.</p>
-            <div class="quick-stats">
-              <div class="stat-item">
-                <span class="stat-number">500+</span>
-                <span class="stat-label">Projects</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Clients</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Years</span>
-              </div>
-            </div>
+            
+              <div class="quick-stats">
+  <div class="stat-item">
+    <span class="stat-number counter" data-target="500">0</span>
+    <span class="stat-label">Projects</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number counter" data-target="150">0</span>
+    <span class="stat-label">Clients</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number counter" data-target="5">0</span>
+    <span class="stat-label">Years</span>
+  </div>
+</div>
+
+
+
           </div>
         </div>
 
@@ -1530,8 +1561,44 @@ p {
   toggleBtn.addEventListener("click", () => {
     setDarkMode(!body.classList.contains("dark-mode"));
   });
-</script>
+    // Counter Animation
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".counter");
+  const speed = 50; // smaller = faster
 
+  const startCounting = (counter) => {
+    const target = +counter.getAttribute("data-target");
+    let count = 0;
+
+    const updateCount = () => {
+      const increment = Math.ceil(target / speed);
+      if (count < target) {
+        count += increment;
+        counter.innerText = count + "+";
+        setTimeout(updateCount, 30);
+      } else {
+        counter.innerText = target + "+";
+      }
+    };
+    updateCount();
+  };
+
+  // Run when visible
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounting(entry.target);
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  counters.forEach(counter => observer.observe(counter));
+});
+</script>
 
 </body>
 </html>

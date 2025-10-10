@@ -241,6 +241,43 @@
       text-align: left;
     }
   }
+/* Quick Stats Fix for Light + Dark mode */
+.quick-stats .stat-item {
+  text-align: center;
+}
+
+/* Numbers (gradient text in light mode) */
+.quick-stats .stat-number {
+  font-size: 2rem;
+  font-weight: 700;
+  background: linear-gradient(90deg, #007bff, #2575fc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
+}
+
+/* Labels in light mode */
+.quick-stats .stat-label {
+  font-size: 0.9rem;
+  color: #444;   /* dark gray for visibility */
+  margin-top: 5px;
+  letter-spacing: 1px;
+}
+
+/* Dark mode overrides */
+.dark-mode .quick-stats .stat-number,
+.dark .quick-stats .stat-number {
+  background: linear-gradient(90deg, #00ffe7, #00aaff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dark-mode .quick-stats .stat-label,
+.dark .quick-stats .stat-label {
+  color: #ccc; /* light gray in dark mode */
+}
+
+
 </style>
 
 <footer class="professional-footer" data-aos="fade-up">
@@ -252,10 +289,20 @@
           <h4 class="brand-name">GrowCraft</h4>
           <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence.</p>
           <div class="quick-stats">
-            <div class="stat-item"><span class="stat-number">500+</span><span class="stat-label">Projects</span></div>
-            <div class="stat-item"><span class="stat-number">150+</span><span class="stat-label">Clients</span></div>
-            <div class="stat-item"><span class="stat-number">5+</span><span class="stat-label">Years</span></div>
-          </div>
+  <div class="stat-item">
+    <span class="stat-number counter" data-target="500">0</span>
+    <span class="stat-label">Projects</span>
+  </div>
+  <div class="stat-item">
+    <span class="stat-number counter" data-target="150">0</span>
+    <span class="stat-label">Clients</span>
+  </div>
+  <div class="stat-item">
+  <span class="stat-number counter slow" data-target="5">0</span>
+  <span class="stat-label">Years</span>
+</div>
+
+</div>
           <div class="footer-social">
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-x-twitter"></i></a>
@@ -316,8 +363,6 @@
     </div>
   </div>
 </footer>
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
   AOS.init({
     duration: 800,
@@ -325,3 +370,5 @@
     offset: 50
   });
 </script>
+
+

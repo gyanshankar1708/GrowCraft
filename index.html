@@ -148,6 +148,37 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
     }
+    /* 🌙 Dark Mode - Testimonials */
+[data-bs-theme="dark"] .testimonial-carousel {
+  background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+}
+
+[data-bs-theme="dark"] .testimonial-heading {
+  color: #00e676 !important; /* neon green accent */
+}
+
+[data-bs-theme="dark"] .testimonial-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 230, 118, 0.25);
+  color: #f5f5f5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+[data-bs-theme="dark"] .testimonial-card h4 {
+  color: #ffffff;
+}
+
+[data-bs-theme="dark"] .testimonial-card span {
+  color: #90caf9; /* soft blue for role text */
+}
+
+[data-bs-theme="dark"] .testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6),
+              0 0 25px rgba(0, 230, 118, 0.5); /* glowing effect */
+}
+
+
 
     /* Training Program Section */
     .training-section {
@@ -986,6 +1017,7 @@
       color: #ffffff;
     }
 
+
     /* Responsive Design */
     @media (max-width: 768px) {
 
@@ -1038,6 +1070,71 @@
     .hover-scale:hover {
       transform: scale(1.05);
     }
+
+    .testimonial-carousel {
+  padding: 75px 0;  
+  background: #f9f9f9;
+  overflow: hidden;
+  position: relative;
+    overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.testimonial-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.carousel-wrapper {
+  overflow-x: hidden; /* only hide horizontal */
+  overflow-y: visible; /* allow vertical shadows */
+  width: 100%;
+}
+
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  will-change: transform;
+}
+
+
+.testimonial-card {
+  flex: 0 0 300px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-height: 180px;
+  transition: all 0.3s ease; /* smooth hover effect */
+  cursor: pointer;
+}
+
+.testimonial-card h4 {
+  margin: 10px 0 0;
+  font-size: 18px;
+}
+
+.testimonial-card span {
+  font-size: 14px;
+  color: #555;
+}
+section, main, .container {
+  overflow: visible !important;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25),
+              0 0 20px rgba(0, 200, 83, 0.4);
+  position: relative;
+  z-index: 10;
+}
+
+
+
   </style>
 </head>
 
@@ -1703,6 +1800,67 @@
     </div>
   </section>
 
+<section class="testimonial-carousel">
+  <h1 class="testimonial-heading" style="color: #27ae60;">What Our Clients & Interns Say</h1>
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="carouselTrack">
+      <!-- 10 Testimonials -->
+      <div class="testimonial-card">
+        <p>"GrowCraft helped us create a modern website that boosted our leads by 40%."</p>
+        <h4>Rohit Sharma</h4>
+        <span>Business Owner</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"The internship program was an amazing learning experience!"</p>
+        <h4>Priya Verma</h4>
+        <span>Ex-Intern</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Great communication and timely delivery of our project."</p>
+        <h4>Arjun Mehta</h4>
+        <span>Startup Founder</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Their UI/UX design transformed our product."</p>
+        <h4>Neha Kapoor</h4>
+        <span>Product Manager</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"The team at GrowCraft is very professional and skilled."</p>
+        <h4>Amit Singh</h4>
+        <span>Entrepreneur</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"I gained real-world experience that helped me land a full-time job."</p>
+        <h4>Sneha Joshi</h4>
+        <span>Ex-Intern</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Excellent SEO work, our traffic increased significantly."</p>
+        <h4>Vikram Rao</h4>
+        <span>Marketing Lead</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"They built our e-commerce store from scratch, amazing job!"</p>
+        <h4>Shalini Gupta</h4>
+        <span>E-Commerce Owner</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Great mentors during my internship, learned so much."</p>
+        <h4>Manish Patel</h4>
+        <span>Ex-Intern</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Super reliable team, would definitely recommend."</p>
+        <h4>Ananya Rao</h4>
+        <span>Startup Founder</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
   <div id="footer-placeholder"></div>
 
   <button id="backToTop" title="Go to top" type="button" class="hover-scale">
@@ -1992,23 +2150,56 @@
         }, 200);
       });
 
-      /* Load Footer */
-      fetch('src/components/footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(() => {
-          // Fallback footer if file doesn't exist
-          document.getElementById('footer-placeholder').innerHTML = `
-                   <footer class="bg-dark text-light py-4 mt-5">
-                       <div class="container text-center">
-                           <p>&copy; ${new Date().getFullYear()} GrowCraft. All rights reserved.</p>
-                       </div>
-                   </footer>
-                 `;
-        });
+  /* Load Footer */
+// fetch('src/components/footer.html')
+//   .then(response => response.text())
+//   .then(data => {
+//     document.getElementById('footer-placeholder').innerHTML = data;
 
+//     // ✅ Counter Script starts only after footer is injected
+//     const counters = document.querySelectorAll(".counter");
+//     const speed = 50; // smaller = faster
+
+//     const startCounting = (counter) => {
+//       const target = +counter.getAttribute("data-target");
+//       let count = 0;
+
+//       const updateCount = () => {
+//         // Always increase at least by 1
+//         const increment = Math.max(1, Math.ceil(target / speed));
+
+//         if (count < target) {
+//           count += increment;
+//           if (count > target) count = target; // prevent overshoot
+//           counter.innerText = count;
+//           setTimeout(updateCount, 30);
+//         } else {
+//           counter.innerText = target + "+";
+//         }
+//       };
+
+//       updateCount();
+//     };
+
+//     const observer = new IntersectionObserver((entries, obs) => {
+//       entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//           startCounting(entry.target);
+//           obs.unobserve(entry.target);
+//         }
+//       });
+//     }, { threshold: 0.5 });
+
+//     counters.forEach(counter => {
+//       observer.observe(counter);
+
+//       // fallback if already visible
+//       if (counter.getBoundingClientRect().top < window.innerHeight) {
+//         startCounting(counter);
+//         observer.unobserve(counter);
+//       }
+//     });
+//   });
       /* Global Clear Form Function */
       window.clearForm = function() {
         const form = document.getElementById('feedbackForm');
@@ -2057,7 +2248,78 @@
         });
       });
     });
-  </script>
+
+    const track = document.getElementById("carouselTrack");
+const cards = track.children;
+const totalCards = cards.length;
+
+// Duplicate testimonials for infinite effect
+track.innerHTML += track.innerHTML;
+
+let position = 0;
+const speed = 0.5; // pixels per frame
+
+function moveCarousel() {
+  position -= speed;
+  if (Math.abs(position) >= track.scrollWidth / 2) {
+    position = 0; // reset to start
+  }
+  track.style.transform = `translateX(${position}px)`;
+  requestAnimationFrame(moveCarousel);
+}
+
+// Start animation
+moveCarousel();
+
+
+
+  /* Load Footer + Start Counter */
+  fetch('src/components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // === Counter Script starts only AFTER footer loads ===
+      const counters = document.querySelectorAll(".counter");
+      const speed = 50;
+
+      const startCounting = (counter) => {
+  const target = +counter.getAttribute("data-target");
+
+  // 👇 Custom speed for "slow" counters (like the 5)
+  const thisSpeed = counter.classList.contains("slow") ? 200 : 50;
+
+  let count = 0;
+
+  const updateCount = () => {
+    const increment = Math.max(1, Math.ceil(target / thisSpeed));
+    if (count < target) {
+      count += increment;
+      if (count > target) count = target;
+      counter.innerText = count;
+      setTimeout(updateCount, 50); // a bit slower step
+    } else {
+      counter.innerText = target + "+";
+    }
+  };
+
+  updateCount();
+};
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startCounting(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => {
+        observer.observe(counter);
+      });
+    });
+</script>
+
 </body>
 
 </html>
