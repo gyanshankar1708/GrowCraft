@@ -1632,7 +1632,7 @@
           <p>Personalized spaces to showcase your skills and work.</p>
         </div>
         <div class="glass-item" role="option" aria-label="Custom Web Apps">
-          <img src="https://cdn-icons-png.flaticon.com/512/108/10838348.png" alt="Web App Icon" />
+          <img src="https://image.pngaaa.com/346/2431346-middle.png" alt="Web App Icon" />
           <h3>Custom Web Apps</h3>
           <p>Tailor-made applications for startups, businesses, and teams.</p>
         </div>
@@ -2032,6 +2032,45 @@
     })();
   </script>
   <script src="darkMode.js"></script>
+  <script>
+  // Select elements
+  const carouselWrapper = document.querySelector('.carousel-wrapper');
+  const scrollWrapper = carouselWrapper.querySelector('.glass-scroll-wrapper');
+  const prevBtn = carouselWrapper.querySelector('.carousel-btn.prev');
+  const nextBtn = carouselWrapper.querySelector('.carousel-btn.next');
+
+  // Amount to scroll each click (width of one item)
+  const scrollAmount = scrollWrapper.querySelector('.glass-item').offsetWidth + 16; // 16px gap
+
+  // Function to update button state
+  function updateButtons() {
+    prevBtn.disabled = scrollWrapper.scrollLeft <= 0;
+    nextBtn.disabled = scrollWrapper.scrollLeft >= scrollWrapper.scrollWidth - scrollWrapper.clientWidth;
+  }
+
+  // Scroll left
+  prevBtn.addEventListener('click', () => {
+    scrollWrapper.scrollBy({
+      left: -scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  // Scroll right
+  nextBtn.addEventListener('click', () => {
+    scrollWrapper.scrollBy({
+      left: scrollAmount,
+      behavior: 'smooth'
+    });
+  });
+
+  // Update buttons on scroll
+  scrollWrapper.addEventListener('scroll', updateButtons);
+
+  // Initial button state
+  updateButtons();
+</script>
+
 </body>
 
 </html>
