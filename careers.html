@@ -13,7 +13,14 @@
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
     crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
-
+<!-- Font Awesome (for the team icon) -->
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
   <style>
     /* Modern CSS Variables */
     :root {
@@ -824,6 +831,89 @@
     @keyframes spin {
       to { transform: rotate(360deg); }
     }
+    :root {
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  --icon-color: #667eea;
+}
+
+/* Team Stats Section */
+.team-stats {
+  background: var(--primary-gradient);
+  padding: 80px 0;
+  text-align: center;
+  color: #fff;
+}
+
+.team-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.team-icon {
+  font-size: 2.5rem;
+  color: var(--icon-color);
+}
+
+
+
+.team-subtext {
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 25px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stat-item {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0; /* square edges */
+  padding: 25px 15px;
+  transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  transform: translateY(-5px);
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.stat-label {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.section-title-our {
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
   </style>
 </head>
 
@@ -935,30 +1025,37 @@
   </section>
 
   <!-- Team Stats Section -->
-  <section class="team-stats">
-    <div class="container">
-      <h2 class="section-title" style="color: white;">Our Growing Team</h2>
-      <p style="color: rgba(255,255,255,0.9); text-align: center; max-width: 600px; margin: 0 auto;">Join a diverse and talented team that's making waves in the digital industry.</p>
-      <div class="stats-grid">
-        <div class="stat-item">
-          <span class="stat-number">50+</span>
-          <span class="stat-label">Team Members</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">8</span>
-          <span class="stat-label">Departments</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">15</span>
-          <span class="stat-label">Countries</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">95%</span>
-          <span class="stat-label">Satisfaction</span>
-        </div>
+<section class="team-stats">
+  <div class="container">
+    <div class="team-header">
+      <i class="fas fa-users team-icon"></i>
+      <h2 class="section-title-our">Our Growing Team</h2>
+    </div>
+    <p class="team-subtext">
+      Join a diverse and talented team that's making waves in the digital industry.
+    </p>
+
+    <div class="stats-grid">
+      <div class="stat-item">
+        <span class="stat-number">50+</span>
+        <span class="stat-label">Team Members</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">8</span>
+        <span class="stat-label">Departments</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">15</span>
+        <span class="stat-label">Countries</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">95%</span>
+        <span class="stat-label">Satisfaction</span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- Benefits Section -->
   <section class="section benefits-section">
