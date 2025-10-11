@@ -1666,6 +1666,58 @@ section, main, .container {
           </div>
         </div>
 
+        <div class="col-12 col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="400">
+          <div class="card card-services h-100 d-flex flex-column">
+            <div class="card-body d-flex flex-column align-items-center">
+
+              <div class="svg-img">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram" >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </div>
+
+              <h5 class="card-title mt-2">AI & ML Services</h5>
+
+              <p class="card-text summary text-center">
+                We help you in digital transformation with AI and ML...
+              </p>
+
+              <div class="card-text extra d-none text-center w-100">
+                <p>
+                  We help you stay consistent and engaging on all platforms. Our strategies increase audience retention
+                  and brand loyalty.
+                </p>
+
+                <ul class="service-features text-start px-3">
+                  <li>AL & ML Services</li>
+                  <li>Deep Learning</li>
+                  <li>Computer Vision</li>
+                  <li>Reinforcement Learning</li>
+                  <li>Chatbot Development</li>
+                </ul>
+
+                <div class="service-stats">
+                  <span class="stat-badge">500+ Posts</span>
+                  <span class="stat-badge">100K+ Followers Gained</span>
+                  <span class="stat-badge">95% Engagement Rate</span>
+                </div>
+
+                <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
+                  <a class="btn btn-sm btn-custom-purple">Case Study</a>
+                  <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
+                </div>
+              </div>
+
+              <div class="btn-group mt-3 d-flex gap-2">
+                <button class="toggle-btn">Read More</button>
+                <a href="src/social-media.html" class="btn btn-sm btn-outline-primary hover-scale rounded ">Explore</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div class="col-12 col-md-8 col-lg-5" data-aos="zoom-in-up" data-aos-delay="500">
           <div class="card card-services h-100 d-flex flex-column">
             <div class="card-body d-flex flex-column align-items-center">
@@ -2418,124 +2470,144 @@ section, main, .container {
         });
       });
     });
-    const backToTop = document.getElementById('backToTop');
-const footer = document.querySelector('footer');
 
-window.addEventListener('scroll', () => {
-  const footerTop = footer.getBoundingClientRect().top;
-  const windowHeight = window.innerHeight;
+    // Initialize testimonial carousel
+    const initTestimonialCarousel = () => {
+      const track = document.getElementById("carouselTrack");
+      if (!track) return;
+      
+      const cards = track.children;
+      const totalCards = cards.length;
 
-  if (footerTop <= windowHeight + 20) {  // 20px buffer
-    backToTop.style.display = 'none';   // hide when overlapping footer
-  } else {
-    backToTop.style.display = 'flex';   // show otherwise
-  }
+      // Duplicate testimonials for infinite effect
+      track.innerHTML += track.innerHTML;
 
-    const track = document.getElementById("carouselTrack");
-const cards = track.children;
-const totalCards = cards.length;
+      let position = 0;
+      const speed = 0.5; // pixels per frame
 
-// Duplicate testimonials for infinite effect
-track.innerHTML += track.innerHTML;
+      function moveCarousel() {
+        position -= speed;
+        if (Math.abs(position) >= track.scrollWidth / 2) {
+          position = 0; // reset to start
+        }
+        track.style.transform = `translateX(${position}px)`;
+        requestAnimationFrame(moveCarousel);
+      }
 
-let position = 0;
-const speed = 0.5; // pixels per frame
+      // Start animation
+      moveCarousel();
+    };
 
-function moveCarousel() {
-  position -= speed;
-  if (Math.abs(position) >= track.scrollWidth / 2) {
-    position = 0; // reset to start
-  }
-  track.style.transform = `translateX(${position}px)`;
-  requestAnimationFrame(moveCarousel);
-}
+    // Initialize back to top functionality
+    const initBackToTopButtons = () => {
+      const backToTop = document.getElementById('backToTop');
+      const footer = document.querySelector('footer');
 
-// Start animation
-moveCarousel();
+      if (backToTop && footer) {
+        window.addEventListener('scroll', () => {
+          const footerTop = footer.getBoundingClientRect().top;
+          const windowHeight = window.innerHeight;
 
-
-
-  /* Load Footer + Start Counter */
-  fetch('src/components/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-
-      // 
-    
-   
-      const counters = document.querySelectorAll(".counter");
-      const speed = 50;
-
-      const startCounting = (counter) => {
-  const target = +counter.getAttribute("data-target");
-
-  // 👇 Custom speed for "slow" counters (like the 5)
-  const thisSpeed = counter.classList.contains("slow") ? 200 : 50;
-
-  let count = 0;
-
-  const updateCount = () => {
-    const increment = Math.max(1, Math.ceil(target / thisSpeed));
-    if (count < target) {
-      count += increment;
-      if (count > target) count = target;
-      counter.innerText = count;
-      setTimeout(updateCount, 50); // a bit slower step
-    } else {
-      counter.innerText = target + "+";
-    }
-  };
-
-  updateCount();
-};
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            startCounting(entry.target);
-            obs.unobserve(entry.target);
+          if (footerTop <= windowHeight + 20) {  // 20px buffer
+            backToTop.style.display = 'none';   // hide when overlapping footer
+          } else {
+            backToTop.style.display = 'flex';   // show otherwise
           }
         });
-      }, { threshold: 0.5 });
+      }
 
-      counters.forEach(counter => {
-        observer.observe(counter);
-      });
-    });
-</script>
+      // ===== ScrollToTopBtn logic for floating button above footer =====
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      const footerBottom = document.querySelector(".footer-bottom");
 
-   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-const footerBottom = document.querySelector(".footer-bottom");
+      if (scrollToTopBtn && footerBottom) {
+        window.addEventListener("scroll", () => {
+          const scrollY = window.scrollY;
+          const windowHeight = window.innerHeight;
+          const footerTop = footerBottom.getBoundingClientRect().top;
 
-window.addEventListener("scroll", () => {
-  const scrollY = window.scrollY;
-  const windowHeight = window.innerHeight;
-  const footerTop = footerBottom.getBoundingClientRect().top;
+          // Show/hide button
+          if (scrollY > 300) {
+            scrollToTopBtn.classList.add("show");
+          } else {
+            scrollToTopBtn.classList.remove("show");
+          }
 
-  // Show/hide button
-  if (scrollY > 300) {
-    scrollToTopBtn.classList.add("show");
-  } else {
-    scrollToTopBtn.classList.remove("show");
-  }
+          // If footer-bottom is visible, move button above it
+          if (footerTop < windowHeight) {
+            const overlap = windowHeight - footerTop;
+            scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px = small gap above footer
+          } else {
+            scrollToTopBtn.style.bottom = "2rem";
+          }
+        });
 
-  // If footer-bottom is visible, move button above it
-  if (footerTop < windowHeight) {
-    const overlap = windowHeight - footerTop;
-    scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px = small gap above footer
-  } else {
-    scrollToTopBtn.style.bottom = "2rem";
-  }
-});
+        // Smooth scroll to top
+        scrollToTopBtn.addEventListener("click", () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        });
+      }
+    };
 
-// Smooth scroll to top
-scrollToTopBtn.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-});
+    // Initialize footer and counters
+    const initFooter = () => {
+      /* Load Footer + Start Counter */
+      fetch('src/components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
 
+          const counters = document.querySelectorAll(".counter");
+          const speed = 50;
+
+          const startCounting = (counter) => {
+            const target = +counter.getAttribute("data-target");
+
+            // Custom speed for "slow" counters (like the 5)
+            const thisSpeed = counter.classList.contains("slow") ? 200 : 50;
+
+            let count = 0;
+
+            const updateCount = () => {
+              const increment = Math.max(1, Math.ceil(target / thisSpeed));
+              if (count < target) {
+                count += increment;
+                if (count > target) count = target;
+                counter.innerText = count;
+                setTimeout(updateCount, 50); // a bit slower step
+              } else {
+                counter.innerText = target + "+";
+              }
+            };
+
+            updateCount();
+          };
+          
+          const observer = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                startCounting(entry.target);
+                obs.unobserve(entry.target);
+              }
+            });
+          }, { threshold: 0.5 });
+
+          counters.forEach(counter => {
+            observer.observe(counter);
+          });
+        })
+        .catch(error => {
+          console.log('Footer could not be loaded:', error);
+        });
+    };
+
+    // Initialize all components
+    initTestimonialCarousel();
+    initBackToTopButtons();
+    initFooter();
   </script>
 </body>
 
