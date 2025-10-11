@@ -11,7 +11,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", serif;
+  font-family: "Lora", serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
@@ -30,16 +30,6 @@ body {
 .navbar,
 .footer {
   background-color: #388e3c;
-}
-/* Footer link colors for dark mode */
-.footer-nav a {
-  color: #ffffff; /* white text for visibility */
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-nav a:hover {
-  color: #00bfa6; /* accent color (optional) */
 }
 
 /* .navbar .nav-link,
@@ -1255,10 +1245,6 @@ body.dark .mb-4:hover {
   max-height: 60px;
   object-fit: contain;
   vertical-align: middle;
-}
-/* Dark mode logo fix */
-[data-bs-theme="dark"] .navbar-brand img {
-  filter: brightness(0) invert(1);
 }
 
 /* Align all nav items vertically center */
