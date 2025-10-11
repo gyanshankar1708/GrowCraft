@@ -904,248 +904,240 @@
       transform: scale(1.3);
     }
 
-    /* Enhanced Footer */
-    .professional-footer {
-      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
-      color: #333;
-      padding: 60px 0 0;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-    }
+    /* ==================== Base Footer ==================== */
+.professional-footer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #edf6f3 50%, #f8f9fa 100%);
+  color: #333;
+  padding: 50px 0 0;
+  margin-top: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
 
-    .footer-brand {
-      text-align: center;
-    }
+/* Brand */
+.footer-logo {
+  max-width: 160px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 768px) {
+  .footer-logo { max-width: 180px; }
+}
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.brand-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
 
-    .footer-logo {
-      width: 100px;
-      height: auto;
-      margin-bottom: 1.5rem;
-      transition: transform 0.3s ease;
-    }
+/* Quick Stats - smaller and consistent */
+.quick-stats {
+  display: flex;
+  justify-content: flex-start; /* aligns left with brand description */
+  gap: 20px; /* smaller space between stats */
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
 
-    .footer-logo:hover {
-      transform: scale(1.05) rotate(5deg);
-    }
+.stat-item {
+  flex: 1;
+  min-width: 60px; /* reduced width for smaller layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align, can use center if preferred */
+}
 
-    .brand-name {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #333;
-      margin-bottom: 1rem;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      transition: all 0.3s ease;
-    }
+.stat-number {
+  font-size: 1.2rem; /* smaller than before */
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 0.2rem;
+}
 
-    .brand-description {
-      font-size: 1rem;
-      color: #666;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-      transition: all 0.3s ease;
-    }
+.stat-label {
+  font-size: 0.75rem; /* smaller and more consistent */
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
 
-    .quick-stats {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
 
-    .stat-item {
-      text-align: center;
-      transition: all 0.3s ease;
-    }
+/* Section Titles */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 30px; height: 2px;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  border-radius: 2px;
+}
 
-    .stat-item:hover {
-      transform: translateY(-3px);
-    }
+/* Links */
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding-left: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.footer-links a:hover {
+  color: #28a745;
+  transform: translateX(5px);
+}
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.footer-links a:hover::before { opacity: 1; }
 
-    .stat-number {
-      display: block;
-      font-size: 1.8rem;
-      font-weight: 700;
-      background: var(--gradient-primary);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
-      transition: all 0.3s ease;
-    }
+/* Contact */
+.contact-item i { color: #28a745; }
+.contact-item a { color: inherit; transition: color 0.3s ease; }
+.contact-item a:hover { color: #20c997; }
 
-    .stat-label {
-      font-size: 0.9rem;
-      color: #666;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: all 0.3s ease;
-    }
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+}
+.social-icons a {
+  font-size: 1.2rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+.social-icons a:hover {
+  color: #28a745;
+  transform: scale(1.2);
+}
 
-    .footer-title {
-      font-size: 1.2rem;
-      font-weight: 600;
-      color: #333;
-      margin-bottom: 1.5rem;
-      position: relative;
-      padding-bottom: 0.5rem;
-      transition: all 0.3s ease;
-    }
+/* Footer Bottom */
+.footer-bottom {
+  background: rgba(40, 167, 69, 0.05);
+  margin-top: 50px;
+  padding: 25px 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.footer-nav a {
+  color: #666;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+.footer-nav a:hover { color: #28a745; }
 
-    .footer-title::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: var(--gradient-primary);
-      border-radius: 2px;
-      transition: all 0.3s ease;
-    }
+/* ==================== Dark Mode ==================== */
+[data-bs-theme="dark"] .professional-footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  color: #f1f5f9;
+}
+[data-bs-theme="dark"] .brand-name {
+  background: linear-gradient(45deg, #20c997, #00ff95);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-bs-theme="dark"] .brand-description,
+[data-bs-theme="dark"] .stat-label,
+[data-bs-theme="dark"] .contact-item span,
+[data-bs-theme="dark"] .footer-links a,
+[data-bs-theme="dark"] .footer-nav a,
+[data-bs-theme="dark"] .copyright {
+  color: #94a3b8;
+}
+[data-bs-theme="dark"] .stat-number,
+[data-bs-theme="dark"] .footer-links a:hover,
+[data-bs-theme="dark"] .footer-links a::before,
+[data-bs-theme="dark"] .contact-item i,
+[data-bs-theme="dark"] .social-icons a:hover,
+[data-bs-theme="dark"] .footer-nav a:hover {
+  color: #00ff95;
+}
+[data-bs-theme="dark"] .footer-title {
+  color: #f8fafc;
+}
+[data-bs-theme="dark"] .footer-title::after {
+  background: linear-gradient(45deg, #20c997, #00ff95);
+}
+[data-bs-theme="dark"] .footer-bottom {
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-bs-theme="dark"] .social-icons a {
+  color: #94a3b8;
+}
 
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
+/* ==================== Animations ==================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Footer Links - smaller and aligned */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-    .footer-links li {
-      margin-bottom: 0.8rem;
-    }
+.footer-links li {
+  margin-bottom: 0.5rem; /* reduced spacing between items */
+}
 
-    .footer-links a {
-      color: #666;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      position: relative;
-      padding-left: 20px;
-      display: inline-block;
-    }
+.footer-links a {
+  font-size: 0.85rem; /* slightly smaller */
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding-left: 12px; /* small padding for arrow */
+}
 
-    .footer-links a:hover {
-      color: var(--primary);
-      transform: translateX(8px);
-    }
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
 
-    .footer-links a::before {
-      content: '▶';
-      position: absolute;
-      left: 0;
-      top: 0;
-      font-size: 0.8rem;
-      color: var(--primary);
-      transition: all 0.3s ease;
-      opacity: 0;
-      transform: translateX(-5px);
-    }
+.footer-links a:hover::before {
+  opacity: 1;
+}
 
-    .footer-links a:hover::before {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    .contact-info {
-      margin-bottom: 2.5rem;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      gap: 15px;
-      transition: all 0.3s ease;
-    }
-
-    .contact-item:hover {
-      transform: translateX(5px);
-    }
-
-    .contact-item i {
-      width: 20px;
-      color: var(--primary);
-      font-size: 1rem;
-      transition: all 0.3s ease;
-      flex-shrink: 0;
-    }
-
-    .contact-item:hover i {
-      transform: scale(1.2);
-    }
-
-    .contact-item a {
-      color: #666;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: color 0.3s ease;
-      flex: 1;
-    }
-
-    .contact-item a:hover {
-      color: var(--primary);
-    }
-
-    .contact-item span {
-      color: #666;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      flex: 1;
-    }
-
-    .footer-bottom {
-      background: rgba(0, 0, 0, 0.05);
-      padding: 25px 0;
-      margin-top: 40px;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    .copyright {
-      color: #666;
-      font-size: 0.95rem;
-      margin: 0;
-      transition: all 0.3s ease;
-    }
-
-    .footer-nav {
-      display: flex;
-      gap: 25px;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
-    .footer-nav a {
-      color: #666;
-      text-decoration: none;
-      font-size: 0.95rem;
-      transition: all 0.3s ease;
-      position: relative;
-    }
-
-    .footer-nav a:hover {
-      color: var(--primary);
-      transform: translateY(-2px);
-    }
-
-    .footer-nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--primary);
-      transition: width 0.3s ease;
-    }
-
-    .footer-nav a:hover::after {
-      width: 100%;
-    }
+.footer-links a:hover {
+  color: #28a745;
+  transform: translateX(3px);
+}
 
     /* Enhanced Scroll to Top Button */
     #scrollToTopBtn {
@@ -1719,93 +1711,111 @@
       </div>
     </div>
   </section>
+<!-- ===== Enhanced GrowCraft Footer ===== -->
+<footer class="professional-footer fade-in" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-4 py-4 fade-in">
+      
+      <!-- Brand -->
+      <div class="col-lg-4 col-md-6 fade-in">
+        <div class="footer-brand fade-in">
+          <h4 class="brand-name">GrowCraft</h4>
+          <p class="brand-description" >
+            Empowering businesses with innovative digital solutions and creative excellence.
+          </p>
+          <div class="quick-stats fade-in">
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Clients</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">1+</span>
+              <span class="stat-label">Years</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <!-- Enhanced Professional Footer -->
-  <footer class="professional-footer fade-in">
+      <!-- Services -->
+      <div class="col-lg-2 col-md-3 col-6 fade-in" >
+        <h5 class="footer-title">Services</h5>
+        <ul class="footer-links" >
+          <li><a href="learn/webdev.html">Web Development</a></li>
+          <li><a href="learn/graphic.html">Graphic Design</a></li>
+          <li><a href="learn/marketing.html">Digital Marketing</a></li>
+          <li><a href="learn/contentwriting.html">Content Writing</a></li>
+          <li><a href="learn/socialmedia.html">Social Media</a></li>
+          <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-3 col-6 fade-in">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#work">Portfolio</a></li>
+          <li><a href="src/contact.html">Contact</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="blogListing.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-4 col-md-6 fade-in" >
+        <h5 class="footer-title">Get In Touch</h5>
+        <div class="contact-info mb-3 fade-in">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+919999999999">+91 999 999 999</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ABC Street, XYZ City, India</span>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="social-icons">
+  <a href="https://discord.gg/vk5zFm56" target="_blank"><i class="fa-brands fa-discord"></i></a>
+  <a href="https://github.com/gyanshankar1708/GrowCraft" target="_blank"><i class="fa-brands fa-github"></i></a>
+  <a href="https://www.instagram.com/GrowCraft" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom fade-in">
     <div class="container">
-      <div class="row g-4 py-4">
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-brand">
-            <img src="../images/Logo_new.png" alt="GrowCraft Logo" class="footer-logo">
-            <h4 class="brand-name">GrowCraft</h4>
-            <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence that drives real results.</p>
-            <div class="quick-stats">
-              <div class="stat-item">
-                <span class="stat-number">500+</span>
-                <span class="stat-label">Projects</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Clients</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Years</span>
-              </div>
-            </div>
-          </div>
+      <div class="row align-items-center py-3 fade-in">
+        <div class="col-md-6">
+          <p class="copyright mb-0">
+            © <span id="year"></span> <strong>GrowCraft</strong>. All rights reserved.
+          </p>
         </div>
-
-        <div class="col-lg-2 col-md-3 col-6">
-          <h5 class="footer-title">Services</h5>
-          <ul class="footer-links">
-            <li><a href="learn/webdev.html">Web Development</a></li>
-            <li><a href="learn/graphic.html">Graphic Design</a></li>
-            <li><a href="learn/marketing.html">Digital Marketing</a></li>
-            <li><a href="learn/contentwriting.html">Content Writing</a></li>
-            <li><a href="learn/socialmedia.html">Social Media</a></li>
-            <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 col-6">
-          <h5 class="footer-title">Quick Links</h5>
-          <ul class="footer-links">
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="index.html#work">Portfolio</a></li>
-            <li><a href="src/contact.html">Contact</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="blogListing.html">Blog</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <h5 class="footer-title">Get In Touch</h5>
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+919999999999">+91 999 999 999</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>ABC Street, XYZ City, India</span>
-            </div>
+        <div class="col-md-6">
+          <div class="footer-nav fade-in">
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+            <a href="#sitemap">Sitemap</a>
           </div>
         </div>
       </div>
     </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="row align-items-center py-3">
-          <div class="col-md-6">
-            <p class="copyright">© 2024 <strong>GrowCraft</strong>. All rights reserved.</p>
-          </div>
-          <div class="col-md-6">
-            <div class="footer-nav">
-              <a href="../privacy.html">Privacy</a>
-              <a href="../terms.html">Terms</a>
-              <a href="../sitemap.html">Sitemap</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  </div>
+</footer>
 
   <!-- Enhanced Scroll to Top Button -->
   <button id="scrollToTopBtn" title="Go to top">
