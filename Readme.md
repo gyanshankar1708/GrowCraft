@@ -4,7 +4,12 @@
 
 GrowCraft is a **service-based platform** designed to help businesses grow online while also providing students with hands-on experience through training and internships.  
 
-> 🏆 **This repository is part of GirlScript Summer of Code 2025 (GSSoC'25)**  
+> 🏆 **This repository is part of GirlScript Summer of Code 2025 (GSSoC'25) and Hacktoberfest 2025**  
+
+![Banner 1](./images/GSSoC.png)
+  
+![Banner 2](./images/hacktober.png)
+
 > Contributions from the community are welcome!
 
 ---
@@ -174,3 +179,5 @@ This project is licensed under the terms specified in the [LICENSE](LICENSE) fil
 - **GirlScript Summer of Code 2025 (GSSoC'25)** for providing an open-source platform
 - Project contributors and mentors
 - Open-source community for continuous inspiration
+
+
