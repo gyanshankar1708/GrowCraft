@@ -24,7 +24,7 @@ body {
 
 h2 {
     text-align: center;
-    color: #2B3A67;
+    color: #28a745;
     font-weight: 800;
     font-size: 2.3rem;
     margin-bottom: 24px;
@@ -50,9 +50,10 @@ h2 {
     border-radius: 14px;
     transition: box-shadow 0.2s, transform 0.18s;
     box-shadow: 0 2px 10px rgba(52,88,255,0.07);
-    border-left: 5px solid #3D5CFC;
+    border-left: 5px solid #28a745;
     position: relative;
     cursor: pointer;
+    margin: 50px;
 }
 .blog-card:hover {
     box-shadow: 0 6px 22px rgba(61,92,252,0.18);
@@ -61,12 +62,12 @@ h2 {
 .blog-card h4 {
     margin: 0 0 8px 0;
     font-size: 1.22rem;
-    color: #222b4e;
+    color: #28a745;
     font-weight: 700;
     transition: color 0.18s;
 }
 .blog-card:hover h4 {
-    color: #3D5CFC;
+    color: #28a745;
 }
 .blog-card small {
     display: block;
@@ -78,7 +79,7 @@ h2 {
 }
 .blog-card p {
     margin: 0;
-    color: #41506b;
+    color: #28a745;
     font-size: 1.04rem;
     line-height:1.6;
 }
@@ -101,11 +102,11 @@ form input, form textarea {
     box-shadow: 0 1.5px 6px rgba(52, 88, 255, 0.04);
 }
 form input:focus, form textarea:focus {
-    border-color: #3D5CFC;
+    border-color: #28a745;
     box-shadow: 0 2px 12px rgba(61,92,252,0.09);
 }
 form button[type=submit] {
-    background: linear-gradient(85deg, #3D5CFC 70%, #3458FF 100%);
+    background: linear-gradient(85deg, #42c134 70%, #13f040 100%);
     color: #fff;
     border: none;
     padding: 15px 0;
@@ -118,14 +119,14 @@ form button[type=submit] {
     transition: background 0.16s, box-shadow .16s;
 }
 form button[type=submit]:hover {
-    background: #273EBB;
+    background: #28a745;
     box-shadow: 0 8px 28px rgba(61, 92, 252, 0.18);
 }
 
 /* Stylize back button */
 button[onclick*="blogListing.html"] {
     background: #f3f6fa;
-    color: #273055;
+    color: #28a745;
     font-weight: 600;
     margin-top: 17px;
     border: none;
@@ -138,7 +139,7 @@ button[onclick*="blogListing.html"] {
 }
 button[onclick*="blogListing.html"]:hover {
     background: #e4e8f5;
-    color: #3D5CFC;
+    color: #28a745;
 }
 
 .fab {
@@ -147,7 +148,7 @@ button[onclick*="blogListing.html"]:hover {
   right: 36px;
   width: 64px;
   height: 64px;
-  background: linear-gradient(120deg,#3869fa 75%, #3458FF 100%);
+    background: linear-gradient(85deg, #42c134 70%, #13f040 100%);
   border-radius: 50%;
   color: #fff;
   font-size: 40px;
@@ -163,9 +164,9 @@ button[onclick*="blogListing.html"]:hover {
 }
 
 .fab:hover {
-    background: linear-gradient(120deg,#273EBB 75%, #3351C4 100%);
+    background: linear-gradient(85deg, #42c134 70%, #13f040 100%);
     transform: scale(1.08);
-    box-shadow: 0 16px 48px rgba(52, 88, 255, 0.32);
+    box-shadow: 0 16px 48px rgba(95, 237, 106, 0.32);
 }
 
 /* Responsive adjustments */
