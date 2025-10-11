@@ -14,8 +14,7 @@
   
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="src/style.css" />
-  <link rel="stylesheet" href="src/blogs.css" />
+  
   <link rel="stylesheet" href="components/footer.css" />
 
   <style>
@@ -182,10 +181,7 @@
       background-color: transparent !important;
     }
 
-    /* Dark mode logo switching */
-    [data-bs-theme="dark"] .navbar-brand img {
-      content: url('images/logo-transparent-dark-mode.png');
-    }
+   
 
     .blog-section {
       background-color: #ffffff;
@@ -195,13 +191,7 @@
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
     }
 
-    /* Ensure the footer background is correct in dark mode */
-html[data-bs-theme="dark"] .professional-footer,
-html.dark .professional-footer,
-html.dark-mode .professional-footer {
-  background-color: #1a1d29 !important;
-}
-
+  
     /* Dark mode blog section */
     .dark-mode .blog-section,
     .dark .blog-section,
@@ -270,7 +260,9 @@ html.dark-mode .professional-footer {
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between align-items-center px-3 px-sm-5">
       <a class="navbar-brand" href="index.html">
-        <img src="images/logo_bg_transparent.png" alt="GrowCraft" width="180" id="logo" />
+        <img src="images/logo_bg_transparent.png" alt="GrowCraft" width="180" id="logo" class="theme-aware-logo"
+    data-light-src="images/logo_bg_transparent.png"
+    data-dark-src="images/Logo.png" />
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -291,12 +283,7 @@ html.dark-mode .professional-footer {
           </li>
         </ul>
       </div>
-      
-<div class="search-container">
-  <input type="text" placeholder="Search..." class="search-input">
-  <button class="search-button">
-    <i class="fas fa-search"></i> </button>
-</div>
+ 
       
 
     </div>
@@ -310,99 +297,6 @@ html.dark-mode .professional-footer {
     </div>
   </div>
 
-  <footer class="professional-footer" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
-  <div class="container">
-    <div class="row g-4 py-4">
-      <div class="col-lg-4 col-md-12">
-        <div class="footer-brand">
-          <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo">
-          <h4 class="brand-name">GrowCraft</h4>
-          <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence.</p>
-          <div class="quick-stats">
-            <div class="stat-item">
-              <span class="stat-number">500+</span>
-              <span class="stat-label">PROJECTS</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">150+</span>
-              <span class="stat-label">CLIENTS</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">5+</span>
-              <span class="stat-label">YEARS</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-2 col-md-4 col-6">
-        <h5 class="footer-title">
-          <i class="fas fa-tools" style="margin-right: 8px;"></i>Services
-        </h5>
-        <ul class="footer-links">
-          <li><a href="learn/webdev.html"><i class="fas fa-code"></i> Web Development</a></li>
-          <li><a href="learn/graphic.html"><i class="fas fa-paint-brush"></i> Graphic Design</a></li>
-          <li><a href="learn/marketing.html"><i class="fas fa-bullhorn"></i> Digital Marketing</a></li>
-          <li><a href="learn/contentwriting.html"><i class="fas fa-pen-nib"></i> Content Writing</a></li>
-          <li><a href="learn/socialmedia.html"><i class="fas fa-hashtag"></i> Social Media</a></li>
-          <li><a href="learn/cyberanalyst.html"><i class="fas fa-shield-alt"></i> Cyber Analyst</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-2 col-md-4 col-6">
-        <h5 class="footer-title">
-          <i class="fas fa-link" style="margin-right: 8px;"></i>Quick Links
-        </h5>
-        <ul class="footer-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#about">About Us</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="index.html#work">Portfolio</a></li>
-          <li><a href="src/contact.html">Contact</a></li>
-          <li><a href="#careers">Careers</a></li>
-          <li><a href="blogListing.html">Blog</a></li>
-        </ul>
-      </div>
-
-      <div class="col-lg-4 col-md-4">
-        <h5 class="footer-title">
-          <i class="fas fa-envelope" style="margin-right: 8px;"></i>Get In Touch
-        </h5>
-        <div class="contact-info">
-          <div class="contact-item">
-            <i class="fas fa-envelope"></i>
-            <a href="mailto:info@growcraft.com">info@growcraft.com</a>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-phone"></i>
-            <a href="tel:+919999999999">+91 999 999 999</a>
-          </div>
-          <div class="contact-item">
-            <i class="fas fa-map-marker-alt"></i>
-            <span>ABC Street, XYZ City, India</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <div class="container">
-      <div class="row align-items-center py-3">
-        <div class="col-md-6">
-          <p class="copyright">© 2024 <strong>GrowCraft</strong>. All rights reserved.</p>
-        </div>
-        <div class="col-md-6">
-          <div class="footer-nav">
-            <a href="#privacy">Privacy</a>
-            <a href="#terms">Terms</a>
-            <a href="#sitemap">Sitemap</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
   <div id="footer-placeholder"></div>
   <script>
     fetch('src/components/footer.html')
