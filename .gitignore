@@ -1,2 +1,3 @@
 # Local Netlify folder
 .netlify
+/src/components/secrets.js
