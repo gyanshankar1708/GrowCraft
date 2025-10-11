@@ -22,6 +22,7 @@
     />
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="components/backtotop.css">
   </head>
   <style>
 
@@ -726,6 +727,11 @@
     </div>
   </div>
 </footer>
+   
+    <button id="backToTop" title="Go to top" type="button">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+    <!-- JS Scripts -->
       <script>
         fetch('src/components/navbar.html')
           .then(response => response.text())
@@ -839,5 +845,7 @@
     <!-- Chatbot button ends here-->
 
     <script src="components/chatbot.js"></script>
+    <script src="components/backtotop.js"></script>
+
   </body>
 </html>

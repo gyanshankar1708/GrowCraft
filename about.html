@@ -690,7 +690,8 @@
           <div class="badges" data-aos="fade-up" data-aos-delay="500" aria-label="Key areas">
             <span class="chip">Website Development</span>
             <span class="chip">Training &amp; Internships</span>
-            <span class="chip">Open Source (GSSoC)</span>
+            <span class="chip">GirlScript Summer of Code (GSSoC'25)</span>
+            <span class="chip"> Hacktoberfest (HF'25)</span>
           </div>
 
           <div class="scroll-cue" data-aos="fade-up" data-aos-delay="600" role="note">
@@ -843,7 +844,32 @@
     AOS.init({ once: true, duration: 1000 });
   </script>
  
+  
+   <button id="backToTop" title="Go to top" type="button">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+  <!-- <script src="src/darkMode.js"></script> -->
 
+ <script>
+    AOS.init({ once: true, duration: 1000 });
+     // Scroll to top functionality
+    const backToTopButton = document.getElementById('backToTop');
+
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 50) {
+        backToTopButton.classList.add('show');
+      } else {
+        backToTopButton.classList.remove('show');
+      }
+    });
+
+    backToTopButton.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
 
 </html>

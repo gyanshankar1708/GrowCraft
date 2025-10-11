@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masterhead | GrowCraft</title>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <style>
+ /* Body & Animations */
+body {
+  background: linear-gradient(135deg,#e6f9ec,#c8f3d6);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Masthead */
+.masthead-header {
+  text-align: center;
+  background: linear-gradient(135deg,#66bb6a,#43a047);
+  color: white;
+  padding: 80px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  animation: slideUp 1s ease forwards;
+}
+
+.masthead-header h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.masthead-header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.masthead-header button {
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  background: linear-gradient(135deg,#93fb95,#08924d);
+  color: white;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.masthead-header button:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: linear-gradient(135deg,#667eea,#764ba2);
+}
+
+/* Section Titles */
+.container h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2e7d32;
+  margin-bottom: 30px;
+}
+
+/* Mission Card */
+.mission {
+  background: white;
+  border-radius: 12px;
+  padding: 40px 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,100%{transform:translateY(0);}
+  50%{transform:translateY(-6px);}
+}
+
+/* Project Admin */
+.project-admin {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.admin-card {
+  background: white;
+  width: 180px;
+  border-radius: 12px;
+  border: 2px solid #43a047;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.admin-card img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  border: 2px solid #66bb6a;
+}
+
+.admin-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Contributors */
+.contributors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.contributor {
+  background: white;
+  width: 140px;
+  border-radius: 12px;
+  border: 2px solid #43a047;
+  text-align: center;
+  padding: 20px;
+  transition: all 0.3s ease;
+  animation: float 3s ease-in-out infinite;
+}
+
+.contributor img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid #66bb6a;
+}
+
+/* ✅ Remove underline & inherit color for contributor links */
+.contributor a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contributor:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Contact Cards (✅ Fixed layout) */
+.contact {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 25px;
+  text-align: left;
+    border: 2px solid #43a047;
+
+}
+
+.inner-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  flex: 1 1 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.inner-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.inner-card p { margin: 10px 0; font-size: 1rem; }
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 1.6rem;
+  color: #43a047;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.2);
+  color: #66bb6a;
+}
+
+/* Back to Top */
+#backToTop {
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  bottom: 40px;
+  right: 20px;
+  z-index: 1000;
+  background: #43a047;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+#backToTop:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Responsive */
+@media(max-width:1024px){
+  .project-admin, .contributors, .contact { justify-content: center; }
+}
+
+@media(max-width:768px){
+  .masthead-header h2{ font-size: 2.2rem; }
+  .masthead-header p{ font-size: 1rem; }
+}
+.project-admin {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 cards per row */
+  gap: 25px;
+  justify-items: center;
+}
+
+.admin-card {
+  max-width: 250px; /* Fixed card width */
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.admin-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+/* Responsive */
+@media (max-width:1024px) {
+  .project-admin {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+  }
+}
+
+@media (max-width:768px) {
+  .project-admin {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+  }
+}
+.contact-section {
+  max-width: 1100px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2e7d32; /* greenish accent */
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 cards side by side */
+  gap: 25px;
+  justify-items: center;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 300px;
+  margin-left: 90px;
+    border: 2px solid #43a047;
+
+}
+
+.contact-card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+.contact-card p {
+  margin: 10px 0;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-card a {
+  color: #2e7d32;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-card a:hover {
+  color: #1b5e20;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  font-size: 1.5rem;
+  color: #2e7d32;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: #1b5e20;
+  transform: scale(1.2);
+}
+
+/* Responsive */
+@media(max-width:1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr; /* stack vertically on smaller screens */
+  }
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Masthead -->
+  <section class="masthead-header">
+    <h2>Masterhead | GrowCraft</h2>
+    <p>GrowCraft is a platform helping businesses grow online while providing students hands-on training and internship opportunities.</p>
+<button onclick="window.location.href='index.html'">Go Back To Home Page</button>
+  </section>
+
+  <div class="container">
+    <!-- Project Mission -->
+    <section class="mission">
+      <h2>Project Mission</h2>
+      <p>Our mission is to connect students with real-world projects while helping businesses grow digitally. We strive to provide professional experiences, mentorship, and a platform for skill development.</p>
+    </section>
+
+ <!-- Project Admin Section -->
+<section class="project-admin-section">
+  <h2>Project Admin & Mentors</h2>
+  <div class="project-admin">
+    <div class="admin-card">
+      <img src="src/images/project_admin.jpg" alt="Admin 1">
+      <h3>Gyanshankar Singh</h3>
+      <p>Project Admin</p>
+    </div>
+    <div class="admin-card">
+      <img src="src/images/khabab_akhtar.jpg" alt="Mentor 1">
+      <h3>Khabab Akhtar</h3>
+      <p>Mentor</p>
+    </div>
+    <div class="admin-card">
+      <img src="src/images/abdullah_jameel.png" alt="Mentor 2">
+      <h3>Abdullah Jameel</h3>
+      <p>Mentor</p>
+    </div>
+    <div class="admin-card">
+      <img src="src/images/ayush_kashap.jpg" alt="Mentor 3">
+      <h3>Ayush Kashyap</h3>
+      <p>Mentor</p>
+    </div>
+  </div>
+</section>
+
+
+    <!-- Contributors -->
+    <section class="contributors-section">
+      <h2>Contributors</h2>
+      <div id="contributors" class="contributors"></div>
+    </section>
+
+    <!-- ✅ Contact Info (side-by-side like admin cards) -->
+<section class="contact-section">
+  <h2>Contact GrowCraft</h2>
+  <div class="contact-grid">
+    <div class="contact-card">
+      <p><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:growCraft@gmail.com">growCraft@gmail.com</a></p>
+      <p><i class="fa-brands fa-github"></i> GitHub: <a href="https://github.com/gyanshankar1708/GrowCraft" target="_blank">GrowCraft Repo</a></p>
+    </div>
+    <div class="contact-card">
+      <p>Follow us:</p>
+      <div class="social-icons">
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <button id="backToTop">↑</button>
+
+  <script>
+    // Fetch GitHub Contributors
+    async function fetchContributors() {
+      try {
+        const response = await fetch("https://api.github.com/repos/gyanshankar1708/GrowCraft/contributors");
+        const contributors = await response.json();
+        const container = document.getElementById("contributors");
+        container.innerHTML = "";
+        contributors.forEach(c => {
+          const div = document.createElement("div");
+          div.classList.add("contributor");
+          div.innerHTML = `
+            <a href="${c.html_url}" target="_blank">
+              <img src="${c.avatar_url}" alt="${c.login}">
+              <p>${c.login}</p>
+              <small>Commits: ${c.contributions}</small>
+            </a>
+          `;
+          container.appendChild(div);
+        });
+      } catch(e) { console.error(e); }
+    }
+    fetchContributors();
+
+    // Back to Top
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTop.style.display = window.scrollY > 50 ? "block" : "none";
+    });
+    backToTop.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  </script>
+
+</body>
+</html>
