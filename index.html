@@ -42,6 +42,11 @@
       overflow-x: hidden;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
+    
+    [data-bs-theme="dark"] body,[data-bs-theme="dark"] .training-section, [data-bs-theme="dark"] .services-section,[data-bs-theme="dark"] .about-section,[data-bs-theme="dark"] .feedback-section{
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  }
+
 
     /* Enhanced Navbar */
     .navbar {
@@ -55,11 +60,20 @@
       z-index: 1000;
       transition: var(--transition);
     }
+    [data-bs-theme="dark"] .navbar {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+      
+    }
 
     .navbar.scrolled {
       padding: 0.8rem 0;
       background: rgba(255, 255, 255, 0.98) !important;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    }
+    [data-bs-theme="dark"] .navbar.scrolled{
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
     }
 
     .navbar-brand img {
@@ -77,6 +91,9 @@
       transition: var(--transition);
       position: relative;
       overflow: hidden;
+    }
+    [data-bs-theme="dark"] .navbar-nav .nav-link{
+      color: #27b965 !important;
     }
 
     .navbar-nav .nav-link::before {
@@ -309,6 +326,9 @@
   font-size: 1rem;
   margin-bottom: 50px;
 }
+[data-bs-theme="dark"] .services-subtitle ,[data-bs-theme="dark"] .about-subtitle,[data-bs-theme="dark"] .feedback-subtitle{
+  color: var(--bs-secondary-color);
+}
 
 .program-card {
   background: #ffffff;
@@ -319,6 +339,10 @@
   transition: all 0.3s ease;
   height: 100%;
 }
+ [data-bs-theme="dark"] .program-card,[data-bs-theme="dark"] .card-services{
+    background: rgba(144, 238, 144, 0.25);
+    border: 1px solid rgba(144, 238, 144, 0.4);
+ }
 
 /* Tranning Section New CSS */
 .program-card img.icon {
@@ -330,6 +354,7 @@
   transition: all 0.3s ease;
 }
 
+
 /* ✅ Title */
 .program-card h6 {
   color: var(--secondary-green);
@@ -337,7 +362,9 @@
   font-weight: 600;
   margin-bottom: 10px;
 }
-
+[data-bs-theme="dark"] .program-card h6{
+  color: #26a85d;
+}
 /* ✅ Description */
 .program-card p {
   color: #444;
@@ -474,6 +501,9 @@
   color: #555;
   margin-top: 10px;
   transition: color 0.3s ease;
+}
+[data-bs-theme="dark"] .card-text.summary{
+  color: var(--bs-secondary-color) ;
 }
 
 .card-services:hover .card-text.summary {
@@ -635,6 +665,9 @@
   color: #000; /* black */
   font-size: 1rem;
   line-height: 1.6;
+}
+[data-bs-theme="dark"] .about-para{
+   color: var(--bs-secondary-color);
 }
 
 /* Responsive: 3 cards per row on lg screens */
