@@ -68,6 +68,18 @@
       transition: var(--transition);
       position: relative;
       overflow: hidden;
+
+    <link rel="stylesheet" href="components/backtotop.css">
+  </head>
+  <style>
+
+    :root{
+          --bg-primary: #1a1a1a;
+                --bg-secondary: #2d2d2d;
+                --text-primary: #ffffff;
+                --text-secondary: #cccccc;
+                --border-color: #404040;
+                --shadow: rgba(0, 0, 0, 0.3)
     }
 
     .navbar-nav .nav-link::before {
@@ -246,7 +258,7 @@
       align-items: center;
       flex-wrap: wrap;
       border-top: 1px solid #374151;
-      padding-top: 1rem;
+      padding: 1rem 4rem 0 4rem;
       margin-top: 1rem;
     }
 
@@ -535,6 +547,84 @@
       </div>
     </footer>
 
+    <button id="backToTop" title="Go to top" type="button">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+    <!-- JS Scripts -->
+      <script>
+        fetch('src/components/navbar.html')
+          .then(response => response.text())
+          .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+          });
+      </script>
+    <script src="src/blogs.js"></script>
+    <script src="src/components/navbar.js"></script>
+    <!-- <script src="src/darkMode.js"></script> -->
+
+    <!-- Logo switching and initialization script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* ----------------------------
+       Logo Switching for Dark Mode
+    ----------------------------- */
+        const logo = document.querySelector("#logo");
+
+        function updateLogo() {
+          const isDark =
+            document.documentElement.getAttribute("data-bs-theme") === "dark";
+          logo.src = isDark ? "images/Logo.png" : "images/Logo_new.png";
+        }
+
+        // Initial update
+        updateLogo();
+
+        // Watch for theme changes
+        const observer = new MutationObserver(function (mutations) {
+          for (const mutation of mutations) {
+            if (
+              mutation.type === "attributes" &&
+              mutation.attributeName === "data-bs-theme"
+            ) {
+              updateLogo();
+            }
+          }
+        });
+
+        observer.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["data-bs-theme"],
+        });
+
+        /* ----------------------------
+       Navbar scroll effect
+    ----------------------------- */
+        window.addEventListener("scroll", function () {
+          const navbar = document.querySelector(".navbar");
+          if (window.scrollY > 50) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+
+    <style>
+      .fab {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        font-size: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
+
     <!-- ========== CHATBOT ========== -->
     <div class="chatbot-container">
       <div class="chatbot-window" id="chatWindow">
@@ -606,5 +696,7 @@
         }
       });
     </script>
+    <script src="components/backtotop.js"></script>
+
   </body>
 </html>

@@ -42,6 +42,11 @@
       overflow-x: hidden;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     }
+    
+    [data-bs-theme="dark"] body,[data-bs-theme="dark"] .training-section, [data-bs-theme="dark"] .services-section,[data-bs-theme="dark"] .about-section,[data-bs-theme="dark"] .feedback-section{
+    background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+  }
+
 
     /* Enhanced Navbar */
     .navbar {
@@ -55,11 +60,20 @@
       z-index: 1000;
       transition: var(--transition);
     }
+    [data-bs-theme="dark"] .navbar {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+      
+    }
 
     .navbar.scrolled {
       padding: 0.8rem 0;
       background: rgba(255, 255, 255, 0.98) !important;
       box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    }
+    [data-bs-theme="dark"] .navbar.scrolled{
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
     }
 
     .navbar-brand img {
@@ -78,6 +92,9 @@
       position: relative;
       overflow: hidden;
     }
+    [data-bs-theme="dark"] .navbar-nav .nav-link{
+      color: #27b965 !important;
+    }
 
     .navbar-nav .nav-link::before {
       content: '';
@@ -95,7 +112,7 @@
       left: 0;
     }
 
-    /* Theme Toggle Button */
+    /* Theme Toggle Button*/
     .theme-toggle {
       background: rgba(39, 174, 96, 0.1);
       border: 1px solid rgba(39, 174, 96, 0.3);
@@ -148,6 +165,37 @@
       transform: translateY(-2px);
       box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
     }
+    /* 🌙 Dark Mode - Testimonials */
+[data-bs-theme="dark"] .testimonial-carousel {
+  background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+}
+
+[data-bs-theme="dark"] .testimonial-heading {
+  color: #00e676 !important; /* neon green accent */
+}
+
+[data-bs-theme="dark"] .testimonial-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 230, 118, 0.25);
+  color: #f5f5f5;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+[data-bs-theme="dark"] .testimonial-card h4 {
+  color: #ffffff;
+}
+
+[data-bs-theme="dark"] .testimonial-card span {
+  color: #90caf9; /* soft blue for role text */
+}
+
+[data-bs-theme="dark"] .testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6),
+              0 0 25px rgba(0, 230, 118, 0.5); /* glowing effect */
+}
+
+
 
    
 
@@ -278,6 +326,9 @@
   font-size: 1rem;
   margin-bottom: 50px;
 }
+[data-bs-theme="dark"] .services-subtitle ,[data-bs-theme="dark"] .about-subtitle,[data-bs-theme="dark"] .feedback-subtitle{
+  color: var(--bs-secondary-color);
+}
 
 .program-card {
   background: #ffffff;
@@ -288,6 +339,10 @@
   transition: all 0.3s ease;
   height: 100%;
 }
+ [data-bs-theme="dark"] .program-card,[data-bs-theme="dark"] .card-services{
+    background: rgba(144, 238, 144, 0.25);
+    border: 1px solid rgba(144, 238, 144, 0.4);
+ }
 
 /* Tranning Section New CSS */
 .program-card img.icon {
@@ -299,6 +354,7 @@
   transition: all 0.3s ease;
 }
 
+
 /* ✅ Title */
 .program-card h6 {
   color: var(--secondary-green);
@@ -306,7 +362,9 @@
   font-weight: 600;
   margin-bottom: 10px;
 }
-
+[data-bs-theme="dark"] .program-card h6{
+  color: #26a85d;
+}
 /* ✅ Description */
 .program-card p {
   color: #444;
@@ -443,6 +501,9 @@
   color: #555;
   margin-top: 10px;
   transition: color 0.3s ease;
+}
+[data-bs-theme="dark"] .card-text.summary{
+  color: var(--bs-secondary-color) ;
 }
 
 .card-services:hover .card-text.summary {
@@ -604,6 +665,9 @@
   color: #000; /* black */
   font-size: 1rem;
   line-height: 1.6;
+}
+[data-bs-theme="dark"] .about-para{
+   color: var(--bs-secondary-color);
 }
 
 /* Responsive: 3 cards per row on lg screens */
@@ -887,6 +951,41 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
     .footer-right a:hover::after {
       width: 100%;
     }
+#scrollToTopBtn {
+  position: fixed;
+  right: 2rem;
+  bottom: -5rem;
+  z-index: 999;
+  border: none;
+  outline: none;
+  background: #51BE7F;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),
+              0 4px 6px -2px rgba(0,0,0,0.05);
+  transition: transform 0.4s ease, opacity 0.4s ease, bottom 0.3s ease;
+  opacity: 0;
+  transform: translateY(50%);
+}
+
+#scrollToTopBtn.show {
+  opacity: 1;
+  transform: translateY(0);
+  bottom: 2rem;
+}
+
+#scrollToTopBtn svg {
+  width: 1.5rem;  
+  height: 1.5rem;
+  display: block;
+}
+
+
 
     /* ===== MEDIA QUERIES ===== */
     /* Tablets */
@@ -914,6 +1013,8 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
       }
     }
 
+
+    /* Responsive Design */
     /* Mobile */
     @media (max-width: 768px) {
       .footer-container {
@@ -989,6 +1090,135 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
         /* remove margin on mobile too */
       }
     }
+    .about-card-style {
+  background: #fff; /* normal card background */
+  border: 1px solid rgba(144, 238, 144, 0.3);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ✅ Hover Effect */
+.about-card-style:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.25);
+  border: 1px solid var(--light-green);
+}
+
+/* ✅ Icon turns brighter green on hover */
+.about-card-style:hover img.icon {
+  filter: brightness(0) saturate(100%) invert(47%) sepia(74%) saturate(563%) hue-rotate(85deg) brightness(97%) contrast(94%);
+}
+
+
+
+
+
+.icon {
+  margin-right: 8px;
+  color: #2e7d32;
+}
+
+.about-para {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.6;
+}
+#backToTop {
+  position: fixed;       /* always visible relative to viewport */
+  bottom: 20px;          /* distance from bottom of viewport */
+  right: 20px;           /* distance from right edge */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #66eaaa, #1fec30);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  z-index: 999;
+}
+
+#backToTop:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+
+
+    .testimonial-carousel {
+  padding: 75px 0;  
+  background: #f9f9f9;
+  overflow: hidden;
+  position: relative;
+    overflow-x: hidden;
+  overflow-y: visible;
+}
+
+.testimonial-heading {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.carousel-wrapper {
+  overflow-x: hidden; /* only hide horizontal */
+  overflow-y: visible; /* allow vertical shadows */
+  width: 100%;
+}
+
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  will-change: transform;
+}
+
+
+.testimonial-card {
+  flex: 0 0 300px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-height: 180px;
+  transition: all 0.3s ease; /* smooth hover effect */
+  cursor: pointer;
+}
+
+.testimonial-card h4 {
+  margin: 10px 0 0;
+  font-size: 18px;
+}
+
+.testimonial-card span {
+  font-size: 14px;
+  color: #555;
+}
+section, main, .container {
+  overflow: visible !important;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25),
+              0 0 20px rgba(0, 200, 83, 0.4);
+  position: relative;
+  z-index: 10;
+}
+
+
+
   </style>
 </head>
 
@@ -1541,116 +1771,80 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
   </section>
 
   <section class="about-section" id="about">
-    <div class="container">
-      <h2 class="about-title" data-aos="fade-up">ABOUT US</h2>
-      <p class="about-subtitle" data-aos="fade-up" data-aos-delay="100">
-        Gateway to <em>Go Digital and Grow Business</em>
-      </p>
+  <div class="container">
+    <h2 class="about-title" data-aos="fade-up">ABOUT US</h2>
+    <p class="about-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Gateway to Go Digital and Grow Business
+    </p>
 
-      <div class="row justify-content-center g-4">
-        <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="100">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift" style="background: rgba(144, 238, 144, 0.25); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          
-            <h4 class="mb-3">
-              <i class="fas fa-users icon"></i>
-              Who We Are
-            </h4>
-            <div class="about-para">
-              GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design &
-              Social Media. We deliver high-quality services that align with market trends.
-            </div>
+    <div class="row justify-content-center g-4">
+      <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="100">
+        <div class="about-card about-card-style">
+          <h4 class="mb-3">
+            <i class="fas fa-users icon"></i>
+            Who We Are
+          </h4>
+          <div class="about-para">
+            GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design &
+            Social Media. We deliver high-quality services that align with market trends.
           </div>
         </div>
+      </div>
 
-        <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift"  style="background: rgba(144, 238, 144, 0.25); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;"
-          >
-            <h4 class="mb-3">
-              <i class="fas fa-microchip icon"></i>
-              Tech-Driven Solutions
-            </h4>
-            <div class="about-para">
-              We use the latest technologies & best practices to deliver innovative solutions. Our services evolve
-              constantly to meet clients' changing needs.
-            </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="about-card about-card-style">
+          <h4 class="mb-3">
+            <i class="fas fa-microchip icon"></i>
+            Tech-Driven Solutions
+          </h4>
+          <div class="about-para">
+            We use the latest technologies & best practices to deliver innovative solutions. Our services evolve
+            constantly to meet clients' changing needs.
           </div>
         </div>
+      </div>
 
-        <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="300">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift"  style="background: rgba(144, 238, 144, 0.25); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;"
-          >
-            <h4 class="mb-3">
-              <i class="fas fa-handshake icon"></i>
-              Client-Centric Approach
-            </h4>
-            <div class="about-para">
-              Every client has unique needs. We understand their goals before creating custom solutions and involve them
-              throughout the development process.
-            </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="300">
+        <div class="about-card about-card-style">
+          <h4 class="mb-3">
+            <i class="fas fa-handshake icon"></i>
+            Client-Centric Approach
+          </h4>
+          <div class="about-para">
+            Every client has unique needs. We understand their goals before creating custom solutions and involve them
+            throughout the development process.
           </div>
         </div>
+      </div>
 
-        <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="400">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift"  style="background: rgba(144, 238, 144, 0.25); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          >
-            <h4 class="mb-3">
-              <i class="fas fa-shield-alt icon"></i>
-              Reliable & Transparent
-            </h4>
-            <div class="about-para">
-              With clear communication, timely delivery, and transparent processes, we ensure success for both our
-              clients and ourselves.
-            </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="400">
+        <div class="about-card about-card-style">
+          <h4 class="mb-3">
+            <i class="fas fa-shield-alt icon"></i>
+            Reliable & Transparent
+          </h4>
+          <div class="about-para">
+            With clear communication, timely delivery, and transparent processes, we ensure success for both our
+            clients and ourselves.
           </div>
         </div>
+      </div>
 
-        <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="500">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift"  style="background: rgba(144, 238, 144, 0.25); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;">
-          >
-            <h4 class="mb-3">
-              <i class="fas fa-award icon"></i>
-              Affordable & Proven
-            </h4>
-            <div class="about-para">
-              We offer cost-effective services and have a history of successful projects. For a reliable digital
-              partner, GrowCraft is your best choice.
-            </div>
+      <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="500">
+        <div class="about-card about-card-style">
+          <h4 class="mb-3">
+            <i class="fas fa-award icon"></i>
+            Affordable & Proven
+          </h4>
+          <div class="about-para">
+            We offer cost-effective services and have a history of successful projects. For a reliable digital
+            partner, GrowCraft is your best choice.
           </div>
         </div>
       </div>
     </div>
-  </section>
-
+  </div>
+</section>
 
   <section class="feedback-section" id="feedback">
   <div class="container">
@@ -1700,6 +1894,68 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
 </section>
 
 
+<section class="testimonial-carousel">
+  <h1 class="testimonial-heading" style="color: #27ae60;">What Our Clients & Interns Say</h1>
+  <div class="carousel-wrapper">
+    <div class="carousel-track" id="carouselTrack">
+      <!-- 10 Testimonials -->
+      <div class="testimonial-card">
+        <p>"GrowCraft helped us create a modern website that boosted our leads by 40%."</p>
+        <h4>Rohit Sharma</h4>
+        <span>Business Owner</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"The internship program was an amazing learning experience!"</p>
+        <h4>Priya Verma</h4>
+        <span>Ex-Intern</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Great communication and timely delivery of our project."</p>
+        <h4>Arjun Mehta</h4>
+        <span>Startup Founder</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Their UI/UX design transformed our product."</p>
+        <h4>Neha Kapoor</h4>
+        <span>Product Manager</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"The team at GrowCraft is very professional and skilled."</p>
+        <h4>Amit Singh</h4>
+        <span>Entrepreneur</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"I gained real-world experience that helped me land a full-time job."</p>
+        <h4>Sneha Joshi</h4>
+        <span>Ex-Intern</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Excellent SEO work, our traffic increased significantly."</p>
+        <h4>Vikram Rao</h4>
+        <span>Marketing Lead</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"They built our e-commerce store from scratch, amazing job!"</p>
+        <h4>Shalini Gupta</h4>
+        <span>E-Commerce Owner</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Great mentors during my internship, learned so much."</p>
+        <h4>Manish Patel</h4>
+        <span>Ex-Intern</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"Super reliable team, would definitely recommend."</p>
+        <h4>Ananya Rao</h4>
+        <span>Startup Founder</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  <div id="footer-placeholder"></div>
 
   <button id="backToTop" title="Go to top" type="button" class="hover-scale">
     <i class="fas fa-chevron-up"></i>
@@ -1709,7 +1965,8 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
     <div class="footer-container ">
       <!-- About GrowCraft -->
       <div class="footer-col">
-        <img src="../images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3" style="height: 60px;">
+        <img src="images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3" style="height: 60px;">
+      
 
         <p>Boost your career with skill-focused training and internship opportunities.</p>
       </div>
@@ -1755,6 +2012,17 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
       </div>
     </div>
   </footer>
+  <button id="scrollToTopBtn" title="Go to top">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none">
+      <path d="M12 5.5V19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M18 11C18 11 13.5811 5.00001 12 5C10.4188 4.99999 6 11 6 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</button>
+
+
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
@@ -2052,23 +2320,56 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
         }, 200);
       });
 
-      /* Load Footer */
-      fetch('src/components/footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer-placeholder').innerHTML = data;
-        })
-        .catch(() => {
-          // Fallback footer if file doesn't exist
-          document.getElementById('footer-placeholder').innerHTML = `
-                   <footer class="bg-dark text-light py-4 mt-5">
-                       <div class="container text-center">
-                           <p>&copy; ${new Date().getFullYear()} GrowCraft. All rights reserved.</p>
-                       </div>
-                   </footer>
-                 `;
-        });
+  /* Load Footer */
+// fetch('src/components/footer.html')
+//   .then(response => response.text())
+//   .then(data => {
+//     document.getElementById('footer-placeholder').innerHTML = data;
 
+//     // ✅ Counter Script starts only after footer is injected
+//     const counters = document.querySelectorAll(".counter");
+//     const speed = 50; // smaller = faster
+
+//     const startCounting = (counter) => {
+//       const target = +counter.getAttribute("data-target");
+//       let count = 0;
+
+//       const updateCount = () => {
+//         // Always increase at least by 1
+//         const increment = Math.max(1, Math.ceil(target / speed));
+
+//         if (count < target) {
+//           count += increment;
+//           if (count > target) count = target; // prevent overshoot
+//           counter.innerText = count;
+//           setTimeout(updateCount, 30);
+//         } else {
+//           counter.innerText = target + "+";
+//         }
+//       };
+
+//       updateCount();
+//     };
+
+//     const observer = new IntersectionObserver((entries, obs) => {
+//       entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//           startCounting(entry.target);
+//           obs.unobserve(entry.target);
+//         }
+//       });
+//     }, { threshold: 0.5 });
+
+//     counters.forEach(counter => {
+//       observer.observe(counter);
+
+//       // fallback if already visible
+//       if (counter.getBoundingClientRect().top < window.innerHeight) {
+//         startCounting(counter);
+//         observer.unobserve(counter);
+//       }
+//     });
+//   });
       /* Global Clear Form Function */
       window.clearForm = function() {
         const form = document.getElementById('feedbackForm');
@@ -2117,6 +2418,124 @@ background-color: rgba(39, 174, 96, 0.8); /* more solid green */
         });
       });
     });
+    const backToTop = document.getElementById('backToTop');
+const footer = document.querySelector('footer');
+
+window.addEventListener('scroll', () => {
+  const footerTop = footer.getBoundingClientRect().top;
+  const windowHeight = window.innerHeight;
+
+  if (footerTop <= windowHeight + 20) {  // 20px buffer
+    backToTop.style.display = 'none';   // hide when overlapping footer
+  } else {
+    backToTop.style.display = 'flex';   // show otherwise
+  }
+
+    const track = document.getElementById("carouselTrack");
+const cards = track.children;
+const totalCards = cards.length;
+
+// Duplicate testimonials for infinite effect
+track.innerHTML += track.innerHTML;
+
+let position = 0;
+const speed = 0.5; // pixels per frame
+
+function moveCarousel() {
+  position -= speed;
+  if (Math.abs(position) >= track.scrollWidth / 2) {
+    position = 0; // reset to start
+  }
+  track.style.transform = `translateX(${position}px)`;
+  requestAnimationFrame(moveCarousel);
+}
+
+// Start animation
+moveCarousel();
+
+
+
+  /* Load Footer + Start Counter */
+  fetch('src/components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-placeholder').innerHTML = data;
+
+      // 
+    
+   
+      const counters = document.querySelectorAll(".counter");
+      const speed = 50;
+
+      const startCounting = (counter) => {
+  const target = +counter.getAttribute("data-target");
+
+  // 👇 Custom speed for "slow" counters (like the 5)
+  const thisSpeed = counter.classList.contains("slow") ? 200 : 50;
+
+  let count = 0;
+
+  const updateCount = () => {
+    const increment = Math.max(1, Math.ceil(target / thisSpeed));
+    if (count < target) {
+      count += increment;
+      if (count > target) count = target;
+      counter.innerText = count;
+      setTimeout(updateCount, 50); // a bit slower step
+    } else {
+      counter.innerText = target + "+";
+    }
+  };
+
+  updateCount();
+};
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            startCounting(entry.target);
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      counters.forEach(counter => {
+        observer.observe(counter);
+      });
+    });
+</script>
+
+   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const footerBottom = document.querySelector(".footer-bottom");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const footerTop = footerBottom.getBoundingClientRect().top;
+
+  // Show/hide button
+  if (scrollY > 300) {
+    scrollToTopBtn.classList.add("show");
+  } else {
+    scrollToTopBtn.classList.remove("show");
+  }
+
+  // If footer-bottom is visible, move button above it
+  if (footerTop < windowHeight) {
+    const overlap = windowHeight - footerTop;
+    scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px = small gap above footer
+  } else {
+    scrollToTopBtn.style.bottom = "2rem";
+  }
+});
+
+// Smooth scroll to top
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
   </script>
 </body>
 
