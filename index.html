@@ -1282,6 +1282,92 @@
       position: relative;
       z-index: 10;
     }
+	
+	
+	/* Login & Signup Cards */
+.auth-section {
+  padding: 80px 20px;
+  background: #f9fafb;
+  text-align: center;
+}
+
+.auth-section .section-title {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #111827;
+}
+
+.auth-section .section-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 50px;
+  color: #4b5563;
+}
+
+.auth-card {
+  background: #ffffff;
+  padding: 40px 25px;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  min-height: 360px;
+  border: 2px solid rgba(144, 238, 144, 0.5) !important; /* 💚 Visible border */
+}
+
+
+.auth-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.18);
+    transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.25);
+  border: 1px solid var(--light-green);
+}
+
+.card-icon {
+  font-size: 48px;
+  color: #2e7d32;
+}
+
+.card-title {
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #2e7d32;
+}
+
+.auth-card p {
+  font-size: 1rem;
+  color: #4b5563;
+  text-align: center;
+}
+
+.btn-card {
+  display: inline-block;
+  background: linear-gradient(135deg,#a8e6cf,#dcedc8);
+  color: #1b5e20;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-card:hover {
+  background: linear-gradient(135deg,#dcedc8,#a8e6cf);
+  transform: scale(1.05);
+}
+
+
+
+/* Responsive */
+@media(max-width:768px) {
+  .auth-card { width: 100%; min-height: auto; padding: 30px 20px; }
+  .card-icon { font-size: 40px; }
+  .card-title { font-size: 1.4rem; }
+}
+
   </style>
 </head>
 
@@ -1330,6 +1416,45 @@
       </div>
     </div>
   </nav>
+
+<!-- ✅ Login & Signup Section -->
+<section class="auth-section" id="auth">
+  <div class="container">
+    <h2 class="head-training" data-aos="fade-up">Login & Signup</h2>
+    <p class="services-subtitle" data-aos="fade-up" data-aos-delay="100">
+      Access your account or create a new one to start using GrowCraft services
+    </p>
+
+    <div class="row justify-content-center g-4">
+
+      <!-- Login Card -->
+      <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="200">
+        <div class="auth-card hover-lift">
+          <div class="card-icon">
+            <i class="fas fa-sign-in-alt"></i>
+          </div>
+          <h3 class="card-title">Login</h3>
+          <p>Already have an account? Log in here to access your dashboard, projects, and personalized tools.</p>
+          <a href="login.html" class="btn-card">Go to Login</a>
+        </div>
+      </div>
+
+      <!-- Signup Card -->
+      <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="300">
+        <div class="auth-card hover-lift">
+          <div class="card-icon">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <h3 class="card-title">Signup</h3>
+          <p>New to GrowCraft? Create an account to start collaborating, exploring services, and growing your business.</p>
+          <a href="signup.html" class="btn-card">Create Account</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 
   <section class="training-section">
     <div class="container-fluid">
