@@ -94,34 +94,28 @@ class DarkModeToggle {
         this.updateLogo();
     }
     
+    // --- NEW AND IMPROVED METHOD ---
     updateLogo() {
-        const logo = document.querySelector("#logo");
-        if (logo) {
-            // Determine the correct path based on current page location
-            let darkLogoPath, lightLogoPath;
-            
-            // Check if we're in the src folder (contact page) or root (home page)
-            if (window.location.pathname.includes('/src/')) {
-                // We're in src folder, use relative path
-                darkLogoPath = 'images/logo-transparent-dark-mode.png';
-                lightLogoPath = 'images/logo_bg_transparent.png';
-            } else {
-                // We're in root folder, use root path
-                darkLogoPath = 'images/logo-transparent-dark-mode.png';
-                lightLogoPath = 'images/logo_bg_transparent.png';
-            }
-            
-            console.log('Updating logo:', this.theme, 'Dark path:', darkLogoPath, 'Light path:', lightLogoPath);
-            
-            if (this.theme === 'dark') {
-                logo.src = darkLogoPath;
-                console.log('Logo updated to dark mode:', logo.src);
-            } else {
-                logo.src = lightLogoPath;
-                console.log('Logo updated to light mode:', logo.src);
-            }
+        // Select ALL logos that are theme-aware
+        const logos = document.querySelectorAll(".theme-aware-logo");
+
+        if (logos.length > 0) {
+            logos.forEach(logo => {
+                if (this.theme === 'dark') {
+                    // Get the dark mode image path from the data attribute
+                    if (logo.dataset.darkSrc) {
+                        logo.src = logo.dataset.darkSrc;
+                    }
+                } else {
+                    // Get the light mode image path from the data attribute
+                    if (logo.dataset.lightSrc) {
+                        logo.src = logo.dataset.lightSrc;
+                    }
+                }
+            });
         } else {
-            console.log('Logo element not found');
+            // This message is helpful for debugging if the class name is wrong
+            console.log('No ".theme-aware-logo" elements found.');
         }
     }
 
@@ -1576,7 +1570,78 @@ class DarkModeToggle {
             
 
 
-        `;
+                /* ========================= Social Media Page Dark Mode Styles ========================= */
+        
+        /* Additional Dark Mode Overrides for Social Media Components */
+        .dark .social-media-page .tag:hover {
+            background: var(--gc-accent) !important;
+            color: white !important;
+        }
+        
+        .dark .social-media-page .benefit:hover {
+            background: var(--gc-bg-secondary) !important;
+        }
+        
+        .dark .social-media-page .step:hover {
+            background: var(--gc-card) !important;
+            box-shadow: var(--gc-shadow-lg) !important;
+        }
+        
+        .dark .social-media-page .kpi:hover {
+            background: var(--gc-bg-secondary) !important;
+            box-shadow: var(--gc-shadow) !important;
+        }
+        
+        .dark .social-media-page .pricing .plan .ribbon {
+            background: var(--gc-success) !important;
+        }
+        
+        .dark .social-media-page input:focus,
+        .dark .social-media-page select:focus,
+        .dark .social-media-page textarea:focus {
+            border-color: var(--gc-accent) !important;
+            box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.1) !important;
+        }
+        
+        /* Dark mode forms for social media page */
+        .dark input, .dark select, .dark textarea {
+            background: var(--gc-bg) !important;
+            border-color: var(--gc-border) !important;
+            color: var(--gc-text) !important;
+        }
+        
+        .dark .card h3 {
+            color: var(--gc-text) !important;
+        }
+        
+        .dark .plan .price {
+            color: var(--gc-accent) !important;
+        }
+        
+        .dark .benefit h3 {
+            color: var(--gc-text) !important;
+        }
+        
+        .dark .step strong {
+            color: var(--gc-text) !important;
+        }
+        
+        .dark .kpi .num {
+            color: var(--gc-accent) !important;
+        }
+        
+        .dark label {
+            color: var(--gc-text) !important;
+        }
+        
+        .dark .navbar-toggler {
+            border-color: var(--gc-border) !important;
+        }
+        
+        .dark .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28241, 245, 249, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+        }
+`;
         document.head.appendChild(style);
     }
 }

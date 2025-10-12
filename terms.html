@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service - GrowCraft</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="src/style.css" />
+
+  <style>
+    /* Modern CSS Variables */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      --warning-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.12);
+      --text-primary: #2d3748;
+      --text-secondary: #4a5568;
+      --border-radius: 20px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Dark mode variables */
+    [data-bs-theme="dark"] {
+      --primary-gradient: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
+      --secondary-gradient: linear-gradient(135deg, #d946ef 0%, #f43f5e 100%);
+      --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+      --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+      --warning-gradient: linear-gradient(135deg, #d946ef 0%, #f43f5e 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.4);
+      --text-primary: #f7fafc;
+      --text-secondary: #e2e8f0;
+    }
+
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: var(--transition);
+    }
+
+    [data-bs-theme="dark"] body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    /* Enhanced Navbar Design */
+    .navbar {
+      padding: 1rem 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+      border-bottom: 3px solid #388e3c;
+      box-shadow: 0 8px 32px rgba(56, 142, 60, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand img {
+      max-height: 55px;
+      object-fit: contain;
+      vertical-align: middle;
+      filter: drop-shadow(2px 2px 4px rgba(56, 142, 60, 0.2));
+      transition: filter 0.3s ease;
+    }
+
+    .navbar-nav .nav-link {
+      position: relative;
+      font-weight: 600;
+      color: #2e7d32 !important;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.75rem;
+      padding: 0.75rem 1.25rem !important;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      background: transparent;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
+    }
+
+    .navbar-nav .nav-link.active {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+      box-shadow: 0 4px 15px rgba(56, 142, 60, 0.25);
+    }
+
+    /* Terms Hero Section */
+    .terms-hero {
+      background: var(--warning-gradient);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .terms-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Terms Content */
+    .terms-content {
+      padding: 80px 0;
+      background: var(--bg-primary, #ffffff);
+    }
+
+    .terms-card {
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      padding: 3rem;
+      margin-bottom: 2rem;
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    [data-bs-theme="dark"] .terms-card {
+      background: #1e293b;
+      border-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+    }
+
+    .terms-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
+    }
+
+    .section-title {
+      color: #d946ef;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    [data-bs-theme="dark"] .section-title {
+      color: #f472b6;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--warning-gradient);
+      border-radius: 2px;
+    }
+
+    .terms-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .terms-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .terms-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    [data-bs-theme="dark"] .terms-list li {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .terms-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      color: #d946ef;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    [data-bs-theme="dark"] .terms-list li::before {
+      color: #f472b6;
+    }
+
+    .numbered-list {
+      counter-reset: item;
+      list-style: none;
+      padding: 0;
+    }
+
+    .numbered-list li {
+      padding: 1rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      position: relative;
+      padding-left: 3rem;
+      counter-increment: item;
+    }
+
+    [data-bs-theme="dark"] .numbered-list li {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .numbered-list li::before {
+      content: counter(item);
+      position: absolute;
+      left: 0;
+      top: 1rem;
+      background: var(--warning-gradient);
+      color: white;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 0.9rem;
+    }
+
+    .last-updated {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border: 1px solid #f59e0b;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    [data-bs-theme="dark"] .last-updated {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      border-color: #f59e0b;
+    }
+
+    .warning-box {
+      background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+      border: 1px solid #ef4444;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin: 2rem 0;
+      border-left: 4px solid #ef4444;
+    }
+
+    [data-bs-theme="dark"] .warning-box {
+      background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+      border-color: #ef4444;
+    }
+
+    .warning-box h5 {
+      color: #ef4444;
+      margin-bottom: 1rem;
+    }
+
+    .contact-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 3rem 0;
+      text-align: center;
+      border-radius: var(--border-radius);
+      margin-top: 2rem;
+    }
+
+    [data-bs-theme="dark"] .contact-section {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .btn-primary-custom {
+      background: var(--warning-gradient);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: var(--transition);
+    }
+
+    .btn-primary-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(240, 147, 251, 0.3);
+      color: white;
+    }
+     /* Professional Footer */
+      .professional-footer {
+        background: linear-gradient(
+          135deg,
+          #f8f9fa 0%,
+          #e9ecef 50%,
+          #f8f9fa 100%
+        );
+        color: #fff !important;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      /* Brand Section */
+      .footer-brand {
+        text-align: center;
+      }
+
+      .footer-logo {
+        max-height: 60px;
+        object-fit: contain;
+        vertical-align: middle;
+      }
+
+      .brand-name {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.3s ease;
+      }
+
+      .brand-description {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.5;
+        transition: all 0.3s ease;
+        text-align: center;
+        font-weight: bold;
+        color: #333;
+      }
+
+      /* Quick Stats */
+      .quick-stats {
+        display: flex;
+        gap: 20px;
+        margin-top: 15px;
+        justify-content: center;
+      }
+
+      .stat-item {
+        text-align: center;
+      }
+
+      .stat-number {
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 700;
+        color: #fff;
+        margin-bottom: 2px;
+      }
+
+      .stat-label {
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #333;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      /* Footer Titles */
+      .footer-title {
+        color: #333;
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        position: relative;
+        padding-bottom: 8px;
+        text-align: justify;
+      }
+
+      .footer-title::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 30px;
+        height: 2px;
+        background: linear-gradient(90deg, #667eea, #764ba2);
+        border-radius: 2px;
+      }
+
+      /* Footer Links */
+      .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: justify;
+      }
+
+      .main-footer {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        padding-top: 2.5rem;
+      }
+
+      .footer-links li {
+        margin-bottom: 8px;
+      }
+
+      .footer-links a {
+        color: #333;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+        position: relative;
+        padding: 4px 0;
+        display: inline-block;
+      }
+
+      .first-grid {
+        margin-right: 2rem;
+      }
+
+      .footer-links a:hover {
+        color: #007bff;
+        padding-left: 8px;
+      }
+
+      .footer-links a::before {
+        content: "";
+        position: absolute;
+        left: -8px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 0;
+        height: 2px;
+        background: #667eea;
+        transition: width 0.3s ease;
+      }
+
+      .footer-links a:hover::before {
+        width: 4px;
+      }
+
+      /* Contact Info */
+      .contact-info {
+        margin-bottom: 15px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+      }
+
+      .contact-item i {
+        color: #007bff;
+        width: 16px;
+        font-size: 0.9rem;
+      }
+
+      .contact-item a {
+        color: #333;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .contact-item a:hover {
+        color: #007bff;
+      }
+
+      .contact-item span {
+        color: #333;
+      }
+
+      /* Social Section */
+      .social-title {
+        color: #ffffff;
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+        font-weight: 500;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 8px;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.08);
+        color: #b8b9c7;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .social-link:hover {
+        background: #667eea;
+        color: #ffffff;
+        transform: translateY(-2px);
+        border-color: #667eea;
+        box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+      }
+
+      .social-link i {
+        font-size: 0.9rem;
+      }
+
+      /* Footer Bottom */
+      .footer-bottom {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        background: rgba(0, 0, 0, 0.05);
+        margin-top: 30px;
+      }
+
+      .copyright {
+        color: #333;
+        font-size: 0.85rem;
+        margin: 0;
+      }
+
+      .copyright strong {
+        color: #007bff;
+      }
+
+      .footer-nav {
+        display: flex;
+        gap: 20px;
+        justify-content: flex-end;
+        align-items: center;
+      }
+
+      .footer-nav a {
+        color: #333;
+        text-decoration: none;
+        font-size: 0.85rem;
+        padding: 6px 12px;
+        border-radius: 15px;
+        transition: all 0.3s ease;
+      }
+
+      .footer-nav a:hover {
+        color: #007bff;
+        background: rgba(0, 123, 255, 0.1);
+        border: 1px solid rgba(0, 123, 255, 0.2);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .professional-footer {
+          margin-top: 40px;
+        }
+
+        .quick-stats {
+          justify-content: center;
+          gap: 15px;
+        }
+
+        .footer-brand,
+        .footer-links,
+        .contact-info,
+        .social-section {
+          text-align: center;
+        }
+
+        .footer-title::after {
+          left: 50%;
+          transform: translateX(-50%);
+        }
+
+        .footer-nav {
+          justify-content: center;
+          margin-top: 15px;
+          gap: 15px;
+          flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+          font-size: 0.8rem;
+          padding: 4px 8px;
+        }
+
+        .social-links {
+          justify-content: center;
+        }
+
+        .footer-bottom .row {
+          text-align: center;
+        }
+
+        .footer-bottom .col-md-6:first-child {
+          margin-bottom: 10px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .quick-stats {
+          flex-direction: column;
+          gap: 10px;
+          align-items: center;
+        }
+
+        .stat-item {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .stat-number {
+          font-size: 1.2rem;
+          margin-bottom: 0;
+        }
+
+        .stat-label {
+          font-size: 0.7rem;
+        }
+      }
+
+      /*Dark Mode*/
+      
+      /* Dark Mode Navbar Overrides */
+      .dark-mode .navbar,
+      .dark .navbar {
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+        border-bottom: 3px solid #4caf50 !important;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+      }
+
+      .dark-mode .navbar.scrolled,
+      .dark .navbar.scrolled {
+        background: rgba(26, 26, 26, 0.95) !important;
+        backdrop-filter: blur(20px);
+      }
+
+      .dark-mode .navbar-nav .nav-link,
+      .dark .navbar-nav .nav-link {
+        color: #ffffff !important;
+        background: transparent;
+      }
+
+      .dark-mode .navbar-nav .nav-link:hover,
+      .dark .navbar-nav .nav-link:hover {
+        color: #000000 !important;
+        background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%) !important;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
+      }
+
+      .dark-mode .navbar-nav .nav-link.active,
+      .dark .navbar-nav .nav-link.active {
+        color: #000000 !important;
+        background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
+        box-shadow: 0 4px 15px rgba(76, 175, 80, 0.25);
+      }
+
+      .dark-mode .navbar-brand,
+      .dark .navbar-brand {
+        color: #ffffff !important;
+      }
+
+      /* Dark Mode Search Bar */
+      .dark-mode .search-container,
+      .dark .search-container {
+        background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%) !important;
+        border: 2px solid transparent;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
+      }
+
+      .dark-mode .search-container::before,
+      .dark .search-container::before {
+        background: linear-gradient(135deg, #4caf50, #388e3c) !important;
+      }
+
+      .dark-mode .search-input,
+      .dark .search-input {
+        background: transparent !important;
+        color: #ffffff !important;
+        border: none;
+      }
+
+      .dark-mode .search-input::placeholder,
+      .dark .search-input::placeholder {
+        color: #cccccc !important;
+      }
+
+      .dark-mode .search-button,
+      .dark .search-button {
+        background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%) !important;
+        color: #000000 !important;
+      }
+
+      .dark-mode .search-button:hover,
+      .dark .search-button:hover {
+        background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
+        transform: scale(1.05);
+      }
+
+      /* Dark Mode Theme Toggle Button Enhancement */
+      .dark-mode .theme-toggle,
+      .dark .theme-toggle {
+        background: rgba(255, 255, 255, 0.1) !important;
+        color: #ffffff !important;
+        border: 1px solid rgba(255, 255, 255, 0.2) !important;
+        border-radius: 50% !important;
+        padding: 10px !important;
+        transition: all 0.3s ease !important;
+      }
+
+      .dark-mode .theme-toggle:hover,
+      .dark .theme-toggle:hover {
+        background: rgba(76, 175, 80, 0.2) !important;
+        border-color: #4caf50 !important;
+        color: #4caf50 !important;
+        transform: scale(1.1) !important;
+      }
+
+      /* Mobile Dark Mode Navbar */
+      @media screen and (max-width: 991.98px) {
+        .dark-mode .navbar-nav,
+        .dark .navbar-nav {
+          background: rgba(26, 26, 26, 0.98) !important;
+          border-radius: 15px;
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+        }
+
+        .dark-mode .search-container,
+        .dark .search-container {
+          background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%) !important;
+        }
+      }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+
+      .terms-card {
+        padding: 2rem;
+      }
+
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body id="main-body">
+  <!-- Navbar starts here -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="blogListing.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="work.html">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="src/contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input" />
+        <button class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar ends here -->
+
+  <!-- Terms Hero Section -->
+  <section class="terms-hero">
+    <div class="container">
+      <h1 class="hero-title">Terms of Service</h1>
+      <p class="hero-subtitle">
+        Please read these terms carefully before using our services. By using GrowCraft, you agree to these terms and conditions.
+      </p>
+    </div>
+  </section>
+
+  <!-- Terms Content -->
+  <section class="terms-content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          
+          <!-- Last Updated -->
+          <div class="last-updated">
+            <h6><i class="fas fa-calendar-alt me-2"></i>Last Updated: December 2024</h6>
+          </div>
+
+          <!-- Introduction -->
+          <div class="terms-card">
+            <h2 class="section-title">Agreement to Terms</h2>
+            <p class="terms-text">
+              Welcome to GrowCraft. These Terms of Service ("Terms") govern your use of our website and services operated by GrowCraft ("we," "our," or "us"). By accessing or using our services, you agree to be bound by these Terms.
+            </p>
+            <div class="warning-box">
+              <h5><i class="fas fa-exclamation-triangle me-2"></i>Important Notice</h5>
+              <p class="terms-text mb-0">
+                If you do not agree to these Terms, you must not access or use our services. These Terms constitute a legally binding agreement between you and GrowCraft.
+              </p>
+            </div>
+          </div>
+
+          <!-- Services Description -->
+          <div class="terms-card">
+            <h2 class="section-title">Our Services</h2>
+            <p class="terms-text">GrowCraft provides the following digital services:</p>
+            <ul class="terms-list">
+              <li>Website development and design</li>
+              <li>Digital marketing and SEO services</li>
+              <li>Graphic design and branding</li>
+              <li>Content writing and copywriting</li>
+              <li>Social media management</li>
+              <li>Cybersecurity analysis and consultation</li>
+              <li>Training and internship programs</li>
+            </ul>
+            <p class="terms-text">
+              We reserve the right to modify, suspend, or discontinue any aspect of our services at any time with or without notice.
+            </p>
+          </div>
+
+          <!-- User Responsibilities -->
+          <div class="terms-card">
+            <h2 class="section-title">User Responsibilities</h2>
+            <p class="terms-text">By using our services, you agree to:</p>
+            <ol class="numbered-list">
+              <li>Provide accurate and complete information when requested</li>
+              <li>Maintain the confidentiality of any account credentials</li>
+              <li>Use our services only for lawful purposes</li>
+              <li>Not interfere with or disrupt our services or servers</li>
+              <li>Not attempt to gain unauthorized access to our systems</li>
+              <li>Respect intellectual property rights</li>
+              <li>Comply with all applicable laws and regulations</li>
+              <li>Provide timely feedback and responses for project work</li>
+            </ol>
+          </div>
+
+          <!-- Payment Terms -->
+          <div class="terms-card">
+            <h2 class="section-title">Payment Terms</h2>
+            <p class="terms-text">
+              Payment terms vary based on the specific services and project scope:
+            </p>
+            <ul class="terms-list">
+              <li>Project-based work requires 50% advance payment before commencement</li>
+              <li>Monthly retainer services are billed in advance</li>
+              <li>Late payments may incur additional charges</li>
+              <li>Refunds are subject to our refund policy</li>
+              <li>All prices are exclusive of applicable taxes</li>
+              <li>Currency for all transactions is Indian Rupees (INR) unless specified</li>
+            </ul>
+            <p class="terms-text">
+              We reserve the right to suspend services for non-payment and pursue legal remedies for outstanding amounts.
+            </p>
+          </div>
+
+          <!-- Intellectual Property -->
+          <div class="terms-card">
+            <h2 class="section-title">Intellectual Property Rights</h2>
+            <p class="terms-text">
+              <strong>Our Rights:</strong> All content, designs, code, and materials created by GrowCraft remain our intellectual property until full payment is received.
+            </p>
+            <p class="terms-text">
+              <strong>Client Rights:</strong> Upon full payment, clients receive ownership rights to custom work created specifically for them, excluding:
+            </p>
+            <ul class="terms-list">
+              <li>Third-party licensed software or components</li>
+              <li>Our proprietary tools and methodologies</li>
+              <li>Pre-existing templates or frameworks</li>
+              <li>General knowledge and experience gained</li>
+            </ul>
+            <p class="terms-text">
+              <strong>Portfolio Rights:</strong> We reserve the right to showcase completed work in our portfolio and marketing materials unless explicitly prohibited by confidentiality agreements.
+            </p>
+          </div>
+
+          <!-- Project Delivery -->
+          <div class="terms-card">
+            <h2 class="section-title">Project Delivery & Revisions</h2>
+            <p class="terms-text">
+              <strong>Timeline:</strong> Project timelines are estimates and may vary based on project complexity, client feedback, and external factors.
+            </p>
+            <p class="terms-text">
+              <strong>Revisions:</strong> Each project includes a specified number of revisions. Additional revisions beyond the agreed scope will incur extra charges.
+            </p>
+            <p class="terms-text">
+              <strong>Client Approval:</strong> Projects require client approval at key milestones. Delayed approvals may extend project timelines.
+            </p>
+            <p class="terms-text">
+              <strong>Final Delivery:</strong> Final project files and assets will be delivered upon completion of payment and project approval.
+            </p>
+          </div>
+
+          <!-- Limitations of Liability -->
+          <div class="terms-card">
+            <h2 class="section-title">Limitations of Liability</h2>
+            <p class="terms-text">
+              To the maximum extent permitted by law, GrowCraft shall not be liable for:
+            </p>
+            <ul class="terms-list">
+              <li>Indirect, incidental, or consequential damages</li>
+              <li>Loss of profits, revenue, or business opportunities</li>
+              <li>Data loss or corruption</li>
+              <li>Third-party actions or failures</li>
+              <li>Force majeure events beyond our control</li>
+              <li>Damages exceeding the total amount paid for services</li>
+            </ul>
+            <div class="warning-box">
+              <h5><i class="fas fa-shield-alt me-2"></i>Disclaimer</h5>
+              <p class="terms-text mb-0">
+                Our services are provided "as is" without warranties of any kind. We do not guarantee specific results or outcomes from our services.
+              </p>
+            </div>
+          </div>
+
+          <!-- Termination -->
+          <div class="terms-card">
+            <h2 class="section-title">Termination</h2>
+            <p class="terms-text">
+              <strong>By Client:</strong> Clients may terminate services with 30 days written notice. Completed work and expenses incurred will be charged.
+            </p>
+            <p class="terms-text">
+              <strong>By GrowCraft:</strong> We may terminate services immediately for:
+            </p>
+            <ul class="terms-list">
+              <li>Non-payment of fees</li>
+              <li>Violation of these Terms</li>
+              <li>Abusive or disrespectful behavior</li>
+              <li>Illegal or unethical requests</li>
+            </ul>
+            <p class="terms-text">
+              Upon termination, all unpaid amounts become immediately due, and access to our services will be revoked.
+            </p>
+          </div>
+
+          <!-- Privacy & Confidentiality -->
+          <div class="terms-card">
+            <h2 class="section-title">Privacy & Confidentiality</h2>
+            <p class="terms-text">
+              We take privacy seriously and maintain strict confidentiality of client information. Our data handling practices are outlined in our <a href="privacy.html" style="color: #d946ef; text-decoration: none;">Privacy Policy</a>.
+            </p>
+            <p class="terms-text">
+              Both parties agree to maintain confidentiality of sensitive business information shared during the course of our relationship.
+            </p>
+          </div>
+
+          <!-- Governing Law -->
+          <div class="terms-card">
+            <h2 class="section-title">Governing Law & Disputes</h2>
+            <p class="terms-text">
+              These Terms are governed by the laws of India. Any disputes will be resolved through:
+            </p>
+            <ol class="numbered-list">
+              <li>Good faith negotiations between the parties</li>
+              <li>Mediation if direct negotiation fails</li>
+              <li>Arbitration under Indian Arbitration laws</li>
+              <li>Courts in [Your City], India as the final recourse</li>
+            </ol>
+          </div>
+
+          <!-- Changes to Terms -->
+          <div class="terms-card">
+            <h2 class="section-title">Changes to Terms</h2>
+            <p class="terms-text">
+              We reserve the right to modify these Terms at any time. Changes will be posted on our website with an updated "Last Modified" date. Continued use of our services after changes constitutes acceptance of the new Terms.
+            </p>
+            <p class="terms-text">
+              For significant changes that may affect existing clients, we will provide reasonable notice via email or other appropriate communication methods.
+            </p>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="contact-section">
+            <h3>Questions About These Terms?</h3>
+            <p class="terms-text">
+              If you have any questions about these Terms of Service, please contact us:
+            </p>
+            <p class="terms-text">
+              <strong>Email:</strong> legal@growcraft.com<br>
+              <strong>Phone:</strong> +91 999 999 999<br>
+              <strong>Address:</strong> ABC Street, XYZ City, India
+            </p>
+            <a href="src/contact.html" class="btn-primary-custom">
+              <i class="fas fa-envelope me-2"></i>Contact Us
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Footer -->
+  <footer class="professional-footer fade-in" style="background: linear-gradient(135deg, #43d863, #8ae78a)">
+    <div class="container">
+      <div class="main-footer row g-4 fade-in">
+        <!-- Footer Columns -->
+        <div class="col-lg-4 col-md-6 fade-in first-grid">
+          <div class="footer-brand fade-in">
+            <img src="images/logo_bg_transparent.png" alt="GrowCraft Logo" class="footer-logo mb-3" />
+            <p class="brand-description">
+              Empowering businesses with innovative digital solutions and creative excellence.
+            </p>
+            <div class="quick-stats fade-in">
+              <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Clients</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Links -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="learn/webdev.html">Web Development</a></li>
+            <li><a href="learn/graphic.html">Graphic Design</a></li>
+            <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="learn/contentwriting.html">Content Writing</a></li>
+            <li><a href="learn/socialmedia.html">Social Media</a></li>
+            <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="work.html">Portfolio</a></li>
+            <li><a href="src/contact.html">Contact</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="blogListing.html">Blog</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Get In Touch</h5>
+          <div class="contact-info mb-3 fade-in">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919999999999">+91 999 999 999</a>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>ABC Street, XYZ City, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom fade-in">
+      <div class="container">
+        <div class="row align-items-center py-3 fade-in">
+          <div class="col-md-6">
+            <p class="copyright mb-0">
+              © <span id="currentYear"></span> <strong>GrowCraft</strong>. All rights reserved.
+            </p>
+          </div>
+          <div class="col-md-6">
+            <div class="footer-nav fade-in">
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+              <a href="sitemap.html">Sitemap</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Professional Footer ends -->
+
+  <script src="src/script.js"></script>
+  <script src="src/utils.js"></script>
+  <script src="src/darkMode.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearSpan = document.getElementById("currentYear");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
+
+</html>

@@ -6,55 +6,80 @@
   <title>Graphic Design Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-    .card {
-  border: none;
-  border-radius: 16px;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+  :root {
+    --bg: #ffffff;
+    --fg: #0f172a;        /* main text */
+    --card: #f8fafc;      /* surfaces */
+    --border: #e5e7eb;    /* dividers */
+    --link: #0d6efd;      /* link color (light) */
+  }
+  :root[data-theme="dark"] {
+    --bg: #0b1120;
+    --fg: #e2e8f0;        /* light text on dark */
+    --card: #111827;
+    --border: #1f2937;
+    --link: #93c5fd;      /* brighter link for dark */
+  }
 
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
-}
+  html, body { background: var(--bg); color: var(--fg); }
 
-.card-img-top {
-  height: 220px;
-  object-fit: cover;
-  border-bottom: 1px solid #eaeaea;
-}
+  /* make links readable in both themes */
+  a:not(.btn-link) { color: var(--link); }
+  a:not(.btn-link):hover { opacity: 0.9; }
 
-.card-title {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #2d2d2d;
-}
+  /* the “Back” link should look like text and stay readable */
+  .btn-link { color: var(--fg) !important; }
+  .btn-link:hover { text-decoration: underline; opacity: 0.9; }
 
-.card-text {
-  font-size: 0.95rem;
-  color: #555;
-}
+  .card {
+    border: none;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: var(--card);
+  }
+  .card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+  .card-img-top { height: 220px; object-fit: cover; border-bottom: 1px solid var(--border); }
 
-h1 {
-  font-weight: 700;
-  color: #1f1f1f;
-}
+  /* ensure headings & copy inherit the right color */
+  h1, h2, h3, h4, h5, h6, .card-title, .card-text, p { color: var(--fg); }
 
-section.container {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
+  h1 { font-weight: 700; }
+  .card-title { font-size: 1.25rem; font-weight: 600; }
+  .card-text { font-size: 0.95rem; }
+  section.container { padding-top: 3rem; padding-bottom: 3rem; }
 
-  </style>
+  /* Big theme toggle button (top-right) */
+  #themeToggle {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 2.2rem;      /* bigger icon */
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    line-height: 1;
+  }
+  #themeToggle:hover { background: rgba(0,0,0,0.05); }
+</style>
+
 </head>
 <body>
+  <!-- Back link -->
   <div class="container mt-4">
     <a href="../index.html" class="btn btn-link text-decoration-none d-flex align-items-center" style="font-size: 1.1rem;">
       &#8592; <span class="ms-2">Back</span>
     </a>
   </div>
-  <!-- Navbar -->
-  <!-- ... Navbar code ... -->
+
+  <!-- Theme toggle button (top right) -->
+  <button id="themeToggle" aria-label="Toggle theme">
+    <span id="themeIcon">🌙</span>
+  </button>
+
   <section class="container mt-5">
     <h1 class="mb-4 text-center">Our Graphic Design Work</h1>
     <p class="text-center mb-5">A visual journey of creativity and communication — from logos to marketing collateral.</p>
@@ -88,5 +113,28 @@ section.container {
       </div>
     </div>
   </section>
+
+  <!-- Theme toggle script -->
+  <script>
+    (function() {
+      const root = document.documentElement;
+      const btn = document.getElementById('themeToggle');
+      const icon = document.getElementById('themeIcon');
+
+      function applyTheme(t) {
+        root.setAttribute('data-theme', t);
+        localStorage.setItem('theme', t);
+        icon.textContent = (t === 'dark') ? '☀️' : '🌙';
+      }
+
+      const saved = localStorage.getItem('theme') || 'light';
+      applyTheme(saved);
+
+      btn.addEventListener('click', () => {
+        const next = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
+        applyTheme(next);
+      });
+    })();
+  </script>
 </body>
 </html>

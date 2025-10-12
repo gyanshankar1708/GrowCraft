@@ -237,8 +237,10 @@ h5 {
 .bg-body-tertiary {
   background-color: transparent !important;
 }
-.icon {
-  height: 6.5rem;
+.icon {  
+  font-size: 2rem;
+  border-radius: 20px;
+  margin-right: 1rem;
 }
 
 .training-links {
@@ -1045,11 +1047,10 @@ body.dark .mb-4:hover {
 
   .footer-links,
   .footer-contact {
-    width: 48%;
+    width:100%;
     float: left;
     margin-left: 5px;
-    padding: 2px;
-    background-color: #28a745; /* or whatever green you're using */
+    padding:10px;
     border-radius: 8px;
     color: white;
     max-width: 500px;
@@ -1117,70 +1118,93 @@ body.dark .mb-4:hover {
 }
 
 .about-title {
-  border-bottom: 3px solid #2a63f4;
+  border-bottom: 3px solid #409B44;
   display: inline-block;
+  margin-bottom: 10vh!important;
 }
 
 .about-subtitle {
   font-style: italic;
-  color: #666;
-  /* added width to the subtitle */
+  color:grey;
   width: 369px;
-  /* add mrgin auto and 0 so that it is in center */
+   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.3);
   margin: 0 auto;
-  /* add animation */
-  border: 1px solid #388e3c;
-  padding: 0 12px;
-  border-radius: 10px;
+  border: 2px solid #388e3c;
+  padding: 0 10px;
+  border-radius: 8px 95px;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   animation: shadowPulse 2s infinite alternate;
+  transform: translateY(-4vh);
 }
 
-.about-subtitle:hover {
-  transform: scale(1.1);
+ .about-subtitle:hover {
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25), 0 0 25px rgba(0, 255, 128, 0.6); /* glow layer */
-}
+} 
 
-@keyframes shadowPulse {
-  0% {
-    /* box-shadow: 0 7px 20px #388e3c; */
-    box-shadow: 0 4px 10px rgba(0, 255, 128, 0.3);
-  }
-  100% {
-    box-shadow: 0 8px 25px rgba(21, 148, 83, 0.7);
-  }
-}
 
 .about-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 30px;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .about-card {
-  background: white;
   border-radius: 16px;
   padding: 25px;
+  background: linear-gradient(-45deg, rgba(72, 135, 72,0.4),  rgba(202, 232, 202,0.4), rgba(131, 194, 131,0.4) );
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch; 
+  min-height: 300px; 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
   text-align: left;
 }
 
-.about-card h3 {
-  margin-bottom: 15px;
-  color: #2a63f4;
+.about-card h4{
+  color: rgb(124, 124, 124);
+}
+.about-card h4 i {
+  color: rgb(42, 93, 55);
+  display: inline-block;
+  animation: growShrink 2s ease-in-out infinite;
+  transform-origin: center;
 }
 
-.about-card p {
+@keyframes growShrink {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+
+.about-para {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  background: white;
   color: #333;
   line-height: 1.6;
 }
 
+
 .about-card:hover {
   transform: translateY(-6px) scale(1.1);
   box-shadow: 0 16px 35px rgba(0, 0, 0, 0.25);
+}
+
+.dark-mode .about-para {
+  background:  #222;
+  color: rgb(255, 255, 255) !important;
+}
+
+.dark-mode .about-card{
+  background: rgba(34, 74, 34,0.3);
 }
 .send-message-btn {
   display: none;
@@ -1609,12 +1633,6 @@ body.dark .mb-4:hover {
 .btn-group:hover .tooltip-box {
   visibility: visible;
   opacity: 1;
-}
-
-.custom-footer-green {
-  background: linear-gradient(180deg, #4be04b 0%, #6eea6e 100%);
-  color: #222;
-  font-family: 'Segoe UI', sans-serif;
 }
 
 .custom-footer-green .footer-underline {
