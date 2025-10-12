@@ -1,388 +1,285 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Privacy Policy - GrowCraft</title>
-    <link
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="src/style.css" />
 
-    <style>
-      /* Modern CSS Variables */
-      :root {
-        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-        --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-        --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
-        --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.12);
-        --text-primary: #2d3748;
-        --text-secondary: #4a5568;
-        --border-radius: 20px;
-        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - GrowCraft</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="src/style.css" />
 
-      /* Dark mode variables */
-      [data-bs-theme="dark"] {
-        --primary-gradient: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
-        --secondary-gradient: linear-gradient(135deg, #d946ef 0%, #f43f5e 100%);
-        --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
-        --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
-        --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.4);
-        --text-primary: #f7fafc;
-        --text-secondary: #e2e8f0;
-      }
+  <style>
+    /* Modern CSS Variables */
+    :root {
+      --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.12);
+      --text-primary: #2d3748;
+      --text-secondary: #4a5568;
+      --border-radius: 20px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
 
-      /* Base Styles */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
+    /* Dark mode variables */
+    [data-bs-theme="dark"] {
+      --primary-gradient: linear-gradient(135deg, #4c63d2 0%, #5a4fcf 100%);
+      --secondary-gradient: linear-gradient(135deg, #d946ef 0%, #f43f5e 100%);
+      --accent-gradient: linear-gradient(135deg, #06b6d4 0%, #3b82f6 100%);
+      --success-gradient: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+      --card-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+      --card-shadow-hover: 0 30px 80px rgba(0, 0, 0, 0.4);
+      --text-primary: #f7fafc;
+      --text-secondary: #e2e8f0;
+    }
 
-      body {
-        font-family: "Inter", "Segoe UI", sans-serif;
-        line-height: 1.6;
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        color: var(--text-primary);
-        overflow-x: hidden;
-        transition: var(--transition);
-      }
+    /* Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      [data-bs-theme="dark"] body {
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      }
+    body {
+      font-family: 'Inter', 'Segoe UI', sans-serif;
+      line-height: 1.6;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      transition: var(--transition);
+    }
 
-      /* Enhanced Navbar Design */
-      .navbar {
-        padding: 1rem 0;
-        background: linear-gradient(
-          135deg,
-          #ffffff 0%,
-          #f8f9fa 100%
-        ) !important;
-        border-bottom: 3px solid #388e3c;
-        box-shadow: 0 8px 32px rgba(56, 142, 60, 0.1);
-        backdrop-filter: blur(10px);
-        transition: all 0.3s ease;
-      }
+    [data-bs-theme="dark"] body {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
 
-      .navbar-brand img {
-        max-height: 55px;
-        object-fit: contain;
-        vertical-align: middle;
-        filter: drop-shadow(2px 2px 4px rgba(56, 142, 60, 0.2));
-        transition: filter 0.3s ease;
-      }
+    /* Enhanced Navbar Design */
+    .navbar {
+      padding: 1rem 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%) !important;
+      border-bottom: 3px solid #388e3c;
+      box-shadow: 0 8px 32px rgba(56, 142, 60, 0.1);
+      backdrop-filter: blur(10px);
+      transition: all 0.3s ease;
+    }
 
-      .navbar-nav .nav-link {
-        position: relative;
-        font-weight: 600;
-        color: #2e7d32 !important;
-        font-family: "Poppins", sans-serif;
-        font-size: 0.75rem;
-        padding: 0.75rem 1.25rem !important;
-        border-radius: 25px;
-        display: flex;
-        align-items: center;
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        text-decoration: none;
-        letter-spacing: 0.5px;
-        background: transparent;
-      }
+    .navbar-brand img {
+      max-height: 55px;
+      object-fit: contain;
+      vertical-align: middle;
+      filter: drop-shadow(2px 2px 4px rgba(56, 142, 60, 0.2));
+      transition: filter 0.3s ease;
+    }
 
-      .navbar-nav .nav-link:hover {
-        color: #ffffff !important;
-        background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
-      }
+    .navbar-nav .nav-link {
+      position: relative;
+      font-weight: 600;
+      color: #2e7d32 !important;
+      font-family: "Poppins", sans-serif;
+      font-size: 0.75rem;
+      padding: 0.75rem 1.25rem !important;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      text-decoration: none;
+      letter-spacing: 0.5px;
+      background: transparent;
+    }
 
-      .navbar-nav .nav-link.active {
-        color: #ffffff !important;
-        background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
-        box-shadow: 0 4px 15px rgba(56, 142, 60, 0.25);
-      }
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
+    }
 
-      /* Privacy Hero Section */
-      .privacy-hero {
-        background: var(--primary-gradient);
-        padding: 120px 0 80px;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-      }
+    .navbar-nav .nav-link.active {
+      color: #ffffff !important;
+      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
+      box-shadow: 0 4px 15px rgba(56, 142, 60, 0.25);
+    }
 
-      .privacy-hero::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-        opacity: 0.3;
-      }
+    /* Privacy Hero Section */
+    .privacy-hero {
+      background: var(--primary-gradient);
+      padding: 120px 0 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-      .hero-title {
-        font-size: 3.5rem;
-        font-weight: 800;
-        color: white;
-        margin-bottom: 1.5rem;
-        position: relative;
-        z-index: 2;
-      }
+    .privacy-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+    }
 
-      .hero-subtitle {
-        font-size: 1.25rem;
-        color: rgba(255, 255, 255, 0.9);
-        margin-bottom: 2rem;
-        position: relative;
-        z-index: 2;
-        max-width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-      }
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: white;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 2;
+    }
 
-      /* Privacy Content */
-      .privacy-content {
-        padding: 80px 0;
-        background: var(--bg-primary, #ffffff);
-      }
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
 
-      .privacy-card {
-        background: white;
-        border-radius: var(--border-radius);
-        box-shadow: var(--card-shadow);
-        padding: 3rem;
-        margin-bottom: 2rem;
-        transition: var(--transition);
-        border: 1px solid rgba(0, 0, 0, 0.05);
-      }
+    /* Privacy Content */
+    .privacy-content {
+      padding: 80px 0;
+      background: var(--bg-primary, #ffffff);
+    }
 
-      [data-bs-theme="dark"] .privacy-card {
-        background: #1e293b;
-        border-color: rgba(255, 255, 255, 0.1);
-        color: var(--text-primary);
-      }
+    .privacy-card {
+      background: white;
+      border-radius: var(--border-radius);
+      box-shadow: var(--card-shadow);
+      padding: 3rem;
+      margin-bottom: 2rem;
+      transition: var(--transition);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
 
-      .privacy-card:hover {
-        transform: translateY(-5px);
-        box-shadow: var(--card-shadow-hover);
-      }
+    [data-bs-theme="dark"] .privacy-card {
+      background: #1e293b;
+      border-color: rgba(255, 255, 255, 0.1);
+      color: var(--text-primary);
+    }
 
-      .section-title {
-        color: #388e3c;
-        font-size: 2rem;
-        font-weight: 700;
-        margin-bottom: 1.5rem;
-        position: relative;
-        padding-bottom: 0.5rem;
-      }
+    .privacy-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--card-shadow-hover);
+    }
 
-      [data-bs-theme="dark"] .section-title {
-        color: #4ade80;
-      }
+    .section-title {
+      color: #388e3c;
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
 
-      .section-title::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 60px;
-        height: 3px;
-        background: var(--primary-gradient);
-        border-radius: 2px;
-      }
+    [data-bs-theme="dark"] .section-title {
+      color: #4ade80;
+    }
 
-      .privacy-text {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        color: var(--text-secondary);
-        margin-bottom: 1.5rem;
-      }
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--primary-gradient);
+      border-radius: 2px;
+    }
 
-      .privacy-list {
-        list-style: none;
-        padding: 0;
-      }
+    .privacy-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
 
-      .privacy-list li {
-        padding: 0.75rem 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        position: relative;
-        padding-left: 2rem;
-      }
+    .privacy-list {
+      list-style: none;
+      padding: 0;
+    }
 
-      [data-bs-theme="dark"] .privacy-list li {
-        border-bottom-color: rgba(255, 255, 255, 0.1);
-      }
+    .privacy-list li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+      position: relative;
+      padding-left: 2rem;
+    }
 
-      .privacy-list li::before {
-        content: "✓";
-        position: absolute;
-        left: 0;
-        top: 0.75rem;
-        color: #388e3c;
-        font-weight: bold;
-        font-size: 1.2rem;
-      }
+    [data-bs-theme="dark"] .privacy-list li {
+      border-bottom-color: rgba(255, 255, 255, 0.1);
+    }
 
-      [data-bs-theme="dark"] .privacy-list li::before {
-        color: #4ade80;
-      }
+    .privacy-list li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+      color: #388e3c;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
 
-      .last-updated {
-        background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
-        border: 1px solid #0284c7;
-        border-radius: 12px;
-        padding: 1.5rem;
-        margin-bottom: 2rem;
-        text-align: center;
-      }
+    [data-bs-theme="dark"] .privacy-list li::before {
+      color: #4ade80;
+    }
 
-      [data-bs-theme="dark"] .last-updated {
-        background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
-        border-color: #0ea5e9;
-      }
+    .last-updated {
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border: 1px solid #0284c7;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
 
-      .contact-section {
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        padding: 3rem 0;
-        text-align: center;
-        border-radius: var(--border-radius);
-        margin-top: 2rem;
-        padding-left: 50px;
-      }
+    [data-bs-theme="dark"] .last-updated {
+      background: linear-gradient(135deg, #1e293b 0%, #334155 100%);
+      border-color: #0ea5e9;
+    }
 
-      [data-bs-theme="dark"] .contact-section {
-        background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      }
+    .contact-section {
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 3rem 0;
+      text-align: center;
+      border-radius: var(--border-radius);
+      margin-top: 2rem;
+    }
 
-      .btn-primary-custom {
-        background: var(--primary-gradient);
-        border: none;
-        color: white;
-        padding: 12px 30px;
-        border-radius: 50px;
-        font-weight: 600;
-        text-decoration: none;
-        display: inline-block;
-        transition: var(--transition);
-      }
+    [data-bs-theme="dark"] .contact-section {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
 
-      .btn-primary-custom:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        color: white;
-      }
+    .btn-primary-custom {
+      background: var(--primary-gradient);
+      border: none;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-block;
+      transition: var(--transition);
+    }
 
-      /* Accordion Styles */
-      .privacy-accordion {
-        margin-bottom: 2rem;
-      }
-
-      .accordion-item {
-        background: white;
-        border: none;
-        border-radius: var(--border-radius) !important;
-        box-shadow: var(--card-shadow);
-        margin-bottom: 1.5rem;
-        overflow: hidden;
-        transition: var(--transition);
-      }
-
-      [data-bs-theme="dark"] .accordion-item {
-        background: #1e293b;
-        border-color: rgba(255, 255, 255, 0.1);
-      }
-
-      .accordion-item:hover {
-        box-shadow: var(--card-shadow-hover);
-        transform: translateY(-2px);
-      }
-
-      .accordion-header {
-        margin: 0;
-      }
-
-      .accordion-button {
-        background: white;
-        color: var(--text-primary);
-        font-size: 1.25rem;
-        font-weight: 600;
-        padding: 1.5rem 2rem;
-        border: none;
-        box-shadow: none;
-        transition: var(--transition);
-      }
-
-      [data-bs-theme="dark"] .accordion-button {
-        background: #1e293b;
-        color: var(--text-primary);
-      }
-
-      .accordion-button:not(.collapsed) {
-        background: white;
-        color: #388e3c;
-        box-shadow: none;
-      }
-
-      [data-bs-theme="dark"] .accordion-button:not(.collapsed) {
-        background: #1e293b;
-        color: #4ade80;
-      }
-
-      .accordion-button:focus {
-        box-shadow: none;
-        border-color: rgba(56, 142, 60, 0.25);
-      }
-
-      .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23388e3c'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        width: 1.25rem;
-        height: 1.25rem;
-        transition: var(--transition);
-      }
-
-      [data-bs-theme="dark"] .accordion-button::after {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234ade80'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-      }
-
-      .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23388e3c'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-        transform: rotate(-180deg);
-      }
-
-      [data-bs-theme="dark"] .accordion-button:not(.collapsed)::after {
-        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234ade80'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
-      }
-
-      .accordion-body {
-        padding: 0 2rem 2rem;
-      }
-
-      .accordion-body .privacy-text {
-        margin-bottom: 1.5rem;
-      }
-
-      /* Professional Footer */
+    .btn-primary-custom:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+      color: white;
+    }
+     /* Professional Footer */
       .professional-footer {
         background: linear-gradient(
           135deg,
@@ -716,15 +613,11 @@
       }
 
       /*Dark Mode*/
-
+      
       /* Dark Mode Navbar Overrides */
       .dark-mode .navbar,
       .dark .navbar {
-        background: linear-gradient(
-          135deg,
-          #1a1a1a 0%,
-          #2d2d2d 100%
-        ) !important;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
         border-bottom: 3px solid #4caf50 !important;
         box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
       }
@@ -744,11 +637,7 @@
       .dark-mode .navbar-nav .nav-link:hover,
       .dark .navbar-nav .nav-link:hover {
         color: #000000 !important;
-        background: linear-gradient(
-          135deg,
-          #4caf50 0%,
-          #388e3c 100%
-        ) !important;
+        background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%) !important;
         transform: translateY(-2px);
         box-shadow: 0 8px 25px rgba(76, 175, 80, 0.3);
       }
@@ -756,11 +645,7 @@
       .dark-mode .navbar-nav .nav-link.active,
       .dark .navbar-nav .nav-link.active {
         color: #000000 !important;
-        background: linear-gradient(
-          135deg,
-          #66bb6a 0%,
-          #4caf50 100%
-        ) !important;
+        background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
         box-shadow: 0 4px 15px rgba(76, 175, 80, 0.25);
       }
 
@@ -772,11 +657,7 @@
       /* Dark Mode Search Bar */
       .dark-mode .search-container,
       .dark .search-container {
-        background: linear-gradient(
-          135deg,
-          #2d2d2d 0%,
-          #3a3a3a 100%
-        ) !important;
+        background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%) !important;
         border: 2px solid transparent;
         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2) !important;
       }
@@ -800,21 +681,13 @@
 
       .dark-mode .search-button,
       .dark .search-button {
-        background: linear-gradient(
-          135deg,
-          #4caf50 0%,
-          #388e3c 100%
-        ) !important;
+        background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%) !important;
         color: #000000 !important;
       }
 
       .dark-mode .search-button:hover,
       .dark .search-button:hover {
-        background: linear-gradient(
-          135deg,
-          #66bb6a 0%,
-          #4caf50 100%
-        ) !important;
+        background: linear-gradient(135deg, #66bb6a 0%, #4caf50 100%) !important;
         transform: scale(1.05);
       }
 
@@ -848,555 +721,326 @@
 
         .dark-mode .search-container,
         .dark .search-container {
-          background: linear-gradient(
-            135deg,
-            #2d2d2d 0%,
-            #3a3a3a 100%
-          ) !important;
+          background: linear-gradient(135deg, #2d2d2d 0%, #3a3a3a 100%) !important;
         }
       }
 
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .hero-title {
-          font-size: 2.5rem;
-        }
-
-        .privacy-card {
-          padding: 2rem;
-        }
-
-        .section-title {
-          font-size: 1.75rem;
-        }
-
-        .accordion-button {
-          padding: 1.25rem 1.5rem;
-          font-size: 1.1rem;
-        }
-
-        .accordion-body {
-          padding: 0 1.5rem 1.5rem;
-        }
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2.5rem;
       }
-    </style>
-  </head>
 
-  <body id="main-body">
-    <!-- Navbar starts here -->
-    <nav class="navbar navbar-expand-lg">
-      <div
-        class="container-fluid d-flex justify-content-between align-items-center px-4"
-      >
-        <a class="navbar-brand hover-scale" href="#">
-          <img
-            src="images/Logo.png"
-            alt="GrowCraft"
-            id="logo"
-            class="smooth-transition"
-          />
-        </a>
+      .privacy-card {
+        padding: 2rem;
+      }
 
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-        >
-          <span class="navbar-toggler-icon"></span>
+      .section-title {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+
+<body id="main-body">
+  <!-- Navbar starts here -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+      <a class="navbar-brand" href="index.html">
+        <img src="images/Logo.png" alt="GrowCraft" width="200" id="logo" />
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="services.html">Services</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="blogListing.html">Blogs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="work.html">Our Work</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="src/contact.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-container">
+        <input type="text" placeholder="Search..." class="search-input" />
+        <button class="search-button">
+          <i class="fas fa-search"></i>
         </button>
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar ends here -->
 
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#" aria-current="page">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="blogListing.html">Blogs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./work.html">Our Work</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./src/faq.html">FAQ</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="src/contact.html">Contact Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="login.html">Login</a>
-            </li>
+  <!-- Privacy Hero Section -->
+  <section class="privacy-hero">
+    <div class="container">
+      <h1 class="hero-title">Privacy Policy</h1>
+      <p class="hero-subtitle">
+        Your privacy is important to us. Learn how we collect, use, and protect your personal information.
+      </p>
+    </div>
+  </section>
+
+  <!-- Privacy Content -->
+  <section class="privacy-content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          
+          <!-- Last Updated -->
+          <div class="last-updated">
+            <h6><i class="fas fa-calendar-alt me-2"></i>Last Updated: December 2024</h6>
+          </div>
+
+          <!-- Introduction -->
+          <div class="privacy-card">
+            <h2 class="section-title">Introduction</h2>
+            <p class="privacy-text">
+              Welcome to GrowCraft ("we," "our," or "us"). We are committed to protecting your personal information and your right to privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website and use our services.
+            </p>
+            <p class="privacy-text">
+              By using our services, you agree to the collection and use of information in accordance with this policy. We will not use or share your information with anyone except as described in this Privacy Policy.
+            </p>
+          </div>
+
+          <!-- Information We Collect -->
+          <div class="privacy-card">
+            <h2 class="section-title">Information We Collect</h2>
+            <p class="privacy-text">We collect information you provide directly to us, such as:</p>
+            <ul class="privacy-list">
+              <li>Name, email address, and contact information when you fill out forms</li>
+              <li>Business information when you request our services</li>
+              <li>Communication preferences and feedback</li>
+              <li>Files and documents you share with us for project work</li>
+              <li>Payment information for billing purposes</li>
+            </ul>
+            <p class="privacy-text">
+              We also automatically collect certain information when you visit our website, including IP address, browser type, device information, and usage data through cookies and similar technologies.
+            </p>
+          </div>
+
+          <!-- How We Use Your Information -->
+          <div class="privacy-card">
+            <h2 class="section-title">How We Use Your Information</h2>
+            <p class="privacy-text">We use the information we collect to:</p>
+            <ul class="privacy-list">
+              <li>Provide, maintain, and improve our services</li>
+              <li>Process transactions and send related information</li>
+              <li>Send you technical notices, updates, and support messages</li>
+              <li>Respond to your comments, questions, and customer service requests</li>
+              <li>Communicate with you about products, services, and promotions</li>
+              <li>Monitor and analyze trends, usage, and activities</li>
+              <li>Detect, investigate, and prevent fraudulent transactions</li>
+            </ul>
+          </div>
+
+          <!-- Information Sharing -->
+          <div class="privacy-card">
+            <h2 class="section-title">Information Sharing and Disclosure</h2>
+            <p class="privacy-text">
+              We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except in the following circumstances:
+            </p>
+            <ul class="privacy-list">
+              <li>With service providers who assist us in operating our business</li>
+              <li>When required by law or to protect our rights</li>
+              <li>In connection with a business transfer or acquisition</li>
+              <li>With your explicit consent for specific purposes</li>
+            </ul>
+          </div>
+
+          <!-- Data Security -->
+          <div class="privacy-card">
+            <h2 class="section-title">Data Security</h2>
+            <p class="privacy-text">
+              We implement appropriate technical and organizational security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction. These measures include:
+            </p>
+            <ul class="privacy-list">
+              <li>Encryption of sensitive data in transit and at rest</li>
+              <li>Regular security assessments and updates</li>
+              <li>Access controls and authentication requirements</li>
+              <li>Employee training on data protection practices</li>
+              <li>Secure backup and disaster recovery procedures</li>
+            </ul>
+          </div>
+
+          <!-- Your Rights -->
+          <div class="privacy-card">
+            <h2 class="section-title">Your Rights and Choices</h2>
+            <p class="privacy-text">You have the right to:</p>
+            <ul class="privacy-list">
+              <li>Access and update your personal information</li>
+              <li>Request deletion of your personal data</li>
+              <li>Opt out of marketing communications</li>
+              <li>Request a copy of your data in a portable format</li>
+              <li>Object to processing of your personal information</li>
+              <li>File a complaint with relevant data protection authorities</li>
+            </ul>
+          </div>
+
+          <!-- Cookies -->
+          <div class="privacy-card">
+            <h2 class="section-title">Cookies and Tracking Technologies</h2>
+            <p class="privacy-text">
+              We use cookies and similar tracking technologies to enhance your experience on our website. Cookies help us:
+            </p>
+            <ul class="privacy-list">
+              <li>Remember your preferences and settings</li>
+              <li>Analyze website traffic and usage patterns</li>
+              <li>Improve our website functionality and performance</li>
+              <li>Provide personalized content and advertisements</li>
+            </ul>
+            <p class="privacy-text">
+              You can control cookie settings through your browser preferences. However, disabling cookies may affect your ability to use certain features of our website.
+            </p>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="contact-section">
+            <h3>Questions About This Policy?</h3>
+            <p class="privacy-text">
+              If you have any questions about this Privacy Policy or our data practices, please contact us:
+            </p>
+            <p class="privacy-text">
+              <strong>Email:</strong> privacy@growcraft.com<br>
+              <strong>Phone:</strong> +91 999 999 999<br>
+              <strong>Address:</strong> ABC Street, XYZ City, India
+            </p>
+            <a href="src/contact.html" class="btn-primary-custom">
+              <i class="fas fa-envelope me-2"></i>Contact Us
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Professional Footer -->
+  <footer class="professional-footer fade-in" style="background: linear-gradient(135deg, #43d863, #8ae78a)">
+    <div class="container">
+      <div class="main-footer row g-4 fade-in">
+        <!-- Footer Columns -->
+        <div class="col-lg-4 col-md-6 fade-in first-grid">
+          <div class="footer-brand fade-in">
+            <img src="images/logo_bg_transparent.png" alt="GrowCraft Logo" class="footer-logo mb-3" />
+            <p class="brand-description">
+              Empowering businesses with innovative digital solutions and creative excellence.
+            </p>
+            <div class="quick-stats fade-in">
+              <div class="stat-item">
+                <span class="stat-number">500+</span>
+                <span class="stat-label">Projects</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">150+</span>
+                <span class="stat-label">Clients</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">5+</span>
+                <span class="stat-label">Years</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Services Links -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Services</h5>
+          <ul class="footer-links">
+            <li><a href="learn/webdev.html">Web Development</a></li>
+            <li><a href="learn/graphic.html">Graphic Design</a></li>
+            <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
+            <li><a href="learn/contentwriting.html">Content Writing</a></li>
+            <li><a href="learn/socialmedia.html">Social Media</a></li>
+            <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
           </ul>
         </div>
-      </div>
-    </nav>
-    <!-- Navbar ends here -->
 
-    <!-- Privacy Hero Section -->
-    <section class="privacy-hero">
-      <div class="container">
-        <h1 class="hero-title">Privacy Policy</h1>
-        <p class="hero-subtitle">
-          Your privacy is important to us. Learn how we collect, use, and
-          protect your personal information.
-        </p>
-      </div>
-    </section>
+        <!-- Quick Links -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html#about">About Us</a></li>
+            <li><a href="work.html">Portfolio</a></li>
+            <li><a href="src/contact.html">Contact</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="blogListing.html">Blog</a></li>
+          </ul>
+        </div>
 
-    <!-- Privacy Content -->
-    <section class="privacy-content">
-      <div class="container">
-        <div class="row justify-content-center">
-          <div class="col-lg-10">
-            <!-- Last Updated -->
-            <div class="last-updated">
-              <h6>
-                <i class="fas fa-calendar-alt me-2"></i>Last Updated: December
-                2024
-              </h6>
+        <!-- Contact -->
+        <div class="col-lg-2 col-md-3 col-6 fade-in">
+          <h5 class="footer-title">Get In Touch</h5>
+          <div class="contact-info mb-3 fade-in">
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
             </div>
-
-            <!-- Privacy Accordion -->
-            <div class="privacy-accordion" id="privacyAccordion">
-              <!-- Introduction -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingOne">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseOne"
-                    aria-expanded="false"
-                    aria-controls="collapseOne"
-                  >
-                    Introduction
-                  </button>
-                </h2>
-                <div
-                  id="collapseOne"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingOne"
-                  data-bs-parent="#privacyAccordion"
-                >
-                  <div class="accordion-body">
-                    <p class="privacy-text">
-                      Welcome to GrowCraft ("we," "our," or "us"). We are
-                      committed to protecting your personal information and your
-                      right to privacy. This Privacy Policy explains how we
-                      collect, use, disclose, and safeguard your information
-                      when you visit our website and use our services.
-                    </p>
-                    <p class="privacy-text">
-                      By using our services, you agree to the collection and use
-                      of information in accordance with this policy. We will not
-                      use or share your information with anyone except as
-                      described in this Privacy Policy.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Information We Collect -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingTwo">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseTwo"
-                    aria-expanded="false"
-                    aria-controls="collapseTwo"
-                  >
-                    Information We Collect
-                  </button>
-                </h2>
-                <div
-                  id="collapseTwo"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingTwo"
-                  data-bs-parent="#privacyAccordion"
-                >
-                  <div class="accordion-body">
-                    <p class="privacy-text">
-                      We collect information you provide directly to us, such
-                      as:
-                    </p>
-                    <ul class="privacy-list">
-                      <li>
-                        Name, email address, and contact information when you
-                        fill out forms
-                      </li>
-                      <li>
-                        Business information when you request our services
-                      </li>
-                      <li>Communication preferences and feedback</li>
-                      <li>
-                        Files and documents you share with us for project work
-                      </li>
-                      <li>Payment information for billing purposes</li>
-                    </ul>
-                    <p class="privacy-text">
-                      We also automatically collect certain information when you
-                      visit our website, including IP address, browser type,
-                      device information, and usage data through cookies and
-                      similar technologies.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <!-- How We Use Your Information -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingThree">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseThree"
-                    aria-expanded="false"
-                    aria-controls="collapseThree"
-                  >
-                    How We Use Your Information
-                  </button>
-                </h2>
-                <div
-                  id="collapseThree"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingThree"
-                  data-bs-parent="#privacyAccordion"
-                >
-                  <div class="accordion-body">
-                    <p class="privacy-text">
-                      We use the information we collect to:
-                    </p>
-                    <ul class="privacy-list">
-                      <li>Provide, maintain, and improve our services</li>
-                      <li>Process transactions and send related information</li>
-                      <li>
-                        Send you technical notices, updates, and support
-                        messages
-                      </li>
-                      <li>
-                        Respond to your comments, questions, and customer
-                        service requests
-                      </li>
-                      <li>
-                        Communicate with you about products, services, and
-                        promotions
-                      </li>
-                      <li>Monitor and analyze trends, usage, and activities</li>
-                      <li>
-                        Detect, investigate, and prevent fraudulent transactions
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Information Sharing -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFour">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFour"
-                    aria-expanded="false"
-                    aria-controls="collapseFour"
-                  >
-                    Information Sharing and Disclosure
-                  </button>
-                </h2>
-                <div
-                  id="collapseFour"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingFour"
-                  data-bs-parent="#privacyAccordion"
-                >
-                  <div class="accordion-body">
-                    <p class="privacy-text">
-                      We do not sell, trade, or otherwise transfer your personal
-                      information to third parties without your consent, except
-                      in the following circumstances:
-                    </p>
-                    <ul class="privacy-list">
-                      <li>
-                        With service providers who assist us in operating our
-                        business
-                      </li>
-                      <li>When required by law or to protect our rights</li>
-                      <li>
-                        In connection with a business transfer or acquisition
-                      </li>
-                      <li>With your explicit consent for specific purposes</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Data Security -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingFive">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseFive"
-                    aria-expanded="false"
-                    aria-controls="collapseFive"
-                  >
-                    Data Security
-                  </button>
-                </h2>
-                <div
-                  id="collapseFive"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingFive"
-                  data-bs-parent="#privacyAccordion"
-                >
-                  <div class="accordion-body">
-                    <p class="privacy-text">
-                      We implement appropriate technical and organizational
-                      security measures to protect your personal information
-                      against unauthorized access, alteration, disclosure, or
-                      destruction. These measures include:
-                    </p>
-                    <ul class="privacy-list">
-                      <li>
-                        Encryption of sensitive data in transit and at rest
-                      </li>
-                      <li>Regular security assessments and updates</li>
-                      <li>Access controls and authentication requirements</li>
-                      <li>Employee training on data protection practices</li>
-                      <li>Secure backup and disaster recovery procedures</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Your Rights -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSix">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseSix"
-                    aria-expanded="false"
-                    aria-controls="collapseSix"
-                  >
-                    Your Rights and Choices
-                  </button>
-                </h2>
-                <div
-                  id="collapseSix"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingSix"
-                  data-bs-parent="#privacyAccordion"
-                >
-                  <div class="accordion-body">
-                    <p class="privacy-text">You have the right to:</p>
-                    <ul class="privacy-list">
-                      <li>Access and update your personal information</li>
-                      <li>Request deletion of your personal data</li>
-                      <li>Opt out of marketing communications</li>
-                      <li>Request a copy of your data in a portable format</li>
-                      <li>Object to processing of your personal information</li>
-                      <li>
-                        File a complaint with relevant data protection
-                        authorities
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Cookies -->
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="headingSeven">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#collapseSeven"
-                    aria-expanded="false"
-                    aria-controls="collapseSeven"
-                  >
-                    Cookies and Tracking Technologies
-                  </button>
-                </h2>
-                <div
-                  id="collapseSeven"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="headingSeven"
-                  data-bs-parent="#privacyAccordion"
-                >
-                  <div class="accordion-body">
-                    <p class="privacy-text">
-                      We use cookies and similar tracking technologies to
-                      enhance your experience on our website. Cookies help us:
-                    </p>
-                    <ul class="privacy-list">
-                      <li>Remember your preferences and settings</li>
-                      <li>Analyze website traffic and usage patterns</li>
-                      <li>Improve our website functionality and performance</li>
-                      <li>Provide personalized content and advertisements</li>
-                    </ul>
-                    <p class="privacy-text">
-                      You can control cookie settings through your browser
-                      preferences. However, disabling cookies may affect your
-                      ability to use certain features of our website.
-                    </p>
-                  </div>
-                </div>
-              </div>
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <a href="tel:+919999999999">+91 999 999 999</a>
             </div>
-
-            <!-- Contact Information -->
-            <div class="contact-section">
-              <h3>Questions About This Policy?</h3>
-              <p class="privacy-text">
-                If you have any questions about this Privacy Policy or our data
-                practices, please contact us:
-              </p>
-              <p class="privacy-text">
-                <strong>Email:</strong> privacy@growcraft.com<br />
-                <strong>Phone:</strong> +91 999 999 999<br />
-                <strong>Address:</strong> ABC Street, XYZ City, India
-              </p>
-              <a href="src/contact.html" class="btn-primary-custom">
-                <i class="fas fa-envelope me-2"></i>Contact Us
-              </a>
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>ABC Street, XYZ City, India</span>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
 
-    <!-- Professional Footer -->
-    <footer
-      class="professional-footer fade-in"
-      style="background: linear-gradient(135deg, #43d863, #8ae78a)"
-    >
+    <!-- Footer Bottom -->
+    <div class="footer-bottom fade-in">
       <div class="container">
-        <div class="main-footer row g-4 fade-in">
-          <!-- Footer Columns -->
-          <div class="col-lg-4 col-md-6 fade-in first-grid">
-            <div class="footer-brand fade-in">
-              <img
-                src="images/logo_bg_transparent.png"
-                alt="GrowCraft Logo"
-                class="footer-logo mb-3"
-              />
-              <p class="brand-description">
-                Empowering businesses with innovative digital solutions and
-                creative excellence.
-              </p>
-              <div class="quick-stats fade-in">
-                <div class="stat-item">
-                  <span class="stat-number">500+</span>
-                  <span class="stat-label">Projects</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">150+</span>
-                  <span class="stat-label">Clients</span>
-                </div>
-                <div class="stat-item">
-                  <span class="stat-number">5+</span>
-                  <span class="stat-label">Years</span>
-                </div>
-              </div>
-            </div>
+        <div class="row align-items-center py-3 fade-in">
+          <div class="col-md-6">
+            <p class="copyright mb-0">
+              © <span id="currentYear"></span> <strong>GrowCraft</strong>. All rights reserved.
+            </p>
           </div>
-
-          <!-- Services Links -->
-          <div class="col-lg-2 col-md-3 col-6 fade-in">
-            <h5 class="footer-title">Services</h5>
-            <ul class="footer-links">
-              <li><a href="learn/webdev.html">Web Development</a></li>
-              <li><a href="learn/graphic.html">Graphic Design</a></li>
-              <li>
-                <a href="src/digital-marketing.html">Digital Marketing</a>
-              </li>
-              <li><a href="learn/contentwriting.html">Content Writing</a></li>
-              <li><a href="learn/socialmedia.html">Social Media</a></li>
-              <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
-            </ul>
-          </div>
-
-          <!-- Quick Links -->
-          <div class="col-lg-2 col-md-3 col-6 fade-in">
-            <h5 class="footer-title">Quick Links</h5>
-            <ul class="footer-links">
-              <li><a href="index.html#about">About Us</a></li>
-              <li><a href="work.html">Portfolio</a></li>
-              <li><a href="src/contact.html">Contact</a></li>
-              <li><a href="#careers">Careers</a></li>
-              <li><a href="blogListing.html">Blog</a></li>
-            </ul>
-          </div>
-
-          <!-- Contact -->
-          <div class="col-lg-2 col-md-3 col-6 fade-in">
-            <h5 class="footer-title">Get In Touch</h5>
-            <div class="contact-info mb-3 fade-in">
-              <div class="contact-item">
-                <i class="fas fa-envelope"></i>
-                <a href="mailto:info@growcraft.com">info@growcraft.com</a>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-phone"></i>
-                <a href="tel:+919999999999">+91 999 999 999</a>
-              </div>
-              <div class="contact-item">
-                <i class="fas fa-map-marker-alt"></i>
-                <span>ABC Street, XYZ City, India</span>
-              </div>
+          <div class="col-md-6">
+            <div class="footer-nav fade-in">
+              <a href="privacy.html">Privacy</a>
+              <a href="terms.html">Terms</a>
+              <a href="sitemap.html">Sitemap</a>
             </div>
           </div>
         </div>
       </div>
+    </div>
+  </footer>
+  <!-- Professional Footer ends -->
 
-      <!-- Footer Bottom -->
-      <div class="footer-bottom fade-in">
-        <div class="container">
-          <div class="row align-items-center py-3 fade-in">
-            <div class="col-md-6">
-              <p class="copyright mb-0">
-                © <span id="currentYear"></span> <strong>GrowCraft</strong>. All
-                rights reserved.
-              </p>
-            </div>
-            <div class="col-md-6">
-              <div class="footer-nav fade-in">
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="sitemap.html">Sitemap</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Professional Footer ends -->
+  <script src="src/script.js"></script>
+  <script src="src/utils.js"></script>
+  <script src="src/darkMode.js"></script>
+  
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const yearSpan = document.getElementById("currentYear");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+    });
+  </script>
+</body>
 
-    <script src="src/script.js"></script>
-    <script src="src/utils.js"></script>
-    <script src="src/darkMode.js"></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const yearSpan = document.getElementById("currentYear");
-        if (yearSpan) {
-          yearSpan.textContent = new Date().getFullYear();
-        }
-      });
-    </script>
-  </body>
 </html>

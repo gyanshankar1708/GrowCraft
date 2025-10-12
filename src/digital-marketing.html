@@ -210,7 +210,7 @@
 
         .gc-title-gradient {
             background: linear-gradient(90deg, var(--gc-primary-1), var(--gc-primary-2));
-            background-clip: text;
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -460,7 +460,7 @@
         .gc-status-value { 
             font: 800 22px/1 ui-sans-serif, system-ui; 
             background: linear-gradient(90deg, var(--gc-primary-1), var(--gc-primary-2)); 
-            background-clip: text; 
+            -webkit-background-clip: text; 
             color: transparent; 
         }
         
@@ -1066,167 +1066,6 @@
         .theme-toggle.active .moon-icon {
             display: block;
         }
-
-        .footer-links a {
-    color: #111827;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s;
-  }
-  .footer-links a .link-arrow {
-    display: none;
-    position: absolute;
-    left: -18px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #2563eb;
-    font-size: 1rem;
-    transition: opacity 0.3s;
-  }
-  .footer-links a:hover {
-    color: #2563eb;
-  }
-  .footer-links a:hover .link-arrow {
-    display: inline-block;
-
-  }
-  :root {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-  --success-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-  --icon-color: #667eea;
-}
-
-/* Modal overlay */
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-  padding: 50px 20px;
-  overflow-y: auto;
-}
-
-/* Modal wrapper */
-.modal-content-wrapper {
-  background: #fff;
-  max-width: 600px; /* Increased width */
-  width: 90%;       /* Responsive width */
-  margin: auto;
-  padding: 40px 30px; /* More padding */
-  border-radius: 12px;
-  box-shadow: 0 15px 40px rgba(0,0,0,0.25);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* More spacing between elements */
-}
-
-/* Close button */
-.modal-close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  font-size: 2rem;
-  color: var(--icon-color);
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  width: 50px;  /* Larger for visibility */
-  height: 50px;
-  line-height: 50px;
-  border-radius: 50%;
-  text-align: center;
-  transition: all 0.3s ease;
-}
-
-.modal-close:hover {
-  background: var(--primary-gradient);
-  color: #fff;
-  transform: rotate(90deg);
-}
-
-/* Modal title */
-.modal-title {
-  font-size: 2rem; /* Slightly bigger for better visual hierarchy */
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #333;
-}
-
-/* Form styling */
-.modal-form label {
-  font-weight: 500;
-  margin-bottom: 8px;
-  display: block;
-  color: #555;
-}
-
-.modal-form input,
-.modal-form textarea {
-  width: 100%;
-  padding: 14px 16px; /* More padding */
-  margin-bottom: 22px;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
-  transition: border 0.3s ease, box-shadow 0.3s ease;
-}
-
-.modal-form input:focus,
-.modal-form textarea:focus {
-  outline: none;
-  border: 2px solid #667eea;
-  box-shadow: 0 0 12px rgba(102, 126, 234, 0.3);
-}
-
-/* Submit button */
-.modal-submit {
-  width: 100%;
-  padding: 16px;
-  font-size: 1.15rem;
-  font-weight: 600;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  background: var(--primary-gradient);
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.modal-submit:hover {
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
-}
-
-/* Responsive */
-@media screen and (max-width: 768px) {
-  .modal-content-wrapper {
-    max-width: 90%;
-    padding: 30px 20px;
-  }
-  .modal-title {
-    font-size: 1.7rem;
-  }
-  .modal-close {
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .modal-title {
-    font-size: 1.5rem;
-  }
-}
-
     </style>
 </head>
 
@@ -1309,25 +1148,22 @@
         </div>
     </section>
 
-<!-- Modal Form -->
-<div class="modal" id="contactModal">
-  <div class="modal-content-wrapper">
-    <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
-    <h2 class="modal-title">Request a Free Consultation</h2>
-    <form class="modal-form">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Your Name" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" placeholder="you@example.com" required>
-
-      <label for="details">Project Details</label>
-      <textarea id="details" rows="4" placeholder="Tell us about your digital marketing goals..." required></textarea>
-
-      <button type="submit" class="modal-submit">Send Request</button>
-    </form>
-  </div>
-</div>
+    <!-- Modal Form -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Request a Free Consultation</h2>
+            <form>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <label for="email">Email Address</label>.
+                <input type="email" id="email" placeholder="you@example.com" required>
+                <label for="details">Project Details</label>
+                <textarea id="details" rows="4" placeholder="Tell us about your digital marketing goals..." required></textarea>
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </div>
 
     <!-- ===== Core Digital Pillars Section ===== -->
     <section class="gc-section gc-section-alt">
@@ -1603,87 +1439,62 @@
                 <h2>Ready to Accelerate Your <span class="gc-gradient">Online Presence?</span></h2>
                 <p>Partner with us to create a digital marketing strategy that delivers real, tangible results for your business.</p>
                 <div class="gc-cta-buttons">
-                    <a href="contact.html" class="gc-btn-cta-primary">🚀 Get a Free Proposal</a>
-                    <a href="../work.html" class="gc-btn-cta-secondary">See Our Work</a>
+                    <a href="#contact" class="gc-btn-cta-primary">🚀 Get a Free Proposal</a>
+                    <a href="#portfolio" class="gc-btn-cta-secondary">See Our Work</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer section starts here (Contact us) -->
-    <!-- Professional Footer -->
-<footer class="professional-footer fade-in">
-  <div class="container">
-    <div class="row g-4 py-4 fade-in">
-      <!-- Footer Brand -->
-      <div class="col-lg-4 col-md-6 fade-in">
-        <div class="footer-brand fade-in">
-          <img src="../images/Logo_new.png" alt="GrowCraft Logo" class="footer-logo mb-3" style="max-width: 120px; height: auto;">
-          <h4 class="brand-name">GrowCraft</h4>
-          <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence.</p>
-          <div class="quick-stats fade-in">
-            <div class="stat-item">
-              <span class="stat-number">500+</span>
-              <span class="stat-label">Projects</span>
+    <footer class="gc-footer py-5")>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">About GrowCraft</h5>
+                    <p style="font-size: 14px;">
+                        GrowCraft is a service-based platform offering:
+                        <br>🌐 Website Development
+                        <br>🖌️ Graphic Design
+                        <br>✍️ Content Writing
+                        <br>📣 Social Media Management
+                        <br>📊 Digital Marketing
+                        <br>🎓 Training & Internship Programs
+                        <br>Helping businesses grow while students gain real-world learning.
+                    </p>
+                </div>
+                <div class="col-md-2">
+                    <h5 class="fw-bold mb-3">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html" class="text-decoration-none">Home</a></li>
+                        <li><a href="../index.html#services" class="text-decoration-none">Services</a></li>
+                        <li><a href="../src/workList.html" class="text-decoration-none">Portfolio</a></li>
+                        <li><a href="../index.html#internship" class="text-decoration-none">Internship</a></li>
+                        <li><a href="../src/contact.html" class="text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h5 class="fw-bold mb-3">Contact Us</h5>
+                    <p>📍 235, PQR, GHI, ABC Street, XYZ, ABC - 10000, India</p>
+                    <p>📞 +91 999 999 999</p>
+                    <p>📧 info@growcraft.com</p>
+                    <button class="btn btn-outline-light btn-sm mt-2">Send Message</button>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="fw-bold mb-3">Follow Us</h5>
+                    <ul class="list-unstyled d-flex flex-column gap-2">
+                        <li><a href="#" class="text-decoration-none"><i class="fab fa-facebook-f me-2"></i>Facebook</a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fab fa-instagram me-2"></i>Instagram</a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fab fa-linkedin-in me-2"></i>LinkedIn</a></li>
+                        <li><a href="#" class="text-decoration-none"><i class="fab fa-github me-2"></i>GitHub</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="stat-item">
-              <span class="stat-number">150+</span>
-              <span class="stat-label">Clients</span>
-            </div>
-            <div class="stat-item">
-              <span class="stat-number">5+</span>
-              <span class="stat-label">Years</span>
-            </div>
-          </div>
         </div>
-      </div>
-
-      <!-- Services Links -->
-      <div class="col-lg-2 col-md-3 col-6 fade-in">
-        <h5 class="footer-title">Services</h5>
-        <ul class="footer-links" style="list-style: none; padding: 0; margin: 0;">
-          <li><a href="../index.html">Web Development <span class="link-arrow">→</span></a></li>
-          <li><a href="../graphic.html">Graphic Design <span class="link-arrow">→</span></a></li>
-          <li><a href="../src/digital-marketing.html">Digital Marketing <span class="link-arrow">→</span></a></li>
-          <li><a href="../content-writing.html">Content Writing <span class="link-arrow">→</span></a></li>
-          <li><a href="../social-media.html">Social Media <span class="link-arrow">→</span></a></li>
-          <li><a href="../cyber-analyst.html">Cyber Analyst <span class="link-arrow">→</span></a></li>
-        </ul>
-      </div>
-
-      <!-- Quick Links -->
-      <div class="col-lg-2 col-md-3 col-6 fade-in">
-        <h5 class="footer-title">Quick Links</h5>
-        <ul class="footer-links" style="list-style: none; padding: 0; margin: 0;">
-          <li><a href="../about.html">About Us <span class="link-arrow">→</span></a></li>
-          <li><a href="../index.html#work">Portfolio <span class="link-arrow">→</span></a></li>
-          <li><a href="../src/contact.html">Contact <span class="link-arrow">→</span></a></li>
-          <li><a href="../careers.html">Careers <span class="link-arrow">→</span></a></li>
-          <li><a href="../blogListing.html">Blog <span class="link-arrow">→</span></a></li>
-        </ul>
-      </div>
-
-      <!-- Get In Touch -->
-      <div class="col-lg-4 col-md-6 fade-in">
-        <h5 class="footer-title">Get In Touch</h5>
-        <ul class="footer-links" style="list-style: none; padding: 0; margin: 0;">
-          <li><a href="mailto:info@growcraft.com"><i class="fas fa-envelope"></i> info@growcraft.com</a></li>
-          <li><a href="tel:+919999999999"><i class="fas fa-phone"></i> +91 999 999 999</a></li>
-          <li><a href="#"><i class="fas fa-map-marker-alt"></i> ABC Street, XYZ City, India</a></li>
-        </ul>
-      </div>
+    </footer>
+    <div class="text-center py-3 gc-footer-bottom" style="background-color: var(--bg-tertiary); color: var(--text-secondary); border-top: 1px solid var(--border-color);">
+        &copy; 2025 <strong>GrowCraft</strong>. All Rights Reserved.
     </div>
-    <div class="footer-bottom fade-in" style="border-top: 1px solid #374151; padding-top: 1rem; margin-top: 1rem; display: flex; justify-content: space-between; flex-wrap: wrap;">
-      <p>© 2025 <strong>GrowCraft</strong>. All rights reserved.</p>
-      <div class="footer-nav">
-        <a href="../privacy.html">Privacy</a>
-        <a href="../terms.html">Terms</a>
-        <a href="../sitemap.html">Sitemap</a>
-
-      </div>
-    </div>
-  </div>
-</footer>
     <button id="backToTop" title="Go to top"
         class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle px-3 py-2"
         style="display:none;">↑</button>

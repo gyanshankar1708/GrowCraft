@@ -14,7 +14,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
+    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="../src/css/webdev.css" />
   </head>
   <body>
@@ -25,8 +25,8 @@
         class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5"
       >
         <!-- Brand -->
-        <a class="navbar-brand d-flex align-items-center" href="../index.html">
-          <img src="../images/Logo_new.png" alt="GrowCraft Logo" id="logo" width="200" />
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="../src/images/logo_bg_transparent.png" alt="GrowCraft Logo" width="200" />
         </a>
 
         <!-- Nav Links -->
@@ -39,7 +39,7 @@
               <a class="nav-link" href="../index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="../index.html#services">Services</a>
+              <a class="nav-link" href="../services.html">Services</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="../blogListing.html">Blogs</a>
@@ -59,13 +59,19 @@
             <input type="text" placeholder="Search..." />
           </div>
           <i class="fa-solid fa-magnifying-glass"></i>
-          <div class="theme-toggle-wrapper ms-3">
-            <div class="theme-toggle-btn" id="themeToggle">
-              <i class="fas fa-moon"></i>
-            </div>
-          </div>
         </div>
-        
+        <!-- Toggler -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
       </div>
     </nav>
     <!-- Navbar ends here -->
@@ -349,7 +355,7 @@
     <!-- Button Section -->
     <div class="text-center my-5">
       <a
-        href="../src/contact.html"
+        href="#contact"
         class="btn btn-success btn-lg px-5 py-3 fw-bold shadow-lg"
       >
         🚀 Let's Build Your Dream Website!
@@ -396,32 +402,32 @@
             </h5>
             <ul class="footer-links">
               <li>
-                <a href="webdev.html"
+                <a href="learn/webdev.html"
                   ><i class="fas fa-code"></i> Web Development</a
                 >
               </li>
               <li>
-                <a href="graphic.html"
+                <a href="learn/graphic.html"
                   ><i class="fas fa-paint-brush"></i> Graphic Design</a
                 >
               </li>
               <li>
-                <a href="marketing.html"
+                <a href="learn/marketing.html"
                   ><i class="fas fa-bullhorn"></i> Digital Marketing</a
                 >
               </li>
               <li>
-                <a href="contentWriting.html"
+                <a href="learn/contentwriting.html"
                   ><i class="fas fa-pen-nib"></i> Content Writing</a
                 >
               </li>
               <li>
-                <a href="socialmedia.html"
+                <a href="learn/socialmedia.html"
                   ><i class="fas fa-hashtag"></i> Social Media</a
                 >
               </li>
               <li>
-                <a href="cyberanalyst.html"
+                <a href="learn/cyberanalyst.html"
                   ><i class="fas fa-shield-alt"></i> Cyber Analyst</a
                 >
               </li>
@@ -434,13 +440,13 @@
               <i class="fas fa-link" style="margin-right: 8px"></i>Quick Links
             </h5>
             <ul class="footer-links">
-              <li><a href="../index.html">Home</a></li>
-              <li><a href="../about.html">About Us</a></li>
-              <li><a href="../index.html#services">Services</a></li>
-              <li><a href="../index.html#work">Portfolio</a></li>
-              <li><a href="../src/contact.html">Contact</a></li>
-              <li><a href="../careers.html">Careers</a></li>
-              <li><a href="../blogListing.html">Blog</a></li>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="index.html#about">About Us</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="index.html#work">Portfolio</a></li>
+              <li><a href="src/contact.html">Contact</a></li>
+              <li><a href="#careers">Careers</a></li>
+              <li><a href="blogListing.html">Blog</a></li>
             </ul>
           </div>
 
@@ -479,9 +485,9 @@
             </div>
             <div class="col-md-6">
               <div class="footer-nav">
-                <a href="../privacy.html">Privacy</a>
-                <a href="../terms.html">Terms</a>
-                <a href="../sitemap.html">Sitemap</a>
+                <a href="#privacy">Privacy</a>
+                <a href="#terms">Terms</a>
+                <a href="#sitemap">Sitemap</a>
               </div>
             </div>
           </div>
@@ -510,76 +516,6 @@
           navbar.classList.remove("scrolled");
         }
       });
-
-      // Enhanced Dark Mode Toggle Functionality
-document.addEventListener('DOMContentLoaded', function() {
-  const themeToggle = document.getElementById('themeToggle');
-  const themeIcon = themeToggle.querySelector('i');
-  
-  // Check for saved theme preference
-  const savedTheme = localStorage.getItem('theme') || 'light';
-  
-  // Apply saved theme
-  if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-    themeIcon.classList.remove('fa-moon');
-    themeIcon.classList.add('fa-sun');
-  }
-  
-  // Toggle theme on button click
-  themeToggle.addEventListener('click', function() {
-    // Add click animation
-    this.style.transform = 'scale(0.9) rotate(-15deg)';
-    setTimeout(() => {
-      this.style.transform = '';
-    }, 300);
-    
-    document.body.classList.toggle('dark-mode');
-    
-    if (document.body.classList.contains('dark-mode')) {
-      themeIcon.classList.remove('fa-moon');
-      themeIcon.classList.add('fa-sun');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      themeIcon.classList.remove('fa-sun');
-      themeIcon.classList.add('fa-moon');
-      localStorage.setItem('theme', 'light');
-    }
-  });
-
-  // Add scroll effect for navbar
-  window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-
-  // Logo update function for theme switching
-  const logo = document.querySelector("#logo");
-  
-  function updateLogo() {
-    const isDark = document.body.classList.contains('dark-mode');
-    logo.src = isDark ? "../images/Logo.png" : "../images/Logo_new.png";
-  }
-  
-  // Update logo on theme change
-  updateLogo();
-  
-  // Watch for theme changes
-  const themeObserver = new MutationObserver(function(mutations) {
-    for (const mutation of mutations) {
-      if (mutation.type === "attributes" && mutation.attributeName === "class") {
-        updateLogo();
-      }
-    }
-  });
-  
-  themeObserver.observe(document.body, { attributes: true });
-});
     </script>
-    
   </body>
 </html>
