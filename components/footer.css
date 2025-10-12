@@ -1,0 +1,223 @@
+/* ===== FOOTER STYLES ===== */
+footer {
+    background: #111827;
+    color: #fff;
+    padding: 3rem 2rem 2rem 2rem;
+}
+
+/* Center grid but slightly shifted to the right */
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+
+    /* Shift footer grid slightly right */
+    position: relative;
+    left: 4.5%;
+}
+
+/* Columns stay left-aligned */
+.footer-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-col h3 {
+    margin-bottom: 1rem;
+    color: #28a745;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: flex-start;
+}
+
+.footer-col a,
+.footer-col p {
+    color: #d1d5db;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: flex-start;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: #28a745;
+    transform: translateX(5px);
+}
+
+/* Social icons aligned left within column */
+.social-icons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+}
+
+/* ===== FOOTER BOTTOM ROW ===== */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-top: 1px solid #374151;
+    padding-top: 1rem;
+    margin-top: 1rem;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* 👇 Add equal spacing to match shifted footer above */
+    padding-left: 4.5%;
+    padding-right: 4.5%;
+
+    /* Keep it in natural centered position */
+    position: static;
+}
+
+.footer-left {
+    color: #9ca3af;
+    font-size: 0.9rem;
+}
+
+.footer-right a {
+    color: #9ca3af;
+    margin-left: 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    position: relative;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.footer-right a:hover {
+    color: #28a745;
+}
+
+.footer-right a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: #28a745;
+    transition: width 0.3s ease;
+}
+
+.footer-right a:hover::after {
+    width: 100%;
+}
+
+/* ===== MEDIA QUERIES ===== */
+/* Tablets */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .footer-col h3 {
+        justify-content: center;
+    }
+
+    .footer-col p,
+    .footer-col a {
+        justify-content: center;
+    }
+
+    .social-icons {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+}
+
+
+/* Responsive Design */
+/* Mobile */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col {
+        align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .footer-col h3 {
+        justify-content: center;
+    }
+
+    .footer-col p,
+    .footer-col a {
+        justify-content: center;
+    }
+
+    .social-icons {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .footer-right a {
+        margin: 0.3rem 0.5rem;
+    }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+    .footer-col h3 {
+        font-size: 1rem;
+    }
+
+    .footer-col a,
+    .footer-right a {
+        font-size: 0.85rem;
+    }
+
+    .footer-left {
+        font-size: 0.85rem;
+    }
+}
+
+/* Important Links margin for large screens */
+.footer-col.important-links {
+    margin-left: 70px;
+    /* margin only on large screens */
+}
+
+/* Tablets and smaller laptops */
+@media (max-width: 1024px) {
+    .footer-col.important-links {
+        margin-left: 0;
+        /* remove margin on smaller screens */
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+    .footer-col.important-links {
+        margin-left: 0;
+        /* remove margin on mobile too */
+    }
+}
