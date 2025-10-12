@@ -210,7 +210,7 @@
 
         .gc-title-gradient {
             background: linear-gradient(90deg, var(--gc-primary-1), var(--gc-primary-2));
-            background-clip: text;
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -460,7 +460,7 @@
         .gc-status-value { 
             font: 800 22px/1 ui-sans-serif, system-ui; 
             background: linear-gradient(90deg, var(--gc-primary-1), var(--gc-primary-2)); 
-            background-clip: text; 
+            -webkit-background-clip: text; 
             color: transparent; 
         }
         
@@ -1476,25 +1476,22 @@
         </div>
     </section>
 
-<!-- Modal Form -->
-<div class="modal" id="contactModal">
-  <div class="modal-content-wrapper">
-    <button class="modal-close" id="closeModal" aria-label="Close modal">&times;</button>
-    <h2 class="modal-title">Request a Free Consultation</h2>
-    <form class="modal-form">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Your Name" required>
-
-      <label for="email">Email Address</label>
-      <input type="email" id="email" placeholder="you@example.com" required>
-
-      <label for="details">Project Details</label>
-      <textarea id="details" rows="4" placeholder="Tell us about your digital marketing goals..." required></textarea>
-
-      <button type="submit" class="modal-submit">Send Request</button>
-    </form>
-  </div>
-</div>
+    <!-- Modal Form -->
+    <div class="modal" id="contactModal">
+        <div class="modal-content">
+            <span class="close-btn" id="closeModal">&times;</span>
+            <h2>Request a Free Consultation</h2>
+            <form>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <label for="email">Email Address</label>.
+                <input type="email" id="email" placeholder="you@example.com" required>
+                <label for="details">Project Details</label>
+                <textarea id="details" rows="4" placeholder="Tell us about your digital marketing goals..." required></textarea>
+                <button type="submit" class="submit-btn">Send Request</button>
+            </form>
+        </div>
+    </div>
 
     <!-- ===== Core Digital Pillars Section ===== -->
     <section class="gc-section gc-section-alt">
@@ -1770,8 +1767,8 @@
                 <h2>Ready to Accelerate Your <span class="gc-gradient">Online Presence?</span></h2>
                 <p>Partner with us to create a digital marketing strategy that delivers real, tangible results for your business.</p>
                 <div class="gc-cta-buttons">
-                    <a href="contact.html" class="gc-btn-cta-primary">🚀 Get a Free Proposal</a>
-                    <a href="../work.html" class="gc-btn-cta-secondary">See Our Work</a>
+                    <a href="#contact" class="gc-btn-cta-primary">🚀 Get a Free Proposal</a>
+                    <a href="#portfolio" class="gc-btn-cta-secondary">See Our Work</a>
                 </div>
             </div>
         </div>
@@ -1801,7 +1798,6 @@
               <span class="stat-number">1+</span>
               <span class="stat-label">Years</span>
             </div>
-          </div>
         </div>
       </div>
 
@@ -1879,8 +1875,6 @@
         </div>
       </div>
     </div>
-  </div>
-</footer>
     <button id="backToTop" title="Go to top"
         class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle px-3 py-2"
         style="display:none;">↑</button>

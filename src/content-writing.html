@@ -30,26 +30,6 @@
             --animation-speed: 0.3s;
         }
 
-        /* ===== DARK MODE THEME VARIABLES ===== */
-        .dark-mode {
-            --bg-color: #0f0f1a;
-            --text-color: #f2f2f7;
-            --text-secondary: #aaa;
-            --card-bg: rgba(20, 20, 40, 0.8);
-            --primary-gradient: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
-            --text-primary: #f2f2f7;
-            --surface: #1a1a2e;
-            --surface-elevated: #2d3748;
-        }
-
-        /* Light mode defaults */
-        :root {
-            --bg-color: #ffffff;
-            --text-color: #222;
-            --text-secondary: #555;
-            --card-bg: rgba(255, 255, 255, 0.9);
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -58,15 +38,15 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background: var(--bg-color);
-            color: var(--text-color);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: var(--text-primary);
             line-height: 1.7;
             overflow-x: hidden;
-            transition: all 0.4s ease;
         }
 
+        /* Improve text contrast and visibility */
         h1, h2, h3, h4, h5, h6 {
-            color: var(--text-color);
+            color: var(--text-primary);
             font-weight: 600;
         }
 
@@ -74,22 +54,9 @@
             color: var(--text-secondary);
         }
 
-        /* Dark mode specific overrides */
-        .dark-mode body {
-            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
-        }
-
-        .dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
-            color: var(--text-color) !important;
-        }
-
-        .dark-mode p {
-            color: var(--text-secondary) !important;
-        }
-
         /* Modern Navbar */
         .navbar {
-            background: var(--bg-color);
+            background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid rgba(0, 0, 0, 0.08);
             position: sticky;
@@ -97,12 +64,6 @@
             z-index: 1000;
             transition: all var(--animation-speed) ease;
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .dark-mode .navbar {
-            background: var(--surface);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
         }
 
         .navbar-brand img {
@@ -114,7 +75,7 @@
         }
 
         .nav-link {
-            color: var(--text-color) !important;
+            color: var(--text-primary) !important;
             font-weight: 500;
             position: relative;
             transition: all var(--animation-speed) ease;
@@ -143,7 +104,7 @@
             display: flex;
             align-items: center;
             padding: 80px 10%;
-            background: var(--bg-color);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
             position: relative;
             overflow: hidden;
         }
@@ -190,7 +151,7 @@
 
         .hero-cta {
             background: var(--primary-gradient);
-            color: white !important;
+            color: white;
             padding: 16px 32px;
             border: none;
             border-radius: 50px;
@@ -205,7 +166,6 @@
         .hero-cta:hover {
             transform: translateY(-2px);
             box-shadow: var(--shadow-hover);
-            opacity: 0.9;
         }
 
         .hero-image {
@@ -237,14 +197,27 @@
             }
         }
 
+        /* Glass Card Design */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: var(--border-radius);
+            padding: 32px;
+            transition: all var(--animation-speed) ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
         /* Services Section */
         .services-section {
             padding: 100px 10%;
-            background: var(--bg-color);
-        }
-
-        .dark-mode .services-section {
-            background: linear-gradient(135deg, rgba(20, 20, 40, 0.3) 0%, rgba(30, 30, 60, 0.3) 100%);
+            background: linear-gradient(135deg, rgba(240, 147, 251, 0.1) 0%, rgba(79, 172, 254, 0.1) 100%);
         }
 
         .section-title {
@@ -272,11 +245,10 @@
             gap: 30px;
         }
 
-        /* Glass Card Design */
-        .service-card, .glass-card {
-            background: var(--card-bg);
+        .service-card {
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-light);
             border-radius: var(--border-radius);
             padding: 32px;
             text-align: center;
@@ -284,13 +256,6 @@
             cursor: pointer;
             position: relative;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .dark-mode .service-card, .dark-mode .glass-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
         }
 
         .service-card::before {
@@ -310,7 +275,7 @@
             opacity: 0.1;
         }
 
-        .service-card:hover, .glass-card:hover {
+        .service-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
         }
@@ -328,11 +293,7 @@
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 16px;
-            color: var(--text-color);
-        }
-
-        .dark-mode .service-title {
-            color: var(--text-color) !important;
+            color: var(--text-primary);
         }
 
         .service-card p {
@@ -341,18 +302,61 @@
             line-height: 1.6;
         }
 
-        .dark-mode .service-card p {
-            color: var(--text-secondary) !important;
+        /* Benefits Section */
+        .benefits-section {
+            padding: 100px 10%;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 32px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            border-radius: var(--border-radius);
+            margin-bottom: 24px;
+            transition: all var(--animation-speed) ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .benefit-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .benefit-item h3 {
+            color: var(--text-primary);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .benefit-item p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            min-width: 60px;
+            text-align: center;
+            transition: transform var(--animation-speed) ease;
+        }
+
+        .benefit-item:hover .benefit-icon {
+            transform: rotate(5deg) scale(1.1);
         }
 
         /* Process Section */
         .process-section {
             padding: 100px 10%;
-            background: var(--bg-color);
-        }
-
-        .dark-mode .process-section {
-            background: linear-gradient(135deg, rgba(20, 20, 40, 0.3) 0%, rgba(30, 30, 60, 0.3) 100%);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
         }
 
         .process-timeline {
@@ -365,7 +369,7 @@
 
         .process-step {
             min-width: 320px;
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: var(--border-radius);
@@ -375,21 +379,11 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
-        .dark-mode .process-step {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
         .process-step h3 {
-            color: var(--text-color);
+            color: var(--text-primary);
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 12px;
-        }
-
-        .dark-mode .process-step h3 {
-            color: var(--text-color) !important;
         }
 
         .process-step p {
@@ -397,10 +391,6 @@
             font-size: 1rem;
             line-height: 1.6;
             margin: 0;
-        }
-
-        .dark-mode .process-step p {
-            color: var(--text-secondary) !important;
         }
 
         .process-step::before {
@@ -428,15 +418,11 @@
         /* Case Studies */
         .case-studies-section {
             padding: 100px 10%;
-            background: var(--bg-color);
-        }
-
-        .dark-mode .case-studies-section {
-            background: linear-gradient(135deg, rgba(20, 20, 40, 0.3) 0%, rgba(30, 30, 60, 0.3) 100%);
+            background: rgba(240, 147, 251, 0.1);
         }
 
         .case-card {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: var(--border-radius);
@@ -447,26 +433,16 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
-        .dark-mode .case-card {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        }
-
         .case-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .case-card h3 {
-            color: var(--text-color);
+            color: var(--text-primary);
             font-size: 1.4rem;
             font-weight: 600;
             margin-bottom: 16px;
-        }
-
-        .dark-mode .case-card h3 {
-            color: var(--text-color) !important;
         }
 
         .case-card p {
@@ -475,18 +451,10 @@
             line-height: 1.6;
         }
 
-        .dark-mode .case-card p {
-            color: var(--text-secondary) !important;
-        }
-
         .result-text {
-            color: var(--text-color);
+            color: var(--text-primary);
             font-weight: 600;
             font-size: 1rem;
-        }
-
-        .dark-mode .result-text {
-            color: var(--text-color) !important;
         }
 
         .progress-bar {
@@ -495,10 +463,6 @@
             border-radius: 6px;
             overflow: hidden;
             margin: 20px 0;
-        }
-
-        .dark-mode .progress-bar {
-            background: rgba(0, 0, 0, 0.3);
         }
 
         .progress-fill {
@@ -540,7 +504,7 @@
         .btn-primary-cta {
             background: rgba(255, 255, 255, 0.2);
             backdrop-filter: blur(10px);
-            color: white !important;
+            color: white;
             padding: 16px 32px;
             border: 1px solid rgba(255, 255, 255, 0.3);
             border-radius: 50px;
@@ -552,7 +516,7 @@
         .btn-primary-cta:hover {
             background: rgba(255, 255, 255, 0.3);
             transform: translateY(-2px);
-            color: white !important;
+            color: white;
         }
 
         /* Modal Enhancement */
@@ -571,20 +535,15 @@
         }
 
         .modal-content {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(0, 0, 0, 0.1);
+            border: 1px solid var(--border-light);
             border-radius: var(--border-radius);
             padding: 40px;
             max-width: 500px;
             width: 90%;
             position: relative;
             animation: modalAppear 0.3s ease-out;
-        }
-
-        .dark-mode .modal-content {
-            background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         @keyframes modalAppear {
@@ -606,7 +565,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
-            color: var(--text-color);
+            color: var(--text-primary);
         }
 
         .form-control {
@@ -615,34 +574,13 @@
             border: 1px solid rgba(0, 0, 0, 0.1);
             border-radius: 8px;
             background: rgba(255, 255, 255, 0.8);
-            color: var(--text-color);
             transition: all var(--animation-speed) ease;
-        }
-
-        .dark-mode .form-control {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            color: var(--text-color);
-        }
-
-        .dark-mode .form-control::placeholder {
-            color: rgba(255, 255, 255, 0.5);
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--accent-color);
             box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.1);
-        }
-
-        /* Dark Mode Toggle */
-        #darkModeToggle {
-            background: none;
-            border: none;
-            font-weight: 600;
-            color: var(--text-color);
-            cursor: pointer;
-            transition: color 0.3s ease;
         }
 
         /* Scroll to Top */
@@ -677,6 +615,146 @@
         }
 
     
+        /* ===== THEME VARIABLES ===== */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222;
+  --text-secondary: #555;
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.dark-mode {
+  --bg-color: #0f0f1a;
+  --text-color: #f2f2f7;
+  --text-secondary: #aaa;
+  --card-bg: rgba(20, 20, 40, 0.6);
+  --primary-gradient: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* ===== BASE ===== */
+body {
+  background: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+}
+
+p {
+  color: var(--text-secondary);
+}
+
+/* ===== NAVBAR ===== */
+.navbar {
+  background: var(--bg-color);
+  transition: all 0.4s ease;
+}
+.nav-link {
+  color: var(--text-color) !important;
+}
+.dark-mode .navbar {
+  background: #1a1a2e;
+}
+.dark-mode .nav-link {
+  color: var(--text-color) !important;
+}
+
+/* ===== HERO ===== */
+.hero {
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+.hero-title {
+  background: var(--primary-gradient);      /* apply gradient */
+  -webkit-background-clip: text;           /* clip background to text */
+  -webkit-text-fill-color: transparent;    /* make text itself transparent */
+  background-clip: text;                   /* for non-webkit browsers */
+  color: transparent;                      /* fallback */
+}
+
+/* ===== CARDS ===== */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+.glass-card:hover {
+  transform: translateY(-5px);
+}
+
+
+
+/* ===== CTA BUTTON ===== */
+.btn-primary-cta, 
+.hero-cta {
+  background: var(--primary-gradient);
+  color: #fff !important;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.btn-primary-cta:hover,
+.hero-cta:hover {
+  opacity: 0.85;
+}
+
+#darkModeToggle {
+  background: none;
+  border: none;
+  font-weight: 600;
+  color: #000;   /* visible in light mode */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dark-mode #darkModeToggle {
+  color: #fff;   /* visible in dark mode */
+}
+
+
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding: 60px 5%;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefit-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .process-timeline {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .process-step {
+                min-width: auto;
+                width: 100%;
+                max-width: 400px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
         /* Animation Utilities */
         .fade-in-up {
             animation: fadeInUp 1s ease-out;
@@ -958,10 +1036,11 @@
                     <li class="nav-item"><a class="nav-link" href="../work.html">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                     <li class="nav-item">
-                        <button id="darkModeToggle" class="btn btn-sm ms-3" style="background:none; border:none; font-weight:600;">
-                            🌙 Dark Mode
-                        </button>
-                    </li>
+  <button id="darkModeToggle" class="btn btn-sm ms-3" style="background:none; border:none; font-weight:600;">
+    🌙 Dark Mode
+  </button>
+</li>
+
                 </ul>
             </div>
         </div>
@@ -1048,7 +1127,7 @@
                 <div class="service-card glass-card fade-in-up stagger-3">
                     <div class="service-icon">✨</div>
                     <h3 class="service-title">Original & Unique</h3>
-                    <p>100% original content that stands out from the competition and builds brand authority.</p>
+                    <p></p>100% original content that stands out from the competition and builds brand authority.</p>
                 </div>
                 
                 <div class="service-card glass-card fade-in-up stagger-4">
@@ -1464,8 +1543,10 @@
             const currentScroll = window.pageYOffset;
             
             if (currentScroll > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
                 navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
             } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
                 navbar.style.boxShadow = 'none';
             }
             
@@ -1548,30 +1629,5 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 </script>
 
-
-        // Dark Mode Toggle
-        const toggleBtn = document.getElementById("darkModeToggle");
-        const body = document.body;
-
-        function setDarkMode(enabled) {
-            if (enabled) {
-                body.classList.add("dark-mode");
-                toggleBtn.textContent = "☀️ Light Mode";
-                localStorage.setItem("dark-mode", "enabled");
-            } else {
-                body.classList.remove("dark-mode");
-                toggleBtn.textContent = "🌙 Dark Mode";
-                localStorage.setItem("dark-mode", "disabled");
-            }
-        }
-
-        // Load preference
-        setDarkMode(localStorage.getItem("dark-mode") === "enabled");
-
-        // Toggle
-        toggleBtn.addEventListener("click", () => {
-            setDarkMode(!body.classList.contains("dark-mode"));
-        });
-    </script>
 </body>
 </html>
