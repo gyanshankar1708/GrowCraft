@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | GrowCraft</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="auth.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
+</head>
+
+<body id="main-body">
+    <!-- Navbar starts here -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
+            <a class="navbar-brand" href="../index.html"><img src="../images/Logo.png" alt="GrowCraft" width="200" id="logo" /></a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#services">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../blogListing.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html#work">Our Work</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Navbar ends here -->
+
+    <!-- Authentication Section -->
+    <section class="auth-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10 col-xl-8">
+                    <div class="auth-container">
+                        <div class="row g-0">
+                            <!-- Left Side - Branding -->
+                            <div class="col-lg-6 auth-brand-side">
+                                <div class="auth-brand">
+                                    <div class="brand-content">
+                                        <img src="../images/Logo.png" alt="GrowCraft" class="brand-logo">
+                                        <h2>Welcome to GrowCraft</h2>
+                                        <p class="brand-description">
+                                            Gateway to <strong>Go Digital and Grow Business</strong>
+                                        </p>
+                                        <div class="brand-features">
+                                            <div class="feature-item">
+                                                <i class="fas fa-globe"></i>
+                                                <span>Website Development</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-paint-brush"></i>
+                                                <span>Graphic Design</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-chart-line"></i>
+                                                <span>Digital Marketing</span>
+                                            </div>
+                                            <div class="feature-item">
+                                                <i class="fas fa-share-alt"></i>
+                                                <span>Social Media Management</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Right Side - Forms -->
+                            <div class="col-lg-6 auth-form-side">
+                                <!-- Login Form -->
+                                <div class="auth-form-container" id="login-form">
+                                    <div class="auth-header">
+                                        <h3>Sign In</h3>
+                                        <p>Welcome back! Please sign in to your account.</p>
+                                    </div>
+
+                                    <form class="auth-form" onsubmit="return handleLogin(event)">
+                                        <div class="form-group">
+                                            <label for="login-email">
+                                                <i class="fas fa-envelope"></i>
+                                                Email Address
+                                            </label>
+                                            <input type="email" class="form-control" id="login-email" 
+                                                   placeholder="Enter your email" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="login-password">
+                                                <i class="fas fa-lock"></i>
+                                                Password
+                                            </label>
+                                            <div class="password-input">
+                                                <input type="password" class="form-control" id="login-password" 
+                                                       placeholder="Enter your password" required>
+                                                <button type="button" class="password-toggle" onclick="togglePassword('login-password')">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-options">
+                                            <div class="remember-me">
+                                                <input type="checkbox" id="remember-me">
+                                                <label for="remember-me">Remember me</label>
+                                            </div>
+                                            <a href="#" class="forgot-password">Forgot Password?</a>
+                                        </div>
+
+                                        <button type="submit" class="btn-auth btn-primary">
+                                            <i class="fas fa-sign-in-alt"></i>
+                                            Sign In
+                                        </button>
+
+                                        <div class="auth-divider">
+                                            <span>or continue with</span>
+                                        </div>
+
+                                        <div class="social-login">
+                                            <button type="button" class="btn-social btn-google" onclick="loginWithGoogle()">
+                                                <i class="fab fa-google"></i>
+                                                Google
+                                            </button>
+                                            <button type="button" class="btn-social btn-linkedin" onclick="loginWithLinkedIn()">
+                                                <i class="fab fa-linkedin"></i>
+                                                LinkedIn
+                                            </button>
+                                        </div>
+
+                                        <div class="auth-switch">
+                                            <p>Don't have an account? 
+                                                <a href="#" onclick="showSignupForm()">Sign up</a>
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <!-- Signup Form -->
+                                <div class="auth-form-container d-none" id="signup-form">
+                                    <div class="auth-header">
+                                        <h3>Create Account</h3>
+                                        <p>Join GrowCraft and start your digital journey!</p>
+                                    </div>
+
+                                    <form class="auth-form" onsubmit="return handleSignup(event)">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="signup-firstname">
+                                                        <i class="fas fa-user"></i>
+                                                        First Name
+                                                    </label>
+                                                    <input type="text" class="form-control" id="signup-firstname" 
+                                                           placeholder="First name" required>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label for="signup-lastname">
+                                                        <i class="fas fa-user"></i>
+                                                        Last Name
+                                                    </label>
+                                                    <input type="text" class="form-control" id="signup-lastname" 
+                                                           placeholder="Last name" required>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="signup-email">
+                                                <i class="fas fa-envelope"></i>
+                                                Email Address
+                                            </label>
+                                            <input type="email" class="form-control" id="signup-email" 
+                                                   placeholder="Enter your email" required>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="signup-phone">
+                                                <i class="fas fa-phone"></i>
+                                                Phone Number
+                                            </label>
+                                            <input type="tel" class="form-control" id="signup-phone" 
+                                                   placeholder="Enter your phone number">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="signup-password">
+                                                <i class="fas fa-lock"></i>
+                                                Password
+                                            </label>
+                                            <div class="password-input">
+                                                <input type="password" class="form-control" id="signup-password" 
+                                                       placeholder="Create a password" required>
+                                                <button type="button" class="password-toggle" onclick="togglePassword('signup-password')">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="confirm-password">
+                                                <i class="fas fa-lock"></i>
+                                                Confirm Password
+                                            </label>
+                                            <div class="password-input">
+                                                <input type="password" class="form-control" id="confirm-password" 
+                                                       placeholder="Confirm your password" required>
+                                                <button type="button" class="password-toggle" onclick="togglePassword('confirm-password')">
+                                                    <i class="fas fa-eye"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="custom-checkbox">
+                                                <input type="checkbox" id="terms-agreement" required>
+                                                <label for="terms-agreement">
+                                                    I agree to the <a href="#" target="_blank">Terms of Service</a> 
+                                                    and <a href="#" target="_blank">Privacy Policy</a>
+                                                </label>
+                                            </div>
+                                        </div>
+
+                                        <button type="submit" class="btn-auth btn-primary">
+                                            <i class="fas fa-user-plus"></i>
+                                            Create Account
+                                        </button>
+
+                                        <div class="auth-divider">
+                                            <span>or sign up with</span>
+                                        </div>
+
+                                        <div class="social-login">
+                                            <button type="button" class="btn-social btn-google" onclick="loginWithGoogle()">
+                                                <i class="fab fa-google"></i>
+                                                Google
+                                            </button>
+                                            <button type="button" class="btn-social btn-linkedin" onclick="loginWithLinkedIn()">
+                                                <i class="fab fa-linkedin"></i>
+                                                LinkedIn
+                                            </button>
+                                        </div>
+
+                                        <div class="auth-switch">
+                                            <p>Already have an account? 
+                                                <a href="#" onclick="showLoginForm()">Sign in</a>
+                                            </p>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" title="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="utils.js"></script>
+    <script src="auth.js"></script>
+    <script src="darkMode.js"></script>
+</body>
+
+</html>
