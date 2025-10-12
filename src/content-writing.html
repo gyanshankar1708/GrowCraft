@@ -614,6 +614,7 @@
             box-shadow: var(--shadow-hover);
         }
 
+    
         /* ===== THEME VARIABLES ===== */
 :root {
   --bg-color: #ffffff;
@@ -777,225 +778,240 @@ p {
 
         }
 
-        /* Professional Footer */
-    .professional-footer {
-      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-      color: #e2e8f0;
-      padding: 4rem 0 0;
-      margin-top: 50px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .professional-footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.02"><circle cx="30" cy="30" r="1"/></g></svg>') repeat;
-    }
-
-    .footer-brand {
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer-logo {
-      height: 60px;
-      margin-bottom: 1rem;
-    }
-
-    .brand-name {
-      font-size: 2rem;
-      font-weight: 800;
-      background: var(--primary-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 1rem;
-    }
-
-    .brand-description {
-      color: #a0aec0;
-      margin-bottom: 2rem;
-      max-width: 400px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .quick-stats {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 2rem;
-      flex-wrap: wrap;
-    }
-
-    .stat-item {
-      text-align: center;
-    }
-
-    .stat-number {
-      display: block;
-      font-size: 2rem;
-      font-weight: 800;
-      background: var(--accent-gradient);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 0.5rem;
-    }
-
-    .stat-label {
-      color: #a0aec0;
-      font-size: 0.9rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .footer-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      position: relative;
-      color: white;
-    }
-
-    .footer-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: var(--primary-gradient);
-      border-radius: 2px;
-    }
-
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer-links li {
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-links a {
-      color: #a0aec0 !important;
-      text-decoration: none;
-      transition: var(--transition);
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .footer-links a::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      opacity: 0;
-      transition: var(--transition);
-      color: #667eea;
-    }
-
-    .footer-links a:hover {
-      color: white !important;
-      transform: translateX(10px);
-    }
-
-    .footer-links a:hover::before {
-      opacity: 1;
-    }
-
-    .contact-info {
-      position: relative;
-      z-index: 2;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      margin-bottom: 1rem;
-      gap: 1rem;
-    }
-
-    .contact-item i {
-      width: 20px;
-      color: #667eea;
-      font-size: 1rem;
-    }
-
-    .contact-item a,
-    .contact-item span {
-      color: #a0aec0;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .contact-item a:hover {
-      color: white;
-    }
-   .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 0;
-  padding-top: 12px;
-  margin-bottom: 10px;
+   /* ==================== Base Footer ==================== */
+.professional-footer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #edf6f3 50%, #f8f9fa 100%);
+  color: #333;
+  padding: 50px 0 0;
+  margin-top: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-
-.footer-bottom p {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.8);
+/* Brand */
+.footer-logo {
+  max-width: 160px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
 }
-
-.footer-bottom a {
-  color: rgba(255, 255, 255, 0.8);
-  text-decoration: none;
-  margin-right: 20px;
-  transition: color 0.3s ease;
+.footer-logo:hover {
+  transform: scale(1.05);
 }
-
-.footer-bottom a:last-child {
-  margin-right: 0; /* remove extra spacing on last link */
+@media (min-width: 768px) {
+  .footer-logo { max-width: 180px; }
 }
-
-.footer-bottom a:hover {
-  color: #ffffff; /* highlight on hover */
-}
-.quick-stats {
-  display: flex;
-  gap: 2rem; /* spacing between items */
-  margin-top: 1rem;
-}
-
-.quick-stats .stat-item {
-  text-align: center;
-  color: #fff; /* makes labels visible */
-}
-
-.quick-stats .stat-number {
-  font-size: 2rem;
+.brand-name {
+  font-size: 1.8rem;
   font-weight: 700;
-  background: linear-gradient(90deg, #6a11cb, #2575fc); /* brand gradient */
+  background: linear-gradient(45deg, #28a745, #20c997);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  display: block;
+}
+.brand-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
 }
 
-.quick-stats .stat-label {
+/* Quick Stats - smaller and consistent */
+.quick-stats {
+  display: flex;
+  justify-content: flex-start; /* aligns left with brand description */
+  gap: 20px; /* smaller space between stats */
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 60px; /* reduced width for smaller layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align, can use center if preferred */
+}
+
+.stat-number {
+  font-size: 1.2rem; /* smaller than before */
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.75rem; /* smaller and more consistent */
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* Section Titles */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 30px; height: 2px;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  border-radius: 2px;
+}
+
+/* Links */
+.footer-links a {
+  color: #666;
+  text-decoration: none;
   font-size: 0.9rem;
-  color: #e0e0e0; /* light gray for labels */
-  margin-top: 5px;
-  letter-spacing: 1px;
+  padding-left: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.footer-links a:hover {
+  color: #28a745;
+  transform: translateX(5px);
+}
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.footer-links a:hover::before { opacity: 1; }
+
+/* Contact */
+.contact-item i { color: #28a745; }
+.contact-item a { color: inherit; transition: color 0.3s ease; }
+.contact-item a:hover { color: #20c997; }
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+}
+.social-icons a {
+  font-size: 1.2rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+.social-icons a:hover {
+  color: #28a745;
+  transform: scale(1.2);
 }
 
+/* Footer Bottom */
+.footer-bottom {
+  background: rgba(40, 167, 69, 0.05);
+  margin-top: 50px;
+  padding: 25px 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.footer-nav a {
+  color: #666;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+.footer-nav a:hover { color: #28a745; }
 
+/* ==================== Dark Mode ==================== */
+[data-bs-theme="dark"] .professional-footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  color: #f1f5f9;
+}
+[data-bs-theme="dark"] .brand-name {
+  background: linear-gradient(45deg, #20c997, #00ff95);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-bs-theme="dark"] .brand-description,
+[data-bs-theme="dark"] .stat-label,
+[data-bs-theme="dark"] .contact-item span,
+[data-bs-theme="dark"] .footer-links a,
+[data-bs-theme="dark"] .footer-nav a,
+[data-bs-theme="dark"] .copyright {
+  color: #94a3b8;
+}
+[data-bs-theme="dark"] .stat-number,
+[data-bs-theme="dark"] .footer-links a:hover,
+[data-bs-theme="dark"] .footer-links a::before,
+[data-bs-theme="dark"] .contact-item i,
+[data-bs-theme="dark"] .social-icons a:hover,
+[data-bs-theme="dark"] .footer-nav a:hover {
+  color: #00ff95;
+}
+[data-bs-theme="dark"] .footer-title {
+  color: #f8fafc;
+}
+[data-bs-theme="dark"] .footer-title::after {
+  background: linear-gradient(45deg, #20c997, #00ff95);
+}
+[data-bs-theme="dark"] .footer-bottom {
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-bs-theme="dark"] .social-icons a {
+  color: #94a3b8;
+}
 
+/* ==================== Animations ==================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Footer Links - smaller and aligned */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem; /* reduced spacing between items */
+}
+
+.footer-links a {
+  font-size: 0.85rem; /* slightly smaller */
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding-left: 12px; /* small padding for arrow */
+}
+
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+}
+
+.footer-links a:hover {
+  color: #28a745;
+  transform: translateX(3px);
+}
     </style>
 </head>
 
@@ -1283,98 +1299,111 @@ p {
             </form>
         </div>
     </div>
-    <!-- Professional Footer -->
-  <footer class="professional-footer">
-    <div class="container">
-      <div class="row g-4 py-4">
-        <!-- Footer Brand -->
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-brand">
-            <img src="../images/Logo.png" alt="GrowCraft Logo" class="footer-logo mb-3">
-            <h4 class="brand-name">GrowCraft</h4>
-            <p class="brand-description">Empowering businesses with innovative digital solutions and creative excellence.</p>
-            
-              <div class="quick-stats">
-  <div class="stat-item">
-    <span class="stat-number counter" data-target="500">0</span>
-    <span class="stat-label">Projects</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-number counter" data-target="150">0</span>
-    <span class="stat-label">Clients</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-number counter" data-target="5">0</span>
-    <span class="stat-label">Years</span>
-  </div>
-</div>
-
-
-
-          </div>
-        </div>
-
-        <!-- Services Links -->
-        <div class="col-lg-2 col-md-3 col-6">
-          <h5 class="footer-title">Services</h5>
-          <ul class="footer-links">
-            <li><a href="../learn/webdev.html">Web Development</a></li>
-            <li><a href="../learn/graphic.html">Graphic Design</a></li>
-            <li><a href="../learn/marketing.html">Digital Marketing</a></li>
-            <li><a href="../learn/contentwriting.html">Content Writing</a></li>
-            <li><a href="../learn/socialmedia.html">Social Media</a></li>
-            <li><a href="../learn/cyberanalyst.html">Cyber Analyst</a></li>
-          </ul>
-        </div>
-
-        <!-- Quick Links -->
-        <div class="col-lg-2 col-md-3 col-6">
-          <h5 class="footer-title">Quick Links</h5>
-          <ul class="footer-links">
-            <li><a href="../index.html#about">About Us</a></li>
-            <li><a href="../index.html#work">Portfolio</a></li>
-            <li><a href="contact.html">Contact</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="../blogListing.html">Blog</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact -->
-        <div class="col-lg-4 col-md-6">
-          <h5 class="footer-title">Get In Touch</h5>
-          <div class="contact-info">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+<!-- ===== Enhanced GrowCraft Footer ===== -->
+<footer class="professional-footer fade-in" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-4 py-4 fade-in">
+      
+      <!-- Brand -->
+      <div class="col-lg-4 col-md-6 fade-in">
+        <div class="footer-brand fade-in">
+          <h4 class="brand-name">GrowCraft</h4>
+          <p class="brand-description" >
+            Empowering businesses with innovative digital solutions and creative excellence.
+          </p>
+          <div class="quick-stats fade-in">
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Projects</span>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+919999999999">+91 999 999 999</a>
+            <div class="stat-item">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Clients</span>
             </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>ABC Street, XYZ City, India</span>
+            <div class="stat-item">
+              <span class="stat-number">1+</span>
+              <span class="stat-label">Years</span>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- Footer Bottom -->
-    <div class="footer-bottom">
-  <div class="row align-items-center">
-    <div class="col-md-6">
-      <p>© 2024 <strong>GrowCraft</strong>. All rights reserved.</p>
-    </div>
-    <div class="col-md-6 text-md-end">
-      <a href="#privacy">Privacy</a>
-      <a href="#terms">Terms</a>
-      <a href="#sitemap">Sitemap</a>
-    </div>
-  </div>
+
+      <!-- Services -->
+      <div class="col-lg-2 col-md-3 col-6 fade-in" >
+        <h5 class="footer-title">Services</h5>
+        <ul class="footer-links" >
+          <li><a href="learn/webdev.html">Web Development</a></li>
+          <li><a href="learn/graphic.html">Graphic Design</a></li>
+          <li><a href="learn/marketing.html">Digital Marketing</a></li>
+          <li><a href="learn/contentwriting.html">Content Writing</a></li>
+          <li><a href="learn/socialmedia.html">Social Media</a></li>
+          <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-3 col-6 fade-in">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#work">Portfolio</a></li>
+          <li><a href="src/contact.html">Contact</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="blogListing.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-4 col-md-6 fade-in" >
+        <h5 class="footer-title">Get In Touch</h5>
+        <div class="contact-info mb-3 fade-in">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+919999999999">+91 999 999 999</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ABC Street, XYZ City, India</span>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="social-icons">
+  <a href="https://discord.gg/vk5zFm56" target="_blank"><i class="fa-brands fa-discord"></i></a>
+  <a href="https://github.com/gyanshankar1708/GrowCraft" target="_blank"><i class="fa-brands fa-github"></i></a>
+  <a href="https://www.instagram.com/GrowCraft" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
 </div>
 
-  </footer>
-    
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom fade-in">
+    <div class="container">
+      <div class="row align-items-center py-3 fade-in">
+        <div class="col-md-6">
+          <p class="copyright mb-0">
+            © <span id="year"></span> <strong>GrowCraft</strong>. All rights reserved.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div class="footer-nav fade-in">
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+            <a href="#sitemap">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTopBtn">

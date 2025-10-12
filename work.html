@@ -813,107 +813,362 @@
         padding: 30px 0 0;
       }
 
-      .footer-brand,
-      .footer-title {
-        text-align: center;
+  
+
+      /* utilities */
+      .flex {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+
+      .spacer {
+        flex: 1;
+      }
+
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Global spacing improvements */
+      section {
+        margin-top: 60px;
+        /* space between sections */
       }
 
       .footer-nav {
         justify-content: center;
-      }
-
-      .footer-bottom .row {
-        text-align: center;
-      }
-
-      .footer-bottom .col-md-6:first-child {
-        margin-bottom: 10px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .quick-stats {
+        align-items: center;
         flex-direction: column;
-        gap: 10px;
-        align-items: center;
+        gap: 1rem;
       }
 
-      .stat-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
+      .works-grid {
+        margin-top: 30px;
+        gap: 28px;
+        /* bigger gaps between cards */
       }
 
-      .stat-number {
-        font-size: 1.2rem;
-        margin-bottom: 0;
+      .site-footer {
+        margin-top: 80px;
+        padding: 40px 20px;
       }
 
-      .stat-label {
-        font-size: 0.7rem;
+      /* Better padding inside hero aside */
+      .hero aside {
+        padding: 24px;
+        border-radius: 16px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.65), #fff);
+        box-shadow: var(--shadow-1);
       }
-    }
 
-  </style>
-</head>
+      /* Card tweaks */
+      .card {
+        padding: 0;
+      }
 
-<body data-theme="light">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-      <a class="navbar-brand" href="index.html">
-        <img src="images/logo_bg_transparent.png" alt="GrowCraft" width="200" class="theme-aware-logo"
-          data-light-src="images/logo_bg_transparent.png" data-dark-src="images/logo-transparent-dark-mode.png" />
-      </a>
+      .card-body {
+        padding: 18px;
+      }
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      .card-title {
+        font-size: 18px;
+        font-weight: 700;
+      }
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html#services">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="blogListing.html">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html#about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active visited" aria-current="page" href="#">Our Work</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="src/contact.html">Contact Us</a>
-          </li>
-        </ul>
-      </div>
+      .card-desc {
+        margin-bottom: 16px;
+        line-height: 1.5;
+      }
+      /* project filter btn */
+      .chip {
+        display: inline-block;
+        padding: 6px 12px;
+        border: 1px solid #ccc;
+        border-radius: 25px;
+        background-color: #f8f9fa;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .chip:hover {
+        background-color: #e2e6ea;
+      }
+      [data-bs-theme='dark'] .chip{
+        color: black; 
+      }
+      .chip.active {
+        background-color: #0d6efd;
+        color: white;
+        border-color: #0d6efd;
+      }
+     /* ==================== Base Footer ==================== */
+.professional-footer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #edf6f3 50%, #f8f9fa 100%);
+  color: #333;
+  padding: 50px 0 0;
+  margin-top: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
 
-      <div class="search-container">
-        <input type="text" placeholder="Search..." class="search-input">
-        <button class="search-button">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
+/* Brand */
+.footer-logo {
+  max-width: 160px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 768px) {
+  .footer-logo { max-width: 180px; }
+}
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.brand-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
 
-    </div>
+/* Quick Stats - smaller and consistent */
+.quick-stats {
+  display: flex;
+  justify-content: flex-start; /* aligns left with brand description */
+  gap: 20px; /* smaller space between stats */
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
 
-  </nav>
+.stat-item {
+  flex: 1;
+  min-width: 60px; /* reduced width for smaller layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align, can use center if preferred */
+}
 
-  <main class="page">
-    <section class="hero" data-aos="fade-up">
-      <div class="hero-left">
-        <h2>We craft digital experiences that <span style="color:rgb(var(--accent));">grow</span> businesses</h2>
-        <p class="lead">Design-led websites, high-converting digital marketing, and visual systems that help customers
-          trust your brand. Explore our selected case studies and studio services.</p>
-        <div class="hero-ctas">
-          <a class="btn btn-primary" href="./services.html">Explore Services</a>
-          <a class="btn btn-ghost" href="src/contact.html">Get a free quote</a>
-        </div>
+.stat-number {
+  font-size: 1.2rem; /* smaller than before */
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.75rem; /* smaller and more consistent */
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* Section Titles */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 30px; height: 2px;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  border-radius: 2px;
+}
+
+/* Links */
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding-left: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.footer-links a:hover {
+  color: #28a745;
+  transform: translateX(5px);
+}
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.footer-links a:hover::before { opacity: 1; }
+
+/* Contact */
+.contact-item i { color: #28a745; }
+.contact-item a { color: inherit; transition: color 0.3s ease; }
+.contact-item a:hover { color: #20c997; }
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+}
+.social-icons a {
+  font-size: 1.2rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+.social-icons a:hover {
+  color: #28a745;
+  transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background: rgba(40, 167, 69, 0.05);
+  margin-top: 50px;
+  padding: 25px 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.footer-nav a {
+  color: #666;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+.footer-nav a:hover { color: #28a745; }
+
+/* ==================== Dark Mode ==================== */
+[data-bs-theme="dark"] .professional-footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  color: #f1f5f9;
+}
+[data-bs-theme="dark"] .brand-name {
+  background: linear-gradient(45deg, #20c997, #00ff95);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-bs-theme="dark"] .brand-description,
+[data-bs-theme="dark"] .stat-label,
+[data-bs-theme="dark"] .contact-item span,
+[data-bs-theme="dark"] .footer-links a,
+[data-bs-theme="dark"] .footer-nav a,
+[data-bs-theme="dark"] .copyright {
+  color: #94a3b8;
+}
+[data-bs-theme="dark"] .stat-number,
+[data-bs-theme="dark"] .footer-links a:hover,
+[data-bs-theme="dark"] .footer-links a::before,
+[data-bs-theme="dark"] .contact-item i,
+[data-bs-theme="dark"] .social-icons a:hover,
+[data-bs-theme="dark"] .footer-nav a:hover {
+  color: #00ff95;
+}
+[data-bs-theme="dark"] .footer-title {
+  color: #f8fafc;
+}
+[data-bs-theme="dark"] .footer-title::after {
+  background: linear-gradient(45deg, #20c997, #00ff95);
+}
+[data-bs-theme="dark"] .footer-bottom {
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-bs-theme="dark"] .social-icons a {
+  color: #94a3b8;
+}
+
+/* ==================== Animations ==================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Footer Links - smaller and aligned */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem; /* reduced spacing between items */
+}
+
+.footer-links a {
+  font-size: 0.85rem; /* slightly smaller */
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding-left: 12px; /* small padding for arrow */
+}
+
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+}
+
+.footer-links a:hover {
+  color: #28a745;
+  transform: translateX(3px);
+}
+    </style>
+  </head>
+
+  <body>
+    <div id="navbar"></div>
+
+    <main class="page">
+      <section class="hero" data-aos="fade-up">
+        <div class="hero-left">
+          <h2>
+            We craft digital experiences that
+            <span style="color: rgb(var(--accent))">grow</span> businesses
+          </h2>
+          <p class="lead">
+            Design-led websites, high-converting digital marketing, and visual
+            systems that help customers trust your brand. Explore our selected
+            case studies and studio services.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="./services.html"
+              >Explore Services</a
+            >
+            <a class="btn btn-ghost" href="src/contact.html"
+              >Get a free quote</a
+            >
+          </div>
 
         <div class="stats" aria-hidden="false">
           <div class="stat">40% Avg Conversion uplift</div>
@@ -1082,8 +1337,7 @@
           <div id="modalApproach" style="color:var(--muted);margin-top:6px">Approach summary</div>
         </div>
       </div>
-
-      <div style="margin-top:10px">
+        <div style="margin-top:10px">
         <strong>Result</strong>
         <div id="modalResult" style="color:var(--muted);margin-top:6px">Measured results and impact</div>
       </div>
@@ -1094,108 +1348,134 @@
       </div>
     </div>
   </div>
+    </div>
+<!-- ===== Enhanced GrowCraft Footer ===== -->
+<footer class="professional-footer fade-in" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-4 py-4 fade-in">
+      
+      <!-- Brand -->
+      <div class="col-lg-4 col-md-6 fade-in">
+        <div class="footer-brand fade-in">
+          <h4 class="brand-name">GrowCraft</h4>
+          <p class="brand-description" >
+            Empowering businesses with innovative digital solutions and creative excellence.
+          </p>
+          <div class="quick-stats fade-in">
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Clients</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">1+</span>
+              <span class="stat-label">Years</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-  <footer class="professional-footer" data-aos="fade-up">
+      <!-- Services -->
+      <div class="col-lg-2 col-md-3 col-6 fade-in" >
+        <h5 class="footer-title">Services</h5>
+        <ul class="footer-links" >
+          <li><a href="learn/webdev.html">Web Development</a></li>
+          <li><a href="learn/graphic.html">Graphic Design</a></li>
+          <li><a href="learn/marketing.html">Digital Marketing</a></li>
+          <li><a href="learn/contentwriting.html">Content Writing</a></li>
+          <li><a href="learn/socialmedia.html">Social Media</a></li>
+          <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-3 col-6 fade-in">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#work">Portfolio</a></li>
+          <li><a href="src/contact.html">Contact</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="blogListing.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-4 col-md-6 fade-in" >
+        <h5 class="footer-title">Get In Touch</h5>
+        <div class="contact-info mb-3 fade-in">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+919999999999">+91 999 999 999</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ABC Street, XYZ City, India</span>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="social-icons">
+  <a href="https://discord.gg/vk5zFm56" target="_blank"><i class="fa-brands fa-discord"></i></a>
+  <a href="https://github.com/gyanshankar1708/GrowCraft" target="_blank"><i class="fa-brands fa-github"></i></a>
+  <a href="https://www.instagram.com/GrowCraft" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+</div>
+
+      </div>
+    </div>
+    </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom fade-in">
     <div class="container">
-      <div class="row g-4 py-4">
-        <div class="col-lg-4 col-md-6">
-          <div class="footer-brand">
-            <img src="images/Logo_new.png" alt="GrowCraft Logo" class="footer-logo mb-3 theme-aware-logo"
-              data-light-src="images/Logo_new.png" data-dark-src="images/Logo.png" />
-            <h4 class="brand-name">GrowCraft</h4>
-            <p class="brand-description">Empowering businesses with
-              innovative digital solutions and creative excellence.</p>
-            <div class="quick-stats">
-              <div class="stat-item">
-                <span class="stat-number">500+</span>
-                <span class="stat-label">Projects</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">150+</span>
-                <span class="stat-label">Clients</span>
-              </div>
-              <div class="stat-item">
-                <span class="stat-number">5+</span>
-                <span class="stat-label">Years</span>
-              </div>
-            </div>
-          </div>
+      <div class="row align-items-center py-3 fade-in">
+        <div class="col-md-6">
+          <p class="copyright mb-0">
+            © <span id="year"></span> <strong>GrowCraft</strong>. All rights reserved.
+          </p>
         </div>
-
-        <div class="col-lg-2 col-md-3 col-6">
-          <h5 class="footer-title">Services</h5>
-          <ul class="footer-links">
-            <li><a href="learn/webdev.html">Web Development</a></li>
-            <li><a href="learn/graphic.html">Graphic Design</a></li>
-            <li><a href="learn/marketing.html">Digital Marketing</a></li>
-            <li><a href="learn/contentwriting.html">Content Writing</a></li>
-            <li><a href="learn/socialmedia.html">Social Media</a></li>
-            <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 col-6">
-          <h5 class="footer-title">Quick Links</h5>
-          <ul class="footer-links">
-            <li><a href="index.html#about">About Us</a></li>
-            <li><a href="index.html#work">Portfolio</a></li>
-            <li><a href="src/contact.html">Contact</a></li>
-            <li><a href="#careers">Careers</a></li>
-            <li><a href="blogListing.html">Blog</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-4 col-md-6">
-          <h5 class="footer-title">Get In Touch</h5>
-          <div class="contact-info mb-3">
-            <div class="contact-item">
-              <i class="fas fa-envelope"></i>
-              <a href="mailto:info@growcraft.com">info@growcraft.com</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-phone"></i>
-              <a href="tel:+919999999999">+91 999 999 999</a>
-            </div>
-            <div class="contact-item">
-              <i class="fas fa-map-marker-alt"></i>
-              <span>ABC Street, XYZ City, India</span>
-            </div>
+        <div class="col-md-6">
+          <div class="footer-nav fade-in">
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+            <a href="#sitemap">Sitemap</a>
           </div>
         </div>
       </div>
     </div>
-    </div>
-
-    <div class="footer-bottom">
-      <div class="container">
-        <div class="row align-items-center py-3">
-          <div class="col-md-6">
-            <p class="copyright mb-0">© 2024
-              <strong>GrowCraft</strong>. All rights reserved.</p>
-          </div>
-          <div class="col-md-6">
-            <div class="footer-nav">
-              <a href="#privacy">Privacy</a>
-              <a href="#terms">Terms</a>
-              <a href="#sitemap">Sitemap</a>
-            </div>
-          </div>
+  </div>
+</footer>
+    <div class="chatbot-container">
+      <div class="chatbot-window" id="chatWindow">
+        <div class="chatbot-header">
+          <img
+            src="images/logo-transparent-dark-mode.png"
+            alt="GrowCraft Logo"
+            class="chatbot-header-logo"
+          />
+          <span>GrowCraft</span>
+          <button onclick="toggleChat()">
+            <img
+              src="images/icons/close_small_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
+              alt="Close"
+            />
+          </button>
         </div>
-      </div>
-    </div>
-    </div>
-  </footer>
-  <div class="chatbot-container">
-    <div class="chatbot-window" id="chatWindow">
-      <div class="chatbot-header">
-        <img src="images/logo-transparent-dark-mode.png" alt="GrowCraft Logo" class="chatbot-header-logo" />
-        <span>GrowCraft</span>
-        <button onclick="toggleChat()"><img src="images/icons/close_small_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png"
-            alt="Close" /></button>
-      </div>
-      <div class="chatbot-body" id="chatBody">
-        <div class="chatbot-msg bot-msg">
-          Hello! I am GrowCraft. How can I assist you today?
+        <div class="chatbot-body" id="chatBody">
+          <div class="chatbot-msg bot-msg">
+            Hello! I am GrowCraft. How can I assist you today?
+         
         </div>
       </div>
       <div class="quick-questions" id="quickQuestions"></div>

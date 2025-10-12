@@ -101,13 +101,7 @@ section {
   opacity: 1;
 }
 
-/* Footer */
-footer {
-  background: #222;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-}
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -129,144 +123,7 @@ footer {
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
-.footer {
-  background-color: #21903b;
-  color: white;
-  font-family: Arial, sans-serif;
-  padding: 40px 20px 10px;
-}
-body.dark-mode .footer {
-  background-color: #222;
-  color: white;
-  font-family: Arial, sans-serif;
-  padding: 40px 20px 10px;
-}
 
-.footer-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 60px;
-}
-
-.footer-container > div {
-  flex: 1 1 200px;
-  min-width: 200px;
-}
-
-.footer h3 {
-  text-decoration: underline;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.footer p,
-.footer a {
-  font-size: 14px;
-  color: white;
-  line-height: 1.6;
-}
-
-.footer a {
-  text-decoration: none;
-}
-
-.footer a:hover {
-  text-decoration: underline;
-}
-
-.footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-links ul li {
-  margin-bottom: 6px;
-}
-
-.footer-social h3 {
-  margin-bottom: 15px;
-}
-
-.social-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.social-list li {
-  margin-bottom: 10px;
-}
-
-.social-list a {
-  text-decoration: none;
-  color: white;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  transition: color 0.3s;
-}
-
-.social-list a:hover {
-  color: #d4f7d4;
-}
-
-.social-list i {
-  background-color: #ffffff30;
-  color: white;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 10px;
-  transition: background 0.3s, color 0.3s;
-}
-
-.social-list a:hover i {
-  background-color: white;
-  color: #28a745;
-}
-
-.footer-bottom {
-  text-align: center;
-  border-top: 1px solid #ffffff80;
-  margin-top: 30px;
-  padding-top: 15px;
-  font-size: 13px;
-}
-.send-message-btn {
-  display: inline-block;
-  margin-top: 15px;
-  padding: 8px 16px;
-  background-color: white;
-  color: #28a745;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
-}
-
-.send-message-btn:hover {
-  background-color: #dff0d8;
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: rgb(180, 180, 180);
-}
-
-textarea {
-  min-height: 8rem;
-}
-
-#error {
-  color: red;
-  font-size: 1rem;
-}
- 
 /* Dark Mode Switch Styles  */
 .toggle-switch {
   position: relative;

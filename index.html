@@ -894,8 +894,7 @@
     [data-bs-theme="dark"] .program-card .text-muted {
       color: #cccccc !important;
     }
-
-    [data-bs-theme="dark"] .card-services {
+     [data-bs-theme="dark"] .card-services {
       background: rgba(255, 255, 255, 0.12) !important;
       border: 1px solid rgba(129, 199, 132, 0.3) !important;
     }
@@ -919,68 +918,38 @@
       color: #ffffff !important;
     }
 
-    /* Footer Dark Mode Styles */
-    [data-bs-theme="dark"] .professional-footer {
-      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%) !important;
-      color: #ffffff !important;
-    }
-
-    [data-bs-theme="dark"] .footer-brand h3,
-    [data-bs-theme="dark"] .footer-brand p,
-    [data-bs-theme="dark"] .footer-links h5,
-    [data-bs-theme="dark"] .footer-links a,
-    [data-bs-theme="dark"] .contact-info .contact-item,
-    [data-bs-theme="dark"] .contact-info .contact-item a,
-    [data-bs-theme="dark"] .contact-info .contact-item span,
-    [data-bs-theme="dark"] .social-title,
-    [data-bs-theme="dark"] .newsletter-text {
-      color: #ffffff !important;
-    }
-
-    [data-bs-theme="dark"] .footer-links a:hover,
-    [data-bs-theme="dark"] .contact-item a:hover {
-      color: var(--accent-green) !important;
-    }
-
-    [data-bs-theme="dark"] .contact-item i {
-      color: var(--accent-green) !important;
-    }
-
-    [data-bs-theme="dark"] .stat-number {
-      color: var(--accent-green) !important;
-    }
-
-    [data-bs-theme="dark"] .stat-label {
-      color: #cccccc !important;
-    }
-
-    [data-bs-theme="dark"] .social-link {
-      background: rgba(255, 255, 255, 0.1) !important;
-      border-color: rgba(255, 255, 255, 0.2) !important;
-      color: #cccccc !important;
-    }
-
-    [data-bs-theme="dark"] .social-link:hover {
-      background: var(--accent-green) !important;
-      border-color: var(--accent-green) !important;
-      color: #000000 !important;
-    }
-
-    [data-bs-theme="dark"] .newsletter-input {
-      background: rgba(255, 255, 255, 0.1) !important;
-      border-color: rgba(255, 255, 255, 0.3) !important;
-      color: #ffffff !important;
-    }
-
-    [data-bs-theme="dark"] .newsletter-input::placeholder {
-      color: rgba(255, 255, 255, 0.6) !important;
-    }
+#scrollToTopBtn {
+  position: fixed;
+  right: 2rem;
+  bottom: -5rem;
+  z-index: 999;
+  border: none;
+  outline: none;
+  background: #51BE7F;
+  cursor: pointer;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1),
+              0 4px 6px -2px rgba(0,0,0,0.05);
+  transition: transform 0.4s ease, opacity 0.4s ease, bottom 0.3s ease;
+  opacity: 0;
+  transform: translateY(50%);
+}
 
     [data-bs-theme="dark"] .newsletter-input:focus {
       border-color: var(--accent-green) !important;
       background: rgba(255, 255, 255, 0.15) !important;
     }
 
+#scrollToTopBtn svg {
+  width: 1.5rem;  
+  height: 1.5rem;
+  display: block;
+}
     [data-bs-theme="dark"] .newsletter-btn {
       background: var(--accent-green) !important;
       color: #000000 !important;
@@ -1133,7 +1102,240 @@ section, main, .container {
   z-index: 10;
 }
 
+/* ==================== Base Footer ==================== */
+.professional-footer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #edf6f3 50%, #f8f9fa 100%);
+  color: #333;
+  padding: 50px 0 0;
+  margin-top: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
 
+/* Brand */
+.footer-logo {
+  max-width: 160px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 768px) {
+  .footer-logo { max-width: 180px; }
+}
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.brand-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Quick Stats - smaller and consistent */
+.quick-stats {
+  display: flex;
+  justify-content: flex-start; /* aligns left with brand description */
+  gap: 20px; /* smaller space between stats */
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 60px; /* reduced width for smaller layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align, can use center if preferred */
+}
+
+.stat-number {
+  font-size: 1.2rem; /* smaller than before */
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.75rem; /* smaller and more consistent */
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* Section Titles */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 30px; height: 2px;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  border-radius: 2px;
+}
+
+/* Links */
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding-left: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.footer-links a:hover {
+  color: #28a745;
+  transform: translateX(5px);
+}
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.footer-links a:hover::before { opacity: 1; }
+
+/* Contact */
+.contact-item i { color: #28a745; }
+.contact-item a { color: inherit; transition: color 0.3s ease; }
+.contact-item a:hover { color: #20c997; }
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+}
+.social-icons a {
+  font-size: 1.2rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+.social-icons a:hover {
+  color: #28a745;
+  transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background: rgba(40, 167, 69, 0.05);
+  margin-top: 50px;
+  padding: 25px 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.footer-nav a {
+  color: #666;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+.footer-nav a:hover { color: #28a745; }
+
+/* ==================== Dark Mode ==================== */
+[data-bs-theme="dark"] .professional-footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  color: #f1f5f9;
+}
+[data-bs-theme="dark"] .brand-name {
+  background: linear-gradient(45deg, #20c997, #00ff95);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-bs-theme="dark"] .brand-description,
+[data-bs-theme="dark"] .stat-label,
+[data-bs-theme="dark"] .contact-item span,
+[data-bs-theme="dark"] .footer-links a,
+[data-bs-theme="dark"] .footer-nav a,
+[data-bs-theme="dark"] .copyright {
+  color: #94a3b8;
+}
+[data-bs-theme="dark"] .stat-number,
+[data-bs-theme="dark"] .footer-links a:hover,
+[data-bs-theme="dark"] .footer-links a::before,
+[data-bs-theme="dark"] .contact-item i,
+[data-bs-theme="dark"] .social-icons a:hover,
+[data-bs-theme="dark"] .footer-nav a:hover {
+  color: #00ff95;
+}
+[data-bs-theme="dark"] .footer-title {
+  color: #f8fafc;
+}
+[data-bs-theme="dark"] .footer-title::after {
+  background: linear-gradient(45deg, #20c997, #00ff95);
+}
+[data-bs-theme="dark"] .footer-bottom {
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-bs-theme="dark"] .social-icons a {
+  color: #94a3b8;
+}
+
+/* ==================== Animations ==================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Footer Links - smaller and aligned */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem; /* reduced spacing between items */
+}
+
+.footer-links a {
+  font-size: 0.85rem; /* slightly smaller */
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding-left: 12px; /* small padding for arrow */
+}
+
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+}
+
+.footer-links a:hover {
+  color: #28a745;
+  transform: translateX(3px);
+}
 
   </style>
 </head>
@@ -1954,6 +2156,122 @@ section, main, .container {
   <button id="backToTop" title="Go to top" type="button" class="hover-scale">
     <i class="fas fa-chevron-up"></i>
   </button>
+  <!-- ===== Enhanced GrowCraft Footer ===== -->
+<footer class="professional-footer fade-in" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-4 py-4 fade-in">
+      
+      <!-- Brand -->
+      <div class="col-lg-4 col-md-6 fade-in">
+        <div class="footer-brand fade-in">
+          <h4 class="brand-name">GrowCraft</h4>
+          <p class="brand-description" >
+            Empowering businesses with innovative digital solutions and creative excellence.
+          </p>
+          <div class="quick-stats fade-in">
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Clients</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">1+</span>
+              <span class="stat-label">Years</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Services -->
+      <div class="col-lg-2 col-md-3 col-6 fade-in" >
+        <h5 class="footer-title">Services</h5>
+        <ul class="footer-links" >
+          <li><a href="learn/webdev.html">Web Development</a></li>
+          <li><a href="learn/graphic.html">Graphic Design</a></li>
+          <li><a href="learn/marketing.html">Digital Marketing</a></li>
+          <li><a href="learn/contentwriting.html">Content Writing</a></li>
+          <li><a href="learn/socialmedia.html">Social Media</a></li>
+          <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-3 col-6 fade-in">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#work">Portfolio</a></li>
+          <li><a href="src/contact.html">Contact</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="blogListing.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-4 col-md-6 fade-in" >
+        <h5 class="footer-title">Get In Touch</h5>
+        <div class="contact-info mb-3 fade-in">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+919999999999">+91 999 999 999</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ABC Street, XYZ City, India</span>
+          </div>
+        </div>
+
+        <!-- Social -->
+        <div class="social-icons">
+  <a href="https://discord.gg/vk5zFm56" target="_blank"><i class="fa-brands fa-discord"></i></a>
+  <a href="https://github.com/gyanshankar1708/GrowCraft" target="_blank"><i class="fa-brands fa-github"></i></a>
+  <a href="https://www.instagram.com/GrowCraft" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+</div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom fade-in">
+    <div class="container">
+      <div class="row align-items-center py-3 fade-in">
+        <div class="col-md-6">
+          <p class="copyright mb-0">
+            © <span id="year"></span> <strong>GrowCraft</strong>. All rights reserved.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div class="footer-nav fade-in">
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+            <a href="#sitemap">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+  <button id="scrollToTopBtn" title="Go to top">
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28" height="28" fill="none">
+      <path d="M12 5.5V19" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M18 11C18 11 13.5811 5.00001 12 5C10.4188 4.99999 6 11 6 11" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+  </svg>
+</button>
+
+
+
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
 
@@ -2364,142 +2682,39 @@ section, main, .container {
       moveCarousel();
     };
 
-    // Initialize back to top functionality
-    const initBackToTopButtons = () => {
-      const backToTop = document.getElementById('backToTop');
-      const footer = document.querySelector('footer');
+</script>
+<script>
+   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const footerBottom = document.querySelector(".footer-bottom");
 
-      if (backToTop && footer) {
-        window.addEventListener('scroll', () => {
-          const footerTop = footer.getBoundingClientRect().top;
-          const windowHeight = window.innerHeight;
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const footerTop = footerBottom.getBoundingClientRect().top;
 
-      // === Counter Script starts only AFTER footer loads ===
-      const counters = document.querySelectorAll(".counter");
-      const speed = 50;
+  // Show/hide button
+  if (scrollY > 300) {
+    scrollToTopBtn.classList.add("show");
+  } else {
+    scrollToTopBtn.classList.remove("show");
+  }
 
-      const startCounting = (counter) => {
-  const target = +counter.getAttribute("data-target");
+  // If footer-bottom is visible, move button above it
+  if (footerTop < windowHeight) {
+    const overlap = windowHeight - footerTop;
+    scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px = small gap above footer
+  } else {
+    scrollToTopBtn.style.bottom = "2rem";
+  }
+});
 
-  // 👇 Custom speed for "slow" counters (like the 5)
-  const thisSpeed = counter.classList.contains("slow") ? 200 : 50;
-
-  let count = 0;
-
-  const updateCount = () => {
-    const increment = Math.max(1, Math.ceil(target / thisSpeed));
-    if (count < target) {
-      count += increment;
-      if (count > target) count = target;
-      counter.innerText = count;
-      setTimeout(updateCount, 50); // a bit slower step
-    } else {
-      counter.innerText = target + "+";
-    }
-  };
-
-  updateCount();
-};
-      const observer = new IntersectionObserver((entries, obs) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            startCounting(entry.target);
-            obs.unobserve(entry.target);
-          if (footerTop <= windowHeight + 20) {  // 20px buffer
-            backToTop.style.display = 'none';   // hide when overlapping footer
-          } else {
-            backToTop.style.display = 'flex';   // show otherwise
-          }
-        });
-      }
-
-      // ===== ScrollToTopBtn logic for floating button above footer =====
-      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-      const footerBottom = document.querySelector(".footer-bottom");
-
-      if (scrollToTopBtn && footerBottom) {
-        window.addEventListener("scroll", () => {
-          const scrollY = window.scrollY;
-          const windowHeight = window.innerHeight;
-          const footerTop = footerBottom.getBoundingClientRect().top;
-
-          // Show/hide button
-          if (scrollY > 300) {
-            scrollToTopBtn.classList.add("show");
-          } else {
-            scrollToTopBtn.classList.remove("show");
-          }
-
-          // If footer-bottom is visible, move button above it
-          if (footerTop < windowHeight) {
-            const overlap = windowHeight - footerTop;
-            scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px = small gap above footer
-          } else {
-            scrollToTopBtn.style.bottom = "2rem";
-          }
-        });
-
-        // Smooth scroll to top
-        scrollToTopBtn.addEventListener("click", () => {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-          });
-        });
-      }
-    };
-
-    // Initialize footer and counters
-    const initFooter = () => {
-      /* Load Footer + Start Counter */
-      fetch('src/components/footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer-placeholder').innerHTML = data;
-
-          const counters = document.querySelectorAll(".counter");
-          const speed = 50;
-
-          const startCounting = (counter) => {
-            const target = +counter.getAttribute("data-target");
-
-            // Custom speed for "slow" counters (like the 5)
-            const thisSpeed = counter.classList.contains("slow") ? 200 : 50;
-
-            let count = 0;
-
-            const updateCount = () => {
-              const increment = Math.max(1, Math.ceil(target / thisSpeed));
-              if (count < target) {
-                count += increment;
-                if (count > target) count = target;
-                counter.innerText = count;
-                setTimeout(updateCount, 50); // a bit slower step
-              } else {
-                counter.innerText = target + "+";
-              }
-            };
-
-            updateCount();
-          };
-          
-          const observer = new IntersectionObserver((entries, obs) => {
-            entries.forEach(entry => {
-              if (entry.isIntersecting) {
-                startCounting(entry.target);
-                obs.unobserve(entry.target);
-              }
-            });
-          }, { threshold: 0.5 });
-
-          counters.forEach(counter => {
-            observer.observe(counter);
-          });
-        })
-        .catch(error => {
-          console.log('Footer could not be loaded:', error);
-        });
-    };
+// Smooth scroll to top
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
 
     // Initialize all components
     initTestimonialCarousel();
