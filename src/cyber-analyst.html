@@ -1052,6 +1052,63 @@ textarea { min-height:84px; resize:vertical; }
   transform: scale(1.1);
 }
 
+/* Enhanced Scroll to Top Button */
+    #backToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      z-index: 99999;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 55px;
+      height: 55px;
+      font-size: 20px;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px) scale(0.8);
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      outline: none;
+      user-select: none;
+      pointer-events: auto;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    #backToTop:hover {
+      background: linear-gradient(135deg, #5a67d8, #6b46c1);
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
+    }
+
+    #backToTop:active {
+      transform: translateY(-1px) scale(0.95);
+      transition: all 0.1s ease;
+    }
+
+    #backToTop.show {
+      opacity: 1 !important;
+      visibility: visible !important;
+      transform: translateY(0) scale(1) !important;
+    }
+
+    /* Responsive positioning for scroll button */
+    @media (max-width: 768px) {
+      #backToTop {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+      }
+
+    }
+
 </style>
 </head>
 <body>
@@ -1919,16 +1976,35 @@ textarea { min-height:84px; resize:vertical; }
     </div>
     </div>
   </footer>
-
-   <!-- Back to Top -->
-    <button id="scrollToTopBtn" title="Go to top">
-  <i class="fa-solid fa-arrow-up"></i>
-</button>
+<button id="backToTop" title="Go to top" type="button">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+   
 
   <script src="darkMode.js"></script>
 
 
 <script>
+
+  
+    // Back to top button functionality
+    (function() {
+      const backToTop = document.getElementById('backToTop');
+      if (!backToTop) return;
+
+      function toggleBackToTop() {
+        if (window.pageYOffset > 100) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      }
+
+      window.addEventListener('scroll', toggleBackToTop);
+      backToTop.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
      
   (function(){
     const root = document.getElementById('gc-hero-cyber');
