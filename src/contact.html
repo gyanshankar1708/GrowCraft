@@ -15,7 +15,8 @@
     crossorigin="anonymous"></script>
   <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
-
+  <link rel="stylesheet" href="../components/footer.css"/>
+  
   <style>
     :root {
       --primary-green: #27ae60;
@@ -60,8 +61,45 @@
     [data-bs-theme="dark"] body {
       background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
       color: #e0ffe0;
+    }    
+    /* Animated Background */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background:
+        radial-gradient(circle at 25% 25%, rgba(120, 119, 198, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(255, 119, 198, 0.1) 0%, transparent 50%);
+      z-index: -1;
+      animation: backgroundFloat 20s ease-in-out infinite;
     }
 
+    [data-bs-theme="dark"] body::before {
+      background:
+        radial-gradient(circle at 25% 25%, rgba(79, 70, 229, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+    }
+
+    @keyframes backgroundFloat {
+
+      0%,
+      100% {
+        transform: translate(0, 0) rotate(0deg);
+      }
+
+      33% {
+        transform: translate(30px, -30px) rotate(120deg);
+      }
+
+      66% {
+        transform: translate(-20px, 20px) rotate(240deg);
+      }
+    }
+
+    /* Navbar Styles */
     .navbar {
       background: rgba(255, 255, 255, 0.95) !important;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
@@ -346,7 +384,6 @@
       margin-top: 2rem;
       box-shadow: var(--card-shadow);
     }
-
     [data-bs-theme="dark"] #thankYouSection {
       background: linear-gradient(135deg, var(--secondary-green), var(--accent-green));
       color: #e0ffe0;
@@ -366,7 +403,17 @@
       height: 60px;
       margin-bottom: 1rem;
     }
+    /* Back to Top Button */
+    #backToTop {
+      background-color: var(--accent-color) !important;
+      border-color: var(--accent-color) !important;
+      color: var(--bg-primary) !important;
+    }
 
+    #backToTop:hover {
+      background-color: var(--accent-hover) !important;
+      border-color: var(--accent-hover) !important;
+    }
     .brand-name {
       font-size: 2rem;
       font-weight: 800;
@@ -381,7 +428,6 @@
       margin-left: auto;
       margin-right: auto;
     }
-
     .footer-title {
       font-size: 1.2rem;
       font-weight: 700;
@@ -399,6 +445,48 @@
     .footer-links a:hover {
       color: #28a745 !important;
       transform: translateX(10px);
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 800;
+      background: var(--accent-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: #a0aec0;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    
+
+    .contact-info {
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1rem;
+      gap: 1rem;
     }
 
     .contact-item i {
@@ -610,27 +698,108 @@
       </div>
     </div>
   </section>
+  <button id="backToTop" title="Go to top"
+    class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle px-3 py-2" style="display:none;">↑</button>
+
 
 
 
   <div id="footer-placeholder"></div>
-  <script>
-    fetch('components/footer.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-placeholder').innerHTML = data;
-        updatelogo()
-      });
-      function updatelogo(){
-        const theme = document.documentElement.getAttribute('data-bs-theme');
-          const logo = document.getElementById("footer-logo");
 
-          if (theme === 'dark') {
-            logo.src = "../images/Logo.png"
-          } else {
-            logo.src = "../images/Logo_new.png"
-          }
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container ">
+      <!-- About GrowCraft -->
+      <div class="footer-col">
+        <img src="../images/Logo_new.png" alt="GrowCraft Logo" class="footer-logo mb-3" style="height: 60px;">
+
+
+        <p>Boost your career with skill-focused training and internship opportunities.</p>
+      </div>
+
+      <!-- Important Links -->
+      <div class="footer-col important-links">
+        <h3>Important Links</h3>
+        <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="../about.html"><i class="fa-solid fa-building"></i> About Us</a>
+        <a href="../service.html"><i class="fa-solid fa-laptop-code"></i> Services</a>
+        <a href="../work.html"><i class="fa-solid fa-graduation-cap"></i> Our Works</a>
+        <a href="../src/faq.html"><i class="fa-solid fa-clock"></i> FAQ</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-envelope"></i> support@GrowCraft.com</p>
+      </div>
+
+      <!-- Social -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i> Facebook</a>
+          <a href="https://www.x.com/"><i class="fa-brands fa-twitter"></i> Twitter</a>
+          <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Row: Credit + Legal -->
+    <div class="footer-bottom">
+      <div class="footer-left">
+        &copy; 2025 GrowCraft. All rights reserved.
+      </div>
+      <div class="footer-right">
+        <a href="../privacy.html"><i class="fa-solid fa-lock"></i> Privacy</a>
+        <a href="../terms.html"><i class="fa-solid fa-file-lines"></i> Terms</a>
+        <a href="../sitemap.html"><i class="fa-solid fa-map"></i> Sitemap</a>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+
+    // Back to top functionality
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      if (!btn) return;
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
       }
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Initialize dark mode toggle
+      new DarkModeToggle();
+
+      // Back to top button
+      const btn = document.getElementById("backToTop");
+      if (btn) {
+        btn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+          updatelogo()
+        });
+      function updatelogo() {
+        const theme = document.documentElement.getAttribute('data-bs-theme');
+        const logo = document.getElementById("footer-logo");
+
+        if (theme === 'dark') {
+          logo.src = "../images/Logo.png"
+        } else {
+          logo.src = "../images/Logo_new.png"
+        }
+      }
+
   </script>
 
 
@@ -658,12 +827,23 @@
 
     document.getElementById("contactForm").addEventListener("submit", function (e) {
       e.preventDefault();
+          // Dark mode toggle functionality
+          document.addEventListener('DOMContentLoaded', function () {
+            // Check for saved theme preference or default to light
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-bs-theme', currentTheme);
 
-      if (!this.checkValidity()) {
-        e.stopPropagation();
-        alert("Please fill all required fields.");
-        return;
-      }
+          });
+          // File upload preview
+          document.getElementById("fileUpload").addEventListener("change", function (e) {
+            const preview = document.getElementById("filePreview");
+            preview.innerHTML = "";
+            for (let file of e.target.files) {
+              const div = document.createElement("div");
+              div.innerHTML = `📄 ${file.name}`;
+              preview.appendChild(div);
+            }
+          });
 
       this.style.display = 'none';
       document.getElementById("thankYouSection").style.display = 'block';
@@ -690,12 +870,26 @@
         if (target) {
           target.scrollIntoView({
             behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
+            block: 'start'          // Form validation and submission
+          document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
 
+            if (!this.checkValidity()) {
+              e.stopPropagation();
+              alert("Please fill all required fields.");
+              return;
+            }
+
+            // Hide form and show thank you message
+            this.style.display = 'none';
+            document.getElementById("thankYouSection").style.display = 'block';
+
+            // Scroll to thank you message
+            document.getElementById("thankYouSection").scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+          });
     const observerOptions = {
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
@@ -716,6 +910,52 @@
       el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
       observer.observe(el);
     });
+          // Initialize international telephone input if available
+          if (typeof intlTelInput !== 'undefined') {
+            const phoneInput = document.querySelector("#phone");
+            const iti = intlTelInput(phoneInput, {
+              initialCountry: "in",
+              separateDialCode: true,
+              preferredCountries: ["in", "us", "gb"]
+            });
+          }
+
+          // Smooth scrolling for anchor links
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              const target = document.querySelector(this.getAttribute('href'));
+              if (target) {
+                target.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            });
+          });
+
+          // Add scroll animations
+          const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          };
+
+          const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+              }
+            });
+          }, observerOptions);
+
+          // Observe elements for animations
+          document.querySelectorAll('.info-box, .form-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+          });
 
   </script>
 

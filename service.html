@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GrowCraft Services</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
+  <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+  <style>
+    :root {
+      --primary-green: #27ae60;
+      --secondary-green: #388e3c;
+      --light-green: #4caf50;
+      --accent-green: #81c784;
+      --dark-bg: #1a1a1a;
+      --darker-bg: #0f0f0f;
+      --card-bg: #fff;
+      --card-shadow: rgba(0,0,0,0.1);
+      --border-radius: 16px;
+      --transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      color: #333;
+      min-height: 100vh;
+    }
+    [data-bs-theme="dark"] body {
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+      color: #e0ffe0;
+    }
+    .navbar {
+      background: rgba(255,255,255,0.95) !important;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      position: sticky; top: 0; z-index: 1000;
+      transition: var(--transition);
+    }
+    [data-bs-theme="dark"] .navbar {
+      background: rgba(26,26,26,0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+    }
+    .navbar-brand img { max-height: 50px; }
+    .navbar-nav .nav-link {
+      color: #2e7d32 !important;
+      font-weight: 500;
+      border-radius: 25px;
+      transition: var(--transition);
+    }
+    [data-bs-theme="dark"] .navbar-nav .nav-link { color: #27b965 !important; }
+    .theme-toggle {
+      background: rgba(39,174,96,0.1);
+      border: 1px solid rgba(39,174,96,0.3);
+      color: var(--primary-green);
+      border-radius: 50%;
+      width: 45px; height: 45px;
+      display: flex; align-items: center; justify-content: center;
+      transition: var(--transition);
+    }
+    .theme-toggle:hover {
+      color: white;
+      border-color: var(--primary-green);
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(39,174,96,0.3);
+    }
+    .theme-toggle i { font-size: 18px; transition: var(--transition); }
+    .theme-toggle:hover i { transform: rotate(20deg) scale(1.1); }
+
+    .services-landing {
+      padding: 80px 0 40px 0;
+      background: #f8fff9;
+      text-align: center;
+    }
+    [data-bs-theme="dark"] .services-landing {
+      background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
+    }
+    .services-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-green);
+      margin-bottom: 10px;
+    }
+    [data-bs-theme="dark"] .services-title { color: #00e676; }
+    .services-subtitle {
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+    }
+    [data-bs-theme="dark"] .services-subtitle { color: #b2ffb2; }
+
+    .service-card {
+      background: var(--card-bg);
+      border-radius: var(--border-radius);
+      padding: 36px 20px;
+      box-shadow: 0 4px 20px var(--card-shadow);
+      transition: var(--transition);
+      text-align: center;
+      margin-bottom: 30px;
+      border: 1px solid rgba(144,238,144,0.3);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    [data-bs-theme="dark"] .service-card {
+      background: rgba(144,238,144,0.08);
+      border: 1px solid rgba(144,238,144,0.4);
+      color: #e0ffe0;
+    }
+    .service-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 8px 20px rgba(39,174,96,0.25);
+      border: 1px solid var(--light-green);
+    }
+    .service-icon {
+      font-size: 48px;
+      color: var(--primary-green);
+      margin-bottom: 18px;
+      transition: var(--transition);
+    }
+    .service-card:hover .service-icon {
+      color: var(--light-green);
+      transform: scale(1.2) rotate(10deg);
+    }
+    .service-title {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--secondary-green);
+      margin-bottom: 10px;
+    }
+    [data-bs-theme="dark"] .service-title { color: #26a85d; }
+    .service-desc {
+      font-size: 1rem;
+      color: #444;
+      margin-bottom: 18px;
+    }
+    [data-bs-theme="dark"] .service-desc { color: #b2ffb2; }
+    .service-btn {
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      color: #fff;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 24px;
+      font-weight: 600;
+      margin-top: auto;
+      transition: var(--transition);
+      text-decoration: none;
+      display: inline-block;
+    }
+    .service-btn:hover {
+      background: linear-gradient(135deg, var(--light-green), var(--accent-green));
+      color: #fff;
+      transform: translateY(-2px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(39,174,96,0.3);
+    }
+    /* Responsive css */
+    @media (max-width: 992px) {
+      .service-card { padding: 28px 12px; }
+      .service-icon { font-size: 38px; }
+    }
+    @media (max-width: 768px) {
+      .services-title { font-size: 2rem; }
+      .service-card { margin-bottom: 20px; }
+    }
+    @media (max-width: 576px) {
+      .service-card { padding: 18px 6px; }
+      .service-title { font-size: 1.1rem; }
+      .service-desc { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body id="main-body">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid d-flex justify-content-between align-items-center px-4">
+      <a class="navbar-brand hover-scale" href="index.html">
+        <img src="images/Logo_new.png" alt="GrowCraft" id="logo" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="service.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="blogListing.html">Blogs</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="work.html">Our Work</a></li>
+          <li class="nav-item"><a class="nav-link" href="src/faq.html">FAQ</a></li>
+          <li class="nav-item"><a class="nav-link" href="src/contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+        </ul>
+        <button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="services-landing">
+    <div class="container">
+      <h2 class="services-title">Our Services</h2>
+      <p class="services-subtitle">
+        In the realm of software, we excel at transmuting the ordinary into the extraordinary.
+      </p>
+      <div class="row justify-content-center">
+        <!-- Digital Marketing -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+            <div class="service-title">Digital Marketing</div>
+            <div class="service-desc">
+              SEO, PPC, Social Media, Email & Content Marketing to boost your brand online.
+            </div>
+            <a href="src/digital-marketing.html" class="service-btn">Learn More</a>
+          </div>
+        </div>
+        <!-- Website Development -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="service-title">Website Development</div>
+            <div class="service-desc">
+              Responsive, modern websites that impress and engage your audience.
+            </div>
+            <a href="src/web.html" class="service-btn">Learn More</a>
+          </div>
+        </div>
+        <!-- Graphic Design -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-palette"></i></div>
+            <div class="service-title">Graphic Design</div>
+            <div class="service-desc">
+              Logos, banners, social media graphics, and more to elevate your brand.
+            </div>
+            <a href="src/graphic_design.html" class="service-btn">Learn More</a>
+          </div>
+        </div>
+        <!-- Social Media Management -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="fab fa-instagram"></i></div>
+            <div class="service-title">Social Media Management</div>
+            <div class="service-desc">
+              Content creation, scheduling, and engagement strategies for all platforms.
+            </div>
+            <a href="src/social-media.html" class="service-btn">Learn More</a>
+          </div>
+        </div>
+        <!-- Content Writing -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-pen-nib"></i></div>
+            <div class="service-title">Content Writing</div>
+            <div class="service-desc">
+              Blogs, web copy, emails, and more—crafted to connect and convert.
+            </div>
+            <a href="learn/contentwriting.html" class="service-btn">Learn More</a>
+          </div>
+        </div>
+        <!-- Cyber Analyst -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="service-title">Cyber Analyst</div>
+            <div class="service-desc">
+              Threat monitoring, security audits, and cyber intelligence for your business.
+            </div>
+            <a href="learn/cyberanalyst.html" class="service-btn">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="mt-5">
+    <div class="container text-center py-4">
+      <img src="images/Logo.png" alt="GrowCraft Logo" style="height: 48px;" class="mb-2"/>
+      <p class="mb-1">Boost your career with skill-focused training and internship opportunities.</p>
+      <div class="mb-2">
+        <a href="index.html" class="me-3 text-success"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="about.html" class="me-3 text-success"><i class="fa-solid fa-building"></i> About Us</a>
+        <a href="work.html" class="me-3 text-success"><i class="fa-solid fa-graduation-cap"></i> Our Works</a>
+        <a href="src/faq.html" class="me-3 text-success"><i class="fa-solid fa-clock"></i> FAQ</a>
+      </div>
+      <div class="mb-2">
+        <a href="https://www.facebook.com/" class="me-2 text-success"><i class="fa-brands fa-facebook"></i></a>
+        <a href="https://www.x.com/" class="me-2 text-success"><i class="fa-brands fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/" class="me-2 text-success"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="https://www.instagram.com/" class="me-2 text-success"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+      <div style="font-size:0.9rem;color:#9ca3af;">&copy; 2025 GrowCraft. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const themeToggle = document.getElementById("themeToggle");
+      const themeIcon = document.getElementById("themeIcon");
+      const htmlTag = document.documentElement;
+
+      // Load theme from localStorage
+      if (localStorage.getItem("theme") === "dark") {
+        htmlTag.setAttribute("data-bs-theme", "dark");
+        themeIcon.classList.remove("fa-moon");
+        themeIcon.classList.add("fa-sun");
+      }
+
+      themeToggle.addEventListener("click", function () {
+        if (htmlTag.getAttribute("data-bs-theme") === "light") {
+          htmlTag.setAttribute("data-bs-theme", "dark");
+          themeIcon.classList.remove("fa-moon");
+          themeIcon.classList.add("fa-sun");
+          localStorage.setItem("theme", "dark");
+        } else {
+          htmlTag.setAttribute("data-bs-theme", "light");
+          themeIcon.classList.remove("fa-sun");
+          themeIcon.classList.add("fa-moon");
+          localStorage.setItem("theme", "light");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
