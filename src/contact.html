@@ -460,6 +460,18 @@
       animation: slideUp 0.5s ease-out;
     }
 
+    /* Back to Top Button */
+    #backToTop {
+      background-color: var(--accent-color) !important;
+      border-color: var(--accent-color) !important;
+      color: var(--bg-primary) !important;
+    }
+
+    #backToTop:hover {
+      background-color: var(--accent-hover) !important;
+      border-color: var(--accent-hover) !important;
+    }
+
 
    
 
@@ -755,6 +767,9 @@
       </div>
     </div>
   </section>
+  <button id="backToTop" title="Go to top"
+    class="btn btn-primary position-fixed bottom-0 end-0 m-4 rounded-circle px-3 py-2" style="display:none;">↑</button>
+
 
 
 
@@ -813,98 +828,140 @@
     </div>
   </footer>
   
+  <script>
+
+    // Back to top functionality
+    window.onscroll = function () {
+      const btn = document.getElementById("backToTop");
+      if (!btn) return;
+      if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        btn.style.display = "block";
+      } else {
+        btn.style.display = "none";
+      }
+    };
+
+    document.addEventListener("DOMContentLoaded", function () {
+      // Initialize dark mode toggle
+      new DarkModeToggle();
+
+      // Back to top button
+      const btn = document.getElementById("backToTop");
+      if (btn) {
+        btn.addEventListener("click", function () {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+      fetch('components/footer.html')
+        .then(response => response.text())
+        .then(data => {
+          document.getElementById('footer-placeholder').innerHTML = data;
+          updatelogo()
+        });
+      function updatelogo() {
+        const theme = document.documentElement.getAttribute('data-bs-theme');
+        const logo = document.getElementById("footer-logo");
+
+        if (theme === 'dark') {
+          logo.src = "../images/Logo.png"
+        } else {
+          logo.src = "../images/Logo_new.png"
+        }
+      }
+
+  </script>
 
 
   <!-- Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
 
   <script>
-    // Dark mode toggle functionality
-    document.addEventListener('DOMContentLoaded', function () {
-      // Check for saved theme preference or default to light
-      const currentTheme = localStorage.getItem('theme') || 'light';
-      document.documentElement.setAttribute('data-bs-theme', currentTheme);
-     
-    });
+          // Dark mode toggle functionality
+          document.addEventListener('DOMContentLoaded', function () {
+            // Check for saved theme preference or default to light
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-bs-theme', currentTheme);
 
-    // File upload preview
-    document.getElementById("fileUpload").addEventListener("change", function (e) {
-      const preview = document.getElementById("filePreview");
-      preview.innerHTML = "";
-      for (let file of e.target.files) {
-        const div = document.createElement("div");
-        div.innerHTML = `📄 ${file.name}`;
-        preview.appendChild(div);
-      }
-    });
-
-    // Form validation and submission
-    document.getElementById("contactForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      if (!this.checkValidity()) {
-        e.stopPropagation();
-        alert("Please fill all required fields.");
-        return;
-      }
-
-      // Hide form and show thank you message
-      this.style.display = 'none';
-      document.getElementById("thankYouSection").style.display = 'block';
-
-      // Scroll to thank you message
-      document.getElementById("thankYouSection").scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-      });
-    });
-
-    // Initialize international telephone input if available
-    if (typeof intlTelInput !== 'undefined') {
-      const phoneInput = document.querySelector("#phone");
-      const iti = intlTelInput(phoneInput, {
-        initialCountry: "in",
-        separateDialCode: true,
-        preferredCountries: ["in", "us", "gb"]
-      });
-    }
-
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
           });
-        }
-      });
-    });
 
-    // Add scroll animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
-    };
+          // File upload preview
+          document.getElementById("fileUpload").addEventListener("change", function (e) {
+            const preview = document.getElementById("filePreview");
+            preview.innerHTML = "";
+            for (let file of e.target.files) {
+              const div = document.createElement("div");
+              div.innerHTML = `📄 ${file.name}`;
+              preview.appendChild(div);
+            }
+          });
 
-    const observer = new IntersectionObserver(function (entries) {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
-        }
-      });
-    }, observerOptions);
+          // Form validation and submission
+          document.getElementById("contactForm").addEventListener("submit", function (e) {
+            e.preventDefault();
 
-    // Observe elements for animations
-    document.querySelectorAll('.info-box, .form-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-      observer.observe(el);
-    });
+            if (!this.checkValidity()) {
+              e.stopPropagation();
+              alert("Please fill all required fields.");
+              return;
+            }
+
+            // Hide form and show thank you message
+            this.style.display = 'none';
+            document.getElementById("thankYouSection").style.display = 'block';
+
+            // Scroll to thank you message
+            document.getElementById("thankYouSection").scrollIntoView({
+              behavior: 'smooth',
+              block: 'center'
+            });
+          });
+
+          // Initialize international telephone input if available
+          if (typeof intlTelInput !== 'undefined') {
+            const phoneInput = document.querySelector("#phone");
+            const iti = intlTelInput(phoneInput, {
+              initialCountry: "in",
+              separateDialCode: true,
+              preferredCountries: ["in", "us", "gb"]
+            });
+          }
+
+          // Smooth scrolling for anchor links
+          document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+              e.preventDefault();
+              const target = document.querySelector(this.getAttribute('href'));
+              if (target) {
+                target.scrollIntoView({
+                  behavior: 'smooth',
+                  block: 'start'
+                });
+              }
+            });
+          });
+
+          // Add scroll animations
+          const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+          };
+
+          const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+              }
+            });
+          }, observerOptions);
+
+          // Observe elements for animations
+          document.querySelectorAll('.info-box, .form-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+            observer.observe(el);
+          });
 
   </script>
 </body>
