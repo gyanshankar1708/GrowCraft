@@ -582,6 +582,44 @@
 
     /* Enhanced Scroll to Top Button */
     #backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 9999;
+  background-color: #4CAF71; /* similar to your image */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(76, 175, 80, 0.4); /* soft shadow */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+#backToTop:hover {
+  background-color: #43a047; /* slightly darker green on hover */
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(67, 160, 71, 0.5);
+}
+
+#backToTop i {
+  font-size: 20px;
+}
+
       position: fixed;
       bottom: 30px;
       right: 30px;
@@ -990,7 +1028,7 @@
     </div>
   </footer>
   <button id="backToTop" title="Go to top" type="button">
-    <i class="fas fa-chevron-up"></i>
+    <i class="fas fa-arrow-up"></i>
   </button>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

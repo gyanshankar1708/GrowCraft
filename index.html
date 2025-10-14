@@ -2269,6 +2269,280 @@
           scrollToTopBtn.classList.remove("show");
         }
 
+        lastScrollY = currentScrollY;
+      });
+
+      /* Carousel Initialization with Enhanced Controls */
+      const carouselEl = document.getElementById("carouselExampleDark");
+      let carouselInstance = null;
+      if (carouselEl) {
+        carouselInstance = new bootstrap.Carousel(carouselEl, {
+          interval: 6000,
+          wrap: true,
+          pause: 'hover'
+        });
+
+        // Add slide change animation
+        carouselEl.addEventListener('slide.bs.carousel', function(e) {
+          const activeCaption = e.relatedTarget.querySelector('.carousel-caption h2');
+          if (activeCaption) {
+            activeCaption.style.opacity = '0';
+            activeCaption.style.transform = 'translateX(50px)';
+
+            setTimeout(() => {
+              activeCaption.style.transition = 'all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+              activeCaption.style.opacity = '1';
+              activeCaption.style.transform = 'translateX(0)';
+            }, 300);
+          }
+        });
+      }
+
+      // Custom next button with enhanced animation
+      const customNextButton = document.getElementById("customNextButton");
+      if (customNextButton && carouselInstance) {
+        customNextButton.addEventListener("click", function() {
+          this.style.transform = 'translateY(-50%) scale(0.95)';
+          setTimeout(() => {
+            this.style.transform = 'translateY(-50%) scale(1)';
+          }, 150);
+          carouselInstance.next();
+        });
+      }
+
+      function showSuccessMessage() {
+        if (!successMessage) return;
+      
+        successMessage.style.display = 'block';
+        successMessage.style.transform = 'scale(0.8)';
+        successMessage.style.opacity = '0';
+      
+        setTimeout(() => {
+          successMessage.style.transition = 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+          successMessage.style.transform = 'scale(1)';
+          successMessage.style.opacity = '1';
+        }, 100);
+      }
+
+      /* Enhanced Service Cards Toggle */
+      const toggleButtons = document.querySelectorAll('.toggle-btn');
+      toggleButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const card = this.closest('.card-services');
+          const extraContent = card.querySelector('.extra');
+
+          if (!extraContent) return;
+
+          const isExpanded = !extraContent.classList.contains('d-none');
+
+          // Enhanced animation
+          if (isExpanded) {
+            extraContent.style.maxHeight = extraContent.scrollHeight + 'px';
+            extraContent.offsetHeight; // Force reflow
+            extraContent.style.maxHeight = '0px';
+            extraContent.style.opacity = '0';
+
+            setTimeout(() => {
+              extraContent.classList.add('d-none');
+              extraContent.style.maxHeight = '';
+              extraContent.style.opacity = '';
+            }, 400);
+
+            this.textContent = 'Read More';
+            card.style.transform = 'translateY(0)';
+          } else {
+            extraContent.classList.remove('d-none');
+            extraContent.style.maxHeight = '0px';
+            extraContent.style.opacity = '0';
+            extraContent.offsetHeight; // Force reflow
+
+            extraContent.style.transition = 'max-height 0.5s ease, opacity 0.5s ease';
+            extraContent.style.maxHeight = extraContent.scrollHeight + 'px';
+            extraContent.style.opacity = '1';
+
+            setTimeout(() => {
+              extraContent.style.maxHeight = '';
+            }, 500);
+
+            this.textContent = 'Read Less';
+            card.style.transform = 'translateY(-5px)';
+          }
+        });
+      });
+
+      /* Enhanced Feedback Form */
+      const feedbackForm = document.getElementById("feedbackForm");
+      const successMessage = document.getElementById("successMessage");
+
+      if (feedbackForm) {
+        // Add input focus animations
+        const inputs = feedbackForm.querySelectorAll('.form-input, .form-textarea');
+        inputs.forEach(input => {
+          input.addEventListener('focus', function() {
+            this.parentElement.style.transform = 'translateY(-2px)';
+            this.style.borderColor = 'rgba(255, 255, 255, 0.6)';
+          });
+
+          input.addEventListener('blur', function() {
+            this.parentElement.style.transform = 'translateY(0)';
+            this.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+          });
+        });
+
+        feedbackForm.addEventListener("submit", function(event) {
+          event.preventDefault();
+
+          const name = document.getElementById("userName").value.trim();
+          const email = document.getElementById("userEmail").value.trim();
+          const feedback = document.getElementById("userFeedback").value.trim();
+
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+          if (!name || !email || !feedback) {
+            showError("Please fill in all required fields.");
+            return;
+          }
+
+          if (!emailRegex.test(email)) {
+            showError("Please enter a valid email address.");
+            return;
+          }
+
+          // Enhanced success animation
+          const formContainer = document.querySelector('.feedback-form-container');
+          formContainer.style.transform = 'scale(0.95)';
+          formContainer.style.opacity = '0.7';
+
+          setTimeout(() => {
+            // Save to localStorage (if needed for functionality)
+            const data = {
+              name,
+              email,
+              feedback,
+              timestamp: new Date().toISOString(),
+            };
+
+            showSuccessMessage();
+
+            // Reset form with animation
+            setTimeout(() => {
+              formContainer.style.transition = 'all 0.5s ease';
+              formContainer.style.transform = 'scale(1)';
+              formContainer.style.opacity = '1';
+              feedbackForm.reset();
+
+              setTimeout(() => {
+                successMessage.style.display = 'none';
+                formContainer.style.transition = '';
+              }, 3000);
+            }, 1000);
+          }, 300);
+        });
+      }
+
+      function showError(msg) {
+        // Enhanced error handling could be added here
+        alert(msg);
+      }
+
+     
+
+  /* Load Footer */
+// fetch('src/components/footer.html')
+//   .then(response => response.text())
+//   .then(data => {
+//     document.getElementById('footer-placeholder').innerHTML = data;
+
+//     // ✅ Counter Script starts only after footer is injected
+//     const counters = document.querySelectorAll(".counter");
+//     const speed = 50; // smaller = faster
+
+//     const startCounting = (counter) => {
+//       const target = +counter.getAttribute("data-target");
+//       let count = 0;
+
+//       const updateCount = () => {
+//         // Always increase at least by 1
+//         const increment = Math.max(1, Math.ceil(target / speed));
+
+//         if (count < target) {
+//           count += increment;
+//           if (count > target) count = target; // prevent overshoot
+//           counter.innerText = count;
+//           setTimeout(updateCount, 30);
+//         } else {
+//           counter.innerText = target + "+";
+//         }
+//       };
+
+//       updateCount();
+//     };
+
+//     const observer = new IntersectionObserver((entries, obs) => {
+//       entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//           startCounting(entry.target);
+//           obs.unobserve(entry.target);
+//         }
+//       });
+//     }, { threshold: 0.5 });
+
+//     counters.forEach(counter => {
+//       observer.observe(counter);
+
+//       // fallback if already visible
+//       if (counter.getBoundingClientRect().top < window.innerHeight) {
+//         startCounting(counter);
+//         observer.unobserve(counter);
+//       }
+//     });
+//   });
+      /* Global Clear Form Function */
+      window.clearForm = function() {
+        const form = document.getElementById('feedbackForm');
+        const inputs = form.querySelectorAll('.form-input, .form-textarea');
+
+        inputs.forEach((input, index) => {
+          setTimeout(() => {
+            input.style.transform = 'translateX(-10px)';
+            setTimeout(() => {
+              input.value = '';
+              input.style.transform = 'translateX(0)';
+            }, 100);
+          }, index * 50);
+        });
+
+        const successMsg = document.getElementById('successMessage');
+        if (successMsg && successMsg.style.display !== 'none') {
+          successMsg.style.display = 'none';
+        }
+      };
+
+      /* Dynamic Year Update */
+      const yearSpan = document.getElementById("currentYear");
+      if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+      }
+
+      /* Enhanced Hover Effects */
+      document.querySelectorAll('.hover-lift').forEach(el => {
+        el.addEventListener('mouseenter', function() {
+          this.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+
+        el.addEventListener('mouseleave', function() {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      document.querySelectorAll('.hover-scale').forEach(el => {
+        el.addEventListener('mouseenter', function() {
+          this.style.transform = 'scale(1.05)';
+        });
+
+        el.addEventListener('mouseleave', function() {
+          this.style.transform = 'scale(1)';
         // If footer-bottom is visible, move button above it
         if (footerTop < windowHeight) {
           const overlap = windowHeight - footerTop;
@@ -2309,6 +2583,60 @@
       // Start animation
       moveCarousel();
     });
+
+
+   const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+const footerBottom = document.querySelector(".footer-bottom");
+
+window.addEventListener("scroll", () => {
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const footerTop = footerBottom.getBoundingClientRect().top;
+
+  // Show/hide button
+  if (scrollY > 300) {
+    scrollToTopBtn.classList.add("show");
+  } else {
+    scrollToTopBtn.classList.remove("show");
+  }
+
+  // If footer-bottom is visible, move button above it
+  if (footerTop < windowHeight) {
+    const overlap = windowHeight - footerTop;
+    scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px = small gap above footer
+  } else {
+    scrollToTopBtn.style.bottom = "2rem";
+  }
+});
+
+// Smooth scroll to top
+scrollToTopBtn.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+});
+
+  const backToTop = document.getElementById('backToTop');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+      backToTop.classList.add('show');
+    } else {
+      backToTop.classList.remove('show');
+    }
+  });
+
+  backToTop.addEventListener('click', () => {
+    backToTop.style.transform = 'translateY(-3px) scale(0.95)';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setTimeout(() => {
+      backToTop.style.transform = '';
+    }, 200);
+  });
+
+
+
   </script>
 </body>
 
