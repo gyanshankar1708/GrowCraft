@@ -8,6 +8,14 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous"/>
   <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
   <style>
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     :root {
       --primary-green: #27ae60;
       --secondary-green: #388e3c;
@@ -15,11 +23,15 @@
       --accent-green: #81c784;
       --dark-bg: #1a1a1a;
       --darker-bg: #0f0f0f;
-      --card-bg: #fff;
-      --card-shadow: rgba(0,0,0,0.1);
-      --border-radius: 16px;
-      --transition: all 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
+      --glass-bg: rgba(255, 255, 255, 0.1);
+      --glass-border: rgba(255, 255, 255, 0.2);
+      --shadow-light: 0 8px 32px rgba(39, 174, 96, 0.15);
+      --shadow-hover: 0 16px 64px rgba(39, 174, 96, 0.25);
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --border-radius: 20px;
+      --spacing: 2rem;
     }
+
     body {
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
@@ -30,41 +42,162 @@
       background: linear-gradient(135deg, var(--dark-bg) 0%, var(--darker-bg) 100%);
       color: #e0ffe0;
     }
-    .navbar {
-      background: rgba(255,255,255,0.95) !important;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-      position: sticky; top: 0; z-index: 1000;
+
+
+        /* Enhanced Navbar */
+   .navbar {
+      padding: 1.2rem 0;
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
       transition: var(--transition);
     }
+
     [data-bs-theme="dark"] .navbar {
-      background: rgba(26,26,26,0.95) !important;
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+
+    }
+
+    .navbar.scrolled {
+      padding: 0.8rem 0;
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    [data-bs-theme="dark"] .navbar.scrolled {
+      background: rgba(26, 26, 26, 0.95) !important;
       border-bottom: 3px solid var(--primary-green);
     }
-    .navbar-brand img { max-height: 50px; }
-    .navbar-nav .nav-link {
-      color: #2e7d32 !important;
-      font-weight: 500;
-      border-radius: 25px;
+
+    .navbar-brand img {
+      max-height: 50px;
       transition: var(--transition);
+      filter: drop-shadow(2px 2px 8px rgba(39, 174, 96, 0.2));
     }
-    [data-bs-theme="dark"] .navbar-nav .nav-link { color: #27b965 !important; }
+
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      color: #2e7d32 !important;
+      padding: 0.8rem 1.5rem !important;
+      border-radius: 25px;
+      margin: 0 0.3rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    [data-bs-theme="dark"] .navbar-nav .nav-link {
+      color: #27b965 !important;
+    }
+
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .navbar-nav .nav-link:hover::before {
+      left: 0;
+    }
+
+    /* Theme Toggle Button*/
     .theme-toggle {
-      background: rgba(39,174,96,0.1);
-      border: 1px solid rgba(39,174,96,0.3);
+      background: rgba(39, 174, 96, 0.1);
+      border: 1px solid rgba(39, 174, 96, 0.3);
       color: var(--primary-green);
       border-radius: 50%;
-      width: 45px; height: 45px;
-      display: flex; align-items: center; justify-content: center;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       transition: var(--transition);
+      position: relative;
+      overflow: hidden;
     }
+
+    .theme-toggle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .theme-toggle:hover::before {
+      left: 0;
+    }
+
     .theme-toggle:hover {
       color: white;
       border-color: var(--primary-green);
       transform: scale(1.1);
-      box-shadow: 0 4px 15px rgba(39,174,96,0.3);
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
     }
-    .theme-toggle i { font-size: 18px; transition: var(--transition); }
-    .theme-toggle:hover i { transform: rotate(20deg) scale(1.1); }
+
+    .theme-toggle i {
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover i {
+      transform: rotate(20deg) scale(1.1);
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+    }
+
+    /* 🌙 Dark Mode - Testimonials */
+    [data-bs-theme="dark"] .testimonial-carousel {
+      background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+    }
+
+    [data-bs-theme="dark"] .testimonial-heading {
+      color: #00e676 !important;
+      /* neon green accent */
+    }
+
+    [data-bs-theme="dark"] .testimonial-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(0, 230, 118, 0.25);
+      color: #f5f5f5;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    }
+
+    [data-bs-theme="dark"] .testimonial-card h4 {
+      color: #ffffff;
+    }
+
+    [data-bs-theme="dark"] .testimonial-card span {
+      color: #90caf9;
+      /* soft blue for role text */
+    }
+
+    [data-bs-theme="dark"] .testimonial-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6),
+        0 0 25px rgba(0, 230, 118, 0.5);
+      /* glowing effect */
+    }
+
 
     .services-landing {
       padding: 80px 0 40px 0;
@@ -179,16 +312,33 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="service.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="blogListing.html">Blogs</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="work.html">Our Work</a></li>
-          <li class="nav-item"><a class="nav-link" href="src/faq.html">FAQ</a></li>
-          <li class="nav-item"><a class="nav-link" href="src/contact.html">Contact Us</a></li>
-          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
-        </ul>
+          <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="index.html#services">Services</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="blogListing.html">Blogs</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about.html">About Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="work.html">Our Work</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="src/faq.html">FAQ</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="src/contact.html">
+        Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Login</a>
+      </li>
+      </ul>
+
         <button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
           <i class="fas fa-moon" id="themeIcon"></i>
         </button>
