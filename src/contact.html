@@ -16,7 +16,8 @@
   <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
   <!-- intl-tel-input CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" />
-
+  <link rel="stylesheet" href="../components/footer.css"/>
+  
   <style>
     /* Modern CSS Variables */
     :root {
@@ -64,14 +65,7 @@
       background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     }
 
-    [data-bs-theme="dark"] footer {
-      background: linear-gradient(135deg, #131313 0%, #1e293b 100%);
-    }
-
-    [data-bs-theme="dark"] footer .footer-title {
-      color: #f2f2f2;
-
-    }
+    
 
     /* Animated Background */
     body::before {
@@ -479,36 +473,7 @@
     }
 
 
-    /* Professional Footer */
-    .professional-footer {
-      background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
-      color: #e2e8f0;
-      padding: 4rem 0 0;
-      margin-top: 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .professional-footer::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.02"><circle cx="30" cy="30" r="1"/></g></svg>') repeat;
-    }
-
-    .footer-brand {
-      text-align: center;
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer-logo {
-      height: 60px;
-      margin-bottom: 1rem;
-    }
+   
 
     .brand-name {
       font-size: 2rem;
@@ -558,61 +523,7 @@
       letter-spacing: 1px;
     }
 
-    .footer-title {
-      font-size: 1.2rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      position: relative;
-      color: white;
-    }
-
-    .footer-title::after {
-      content: '';
-      position: absolute;
-      bottom: -8px;
-      left: 0;
-      width: 40px;
-      height: 3px;
-      background: var(--primary-gradient);
-      border-radius: 2px;
-    }
-
-    .footer-links {
-      list-style: none;
-      padding: 0;
-      position: relative;
-      z-index: 2;
-    }
-
-    .footer-links li {
-      margin-bottom: 0.75rem;
-    }
-
-    .footer-links a {
-      color: #a0aec0 !important;
-      text-decoration: none;
-      transition: var(--transition);
-      position: relative;
-      padding-left: 1.5rem;
-    }
-
-    .footer-links a::before {
-      content: '→';
-      position: absolute;
-      left: 0;
-      opacity: 0;
-      transition: var(--transition);
-      color: #667eea;
-    }
-
-    .footer-links a:hover {
-      color: white !important;
-      transform: translateX(10px);
-    }
-
-    .footer-links a:hover::before {
-      opacity: 1;
-    }
+    
 
     .contact-info {
       position: relative;
@@ -864,6 +775,59 @@
 
   <div id="footer-placeholder"></div>
 
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="footer-container ">
+      <!-- About GrowCraft -->
+      <div class="footer-col">
+        <img src="../images/Logo_new.png" alt="GrowCraft Logo" class="footer-logo mb-3" style="height: 60px;">
+
+
+        <p>Boost your career with skill-focused training and internship opportunities.</p>
+      </div>
+
+      <!-- Important Links -->
+      <div class="footer-col important-links">
+        <h3>Important Links</h3>
+        <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="../about.html"><i class="fa-solid fa-building"></i> About Us</a>
+        <a href="../service.html"><i class="fa-solid fa-laptop-code"></i> Services</a>
+        <a href="../work.html"><i class="fa-solid fa-graduation-cap"></i> Our Works</a>
+        <a href="../src/faq.html"><i class="fa-solid fa-clock"></i> FAQ</a>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+        <p><i class="fa-solid fa-envelope"></i> support@GrowCraft.com</p>
+      </div>
+
+      <!-- Social -->
+      <div class="footer-col">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+          <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i> Facebook</a>
+          <a href="https://www.x.com/"><i class="fa-brands fa-twitter"></i> Twitter</a>
+          <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom Row: Credit + Legal -->
+    <div class="footer-bottom">
+      <div class="footer-left">
+        &copy; 2025 GrowCraft. All rights reserved.
+      </div>
+      <div class="footer-right">
+        <a href="../privacy.html"><i class="fa-solid fa-lock"></i> Privacy</a>
+        <a href="../terms.html"><i class="fa-solid fa-file-lines"></i> Terms</a>
+        <a href="../sitemap.html"><i class="fa-solid fa-map"></i> Sitemap</a>
+      </div>
+    </div>
+  </footer>
+  
   <script>
 
     // Back to top functionality
