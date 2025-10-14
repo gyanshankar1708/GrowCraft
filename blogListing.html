@@ -854,461 +854,609 @@
   <!--Footer-->
   <!-- Professional Footer -->
 <style>
-  /* Footer Styles */
-  .professional-footer {
-    background-color: #f8f9fa !important;
-    color: #6c757d !important;
-    padding: 40px 0 20px !important;
-    border-top: 1px solid #e9ecef !important;
-    transition: all 0.3s ease !important;
-    margin-top: 50px !important;
-    position: relative !important;
-    z-index: 999 !important;
-    display: block !important;
-    width: 100% !important;
-  }
+    /* ===== Footer ===== */
 
-  /* Dark mode support */
-  .dark-mode .professional-footer,
-  .dark .professional-footer {
-    background-color: #1a1d29 !important;
-    color: #a8b2d1 !important;
-    border-top: 1px solid #2a2e3a !important;
-  }
-
-  /* Brand Section */
-  .footer-brand {
-    text-align: left;
-    margin-bottom: 2rem;
-  }
-
-  .footer-logo {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin-bottom: 1rem;
-    transition: transform 0.3s ease;
-  }
-
-  .footer-logo:hover {
-    transform: scale(1.1);
-  }
-
-  .brand-name {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: #007bff;
-    margin-bottom: 0.5rem;
-    transition: all 0.3s ease;
-  }
-
-  .dark-mode .brand-name,
-  .dark .brand-name {
-    color: #00ffe7 !important;
-  }
-
-  .brand-description {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-    transition: all 0.3s ease;
-  }
-
-  .dark-mode .brand-description,
-  .dark .brand-description {
-    color: #a8b2d1 !important;
-  }
-
-  .quick-stats {
-    display: flex;
-    justify-content: flex-start;
-    gap: 20px;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .stat-item {
-    text-align: left;
-  }
-
-  .stat-number {
-    display: block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #007bff;
-    margin-bottom: 0.25rem;
-    transition: all 0.3s ease;
-  }
-
-  .dark-mode .stat-number,
-  .dark .stat-number {
-    color: #00ffe7 !important;
-  }
-
-  .stat-label {
-    font-size: 0.8rem;
-    color: #666;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-  }
-
-  .dark-mode .stat-label,
-  .dark .stat-label {
-    color: #a8b2d1 !important;
-  }
-
-  /* Footer Titles */
-  .footer-title {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 1rem;
-    position: relative;
-    padding-bottom: 0.5rem;
-    transition: all 0.3s ease;
-    text-align: justify;
-  }
-
-  .dark-mode .footer-title,
-  .dark .footer-title {
-    color: #ffffff !important;
-  }
-
-  .footer-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 30px;
-    height: 2px;
-    background: linear-gradient(45deg, #007bff, #0056b3);
-    border-radius: 2px;
-    transition: all 0.3s ease;
-  }
-
-  .dark-mode .footer-title::after,
-  .dark .footer-title::after {
-    background: linear-gradient(45deg, #00ffe7, #0b84f3) !important;
-  }
-
-  /* Footer Links */
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: justify;
-  }
-
-  .footer-links li {
-    margin-bottom: 0.5rem;
-  }
-
-  .footer-links a {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    position: relative;
-    padding-left: 25px;
-    display: inline-block;
-  }
-
-  .footer-links a i {
-    position: absolute;
-    left: 0;
-    top: 2px;
-    color: #007bff;
-    font-size: 0.8rem;
-    width: 16px;
-    text-align: left;
-  }
-
-  .dark-mode .footer-links a,
-  .dark .footer-links a {
-    color: #a8b2d1 !important;
-  }
-
-  .dark-mode .footer-links a i,
-  .dark .footer-links a i {
-    color: #0b84f3 !important;
-  }
-
-  .footer-links a:hover {
-    color: #007bff;
-    transform: translateX(5px);
-  }
-
-  .dark-mode .footer-links a:hover,
-  .dark .footer-links a:hover {
-    color: #00ffe7 !important;
-  }
-
-  /* Contact Info */
-  .contact-info {
-    margin-bottom: 2rem;
-  }
-
-  .contact-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 0.75rem;
-    gap: 10px;
-    text-align: justify;
-  }
-
-  .contact-item i {
-    width: 18px;
-    color: #007bff;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    flex-shrink: 0;
-  }
-
-  .dark-mode .contact-item i,
-  .dark .contact-item i {
-    color: #0b84f3 !important;
-  }
-
-  .contact-item a {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-    flex: 1;
-  }
-
-  .dark-mode .contact-item a,
-  .dark .contact-item a {
-    color: #a8b2d1 !important;
-  }
-
-  .contact-item a:hover {
-    color: #007bff;
-  }
-
-  .dark-mode .contact-item a:hover,
-  .dark .contact-item a:hover {
-    color: #00ffe7 !important;
-  }
-
-  .contact-item span {
-    color: #666;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-    flex: 1;
-  }
-
-  .dark-mode .contact-item span,
-  .dark .contact-item span {
-    color: #a8b2d1 !important;
-  }
-
-  /* Footer Bottom */
-  .footer-bottom {
-    background: rgba(0, 0, 0, 0.05);
-    padding: 20px 0;
-    margin-top: 30px;
-    border-top: 1px solid rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  .dark-mode .footer-bottom,
-  .dark .footer-bottom {
-    background: rgba(0, 0, 0, 0.3) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
-  }
-
-  .copyright {
-    color: #666;
-    font-size: 0.9rem;
-    margin: 0;
-    transition: all 0.3s ease;
-  }
-
-  .dark-mode .copyright,
-  .dark .copyright {
-    color: #a8b2d1 !important;
-  }
-
-  .footer-nav {
-    display: flex;
-    gap: 20px;
-    justify-content: flex-end;
-    align-items: center;
-  }
-
-  .footer-nav a {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-  }
-
-  .dark-mode .footer-nav a,
-  .dark .footer-nav a {
-    color: #a8b2d1 !important;
-  }
-
-  .footer-nav a:hover {
-    color: #007bff;
-  }
-
-  .dark-mode .footer-nav a:hover,
-  .dark .footer-nav a:hover {
-    color: #00ffe7 !important;
-  }
-
-  .row.g-4.py-4 {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .professional-footer {
-      padding: 30px 0 0;
+    .modern-footer {
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      background: linear-gradient(135deg, #43d863, #8ae78a);
+      color: #16213e;
+      padding: 60px 20px 20px;
+      border-radius: 25px 25px 0 0;
+      box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+      overflow-x: hidden;
+      /* Center it if inside a constrained container */
     }
 
-    .footer-brand,
-    .footer-title {
-      text-align: left;
+    /* ==== Styling Top==== */
+    .footer-top {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+      margin-bottom: 30px;
     }
 
-    .footer-nav {
-      justify-content: center;
-    }
+    /* ==== Styling Brand==== */
 
-    .footer-bottom .row {
-      text-align: left;
-    }
-
-    .footer-bottom .col-md-6:first-child {
+    .footer-brand h3 {
+      font-size: 1.8rem;
+      font-weight: bold;
       margin-bottom: 10px;
+      display: flex;
+      align-items: center;
     }
 
-    .quick-stats {
-      justify-content: flex-start;
+  .stat-container {
+  display: flex;
+  flex-wrap: wrap; /* allows items to go to next line on small screens */
+  gap: 20px; /* space between stat items */
+  margin-top: 20px;
+}
+
+.stat-item {
+  flex: 1 1 100px; /* grow, shrink, base width */
+  min-width: 100px; /* prevents it from shrinking too small */
+  text-align: center;
+}
+
+/* Optional: adjust numbers and labels */
+.stat-item .stat-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #00bfff;
+  display: block;
+}
+
+.stat-label {
+  font-size: 0.;
+  color: #555;
+  display: block;
+}
+
+
+    .footer-brand h3 i {
+      margin-right: 10px;
+      font-size: 1.6rem;
+      font-weight: bold;
+      vertical-align: middle;
     }
-  }
 
-  @media (max-width: 576px) {
-    .quick-stats {
-      flex-direction: column;
-      gap: 15px;
-      align-items: flex-start;
+    .footer-brand p {
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.5;
+      opacity: 0.9;
     }
 
-    .stat-item {
-      text-align: left;
-    }
-  }
-</style>
-
-
-  <!-- JS Scripts -->
-  <script src="src/blogs.js"></script>
-  <script src="src/darkMode.js"></script>
-  
-  <!-- Logo switching and initialization script -->
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    /* ----------------------------
-       Logo Switching for Dark Mode
-    ----------------------------- */
-    const logo = document.querySelector("#logo");
-
-    function updateLogo() {
-      const isDark = document.documentElement.getAttribute("data-bs-theme") === "dark";
-      logo.src = isDark ? "images/Logo.png" : "images/Logo_new.png";
+    .footer-links-section h4 {
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #43d863;
+      padding-bottom: 5px;
     }
 
-    // Initial update
-    updateLogo();
+    .footer-links-section ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
 
-    // Watch for theme changes
-    const observer = new MutationObserver(function (mutations) {
-      for (const mutation of mutations) {
-        if (mutation.type === "attributes" && mutation.attributeName === "data-bs-theme") {
-          updateLogo();
-        }
-      }
-    });
+    .footer-links-section ul li {
+      margin-bottom: 8px;
+    }
 
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["data-bs-theme"],
-    });
+    .footer-links-section ul li a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.3s;
+    }
 
-    /* ----------------------------
-       Navbar scroll effect
-    ----------------------------- */
-    window.addEventListener('scroll', function() {
-      const navbar = document.querySelector('.navbar');
-      if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-      } else {
-        navbar.classList.remove('scrolled');
-      }
-    });
-  });
-  </script>
-  
+    .footer-links-section ul li a:hover {
+      color: #fff;
+      transform: translateX(5px);
+    }
 
+    .social-icons {
+      display: flex;
+      gap: 10px;
+      margin-top: 5px;
+    }
 
-  <style>
-    .fab {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      font-size: 28px;
+    .social-icons a {
       display: flex;
       align-items: center;
       justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .contact-info{
+      margin-top: 20px;
+      margin-left: 10px;
+    }
+
+    .contact-item {
+      margin-bottom: 10px;
+    }
+
+
+    .social-icons a:hover {
+      background: #fff;
+      color: #2c5aa0;
+      transform: scale(1.1);
+    }
+
+    .footer-bottom {
+      display: flex;
+      /* flex-wrap: wrap; */
+      justify-content: space-between;
+      text-align: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      padding-top: 15px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 15px;
+      margin-right: 20px;
+    }
+
+
+    .footer-card {
+      flex: 1 1 200px;
+      min-width: 200px;
+      background-color: rgba(255, 255, 255, 0.8); /* same as #ffffffcc */
+      border-radius: 15px; /* smooth rounded corners */
+      padding: 20px; /* space inside card */
+      backdrop-filter: blur(10px); /* adds glass blur effect */
+      -webkit-backdrop-filter: blur(10px); /* Safari support */
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* soft shadow */
+      color: #1a1a1a; /* dark text for contrast */
+    }
+    .footer-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-card i {
+      font-weight: bold;
+      color: #1a1a1a; /* dark color */
+      transition: color 0.3s ease;
+    }
+
+    .footer-card ul li {
+      margin-bottom: 8px;
+    }
+
+    .footer-card a:hover i {
+      color: #0077b5; /* LinkedIn blue */
+    }
+    .footer-card a:hover {
+      color: #0077b5; /* Text link turns blue too */
+    }
+
+    .footer-card ul li a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1a1a1a; /* dark gray */
       text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+
+      padding: 5px;
+      padding-left: 20px;
     }
 
-    .dark-mode {
-      background-color: #121212;
-      color: #f1f1f1;
-    }
-    /* Dark mode footer styles */
-    .dark-mode .professional-footer,
-    .dark .professional-footer {
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%) !important;
-      color: #ffffff !important;
+    .footer-card ul li a:hover {
+      color: #1a1a1a;
+      /* transition: color 0.3s ease; smooth color change on hover */
+      transform: translateX(5px);
     }
 
+    @media (max-width: 768px) {
+      .footer-top {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem;
+      }
+
+      .footer-brand h2 {
+        font-size: 1.5rem;
+      }
+
+      .footer-links-section h4 {
+        font-size: 1rem;
+      }
+
+      .footer-links-section ul li a {
+        font-size: 0.95rem;
+      }
+
+      .social-icons a {
+        width: 35px;
+        height: 35px;
+      }
+
+      /* Mobile Social Links Fix */
+      .social-links {
+        flex-direction: column;
+        gap: 0.8rem;
+        align-items: center;
+      }
+
+      .social-links a {
+        width: 85%;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .footer-top {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .social-icons {
+        justify-content: center;
+      }
+
+      .footer-links-section ul li a {
+        justify-content: center;
+      }
+
+      .social-links a {
+        width: 90%;
+        font-size: 0.9rem;
+      }
+    }
+    .footer-bottom .heart {
+      color: inherit;
+    }
   </style>
-  <!-- Chatbot button-->
-    <div class="chatbot-container">
-      <div class="chatbot-window" id="chatWindow">
-        <div class="chatbot-header">
-          <img src="images/logo-transparent-dark-mode.png" alt="GrowCraft Logo" class="chatbot-header-logo" />
-          <span>GrowCraft</span>
-          <button onclick="toggleChat()"><img src="images/icons/close_small_24dp_FFFFFF_FILL0_wght400_GRAD0_opsz24.png" alt="Close" /></button>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5"
+      >
+        <a class="navbar-brand" href="index.html"
+          ><img
+            src="images/logo_bg_transparent.png"
+            alt="GrowCraft"
+            width="200"
+            id="logo"
+        /></a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a
+                class="nav-link active visited"
+                aria-current="page"
+                href="index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="index.html#services"
+                >Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="blogListing.html"
+                >Blogs</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="index.html#about"
+                >About Us</a
+              >
+            </li>
+            <!-- Added new "Our Work" link to navigate to the new work section on same page -->
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="index.html#work"
+                >Our Work</a
+              >
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="src/contact.html"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
         </div>
-        <div class="chatbot-body" id="chatBody">
-          <div class="chatbot-msg bot-msg">
-            Hello! I am GrowCraft. How can I assist you today?
-          </div>
-        </div>
-        <div class="quick-questions" id="quickQuestions"></div>
-        <div class="chatbot-input-container">
-          <input id="chatInput" type="text" placeholder="Type your query..." />
-          <button onclick="sendMessage()"><img src="images/icons/send.png" alt="Send" /></button>
+
+        <!-- Responsive Search Bar -->
+        <div class="search-container">
+          <input type="text" placeholder="Search..." class="search-input" />
+          <button class="search-button">
+            <i class="fas fa-search"></i>
+            <!-- Font Awesome icon -->
+          </button>
         </div>
       </div>
-      <button class="chatbot-toggle-btn" onclick="toggleChat()"><i class="fas fa-leaf"></i></button>
-    </div>
-  <!-- Chatbot button ends here-->
+    </nav>
 
-  <script src="components/chatbot.js"></script>
+    <!-- Blog Section -->
+    <section class="py-5 bg-light">
+      <div class="container">
+        <h2 class="text-center mb-4">📚 Our Blog</h2>
+        <div class="row" id="blog-list">
+          <!-- Blog cards populated via JavaScript -->
+        </div>
+      </div>
+    </section>
 
-</body>
+    <!-- Professional Footer -->
 
+    <!-- Professional Footer ends -->
+
+    <footer class="modern-footer" aria-label="Footer">
+      <div class="footer-top">
+        <div class="footer-brand footer-card">
+          <h3><i class="fas fa-seedling"></i> GrowCraft</h3>
+          <p style="margin-top: 20px">
+            Empowering businesses with innovative digital solutions and creative
+            execellence.
+          </p>
+          <div class="stat-container">
+          <div class="stat-item">
+            <span class="stat-number">500+</span>
+            <span class="stat-label">Projects</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-number">150+</span>
+            <span class="stat-label">Clients</span>
+          </div>
+
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years</span>
+          </div>
+          </div>
+        </div>
+
+        <div class="footer-links-section footer-card">
+          <h4>Quick Links</h4>
+          <ul>
+            <li>
+              <a href="index.html#about"><i class="fas fa-home"></i>About Us</a>
+            </li>
+            <li>
+              <a href="about.html#work"><i class="fas fa-users"></i>Portfolio</a>
+            </li>
+            <li>
+              <a href="src/contact.html"><i class="fas fa-envelope"></i>Contact</a>
+            </li>
+            <li>
+              <a href="#careers"
+                ><i class="fa-solid fa-user-tie"></i>Careers</a
+              >
+            </li>
+            <li>
+              <a href="blogListing.html"><i class="fa-solid fa-blog"></i></i>Blog</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-links-section footer-card">
+          <h4>Services</h4>
+          <ul>
+            <li>
+              <a href="learn/webdev.html"><i class="fa-solid fa-code"></i></i>Web Development</a>
+            </li>
+            <li>
+              <a href="learn/graphic.html"
+                ><i class="fa-solid fa-palette"></i>Graphic Design</a
+              >
+            </li>
+            <li>
+              <a href="learn/marketing.html"
+                ><i class="fa-solid fa-chart-line"></i></i>Digital Marketing</a
+              >
+            </li>
+            <li>
+              <a href="learn/contentwriting.html"
+                ><i class="fa-solid fa-pen-nib"></i></i>Content Writing</a
+              >
+            </li>
+
+            <li>
+              <a href="learn/socialmedia.html"
+                ><i class="fa-solid fa-hashtag"></i></i>Social Media</a
+              >
+            </li>
+
+            <li>
+              <a href="learn/cyberanalyst.html"
+                ><i class="fa-solid fa-shield-halved"></i>Cyber Analyst</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-links-section footer-card">
+          <h4>Get In Touch</h4>
+          <div class="social-icons">
+            <a
+              href="https://github.com/gyanshankar1708"
+              target="_blank"
+              title="GitHub"
+            >
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/gyanshankar1708/"
+              target="_blank"
+              title="LinkedIn"
+              class="linkedin-icon"
+            >
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:info@growcraft.com" title="Email"
+              ><i class="fas fa-envelope"></i
+            ></a>
+          </div>
+          <div class="contact-info">
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+919999999999">+91 999 999 999</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ABC Street, XYZ City, India</span>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright">&copy; 2024<strong>GrowCraft</strong>. All rights reserved</p>
+        </div>
+        <div class="footer-nav">
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+          <a href="#sitemap">Sitemap</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- FAB for creating blog -->
+    <a
+      href="blogWrite.html"
+      class="fab btn btn-primary shadow"
+      title="Write a new blog post"
+      >+</a
+    >
+
+    <!-- JS Scripts -->
+    <script src="src/blogs.js"></script>
+    <script src="src/darkMode.js"></script>
+
+    <style>
+      .fab {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        font-size: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+      }
+
+      .dark-mode {
+        background-color: #121212;
+        color: #f1f1f1;
+      }
+
+      /* Dark mode footer styles */
+      /* ===== Dark Mode Footer ===== */
+.dark-mode .modern-footer,
+.dark .modern-footer {
+  background: linear-gradient(135deg, #0f111a, #1a1c2a);
+  color: #f0f0f0;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode .modern-footer .footer-brand h3,
+.dark .modern-footer .footer-brand h3,
+.dark-mode .modern-footer .footer-links-section h4,
+.dark .modern-footer .footer-links-section h4,
+.dark-mode .modern-footer .footer-bottom,
+.dark .modern-footer .footer-bottom {
+  color: #f0f0f0;
+}
+
+.dark-mode .modern-footer .footer-brand p,
+.dark .modern-footer .footer-brand p,
+.dark-mode .modern-footer .contact-info,
+.dark .modern-footer .contact-info,
+.dark-mode .modern-footer .stat-label,
+.dark .modern-footer .stat-label {
+  color: #ccc;
+}
+
+.dark-mode .modern-footer .footer-card,
+.dark .modern-footer .footer-card {
+  background-color: rgba(30, 30, 40, 0.8);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  color: #f0f0f0;
+}
+
+.dark-mode .modern-footer .footer-card a,
+.dark .modern-footer .footer-card a,
+.dark-mode .modern-footer .footer-card i,
+.dark .modern-footer .footer-card i {
+  color: #f0f0f0;
+}
+
+.dark-mode .modern-footer .footer-card a:hover,
+.dark .modern-footer .footer-card a:hover,
+.dark-mode .modern-footer .footer-card a:hover i,
+.dark .modern-footer .footer-card a:hover i,
+.dark-mode .modern-footer .footer-links-section ul li a:hover,
+.dark .modern-footer .footer-links-section ul li a:hover {
+  color: #43d863; /* hover accent */
+}
+
+.dark-mode .modern-footer .social-icons a,
+.dark .modern-footer .social-icons a {
+  background: rgba(255, 255, 255, 0.1);
+  color: #f0f0f0;
+}
+
+.dark-mode .modern-footer .social-icons a:hover,
+.dark .modern-footer .social-icons a:hover {
+  background: #43d863;
+  color: #0f111a;
+}  
+    </style>
+  </body>
 </html>
