@@ -230,4 +230,9 @@ This project is licensed under the terms specified in the [LICENSE](LICENSE) fil
 - Project contributors and mentors
 - Open-source community for continuous inspiration
 
+- **Hacktoberfest 2025** by DigitalOcean, GitHub, and partners for encouraging global open-source contributions  
+- All the amazing **contributors and maintainers** who made this event impactful  
+- The vibrant **open-source community** for spreading collaboration, innovation, and learning 🌍  
+
+
 
