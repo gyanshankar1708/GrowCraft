@@ -39,12 +39,14 @@ function renderBlogs() {
       localStorage.setItem('selectedBlogIndex', realIndex);
       window.location = 'blogView.html';
     };
-    el.innerHTML = `
-      <h4>${blog.title}</h4>
-      <small>By ${blog.author} | ${blog.date}</small>
-      <p style="max-height: 56px; overflow:hidden; text-overflow:ellipsis;">${blog.content.length > 130 ? blog.content.substring(0, 130) + '…' : blog.content}</p>
-      <span style="color:#3D5CFC; font-size:.93rem; font-weight:600;letter-spacing:.1em;">Read More &rarr;</span>
-    `;
+el.innerHTML = `
+  <div class="blog-content">
+    <h4>${blog.title}</h4>
+    <small>By ${blog.author} | ${blog.date}</small>
+    <p>${blog.content.length > 130 ? blog.content.substring(0, 130) + '…' : blog.content}</p>
+    <span class="read-more-btn">Read More &rarr;</span>
+  </div>
+`;
     blogList.appendChild(el);
   });
 }
