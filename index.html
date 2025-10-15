@@ -2589,6 +2589,114 @@
 
       // Start animation
       moveCarousel();
+    };
+
+    // Initialize back to top functionality
+  // ===== 1. COUNTER SCRIPT (runs when footer is visible) =====
+  const initCounters = () => {
+    const counters = document.querySelectorAll(".counter");
+    if (counters.length === 0) return; // Exit if no counters on the page
+
+    const startCounting = (counter) => {
+      const target = +counter.getAttribute("data-target");
+      const thisSpeed = counter.classList.contains("slow") ? 200 : 50;
+      let count = 0;
+
+      const updateCount = () => {
+        const increment = Math.max(1, Math.ceil(target / thisSpeed));
+        if (count < target) {
+          count += increment;
+          if (count > target) count = target;
+          counter.innerText = count;
+          setTimeout(updateCount, 50); // Controls the speed of the count animation
+        } else {
+          counter.innerText = target + "+";
+        }
+      };
+      updateCount();
+    };
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          startCounting(entry.target);
+          obs.unobserve(entry.target); // Stop observing after it has been triggered
+        }
+      });
+    }, { threshold: 0.5 }); // Trigger when 50% of the element is visible
+
+    counters.forEach(counter => {
+      observer.observe(counter);
+    });
+  };
+
+
+  // ===== 2. SCROLL TO TOP BUTTON SCRIPT =====
+  const initScrollToTopButton = () => {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const footer = document.querySelector("footer");
+
+    if (!scrollToTopBtn || !footer) return; // Exit if elements don't exist
+
+    window.addEventListener("scroll", () => {
+      // Show or hide the button based on scroll position
+      if (window.scrollY > 300) {
+        scrollToTopBtn.classList.add("show");
+      } else {
+        scrollToTopBtn.classList.remove("show");
+      }
+
+      // Move the button up when it's about to overlap the footer
+      const footerTop = footer.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      
+      if (footerTop < windowHeight) {
+        const overlap = windowHeight - footerTop;
+        scrollToTopBtn.style.bottom = `${overlap + 20}px`; // 20px gap above footer
+      } else {
+        scrollToTopBtn.style.bottom = "2rem"; // Default position
+      }
+    });
+
+    // Add click event for smooth scrolling to the top
+    scrollToTopBtn.addEventListener("click", () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    });
+  };
+
+
+  // ===== 3. FOOTER LOADER =====
+  const initFooter = () => {
+    fetch('src/components/footer.html')
+      .then(response => response.text())
+      .then(data => {
+        const footerPlaceholder = document.getElementById('footer-placeholder');
+        if (footerPlaceholder) {
+          footerPlaceholder.innerHTML = data;
+          // After the footer is loaded, initialize the scripts that depend on it
+          initCounters(); 
+          initScrollToTopButton();
+        }
+      })
+      .catch(error => {
+        console.log('Footer could not be loaded:', error);
+      });
+  };
+
+  // ===== INITIALIZE EVERYTHING WHEN THE PAGE LOADS =====
+  document.addEventListener('DOMContentLoaded', () => {
+    // Initialize components that don't depend on the footer
+    initTestimonialCarousel(); 
+    
+    // Load the footer, which will then trigger the other scripts
+    initFooter();
+  });
+</script>
+<script src="darkMode.js"></script>
+=======
     });
 
 
@@ -2646,5 +2754,4 @@ scrollToTopBtn.addEventListener("click", () => {
 
   </script>
 </body>
-
 </html>
