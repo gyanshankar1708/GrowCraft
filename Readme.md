@@ -47,24 +47,74 @@ This platform offers services to clients and creates opportunities for students 
 ##  Folder Structure
 
 ```
+# 🌱 GrowCraft Project Structure
+
 GrowCraft/
-├── index.html
-├── blogListing.html
-├── blogView.html
-├── blogWrite.html
-├── contact-handler.php
-├── database_schema.sql
-├── images/
-│   ├── (images and icons used throughout the site)
-├── src/
-│   ├── contact.html
-│   ├── blogs.css / blogs.js
-│   ├── style.css / script.js
-│   ├── utils.js
-│   ├── web.html
+├── index.html 🏠
+├── about.html 👩‍💻
+├── blogListing.html 📰
+├── blogView.html 🧾
+├── blogWrite.html ✍️
+├── contact.html 📞
+├── careers.html 💼
+├── terms.html / privacy.html 📜
+├── service.html ⚡
+├── work.html 💡
+├── contact-handler.php 🧩
+├── database_schema.sql 🧮
+│
+├── .github/ ⚙️
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.yml 🐞
+│   │   ├── feature_request.yml ✨
+│   │   ├── documentation.md 📘
+│   │   └── performance.md ⚡
+│   ├── workflows/
+│   │   ├── issue-create-automate-message.yml 🤖
+│   │   └── pr-create-automate-message.yml 🤝
+│   └── pull_request_template.md 🧾
+│
+├── components/ 🧱
+│   ├── backtotop.{css, js} 🔼
+│   ├── chatbot.{css, js} 💬
+│   └── footer.{css, html} 🦶
+│
+├── images/ 🖼️
+│   ├── (icons, assets, and illustrations used across the site)
+│
+├── learn/ 📚
+│   ├── contentwriting.html ✏️
+│   ├── cyberanalyst.html 🛡️
+│   ├── marketing.html 📢
+│   ├── graphic.html 🎨
+│   ├── socialmedia.html 🌐
+│   └── webdev.html 💻
+│
+├── src/ 🧩
+│   ├── contact.html / contact.css / contact.js 📞
+│   ├── blogs.css / blogs.js 📰
+│   ├── style.css / script.js 🎨
+│   ├── utils.js ⚙️
+│   ├── web.html 🌍
 │   └── css/
-│       └── style.css
-└── (additional documentation and assets)
+│       └── style.css 🎨
+│
+├── netlify/ ☁️
+│   └── functions/
+│       └── getContributors.js 👥
+│
+├── docs/ 📄
+│   ├── CODE_OF_CONDUCT.md 📜  
+│   ├── CONTRIBUTING.md 🤝  
+│   ├── CONTACT_PAGE_DOCS.md 📞  
+│   ├── START_PROJECT_GUIDE.md 🚀  
+│   └── LICENSE ⚖️  
+│
+├── _redirects 🧭
+├── netlify.toml ⚙️
+├── start-growcraft.{bat, ps1} 🚀
+└── .gitignore 🙈
+
 ```
 
 ---
@@ -179,5 +229,10 @@ This project is licensed under the terms specified in the [LICENSE](LICENSE) fil
 - **GirlScript Summer of Code 2025 (GSSoC'25)** for providing an open-source platform
 - Project contributors and mentors
 - Open-source community for continuous inspiration
+
+- **Hacktoberfest 2025** by DigitalOcean, GitHub, and partners for encouraging global open-source contributions  
+- All the amazing **contributors and maintainers** who made this event impactful  
+- The vibrant **open-source community** for spreading collaboration, innovation, and learning 🌍  
+
 
 
