@@ -190,6 +190,20 @@
       color:#0077b5;
       transform:scale(1.05);
     }
+    #strengthBar{
+  width:100%;
+  height:6px;
+  background:#ddd;
+  border-radius:4px;
+  margin-top:5px;
+  overflow:hidden;
+}
+#strengthBar span{
+  display:block;
+  height:100%;
+  width:0%;
+  transition:width 0.3s ease;
+}
 
     .signin-link{text-align:center; margin-top:14px; font-size:13px;}
     .signin-link a{color:#dcedc8; text-decoration:none;}
@@ -235,9 +249,12 @@
 
         <!-- Password field with eye icon -->
         <div class="password-wrapper">
-          <input type="password" id="password" placeholder="Password (min 6 chars)" required>
-          <i class="fas fa-eye" onclick="togglePassword('password', this)"></i>
-        </div>
+  <input type="password" id="password" placeholder="Password (min 6 chars)" required onkeyup="checkStrength()">
+  <i class="fas fa-eye" onclick="togglePassword('password', this)"></i>
+</div>
+<div id="strengthBar"></div>
+<span id="strengthText" style="font-size: 12px; display:block; margin-top:4px;"></span>
+
         <div class="password-wrapper">
           <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
           <i class="fas fa-eye" onclick="togglePassword('confirmPassword', this)"></i>
@@ -301,6 +318,26 @@
 
       alert("Signup successful!\nRole: "+role+"\nName: "+name+"\nEmail: "+email);
     });
+    function checkStrength(){
+  const password = document.getElementById("password").value;
+  const strengthBar = document.getElementById("strengthBar");
+  const strengthText = document.getElementById("strengthText");
+  let strength = 0;
+
+  if(password.length >= 6) strength++;
+  if(/[A-Z]/.test(password)) strength++;
+  if(/[0-9]/.test(password)) strength++;
+  if(/[!@#$%^&*(),.?":{}|<>]/.test(password)) strength++;
+
+  let width = ["0%", "25%", "50%", "75%", "100%"];
+  let text = ["", "Very Weak", "Weak", "Good", "Strong"];
+  let color = ["", "red", "orange", "gold", "green"];
+
+  strengthBar.innerHTML = `<span style="width:${width[strength]}; background:${color[strength]};"></span>`;
+  strengthText.textContent = text[strength];
+  strengthText.style.color = color[strength];
+}
+
   </script>
 </body>
 </html>

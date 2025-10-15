@@ -267,7 +267,23 @@
           transparent);
       z-index: 1;
     }
-
+.contact-btn:hover{
+  transform: scale(1.15);
+  border-radius: 0 2px 8px solid blue;
+}
+.contact-section{
+  width: 75%;
+margin: auto;
+background-color: rgb(202, 202, 231);
+border-radius: 20px;
+padding: 2rem;
+margin-top: 2rem;
+margin-bottom: 2rem;
+transition: transform 0.2s ease-in-out;
+}
+.contact-section:hover{
+  transform: scale(1.12);
+}
     .light-mode.webdev-hero::before {
       max-width: 100%;
       height: 200px;
@@ -1070,9 +1086,9 @@
 
     .navbar-nav {
       display: flex;
-      justify-content: center;
+      justify-content: end;
       width: 100%;
-      gap: 20px;
+      gap: 40px;
     }
 
 
@@ -1081,7 +1097,7 @@
     .navbar-nav .nav-item {
       display: flex;
       align-items: center;
-      margin-left: auto;
+      margin-left: 10px;
 
     }
 
@@ -1100,6 +1116,7 @@
       color: #333;
       /* Default link color */
       font-weight: 500;
+      font-size: 20px;
       transition: color 0.3s ease;
     }
 
@@ -1138,8 +1155,11 @@
       font-weight: 700;
       color: #1e293b;
       margin-bottom: 20px;
+      transition: transform 0.2s ease-in-out;
     }
-
+.contact-content h2:hover{
+  transform: scale(1.15);
+}
     .contact-content h2 span {
       background: linear-gradient(90deg, #3b82f6, #6366f1);
       -webkit-background-clip: text;
@@ -1149,7 +1169,7 @@
 
     .contact-content p {
       font-size: 1.1rem;
-      color: #475569;
+      color: #010101ba;
       margin-bottom: 30px;
       max-width: 600px;
       margin-inline: auto;
@@ -1158,7 +1178,7 @@
     .contact-btn {
       padding: 12px 30px;
       font-size: 1rem;
-      background: linear-gradient(to right, #3b82f6, #6366f1);
+      background: linear-gradient(to right, #49d9f9e8, #6366f1);
       color: #fff;
       border: none;
       border-radius: 6px;
@@ -1167,7 +1187,8 @@
     }
 
     .contact-btn:hover {
-      background: linear-gradient(to right, #2563eb, #4f46e5);
+      background: linear-gradient(to right, #2563eb, #46c0e5);
+      transform: scale(1.15);
     }
 
     /*Footer*/
