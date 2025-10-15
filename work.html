@@ -890,6 +890,7 @@
         <div class="hero-ctas">
           <a class="btn btn-primary" href="./services.html">Explore Services</a>
           <a class="btn btn-ghost" href="src/contact.html">Get a free quote</a>
+          <button id="viewContributorsBtn" class="btn btn-primary">View Contributors</button>
         </div>
 
         <div class="stats" aria-hidden="false">
@@ -1197,6 +1198,43 @@
   <script src="src/darkMode.js"></script>
   <script src="components/chatbot.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const btn = document.getElementById("viewContributorsBtn");
+  btn.addEventListener("click", function() {
+    fetch("../masthead.s.html")
+      .then(response => {
+        if (!response.ok) throw new Error("File not found");
+        return response.text();
+      })
+      .then(data => {
+        const modal = document.createElement("div");
+        modal.innerHTML = `
+          <div id="contributorsModal" style="
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); display: flex; justify-content: center;
+            align-items: center; z-index: 9999;">
+            <div style="
+              background: #fff; padding: 20px; border-radius: 10px; 
+              width: 80%; max-height: 80%; overflow-y: auto;">
+              <button id="closeContributors" style="
+                float: right; background: #333; color: #fff; border: none; 
+                border-radius: 5px; padding: 5px 10px; cursor: pointer;">X</button>
+              ${data}
+            </div>
+          </div>
+        `;
+        document.body.appendChild(modal);
+        document.getElementById("closeContributors").onclick = () => modal.remove();
+      })
+      .catch(err => alert("Error loading contributor details."));
+  });
+});
+</script>
+
+
   <script>
     AOS.init({
       duration: 800,
