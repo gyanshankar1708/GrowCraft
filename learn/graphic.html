@@ -4,6 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Graphic Design Portfolio</title>
+ 
+   <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <!-- Bootstrap Icons CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
   <style>
   :root {
@@ -11,8 +28,24 @@
     --fg: #0f172a;        /* main text */
     --card: #f8fafc;      /* surfaces */
     --border: #e5e7eb;    /* dividers */
-    --link: #0d6efd;      /* link color (light) */
+    --link: #eef1f5;      /* link color (light) */
   }
+  
+:root {
+  --primary-green: #27ae60;
+  --secondary-green: #388e3c;
+  --light-green: #4caf50;
+  --accent-green: #81c784;
+  --dark-bg: #1a1a1a;
+  --darker-bg: #0f0f0f;
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --shadow-light: 0 8px 32px rgba(39, 174, 96, 0.15);
+  --shadow-hover: 0 16px 64px rgba(39, 174, 96, 0.25);
+  --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --border-radius: 20px;
+  --spacing: 2rem;
+}
   :root[data-theme="dark"] {
     --bg: #0b1120;
     --fg: #e2e8f0;        /* light text on dark */
@@ -30,6 +63,100 @@
   /* the “Back” link should look like text and stay readable */
   .btn-link { color: var(--fg) !important; }
   .btn-link:hover { text-decoration: underline; opacity: 0.9; }
+
+  
+.navbar {
+  padding: 1.2rem 0;
+  background: rgba(255, 255, 255, 0.95) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  padding: 0.8rem 0;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+.navbar-brand img {
+  max-height: 50px;
+  transition: var(--transition);
+  filter: drop-shadow(2px 2px 8px rgba(39, 174, 96, 0.2));
+}
+
+.navbar-nav .nav-link {
+  font-weight: 500;
+  color: #2e7d32 !important;
+  padding: 0.8rem 1.5rem !important;
+  border-radius: 25px;
+  margin: 0 0.3rem;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-nav .nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.navbar-nav .nav-link:hover::before {
+  left: 0;
+}
+
+.theme-toggle {
+  background: rgba(39, 174, 96, 0.1);
+  border: 1px solid rgba(39, 174, 96, 0.3);
+  color: var(--primary-green);
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.theme-toggle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+  transition: var(--transition);
+  z-index: -1;
+}
+
+.theme-toggle:hover::before {
+  left: 0;
+}
+
+
+.theme-toggle i {
+  font-size: 18px;
+  transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+}
 
   .card {
     border: none;
@@ -64,77 +191,1522 @@
     line-height: 1;
   }
   #themeToggle:hover { background: rgba(0,0,0,0.05); }
+  .graphic-portfolio {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Design Card Styling */
+.design-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: all 0.35s ease;
+}
+
+.design-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.design-card .img-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.design-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.design-card:hover img {
+  transform: scale(1.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Texts */
+.card-title {
+  color: #0f172a;
+}
+
+.text-muted {
+  color: #64748b !important;
+}
+
+/* Dark Mode Compatibility */
+[data-bs-theme="dark"] .design-card {
+  background-color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+[data-bs-theme="dark"] .card-title {
+  color: #e2e8f0;
+}
+
+[data-bs-theme="dark"] .text-muted {
+  color: #cbd5e1 !important;
+}
+
 </style>
+
+<style>
+/* ===== CTA Section Styling ===== */
+.cta-section {
+  background-color: #ffffff; /* white background */
+  padding: 80px 20px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  margin: 60px auto;
+  max-width: 900px;
+}
+
+.cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #27ae60; /* GrowCraft green */
+  margin-bottom: 15px;
+}
+
+.cta-subtitle {
+  font-size: 1.05rem;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* CTA Button */
+.btn-cta {
+  background-color: #27ae60;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 12px 30px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-cta:hover {
+  background-color: #1e7a45;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(39, 174, 96, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cta-title {
+    font-size: 1.6rem;
+  }
+  .cta-subtitle {
+    font-size: 0.95rem;
+  }
+  .btn-cta {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+}
+</style>
+
+<style>
+/* ===== Feedback / Testimonial Section ===== */
+.feedback-section {
+  background-color: #f8fff9;
+  padding: 80px 20px;
+}
+
+.feedback-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.feedback-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+/* Testimonial Card */
+.feedback-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.feedback-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(39,174,96,0.2);
+  border: 1px solid #4caf50;
+}
+
+.feedback-img img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 3px solid #27ae60;
+}
+
+.feedback-text {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 15px;
+  min-height: 60px;
+}
+
+.feedback-name {
+  font-weight: 600;
+  color: #27ae60;
+  margin-bottom: 5px;
+}
+
+.feedback-role {
+  font-size: 0.85rem;
+  color: #388e3c;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .feedback-card {
+    padding: 25px 15px;
+  }
+  .feedback-img img {
+    width: 70px;
+    height: 70px;
+  }
+  .feedback-title {
+    font-size: 1.8rem;
+  }
+  .feedback-subtitle {
+    font-size: 0.95rem;
+  }
+}
+</style>
+
+<style>
+/* ===== Projects Section Styling ===== */
+.projects-section {
+  padding: 80px 20px;
+  background-color: #f8fff9;
+}
+
+.projects-section .section-title {
+  font-size: 2.2rem;
+  color: #27ae60;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.projects-section .section-subtitle {
+  color: #555;
+  font-size: 1rem;
+  margin-bottom: 50px;
+}
+
+/* Project Cards */
+.project-card {
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.project-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.project-content h5 {
+  color: #27ae60;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.project-tags {
+  font-size: 0.85rem;
+  color: #388e3c;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.project-desc {
+  font-size: 0.9rem;
+  color: #555;
+  flex: 1;
+}
+
+.btn-project {
+  display: inline-block;
+  margin-top: 12px;
+  background: #27ae60;
+  color: #fff;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-project:hover {
+  background: #1e7a45;
+  color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .project-card img {
+    height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .project-card img {
+    height: 180px;
+  }
+}
+</style>
+
+
+<style>
+/* ===== Section Titles ===== */
+.section-title {
+  font-weight: 700;
+  color: #27ae60;
+  font-size: 2rem;
+}
+.section-subtitle {
+  color: #555;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ===== Design Categories ===== */
+.category-card {
+  background: #fff;
+  border: 1px solid #e6f4ea;
+  border-radius: 16px;
+  padding: 30px 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+.category-card:hover {
+  transform: translateY(-6px);
+  border-color: #27ae60;
+  box-shadow: 0 10px 25px rgba(39, 174, 96, 0.15);
+}
+
+.icon-circle {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  background: #e6f4ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #27ae60;
+  font-size: 1.6rem;
+}
+
+.category-card h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.category-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.learn-more {
+  display: inline-block;
+  color: #27ae60;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 8px;
+  transition: all 0.3s ease;
+}
+.learn-more:hover {
+  color: #1e7a45;
+}
+
+/* ===== Masonry Grid (Featured Projects) ===== */
+.masonry-grid {
+  columns: 3;
+  column-gap: 1rem;
+}
+.masonry-item {
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
+
+.portfolio-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.portfolio-card img {
+  width: 100%;
+  border-radius: 16px;
+  transition: transform 0.5s ease;
+}
+.portfolio-card:hover img {
+  transform: scale(1.1);
+}
+.portfolio-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(39, 174, 96, 0.85);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: all 0.4s ease;
+  text-align: center;
+  border-radius: 16px;
+}
+.portfolio-card:hover .overlay {
+  opacity: 1;
+}
+.overlay h5 {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+.overlay p {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+.btn-view {
+  background: #fff;
+  color: #27ae60;
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+}
+.btn-view:hover {
+  background: #27ae60;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .masonry-grid {
+    columns: 2;
+  }
+}
+@media (max-width: 576px) {
+  .masonry-grid {
+    columns: 1;
+  }
+}
+</style>
+
+
+<style>
+/* ===== Root Colors (GrowCraft Theme) ===== */
+:root {
+  --primary-green: #27ae60;
+  --secondary-green: #388e3c;
+  --light-bg: #f8fff9;
+  --text-dark: #222;
+}
+
+/* ===== Hero Section ===== */
+.graphic-hero {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 100px 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  margin-top: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative subtle gradient corners */
+.graphic-hero::before,
+.graphic-hero::after {
+  content: "";
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: var(--light-bg);
+  z-index: 0;
+}
+.graphic-hero::before {
+  top: -60px;
+  left: -60px;
+}
+.graphic-hero::after {
+  bottom: -60px;
+  right: -60px;
+}
+
+/* ===== Hero Text ===== */
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--primary-green);
+  margin-bottom: 15px;
+}
+
+.hero-subtitle {
+  color: #444;
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* ===== Hero Buttons ===== */
+.btn-primary-green {
+  background: var(--primary-green);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary-green:hover {
+  background: var(--secondary-green);
+  transform: translateY(-2px);
+}
+
+.btn-outline-green {
+  border: 2px solid var(--primary-green);
+  color: var(--primary-green);
+  border-radius: 50px;
+  padding: 10px 30px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-green:hover {
+  background: var(--primary-green);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* ===== Hero Image ===== */
+.hero-img {
+  width: 100%;
+  max-width: 550px;
+  filter: drop-shadow(0 8px 16px rgba(39, 174, 96, 0.2));
+  transition: transform 0.5s ease;
+}
+
+.hero-img:hover {
+  transform: scale(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 2.3rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-img {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 1.9rem;
+  }
+  .hero-buttons .btn {
+    display: block;
+    margin: 10px auto;
+  }
+}
+/* 🌙 ===== Dark Mode (Bootstrap Theme Attribute) ===== */
+[data-bs-theme="dark"] {
+  --primary-green: #4ade80; /* slightly brighter green */
+  --secondary-green: #22c55e;
+  --light-bg: #0f172a;
+  --text-dark: #e2e8f0;
+}
+
+/* ===== Navbar ===== */
+[data-bs-theme="dark"] .navbar {
+  background: rgba(15, 23, 42, 0.9) !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.5);
+}
+[data-bs-theme="dark"] .navbar-nav .nav-link {
+  color: #a7f3d0 !important;
+}
+[data-bs-theme="dark"] .navbar-nav .nav-link:hover {
+  color: #fff !important;
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+}
+[data-bs-theme="dark"] .theme-toggle {
+  background: rgba(34, 197, 94, 0.15);
+  border-color: rgba(34, 197, 94, 0.4);
+  color: #a7f3d0;
+}
+
+/* ===== Hero Section ===== */
+[data-bs-theme="dark"] .graphic-hero {
+  background-color: #1e293b;
+  color: #e2e8f0;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+[data-bs-theme="dark"] .hero-title {
+  color: #4ade80;
+}
+[data-bs-theme="dark"] .hero-subtitle {
+  color: #cbd5e1;
+}
+[data-bs-theme="dark"] .btn-primary-green {
+  background: #22c55e;
+  color: #fff;
+}
+[data-bs-theme="dark"] .btn-primary-green:hover {
+  background: #16a34a;
+}
+[data-bs-theme="dark"] .btn-outline-green {
+  border-color: #22c55e;
+  color: #22c55e;
+}
+[data-bs-theme="dark"] .btn-outline-green:hover {
+  background: #22c55e;
+  color: #fff;
+}
+
+/* ===== Cards (Projects, Design, Feedback, Categories) ===== */
+[data-bs-theme="dark"] .card,
+[data-bs-theme="dark"] .design-card,
+[data-bs-theme="dark"] .project-card,
+[data-bs-theme="dark"] .feedback-card,
+[data-bs-theme="dark"] .category-card {
+  background: #1e293b;
+  border-color: rgba(255, 255, 255, 0.1);
+  color: #e2e8f0;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+[data-bs-theme="dark"] .card-title,
+[data-bs-theme="dark"] .feedback-name,
+[data-bs-theme="dark"] .project-content h5 {
+  color: #4ade80;
+}
+[data-bs-theme="dark"] .text-muted,
+[data-bs-theme="dark"] .project-desc,
+[data-bs-theme="dark"] .feedback-text {
+  color: #cbd5e1 !important;
+}
+[data-bs-theme="dark"] .design-card:hover,
+[data-bs-theme="dark"] .project-card:hover,
+[data-bs-theme="dark"] .feedback-card:hover {
+  box-shadow: 0 12px 30px rgba(34, 197, 94, 0.25);
+  transform: translateY(-5px);
+}
+
+/* ===== Masonry Portfolio ===== */
+[data-bs-theme="dark"] .portfolio-card .overlay {
+  background: rgba(34, 197, 94, 0.85);
+}
+[data-bs-theme="dark"] .portfolio-card img {
+  filter: brightness(0.85);
+}
+
+/* ===== CTA Section ===== */
+[data-bs-theme="dark"] .cta-section {
+  background-color: #1e293b;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+[data-bs-theme="dark"] .cta-title {
+  color: #4ade80;
+}
+[data-bs-theme="dark"] .cta-subtitle {
+  color: #cbd5e1;
+}
+[data-bs-theme="dark"] .btn-cta {
+  background-color: #22c55e;
+}
+[data-bs-theme="dark"] .btn-cta:hover {
+  background-color: #16a34a;
+}
+
+/* ===== Feedback Section ===== */
+[data-bs-theme="dark"] .feedback-section {
+  background-color: #0f172a;
+}
+[data-bs-theme="dark"] .feedback-card {
+  background-color: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ===== Projects Section ===== */
+[data-bs-theme="dark"] .projects-section {
+  background-color: #0f172a;
+}
+[data-bs-theme="dark"] .project-content {
+  color: #e2e8f0;
+}
+[data-bs-theme="dark"] .project-tags {
+  color: #86efac;
+}
+
+/* ===== Categories ===== */
+[data-bs-theme="dark"] .icon-circle {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+}
+[data-bs-theme="dark"] .category-card h5 {
+  color: #e2e8f0;
+}
+[data-bs-theme="dark"] .category-card p {
+  color: #cbd5e1;
+}
+
+/* ===== Section Background ===== */
+[data-bs-theme="dark"] body {
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+[data-bs-theme="dark"] h1, 
+[data-bs-theme="dark"] h2, 
+[data-bs-theme="dark"] h3, 
+[data-bs-theme="dark"] h4, 
+[data-bs-theme="dark"] h5, 
+[data-bs-theme="dark"] h6 {
+  color: #4ade80;
+}
+[data-bs-theme="dark"] p {
+  color: #cbd5e1;
+}
+
+/* ===== Scroll to Top Button ===== */
+[data-bs-theme="dark"] #backToTop {
+  background: #22c55e;
+  color: #fff;
+}
+[data-bs-theme="dark"] #backToTop:hover {
+  background: #16a34a;
+}
+
+/* ==================== Base Footer ==================== */
+.professional-footer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #edf6f3 50%, #f8f9fa 100%);
+  color: #333;
+  padding: 50px 0 0;
+  margin-top: 50px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Brand */
+.footer-logo {
+  max-width: 160px;
+  margin-bottom: 1.5rem;
+  transition: transform 0.3s ease;
+}
+.footer-logo:hover {
+  transform: scale(1.05);
+}
+@media (min-width: 768px) {
+  .footer-logo { max-width: 180px; }
+}
+.brand-name {
+  font-size: 1.8rem;
+  font-weight: 700;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.brand-description {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Quick Stats - smaller and consistent */
+.quick-stats {
+  display: flex;
+  justify-content: flex-start; /* aligns left with brand description */
+  gap: 20px; /* smaller space between stats */
+  margin-top: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 60px; /* reduced width for smaller layout */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align, can use center if preferred */
+}
+
+.stat-number {
+  font-size: 1.2rem; /* smaller than before */
+  font-weight: 700;
+  color: #28a745;
+  margin-bottom: 0.2rem;
+}
+
+.stat-label {
+  font-size: 0.75rem; /* smaller and more consistent */
+  color: #555;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+
+/* Section Titles */
+.footer-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+.footer-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 30px; height: 2px;
+  background: linear-gradient(45deg, #28a745, #20c997);
+  border-radius: 2px;
+}
+
+/* Links */
+.footer-links a {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding-left: 15px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.footer-links a:hover {
+  color: #28a745;
+  transform: translateX(5px);
+}
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+.footer-links a:hover::before { opacity: 1; }
+
+/* Contact */
+.contact-item i { color: #28a745; }
+.contact-item a { color: inherit; transition: color 0.3s ease; }
+.contact-item a:hover { color: #20c997; }
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 1rem;
+}
+.social-icons a {
+  font-size: 1.2rem;
+  color: #666;
+  transition: all 0.3s ease;
+}
+.social-icons a:hover {
+  color: #28a745;
+  transform: scale(1.2);
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background: rgba(40, 167, 69, 0.05);
+  margin-top: 50px;
+  padding: 25px 0;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+.footer-nav a {
+  color: #666;
+  margin-left: 15px;
+  transition: color 0.3s ease;
+}
+.footer-nav a:hover { color: #28a745; }
+
+/* ==================== Dark Mode ==================== */
+[data-bs-theme="dark"] .professional-footer {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  color: #f1f5f9;
+}
+[data-bs-theme="dark"] .brand-name {
+  background: linear-gradient(45deg, #20c997, #00ff95);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+[data-bs-theme="dark"] .brand-description,
+[data-bs-theme="dark"] .stat-label,
+[data-bs-theme="dark"] .contact-item span,
+[data-bs-theme="dark"] .footer-links a,
+[data-bs-theme="dark"] .footer-nav a,
+[data-bs-theme="dark"] .copyright {
+  color: #94a3b8;
+}
+[data-bs-theme="dark"] .stat-number,
+[data-bs-theme="dark"] .footer-links a:hover,
+[data-bs-theme="dark"] .footer-links a::before,
+[data-bs-theme="dark"] .contact-item i,
+[data-bs-theme="dark"] .social-icons a:hover,
+[data-bs-theme="dark"] .footer-nav a:hover {
+  color: #00ff95;
+}
+[data-bs-theme="dark"] .footer-title {
+  color: #f8fafc;
+}
+[data-bs-theme="dark"] .footer-title::after {
+  background: linear-gradient(45deg, #20c997, #00ff95);
+}
+[data-bs-theme="dark"] .footer-bottom {
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+[data-bs-theme="dark"] .social-icons a {
+  color: #94a3b8;
+}
+
+/* ==================== Animations ==================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Footer Links - smaller and aligned */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.5rem; /* reduced spacing between items */
+}
+
+.footer-links a {
+  font-size: 0.85rem; /* slightly smaller */
+  color: #555;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+  position: relative;
+  padding-left: 12px; /* small padding for arrow */
+}
+
+.footer-links a::before {
+  content: '▸';
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover::before {
+  opacity: 1;
+}
+
+.footer-links a:hover {
+  color: #28a745;
+  transform: translateX(3px);
+}
+</style>
+
+
 
 </head>
 <body>
-  <!-- Back link -->
-  <div class="container mt-4">
-    <a href="../index.html" class="btn btn-link text-decoration-none d-flex align-items-center" style="font-size: 1.1rem;">
-      &#8592; <span class="ms-2">Back</span>
-    </a>
+   <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center px-4"
+      >
+        <a class="navbar-brand hover-scale" href="#">
+          <img
+            src="../images/logo_bg_transparent.png"
+            alt="GrowCraft"
+            id="navbarLogo"
+            class="smooth-transition"
+          />
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blogListing.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./work.html">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./src/faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="src/contact.html">Contact Us</a>
+            </li>
+          </ul>
+
+          <button
+            class="btn theme-toggle ms-3"
+            type="button"
+            id="themeToggle"
+            title="Toggle Dark/Light Mode"
+          >
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <!-- ===== Hero Section for Graphic Design Portfolio ===== -->
+<section class="graphic-hero container text-center py-5">
+  <div class="hero-content">
+    <h1 class="hero-title">Designs That Speak Louder Than Words</h1>
+    <p class="hero-subtitle">
+      Empowering brands with creative visuals — from stunning logos to marketing campaigns that convert.
+    </p>
+    <div class="hero-buttons mt-4">
+      <a href="#portfolio" class="btn btn-primary-green me-3">View Our Work</a>
+      
+    </div>
   </div>
 
-  <!-- Theme toggle button (top right) -->
-  <button id="themeToggle" aria-label="Toggle theme">
-    <span id="themeIcon">🌙</span>
-  </button>
+ 
+</section>
+<!-- ===== Design Categories Section ===== -->
+<section class="design-categories container py-5 text-center" id="categories">
+  <h2 class="section-title mb-3">Explore Our Design Expertise</h2>
+  <p class="section-subtitle mb-5">
+    Discover how GrowCraft brings ideas to life — from brands to pixels.
+  </p>
 
-  <section class="container mt-5">
-    <h1 class="mb-4 text-center">Our Graphic Design Work</h1>
-    <p class="text-center mb-5">A visual journey of creativity and communication — from logos to marketing collateral.</p>
-    <div class="row">
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="../images/img1gr.jpg" class="card-img-top" alt="Logo Design">
-          <div class="card-body">
-            <h5 class="card-title">Brand Identity Kit</h5>
-            <p class="card-text">Custom logo, typography, and color scheme designed for a tech startup.</p>
+  <div class="row g-4">
+    <!-- Category Card -->
+    <div class="col-md-4 col-sm-6">
+      <div class="category-card">
+        <div class="icon-circle">
+          <i class="fas fa-paint-brush"></i>
+        </div>
+        <h5>Branding & Logo Design</h5>
+        <p>Crafting unique identities that reflect your brand’s essence.</p>
+       
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <div class="category-card">
+        <div class="icon-circle">
+          <i class="fas fa-bullhorn"></i>
+        </div>
+        <h5>Posters & Marketing Collateral</h5>
+        <p>Bold visuals and layouts that elevate your campaigns.</p>
+       
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <div class="category-card">
+        <div class="icon-circle">
+          <i class="fas fa-chart-pie"></i>
+        </div>
+        <h5>Infographics & Data Visuals</h5>
+        <p>Transforming complex data into visually stunning insights.</p>
+        
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <div class="category-card">
+        <div class="icon-circle">
+          <i class="fas fa-mobile-alt"></i>
+        </div>
+        <h5>UI/UX Visual Assets</h5>
+        <p>Design systems and interfaces that delight and engage users.</p>
+        
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <div class="category-card">
+        <div class="icon-circle">
+          <i class="fas fa-share-alt"></i>
+        </div>
+        <h5>Social Media Design</h5>
+        <p>Eye-catching content crafted for impact and shareability.</p>
+        
+      </div>
+    </div>
+
+    <div class="col-md-4 col-sm-6">
+      <div class="category-card">
+        <div class="icon-circle">
+          <i class="fas fa-pen-nib"></i>
+        </div>
+        <h5>Illustrations</h5>
+        <p>Custom artwork to add character and emotion to your brand.</p>
+       
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== Projects / Portfolio Section ===== -->
+<section class="projects-section container py-5" id="projects">
+  <h2 class="section-title text-center mb-3">Our Graphic Design Projects</h2>
+  <p class="section-subtitle text-center mb-5">
+    A diverse collection of our work — branding, posters, UI assets, and social media visuals.
+  </p>
+
+  <div class="row g-4">
+    <!-- Project Card -->
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="project-card">
+        <img src="../images/brand-logo.png" alt="Brand Identity Kit">
+        <div class="project-content">
+          <h5>Brand Identity Kit</h5>
+          <p class="project-tags">Logo / Branding / Typography</p>
+          <p class="project-desc">
+            Custom logo, typography, and color scheme designed for a tech startup.
+          </p>
+          <a href="#" class="btn-project">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="project-card">
+        <img src="../images/poster-design.jpeg" alt="Event Poster Series">
+        <div class="project-content">
+          <h5>Event Poster Series</h5>
+          <p class="project-tags">Posters / Marketing Collateral</p>
+          <p class="project-desc">
+            Vibrant poster collection made for online and offline tech summits.
+          </p>
+          <a href="#" class="btn-project">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="project-card">
+        <img src="../images/infographics.jpeg" alt="Data Infographics">
+        <div class="project-content">
+          <h5>Data Infographics</h5>
+          <p class="project-tags">Infographics / Visual Data</p>
+          <p class="project-desc">
+            Transforming complex data into visually stunning insights.
+          </p>
+          <a href="#" class="btn-project">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="project-card">
+        <img src="../images/ui-ux-design.jpeg" alt="UI Design Assets">
+        <div class="project-content">
+          <h5>UI/UX Visual Assets</h5>
+          <p class="project-tags">UI / UX / Interfaces</p>
+          <p class="project-desc">
+            Design systems and interfaces that delight and engage users.
+          </p>
+          <a href="#" class="btn-project">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="project-card">
+        <img src="../images/social-media.jpeg" alt="Social Media Design">
+        <div class="project-content">
+          <h5>Social Media Campaigns</h5>
+          <p class="project-tags">Social Media / Marketing</p>
+          <p class="project-desc">
+            Eye-catching graphics created to maximize engagement across platforms.
+          </p>
+          <a href="#" class="btn-project">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="project-card">
+        <img src="../images/illustrations.jpeg" alt="Custom Illustrations">
+        <div class="project-content">
+          <h5>Illustrations & Artwork</h5>
+          <p class="project-tags">Illustrations / Character Design</p>
+          <p class="project-desc">
+            Custom illustrations that bring stories and ideas to life.
+          </p>
+          <a href="#" class="btn-project">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add more cards below as needed -->
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="project-card">
+        <img src="../images/poster-design.jpeg" alt="Banner Design">
+        <div class="project-content">
+          <h5>Website Banner Design</h5>
+          <p class="project-tags">Web / Marketing / Graphics</p>
+          <p class="project-desc">
+            Engaging banners to improve conversions and user experience.
+          </p>
+          <a href="#" class="btn-project">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="project-card">
+        <img src="../images/packaging.jpeg" alt="Packaging Design">
+        <div class="project-content">
+          <h5>Product Packaging</h5>
+          <p class="project-tags">Packaging / Branding</p>
+          <p class="project-desc">
+            Packaging concepts that communicate product quality and brand identity.
+          </p>
+          <a href="#" class="btn-project">View Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== Testimonials / Client Feedback Section ===== -->
+<section class="feedback-section container py-5" id="testimonials">
+  <h2 class="feedback-title text-center mb-3">What Our Clients Say</h2>
+  <p class="feedback-subtitle text-center mb-5">
+    Real feedback from our clients — inspiring stories and experiences with GrowCraft.
+  </p>
+
+  <div class="row g-4">
+    <!-- Testimonial Card -->
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="feedback-card hover-lift">
+        <div class="feedback-img">
+          <img src="../images/client01.png" alt="Client 1" class="rounded-circle" />
+        </div>
+        <p class="feedback-text">
+          “GrowCraft transformed our brand identity — the attention to detail was incredible!”
+        </p>
+        <h5 class="feedback-name">Amit Sharma</h5>
+        <p class="feedback-role">CEO, TechNova</p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="feedback-card hover-lift">
+        <div class="feedback-img">
+          <img src="../images/client02.png" alt="Client 2" class="rounded-circle" />
+        </div>
+        <p class="feedback-text">
+          “Exceptional design team! Our marketing campaigns saw a 40% engagement increase.”
+        </p>
+        <h5 class="feedback-name">Priya Mehra</h5>
+        <p class="feedback-role">Marketing Head, InnoWave</p>
+      </div>
+    </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="feedback-card hover-lift">
+        <div class="feedback-img">
+          <img src="../images/client03.jpeg" alt="Client 3" class="rounded-circle" />
+        </div>
+        <p class="feedback-text">
+          “The illustrations and branding perfectly captured our vision — highly recommend GrowCraft!”
+        </p>
+        <h5 class="feedback-name">Rohit Verma</h5>
+        <p class="feedback-role">Founder, Artify</p>
+      </div>
+    </div>
+
+    <!-- Add more testimonial cards as needed -->
+  </div>
+</section>
+<!-- ===== Call-to-Action / Collaboration Section ===== -->
+<section class="cta-section py-5" id="contact">
+  <div class="container text-center">
+    <h2 class="cta-title mb-3">Have a vision in mind? Let’s bring it to life together.</h2>
+    <p class="cta-subtitle mb-4">
+      Collaborate with our design experts and transform your ideas into visually stunning experiences.
+    </p>
+    <a href="contact.html" class="btn btn-cta px-5 py-2">Start Your Project</a>
+  </div>
+</section>
+
+<!-- ===== Enhanced GrowCraft Footer ===== -->
+<footer class="professional-footer fade-in" data-aos="fade-up">
+  <div class="container">
+    <div class="row g-4 py-4 fade-in">
+      
+      <!-- Brand -->
+      <div class="col-lg-4 col-md-6 fade-in">
+        <div class="footer-brand fade-in">
+          <h4 class="brand-name">GrowCraft</h4>
+          <p class="brand-description" >
+            Empowering businesses with innovative digital solutions and creative excellence.
+          </p>
+          <div class="quick-stats fade-in">
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Projects</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">20+</span>
+              <span class="stat-label">Clients</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">1+</span>
+              <span class="stat-label">Years</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="../images/img2gr.png" class="card-img-top" alt="Poster Design">
-          <div class="card-body">
-            <h5 class="card-title">Event Poster Series</h5>
-            <p class="card-text">Vibrant poster collection made for online and offline tech summits.</p>
+
+      <!-- Services -->
+      <div class="col-lg-2 col-md-3 col-6 fade-in" >
+        <h5 class="footer-title">Services</h5>
+        <ul class="footer-links" >
+          <li><a href="learn/webdev.html">Web Development</a></li>
+          <li><a href="learn/graphic.html">Graphic Design</a></li>
+          <li><a href="learn/marketing.html">Digital Marketing</a></li>
+          <li><a href="learn/contentwriting.html">Content Writing</a></li>
+          <li><a href="learn/socialmedia.html">Social Media</a></li>
+          <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-2 col-md-3 col-6 fade-in">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul class="footer-links">
+          <li><a href="index.html#about">About Us</a></li>
+          <li><a href="index.html#work">Portfolio</a></li>
+          <li><a href="src/contact.html">Contact</a></li>
+          <li><a href="#careers">Careers</a></li>
+          <li><a href="blogListing.html">Blog</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-4 col-md-6 fade-in" >
+        <h5 class="footer-title">Get In Touch</h5>
+        <div class="contact-info mb-3 fade-in">
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <a href="tel:+919999999999">+91 999 999 999</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <span>ABC Street, XYZ City, India</span>
           </div>
         </div>
+
+        <!-- Social -->
+        <div class="social-icons">
+  <a href="https://discord.gg/vk5zFm56" target="_blank"><i class="fa-brands fa-discord"></i></a>
+  <a href="https://github.com/gyanshankar1708/GrowCraft" target="_blank"><i class="fa-brands fa-github"></i></a>
+  <a href="https://www.instagram.com/GrowCraft" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+  <a href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+</div>
+
       </div>
-      <div class="col-md-4 mb-4">
-        <div class="card shadow">
-          <img src="../images/img3gr.jpg" class="card-img-top" alt="Infographic">
-          <div class="card-body">
-            <h5 class="card-title">Infographics & Icons</h5>
-            <p class="card-text">Data-driven illustrations for SaaS onboarding flows and dashboards.</p>
+
+    </div>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom fade-in">
+    <div class="container">
+      <div class="row align-items-center py-3 fade-in">
+        <div class="col-md-6">
+          <p class="copyright mb-0">
+            © <span id="year"></span> <strong>GrowCraft</strong>. All rights reserved.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <div class="footer-nav fade-in">
+            <a href="#privacy">Privacy</a>
+            <a href="#terms">Terms</a>
+            <a href="#sitemap">Sitemap</a>
           </div>
         </div>
       </div>
     </div>
-  </section>
-
+  </div>
+</footer>
   <!-- Theme toggle script -->
   <script>
-    (function() {
-      const root = document.documentElement;
-      const btn = document.getElementById('themeToggle');
-      const icon = document.getElementById('themeIcon');
+  const THEME_KEY = 'theme';
 
-      function applyTheme(t) {
-        root.setAttribute('data-theme', t);
-        localStorage.setItem('theme', t);
-        icon.textContent = (t === 'dark') ? '☀️' : '🌙';
+  function applyTheme(theme) {
+    // Apply Bootstrap theme attribute
+    document.documentElement.setAttribute('data-bs-theme', theme);
+    document.body.classList.toggle('dark', theme === 'dark');
+
+    // Update icon
+    const icon = document.getElementById('themeIcon');
+    if (icon) {
+      if (theme === 'dark') {
+        icon.classList.remove('fa-moon');
+        icon.classList.add('fa-sun');
+      } else {
+        icon.classList.remove('fa-sun');
+        icon.classList.add('fa-moon');
       }
+    }
 
-      const saved = localStorage.getItem('theme') || 'light';
-      applyTheme(saved);
+    // Optional: update logo if function exists
+    if (typeof updatelogo === 'function') {
+      try { updatelogo(); } catch (_) {}
+    }
+  }
+  function updatelogo() {
+  const logo = document.getElementById("navbarLogo");
+  if (!logo) return;
 
-      btn.addEventListener('click', () => {
-        const next = (root.getAttribute('data-theme') === 'dark') ? 'light' : 'dark';
+  const theme = document.documentElement.getAttribute("data-bs-theme");
+  if (theme === "dark") {
+    logo.src = "../images/Logo.png"; // dark mode logo
+  } else {
+    logo.src = "../images/Logo_new.png"; // light mode logo
+  }
+}
+function updatelogo() {
+  const logo = document.getElementById("navbarLogo");
+  if (!logo) return;
+
+  const theme = document.documentElement.getAttribute("data-bs-theme");
+  if (theme === "dark") {
+    logo.src = "../images/Logo.png"; // dark mode logo
+  } else {
+    logo.src = "../images/Logo_new.png"; // light mode logo
+  }
+}
+
+
+  function pickInitialTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'light' || saved === 'dark') return saved;
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    return prefersDark ? 'dark' : 'light';
+  }
+
+  document.addEventListener('DOMContentLoaded', function () {
+    // Apply initial theme
+    applyTheme(pickInitialTheme());
+
+    // Handle toggle button
+    const btn = document.getElementById('themeToggle');
+    if (btn) {
+      btn.addEventListener('click', function () {
+        const current = document.documentElement.getAttribute('data-bs-theme') === 'dark' ? 'dark' : 'light';
+        const next = current === 'dark' ? 'light' : 'dark';
+        localStorage.setItem(THEME_KEY, next);
         applyTheme(next);
       });
-    })();
-  </script>
+    }
+
+    // Scroll-to-top button logic
+    const backToTop = document.getElementById("backToTop");
+    if (backToTop) {
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTop.classList.add("show");
+        } else {
+          backToTop.classList.remove("show");
+        }
+      });
+
+      backToTop.addEventListener("click", () => {
+        backToTop.style.transform = "translateY(-3px) scale(0.95)";
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        setTimeout(() => backToTop.style.transform = "", 200);
+      });
+    }
+  });
+</script>
+
 </body>
 </html>
