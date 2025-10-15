@@ -1,6 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" data-bs-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GrowCraft - Gateway to Digital Success</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+    />
+    <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-green: #27ae60;
+        --secondary-green: #388e3c;
+        --light-green: #4caf50;
+        --accent-green: #81c784;
+        --dark-bg: #1a1a1a;
+        --darker-bg: #0f0f0f;
+        --glass-bg: rgba(255, 255, 255, 0.1);
+        --glass-border: rgba(255, 255, 255, 0.2);
+        --shadow-light: 0 8px 32px rgba(39, 174, 96, 0.15);
+        --shadow-hover: 0 16px 64px rgba(39, 174, 96, 0.25);
+        --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        --border-radius: 20px;
+        --spacing: 2rem;
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -403,197 +442,730 @@
         padding: 35px 15px;
       }
 
-      .program-card img.icon {
-        width: 70px;
-        height: 70px;
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        color: #333;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
       }
-    }
 
-    @media (max-width: 768px) {
+      /* Enhanced Navbar */
+      .navbar {
+        padding: 1.2rem 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .navbar.scrolled {
+        padding: 0.8rem 0;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+      }
+
+      .navbar-brand img {
+        max-height: 50px;
+        transition: var(--transition);
+        filter: drop-shadow(2px 2px 8px rgba(39, 174, 96, 0.2));
+      }
+
+      .navbar-nav .nav-link {
+        font-weight: 600;
+        color: #2e7d32;
+        padding: 0.8rem 1.5rem !important;
+        border-radius: 25px;
+        margin: 0 0.3rem;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .navbar-nav .nav-link::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--primary-green),
+          var(--light-green)
+        );
+        transition: var(--transition);
+        z-index: -1;
+      }
+
+      .navbar-nav .nav-link:hover::before {
+        left: 0;
+      }
+
+      /* Theme Toggle Button*/
+      .theme-toggle {
+        background: rgba(39, 174, 96, 0.1);
+        border: 1px solid rgba(39, 174, 96, 0.3);
+        color: var(--primary-green);
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .theme-toggle::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          135deg,
+          var(--primary-green),
+          var(--light-green)
+        );
+        transition: var(--transition);
+        z-index: -1;
+      }
+
+      .theme-toggle:hover::before {
+        left: 0;
+      }
+
+      .theme-toggle:hover {
+        color: white;
+        border-color: var(--primary-green);
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+      }
+
+      .theme-toggle i {
+        font-size: 18px;
+        transition: var(--transition);
+      }
+
+      .theme-toggle:hover i {
+        transform: rotate(20deg) scale(1.1);
+      }
+
+      .navbar-nav .nav-link:hover {
+        color: #ffffff !important;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
+      }
+      /* dark theme for body */
+      [data-bs-theme="dark"] body {
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+        color: var(--card-bg);
+      }
+      /* dark theme for navbar */
+      [data-bs-theme="dark"] .navbar {
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+      }
+      [data-bs-theme="dark"] .nav-link {
+        color: var(--primary-green);
+      }
+      /* dark theme for training section */
+      [data-bs-theme="dark"] .training-section {
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+      }
+      [data-bs-theme="dark"] .services-subtitle {
+        color: var(--card-bg);
+      }
+      [data-bs-theme="dark"] .program-card {
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+        color: var(--card-bg);
+        border: 1px solid white;
+        box-shadow: 0 2px 10px rgba(3, 92, 37, 0.5);
+      }
+
+      /* service section */
+      [data-bs-theme="dark"] .services-section {
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+      }
+      [data-bs-theme="dark"] .card-services {
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+      }
+      [data-bs-theme="dark"] .card-text.summary {
+        color: var(--text-white) !important;
+      }
+      /* about section */
+      [data-bs-theme="dark"] .about-section {
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+        color: var(--text-white);
+      }
+      [data-bs-theme="dark"] .about-subtitle {
+        color: var(--text-white);
+      }
+      [data-bs-theme="dark"] .about-para {
+        color: var(--text-white);
+      }
+      /* feedback section */
+      [data-bs-theme="dark"] .feedback-section {
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+        color: var(--text-white);
+      }
+      [data-bs-theme="dark"] .feedback-subtitle {
+        color: var(--text-white);
+      }
+
+      /* 🌙 Dark Mode - Testimonials */
+      [data-bs-theme="dark"] .testimonial-carousel {
+        background: linear-gradient(135deg, #121212 0%, #1e1e1e 100%);
+      }
+
+      [data-bs-theme="dark"] .testimonial-heading {
+        color: #00e676 !important; /* neon green accent */
+      }
+
+      [data-bs-theme="dark"] .testimonial-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(0, 230, 118, 0.25);
+        color: #f5f5f5;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+      }
+
+      [data-bs-theme="dark"] .testimonial-card h4 {
+        color: #ffffff;
+      }
+
+      [data-bs-theme="dark"] .testimonial-card span {
+        color: #90caf9; /* soft blue for role text */
+      }
+
+      [data-bs-theme="dark"] .testimonial-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6),
+          0 0 25px rgba(0, 230, 118, 0.5); /* glowing effect */
+      }
+
+      /* Carousel Enhancements */
+      .carousel-section {
+        position: relative;
+        margin: 2rem 0;
+      }
+
+      .carousel-inner {
+        border-radius: var(--border-radius);
+        overflow: hidden;
+      }
+
+      .carousel-item {
+        position: relative;
+        height: 70vh;
+        min-height: 500px;
+      }
+
+      .carousel-overlay img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        filter: brightness(0.7);
+        transition: var(--transition);
+      }
+
+      .carousel-item:hover .carousel-overlay img {
+        filter: brightness(0.8);
+        transform: scale(1.02);
+      }
+
+      .carousel-caption {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(15px);
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .carousel-caption h2 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #ffffff;
+        margin-bottom: 1.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      .redirect-btns .btn {
+        padding: 12px 24px;
+        margin: 0 8px;
+        border-radius: 25px;
+        font-weight: 600;
+        transition: var(--transition);
+        border: 2px solid transparent;
+      }
+
+      .btn-primary {
+        background: linear-gradient(
+          135deg,
+          var(--primary-green),
+          var(--light-green)
+        );
+        border: none;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(
+          135deg,
+          var(--light-green),
+          var(--accent-green)
+        );
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(39, 174, 96, 0.4);
+      }
+
+      .btn-custom-purple {
+        background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+        border: none;
+        color: white;
+      }
+
+      .btn-custom-purple:hover {
+        background: linear-gradient(135deg, #5a4fcf, #6c5ce7);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(108, 92, 231, 0.4);
+      }
+
+      /* Custom Carousel Arrow */
+
+      .arrow-slide-btn:hover {
+        background: rgba(255, 255, 255, 0.25);
+        transform: translateY(-50%) scale(1.1);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      }
+
+      .arrow-icon {
+        font-size: 24px;
+        transition: var(--transition);
+      }
+
+      .arrow-slide-btn:hover .arrow-icon {
+        transform: translateX(3px);
+      }
+
+      :root {
+        --primary-green: #27ae60;
+        --secondary-green: #388e3c;
+        --light-green: #4caf50;
+        --accent-green: #81c784;
+      }
+
+      .training-section {
+        background: #f8fff9;
+        padding: 80px 20px;
+        text-align: center;
+      }
+
       .head-training {
-        font-size: 1.8rem;
+        color: var(--primary-green);
+        font-weight: 700;
+        margin-bottom: 10px;
+        font-size: 2.2rem;
       }
 
-      .program-card {
-        margin-bottom: 20px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .program-card {
-        padding: 25px 10px;
-      }
-
-      .program-card h6 {
+      .services-subtitle {
+        color: #555;
         font-size: 1rem;
+        margin-bottom: 50px;
       }
 
-      .program-card p {
-        font-size: 0.9rem;
+      .program-card {
+        background: #ffffff;
+        border-radius: 16px;
+        padding: 40px 20px;
+        text-align: center;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        height: 100%;
       }
-    }
 
-    /* === Colors & Variables === */
-    :root {
-      --primary-green: #27ae60;
-      --btn-blue: #3498db;
-      --btn-blue-hover: #2980b9;
-      --text-white: #fff;
-      --card-bg: #fff;
-      --card-shadow: rgba(0, 0, 0, 0.1);
-    }
-
-    /* === Section Styles === */
-    .services-section {
-      padding: 80px 20px;
-      background: #f8fff9;
-      text-align: center;
-    }
-
-    .services-section .heading-text {
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: var(--primary-green);
-      margin-bottom: 10px;
-    }
-
-    .services-subtitle {
-      color: #555;
-      font-size: 1rem;
-      margin-bottom: 50px;
-    }
-
-    /* === Card Styles === */
-    .card-services {
-      background: var(--card-bg);
-      border-radius: 15px;
-      padding: 30px 20px;
-      text-align: center;
-      transition: transform 0.4s ease, box-shadow 0.4s ease;
-      box-shadow: 0 4px 20px var(--card-shadow);
-      cursor: pointer;
-      height: 100%;
-    }
-
-    .card-services:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(39, 174, 96, 0.25);
-      border: 1px solid var(--light-green);
-    }
-
-    /* === Icon Styles === */
-    .svg-img svg {
-      width: 50px;
-      height: 50px;
-      color: var(--primary-green);
-      transition: all 0.4s ease;
-    }
-
-    .card-services:hover .svg-img svg {
-      transform: scale(1.2) rotate(10deg);
-    }
-
-    /* === Title Styles === */
-    .card-title {
-      color: var(--primary-green);
-      font-weight: 600;
-      margin-top: 15px;
-      transition: color 0.3s ease, transform 0.3s ease;
-    }
-
-    .card-services:hover .card-title {
-      transform: translateY(-3px);
-    }
-
-    /* === Card Text === */
-    .card-text.summary {
-      font-size: 0.95rem;
-      color: #555;
-      margin-top: 10px;
-      transition: color 0.3s ease;
-    }
-
-    [data-bs-theme="dark"] .card-text.summary {
-      color: var(--bs-secondary-color);
-    }
-
-    .card-services:hover .card-text.summary {
-      color: #333;
-    }
-
-    /* === Buttons === */
-    .btn-group .toggle-btn {
-      background: var(--primary-green);
-      color: var(--text-white);
-      border: none;
-      padding: 6px 15px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    .btn-group .toggle-btn:hover {
-      background: #1e8449;
-    }
-
-    .btn-group .btn-outline-primary {
-      background: var(--btn-blue);
-      color: var(--text-white);
-      border: none;
-      padding: 6px 15px;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
-
-    .btn-group .btn-outline-primary:hover {
-      background: var(--btn-blue-hover);
-      color: var(--text-white);
-    }
-
-    /* === Responsive Grid === */
-    @media (min-width: 992px) {
-      .col-lg-5 {
-        flex: 0 0 31%;
-        max-width: 31%;
-        margin-bottom: 30px;
-      }
-    }
-
-    @media (max-width: 991px) {
-      .col-lg-5 {
-        flex: 0 0 48%;
-        max-width: 48%;
+      /* Tranning Section New CSS */
+      .program-card img.icon {
+        width: 80px;
+        height: 80px;
         margin-bottom: 20px;
+        object-fit: contain;
+        filter: brightness(0) saturate(100%) invert(39%) sepia(55%)
+          saturate(620%) hue-rotate(87deg) brightness(92%) contrast(91%);
+        transition: all 0.3s ease;
       }
-    }
 
-    @media (max-width: 768px) {
-      .col-md-6 {
-        flex: 0 0 100%;
-        max-width: 100%;
-        margin-bottom: 15px;
+      /* ✅ Title */
+      .program-card h6 {
+        color: var(--secondary-green);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 10px;
       }
-    }
 
-    /* === Mobile-Friendly Hover Animations === */
-    @media (hover: hover) and (pointer: fine) {
+      /* ✅ Description */
+      .program-card p {
+        color: #444;
+        font-size: 0.95rem;
+        line-height: 1.5;
+        margin: 0 auto;
+        max-width: 250px;
+      }
 
-      /* Only apply hover effects on devices that support hover */
+      /* ✅ Hover Effect */
+      .program-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(39, 174, 96, 0.25);
+        border: 1px solid var(--light-green);
+      }
+
+      /* ✅ Icon turns brighter green on hover */
+      .program-card:hover img.icon {
+        filter: brightness(0) saturate(100%) invert(47%) sepia(74%)
+          saturate(563%) hue-rotate(85deg) brightness(97%) contrast(94%);
+      }
+
+      /* Remove underline */
+      .training-links {
+        text-decoration: none;
+      }
+
+      /* ✅ Responsive Design */
+      @media (max-width: 992px) {
+        .program-card {
+          padding: 35px 15px;
+        }
+        .program-card img.icon {
+          width: 70px;
+          height: 70px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .head-training {
+          font-size: 1.8rem;
+        }
+        .program-card {
+          margin-bottom: 20px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .program-card {
+          padding: 25px 10px;
+        }
+        .program-card h6 {
+          font-size: 1rem;
+        }
+        .program-card p {
+          font-size: 0.9rem;
+        }
+      }
+
+      /* === Colors & Variables === */
+      :root {
+        --primary-green: #27ae60;
+        --btn-blue: #3498db;
+        --btn-blue-hover: #2980b9;
+        --text-white: #fff;
+        --card-bg: #fff;
+        --card-shadow: rgba(0, 0, 0, 0.1);
+      }
+
+      /* === Section Styles === */
+      .services-section {
+        padding: 80px 20px;
+        background: #f8fff9;
+        text-align: center;
+      }
+
+      .services-section .heading-text {
+        font-size: 2.2rem;
+        font-weight: 700;
+        color: var(--primary-green);
+        margin-bottom: 10px;
+      }
+
+      .services-subtitle {
+        color: #555;
+        font-size: 1rem;
+        margin-bottom: 50px;
+      }
+
+      /* === Card Styles === */
+      .card-services {
+        background: var(--card-bg);
+        border-radius: 15px;
+        padding: 30px 20px;
+        text-align: center;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        box-shadow: 0 4px 20px var(--card-shadow);
+        cursor: pointer;
+        height: 100%;
+      }
+
       .card-services:hover {
-        transform: translateY(-10px) scale(1.03);
-        box-shadow: 0 10px 25px rgba(39, 174, 96, 0.25);
+        transform: translateY(-10px);
+        box-shadow: 0 8px 20px rgba(39, 174, 96, 0.25);
+        border: 1px solid var(--light-green);
+      }
+
+      /* === Icon Styles === */
+      .svg-img svg {
+        width: 50px;
+        height: 50px;
+        color: var(--primary-green);
+        transition: all 0.4s ease;
       }
 
       .card-services:hover .svg-img svg {
         transform: scale(1.2) rotate(10deg);
       }
 
+      /* === Title Styles === */
+      .card-title {
+        color: var(--primary-green);
+        font-weight: 600;
+        margin-top: 15px;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
       .card-services:hover .card-title {
         transform: translateY(-3px);
+      }
+
+      /* === Card Text === */
+      .card-text.summary {
+        font-size: 0.95rem;
+        color: #555;
+        margin-top: 10px;
+        transition: color 0.3s ease;
       }
 
       .card-services:hover .card-text.summary {
         color: #333;
       }
+
+      /* === Buttons === */
+      .btn-group .toggle-btn {
+        background: var(--primary-green);
+        color: var(--text-white);
+        border: none;
+        padding: 6px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-group .toggle-btn:hover {
+        background: #1e8449;
+      }
+
+      .btn-group .btn-outline-primary {
+        background: var(--btn-blue);
+        color: var(--text-white);
+        border: none;
+        padding: 6px 15px;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+      }
+
+      .btn-group .btn-outline-primary:hover {
+        background: var(--btn-blue-hover);
+        color: var(--text-white);
+      }
+
+      /* === Responsive Grid === */
+      @media (min-width: 992px) {
+        .col-lg-5 {
+          flex: 0 0 31%;
+          max-width: 31%;
+          margin-bottom: 30px;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .col-lg-5 {
+          flex: 0 0 48%;
+          max-width: 48%;
+          margin-bottom: 20px;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .col-md-6 {
+          flex: 0 0 100%;
+          max-width: 100%;
+          margin-bottom: 15px;
+        }
+      }
+
+      /* === Mobile-Friendly Hover Animations === */
+      @media (hover: hover) and (pointer: fine) {
+        /* Only apply hover effects on devices that support hover */
+        .card-services:hover {
+          transform: translateY(-10px) scale(1.03);
+          box-shadow: 0 10px 25px rgba(39, 174, 96, 0.25);
+        }
+
+        .card-services:hover .svg-img svg {
+          transform: scale(1.2) rotate(10deg);
+        }
+
+        .card-services:hover .card-title {
+          transform: translateY(-3px);
+        }
+
+        .card-services:hover .card-text.summary {
+          color: #333;
+        }
+      } /* All service icons green and slightly bigger */
+      .card-services .svg-img svg {
+        color: #27ae60; /* green */
+        width: 40px; /* increase size */
+        height: 40px; /* increase size */
+        transition: all 0.4s ease;
+      }
+
+      /* Hover animation for icons */
+      .card-services:hover .svg-img svg {
+        transform: scale(1.3) rotate(10deg); /* slightly bigger on hover */
+      }
+      /* About section general */
+      .about-section {
+        padding: 60px 20px;
+        background-color: #f8fff9;
+      }
+
+      /* About section title */
+      .about-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: var(--primary-green);
+        margin-bottom: 10px;
+      }
+
+      /* About subtitle */
+      .about-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #000; /* black */
+        margin-bottom: 50px;
+      }
+
+      /* About cards row */
+      .about-section .row {
+        justify-content: center;
+        gap: 30px;
+      }
+
+      /* About card */
+      .about-card {
+        text-align: center;
+        border-radius: 12px;
+        transition: transform 0.4s ease, box-shadow 0.4s ease;
+        background-color: #fff;
+      }
+
+      /* Hover lift effect */
+      .about-card.hover-lift:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Icon inside h4 */
+      .about-card h4 {
+        display: flex;
+        flex-direction: column; /* icon on top, title below */
+        align-items: center;
+        gap: 10px;
+        font-size: 1.3rem;
+        color: #27ae60; /* green */
+        margin-bottom: 15px;
+      }
+
+      /* Icon size and color */
+      .about-card h4 .icon {
+        font-size: 36px;
+        color: #27ae60; /* green */
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      /* Icon hover animation */
+      .about-card.hover-lift:hover .icon {
+        transform: scale(1.2) rotate(10deg);
+        color: #2ecc71; /* brighter green on hover */
+      }
+
+      /* About paragraph text */
+      .about-para {
+        color: #000; /* black */
+        font-size: 1rem;
+        line-height: 1.6;
+      }
+
+      /* Responsive: 3 cards per row on lg screens */
+      @media (min-width: 992px) {
+        .about-section .col-lg-4 {
+          flex: 0 0 31%;
+          max-width: 31%;
+        }
+      }
+
+      /* Responsive: 2 cards per row on md screens */
+      @media (min-width: 768px) and (max-width: 991px) {
+        .about-section .col-md-6 {
+          flex: 0 0 48%;
+          max-width: 48%;
+        }
+      }
+
+      /* Responsive: 1 card per row on sm screens */
+      @media (max-width: 767px) {
+        .about-section .col-sm-6 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
+      }
+      /* Feedback Section */
+      .feedback-section {
+        padding: 60px 20px;
+        background-color: #f8fff9; /* light neutral background */
+        color: #333;
+      }
+
+      .feedback-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #27ae60; /* green */
+        margin-bottom: 10px;
+      }
+
+      .feedback-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+        color: #555;
+      }
+
+      /* Form container */
+      .feedback-form-container {
+        max-width: 700px;
+        margin: auto;
+        background-color: rgba(39, 174, 96, 0.8); /* more solid green */
+        padding: 35px 30px;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      }
+
+      /* Form Row */
     }
 
     /* All service icons green and slightly bigger */
@@ -873,8 +1445,92 @@
     /* Responsive */
     @media (max-width: 767px) {
       .form-row {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
       }
+
+      /* Form Group */
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+
+      /* Labels */
+      .form-group label {
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #222;
+        font-size: 0.95rem;
+      }
+
+      /* Inputs and Textarea */
+      .form-input,
+      .form-textarea {
+        padding: 12px 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1rem;
+        color: #333;
+        background-color: #fafafa;
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .form-input:focus,
+      .form-textarea:focus {
+        outline: none;
+        border-color: #007bff; /* subtle focus color */
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+      }
+
+      /* Textarea styling */
+      .form-textarea {
+        resize: none;
+      }
+
+      /* Buttons */
+      .form-buttons {
+        display: flex;
+        justify-content: flex-start;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .btn-submit,
+      .btn-cancel {
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        border: none;
+        transition: all 0.3s ease;
+      }
+
+      /* Submit button */
+      .btn-submit {
+        background-color: #007bff;
+        color: #fff;
+      }
+
+      .btn-submit:hover {
+        background-color: #0056b3;
+      }
+
+      /* Cancel button */
+      .btn-cancel {
+        background-color: #e0e0e0;
+        color: #333;
+      }
+
+      .btn-cancel:hover {
+        background-color: #cfcfcf;
+      }
+
+      /* Success Message */
+      .success-message {
+        display: none;
+        margin-top: 20px;
     }
 
     /* ===== FOOTER STYLES ===== */
@@ -1104,244 +1760,344 @@
       .footer-container {
         grid-template-columns: repeat(2, 1fr);
         text-align: center;
-        gap: 1.5rem;
+        color: #28a745;
+        font-weight: 600;
       }
 
-      .footer-col h3 {
-        justify-content: center;
+      .success-message i {
+        font-size: 2rem;
+        margin-bottom: 8px;
+        color: #28a745;
       }
 
-      .footer-col p,
-      .footer-col a {
-        justify-content: center;
+      /* Hover scale effect */
+      .hover-scale {
+        transition: transform 0.3s ease;
       }
 
-      .social-icons {
-        flex-direction: row;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
+      .hover-scale:hover {
+        transform: scale(1.05);
       }
-    }
 
+      /* Responsive */
+      @media (max-width: 767px) {
+        .form-row {
+          flex-direction: column;
+        }
+      }
 
-    /* Responsive Design */
-    /* Mobile */
-    @media (max-width: 768px) {
+      /* Remaining sections and footer remain unchanged */
+      /* ===== FOOTER STYLES ===== */
+      footer {
+        background: #111827;
+        color: #fff;
+        padding: 3rem 2rem 2rem 2rem;
+      }
+
       .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .footer-col {
-        align-items: center;
-        margin-bottom: 1.5rem;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        margin-bottom: 2rem;
+        text-align: left;
       }
 
       .footer-col h3 {
-        justify-content: center;
+        margin-bottom: 1rem;
+        color: #28a745;
+        font-size: 1.2rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: flex-start;
       }
 
-      .footer-col p,
       .footer-col a {
-        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #d1d5db;
+        text-decoration: none;
+        margin-bottom: 0.5rem;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .footer-col a:hover {
+        color: #28a745;
+        transform: translateX(5px);
+      }
+
+      .footer-col p {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        justify-content: flex-start;
       }
 
       .social-icons {
+        display: flex;
         flex-direction: column;
-        align-items: center;
         gap: 0.5rem;
       }
 
+      .social-icons a {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+      }
+
+      .social-icons a:hover {
+        color: #28a745;
+        transform: scale(1.05);
+      }
+
+      /* ===== FOOTER BOTTOM ROW ===== */
       .footer-bottom {
-        flex-direction: column;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 0.5rem;
-      }
-
-      .footer-right a {
-        margin: 0.3rem 0.5rem;
-      }
-    }
-
-    /* Very small screens */
-    @media (max-width: 480px) {
-      .footer-col h3 {
-        font-size: 1rem;
-      }
-
-      .footer-col a,
-      .footer-right a {
-        font-size: 0.85rem;
+        flex-wrap: wrap;
+        border-top: 1px solid #374151;
+        padding-top: 1rem;
+        margin-top: 1rem;
       }
 
       .footer-left {
-        font-size: 0.85rem;
+        color: #9ca3af;
+        font-size: 0.9rem;
       }
-    }
 
-    /* Important Links margin for large screens */
-    .footer-col.important-links {
-      margin-left: 70px;
-      /* margin only on large screens */
-    }
+      .footer-right a {
+        color: #9ca3af;
+        margin-left: 1rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+        position: relative;
+        padding-bottom: 2px;
+        transition: all 0.3s ease;
+      }
 
-    /* Tablets and smaller laptops */
-    @media (max-width: 1024px) {
+      .footer-right a:hover {
+        color: #28a745;
+      }
+
+      .footer-right a::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 2px;
+        left: 0;
+        bottom: 0;
+        background-color: #28a745;
+        transition: width 0.3s ease;
+      }
+
+      .footer-right a:hover::after {
+        width: 100%;
+      }
+      #scrollToTopBtn {
+        position: fixed;
+        right: 2rem;
+        bottom: -5rem;
+        z-index: 999;
+        border: none;
+        outline: none;
+        background: #51be7f;
+        cursor: pointer;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        transition: transform 0.4s ease, opacity 0.4s ease, bottom 0.3s ease;
+        opacity: 0;
+        transform: translateY(50%);
+      }
+
+      #scrollToTopBtn.show {
+        opacity: 1;
+        transform: translateY(0);
+        bottom: 2rem;
+      }
+
+      #scrollToTopBtn svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        display: block;
+      }
+
+      /* ===== MEDIA QUERIES ===== */
+      /* Tablets */
+      @media (max-width: 1024px) {
+        .footer-container {
+          grid-template-columns: repeat(2, 1fr);
+          text-align: center;
+          gap: 1.5rem;
+        }
+
+        .footer-col h3 {
+          justify-content: center;
+        }
+
+        .footer-col p,
+        .footer-col a {
+          justify-content: center;
+        }
+
+        .social-icons {
+          flex-direction: row;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+      }
+
+      /* Responsive Design */
+      /* Mobile */
+      @media (max-width: 768px) {
+        .footer-container {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .footer-col {
+          align-items: center;
+          margin-bottom: 1.5rem;
+        }
+
+        .footer-col h3 {
+          justify-content: center;
+        }
+
+        .footer-col p,
+        .footer-col a {
+          justify-content: center;
+        }
+
+        .social-icons {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .footer-bottom {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .footer-right a {
+          margin: 0.3rem 0.5rem;
+        }
+      }
+
+      /* Very small screens */
+      @media (max-width: 480px) {
+        .footer-col h3 {
+          font-size: 1rem;
+        }
+
+        .footer-col a,
+        .footer-right a {
+          font-size: 0.85rem;
+        }
+
+        .footer-left {
+          font-size: 0.85rem;
+        }
+      }
+
+      /* Important Links margin for large screens */
       .footer-col.important-links {
-        margin-left: 0;
-        /* remove margin on smaller screens */
+        margin-left: 70px;
+        /* margin only on large screens */
       }
-    }
 
-    /* Mobile devices */
-    @media (max-width: 768px) {
-      .footer-col.important-links {
-        margin-left: 0;
-        /* remove margin on mobile too */
+      /* Tablets and smaller laptops */
+      @media (max-width: 1024px) {
+        .footer-col.important-links {
+          margin-left: 0;
+          /* remove margin on smaller screens */
+        }
       }
-    }
 
-    .about-card-style {
-      background: #fff;
-      /* normal card background */
-      border: 1px solid rgba(144, 238, 144, 0.3);
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      padding: 2rem;
-      height: 100%;
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+      /* Mobile devices */
+      @media (max-width: 768px) {
+        .footer-col.important-links {
+          margin-left: 0;
+          /* remove margin on mobile too */
+        }
+      }
 
-    /* ✅ Hover Effect */
-    .about-card-style:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 8px 20px rgba(39, 174, 96, 0.25);
-      border: 1px solid var(--light-green);
-    }
+      .testimonial-carousel {
+        padding: 75px 0;
+        background: #f9f9f9;
+        overflow: hidden;
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: visible;
+      }
 
-    /* ✅ Icon turns brighter green on hover */
-    .about-card-style:hover img.icon {
-      filter: brightness(0) saturate(100%) invert(47%) sepia(74%) saturate(563%) hue-rotate(85deg) brightness(97%) contrast(94%);
-    }
+      .testimonial-heading {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+        font-weight: bold;
+      }
 
+      .carousel-wrapper {
+        overflow-x: hidden; /* only hide horizontal */
+        overflow-y: visible; /* allow vertical shadows */
+        width: 100%;
+      }
 
+      .carousel-track {
+        display: flex;
+        gap: 20px;
+        will-change: transform;
+      }
 
+      .testimonial-card {
+        flex: 0 0 300px;
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+        min-height: 180px;
+        transition: all 0.3s ease; /* smooth hover effect */
+        cursor: pointer;
+      }
 
+      .testimonial-card h4 {
+        margin: 10px 0 0;
+        font-size: 18px;
+      }
 
-    .icon {
-      margin-right: 8px;
-      color: #2e7d32;
-    }
+      .testimonial-card span {
+        font-size: 14px;
+        color: #555;
+      }
+      section,
+      main,
+      .container {
+        overflow: visible !important;
+      }
 
-    .about-para {
-      font-size: 0.95rem;
-      color: #333;
-      line-height: 1.6;
-    }
+      .testimonial-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25),
+          0 0 20px rgba(0, 200, 83, 0.4);
+        position: relative;
+        z-index: 10;
+      }
 
-    #backToTop {
-      position: fixed;
-      /* always visible relative to viewport */
-      bottom: 20px;
-      /* distance from bottom of viewport */
-      right: 20px;
-      /* distance from right edge */
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, #66eaaa, #1fec30);
-      color: white;
-      border: none;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 18px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      z-index: 999;
-    }
-
-    #backToTop:hover {
-      transform: scale(1.1);
-      opacity: 0.9;
-    }
-
-
-
-    .testimonial-carousel {
-      padding: 75px 0;
-      background: #f9f9f9;
-      overflow: hidden;
-      position: relative;
-      overflow-x: hidden;
-      overflow-y: visible;
-    }
-
-    .testimonial-heading {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 24px;
-      font-weight: bold;
-    }
-
-    .carousel-wrapper {
-      overflow-x: hidden;
-      /* only hide horizontal */
-      overflow-y: visible;
-      /* allow vertical shadows */
-      width: 100%;
-    }
-
-
-    .carousel-track {
-      display: flex;
-      gap: 20px;
-      will-change: transform;
-    }
-
-
-    .testimonial-card {
-      flex: 0 0 300px;
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-      min-height: 180px;
-      transition: all 0.3s ease;
-      /* smooth hover effect */
-      cursor: pointer;
-    }
-
-    .testimonial-card h4 {
-      margin: 10px 0 0;
-      font-size: 18px;
-    }
-
-    .testimonial-card span {
-      font-size: 14px;
-      color: #555;
-    }
-
-    section,
-    main,
-    .container {
-      overflow: visible !important;
-    }
-
-    .testimonial-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25),
-        0 0 20px rgba(0, 200, 83, 0.4);
-      position: relative;
-      z-index: 10;
-    }
-	
-	
-	/* Login & Signup Cards */
+      	/* Login & Signup Cards */
 .auth-section {
   padding: 80px 20px;
   background: #f9fafb;
@@ -1424,57 +2180,73 @@
   .card-icon { font-size: 40px; }
   .card-title { font-size: 1.4rem; }
 }
+    </style>
+  </head>
 
-  </style>
-</head>
+  <body id="main-body">
+    <nav class="navbar navbar-expand-lg">
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center px-4"
+      >
+        <a class="navbar-brand hover-scale" href="#">
+          <img
+            src="images/Logo.png"
+            alt="GrowCraft"
+            id="logo"
+            class="smooth-transition"
+          />
+        </a>
 
-<body id="main-body">
-  <nav class="navbar navbar-expand-lg">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-4">
-      <a class="navbar-brand hover-scale" href="#">
-        <img src="images/Logo_new.png" alt="GrowCraft" id="logo" class="smooth-transition" />
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link active" href="#" aria-current="page">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="service.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="blogListing.html">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./work.html">Our Work</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="./src/faq.html">FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="src/contact.html">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="login.html">Login</a>
-          </li>
-        </ul>
-
-        <button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
-          <i class="fas fa-moon" id="themeIcon"></i>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
-      </div>
-    </div>
-  </nav>
 
-<!-- ✅ Login & Signup Section -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="#" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="blogListing.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./work.html">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./src/faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="src/contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="login.html">Login</a>
+            </li>
+          </ul>
+
+          <button
+            class="btn theme-toggle ms-3"
+            type="button"
+            id="themeToggle"
+            title="Toggle Dark/Light Mode"
+          >
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ✅ Login & Signup Section -->
 <section class="auth-section" id="auth">
   <div class="container">
     <h2 class="head-training" data-aos="fade-up">Login & Signup</h2>
@@ -1513,732 +2285,1741 @@
 </section>
 
 
-  <section class="training-section">
-    <div class="container-fluid">
-      <h2 class="head-training" data-aos="fade-up">Training & Internship Programs</h2>
-      <p class="services-subtitle" data-aos="fade-up" data-aos-delay="100">
-        Boost your career with skill-focused training and internship opportunities. </p>
-
-      <div class="row g-4 justify-content-center px-4">
-
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <a href="src/web.html" class="training-links text-decoration-none">
-            <div class="program-card hover-lift">
-              <img src="images/icons/WebDev.png" alt="Web Development" class="icon" />
-              <h6 class="mb-0 mt-2">Website Development</h6>
-              <p class="text-muted small mt-2">Build responsive, modern websites</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <a href="src/digital-marketing.html" class="training-links text-decoration-none">
-            <div class="program-card hover-lift">
-              <img src="images/icons/DigitalMarketing.png" alt="Digital Marketing" class="icon" />
-              <h6 class="mb-0 mt-2">Digital Marketing</h6>
-              <p class="text-muted small mt-2">Promote brands online effectively</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <a href="src/content-writing.html" class="training-links text-decoration-none">
-            <div class="program-card hover-lift">
-              <img src="images/icons/Content.png" alt="Content Writing" class="icon" />
-              <h6 class="mb-0 mt-2">Content Writing</h6>
-              <p class="text-muted small mt-2">Create engaging content</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-          <a href="src/social-media.html" class="training-links text-decoration-none">
-            <div class="program-card hover-lift">
-              <img src="images/icons/SocialMediaMaganement.png" alt="Social Media Management" class="icon" />
-              <h6 class="mb-0 mt-2">Social Media Management</h6>
-              <p class="text-muted small mt-2">Manage and grow social platforms</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-          <a href="src/graphic_design.html" class="training-links text-decoration-none">
-            <div class="program-card hover-lift">
-              <img src="images/icons/GraphicDesign.png" alt="Graphic Designing" class="icon" />
-              <h6 class="mb-0 mt-2">Graphic Designing</h6>
-              <p class="text-muted small mt-2">Create beautiful designs</p>
-            </div>
-          </a>
-        </div>
-
-        <div class="col-sm-12 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
-          <a href="src/cyber-analyst.html" class="training-links text-decoration-none">
-            <div class="program-card hover-lift">
-              <img src="images/icons/Cyb-security.png" alt="Cyber Analyst" class="icon" />
-              <h6 class="mb-0 mt-2">Cyber Analyst</h6>
-              <p class="text-muted small mt-2">Protect against cyber threats</p>
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <main class="carousel-section" id="home">
-    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-aos="zoom-in" data-bs-ride="carousel"
-      data-bs-wrap="true">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
-          aria-current="true"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="4"></button>
-        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="5"></button>
-      </div>
-
-      <div class="carousel-inner">
-        <div class="carousel-item active" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/WebDev.png" class="d-block w-100" alt="Website Development">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2 class="slide-in-right">Website Development</h2>
-            <div class="redirect-btns">
-              <a href="src/web.html" class="btn btn-primary hover-scale">Learn More</a>
-              <a href="learn/webdev.html" class="btn btn-custom-purple hover-scale">Portfolio</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/GraphicDesign.png" class="d-block w-100" alt="Graphic Design">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2 class="slide-in-right">Graphic Design</h2>
-            <div class="redirect-btns">
-              <a href="src/graphic_design.html" class="btn btn-primary hover-scale">Learn More</a>
-              <a href="learn/graphic.html" class="btn btn-custom-purple hover-scale">Portfolio</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/DigitalMarketing.png" class="d-block w-100" alt="Digital Marketing">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2 class="slide-in-right">Digital Marketing</h2>
-            <div class="redirect-btns">
-              <a href="src/digital-marketing.html" class="btn btn-primary hover-scale">Learn More</a>
-              <a href="learn/marketing.html" class="btn btn-custom-purple hover-scale">Portfolio</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/SocialMediaManagement.png" class="d-block w-100" alt="Social Media Management">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2 class="slide-in-right">Social Media Management</h2>
-            <div class="redirect-btns">
-              <a href="src/social-media.html" class="btn btn-primary hover-scale">Learn More</a>
-              <a href="learn/socialmedia.html" class="btn btn-custom-purple hover-scale">Portfolio</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/ContentWriting.png" class="d-block w-100" alt="Content Writing">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2 class="slide-in-right">Content Writing</h2>
-            <div class="redirect-btns">
-              <a href="src/content-writing.html" class="btn btn-primary hover-scale">Learn More</a>
-              <a href="learn/contentwriting.html" class="btn btn-custom-purple hover-scale">Portfolio</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="carousel-item" data-bs-interval="8000">
-          <div class="carousel-overlay">
-            <img src="images/Cybersecurity.png" class="d-block w-100" alt="Cyber Analyst">
-          </div>
-          <div class="carousel-caption d-block">
-            <h2 class="slide-in-right">Cyber Analyst</h2>
-            <div class="redirect-btns">
-              <a href="src/cyber-analyst.html" class="btn btn-primary hover-scale">Learn More</a>
-              <a href="learn/cyberanalyst.html" class="btn btn-custom-purple hover-scale">Portfolio</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- <button class="arrow-slide-btn" id="customNextButton">
-          <span class="arrow-icon">
-            <i class="fas fa-arrow-right"></i>
-          </span>
-        </button> -->
-      </div>
-      <!--Unwanted Arrow Button in the carousel-->
-      <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button> -->
-
-      <!-- <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button> -->
-    </div>
-  </main>
-
-  <section class="services-section" id="services">
-    <div class="container">
-      <h2 class="heading-text" data-aos="fade-up">SERVICES</h2>
-      <p class="services-subtitle" data-aos="fade-up" data-aos-delay="100">
-        In the realm of software, we excel at transmuting the ordinary into the extraordinary
-      </p>
-
-      <div class="row g-4 justify-content-center">
-
-        <div class="col-12 col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="100">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2">
-                  <line x1="18" y1="20" x2="18" y2="10"></line>
-                  <line x1="12" y1="20" x2="12" y2="4"></line>
-                  <line x1="6" y1="20" x2="6" y2="14"></line>
-                </svg>
-              </div>
-
-              <h5 class="card-title mt-2">Digital Marketing</h5>
-
-              <p class="card-text summary text-center">
-                In today's digital-driven age, Marketing means Digital Marketing...
-              </p>
-
-              <div class="card-text extra d-none text-center w-100">
-                <p>
-                  Digital Marketing plays a vital role in reaching target customers and enhancing brand visibility.
-                  Our team specializes in SEO, PPC, social media, email campaigns, and content marketing.
-                </p>
-
-                <ul class="service-features text-start px-3">
-                  <li>SEO Optimization for higher search rankings</li>
-                  <li>Targeted PPC Campaigns</li>
-                  <li>Social Media Strategy & Management</li>
-                  <li>Email Marketing Campaigns</li>
-                  <li>Content Marketing for brand awareness</li>
-                </ul>
-
-                <div class="service-stats">
-                  <span class="stat-badge">100+ Campaigns</span>
-                  <span class="stat-badge">50K+ Leads</span>
-                  <span class="stat-badge">30% Avg ROI</span>
-                </div>
-
-                <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
-                  <a class="btn btn-sm btn-custom-purple">Case Study</a>
-                  <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
-                </div>
-              </div>
-
-              <div class="btn-group mt-3 d-flex gap-2">
-                <button class="toggle-btn">Read More</button>
-                <a href="src/digital-marketing.html"
-                  class="btn btn-sm btn-outline-primary hover-scale rounded">Explore</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="200">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layout">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                  <line x1="3" y1="9" x2="21" y2="9"></line>
-                  <line x1="9" y1="21" x2="9" y2="9"></line>
-                </svg>
-              </div>
-
-              <h5 class="card-title mt-2">Website Development</h5>
-
-              <p class="card-text summary text-center">
-                A website is often the first impression. We make it exceptional...
-              </p>
-
-              <div class="card-text extra d-none text-center w-100">
-                <p>
-                  A well-designed website increases brand trust and customer engagement. We deliver responsive,
-                  aesthetic,
-                  and performance-optimized websites aligned with your business goals.
-                </p>
-
-                <ul class="service-features text-start px-3">
-                  <li>Responsive design for all devices</li>
-                  <li>High-performance and fast loading</li>
-                  <li>SEO-friendly structure</li>
-                  <li>User-friendly navigation & UI/UX design</li>
-                  <li>Integration with APIs and third-party tools</li>
-                </ul>
-
-                <div class="service-stats">
-                  <span class="stat-badge">50+ Projects</span>
-                  <span class="stat-badge">20K+ Visitors/month</span>
-                  <span class="stat-badge">95% Client Satisfaction</span>
-                </div>
-
-                <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
-                  <a class="btn btn-sm btn-custom-purple">Portfolio</a>
-                  <a href="src/contact.html" class="btn btn-sm btn-outline-primary ">Contact Us</a>
-                </div>
-              </div>
-
-              <div class="btn-group mt-3 d-flex gap-2">
-                <button class="toggle-btn">Read More</button>
-                <a href="src/web.html" class="btn btn-sm btn-outline-primary hover-scale rounded ">Explore</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="300">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers">
-                  <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                  <polyline points="2 17 12 22 22 17"></polyline>
-                  <polyline points="2 12 12 17 22 12"></polyline>
-                </svg>
-              </div>
-
-              <h5 class="card-title mt-2">Graphic Design</h5>
-
-              <p class="card-text summary text-center">
-                Stunning visuals to elevate your brand in a crowded space...
-              </p>
-
-              <div class="card-text extra d-none text-center w-100">
-                <p>
-                  From branding to social media, our designers craft engaging graphics that communicate effectively
-                  and leave a lasting impression.
-                </p>
-
-                <ul class="service-features text-start px-3">
-                  <li>Logo and Brand Identity Design</li>
-                  <li>Social Media Graphics & Banners</li>
-                  <li>Marketing Collateral Design</li>
-                  <li>Illustrations and Infographics</li>
-                  <li>UI/UX Visual Design for Web & Apps</li>
-                </ul>
-
-                <div class="service-stats">
-                  <span class="stat-badge">200+ Projects</span>
-                  <span class="stat-badge">150+ Happy Clients</span>
-                  <span class="stat-badge">5 Awards Won</span>
-                </div>
-
-                <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
-                  <a class="btn btn-sm btn-custom-purple">Portfolio</a>
-                  <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
-                </div>
-              </div>
-
-              <div class="btn-group mt-3 d-flex gap-2">
-                <button class="toggle-btn">Read More</button>
-                <a href="src/graphic_design.html"
-                  class="btn btn-sm btn-outline-primary hover-scale rounded ">Explore</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-5" data-aos="zoom-in-up" data-aos-delay="400">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-instagram">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                </svg>
-              </div>
-
-              <h5 class="card-title mt-2">Social Media Management</h5>
-
-              <p class="card-text summary text-center">
-                From posts to stories, we manage your online presence with style...
-              </p>
-
-              <div class="card-text extra d-none text-center w-100">
-                <p>
-                  We help you stay consistent and engaging on all platforms. Our strategies increase audience retention
-                  and brand loyalty.
-                </p>
-
-                <ul class="service-features text-start px-3">
-                  <li>Content Creation & Scheduling</li>
-                  <li>Audience Engagement & Monitoring</li>
-                  <li>Influencer Collaboration</li>
-                  <li>Analytics & Performance Tracking</li>
-                  <li>Platform-Specific Strategy</li>
-                </ul>
-
-                <div class="service-stats">
-                  <span class="stat-badge">500+ Posts</span>
-                  <span class="stat-badge">100K+ Followers Gained</span>
-                  <span class="stat-badge">95% Engagement Rate</span>
-                </div>
-
-                <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
-                  <a class="btn btn-sm btn-custom-purple">Case Study</a>
-                  <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
-                </div>
-              </div>
-
-              <div class="btn-group mt-3 d-flex gap-2">
-                <button class="toggle-btn">Read More</button>
-                <a href="src/social-media.html" class="btn btn-sm btn-outline-primary hover-scale rounded ">Explore</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-8 col-lg-5" data-aos="zoom-in-up" data-aos-delay="500">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit-3">
-                  <path d="M12 20h9"></path>
-                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-                </svg>
-              </div>
-
-              <h5 class="card-title mt-2">Content Writing</h5>
-
-              <p class="card-text summary text-center">
-                Compelling content that connects, converts, and captivates your audience...
-              </p>
-
-              <div class="card-text extra d-none text-center w-100">
-                <p>
-                  Our expert writers create engaging blog posts, web copy, articles, and marketing content
-                  that drives results and builds your brand voice.
-                </p>
-
-                <ul class="service-features text-start px-3">
-                  <li>SEO-Optimized Blog Posts</li>
-                  <li>Website Copy & Landing Pages</li>
-                  <li>Marketing Emails & Newsletters</li>
-                  <li>Product Descriptions & Sales Copy</li>
-                  <li>Social Media Captions & Storytelling</li>
-                </ul>
-
-                <div class="service-stats">
-                  <span class="stat-badge">500+ Articles</span>
-                  <span class="stat-badge">100+ Clients</span>
-                  <span class="stat-badge">98% Satisfaction</span>
-                </div>
-
-                <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
-                  <a class="btn btn-sm btn-custom-purple">Case Study</a>
-                  <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
-                </div>
-              </div>
-
-              <div class="btn-group mt-3 d-flex gap-2">
-                <button class="toggle-btn">Read More</button>
-                <a href="learn/contentwriting.html"
-                  class="btn btn-sm btn-outline-primary hover-scale rounded ">Explore</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-12 col-md-8 col-lg-5" data-aos="zoom-in-up" data-aos-delay="600">
-          <div class="card card-services h-100 d-flex flex-column">
-            <div class="card-body d-flex flex-column align-items-center">
-
-              <div class="svg-img">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shield">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                </svg>
-              </div>
-
-              <h5 class="card-title mt-2">Cyber Analyst</h5>
-
-              <p class="card-text summary text-center">
-                In the digital age, a cyber analyst is the silent guardian — turning data into defense...
-              </p>
-
-              <div class="card-text extra d-none text-center w-100">
-                <p>
-                  Think smart, click safe, and stay vigilant — because a cyber-strong society is a future-proof society.
-                </p>
-
-                <ul class="service-features text-start px-3">
-                  <li>Threat Monitoring & Analysis</li>
-                  <li>Network Security & Penetration Testing</li>
-                  <li>Data Protection & Compliance</li>
-                  <li>Incident Response & Recovery</li>
-                  <li>Cyber Intelligence & Risk Assessment</li>
-                </ul>
-
-                <div class="service-stats">
-                  <span class="stat-badge">100+ Threats Neutralized</span>
-                  <span class="stat-badge">50+ Security Audits</span>
-                  <span class="stat-badge">99% Protection Success</span>
-                </div>
-
-                <div class="extra-cta mt-3 d-flex gap-2 justify-content-center">
-                  <a class="btn btn-sm btn-custom-purple">Case Study</a>
-                  <a href="src/contact.html" class="btn btn-sm btn-outline-primary">Contact Us</a>
-                </div>
-              </div>
-
-              <div class="btn-group mt-3 d-flex gap-2">
-                <button class="toggle-btn">Read More</button>
-                <a href="learn/cyberanalyst.html"
-                  class="btn btn-sm btn-outline-primary hover-scale rounded ">Explore</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="about-section" id="about">
-    <div class="container">
-      <h2 class="about-title" data-aos="fade-up">ABOUT US</h2>
-      <p class="about-subtitle" data-aos="fade-up" data-aos-delay="100">
-        Gateway to Go Digital and Grow Business
-      </p>
-
-      <div class="row justify-content-center g-4">
-        <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="100">
-          <div class="about-card about-card-style">
-            <h4 class="mb-3">
-              <i class="fas fa-users icon"></i>
-              Who We Are
-            </h4>
-            <div class="about-para">
-              GrowCraft is a one-stop shop for Software, App, Website development, Digital Marketing, Graphic Design &
-              Social Media. We deliver high-quality services that align with market trends.
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="about-card about-card-style">
-            <h4 class="mb-3">
-              <i class="fas fa-microchip icon"></i>
-              Tech-Driven Solutions
-            </h4>
-            <div class="about-para">
-              We use the latest technologies & best practices to deliver innovative solutions. Our services evolve
-              constantly to meet clients' changing needs.
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="300">
-          <div class="about-card about-card-style">
-            <h4 class="mb-3">
-              <i class="fas fa-handshake icon"></i>
-              Client-Centric Approach
-            </h4>
-            <div class="about-para">
-              Every client has unique needs. We understand their goals before creating custom solutions and involve them
-              throughout the development process.
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4" data-aos="fade-right" data-aos-delay="400">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift" style="
-      background: rgb(255, 255, 255); 
-      border: 1px solid rgba(144, 238, 144, 0.4); 
-      backdrop-filter: blur(10px); 
-      -webkit-backdrop-filter: blur(10px); 
-      border-radius: 12px; 
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-      transition: transform 0.3s ease, box-shadow 0.3s ease;">
-
-            <h4 class="mb-3">
-              <i class="fas fa-shield-alt icon"></i>
-              Reliable & Transparent
-            </h4>
-            <div class="about-para">
-              With clear communication, timely delivery, and transparent processes, we ensure success for both our
-              clients and ourselves.
-            </div>
-          </div>
-        </div>
-
-        <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="500">
-          <div class="about-card about-card-style">
-            <h4 class="mb-3">
-              <i class="fas fa-award icon"></i>
-              Affordable & Proven
-            </h4>
-            <div class="about-para">
-              We offer cost-effective services and have a history of successful projects. For a reliable digital
-              partner, GrowCraft is your best choice.
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-lg-4" data-aos="fade-left" data-aos-delay="500">
-          <div class="about-card p-4 h-100 shadow-sm hover-lift" style="background: rgb(255, 255, 255); 
-          border: 1px solid rgba(144, 238, 144, 0.4); 
-          backdrop-filter: blur(10px); 
-          -webkit-backdrop-filter: blur(10px); 
-          border-radius: 12px; 
-          box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1); 
-          transition: transform 0.3s ease, box-shadow 0.3s ease;">
-
-            <!-- <h4 class="mb-3">
-              <i class="fas fa-people-arrows icon"></i>
-              Creative & Collaborative
-            </h4> -->
-            <div class="about-para">
-              Innovation thrives on collaboration. GrowCraft blends creative thinking and teamwork to build standout
-              solutions. Your vision + our expertise = results.
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="feedback-section" id="feedback">
-    <div class="container">
-      <div class="feedback-content" data-aos="fade-up">
-        <h2 class="feedback-title">Feedback & Reviews</h2>
-        <p class="feedback-subtitle">
-          We value your feedback! Share your experience and help us improve our services.
+    <section class="training-section">
+      <div class="container-fluid">
+        <h2 class="head-training" data-aos="fade-up">
+          Training & Internship Programs
+        </h2>
+        <p class="services-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Boost your career with skill-focused training and internship
+          opportunities.
         </p>
 
-        <div class="feedback-form-container" data-aos="zoom-in" data-aos-delay="200">
-          <form id="feedbackForm" class="feedback-form">
-
-            <div class="form-row">
-              <div class="form-group">
-                <label for="userName">Your Name *</label>
-                <input type="text" id="userName" name="userName" placeholder="Enter your name" required
-                  class="form-input">
+        <div class="row g-4 justify-content-center px-4">
+          <div
+            class="col-sm-12 col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <a href="src/web.html" class="training-links text-decoration-none">
+              <div class="program-card hover-lift">
+                <img
+                  src="images/icons/WebDev.png"
+                  alt="Web Development"
+                  class="icon"
+                />
+                <h6 class="mb-0 mt-2">Website Development</h6>
+                <p class="text-muted small mt-2">
+                  Build responsive, modern websites
+                </p>
               </div>
-              <div class="form-group">
-                <label for="userEmail">Your Email *</label>
-                <input type="email" id="userEmail" name="userEmail" placeholder="Enter your email" required
-                  class="form-input">
+            </a>
+          </div>
+
+          <div
+            class="col-sm-12 col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <a
+              href="src/digital-marketing.html"
+              class="training-links text-decoration-none"
+            >
+              <div class="program-card hover-lift">
+                <img
+                  src="images/icons/DigitalMarketing.png"
+                  alt="Digital Marketing"
+                  class="icon"
+                />
+                <h6 class="mb-0 mt-2">Digital Marketing</h6>
+                <p class="text-muted small mt-2">
+                  Promote brands online effectively
+                </p>
               </div>
-            </div>
+            </a>
+          </div>
 
-            <div class="form-group">
-              <label for="userFeedback">Your Feedback *</label>
-              <textarea id="userFeedback" name="userFeedback"
-                placeholder="Share your thoughts, suggestions, or experience with us..." rows="4" required
-                class="form-textarea" minlength="50" maxlength="100"></textarea>
-            </div>
+          <div
+            class="col-sm-12 col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <a
+              href="src/content-writing.html"
+              class="training-links text-decoration-none"
+            >
+              <div class="program-card hover-lift">
+                <img
+                  src="images/icons/Content.png"
+                  alt="Content Writing"
+                  class="icon"
+                />
+                <h6 class="mb-0 mt-2">Content Writing</h6>
+                <p class="text-muted small mt-2">Create engaging content</p>
+              </div>
+            </a>
+          </div>
 
-            <div class="form-buttons">
-              <button type="submit" class="btn btn-submit hover-scale">
-                <i class="fas fa-paper-plane me-2"></i>Submit
-              </button>
-              <button type="button" class="btn btn-cancel hover-scale" onclick="clearForm()">
-                <i class="fas fa-times me-2"></i>Cancel
-              </button>
-            </div>
+          <div
+            class="col-sm-12 col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <a
+              href="src/social-media.html"
+              class="training-links text-decoration-none"
+            >
+              <div class="program-card hover-lift">
+                <img
+                  src="images/icons/SocialMediaMaganement.png"
+                  alt="Social Media Management"
+                  class="icon"
+                />
+                <h6 class="mb-0 mt-2">Social Media Management</h6>
+                <p class="text-muted small mt-2">
+                  Manage and grow social platforms
+                </p>
+              </div>
+            </a>
+          </div>
 
-          </form>
-        </div>
+          <div
+            class="col-sm-12 col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="500"
+          >
+            <a
+              href="src/graphic_design.html"
+              class="training-links text-decoration-none"
+            >
+              <div class="program-card hover-lift">
+                <img
+                  src="images/icons/GraphicDesign.png"
+                  alt="Graphic Designing"
+                  class="icon"
+                />
+                <h6 class="mb-0 mt-2">Graphic Designing</h6>
+                <p class="text-muted small mt-2">Create beautiful designs</p>
+              </div>
+            </a>
+          </div>
 
-        <div id="successMessage" class="success-message">
-          <i class="fas fa-check-circle"></i>
-          <p>Thank you for your feedback! Submitted successfully.</p>
+          <div
+            class="col-sm-12 col-md-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="600"
+          >
+            <a
+              href="src/cyber-analyst.html"
+              class="training-links text-decoration-none"
+            >
+              <div class="program-card hover-lift">
+                <img
+                  src="images/icons/Cyb-security.png"
+                  alt="Cyber Analyst"
+                  class="icon"
+                />
+                <h6 class="mb-0 mt-2">Cyber Analyst</h6>
+                <p class="text-muted small mt-2">
+                  Protect against cyber threats
+                </p>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <main class="carousel-section" id="home">
+      <div
+        id="carouselExampleDark"
+        class="carousel carousel-dark slide"
+        data-aos="zoom-in"
+        data-bs-ride="carousel"
+        data-bs-wrap="true"
+      >
+        <div class="carousel-indicators">
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="1"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="2"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="3"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="4"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#carouselExampleDark"
+            data-bs-slide-to="5"
+          ></button>
+        </div>
 
-  <section class="testimonial-carousel">
-    <h1 class="testimonial-heading" style="color: #27ae60;">What Our Clients & Interns Say</h1>
-    <div class="carousel-wrapper">
-      <div class="carousel-track" id="carouselTrack">
-        <!-- 10 Testimonials -->
-        <div class="testimonial-card">
-          <p>"GrowCraft helped us create a modern website that boosted our leads by 40%."</p>
-          <h4>Rohit Sharma</h4>
-          <span>Business Owner</span>
+        <div class="carousel-inner">
+          <div class="carousel-item active" data-bs-interval="8000">
+            <div class="carousel-overlay">
+              <img
+                src="images/WebDev.png"
+                class="d-block w-100"
+                alt="Website Development"
+              />
+            </div>
+            <div class="carousel-caption d-block">
+              <h2 class="slide-in-right">Website Development</h2>
+              <div class="redirect-btns">
+                <a href="src/web.html" class="btn btn-primary hover-scale"
+                  >Learn More</a
+                >
+                <a
+                  href="learn/webdev.html"
+                  class="btn btn-custom-purple hover-scale"
+                  >Portfolio</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-bs-interval="8000">
+            <div class="carousel-overlay">
+              <img
+                src="images/GraphicDesign.png"
+                class="d-block w-100"
+                alt="Graphic Design"
+              />
+            </div>
+            <div class="carousel-caption d-block">
+              <h2 class="slide-in-right">Graphic Design</h2>
+              <div class="redirect-btns">
+                <a
+                  href="src/graphic_design.html"
+                  class="btn btn-primary hover-scale"
+                  >Learn More</a
+                >
+                <a
+                  href="learn/graphic.html"
+                  class="btn btn-custom-purple hover-scale"
+                  >Portfolio</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-bs-interval="8000">
+            <div class="carousel-overlay">
+              <img
+                src="images/DigitalMarketing.png"
+                class="d-block w-100"
+                alt="Digital Marketing"
+              />
+            </div>
+            <div class="carousel-caption d-block">
+              <h2 class="slide-in-right">Digital Marketing</h2>
+              <div class="redirect-btns">
+                <a
+                  href="src/digital-marketing.html"
+                  class="btn btn-primary hover-scale"
+                  >Learn More</a
+                >
+                <a
+                  href="learn/marketing.html"
+                  class="btn btn-custom-purple hover-scale"
+                  >Portfolio</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-bs-interval="8000">
+            <div class="carousel-overlay">
+              <img
+                src="images/SocialMediaManagement.png"
+                class="d-block w-100"
+                alt="Social Media Management"
+              />
+            </div>
+            <div class="carousel-caption d-block">
+              <h2 class="slide-in-right">Social Media Management</h2>
+              <div class="redirect-btns">
+                <a
+                  href="src/social-media.html"
+                  class="btn btn-primary hover-scale"
+                  >Learn More</a
+                >
+                <a
+                  href="learn/socialmedia.html"
+                  class="btn btn-custom-purple hover-scale"
+                  >Portfolio</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-bs-interval="8000">
+            <div class="carousel-overlay">
+              <img
+                src="images/ContentWriting.png"
+                class="d-block w-100"
+                alt="Content Writing"
+              />
+            </div>
+            <div class="carousel-caption d-block">
+              <h2 class="slide-in-right">Content Writing</h2>
+              <div class="redirect-btns">
+                <a
+                  href="src/content-writing.html"
+                  class="btn btn-primary hover-scale"
+                  >Learn More</a
+                >
+                <a
+                  href="learn/contentwriting.html"
+                  class="btn btn-custom-purple hover-scale"
+                  >Portfolio</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <div class="carousel-item" data-bs-interval="8000">
+            <div class="carousel-overlay">
+              <img
+                src="images/Cybersecurity.png"
+                class="d-block w-100"
+                alt="Cyber Analyst"
+              />
+            </div>
+            <div class="carousel-caption d-block">
+              <h2 class="slide-in-right">Cyber Analyst</h2>
+              <div class="redirect-btns">
+                <a
+                  href="src/cyber-analyst.html"
+                  class="btn btn-primary hover-scale"
+                  >Learn More</a
+                >
+                <a
+                  href="learn/cyberanalyst.html"
+                  class="btn btn-custom-purple hover-scale"
+                  >Portfolio</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <button class="arrow-slide-btn" id="customNextButton">
+            <span class="arrow-icon">
+              <i class="fas fa-arrow-right"></i>
+            </span>
+          </button>
         </div>
-        <div class="testimonial-card">
-          <p>"The internship program was an amazing learning experience!"</p>
-          <h4>Priya Verma</h4>
-          <span>Ex-Intern</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"Great communication and timely delivery of our project."</p>
-          <h4>Arjun Mehta</h4>
-          <span>Startup Founder</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"Their UI/UX design transformed our product."</p>
-          <h4>Neha Kapoor</h4>
-          <span>Product Manager</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"The team at GrowCraft is very professional and skilled."</p>
-          <h4>Amit Singh</h4>
-          <span>Entrepreneur</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"I gained real-world experience that helped me land a full-time job."</p>
-          <h4>Sneha Joshi</h4>
-          <span>Ex-Intern</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"Excellent SEO work, our traffic increased significantly."</p>
-          <h4>Vikram Rao</h4>
-          <span>Marketing Lead</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"They built our e-commerce store from scratch, amazing job!"</p>
-          <h4>Shalini Gupta</h4>
-          <span>E-Commerce Owner</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"Great mentors during my internship, learned so much."</p>
-          <h4>Manish Patel</h4>
-          <span>Ex-Intern</span>
-        </div>
-        <div class="testimonial-card">
-          <p>"Super reliable team, would definitely recommend."</p>
-          <h4>Ananya Rao</h4>
-          <span>Startup Founder</span>
+
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleDark"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </main>
+
+    <section class="services-section" id="services">
+      <div class="container">
+        <h2 class="heading-text" data-aos="fade-up">SERVICES</h2>
+        <p class="services-subtitle" data-aos="fade-up" data-aos-delay="100">
+          In the realm of software, we excel at transmuting the ordinary into
+          the extraordinary
+        </p>
+
+        <div class="row g-4 justify-content-center">
+          <div
+            class="col-12 col-md-6 col-lg-5"
+            data-aos="zoom-in-up"
+            data-aos-delay="100"
+          >
+            <div class="card card-services h-100 d-flex flex-column">
+              <div class="card-body d-flex flex-column align-items-center">
+                <div class="svg-img">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-bar-chart-2"
+                  >
+                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                  </svg>
+                </div>
+
+                <h5 class="card-title mt-2">Digital Marketing</h5>
+
+                <p class="card-text summary text-center">
+                  In today's digital-driven age, Marketing means Digital
+                  Marketing...
+                </p>
+
+                <div class="card-text extra d-none text-center w-100">
+                  <p>
+                    Digital Marketing plays a vital role in reaching target
+                    customers and enhancing brand visibility. Our team
+                    specializes in SEO, PPC, social media, email campaigns, and
+                    content marketing.
+                  </p>
+
+                  <ul class="service-features text-start px-3">
+                    <li>SEO Optimization for higher search rankings</li>
+                    <li>Targeted PPC Campaigns</li>
+                    <li>Social Media Strategy & Management</li>
+                    <li>Email Marketing Campaigns</li>
+                    <li>Content Marketing for brand awareness</li>
+                  </ul>
+
+                  <div class="service-stats">
+                    <span class="stat-badge">100+ Campaigns</span>
+                    <span class="stat-badge">50K+ Leads</span>
+                    <span class="stat-badge">30% Avg ROI</span>
+                  </div>
+
+                  <div
+                    class="extra-cta mt-3 d-flex gap-2 justify-content-center"
+                  >
+                    <a class="btn btn-sm btn-custom-purple">Case Study</a>
+                    <a
+                      href="src/contact.html"
+                      class="btn btn-sm btn-outline-primary"
+                      >Contact Us</a
+                    >
+                  </div>
+                </div>
+
+                <div class="btn-group mt-3 d-flex gap-2">
+                  <button class="toggle-btn">Read More</button>
+                  <a
+                    href="src/digital-marketing.html"
+                    class="btn btn-sm btn-outline-primary hover-scale rounded"
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-md-6 col-lg-5"
+            data-aos="zoom-in-up"
+            data-aos-delay="200"
+          >
+            <div class="card card-services h-100 d-flex flex-column">
+              <div class="card-body d-flex flex-column align-items-center">
+                <div class="svg-img">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-layout"
+                  >
+                    <rect
+                      x="3"
+                      y="3"
+                      width="18"
+                      height="18"
+                      rx="2"
+                      ry="2"
+                    ></rect>
+                    <line x1="3" y1="9" x2="21" y2="9"></line>
+                    <line x1="9" y1="21" x2="9" y2="9"></line>
+                  </svg>
+                </div>
+
+                <h5 class="card-title mt-2">Website Development</h5>
+
+                <p class="card-text summary text-center">
+                  A website is often the first impression. We make it
+                  exceptional...
+                </p>
+
+                <div class="card-text extra d-none text-center w-100">
+                  <p>
+                    A well-designed website increases brand trust and customer
+                    engagement. We deliver responsive, aesthetic, and
+                    performance-optimized websites aligned with your business
+                    goals.
+                  </p>
+
+                  <ul class="service-features text-start px-3">
+                    <li>Responsive design for all devices</li>
+                    <li>High-performance and fast loading</li>
+                    <li>SEO-friendly structure</li>
+                    <li>User-friendly navigation & UI/UX design</li>
+                    <li>Integration with APIs and third-party tools</li>
+                  </ul>
+
+                  <div class="service-stats">
+                    <span class="stat-badge">50+ Projects</span>
+                    <span class="stat-badge">20K+ Visitors/month</span>
+                    <span class="stat-badge">95% Client Satisfaction</span>
+                  </div>
+
+                  <div
+                    class="extra-cta mt-3 d-flex gap-2 justify-content-center"
+                  >
+                    <a class="btn btn-sm btn-custom-purple">Portfolio</a>
+                    <a
+                      href="src/contact.html"
+                      class="btn btn-sm btn-outline-primary"
+                      >Contact Us</a
+                    >
+                  </div>
+                </div>
+
+                <div class="btn-group mt-3 d-flex gap-2">
+                  <button class="toggle-btn">Read More</button>
+                  <a
+                    href="src/web.html"
+                    class="btn btn-sm btn-outline-primary hover-scale rounded"
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-md-6 col-lg-5"
+            data-aos="zoom-in-up"
+            data-aos-delay="300"
+          >
+            <div class="card card-services h-100 d-flex flex-column">
+              <div class="card-body d-flex flex-column align-items-center">
+                <div class="svg-img">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-layers"
+                  >
+                    <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                    <polyline points="2 17 12 22 22 17"></polyline>
+                    <polyline points="2 12 12 17 22 12"></polyline>
+                  </svg>
+                </div>
+
+                <h5 class="card-title mt-2">Graphic Design</h5>
+
+                <p class="card-text summary text-center">
+                  Stunning visuals to elevate your brand in a crowded space...
+                </p>
+
+                <div class="card-text extra d-none text-center w-100">
+                  <p>
+                    From branding to social media, our designers craft engaging
+                    graphics that communicate effectively and leave a lasting
+                    impression.
+                  </p>
+
+                  <ul class="service-features text-start px-3">
+                    <li>Logo and Brand Identity Design</li>
+                    <li>Social Media Graphics & Banners</li>
+                    <li>Marketing Collateral Design</li>
+                    <li>Illustrations and Infographics</li>
+                    <li>UI/UX Visual Design for Web & Apps</li>
+                  </ul>
+
+                  <div class="service-stats">
+                    <span class="stat-badge">200+ Projects</span>
+                    <span class="stat-badge">150+ Happy Clients</span>
+                    <span class="stat-badge">5 Awards Won</span>
+                  </div>
+
+                  <div
+                    class="extra-cta mt-3 d-flex gap-2 justify-content-center"
+                  >
+                    <a class="btn btn-sm btn-custom-purple">Portfolio</a>
+                    <a
+                      href="src/contact.html"
+                      class="btn btn-sm btn-outline-primary"
+                      >Contact Us</a
+                    >
+                  </div>
+                </div>
+
+                <div class="btn-group mt-3 d-flex gap-2">
+                  <button class="toggle-btn">Read More</button>
+                  <a
+                    href="src/graphic_design.html"
+                    class="btn btn-sm btn-outline-primary hover-scale rounded"
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-md-6 col-lg-5"
+            data-aos="zoom-in-up"
+            data-aos-delay="400"
+          >
+            <div class="card card-services h-100 d-flex flex-column">
+              <div class="card-body d-flex flex-column align-items-center">
+                <div class="svg-img">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-instagram"
+                  >
+                    <rect
+                      x="2"
+                      y="2"
+                      width="20"
+                      height="20"
+                      rx="5"
+                      ry="5"
+                    ></rect>
+                    <path
+                      d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                    ></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+
+                <h5 class="card-title mt-2">Social Media Management</h5>
+
+                <p class="card-text summary text-center">
+                  From posts to stories, we manage your online presence with
+                  style...
+                </p>
+
+                <div class="card-text extra d-none text-center w-100">
+                  <p>
+                    We help you stay consistent and engaging on all platforms.
+                    Our strategies increase audience retention and brand
+                    loyalty.
+                  </p>
+
+                  <ul class="service-features text-start px-3">
+                    <li>Content Creation & Scheduling</li>
+                    <li>Audience Engagement & Monitoring</li>
+                    <li>Influencer Collaboration</li>
+                    <li>Analytics & Performance Tracking</li>
+                    <li>Platform-Specific Strategy</li>
+                  </ul>
+
+                  <div class="service-stats">
+                    <span class="stat-badge">500+ Posts</span>
+                    <span class="stat-badge">100K+ Followers Gained</span>
+                    <span class="stat-badge">95% Engagement Rate</span>
+                  </div>
+
+                  <div
+                    class="extra-cta mt-3 d-flex gap-2 justify-content-center"
+                  >
+                    <a class="btn btn-sm btn-custom-purple">Case Study</a>
+                    <a
+                      href="src/contact.html"
+                      class="btn btn-sm btn-outline-primary"
+                      >Contact Us</a
+                    >
+                  </div>
+                </div>
+
+                <div class="btn-group mt-3 d-flex gap-2">
+                  <button class="toggle-btn">Read More</button>
+                  <a
+                    href="src/social-media.html"
+                    class="btn btn-sm btn-outline-primary hover-scale rounded"
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-12 col-md-6 col-lg-5"
+            data-aos="zoom-in-up"
+            data-aos-delay="400"
+          >
+            <div class="card card-services h-100 d-flex flex-column">
+              <div class="card-body d-flex flex-column align-items-center">
+                <div class="svg-img">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-instagram"
+                  >
+                    <rect
+                      x="2"
+                      y="2"
+                      width="20"
+                      height="20"
+                      rx="5"
+                      ry="5"
+                    ></rect>
+                    <path
+                      d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                    ></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                  </svg>
+                </div>
+
+                <h5 class="card-title mt-2">AI & ML Services</h5>
+
+                <p class="card-text summary text-center">
+                  We help you in digital transformation with AI and ML...
+                </p>
+
+                <div class="card-text extra d-none text-center w-100">
+                  <p>
+                    We help you stay consistent and engaging on all platforms.
+                    Our strategies increase audience retention and brand
+                    loyalty.
+                  </p>
+
+                  <ul class="service-features text-start px-3">
+                    <li>AI & ML Servicing</li>
+                    <li>Deep Learning</li>
+                    <li>Computer Vision</li>
+                    <li>Reinforcement Learning</li>
+                    <li>Chatboot Deployment</li>
+                  </ul>
+
+                  <div class="service-stats">
+                    <span class="stat-badge">500+ Posts</span>
+                    <span class="stat-badge">100K+ Followers Gained</span>
+                    <span class="stat-badge">95% Engagement Rate</span>
+                  </div>
+
+                  <div
+                    class="extra-cta mt-3 d-flex gap-2 justify-content-center"
+                  >
+                    <a class="btn btn-sm btn-custom-purple">Case Study</a>
+                    <a
+                      href="src/contact.html"
+                      class="btn btn-sm btn-outline-primary"
+                      >Contact Us</a
+                    >
+                  </div>
+                </div>
+
+                <div class="btn-group mt-3 d-flex gap-2">
+                  <button class="toggle-btn">Read More</button>
+                  <a
+                    href="src/social-media.html"
+                    class="btn btn-sm btn-outline-primary hover-scale rounded"
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-md-6 col-lg-5"
+            data-aos="zoom-in-up"
+            data-aos-delay="500"
+          >
+            <div class="card card-services h-100 d-flex flex-column">
+              <div class="card-body d-flex flex-column align-items-center">
+                <div class="svg-img">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-edit-3"
+                  >
+                    <path d="M12 20h9"></path>
+                    <path
+                      d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+                    ></path>
+                  </svg>
+                </div>
+
+                <h5 class="card-title mt-2">Content Writing</h5>
+
+                <p class="card-text summary text-center">
+                  Compelling content that connects, converts, and captivates
+                  your audience...
+                </p>
+
+                <div class="card-text extra d-none text-center w-100">
+                  <p>
+                    Our expert writers create engaging blog posts, web copy,
+                    articles, and marketing content that drives results and
+                    builds your brand voice.
+                  </p>
+
+                  <ul class="service-features text-start px-3">
+                    <li>SEO-Optimized Blog Posts</li>
+                    <li>Website Copy & Landing Pages</li>
+                    <li>Marketing Emails & Newsletters</li>
+                    <li>Product Descriptions & Sales Copy</li>
+                    <li>Social Media Captions & Storytelling</li>
+                  </ul>
+
+                  <div class="service-stats">
+                    <span class="stat-badge">500+ Articles</span>
+                    <span class="stat-badge">100+ Clients</span>
+                    <span class="stat-badge">98% Satisfaction</span>
+                  </div>
+
+                  <div
+                    class="extra-cta mt-3 d-flex gap-2 justify-content-center"
+                  >
+                    <a class="btn btn-sm btn-custom-purple">Case Study</a>
+                    <a
+                      href="src/contact.html"
+                      class="btn btn-sm btn-outline-primary"
+                      >Contact Us</a
+                    >
+                  </div>
+                </div>
+
+                <div class="btn-group mt-3 d-flex gap-2">
+                  <button class="toggle-btn">Read More</button>
+                  <a
+                    href="learn/contentwriting.html"
+                    class="btn btn-sm btn-outline-primary hover-scale rounded"
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-12 col-md-6 col-lg-5"
+            data-aos="zoom-in-up"
+            data-aos-delay="600"
+          >
+            <div class="card card-services h-100 d-flex flex-column">
+              <div class="card-body d-flex flex-column align-items-center">
+                <div class="svg-img">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-shield"
+                  >
+                    <path
+                      d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"
+                    ></path>
+                  </svg>
+                </div>
+
+                <h5 class="card-title mt-2">Cyber Analyst</h5>
+
+                <p class="card-text summary text-center">
+                  In the digital age, a cyber analyst is the silent guardian —
+                  turning data into defense...
+                </p>
+
+                <div class="card-text extra d-none text-center w-100">
+                  <p>
+                    Think smart, click safe, and stay vigilant — because a
+                    cyber-strong society is a future-proof society.
+                  </p>
+
+                  <ul class="service-features text-start px-3">
+                    <li>Threat Monitoring & Analysis</li>
+                    <li>Network Security & Penetration Testing</li>
+                    <li>Data Protection & Compliance</li>
+                    <li>Incident Response & Recovery</li>
+                    <li>Cyber Intelligence & Risk Assessment</li>
+                  </ul>
+
+                  <div class="service-stats">
+                    <span class="stat-badge">100+ Threats Neutralized</span>
+                    <span class="stat-badge">50+ Security Audits</span>
+                    <span class="stat-badge">99% Protection Success</span>
+                  </div>
+
+                  <div
+                    class="extra-cta mt-3 d-flex gap-2 justify-content-center"
+                  >
+                    <a class="btn btn-sm btn-custom-purple">Case Study</a>
+                    <a
+                      href="src/contact.html"
+                      class="btn btn-sm btn-outline-primary"
+                      >Contact Us</a
+                    >
+                  </div>
+                </div>
+
+                <div class="btn-group mt-3 d-flex gap-2">
+                  <button class="toggle-btn">Read More</button>
+                  <a
+                    href="learn/cyberanalyst.html"
+                    class="btn btn-sm btn-outline-primary hover-scale rounded"
+                    >Explore</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container">
+        <h2 class="about-title" data-aos="fade-up">ABOUT US</h2>
+        <p class="about-subtitle" data-aos="fade-up" data-aos-delay="100">
+          Gateway to <em>Go Digital and Grow Business</em>
+        </p>
+
+        <div class="row justify-content-center g-4">
+          <div
+            class="col-sm-6 col-lg-4"
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
+            <div
+              class="about-card p-4 h-100 shadow-sm hover-lift"
+              style="
+                background: rgba(144, 238, 144, 0.25);
+                border: 1px solid rgba(144, 238, 144, 0.4);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+              "
+            >
+              <h4 class="mb-3">
+                <i class="fas fa-users icon"></i>
+                Who We Are
+              </h4>
+              <div class="about-para">
+                GrowCraft is a one-stop shop for Software, App, Website
+                development, Digital Marketing, Graphic Design & Social Media.
+                We deliver high-quality services that align with market trends.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-6 col-lg-4"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="about-card p-4 h-100 shadow-sm hover-lift"
+              style="
+                background: rgba(144, 238, 144, 0.25);
+                border: 1px solid rgba(144, 238, 144, 0.4);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+              "
+            >
+              <h4 class="mb-3">
+                <i class="fas fa-microchip icon"></i>
+                Tech-Driven Solutions
+              </h4>
+              <div class="about-para">
+                We use the latest technologies & best practices to deliver
+                innovative solutions. Our services evolve constantly to meet
+                clients' changing needs.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-6 col-lg-4"
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
+            <div
+              class="about-card p-4 h-100 shadow-sm hover-lift"
+              style="
+                background: rgba(144, 238, 144, 0.25);
+                border: 1px solid rgba(144, 238, 144, 0.4);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+              "
+            >
+              <h4 class="mb-3">
+                <i class="fas fa-handshake icon"></i>
+                Client-Centric Approach
+              </h4>
+              <div class="about-para">
+                Every client has unique needs. We understand their goals before
+                creating custom solutions and involve them throughout the
+                development process.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-6 col-lg-4"
+            data-aos="fade-right"
+            data-aos-delay="400"
+          >
+            <div
+              class="about-card p-4 h-100 shadow-sm hover-lift"
+              style="
+                background: rgba(144, 238, 144, 0.25);
+                border: 1px solid rgba(144, 238, 144, 0.4);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+              "
+            
+              >
+              <h4 class="mb-3">
+                <i class="fas fa-shield-alt icon"></i>
+                Reliable & Transparent
+              </h4>
+              <div class="about-para">
+                With clear communication, timely delivery, and transparent
+                processes, we ensure success for both our clients and ourselves.
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="col-sm-6 col-lg-4"
+            data-aos="fade-left"
+            data-aos-delay="500"
+          >
+            <div
+              class="about-card p-4 h-100 shadow-sm hover-lift"
+              style="
+                background: rgba(144, 238, 144, 0.25);
+                border: 1px solid rgba(144, 238, 144, 0.4);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+              "
+            
+              >
+              <h4 class="mb-3">
+                <i class="fas fa-award icon"></i>
+                Affordable & Proven
+              </h4>
+              <div class="about-para">
+                We offer cost-effective services and have a history of
+                successful projects. For a reliable digital partner, GrowCraft
+                is your best choice.
+              </div>
+            </div>
+          </div>
+          <div
+            class="col-sm-6 col-lg-4"
+            data-aos="fade-left"
+            data-aos-delay="500"
+          >
+            <div
+              class="about-card p-4 h-100 shadow-sm hover-lift"
+              style="
+                background: rgba(144, 238, 144, 0.25);
+                border: 1px solid rgba(144, 238, 144, 0.4);
+                backdrop-filter: blur(10px);
+                -webkit-backdrop-filter: blur(10px);
+                border-radius: 12px;
+                box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+              "
+            
+              >
+              <h4 class="mb-3">
+                <i class="fas fa-people-arrows icon"></i>
+                Creative & Collaborative
+              </h4>
+              <div class="about-para">
+                Innovation thrives on collaboration. GrowCraft blends creative
+                thinking and teamwork to build standout solutions. Your vision +
+                our expertise = results.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="feedback-section" id="feedback">
+      <div class="container">
+        <div class="feedback-content" data-aos="fade-up">
+          <h2 class="feedback-title">Feedback & Reviews</h2>
+          <p class="feedback-subtitle">
+            We value your feedback! Share your experience and help us improve
+            our services.
+          </p>
+
+          <div
+            class="feedback-form-container"
+            data-aos="zoom-in"
+            data-aos-delay="200"
+          >
+            <form id="feedbackForm" class="feedback-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="userName">Your Name *</label>
+                  <input
+                    type="text"
+                    id="userName"
+                    name="userName"
+                    placeholder="Enter your name"
+                    required
+                    class="form-input"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="userEmail">Your Email *</label>
+                  <input
+                    type="email"
+                    id="userEmail"
+                    name="userEmail"
+                    placeholder="Enter your email"
+                    required
+                    class="form-input"
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="userFeedback">Your Feedback *</label>
+                <textarea
+                  id="userFeedback"
+                  name="userFeedback"
+                  placeholder="Share your thoughts, suggestions, or experience with us..."
+                  rows="4"
+                  required
+                  class="form-textarea"
+                  minlength="50"
+                  maxlength="100"
+                ></textarea>
+              </div>
+
+              <div class="form-buttons">
+                <button type="submit" class="btn btn-submit hover-scale">
+                  <i class="fas fa-paper-plane me-2"></i>Submit
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-cancel hover-scale"
+                  onclick="clearForm()"
+                >
+                  <i class="fas fa-times me-2"></i>Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div id="successMessage" class="success-message">
+            <i class="fas fa-check-circle"></i>
+            <p>Thank you for your feedback! Submitted successfully.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonial-carousel">
+      <h1 class="testimonial-heading" style="color: #27ae60">
+        What Our Clients & Interns Say
+      </h1>
+      <div class="carousel-wrapper">
+        <div class="carousel-track" id="carouselTrack">
+          <!-- 10 Testimonials -->
+          <div class="testimonial-card">
+            <p>
+              "GrowCraft helped us create a modern website that boosted our
+              leads by 40%."
+            </p>
+            <h4>Rohit Sharma</h4>
+            <span>Business Owner</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"The internship program was an amazing learning experience!"</p>
+            <h4>Priya Verma</h4>
+            <span>Ex-Intern</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"Great communication and timely delivery of our project."</p>
+            <h4>Arjun Mehta</h4>
+            <span>Startup Founder</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"Their UI/UX design transformed our product."</p>
+            <h4>Neha Kapoor</h4>
+            <span>Product Manager</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"The team at GrowCraft is very professional and skilled."</p>
+            <h4>Amit Singh</h4>
+            <span>Entrepreneur</span>
+          </div>
+          <div class="testimonial-card">
+            <p>
+              "I gained real-world experience that helped me land a full-time
+              job."
+            </p>
+            <h4>Sneha Joshi</h4>
+            <span>Ex-Intern</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"Excellent SEO work, our traffic increased significantly."</p>
+            <h4>Vikram Rao</h4>
+            <span>Marketing Lead</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"They built our e-commerce store from scratch, amazing job!"</p>
+            <h4>Shalini Gupta</h4>
+            <span>E-Commerce Owner</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"Great mentors during my internship, learned so much."</p>
+            <h4>Manish Patel</h4>
+            <span>Ex-Intern</span>
+          </div>
+          <div class="testimonial-card">
+            <p>"Super reliable team, would definitely recommend."</p>
+            <h4>Ananya Rao</h4>
+            <span>Startup Founder</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- <div id="footer-placeholder"></div> -->
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+      <div class="footer-container">
+        <!-- About GrowCraft -->
+        <div class="footer-col">
+          <img
+            src="./images/Logo.png"
+            id="footerLogo"
+            alt="GrowCraft Logo"
+            class="footer-logo mb-3"
+            style="height: 60px"
+          />
+
+          <p>
+            Boost your career with skill-focused training and internship
+            opportunities.
+          </p>
+        </div>
+
+        <!-- Important Links -->
+        <div class="footer-col important-links">
+          <h3>Important Links</h3>
+          <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a href="about.html"><i class="fa-solid fa-building"></i> About Us</a>
+          <a href="index.html#services"
+            ><i class="fa-solid fa-laptop-code"></i> Services</a
+          >
+          <a href="work.html"
+            ><i class="fa-solid fa-graduation-cap"></i> Our Works</a
+          >
+          <a href="src/faq.html"><i class="fa-solid fa-clock"></i> FAQ</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-col">
+          <h3>Contact</h3>
+          <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+          <p><i class="fa-solid fa-envelope"></i> support@GrowCraft.com</p>
+        </div>
+
+        <!-- Social -->
+        <div class="footer-col">
+          <h3>Follow Us</h3>
+          <div class="social-icons">
+            <a href="https://www.facebook.com/"
+              ><i class="fa-brands fa-facebook"></i> Facebook</a
+            >
+            <a href="https://www.x.com/"
+              ><i class="fa-brands fa-twitter"></i> Twitter</a
+            >
+            <a href="https://www.linkedin.com/"
+              ><i class="fa-brands fa-linkedin"></i> LinkedIn</a
+            >
+            <a href="https://www.instagram.com/"
+              ><i class="fa-brands fa-instagram"></i> Instagram</a
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Row: Credit + Legal -->
+      <div class="footer-bottom">
+        <div class="footer-left">
+          &copy; 2025 GrowCraft. All rights reserved.
+        </div>
+        <div class="footer-right">
+          <a href="privacy.html"><i class="fa-solid fa-lock"></i> Privacy</a>
+          <a href="terms.html"><i class="fa-solid fa-file-lines"></i> Terms</a>
+          <a href="sitemap.html"><i class="fa-solid fa-map"></i> Sitemap</a>
+        </div>
+      </div>
+    </footer>
+    <button id="scrollToTopBtn" title="Go to top">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        width="28"
+        height="28"
+        fill="none"
+      >
+        <path
+          d="M12 5.5V19"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+        <path
+          d="M18 11C18 11 13.5811 5.00001 12 5C10.4188 4.99999 6 11 6 11"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        />
+      </svg>
+    </button>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800, // values from 0 to 3000, with step 50ms
+        once: true, // whether animation should happen only once - while scrolling down
+      });
+    </script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        /* Enhanced Theme Toggle Functionality */
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+
+        // Get current theme from localStorage or default to 'light'
+        let currentTheme = localStorage.getItem("theme") || "light";
+
+        // Apply theme on page load
+        document.documentElement.setAttribute("data-bs-theme", currentTheme);
+        updateThemeIcon(currentTheme);
+
+        // Theme toggle event listener
+        if (themeToggle) {
+          themeToggle.addEventListener("click", function () {
+            // Add click animation
+            this.style.transform = "scale(0.95)";
+            setTimeout(() => {
+              this.style.transform = "scale(1.1)";
+              setTimeout(() => {
+                this.style.transform = "";
+              }, 150);
+            }, 100);
+
+            // Toggle theme
+            currentTheme = currentTheme === "light" ? "dark" : "light";
+            document.documentElement.setAttribute(
+              "data-bs-theme",
+              currentTheme
+            );
+            localStorage.setItem("theme", currentTheme);
+            updateThemeIcon(currentTheme);
+          });
+        }
+
+        function updateThemeIcon(theme) {
+          if (themeIcon) {
+            if (theme === "dark") {
+              themeIcon.className = "fas fa-sun";
+              themeIcon.style.transform = "rotate(180deg)";
+            } else {
+              themeIcon.className = "fas fa-moon";
+              themeIcon.style.transform = "rotate(0deg)";
+            }
+          }
+        }
+        const logo = document.querySelector("#logo");
+        const footerLogo = document.querySelector("#footerLogo");
+
+        function updateLogo() {
+          const isDark =
+            document.documentElement.getAttribute("data-bs-theme") === "dark";
+          const logoSrc = isDark
+            ? "./images/Logo.png"
+            : "./images/Logo_new.png";
+
+          if (logo) {
+            logo.src = logoSrc;
+          }
+          if (footerLogo) {
+            footerLogo.src = logoSrc;
+          }
+        }
+
+        updateLogo();
+        const themeObserver = new MutationObserver(function (mutations) {
+          for (const mutation of mutations) {
+            if (
+              mutation.type === "attributes" &&
+              mutation.attributeName === "data-bs-theme"
+            ) {
+              updateLogo();
+            }
+          }
+        });
+        themeObserver.observe(document.documentElement, {
+          attributes: true,
+          attributeFilter: ["data-bs-theme"],
+        });
+
+        /* Enhanced Navbar Scroll Effect */
+        const navbar = document.querySelector(".navbar");
+        let lastScrollY = window.scrollY;
+
+        window.addEventListener("scroll", () => {
+          const currentScrollY = window.scrollY;
+
+          if (currentScrollY > 100) {
+            navbar.classList.add("scrolled");
+          } else {
+            navbar.classList.remove("scrolled");
+          }
+
+          lastScrollY = currentScrollY;
+        });
+
+        /* Carousel Initialization with Enhanced Controls */
+        const carouselEl = document.getElementById("carouselExampleDark");
+        let carouselInstance = null;
+        if (carouselEl) {
+          carouselInstance = new bootstrap.Carousel(carouselEl, {
+            interval: 6000,
+            wrap: true,
+            pause: "hover",
+          });
+
+          // Add slide change animation
+          carouselEl.addEventListener("slide.bs.carousel", function (e) {
+            const activeCaption = e.relatedTarget.querySelector(
+              ".carousel-caption h2"
+            );
+            if (activeCaption) {
+              activeCaption.style.opacity = "0";
+              activeCaption.style.transform = "translateX(50px)";
+
+              setTimeout(() => {
+                activeCaption.style.transition =
+                  "all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+                activeCaption.style.opacity = "1";
+                activeCaption.style.transform = "translateX(0)";
+              }, 300);
+            }
+          });
+        }
+
+        // Custom next button with enhanced animation
+        const customNextButton = document.getElementById("customNextButton");
+        if (customNextButton && carouselInstance) {
+          customNextButton.addEventListener("click", function () {
+            this.style.transform = "translateY(-50%) scale(0.95)";
+            setTimeout(() => {
+              this.style.transform = "translateY(-50%) scale(1)";
+            }, 150);
+            carouselInstance.next();
+          });
+        }
+
+        function showSuccessMessage() {
+          if (!successMessage) return;
+
+          successMessage.style.display = "block";
+          successMessage.style.transform = "scale(0.8)";
+          successMessage.style.opacity = "0";
+
+          setTimeout(() => {
+            successMessage.style.transition =
+              "all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)";
+            successMessage.style.transform = "scale(1)";
+            successMessage.style.opacity = "1";
+          }, 100);
+        }
+
+        /* Enhanced Service Cards Toggle */
+        const toggleButtons = document.querySelectorAll(".toggle-btn");
+        toggleButtons.forEach((btn) => {
+          btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const card = this.closest(".card-services");
+            const extraContent = card.querySelector(".extra");
+
+            if (!extraContent) return;
+
+            const isExpanded = !extraContent.classList.contains("d-none");
+
+            // Enhanced animation
+            if (isExpanded) {
+              extraContent.style.maxHeight = extraContent.scrollHeight + "px";
+              extraContent.offsetHeight; // Force reflow
+              extraContent.style.maxHeight = "0px";
+              extraContent.style.opacity = "0";
+
+              setTimeout(() => {
+                extraContent.classList.add("d-none");
+                extraContent.style.maxHeight = "";
+                extraContent.style.opacity = "";
+              }, 400);
+
+              this.textContent = "Read More";
+              card.style.transform = "translateY(0)";
+            } else {
+              extraContent.classList.remove("d-none");
+              extraContent.style.maxHeight = "0px";
+              extraContent.style.opacity = "0";
+              extraContent.offsetHeight; // Force reflow
+
+              extraContent.style.transition =
+                "max-height 0.5s ease, opacity 0.5s ease";
+              extraContent.style.maxHeight = extraContent.scrollHeight + "px";
+              extraContent.style.opacity = "1";
+
+              setTimeout(() => {
+                extraContent.style.maxHeight = "";
+              }, 500);
+
+              this.textContent = "Read Less";
+              card.style.transform = "translateY(-5px)";
+            }
+          });
+        });
+
+        /* Enhanced Feedback Form */
+        const feedbackForm = document.getElementById("feedbackForm");
+        const successMessage = document.getElementById("successMessage");
+
+        if (feedbackForm) {
+          // Add input focus animations
+          const inputs = feedbackForm.querySelectorAll(
+            ".form-input, .form-textarea"
+          );
+          inputs.forEach((input) => {
+            input.addEventListener("focus", function () {
+              this.parentElement.style.transform = "translateY(-2px)";
+              this.style.borderColor = "rgba(255, 255, 255, 0.6)";
+            });
+
+            input.addEventListener("blur", function () {
+              this.parentElement.style.transform = "translateY(0)";
+              this.style.borderColor = "rgba(255, 255, 255, 0.3)";
+            });
+          });
+
+          feedbackForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            const name = document.getElementById("userName").value.trim();
+            const email = document.getElementById("userEmail").value.trim();
+            const feedback = document
+              .getElementById("userFeedback")
+              .value.trim();
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!name || !email || !feedback) {
+              showError("Please fill in all required fields.");
+              return;
+            }
+
+            if (!emailRegex.test(email)) {
+              showError("Please enter a valid email address.");
+              return;
+            }
+
+            // Enhanced success animation
+            const formContainer = document.querySelector(
+              ".feedback-form-container"
+            );
+            formContainer.style.transform = "scale(0.95)";
+            formContainer.style.opacity = "0.7";
+
+            setTimeout(() => {
+              // Save to localStorage (if needed for functionality)
+              const data = {
+                name,
+                email,
+                feedback,
+                timestamp: new Date().toISOString(),
+              };
+
+              showSuccessMessage();
+
+              // Reset form with animation
+              setTimeout(() => {
+                formContainer.style.transition = "all 0.5s ease";
+                formContainer.style.transform = "scale(1)";
+                formContainer.style.opacity = "1";
+                feedbackForm.reset();
+
+                setTimeout(() => {
+                  successMessage.style.display = "none";
+                  formContainer.style.transition = "";
+                }, 3000);
+              }, 1000);
+            }, 300);
+          });
+        }
+
+        function showError(msg) {
+          // Enhanced error handling could be added here
+          alert(msg);
+        }
+        /* Global Clear Form Function */
+        window.clearForm = function () {
+          const form = document.getElementById("feedbackForm");
+          const inputs = form.querySelectorAll(".form-input, .form-textarea");
+
+          inputs.forEach((input, index) => {
+            setTimeout(() => {
+              input.style.transform = "translateX(-10px)";
+              setTimeout(() => {
+                input.value = "";
+                input.style.transform = "translateX(0)";
+              }, 100);
+            }, index * 50);
+          });
+
+          const successMsg = document.getElementById("successMessage");
+          if (successMsg && successMsg.style.display !== "none") {
+            successMsg.style.display = "none";
+          }
+        };
+
+        /* Dynamic Year Update */
+        const yearSpan = document.getElementById("currentYear");
+        if (yearSpan) {
+          yearSpan.textContent = new Date().getFullYear();
+        }
+
+        /* Enhanced Hover Effects */
+        document.querySelectorAll(".hover-lift").forEach((el) => {
+          el.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-8px) scale(1.02)";
+          });
+
+          el.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0) scale(1)";
+          });
+        });
+
+        document.querySelectorAll(".hover-scale").forEach((el) => {
+          el.addEventListener("mouseenter", function () {
+            this.style.transform = "scale(1.05)";
+          });
+
+          el.addEventListener("mouseleave", function () {
+            this.style.transform = "scale(1)";
+          });
+        });
+      });
+
+      const track = document.getElementById("carouselTrack");
+      const cards = track.children;
+      const totalCards = cards.length;
+
+      // Duplicate testimonials for infinite effect
+      track.innerHTML += track.innerHTML;
+
+      let position = 0;
+      const speed = 0.5; // pixels per frame
+
+      function moveCarousel() {
+        position -= speed;
+        if (Math.abs(position) >= track.scrollWidth / 2) {
+          position = 0; // reset to start
+        }
+        track.style.transform = `translateX(${position}px)`;
+        requestAnimationFrame(moveCarousel);
+      }
+
+      // Start animation
+      moveCarousel();
+=======
     </div>
   </section>
    <footer class="professional-footer" data-aos="fade-up" >
@@ -2347,14 +4128,56 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800, // values from 0 to 3000, with step 50ms
-      once: true, // whether animation should happen only once - while scrolling down
-    });
-  </script>
+      /* Load Footer + Start Counter */
+      fetch("src/components/footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-placeholder").innerHTML = data;
 
+          // === Counter Script starts only AFTER footer loads ===
+          const counters = document.querySelectorAll(".counter");
+          const speed = 50;
+
+          const startCounting = (counter) => {
+            const target = +counter.getAttribute("data-target");
+
+            // 👇 Custom speed for "slow" counters (like the 5)
+            const thisSpeed = counter.classList.contains("slow") ? 200 : 50;
+
+            let count = 0;
+
+            const updateCount = () => {
+              const increment = Math.max(1, Math.ceil(target / thisSpeed));
+              if (count < target) {
+                count += increment;
+                if (count > target) count = target;
+                counter.innerText = count;
+                setTimeout(updateCount, 50); // a bit slower step
+              } else {
+                counter.innerText = target + "+";
+              }
+            };
+
+            updateCount();
+          };
+          const observer = new IntersectionObserver(
+            (entries, obs) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  startCounting(entry.target);
+                  obs.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.5 }
+          );
+
+          counters.forEach((counter) => {
+            observer.observe(counter);
+          });
+        });
+
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const scrollToTopBtn = document.getElementById("scrollbackToTopbtn");
@@ -2662,6 +4485,10 @@
           behavior: "smooth",
         });
       });
+    </script>
+  </body>
+</html>
+
 
       // Infinite carousel animation
       const track = document.getElementById("carouselTrack");
