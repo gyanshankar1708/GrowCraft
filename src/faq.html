@@ -12,85 +12,141 @@
 
   <style>
     /* Enhanced Navbar Design */
+
+    :root {
+            --primary-color: #667eea;
+            
+            --accent-color: #4facfe;
+            --text-primary: #1a202c;
+            --text-secondary: #4a5568;
+            --text-light: #718096;
+             --animation-speed: 0.3s;
+            --primary-green: #27ae60;
+             --light-green: #4caf50;
+             --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
     .navbar {
-      padding: 1rem 0;
-      background: linear-gradient(135deg,
-          #ffffff 0%,
-          #f8f9fa 100%) !important;
-      border-bottom: 3px solid #388e3c;
-      box-shadow: 0 8px 32px rgba(56, 142, 60, 0.1);
-      backdrop-filter: blur(10px);
-      transition: all 0.3s ease;
+      padding: 1.2rem 0;
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .dark-mode .navbar {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+
     }
 
     .navbar.scrolled {
-      padding: 0.5rem 0;
-      background: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: blur(20px);
+      padding: 0.8rem 0;
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     }
 
-    .navbar-nav .nav-item {
-      display: flex;
-      align-items: center;
-    }
-
-    .navbar-nav {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .navbar-brand {
-      transition: transform 0.3s ease;
-    }
-
-    .navbar-brand:hover {
-      transform: scale(1.05);
+    .dark-mode .navbar.scrolled {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
     }
 
     .navbar-brand img {
-      max-height: 55px;
-      object-fit: contain;
-      vertical-align: middle;
-      filter: drop-shadow(2px 2px 4px rgba(56, 142, 60, 0.2));
-      transition: filter 0.3s ease;
-    }
-
-    .navbar-brand img:hover {
-      filter: drop-shadow(4px 4px 8px rgba(56, 142, 60, 0.3));
+      max-height: 50px;
+      transition: var(--transition);
+      filter: drop-shadow(2px 2px 8px rgba(39, 174, 96, 0.2));
     }
 
     .navbar-nav .nav-link {
-      position: relative;
-      font-weight: 600;
+      font-weight: 500;
       color: #2e7d32 !important;
-      font-family: "Poppins", sans-serif;
-      font-size: 0.75rem;
-      padding: 0.75rem 1.25rem !important;
+      padding: 0.8rem 1.5rem !important;
       border-radius: 25px;
+      margin: 0 0.3rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .navbar-nav .nav-link:hover::before {
+      left: 0;
+    }
+    
+     .dark-mode .navbar-nav .nav-link {
+      color: white !important;
+    }
+  
+
+    /* Theme Toggle Button*/
+    .theme-toggle {
+      background: rgba(39, 174, 96, 0.1);
+      border: 1px solid rgba(39, 174, 96, 0.3);
+      color: var(--primary-green);
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
       display: flex;
       align-items: center;
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      text-decoration: none;
-      letter-spacing: 0.5px;
-      background: transparent;
+      justify-content: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .theme-toggle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .theme-toggle:hover::before {
+      left: 0;
+    }
+
+    .theme-toggle:hover {
+      color: white;
+      border-color: var(--primary-green);
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    }
+
+    .theme-toggle i {
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover i {
+      transform: rotate(20deg) scale(1.1);
     }
 
     .navbar-nav .nav-link:hover {
       color: #ffffff !important;
-      background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
       transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(56, 142, 60, 0.3);
+      box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
     }
 
-    .navbar-nav .nav-link.active {
-      color: #ffffff !important;
-      background: linear-gradient(135deg, #4caf50 0%, #388e3c 100%);
-      box-shadow: 0 4px 15px rgba(56, 142, 60, 0.25);
-    }
-
+  
     /* Enhanced search bar */
     .search-container {
       display: flex;
@@ -719,49 +775,33 @@
 </head>
 
 <body id="main-body">
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-      <a class="navbar-brand" href="index.html">
-        <img src="../images/Logo_new.png" alt="GrowCraft" width="200" />
-      </a>
+  <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid px-5">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../images/Logo_new.png" alt="GrowCraft" id="logo" style="color: black !important;" width="180">
+            </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="../index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../service.html">Services</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../blogListing.html">Blogs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../about.html">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="../work.html">Our Work</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="faq.html">FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact Us</a>
-          </li>
-        </ul>
-      </div>
-      <div class="search-container">
-        <input type="text" placeholder="Search..." class="search-input" />
-        <button class="search-button">
-          <i class="fas fa-search"></i>
-        </button>
-      </div>
-    </div>
-  </nav>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../blogListing.html">Blogs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About Us</a></li>
+                     <li class="nav-item">  <a class="nav-link" href="../work.html">Our Work</a></li>
+                      <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a> </li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">login</a></li>
+                    <li class="nav-item"><button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
+                   <i class="fas fa-moon" id="themeIcon"></i></button></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
   <section class="faq-section py-5" id="faq">
     <div class="container">
       <div class="row justify-content-center">
@@ -1043,33 +1083,7 @@
       offset: 50,
     });
 
-    // FAQ Toggle Function
-    function toggleFaq(faqNumber) {
-      const answer = document.getElementById(`faq-answer-${faqNumber}`);
-      const icon = document.querySelector(`[data-faq="${faqNumber}"] .faq-icon i`);
-      const iconContainer = document.querySelector(`[data-faq="${faqNumber}"] .faq-icon`);
-      const question = document.querySelector(`[data-faq="${faqNumber}"] .faq-question`);
-
-      // Toggle the answer visibility
-      answer.classList.toggle('show');
-
-      // Toggle icon rotation and styling
-      if (answer.classList.contains('show')) {
-        icon.classList.remove('fa-plus');
-        icon.classList.add('fa-minus');
-        iconContainer.classList.add('rotated');
-        question.style.background = 'linear-gradient(135deg, #4caf50 0%, #388e3c 100%)';
-        question.style.color = 'white';
-        question.querySelector('h3').style.color = 'white';
-      } else {
-        icon.classList.remove('fa-minus');
-        icon.classList.add('fa-plus');
-        iconContainer.classList.remove('rotated');
-        question.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)';
-        question.style.color = '';
-        question.querySelector('h3').style.color = '#2e7d32';
-      }
-    }
+    
 
     // Add scroll effect to navbar
     window.addEventListener("scroll", function() {
@@ -1137,6 +1151,35 @@
       }
     });
   </script>
+
+  <script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const body = document.body;
+  const logo = document.querySelector("#logo");
+  const themeIcon = document.getElementById("themeIcon");
+
+  function setDarkMode(enabled) {
+    if (enabled) {
+      body.classList.add("dark-mode");
+      themeIcon.className = 'fas fa-sun';
+      logo.src = "../images/logo-transparent-dark-mode.png"; // dark mode logo
+      localStorage.setItem("dark-mode", "enabled");
+    } else {
+      body.classList.remove("dark-mode");
+      themeIcon.className = 'fas fa-moon';
+      logo.src = "../images/Logo_new.png"; // light mode logo
+      localStorage.setItem("dark-mode", "disabled");
+    }
+  }
+
+  // Load preference on page load
+  setDarkMode(localStorage.getItem("dark-mode") === "enabled");
+
+  // Toggle mode on button click
+  toggleBtn.addEventListener("click", () => {
+    setDarkMode(!body.classList.contains("dark-mode"));
+  });
+</script>
 </body>
 
 </html>
