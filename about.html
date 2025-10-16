@@ -249,7 +249,13 @@
     transform: translateY(-3px);
     border-color: #667eea;
   }
-
+  
+  #learnMoreBtn{
+    --btn-bg: linear-gradient(135deg, var(--brand), var(--brand-2));
+      border: 0; color: white; padding: 12px 18px; border-radius: 14px; font-weight: 600; cursor: pointer; box-shadow: var(--shadow);
+      background: var(--btn-bg);
+      transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+  }
   .stat-number {
     display: block;
     font-size: 1.4rem;
