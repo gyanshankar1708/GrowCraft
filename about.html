@@ -249,7 +249,13 @@
     transform: translateY(-3px);
     border-color: #667eea;
   }
-
+  
+  #learnMoreBtn{
+    --btn-bg: linear-gradient(135deg, var(--brand), var(--brand-2));
+      border: 0; color: white; padding: 12px 18px; border-radius: 14px; font-weight: 600; cursor: pointer; box-shadow: var(--shadow);
+      background: var(--btn-bg);
+      transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+  }
   .stat-number {
     display: block;
     font-size: 1.4rem;
@@ -939,57 +945,7 @@
 
   <div id="footer-placeholder"></div>
   <!-- ===== FOOTER ===== -->
-  <footer>
-    <div class="footer-container ">
-      <!-- About GrowCraft -->
-      <div class="footer-col">
-        <img src="images/Logo_new.png" alt="GrowCraft Logo" class="footer-logo mb-3" style="height: 60px;">
 
-
-        <p>Boost your career with skill-focused training and internship opportunities.</p>
-      </div>
-
-      <!-- Important Links -->
-      <div class="footer-col important-links">
-        <h3>Important Links</h3>
-        <a href="../index.html"><i class="fa-solid fa-house"></i> Home</a>
-        <a href="../about.html"><i class="fa-solid fa-building"></i> About Us</a>
-        <a href="service.html"><i class="fa-solid fa-laptop-code"></i> Services</a>
-        <a href="../work.html"><i class="fa-solid fa-graduation-cap"></i> Our Works</a>
-        <a href="../src/faq.html"><i class="fa-solid fa-clock"></i> FAQ</a>
-      </div>
-
-      <!-- Contact -->
-      <div class="footer-col">
-        <h3>Contact</h3>
-        <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
-        <p><i class="fa-solid fa-envelope"></i> support@GrowCraft.com</p>
-      </div>
-
-      <!-- Social -->
-      <div class="footer-col">
-        <h3>Follow Us</h3>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook"></i> Facebook</a>
-          <a href="https://www.x.com/"><i class="fa-brands fa-twitter"></i> Twitter</a>
-          <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-          <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i> Instagram</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Footer Bottom Row: Credit + Legal -->
-    <div class="footer-bottom">
-      <div class="footer-left">
-        &copy; 2025 GrowCraft. All rights reserved.
-      </div>
-      <div class="footer-right">
-        <a href="../privacy.html"><i class="fa-solid fa-lock"></i> Privacy</a>
-        <a href="../terms.html"><i class="fa-solid fa-file-lines"></i> Terms</a>
-        <a href="../sitemap.html"><i class="fa-solid fa-map"></i> Sitemap</a>
-      </div>
-    </div>
-  </footer>
   <script>
     fetch('src/components/footer.html')
     .then(response => response.text())
@@ -1007,152 +963,167 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const footerBottom = document.querySelector(".footer-bottom");
 
-    document.addEventListener("DOMContentLoaded", function () {
-      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-      const footerBottom = document.querySelector(".footer-bottom");
+    // Scroll logic
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const footerTop = footerBottom.getBoundingClientRect().top;
 
-      window.addEventListener("scroll", () => {
-        const scrollY = window.scrollY;
-        const windowHeight = window.innerHeight;
-        const footerTop = footerBottom.getBoundingClientRect().top;
+      // Show/hide button
+      if (scrollY > 300) {
+        scrollToTopBtn.classList.add("show");
+      } else {
+        scrollToTopBtn.classList.remove("show");
+      }
 
-        // Show/hide button
-        if (scrollY > 300) {
-          scrollToTopBtn.classList.add("show");
-        } else {
-          scrollToTopBtn.classList.remove("show");
-        }
+      // If footer-bottom is visible, move button above it
+      if (footerTop < windowHeight) {
+        const overlap = windowHeight - footerTop;
+        scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px gap above footer
+      } else {
+        scrollToTopBtn.style.bottom = "2rem";
+      }
+    });
 
-        // If footer-bottom is visible, move button above it
-        if (footerTop < windowHeight) {
-          const overlap = windowHeight - footerTop;
-          scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px = small gap above footer
-        } else {
-          scrollToTopBtn.style.bottom = "2rem";
-        }
-      });
-
-    // ✅ 2. INITIALIZED AOS
+    // ✅ Initialize AOS
     AOS.init({
       duration: 800,
       once: true,
       offset: 50,
     });
-  
-    // Theme handling
-    
-   
 
-    // Parallax for decorative elements
-    (function() {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // 🎨 Parallax for decorative elements
+    (function () {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduce) return;
 
-      const tracked = Array.from(document.querySelectorAll('[data-parallax]'));
+      const tracked = Array.from(document.querySelectorAll("[data-parallax]"));
       if (!tracked.length) return;
 
       const bounds = { x: 0, y: 0 };
       const lerp = (a, b, t) => a + (b - a) * t;
-      let rx = 0, ry = 0;
+      let rx = 0,
+        ry = 0;
 
-      window.addEventListener('mousemove', (e) => {
-        const vw = window.innerWidth, vh = window.innerHeight;
-        const nx = (e.clientX / vw) * 2 - 1; // -1..1
-        const ny = (e.clientY / vh) * 2 - 1;
-        bounds.x = nx; bounds.y = ny;
-      }, { passive: true });
+      window.addEventListener(
+        "mousemove",
+        (e) => {
+          const vw = window.innerWidth,
+            vh = window.innerHeight;
+          const nx = (e.clientX / vw) * 2 - 1; // -1..1
+          const ny = (e.clientY / vh) * 2 - 1;
+          bounds.x = nx;
+          bounds.y = ny;
+        },
+        { passive: true }
+      );
 
       function tick() {
         rx = lerp(rx, bounds.x, 0.06);
         ry = lerp(ry, bounds.y, 0.06);
-        tracked.forEach(el => {
-          const amt = parseFloat(el.getAttribute('data-parallax')) || 8;
-          el.style.transform = `translate3d(${rx*amt}px, ${ry*amt}px, 0)`;
+        tracked.forEach((el) => {
+          const amt = parseFloat(el.getAttribute("data-parallax")) || 8;
+          el.style.transform = `translate3d(${rx * amt}px, ${ry * amt}px, 0)`;
         });
         requestAnimationFrame(tick);
       }
+
       requestAnimationFrame(tick);
     })();
 
-    // ❌ 3. REMOVED OLD REVEAL ON VIEW SCRIPT (IntersectionObserver)
-    
-    // CTA demo handlers
-    document.getElementById('exploreServices')?.addEventListener('click', ()=>{
-      window.location.href = 'index.html#services';
-    });
-    document.getElementById('joinContrib')?.addEventListener('click', ()=>{
-      window.location.href = 'index.html#contribute';
-    });
-    document.getElementById('learnMoreBtn')?.addEventListener('click', ()=>{
-      window.location.href = 'index.html#our-story';
-    });
+    // 📅 Current year in footer
+    const yearSpan = document.getElementById("currentYear");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
 
-    // Current year in footer
-    document.addEventListener("DOMContentLoaded", function () {
-      const yearSpan = document.getElementById("currentYear");
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-      }
-    });
-
-    // Back to top button functionality
-    (function() {
-      const backToTop = document.getElementById('backToTop');
+    // 🔝 Back to top button functionality
+    (function () {
+      const backToTop = document.getElementById("backToTop");
       if (!backToTop) return;
 
       function toggleBackToTop() {
         if (window.pageYOffset > 100) {
-          backToTop.classList.add('show');
+          backToTop.classList.add("show");
         } else {
-          backToTop.classList.remove('show');
+          backToTop.classList.remove("show");
         }
       }
 
-      window.addEventListener('scroll', toggleBackToTop);
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.addEventListener("scroll", toggleBackToTop);
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
     })();
 
-    // Counter animation for facts
-    (function(){
-      const counters = document.querySelectorAll('[data-target]');
-      if('IntersectionObserver' in window){
-        const counterObserver = new IntersectionObserver((entries, o)=>{
-          entries.forEach(en => {
-            if(en.isIntersecting){
-              counters.forEach(el=>{
-                const target = Number(el.getAttribute('data-target')) || 0; 
-                let t0=null; 
-                const dur=1100;
-                function step(ts){ 
-                  if(!t0) t0=ts; 
-                  const p=Math.min((ts-t0)/dur, 1); 
-                  el.textContent = Math.floor(p*target); 
-                  if(p<1) requestAnimationFrame(step); 
-                  else el.textContent = target; 
+    // 🔢 Counter animation for facts
+    (function () {
+      const counters = document.querySelectorAll("[data-target]");
+      if ("IntersectionObserver" in window) {
+        const counterObserver = new IntersectionObserver((entries, o) => {
+          entries.forEach((en) => {
+            if (en.isIntersecting) {
+              counters.forEach((el) => {
+                const target = Number(el.getAttribute("data-target")) || 0;
+                let t0 = null;
+                const dur = 1100;
+
+                function step(ts) {
+                  if (!t0) t0 = ts;
+                  const p = Math.min((ts - t0) / dur, 1);
+                  el.textContent = Math.floor(p * target);
+                  if (p < 1) requestAnimationFrame(step);
+                  else el.textContent = target;
                 }
+
                 requestAnimationFrame(step);
               });
               o.unobserve(en.target);
             }
           });
-        }, {threshold:0.25});
-        const factsWrap = document.querySelector('.facts'); 
-        if(factsWrap) counterObserver.observe(factsWrap);
+        }, { threshold: 0.25 });
+
+        const factsWrap = document.querySelector(".facts");
+        if (factsWrap) counterObserver.observe(factsWrap);
       } else {
-        counters.forEach(el => el.textContent = el.getAttribute('data-target'));
+        counters.forEach((el) => (el.textContent = el.getAttribute("data-target")));
       }
     })();
 
-    // CTA handlers
-    document.getElementById('exploreBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#services');
-    document.getElementById('guideBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#contributing');
-    document.getElementById('contactBtn')?.addEventListener('click', ()=> window.location.href = 'src/contact.html');
-    document.getElementById('contributeBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#contribute');
-  </script>
+    // 🚀 CTA handlers
+    document.getElementById("exploreServices")?.addEventListener("click", () => {
+      window.location.href = "index.html#services";
+    });
 
+    document.getElementById("joinContrib")?.addEventListener("click", () => {
+      window.location.href = "index.html#contribute";
+    });
+
+    document.getElementById("learnMoreBtn")?.addEventListener("click", () => {
+      window.location.href = "index.html#our-story";
+    });
+
+    document.getElementById("exploreBtn")?.addEventListener("click", () => {
+      window.location.href = "index.html#services";
+    });
+
+    document.getElementById("guideBtn")?.addEventListener("click", () => {
+      window.location.href = "index.html#contributing";
+    });
+
+    document.getElementById("contactBtn")?.addEventListener("click", () => {
+      window.location.href = "src/contact.html";
+    });
+
+    document.getElementById("contributeBtn")?.addEventListener("click", () => {
+      window.location.href = "index.html#contribute";
+    });
+  });
+</script>
 
 <script>
   const toggleBtn = document.getElementById("themeToggle");
@@ -1163,12 +1134,12 @@
   function setDarkMode(enabled) {
     if (enabled) {
       body.classList.add("dark-mode");
-      themeIcon.className = 'fas fa-sun';
+      themeIcon.className = "fas fa-sun";
       logo.src = "images/logo-transparent-dark-mode.png"; // dark mode logo
       localStorage.setItem("dark-mode", "enabled");
     } else {
       body.classList.remove("dark-mode");
-      themeIcon.className = 'fas fa-moon';
+      themeIcon.className = "fas fa-moon";
       logo.src = "images/Logo_new.png"; // light mode logo
       localStorage.setItem("dark-mode", "disabled");
     }
@@ -1182,5 +1153,6 @@
     setDarkMode(!body.classList.contains("dark-mode"));
   });
 </script>
+
 </body>
 </html>
