@@ -1177,6 +1177,69 @@
       }
     });
   </script>
+
+  <!-- Back to Top Button (GrowCraft ) -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  let backToTopBtn = document.getElementById('backToTop');
+  if (!backToTopBtn) {
+    backToTopBtn = document.createElement('button');
+    backToTopBtn.id = 'backToTop';
+    backToTopBtn.title = 'Back to top';
+    
+    backToTopBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="11" stroke="none" fill="transparent"></circle>
+        <path d="M12 19V7M5 12l7-7 7 7"/>
+      </svg>`;
+    document.body.appendChild(backToTopBtn);
+  }
+
+  // Button styling
+  Object.assign(backToTopBtn.style, {
+    position: 'fixed',
+    bottom: '35px',
+    right: '35px',
+    width: '55px',
+    height: '55px',
+    borderRadius: '50%',
+    border: 'none',
+    background: 'linear-gradient(145deg, #2e7d32, #3fa34d)',
+    display: 'none',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+    zIndex: '9999',
+    boxShadow: '0 4px 10px rgba(0, 0, 0, 0.3)',
+    transition: 'transform 0.25s ease, box-shadow 0.25s ease, background 0.3s ease',
+  });
+
+  // Hover effect
+  backToTopBtn.addEventListener('mouseenter', () => {
+    backToTopBtn.style.transform = 'translateY(-5px) scale(1.08)';
+    backToTopBtn.style.background = 'linear-gradient(145deg, #43a047, #2e7d32)';
+    backToTopBtn.style.boxShadow = '0 6px 16px rgba(0, 0, 0, 0.35)';
+  });
+
+  backToTopBtn.addEventListener('mouseleave', () => {
+    backToTopBtn.style.transform = 'translateY(0) scale(1)';
+    backToTopBtn.style.background = 'linear-gradient(145deg, #2e7d32, #3fa34d)';
+    backToTopBtn.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.3)';
+  });
+
+  // Show button after scrolling down
+  window.addEventListener('scroll', () => {
+    backToTopBtn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+  });
+
+  // Smooth scroll to top
+  backToTopBtn.addEventListener('click', e => {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+});
+</script>
+
 </body>
 
 </html>
