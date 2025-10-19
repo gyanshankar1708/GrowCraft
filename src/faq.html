@@ -131,11 +131,6 @@
       color: white !important;
       transform: translateY(-2px);
     }
-    body {
-      font-family: "Poppins", sans-serif;
-      background: #fff;
-      color: #333;
-    }
 
       /* FAQ Styles */
     .faq-section {
@@ -416,27 +411,27 @@
 
 .quick-stats {
   display: flex;
-  justify-content: flex-start; /* aligns left with brand description */
-  gap: 20px; /* smaller space between stats */
+  justify-content: flex-start;
+  gap: 20px;
   margin-top: 1rem;
   flex-wrap: wrap;
   text-align: center;
 }
 .stat-item {
   flex: 1;
-  min-width: 60px; /* reduced width for smaller layout */
+  min-width: 60px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* left align, can use center if preferred */
+  align-items: flex-start;
 }
 .stat-number {
-  font-size: 1.2rem; /* smaller than before */
+  font-size: 1.2rem;
   font-weight: 700;
   color: #28a745;
   margin-bottom: 0.2rem;
 }
 .stat-label {
-  font-size: 0.75rem; /* smaller and more consistent */
+  font-size: 0.75rem;
   color: #555;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -710,8 +705,6 @@
   background: #2e7d32;
   transform: scale(1.1);
 }
-
-
   </style>
 </head>
 
@@ -751,25 +744,25 @@
           </li>
         </ul>
 
-        <!-- THEME TOGGLE (added) -->
+        <!-- THEME TOGGLE -->
         <div class="d-flex align-items-center ms-lg-3 mt-3 mt-lg-0">
           <button id="themeToggle"
                   class="btn btn-outline-secondary rounded-pill px-3"
                   type="button"
                   aria-label="Toggle theme">
-            <i id="themeIcon" class="bi bi-moon-stars"></i>
+            <i id="themeIcon" class="fas fa-moon"></i>
             <span class="ms-2 d-none d-sm-inline" id="themeLabel">Dark</span>
           </button>
         </div>
-        <!-- /THEME TOGGLE -->
       </div>
     </div>
   </nav>
+
  <section class="faq-section py-5" id="faq">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-10">
-          <div class="faq-header text-center mb-5" data-aos="fade-down">
+          <div class="faq-header text-center mb-5">
             <h1 class="faq-title">Frequently Asked Questions</h1>
             <p class="faq-subtitle">
               Find answers to common questions about GrowCraft's training programs, internships, and services.
@@ -777,8 +770,9 @@
           </div>
 
           <div class="faq-container">
-            <div class="faq-item" data-faq="1" data-aos="fade-up" data-aos-delay="100">
-              <div class="faq-question" onclick="toggleFaq(1)">
+            <!-- FAQ Item 1 - REMOVED onclick attribute -->
+            <div class="faq-item" data-faq="1">
+              <div class="faq-question">
                 <h3>What training and internship programs does GrowCraft offer?</h3>
                 <span class="faq-icon">
                   <i class="fas fa-plus"></i>
@@ -798,8 +792,9 @@
               </div>
             </div>
 
-            <div class="faq-item" data-faq="2" data-aos="fade-up" data-aos-delay="200">
-              <div class="faq-question" onclick="toggleFaq(2)">
+            <!-- FAQ Item 2 - REMOVED onclick attribute -->
+            <div class="faq-item" data-faq="2">
+              <div class="faq-question">
                 <h3>How can I apply for a training or internship program?</h3>
                 <span class="faq-icon">
                   <i class="fas fa-plus"></i>
@@ -819,8 +814,9 @@
               </div>
             </div>
 
-            <div class="faq-item" data-faq="3" data-aos="fade-up" data-aos-delay="300">
-              <div class="faq-question" onclick="toggleFaq(3)">
+            <!-- FAQ Item 3 - REMOVED onclick attribute -->
+            <div class="faq-item" data-faq="3">
+              <div class="faq-question">
                 <h3>Do the programs provide certification upon completion?</h3>
                 <span class="faq-icon">
                   <i class="fas fa-plus"></i>
@@ -839,8 +835,9 @@
               </div>
             </div>
 
-            <div class="faq-item" data-faq="4" data-aos="fade-up" data-aos-delay="400">
-              <div class="faq-question" onclick="toggleFaq(4)">
+            <!-- FAQ Item 4 - REMOVED onclick attribute -->
+            <div class="faq-item" data-faq="4">
+              <div class="faq-question">
                 <h3>Are GrowCraft internships paid or unpaid?</h3>
                 <span class="faq-icon">
                   <i class="fas fa-plus"></i>
@@ -872,8 +869,9 @@
               </div>
             </div>
 
-            <div class="faq-item" data-faq="5" data-aos="fade-up" data-aos-delay="500">
-              <div class="faq-question" onclick="toggleFaq(5)">
+            <!-- FAQ Item 5 - REMOVED onclick attribute -->
+            <div class="faq-item" data-faq="5">
+              <div class="faq-question">
                 <h3>How can I contact GrowCraft for more details?</h3>
                 <span class="faq-icon">
                   <i class="fas fa-plus"></i>
@@ -919,7 +917,7 @@
 
           </div>
 
-          <div class="faq-cta text-center mt-5" data-aos="zoom-in-up">
+          <div class="faq-cta text-center mt-5">
             <h3>Still have questions?</h3>
             <p>Can't find what you're looking for? Our team is here to help!</p>
             <a href="../src/contact.html" class="btn btn-primary btn-lg">
@@ -932,8 +930,8 @@
     </div>
   </section>
 
-  <!-- ===== Enhanced GrowCraft Footer ===== -->
-<footer class="professional-footer fade-in" data-aos="fade-up">
+  <!-- Footer -->
+<footer class="professional-footer fade-in">
   <div class="container">
     <div class="row g-4 py-4 fade-in">
       
@@ -941,7 +939,7 @@
       <div class="col-lg-4 col-md-6 fade-in">
         <div class="footer-brand fade-in">
           <h4 class="brand-name">GrowCraft</h4>
-          <p class="brand-description" >
+          <p class="brand-description">
             Empowering businesses with innovative digital solutions and creative excellence.
           </p>
           <div class="quick-stats fade-in">
@@ -1016,7 +1014,7 @@
     </div>
   </div>
 
-  <!-- Bottom -->
+  <!-- Footer Bottom -->
   <div class="footer-bottom fade-in">
     <div class="container">
       <div class="row align-items-center py-3 fade-in">
@@ -1025,7 +1023,7 @@
             © <span id="year"></span> <strong>GrowCraft</strong>. All rights reserved.
           </p>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 text-md-end">
           <div class="footer-nav fade-in">
             <a href="#privacy">Privacy</a>
             <a href="#terms">Terms</a>
@@ -1037,131 +1035,52 @@
   </div>
 </footer>
 
-<script>
-document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-  
-
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- ONLY Dark Mode Toggle Script - FAQ handled by external JS -->
   <script>
-  // FAQ toggle
-  document.querySelectorAll(".faq-question").forEach(q => {
-    q.addEventListener("click", () => {
-      const item = q.parentElement;
-      item.classList.toggle("active");
-    });
-  });
+    // Set current year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Dark Mode Toggle
-  const themeToggle = document.getElementById("themeToggle");
-  const themeIcon = document.getElementById("themeIcon");
-  const htmlEl = document.documentElement;
-  const logo = document.getElementById("logo");
+    // Dark Mode Toggle
+    const themeToggle = document.getElementById("themeToggle");
+    const themeIcon = document.getElementById("themeIcon");
+    const htmlEl = document.documentElement;
+    const logo = document.getElementById("logo");
 
-  // Define logo paths
-  const lightLogo = "images/logo_bg_transparent.png";
-  const darkLogo = "../images/Logo.png";
+    // Define logo paths
+    const lightLogo = "images/logo_bg_transparent.png";
+    const darkLogo = "../images/Logo.png";
 
-  // Load saved theme
-  if (localStorage.getItem("theme") === "dark") {
-    htmlEl.setAttribute("data-bs-theme", "dark");
-    themeIcon.classList.replace("fa-moon", "fa-sun");
-    logo.src = darkLogo;
-  } else {
-    logo.src = lightLogo;
-  }
-
-  themeToggle.addEventListener("click", () => {
-    if (htmlEl.getAttribute("data-bs-theme") === "dark") {
-      // Switch to light mode
-      htmlEl.removeAttribute("data-bs-theme");
-      themeIcon.classList.replace("fa-sun", "fa-moon");
-      localStorage.setItem("theme", "light");
-      logo.src = lightLogo;
-    } else {
-      // Switch to dark mode
+    // Load saved theme
+    if (localStorage.getItem("theme") === "dark") {
       htmlEl.setAttribute("data-bs-theme", "dark");
       themeIcon.classList.replace("fa-moon", "fa-sun");
-      localStorage.setItem("theme", "dark");
       logo.src = darkLogo;
-    }
-  });
-
-  // Scroll To Top
-  const backToTop = document.getElementById("backToTop");
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 300) backToTop.classList.add("show");
-    else backToTop.classList.remove("show");
-  });
-  backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-</script>
-
-  <script>
-        // FAQ Toggle Function
-    function toggleFaq(faqNumber) {
-      const answer = document.getElementById(`faq-answer-${faqNumber}`);
-      const icon = document.querySelector(`[data-faq="${faqNumber}"] .faq-icon i`);
-      const iconContainer = document.querySelector(`[data-faq="${faqNumber}"] .faq-icon`);
-      const question = document.querySelector(`[data-faq="${faqNumber}"] .faq-question`);
-
-      // Toggle the answer visibility
-      answer.classList.toggle('show');
-
-      // Toggle icon rotation and styling
-      if (answer.classList.contains('show')) {
-        icon.classList.remove('fa-plus');
-        icon.classList.add('fa-minus');
-        iconContainer.classList.add('rotated');
-        question.style.background = 'linear-gradient(135deg, #4caf50 0%, #388e3c 100%)';
-        question.style.color = 'white';
-        question.querySelector('h3').style.color = 'white';
-      } else {
-        icon.classList.remove('fa-minus');
-        icon.classList.add('fa-plus');
-        iconContainer.classList.remove('rotated');
-        question.style.background = 'linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)';
-        question.style.color = '';
-        question.querySelector('h3').style.color = '#2e7d32';
-      }
+    } else {
+      logo.src = lightLogo;
     }
 
-    // Add scroll effect to navbar
-    window.addEventListener("scroll", function() {
-      const navbar = document.querySelector(".navbar");
-      if (window.scrollY > 50) {
-        navbar.classList.add("scrolled");
+    themeToggle.addEventListener("click", () => {
+      if (htmlEl.getAttribute("data-bs-theme") === "dark") {
+        // Switch to light mode
+        htmlEl.removeAttribute("data-bs-theme");
+        themeIcon.classList.replace("fa-sun", "fa-moon");
+        localStorage.setItem("theme", "light");
+        logo.src = lightLogo;
       } else {
-        navbar.classList.remove("scrolled");
+        // Switch to dark mode
+        htmlEl.setAttribute("data-bs-theme", "dark");
+        themeIcon.classList.replace("fa-moon", "fa-sun");
+        localStorage.setItem("theme", "dark");
+        logo.src = darkLogo;
       }
     });
+  </script>
 
-    // Scroll to top functionality
-    const backToTopButton = document.getElementById('backToTop');
+  <!-- External FAQ JavaScript -->
+  <script src="faq.js"></script>
 
-    window.addEventListener('scroll', function() {
-      if (window.pageYOffset > 300) {
-        backToTopButton.classList.add('show');
-      } else {
-        backToTopButton.classList.remove('show');
-      }
-    });
-
-    backToTopButton.addEventListener('click', function() {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-
-    // Set current year
-    document.addEventListener("DOMContentLoaded", function() {
-      const yearSpan = document.getElementById("currentYear");
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-      }
-    });
-    </script>
 </body>
 </html>
-
