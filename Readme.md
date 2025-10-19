@@ -1,4 +1,4 @@
-[![Join our group on Discord](https://github.com/user-attachments/assets/f7be9334-dd82-4c36-83d4-2e21bfca7633)](https://discord.gg/a2zdpnfZ)
+[![Join our group on Discord](https://github.com/user-attachments/assets/f7be9334-dd82-4c36-83d4-2e21bfca7633)](https://discord.gg/VDHMkaXCYP)
 
 # 🌱 GrowCraft
 

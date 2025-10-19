@@ -608,17 +608,17 @@ p {
 }
 
 /* ===== NAVBAR ===== */
-.navbar {
-      padding: 1.2rem 0;
-      background: rgba(255, 255, 255, 0.95) !important;
-      backdrop-filter: blur(20px);
-      border-bottom: none;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      transition: var(--transition);
-    }
+  .navbar {
+        padding: 1.2rem 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: var(--transition);
+      }
 
     .dark-mode .navbar {
       background: rgba(26, 26, 26, 0.95) !important;
@@ -1072,31 +1072,65 @@ p {
 <body>
     <!-- Modern Navbar -->
     <nav class="navbar navbar-expand-lg">
-        <div class="container-fluid px-5">
-            <a class="navbar-brand" href="../index.html">
-                <img src="../images/Logo_new.png" alt="GrowCraft" id="logo" style="color: black !important;" width="180">
-            </a>
+      <div
+        class="container-fluid d-flex justify-content-between align-items-center px-4"
+      >
+        <a class="navbar-brand hover-scale" href="#">
+          <img
+            src="images/Logo.png"
+            alt="GrowCraft"
+            id="logo"
+            class="smooth-transition"
+          />
+        </a>
 
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../blogListing.html">Blogs</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../index.html#about">About Us</a></li>
-                     <li class="nav-item">  <a class="nav-link" href="../work.html">Our Work</a></li>
-                      <li class="nav-item"><a class="nav-link" href="faq.html">FAQ</a> </li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="login.html">login</a></li>
-                    <li class="nav-item"><button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
-                   <i class="fas fa-moon" id="themeIcon"></i></button></li>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="../index.html" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../service.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../blogListing.html">Blogs</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../about.html">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../work.html">Our Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../src/faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../src/contact.html">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../login.html">Login</a>
+            </li>
+          </ul>
 
-                </ul>
-            </div>
+          <button
+            class="btn theme-toggle ms-3"
+            type="button"
+            id="themeToggle"
+            title="Toggle Dark/Light Mode"
+          >
+            <i class="fas fa-moon" id="themeIcon"></i>
+          </button>
         </div>
+      </div>
     </nav>
 
     <!-- Enhanced Hero Section -->
