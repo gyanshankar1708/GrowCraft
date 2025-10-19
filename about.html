@@ -186,34 +186,6 @@
       box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
     }
 
-    .professional-footer .row {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 0 !important; /* or any specific gap you need for the footer */
-    align-items: stretch !important;
-}
-
-      /* Professional Footer */
-  .professional-footer {
-    background: linear-gradient(135deg, #1e1e2e 0%, #2d2d44 100%);
-    color: #ffffff;
-    margin-top: 60px;
-    padding-top: 50px;
-    border-top: 3px solid transparent;
-    border-image: linear-gradient(90deg, #667eea, #764ba2, #667eea) 1;
-  }
-
-  .professional-footer .container {
-    max-width: 1200px;
-    margin: auto;
-  }
-
-  /* Brand Section */
-  .footer-logo {
-    max-width: 120px;
-    margin-bottom: 15px;
-  }
-
   .brand-name {
     color: #667eea;
     font-weight: 700;
@@ -269,42 +241,6 @@
     text-transform: uppercase;
   }
 
-  /* Footer Titles */
-  .footer-title {
-    color: #ffffff;
-    font-weight: 600;
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-    transition: color 0.3s ease;
-  }
-
-  .footer-title:hover {
-    color: #667eea;
-  }
-
-  /* Footer Links */
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .footer-links li {
-    margin-bottom: 8px;
-  }
-
-  .footer-links a {
-    color: #b8b9c7;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: all 0.3s ease;
-  }
-
-  .footer-links a:hover {
-    color: #667eea;
-    padding-left: 5px;
-  }
-
   /* Contact Info */
   .contact-item {
     display: flex;
@@ -352,14 +288,6 @@
     border-color: #667eea;
   }
 
-  /* Footer Bottom */
-  .footer-bottom {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 0px;
-    padding: 15px 0;
-    text-align: center;
-  }
-
   .copyright {
     color: #9ca3af;
     font-size: 0.85rem;
@@ -369,41 +297,6 @@
     color: #667eea;
   }
 
-  .footer-nav {
-    margin-top: 8px;
-  }
-
-  .footer-nav a {
-    color: #9ca3af;
-    text-decoration: none;
-    font-size: 0.85rem;
-    margin: 0 10px;
-    transition: all 0.3s ease;
-  }
-
-  .footer-nav a:hover {
-    color: #ffffff;
-  }
-
-  /* =====================
-    FOOTER RESPONSIVE FIX
-    ===================== */
-
-/* Tablet (max 992px) */
-@media (max-width: 992px) {
-  .professional-footer .container {
-    padding: 0 20px;
-  }
-
-  .footer-column {
-    margin: 20px 0 !important; /* override inline margins */
-    text-align: center;
-  }
-
-  .footer-links li {
-    margin-bottom: 10px;
-  }
-
   .contact-item {
     justify-content: center;
   }
@@ -411,62 +304,6 @@
   .social-links {
     justify-content: center;
   }
-}
-/* ================================
-    Responsive Footer Fixes
-================================ */
-
-/* Tablet and below */
-@media (max-width: 992px) {
-  .professional-footer .col-lg-2,
-  .professional-footer .col-lg-3 {
-    margin-left: 0 !important;  /* remove hardcoded inline margin */
-    margin-right: 0 !important;
-    text-align: center;
-  }
-
-  .professional-footer .footer-links {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    align-items: center;
-    padding: 0;
-  }
-
-  .professional-footer .contact-info {
-    text-align: center;
-  }
-
-  .professional-footer .social-links {
-    justify-content: center;
-    margin-top: 12px;
-  }
-}
-
-/* Mobile - narrow screens */
-@media (max-width: 576px) {
-  .professional-footer .brand-description {
-    font-size: 0.85rem;
-  }
-
-  .professional-footer .stat-item {
-    flex: none;
-    width: 100%;
-  }
-
-  .professional-footer .footer-title {
-    font-size: 1rem;
-  }
-
-  .professional-footer .footer-links a {
-    font-size: 0.85rem;
-  }
-
-  .professional-footer .copyright {
-    font-size: 0.75rem;
-  }
-}
-
 
     /* Section Wrapper */
     .hero {
@@ -729,6 +566,7 @@
       }
 
     }
+  
   </style>
 </head>
 
@@ -918,6 +756,112 @@
     </div>
   </section>
 
+   <footer class="professional-footer" data-aos="fade-up">
+      <div class="container">
+        <div class="main-footer row g-4">
+          <div class="col-lg-4 col-md-6 first-grid">
+            <div class="footer-brand">
+              <img
+                height="50"
+                src="images/logo-transparent-dark-mode.png"
+                alt="GrowCraft Logo"
+                class="footer-logo mb-3"
+              />
+              <p class="brand-description">
+                Empowering businesses with innovative digital solutions and
+                creative excellence.
+              </p>
+              <div class="quick-stats">
+                <div class="stat-item">
+                  <span class="stat-number">500+</span>
+                  <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">150+</span>
+                  <span class="stat-label">Clients</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">5+</span>
+                  <span class="stat-label">Years</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-3 col-6">
+            <h5 class="footer-title">Services</h5>
+            <ul class="footer-links">
+              <li><a href="learn/webdev.html">Web Development</a></li>
+              <li><a href="learn/graphic.html">Graphic Design</a></li>
+              <li><a href="src/digital-marketing.html">Digital Marketing</a></li>
+              <li><a href="learn/contentwriting.html">Content Writing</a></li>
+              <li><a href="learn/socialmedia.html">Social Media</a></li>
+              <li><a href="learn/cyberanalyst.html">Cyber Analyst</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 col-6">
+            <h5 class="footer-title">Quick Links</h5>
+            <ul class="footer-links">
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="../work.html">Portfolio</a></li>
+              <li><a href="src/contact.html">Contact</a></li>
+              <li><a href="../careers.html">Careers</a></li>
+              <li><a href="../blogListing.html">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6">
+            <h5 class="footer-title">Get In Touch</h5>
+            <div class="contact-info mb-3">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <a href="mailto:info@growcraft.com">info@growcraft.com</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <a href="tel:+919999999999">+91 999 999 9999</a>
+              </div>
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span>ABC Street, XYZ City, India</span>
+              </div>
+              <div class="contact-item d-flex gap-4 mt-4">
+                 <a href="https://discord.gg/vk5zFm56" target="_blank">
+                   <i class="fa-brands fa-discord" style=" font-size: 20px;"></i>
+                 </a>
+                 <a href="https://github.com/gyanshankar1708/GrowCraft" target="_blank">
+                   <i class="fa-brands fa-github" style=" font-size: 20px;"></i>
+                 </a>
+                 <a href="https://www.instagram.com/GrowCraft" target="_blank">
+                   <i class="fa-brands fa-instagram" style=" font-size: 20px;"></i>
+                 </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="container">
+            <div class="row align-items-center py-3">
+              <div class="col-md-9">
+                <p class="copyright mb-0">
+                  © <span id="currentYear">2025</span>
+                  <strong>GrowCraft</strong>. All rights reserved.
+                </p>
+              </div>
+              <div class="col-md-2">
+                <div class="footer-nav">
+                  <a href="../privacy.html">Privacy</a>
+                  <a href="../terms.html">Terms</a>
+                  <a href="../sitemap.html">Sitemap</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <div class="chatbot-container">
       <div class="chatbot-window" id="chatWindow">
@@ -943,17 +887,6 @@
     <i class="fas fa-chevron-up"></i>
   </button>
 
-  <div id="footer-placeholder"></div>
-  <!-- ===== FOOTER ===== -->
-
-  <script>
-    fetch('src/components/footer.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('footer-placeholder').innerHTML = data;
-    });
-  </script>
-
 
   <script src="src/script.js"></script>
   <script src="src/utils.js"></script>
@@ -965,13 +898,12 @@
   <script>
   document.addEventListener("DOMContentLoaded", function () {
     const scrollToTopBtn = document.getElementById("scrollToTopBtn");
-    const footerBottom = document.querySelector(".footer-bottom");
-
+   
     // Scroll logic
     window.addEventListener("scroll", () => {
       const scrollY = window.scrollY;
       const windowHeight = window.innerHeight;
-      const footerTop = footerBottom.getBoundingClientRect().top;
+
 
       // Show/hide button
       if (scrollY > 300) {
@@ -980,13 +912,6 @@
         scrollToTopBtn.classList.remove("show");
       }
 
-      // If footer-bottom is visible, move button above it
-      if (footerTop < windowHeight) {
-        const overlap = windowHeight - footerTop;
-        scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px gap above footer
-      } else {
-        scrollToTopBtn.style.bottom = "2rem";
-      }
     });
 
     // ✅ Initialize AOS
@@ -1033,13 +958,7 @@
       }
 
       requestAnimationFrame(tick);
-    })();
-
-    // 📅 Current year in footer
-    const yearSpan = document.getElementById("currentYear");
-    if (yearSpan) {
-      yearSpan.textContent = new Date().getFullYear();
-    }
+    });
 
     // 🔝 Back to top button functionality
     (function () {
