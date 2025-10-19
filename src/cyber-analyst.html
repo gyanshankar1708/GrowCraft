@@ -33,12 +33,16 @@
       }
 
         .navbar {
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
-      background-color: #ffffff !important;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-
-    }
+        padding: 1.2rem 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: none;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: var(--transition);
+      }
 
     .navbar-nav li {
       margin: 0 10px;
