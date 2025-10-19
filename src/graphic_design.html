@@ -40,6 +40,10 @@
       --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
       --gradient-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      --primary-green: #27ae60;
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --accent-green: #81c784;
+      --light-green: #4caf50;
     }
 
     * {
@@ -58,86 +62,129 @@
       scroll-behavior: smooth;
     }
 
-    /* Enhanced Navbar */
-    .navbar {
-      padding-top: 1rem;
-      padding-bottom: 1rem;
+     /* Navbar Custom Styling */
+     .navbar {
+      padding: 1.2rem 0;
       background: rgba(255, 255, 255, 0.95) !important;
       backdrop-filter: blur(20px);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
+      border-bottom: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
       position: sticky;
       top: 0;
       z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .dark-mode .navbar {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+
     }
 
     .navbar.scrolled {
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      padding: 0.8rem 0;
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
     }
 
-    .navbar-nav li {
-      margin: 0 15px;
-    }
-
-    .navbar-nav {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      gap: 20px;
+    .dark-mode .navbar.scrolled {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
     }
 
     .navbar-brand img {
-      max-height: 60px;
-      object-fit: contain;
-      vertical-align: middle;
-      transition: transform 0.3s ease;
+      max-height: 50px;
+      transition: var(--transition);
+      filter: drop-shadow(2px 2px 8px rgba(39, 174, 96, 0.2));
     }
 
-    .navbar-brand img:hover {
-      transform: scale(1.05);
-    }
-
-    .navbar-nav .nav-item {
-      display: flex;
-      align-items: center;
-      margin-left: auto;
-    }
-
-    .nav-item .nav-link {
-      font-weight: 600;
-      color: var(--text) !important;
-      font-family: "Lora", serif;
-      display: flex;
-      align-items: center;
-      transition: all 0.3s ease;
-      position: relative;
-      padding: 8px 16px;
+    .navbar-nav .nav-link {
+      font-weight: 500;
+      color: #2e7d32 !important;
+      padding: 0.8rem 1.5rem !important;
       border-radius: 25px;
+      margin: 0 0.3rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      font-size: 17px;
+    }
+
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .navbar-nav .nav-link:hover::before {
+      left: 0;
+    }
+    
+     .dark-mode .navbar-nav .nav-link {
+      color: white !important;
+    }
+  
+
+    /* Theme Toggle Button*/
+    .theme-toggle {
+      background: rgba(39, 174, 96, 0.1);
+      border: 1px solid rgba(39, 174, 96, 0.3);
+      color: var(--primary-green);
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .theme-toggle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .theme-toggle:hover::before {
+      left: 0;
+    }
+
+    .theme-toggle:hover {
+      color: white;
+      border-color: var(--primary-green);
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    }
+
+    .theme-toggle i {
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover i {
+      transform: rotate(20deg) scale(1.1);
     }
 
     .navbar-nav .nav-link:hover {
-      color: var(--primary) !important;
-      background: rgba(99, 102, 241, 0.1);
+      color: #ffffff !important;
       transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
     }
 
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 50%;
-      bottom: -3px;
-      width: 0%;
-      height: 2px;
-      background: var(--gradient-primary);
-      transition: all 0.3s ease;
-      transform: translateX(-50%);
-    }
-
-    .navbar-nav .nav-link:hover::after {
-      width: 80%;
-    }
 
     /* Enhanced Floating Blobs Background */
     .blobs {
@@ -1499,55 +1546,46 @@
   <!-- Enhanced Navbar -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid d-flex justify-content-between align-items-center px-2 px-sm-5">
-      <a class="navbar-brand" href="#"><img src="../images/Logo_new.png" alt="GrowCraft" width="200" id="logo"></a>
+      <a class="navbar-brand" href="index.html"><img src="../images/Logo_new.png" alt="GrowCraft" width="200" id="logo"></a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active visited" aria-current="page" href="../index.html">
-              <i class="fas fa-home me-1"></i>Home
-            </a>
+            <a class="nav-link active" href="index.html" aria-current="page"> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#services">
-              <i class="fas fa-cogs me-1"></i>Services
-            </a>
+            <a class="nav-link" href="index.html#services"> Services</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="../blogListing.html">
-              <i class="fas fa-blog me-1"></i>Blogs
-            </a>
+            <a class="nav-link" href="blogListing.html"> Blogs</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#about">
-              <i class="fas fa-users me-1"></i>About Us
-            </a>
+            <a class="nav-link" href="about.html">  About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#work">
-              <i class="fas fa-briefcase me-1"></i>Our Work
-            </a>
+            <a class="nav-link" href="./work.html"> Our Work</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="contact.html">
-              <i class="fas fa-envelope me-1"></i>Contact Us
-            </a>
+            <a class="nav-link" href="./src/faq.html"> FAQ</a>
           </li>
-          <li class="nav-item" >
-  <button id="darkModeToggle" class="btn btn-sm btn-outline-light ms-3">
-    🌙 Dark Mode
-  </button>
-</li>
-
-        </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="src/contact.html"> Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html"> Login</a>
+           </li>
+           <li class="nav-item"><button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
+                   <i class="fas fa-moon" id="themeIcon"></i></button></li>
+           </ul>
+       
+        </button>
       </div>
     </div>
   </nav>
-
   <!-- Enhanced Global Blobs Background -->
   <div class="blobs">
     <div class="blob blob1"></div>
@@ -1983,25 +2021,31 @@
     console.log('🎨 Enhanced GrowCraft Design Page Loaded Successfully!');
   </script>
   <script>
-  const toggleBtn = document.getElementById("darkModeToggle");
+  const toggleBtn = document.getElementById("themeToggle");
   const body = document.body;
+  const logo = document.querySelector("#logo");
+  const themeIcon = document.getElementById("themeIcon");
 
-  // Load saved mode from localStorage
-  if (localStorage.getItem("dark-mode") === "enabled") {
-    body.classList.add("dark-mode");
-    toggleBtn.textContent = "☀️ Light Mode";
-  }
-
-  toggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark-mode");
-
-    if (body.classList.contains("dark-mode")) {
-      toggleBtn.textContent = "☀️ Light Mode";
+  function setDarkMode(enabled) {
+    if (enabled) {
+      body.classList.add("dark-mode");
+      themeIcon.className = "fas fa-sun";
+      logo.src = "../images/logo-transparent-dark-mode.png"; // dark mode logo
       localStorage.setItem("dark-mode", "enabled");
     } else {
-      toggleBtn.textContent = "🌙 Dark Mode";
+      body.classList.remove("dark-mode");
+      themeIcon.className = "fas fa-moon";
+      logo.src = "../images/Logo_new.png"; // light mode logo
       localStorage.setItem("dark-mode", "disabled");
     }
+  }
+
+  // Load preference on page load
+  setDarkMode(localStorage.getItem("dark-mode") === "enabled");
+
+  // Toggle mode on button click
+  toggleBtn.addEventListener("click", () => {
+    setDarkMode(!body.classList.contains("dark-mode"));
   });
 </script>
 

@@ -4,13 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>GrowCraft — About Us</title>
-  <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/style.css">
+
+ 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="shortcut icon" href="Favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="components/chatbot.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
   
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="../components/footer.css"/>
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -27,6 +30,10 @@
       --text: #e5e7eb;           /* light text */
       --muted: #9ca3af;          /* muted text */
       --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --primary-green: #27ae60;
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --accent-green: #81c784;
+      --light-green: #4caf50;
     }
 
     /* Light theme override */
@@ -38,6 +45,10 @@
       --text: #0b0f14;
       --muted: #475569;
       --shadow: 0 10px 24px rgba(2,6,23,0.08);
+      --primary-green: #27ae60;
+      --transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --accent-green: #81c784;
+      --light-green: #4caf50;
     }
 
     /* Global Resets */
@@ -53,60 +64,127 @@
     button { font: inherit; }
 
     /* Navbar Custom Styling */
-    .navbar {
-      padding-top: 0.8rem;
-      padding-bottom: 0.8rem;
-      background-color: #ffffff !important;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+     .navbar {
+      padding: 1.2rem 0;
+      background: rgba(255, 255, 255, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: none;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      transition: var(--transition);
+    }
+
+    .dark-mode .navbar {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
+
+    }
+
+    .navbar.scrolled {
+      padding: 0.8rem 0;
+      background: rgba(255, 255, 255, 0.98) !important;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    }
+
+    .dark-mode .navbar.scrolled {
+      background: rgba(26, 26, 26, 0.95) !important;
+      border-bottom: 3px solid var(--primary-green);
     }
 
     .navbar-brand img {
-      max-height: 60px;
-      object-fit: contain;
-      vertical-align: middle;
-      transition: all 0.3s ease;
+      max-height: 50px;
+      transition: var(--transition);
+      filter: drop-shadow(2px 2px 8px rgba(39, 174, 96, 0.2));
     }
 
     .navbar-nav .nav-link {
       font-weight: 500;
-      padding: 0.75rem 1rem;
-      color: #333;
+      color: #2e7d32 !important;
+      padding: 0.8rem 1.5rem !important;
+      border-radius: 25px;
+      margin: 0 0.3rem;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+      font-size: 17px;
+    }
+
+    .navbar-nav .nav-link::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .navbar-nav .nav-link:hover::before {
+      left: 0;
+    }
+    
+     .dark-mode .navbar-nav .nav-link {
+      color: white !important;
+    }
+  
+
+    /* Theme Toggle Button*/
+    .theme-toggle {
+      background: rgba(39, 174, 96, 0.1);
+      border: 1px solid rgba(39, 174, 96, 0.3);
+      color: var(--primary-green);
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
       display: flex;
       align-items: center;
-      transition: color 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover,
-    .navbar-nav .nav-link.active {
-      color: #463896;
-    }
-
-    .navbar-nav .nav-link {
+      justify-content: center;
+      transition: var(--transition);
       position: relative;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s ease;
+      overflow: hidden;
+    }
+
+    .theme-toggle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, var(--primary-green), var(--light-green));
+      transition: var(--transition);
+      z-index: -1;
+    }
+
+    .theme-toggle:hover::before {
+      left: 0;
+    }
+
+    .theme-toggle:hover {
+      color: white;
+      border-color: var(--primary-green);
+      transform: scale(1.1);
+      box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+    }
+
+    .theme-toggle i {
+      font-size: 18px;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover i {
+      transform: rotate(20deg) scale(1.1);
     }
 
     .navbar-nav .nav-link:hover {
-      color: #007bff;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(39, 174, 96, 0.3);
     }
-
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: -3px;
-      width: 0%;
-      height: 2px;
-      background-color: #007bff;
-      transition: width 0.3s ease;
-    }
-
-    .navbar-nav .nav-link:hover::after {
-      width: 100%;
-    }
-
 
     .professional-footer .row {
     display: flex !important;
@@ -171,7 +249,13 @@
     transform: translateY(-3px);
     border-color: #667eea;
   }
-
+  
+  #learnMoreBtn{
+    --btn-bg: linear-gradient(135deg, var(--brand), var(--brand-2));
+      border: 0; color: white; padding: 12px 18px; border-radius: 14px; font-weight: 600; cursor: pointer; box-shadow: var(--shadow);
+      background: var(--btn-bg);
+      transition: transform .12s ease, box-shadow .2s ease, filter .2s ease;
+  }
   .stat-number {
     display: block;
     font-size: 1.4rem;
@@ -444,14 +528,7 @@
     .sprout svg { width: 18px; height: 18px; color: white; }
 
     .actions { display: flex; align-items: center; gap: 10px; }
-    .theme-toggle, .ghost {
-      border: 1px solid var(--border); background: color-mix(in oklab, var(--bg-soft), transparent 80%);
-      color: var(--text); padding: 10px 12px; border-radius: 12px; cursor: pointer;
-      transition: transform .15s ease, border-color .2s ease, background .2s ease;
-      backdrop-filter: saturate(120%) blur(8px);
-    }
-    .theme-toggle:hover, .ghost:hover { transform: translateY(-1px); border-color: color-mix(in oklab, var(--brand), transparent 70%); }
-
+    
     /* Hero content */
     .content {
       display: grid; grid-template-columns: 1.1fr .9fr; gap: clamp(24px, 6vw, 56px); align-items: center;
@@ -575,7 +652,6 @@
 
     /* small control row */
     .row{display:flex;gap:10px;align-items:center}
-    .btn{padding:10px 12px;border-radius:12px;border:1px solid var(--border);background:var(--glass);cursor:pointer}
     .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand-2));color:white;border:0}
     .ghost{background:transparent}
 
@@ -668,24 +744,34 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a aria-current="page" class="nav-link" href="index.html">Home</a>
+            <a class="nav-link active" href="index.html" aria-current="page"> Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html#services">Services</a>
+            <a class="nav-link" href="index.html#services"> Services</a>
           </li>
           <li class="nav-item">
-            <a aria-current="page" class="nav-link" href="blogListing.html">Blogs</a>
+            <a class="nav-link" href="blogListing.html"> Blogs</a>
           </li>
           <li class="nav-item">
-            <a aria-current="page" class="nav-link active visited" href="about.html">About Us</a>
+            <a class="nav-link" href="about.html">  About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.html#work">Our Work</a>
+            <a class="nav-link" href="./work.html"> Our Work</a>
           </li>
           <li class="nav-item">
-            <a aria-current="page" class="nav-link" href="src/contact.html">Contact Us</a>
+            <a class="nav-link" href="./src/faq.html"> FAQ</a>
           </li>
-        </ul>
+          <li class="nav-item">
+            <a class="nav-link" href="src/contact.html"> Contact Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login.html"> Login</a>
+           </li>
+           <li class="nav-item"><button class="btn theme-toggle ms-3" type="button" id="themeToggle" title="Toggle Dark/Light Mode">
+                   <i class="fas fa-moon" id="themeIcon"></i></button></li>
+           </ul>
+       
+        </button>
       </div>
     </div>
   </nav>
@@ -858,6 +944,8 @@
   </button>
 
   <div id="footer-placeholder"></div>
+  <!-- ===== FOOTER ===== -->
+
   <script>
     fetch('src/components/footer.html')
     .then(response => response.text())
@@ -866,150 +954,205 @@
     });
   </script>
 
+
   <script src="src/script.js"></script>
   <script src="src/utils.js"></script>
   <script src="components/chatbot.js"></script>
-  <script src="src/darkMode.js"></script>
+  
   
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <script>
-    // ✅ 2. INITIALIZED AOS
+  document.addEventListener("DOMContentLoaded", function () {
+    const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+    const footerBottom = document.querySelector(".footer-bottom");
+
+    // Scroll logic
+    window.addEventListener("scroll", () => {
+      const scrollY = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const footerTop = footerBottom.getBoundingClientRect().top;
+
+      // Show/hide button
+      if (scrollY > 300) {
+        scrollToTopBtn.classList.add("show");
+      } else {
+        scrollToTopBtn.classList.remove("show");
+      }
+
+      // If footer-bottom is visible, move button above it
+      if (footerTop < windowHeight) {
+        const overlap = windowHeight - footerTop;
+        scrollToTopBtn.style.bottom = `${overlap + 16}px`; // 16px gap above footer
+      } else {
+        scrollToTopBtn.style.bottom = "2rem";
+      }
+    });
+
+    // ✅ Initialize AOS
     AOS.init({
       duration: 800,
       once: true,
       offset: 50,
     });
-  
-    // Theme handling
-    (function() {
-      const stored = localStorage.getItem('gc-theme');
-      const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-      const mode = stored || (prefersDark ? 'dark' : 'light');
-      document.body.classList.toggle('theme-light', mode === 'light');
-      const btn = document.getElementById('themeToggle');
-      if (btn) {
-        const setLabel = (isDark)=>{
-          btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
-          btn.textContent = isDark ? '🌙' : '☀️';
-        };
-        setLabel(mode !== 'light');
-        btn.addEventListener('click', () => {
-          const isLight = document.body.classList.toggle('theme-light');
-          localStorage.setItem('gc-theme', isLight ? 'light' : 'dark');
-          setLabel(!isLight);
-        });
-      }
-    })();
 
-    // Parallax for decorative elements
-    (function() {
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    // 🎨 Parallax for decorative elements
+    (function () {
+      const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       if (reduce) return;
 
-      const tracked = Array.from(document.querySelectorAll('[data-parallax]'));
+      const tracked = Array.from(document.querySelectorAll("[data-parallax]"));
       if (!tracked.length) return;
 
       const bounds = { x: 0, y: 0 };
       const lerp = (a, b, t) => a + (b - a) * t;
-      let rx = 0, ry = 0;
+      let rx = 0,
+        ry = 0;
 
-      window.addEventListener('mousemove', (e) => {
-        const vw = window.innerWidth, vh = window.innerHeight;
-        const nx = (e.clientX / vw) * 2 - 1; // -1..1
-        const ny = (e.clientY / vh) * 2 - 1;
-        bounds.x = nx; bounds.y = ny;
-      }, { passive: true });
+      window.addEventListener(
+        "mousemove",
+        (e) => {
+          const vw = window.innerWidth,
+            vh = window.innerHeight;
+          const nx = (e.clientX / vw) * 2 - 1; // -1..1
+          const ny = (e.clientY / vh) * 2 - 1;
+          bounds.x = nx;
+          bounds.y = ny;
+        },
+        { passive: true }
+      );
 
       function tick() {
         rx = lerp(rx, bounds.x, 0.06);
         ry = lerp(ry, bounds.y, 0.06);
-        tracked.forEach(el => {
-          const amt = parseFloat(el.getAttribute('data-parallax')) || 8;
-          el.style.transform = `translate3d(${rx*amt}px, ${ry*amt}px, 0)`;
+        tracked.forEach((el) => {
+          const amt = parseFloat(el.getAttribute("data-parallax")) || 8;
+          el.style.transform = `translate3d(${rx * amt}px, ${ry * amt}px, 0)`;
         });
         requestAnimationFrame(tick);
       }
+
       requestAnimationFrame(tick);
     })();
 
-    // ❌ 3. REMOVED OLD REVEAL ON VIEW SCRIPT (IntersectionObserver)
-    
-    // CTA demo handlers
-    document.getElementById('exploreServices')?.addEventListener('click', ()=>{
-      window.location.href = 'index.html#services';
-    });
-    document.getElementById('joinContrib')?.addEventListener('click', ()=>{
-      window.location.href = 'index.html#contribute';
-    });
-    document.getElementById('learnMoreBtn')?.addEventListener('click', ()=>{
-      window.location.href = 'index.html#our-story';
-    });
+    // 📅 Current year in footer
+    const yearSpan = document.getElementById("currentYear");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
 
-    // Current year in footer
-    document.addEventListener("DOMContentLoaded", function () {
-      const yearSpan = document.getElementById("currentYear");
-      if (yearSpan) {
-        yearSpan.textContent = new Date().getFullYear();
-      }
-    });
-
-    // Back to top button functionality
-    (function() {
-      const backToTop = document.getElementById('backToTop');
+    // 🔝 Back to top button functionality
+    (function () {
+      const backToTop = document.getElementById("backToTop");
       if (!backToTop) return;
 
       function toggleBackToTop() {
         if (window.pageYOffset > 100) {
-          backToTop.classList.add('show');
+          backToTop.classList.add("show");
         } else {
-          backToTop.classList.remove('show');
+          backToTop.classList.remove("show");
         }
       }
 
-      window.addEventListener('scroll', toggleBackToTop);
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.addEventListener("scroll", toggleBackToTop);
+      backToTop.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
       });
     })();
 
-    // Counter animation for facts
-    (function(){
-      const counters = document.querySelectorAll('[data-target]');
-      if('IntersectionObserver' in window){
-        const counterObserver = new IntersectionObserver((entries, o)=>{
-          entries.forEach(en => {
-            if(en.isIntersecting){
-              counters.forEach(el=>{
-                const target = Number(el.getAttribute('data-target')) || 0; 
-                let t0=null; 
-                const dur=1100;
-                function step(ts){ 
-                  if(!t0) t0=ts; 
-                  const p=Math.min((ts-t0)/dur, 1); 
-                  el.textContent = Math.floor(p*target); 
-                  if(p<1) requestAnimationFrame(step); 
-                  else el.textContent = target; 
+    // 🔢 Counter animation for facts
+    (function () {
+      const counters = document.querySelectorAll("[data-target]");
+      if ("IntersectionObserver" in window) {
+        const counterObserver = new IntersectionObserver((entries, o) => {
+          entries.forEach((en) => {
+            if (en.isIntersecting) {
+              counters.forEach((el) => {
+                const target = Number(el.getAttribute("data-target")) || 0;
+                let t0 = null;
+                const dur = 1100;
+
+                function step(ts) {
+                  if (!t0) t0 = ts;
+                  const p = Math.min((ts - t0) / dur, 1);
+                  el.textContent = Math.floor(p * target);
+                  if (p < 1) requestAnimationFrame(step);
+                  else el.textContent = target;
                 }
+
                 requestAnimationFrame(step);
               });
               o.unobserve(en.target);
             }
           });
-        }, {threshold:0.25});
-        const factsWrap = document.querySelector('.facts'); 
-        if(factsWrap) counterObserver.observe(factsWrap);
+        }, { threshold: 0.25 });
+
+        const factsWrap = document.querySelector(".facts");
+        if (factsWrap) counterObserver.observe(factsWrap);
       } else {
-        counters.forEach(el => el.textContent = el.getAttribute('data-target'));
+        counters.forEach((el) => (el.textContent = el.getAttribute("data-target")));
       }
     })();
 
-    // CTA handlers
-    document.getElementById('exploreBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#services');
-    document.getElementById('guideBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#contributing');
-    document.getElementById('contactBtn')?.addEventListener('click', ()=> window.location.href = 'src/contact.html');
-    document.getElementById('contributeBtn')?.addEventListener('click', ()=> window.location.href = 'index.html#contribute');
-  </script>
+    // 🚀 CTA handlers
+    document.getElementById("exploreServices")?.addEventListener("click", () => {
+      window.location.href = "index.html#services";
+    });
+
+    document.getElementById("joinContrib")?.addEventListener("click", () => {
+      window.location.href = "index.html#contribute";
+    });
+
+    document.getElementById("learnMoreBtn")?.addEventListener("click", () => {
+      window.location.href = "index.html#our-story";
+    });
+
+    document.getElementById("exploreBtn")?.addEventListener("click", () => {
+      window.location.href = "index.html#services";
+    });
+
+    document.getElementById("guideBtn")?.addEventListener("click", () => {
+      window.location.href = "index.html#contributing";
+    });
+
+    document.getElementById("contactBtn")?.addEventListener("click", () => {
+      window.location.href = "src/contact.html";
+    });
+
+    document.getElementById("contributeBtn")?.addEventListener("click", () => {
+      window.location.href = "index.html#contribute";
+    });
+  });
+</script>
+
+<script>
+  const toggleBtn = document.getElementById("themeToggle");
+  const body = document.body;
+  const logo = document.querySelector("#logo");
+  const themeIcon = document.getElementById("themeIcon");
+
+  function setDarkMode(enabled) {
+    if (enabled) {
+      body.classList.add("dark-mode");
+      themeIcon.className = "fas fa-sun";
+      logo.src = "images/logo-transparent-dark-mode.png"; // dark mode logo
+      localStorage.setItem("dark-mode", "enabled");
+    } else {
+      body.classList.remove("dark-mode");
+      themeIcon.className = "fas fa-moon";
+      logo.src = "images/Logo_new.png"; // light mode logo
+      localStorage.setItem("dark-mode", "disabled");
+    }
+  }
+
+  // Load preference on page load
+  setDarkMode(localStorage.getItem("dark-mode") === "enabled");
+
+  // Toggle mode on button click
+  toggleBtn.addEventListener("click", () => {
+    setDarkMode(!body.classList.contains("dark-mode"));
+  });
+</script>
 
 </body>
 </html>

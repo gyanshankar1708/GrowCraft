@@ -19,3 +19,18 @@
 .collapse.fade.show {
   opacity: 1;
 }
+
+/* Contributors button style */
+.btn-secondary {
+  background: linear-gradient(90deg, #4CAF50, #2E7D32);
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: linear-gradient(90deg, #2E7D32, #4CAF50);
+  transform: scale(1.05);
+}

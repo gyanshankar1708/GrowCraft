@@ -122,7 +122,7 @@ class DarkModeToggle {
     addTransitionStyles() {
         // Add smooth transitions for theme switching
         const style = document.createElement('style');
-        style.textContent = `
+        style.textContent =  `
             * {
                 transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
             }
@@ -1539,35 +1539,6 @@ class DarkModeToggle {
   background: #a78bfa;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-
-
-
-
-
-
-            
 
 
                 /* ========================= Social Media Page Dark Mode Styles ========================= */

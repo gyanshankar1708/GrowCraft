@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FAQ - GrowCraft</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="shortcut icon" href="../Favicon.ico" type="image/x-icon" />
   <style>
     /* ===== GLOBAL RESET ===== */
@@ -711,41 +711,7 @@
   transform: scale(1.1);
 }
 
-/* Enhanced Scroll to Top Button */
-    #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      z-index: 99999;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      border-radius: 50%;
-      width: 55px;
-      height: 55px;
-      font-size: 20px;
-      cursor: pointer;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px) scale(0.8);
-      transition: all 0.4s ease;
-      box-shadow: 0 4px 20px rgba(102, 126, 234, 0.3);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
 
-    #backToTop:hover {
-      background: linear-gradient(135deg, #5a67d8, #6b46c1);
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 6px 25px rgba(102, 126, 234, 0.4);
-    }
-
-    #backToTop.show {
-      opacity: 1;
-      visibility: visible;
-      transform: translateY(0) scale(1);
-    }
   </style>
 </head>
 
@@ -796,12 +762,6 @@
           </button>
         </div>
         <!-- /THEME TOGGLE -->
-      </div>
-      <div class="search-container">
-        <input type="text" placeholder="Search..." class="search-input" />
-        <button class="search-button">
-          <i class="fas fa-search"></i>
-        </button>
       </div>
     </div>
   </nav>
@@ -1081,7 +1041,7 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
   <script>
@@ -1204,3 +1164,4 @@ document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
+

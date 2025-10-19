@@ -27,12 +27,17 @@ body {
   color: #222;
 }
 
+
+
+
 .navbar,
 .footer {
   background-color: #388e3c;
-}
+} 
 
-/* .navbar .nav-link,
+
+
+.navbar .nav-link,
 .footer {
   color: #fff !important;
 } */
@@ -46,6 +51,7 @@ h5 {
   color: #388e3c;
   font-weight: 700;
 }
+
 
 .btn-primary {
   background-color: #388e3c;
@@ -75,7 +81,7 @@ h5 {
   margin-bottom: 1rem;
 }
 
-.dark-mode {
+/* .dark-mode {
   background-color: #222 !important;
   color: #f1f1f1 !important;
 }
@@ -87,7 +93,31 @@ h5 {
 .dark-mode h2,
 .dark-mode h1 {
   color: #fbc02d !important;
+} */
+
+
+.dark-mode {
+  background-color: var(--bg-color-dark) !important;
+  color: var(--text-color-dark) !important;
 }
+
+.dark-mode .footer,
+.dark-mode .navbar {
+  background-color: var(--primary-color-dark) !important;
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode h4,
+.dark-mode h5 {
+  color: var(--heading-color-dark) !important;
+}
+
+.dark-mode a {
+  color: var(--link-color-dark) !important;
+}
+
 
 /* Authentication Navbar Styles */
 #profile-section {
