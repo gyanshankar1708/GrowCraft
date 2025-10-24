@@ -1,6 +1,6 @@
 /*
 ===========================================
-  CHATBOT STYLESHEET (GrowCraft Themed) - v7
+  CHATBOT STYLESHEET (GrowCraft Themed) - v8
 ===========================================
 */
 
@@ -9,8 +9,7 @@
 body {
   font-family: "Poppins", "Jost", system-ui, sans-serif;
   margin: 0;
-  /* Define light theme colors by default */
-  --chat-primary: #28a745; /* Website's Main Green */
+  --chat-primary: #28a745;
   --chat-primary-hover: #218838;
   --chat-bg: #ffffff;
   --chat-header-text: #ffffff;
@@ -27,17 +26,19 @@ body {
   --input-text: #333;
   --input-border: #ccc;
 
-  --quick-btn-bg: #e6f7e6; /* Light green */
+  --quick-btn-bg: #e6f7e6;
   --quick-btn-text: var(--chat-primary);
   --quick-btn-hover-bg: #d1f0d1;
 
   --scrollbar-thumb: #c1c1c1;
   --scrollbar-track: #f1f1f1;
+
+  --transition-speed: 0.25s;
 }
 
-/* Define dark theme colors */
+/* Dark Theme */
 body.dark-mode {
-  --chat-primary: #6fdc6f; /* Brighter Green for Dark BG */
+  --chat-primary: #6fdc6f;
   --chat-primary-hover: #5abd5a;
   --chat-bg: #2b2b2b;
   --chat-header-text: #ffffff;
@@ -48,7 +49,7 @@ body.dark-mode {
   --bot-msg-bg: #383838;
   --bot-msg-text: #f1f1f1;
   --user-msg-bg: var(--chat-primary);
-  --user-msg-text: #1a1a1a; /* Dark text on light green */
+  --user-msg-text: #1a1a1a;
 
   --input-bg: #383838;
   --input-text: #f1f1f1;
@@ -62,29 +63,30 @@ body.dark-mode {
   --scrollbar-track: #333;
 }
 
-/* --- New styles for the chatbot logo --- */
-
-/* This aligns the new logo and title */
+/* --- Logo & Header --- */
 .chatbot-header-title {
   display: flex;
   align-items: center;
+  gap: 8px;
 }
 
-/* This styles your new logo */
 .chatbot-header-logo {
-  width: auto;   /* You can change the size */
-  height: 30px; /* You can change the size */
-  margin-right: 8px; /* Adds space between the logo and "GrowCraft" */
+  width: auto;
+  height: 32px;
+  transition: transform var(--transition-speed);
 }
 
-/* 2. CHATBOT CONTAINER & TOGGLE
------------------------------------ */
+.chatbot-header-logo:hover {
+  transform: scale(1.1);
+}
+
+/* --- Container & Toggle --- */
 .chatbot-container {
   position: fixed;
   bottom: 40px;
   left: 40px;
   z-index: 1000;
-  font-size: 15px; 
+  font-size: 15px;
 }
 
 .chatbot-toggle-btn {
@@ -96,19 +98,18 @@ body.dark-mode {
   font-size: 24px;
   border: none;
   cursor: pointer;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.2s;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-speed) ease-in-out;
 }
 
 .chatbot-toggle-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.15) rotate(10deg);
   background: var(--chat-primary-hover);
 }
 
-/* 3. CHATBOT WINDOW
------------------------------------ */
+/* --- Chat Window --- */
 .chatbot-window {
-  width: 400px; 
+  width: 400px;
   height: 500px;
   background: var(--chat-bg);
   border-radius: 20px;
@@ -119,15 +120,15 @@ body.dark-mode {
   left: 0;
   display: flex;
   flex-direction: column;
-  transform: scale(0);
+  transform: scale(0.8) translateY(50px);
   opacity: 0;
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
   pointer-events: none;
   overflow: hidden;
 }
 
 .chatbot-window.open {
-  transform: scale(1);
+  transform: scale(1) translateY(0);
   opacity: 1;
   pointer-events: auto;
 }
@@ -135,16 +136,17 @@ body.dark-mode {
 .chatbot-header {
   background: var(--chat-primary);
   color: var(--chat-header-text);
-  padding: 10px 16px;
+  padding: 12px 16px;
   display: flex;
   align-items: center;
   font-weight: 600;
-  font-size: 18px; 
+  font-size: 18px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  position: relative;
 }
 
-/* Rule to center the GrowCraft title */
 .chatbot-header span {
   flex-grow: 1;
   text-align: center;
@@ -154,56 +156,63 @@ body.dark-mode {
   background: transparent;
   border: none;
   color: var(--chat-header-text);
-  font-size: 18px;
+  font-size: 20px;
   cursor: pointer;
+  transition: transform var(--transition-speed);
 }
 
-/* 4. CHATBOT BODY & MESSAGES
------------------------------------ */
+.chatbot-header button:hover {
+  transform: scale(1.2);
+}
+
+/* --- Chat Body & Messages --- */
 .chatbot-body {
-  flex: 1; 
+  flex: 1;
   padding: 12px 16px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 12px;
   background: var(--chat-body-bg);
+  scroll-behavior: smooth;
 }
 
 .chatbot-msg {
-  max-width: 70%; 
-  padding: 10px 16px;
-  border-radius: 20px;
+  max-width: 70%;
+  padding: 12px 18px;
+  border-radius: 24px;
   word-wrap: break-word;
-  line-height: 1.4;
-  font-size: 15px; 
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  line-height: 1.5;
+  font-size: 15px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: all var(--transition-speed);
 }
 
 .bot-msg {
   background: var(--bot-msg-bg);
   color: var(--bot-msg-text);
-  align-self: flex-start; 
+  align-self: flex-start;
   border-top-left-radius: 4px;
+  animation: fadeIn 0.4s ease;
 }
 
 .user-msg {
   background: var(--user-msg-bg);
   color: var(--user-msg-text);
-  align-self: flex-end; 
+  align-self: flex-end;
   border-top-right-radius: 4px;
+  animation: fadeIn 0.4s ease;
 }
 
-/* 5. QUICK QUESTIONS (Horizontal Scroll)
------------------------------------ */
+/* Quick questions (horizontal scroll) */
 .quick-questions {
   padding: 8px 12px;
-  display: flex; 
+  display: flex;
   gap: 8px;
-  overflow-x: auto; 
+  overflow-x: auto;
   background: var(--chat-body-bg);
-  scrollbar-width: none; 
-  -ms-overflow-style: none; 
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 
 .quick-questions::-webkit-scrollbar {
@@ -214,27 +223,25 @@ body.dark-mode {
   border-radius: 3px;
 }
 .quick-questions::-webkit-scrollbar-thumb {
-  background: var(--chat-primary); /* MODIFIED: Changed to theme green */
+  background: var(--chat-primary);
   border-radius: 3px;
 }
 .quick-questions::-webkit-scrollbar-thumb:hover {
-  background: var(--chat-primary-hover); /* MODIFIED: Changed to theme hover green */
+  background: var(--chat-primary-hover);
 }
 
 .quick-question-btn {
-  margin: 0;
-  padding: 6px 14px; 
+  padding: 7px 16px;
   background: var(--quick-btn-bg);
   color: var(--quick-btn-text);
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  white-space: nowrap; 
-  flex-shrink: 0; 
-  text-align: center;
+  white-space: nowrap;
+  flex-shrink: 0;
   font-size: 13px;
   font-weight: 500;
-  transition: all 0.2s;
+  transition: all var(--transition-speed);
 }
 
 .quick-question-btn:hover {
@@ -249,50 +256,49 @@ body.dark-mode {
   background: var(--chat-primary-hover);
 }
 
-/* 6. CHATBOT INPUT
------------------------------------ */
+/* --- Chat Input --- */
 .chatbot-input-container {
   display: flex;
-  padding: 10px 12px;
+  padding: 12px 14px;
   border-top: 1px solid var(--chat-border);
-  gap: 6px;
+  gap: 8px;
   background: var(--chat-bg);
 }
 
 .chatbot-input-container input {
   flex: 1;
-  padding: 10px 12px;
-  border-radius: 20px;
+  padding: 12px 14px;
+  border-radius: 24px;
   border: 1px solid var(--input-border);
   outline: none;
-  font-size: 15px; 
+  font-size: 15px;
   background: var(--input-bg);
   color: var(--input-text);
-  transition: all 0.2s;
+  transition: all var(--transition-speed);
 }
 
 .chatbot-input-container input:focus {
   border-color: var(--chat-primary);
-  box-shadow: 0 0 5px var(--chat-primary);
+  box-shadow: 0 0 8px var(--chat-primary);
 }
 
 .chatbot-input-container button {
-  padding: 8px 16px;
+  padding: 10px 18px;
   background: var(--chat-primary);
   border: none;
   color: var(--chat-header-text);
-  border-radius: 20px;
+  border-radius: 24px;
   cursor: pointer;
   font-weight: 500;
-  transition: all 0.2s;
+  transition: all var(--transition-speed);
 }
 
 .chatbot-input-container button:hover {
   background: var(--chat-primary-hover);
+  transform: scale(1.05);
 }
 
-/* 7. CUSTOM SCROLLBAR for chat body
------------------------------------ */
+/* --- Custom Scrollbars --- */
 .chatbot-body::-webkit-scrollbar {
   width: 8px;
 }
@@ -300,24 +306,24 @@ body.dark-mode {
   background: var(--scrollbar-track);
 }
 .chatbot-body::-webkit-scrollbar-thumb {
-  background: var(--chat-primary); /* MODIFIED: Changed to theme green */
+  background: var(--chat-primary);
   border-radius: 4px;
 }
 .chatbot-body::-webkit-scrollbar-thumb:hover {
-  background: var(--chat-primary-hover); /* MODIFIED: Changed to theme hover green */
+  background: var(--chat-primary-hover);
 }
 
-/*
-===========================================
-  8. RESPONSIVE STYLES (Mobile)
-===========================================
-*/
+/* --- Animations --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px);}
+  to { opacity: 1; transform: translateY(0);}
+}
 
+/* --- Responsive --- */
 @media (max-width: 480px) {
-  
   .chatbot-container {
     bottom: 20px;
-    left: auto; 
+    left: auto;
     right: 20px;
   }
 
@@ -328,17 +334,16 @@ body.dark-mode {
   }
 
   .chatbot-window {
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    width: 100%; 
-    height: 100%;
-    height: 100svh; 
+    width: 100%;
+    height: 100svh;
     border-radius: 0;
     border: none;
-    transform-origin: bottom right; 
+    transform-origin: bottom right;
   }
 
   .chatbot-header {
@@ -350,4 +355,3 @@ body.dark-mode {
     flex: 1;
   }
 }
-
