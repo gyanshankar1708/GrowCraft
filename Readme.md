@@ -38,6 +38,7 @@ GrowCraft is a **service-based platform** designed to help businesses grow onlin
 - ✍️ **Content Writing**
 - 📣 **Social Media Management**
 - 📊 **Digital Marketing**
+- 💻 **Cyber Analyst**
 - 🎓 **Training & Internship Programs**
 
 This platform offers services to clients and creates opportunities for students to learn by doing.
