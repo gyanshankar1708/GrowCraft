@@ -92,6 +92,7 @@
         border-bottom: 3px solid var(--primary-green);
       }
 
+
       .navbar-brand img {
         max-height: 50px;
         transition: var(--transition);
@@ -1010,6 +1011,156 @@
             text-align: center;
         }
       }
+
+        .container {
+        max-width: 1150px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      .feature-section {
+        padding: 60px 0;
+        background: linear-gradient(180deg, #f2f4f7ff 0%, #f1f3f7ff 100%);
+        color: #0b0c0cff;
+      }
+
+      .feature-section.alt {
+        background: linear-gradient(180deg, #f3f4f6ff 0%, #f5f5f6ff 100%);
+      }
+
+      .section-title {
+        font-size: 2rem;
+        margin-bottom: 8px;
+        text-align: center;
+        letter-spacing: 0.6px;
+      }
+
+      .section-desc {
+        text-align: center;
+        margin-bottom: 32px;
+        color: #060606ff;
+        font-size: 1rem;
+      }
+
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        background: rgba(255, 255, 255, 0.03);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(2, 6, 23, 0.55);
+        display: flex;
+        flex-direction: column;
+        transition: transform .22s ease, box-shadow .22s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 14px 30px rgba(2, 6, 23, 0.65);
+      }
+
+      .card-img {
+        width: 100%;
+        height: 170px;
+        object-fit: cover;
+        display: block;
+        background: linear-gradient(45deg, #0b2540, #06314f);
+      }
+
+      .card-body {
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        flex: 1;
+      }
+
+      .card-title {
+        font-size: 1.125rem;
+        margin: 0;
+        color: #026022ff;
+      }
+
+      .card-text {
+        margin: 0;
+        color: #01040aff;
+        flex: 1;
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 10px 14px;
+        border-radius: 10px;
+        font-weight: 600;
+      }
+
+      .btn-learn {
+        align-self: flex-start;
+        border: 0;
+        background: linear-gradient(90deg, #9cf4bbff, #18a006ff);
+        color: #fff;
+        box-shadow: 0 6px 18px rgba(0, 100, 160, 0.18);
+        transition: transform .14s ease, opacity .14s ease;
+      }
+
+      .btn-learn:hover {
+        transform: translateY(-3px);
+        opacity: .95;
+      }
+
+      @media (max-width: 520px) {
+        .card-img {
+          height: 140px;
+        }
+        .section-title {
+          font-size: 1.6rem;
+        }
+      }
+
+      [data-bs-theme="dark"] .feature-section {
+        background: linear-gradient(180deg, #0a0f1a 0%, #0b0f1cff 100%);
+        color: #e6eef8;
+      }
+
+      [data-bs-theme="dark"] .feature-section.alt {
+        background: linear-gradient(180deg, #0b0f1cff 0%, #070b14ff 100%);
+      }
+
+      [data-bs-theme="dark"] .section-title {
+        color: #aaf5bd;
+      }
+
+      [data-bs-theme="dark"] .section-desc {
+        color: #c7d6e5;
+      }
+
+      [data-bs-theme="dark"] .card {
+        background: rgba(255, 255, 255, 0.05);
+        box-shadow: 0 6px 22px rgba(0, 0, 0, 0.65);
+      }
+
+      [data-bs-theme="dark"] .card-title {
+        color: #7cf5a5;
+      }
+
+      [data-bs-theme="dark"] .card-text {
+        color: #d4e1f2;
+      }
+
+      [data-bs-theme="dark"] .btn-learn {
+        background: linear-gradient(90deg, #2ea6ff, #0077cc);
+        color: #fff;
+        box-shadow: 0 6px 20px rgba(0, 100, 255, 0.25);
+      }
+
+      [data-bs-theme="dark"] .card-img {
+        background: linear-gradient(45deg, #061d34, #082742);
+      }
     </style>
   </head>
 
@@ -1268,6 +1419,90 @@
         </div>
       </div>
     </section>
+
+    <!-- ======================= Hackathon Section ======================= -->
+<section id="hackathon" class="feature-section">
+  <div class="container">
+    <h2 class="section-title">Top Hackathons</h2>
+    <p class="section-desc">Participate in real-world problem-solving competitions, build amazing projects, and showcase your innovation.</p>
+
+    <div class="cards-grid">
+      <article class="card">
+        <div class="card-body">
+          <h3 class="card-title">Smart India Hackathon</h3>
+          <p class="card-text">A nationwide initiative by the Government of India to provide students a platform to solve pressing industry problems.</p>
+          <a class="btn btn-learn" href="https://www.sih.gov.in/" target="_blank">Learn more</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <h3 class="card-title">Major League Hacking</h3>
+          <p class="card-text">Global hackathon community empowering student developers to learn and innovate through hands-on coding events.</p>
+          <a class="btn btn-learn" href="https://mlh.io/" target="_blank">Learn more</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <h3 class="card-title">Hack the Mountains</h3>
+          <p class="card-text">An international hackathon focusing on sustainability, climate tech, and innovation for a better future.</p>
+          <a class="btn btn-learn" href="https://hackthemountain.tech/" target="_blank">Learn more</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <h3 class="card-title">NASA Space Apps Challenge</h3>
+          <p class="card-text">A global hackathon uniting coders, scientists, and designers to build solutions for space and Earth challenges.</p>
+          <a class="btn btn-learn" href="https://www.spaceappschallenge.org/" target="_blank">Learn more</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= Open Source Contribution Section ======================= -->
+<section id="contributions" class="feature-section alt">
+  <div class="container">
+    <h2 class="section-title">Open Source Contributions</h2>
+    <p class="section-desc">Contribute to open source projects, learn from real codebases, and build your developer portfolio.</p>
+
+    <div class="cards-grid">
+      <article class="card">
+        <div class="card-body">
+          <h3 class="card-title">Hacktoberfest</h3>
+          <p class="card-text">An annual month-long celebration of open source organized by DigitalOcean and GitHub.</p>
+          <a class="btn btn-learn" href="https://hacktoberfest.com/" target="_blank">Learn more</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <h3 class="card-title">Linux Foundation Projects</h3>
+          <p class="card-text">Collaborate on leading open source technologies — from Linux to Kubernetes to Node.js.</p>
+          <a class="btn btn-learn" href="https://www.linuxfoundation.org/projects/" target="_blank">Learn more</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <h3 class="card-title">Google Summer of Code</h3>
+          <p class="card-text">A global program where students work with open source organizations and gain real-world experience.</p>
+          <a class="btn btn-learn" href="https://summerofcode.withgoogle.com/" target="_blank">Learn more</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-body">
+          <h3 class="card-title">Outreachy</h3>
+          <p class="card-text">A paid remote internship program supporting diversity in open source contributions.</p>
+          <a class="btn btn-learn" href="https://www.outreachy.org/" target="_blank">Learn more</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
 
     <main class="carousel-section" id="home">
       <div
