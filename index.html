@@ -108,6 +108,11 @@
         position: relative;
         overflow: hidden;
       }
+      /* Active nav item */
+      .navbar-nav .nav-link.active {
+      background-color: #2e7d32;
+      color: #ffffff !important;
+      }
 
       [data-bs-theme="dark"] .navbar-nav .nav-link {
         color: #27b965 !important;
@@ -1039,7 +1044,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="#" aria-current="page">Home</a>
+              <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="service.html">Services</a>
@@ -2239,5 +2244,21 @@
         });
     });
     </script>
+    <script>
+      const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+      const currentPage = window.location.pathname.split("/").pop();
+    
+      navLinks.forEach(link => {
+        const linkPage = link.getAttribute("href");
+    
+        if (
+          linkPage === currentPage ||
+          (currentPage === "" && linkPage === "index.html")
+        ) {
+          link.classList.add("active");
+        }
+      });
+    </script>
+    
   </body>
 </html>
