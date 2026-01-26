@@ -27,6 +27,24 @@
       box-shadow:0 12px 30px rgba(0,0,0,0.15);
       animation:slideUp 1s ease forwards;
     }
+
+    .home-link{
+      position:absolute;
+      top:20px;
+      left:20px;
+      font-size:15px;
+    }
+
+    .home-link a{
+      text-decoration:none;
+      color:#2e7d32;
+      font-weight:600;
+      display:flex;
+      align-items:center;
+      gap:6px;
+      transition:color .3s ease;
+    }
+
     @keyframes slideUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
     .auth-image{
       flex:1;
@@ -150,6 +168,9 @@
   </style>
 </head>
 <body>
+  <div class="home-link">
+    <a href="index.html" aria-label="Go to Home Page"><i class="fas fa-home"></i> Back to Home</a>
+  </div>
   <main class="auth-container" role="main">
     <section class="auth-image">
       <img src="images/Logo_new.png" alt="GrowCraft Logo" />
